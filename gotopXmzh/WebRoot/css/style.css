@@ -1,0 +1,105 @@
+BODY {
+SCROLLBAR-FACE-COLOR: #93BEFF;
+SCROLLBAR-HIGHLIGHT-COLOR: #F0F6FF;
+SCROLLBAR-SHADOW-COLOR:#0099FF;
+SCROLLBAR-3DLIGHT-COLOR: #006699;
+SCROLLBAR-ARROW-COLOR: #4496D9;
+SCROLLBAR-TRACK-COLOR: #F0F6FF;
+SCROLLBAR-DARKSHADOW-COLOR: #93BEFF;
+	background-position: top top;
+	vertical-align: top;
+}
+
+TABLE {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: ����
+}
+
+A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #303030; TEXT-DECORATION: none
+}
+A:active {
+	FONT-SIZE: 12px; COLOR: #303030; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #303030; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #303030; TEXT-DECORATION: underline
+}
+.title {
+	font-family: "����";
+	font-size: 18px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	line-height: normal;
+}
+input {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #D4D4D4;
+	border-right-color: #F5F5F5;
+	border-bottom-color: #F5F5F5;
+	border-left-color: #D4D4D4;
+	height: 20px;
+}
+
+.btn {
+	background-color: #F0F0F0;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #F6F6F6;
+	border-right-color: #D7D7D7;
+	border-bottom-color: #D7D7D7;
+	border-left-color: #F6F6F6;	
+	height: 25px;
+	font-family: "����";
+	font-size: 12px;
+}
+.checkbox {
+	border: 0px solid;
+}
+
+.printtable {
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+.printtd {
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}

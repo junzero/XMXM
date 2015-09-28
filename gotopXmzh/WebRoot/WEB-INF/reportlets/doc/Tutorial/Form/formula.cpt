@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<XMLVersion>20091127</XMLVersion>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[select * from CompanyProfits]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="0" align="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings shrinkToFitMode="0" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+<Background name="NullBackground" />
+</ReportWebAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table name="CompanyProfits"/>
+<ColumnConfig name="ID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="1" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="SalesRevenueIn" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="SalesRevenueOut" isKey="false" skipUnmodified="false" >
+<ColumnRow column="3" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="SalesCostsIn" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="SalesCostsOut" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="3"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,33,24,30,32,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[79,90,87,72,72,72,135,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="5" r="1"><O><![CDATA[]]></O>
+</C>
+<C c="1" r="2" s="0"><O><![CDATA[ID]]></O>
+</C>
+<C c="2" r="2" s="0"><O><![CDATA[内部收入]]></O>
+</C>
+<C c="3" r="2" s="0"><O><![CDATA[对外收入]]></O>
+</C>
+<C c="4" r="2" s="0"><O><![CDATA[内部成本]]></O>
+</C>
+<C c="5" r="2" s="0"><O><![CDATA[外部成本]]></O>
+</C>
+<C c="6" r="2" s="0"><O><![CDATA[净收入]]></O>
+</C>
+<C c="1" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="ID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="SalesRevenueIn" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="3" r="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="SalesRevenueOut" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="4" r="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="SalesCostsIn" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="SalesCostsOut" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="6" r="3" s="2"><O t="Formula" class="Formula"><Attributes><![CDATA[=C4+D4-E4-F4]]></Attributes></O>
+</C>
+<C c="5" r="5" s="3"><O><![CDATA[总收入：]]></O>
+</C>
+<C c="6" r="5" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(G4)]]></Attributes></O>
+</C>
+<C c="4" r="10"></C>
+<C c="6" r="13"></C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat"><![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

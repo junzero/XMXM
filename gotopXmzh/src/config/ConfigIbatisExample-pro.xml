@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext >
+  	<!-- 数据库连接 -->
+    <jdbcConnection driverClass="oracle.jdbc.OracleDriver" 
+    	connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+    	userId="tyjg" password="tyjg" >
+      <!-- 数据库所用jar包,指定数据库jdbc驱动jar包的绝对路径。 -->
+      <classPathEntry location="E:/javautils/myeclipse65_workspace/gotopcrm/WebRoot/WEB-INF/lib/classes12.jar" />
+      <!-- 是否返回数据库注释(表、字段注释) -->
+      <property name="remarksReporting" value="true"/>
+    </jdbcConnection>
+    <!-- 生成ibatis 表对应的实体，targetPackage 生成的包目录，一般情况下对应model目录；targetProject 项目名称 -->
+    <!-- targetPackage com.gotop.为默认写法；sfwd 为项目名；table 为模块名；model为分类名-->
+    <javaModelGenerator targetPackage="com.gotop.tyjg.stable.model" targetProject="gotoptyjg">
+    </javaModelGenerator>
+    <!-- 生成对应的Struts2的action，targetPackage 生成的包目录，一般情况下对应action目录；targetProject 项目名称 -->
+    <actionGenerator targetPackage="com.gotop.tyjg.stable.action" targetProject="gotoptyjg">
+    </actionGenerator>
+    <!-- 生成对应的spring的service，targetPackage 生成的包目录，一般情况下对应service目录；targetProject 项目名称 -->
+    <serviceGenerator targetPackage="com.gotop.tyjg.stable.service" targetProject="gotoptyjg">
+    </serviceGenerator>
+    <!-- 生成对应的jsp，targetPackage 生成的包目录，一般情况下对应jsp目录；targetProject 项目名称 -->
+    <jspGenerator targetPackage="WebRoot.jsp.tyjg.stable" targetProject="gotoptyjg">
+    </jspGenerator>
+    <!-- 生成ibatis 表对应的配置文件，targetPackage 生成的包目录，一般情况下对应map目录；targetProject 项目名称 -->
+    <sqlMapGenerator targetPackage="com.gotop.tyjg.stable.map" targetProject="gotoptyjg">
+    </sqlMapGenerator>
+    <!-- 生成ibatis 表对应的DAO，targetPackage 生成的包目录，一般情况下对应dao目录；targetProject 项目名称； type="SPRING" 为默认填写 -->
+    <daoGenerator targetPackage="com.gotop.tyjg.stable.dao" targetProject="gotoptyjg" type="SPRING">
+    </daoGenerator>
+    <!-- 以上为全局配制，一个项目基本上一个配置，下面欲生成的table表，可以多个同时存在 -->
+    <!-- 欲生成的表，schema为表空间 如果数据库里面有多个相同表名在不同的schema下，那么你得加上: schema -->
+    <!-- tableName表名 module：项目名.模块名 menuPack：比模块更细的菜单名（可不写） alias：表别外（可不写）
+    <table tableName="OM_GROUP" module="tyjg.stable">
+    	<generatedKey column="GROUPID" sqlStatement="select seq_om_group.nextval from dual" identity="false" />
+    </table>
+    <table tableName="OM_GROUPMEMBER" module="tyjg.stable">
+    </table>
+    <table tableName="om_empgroup" module="tyjg.stable">
+    </table>
+    <table tableName="OM_GROUPRANGE" module="tyjg.stable">
+    </table>-->
+    <table tableName="AT_FILEUPLOAD" module="tyjg.stable">
+    	<generatedKey column="FILE_ID" sqlStatement="select seq_at_fileupload.nextval from dual" identity="false" />
+    </table>
+  </abatorContext>
+</abatorConfiguration>

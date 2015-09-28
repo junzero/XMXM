@@ -1,0 +1,298 @@
+body{MARGIN: 0px;
+PADDING: 0px; 
+FONT-SIZE:12px;
+LINE-HEIGHT:150%;
+BACKGROUND: #fff;
+font-family:'新宋体',sans-serif,'宋体',arial,;
+background-color:#E8E8E8;
+}
+
+div,button,input,select{
+font-size:12px;
+}
+td,th{font-size:12px;}
+img{border:0px;
+}
+ul {margin:0px}
+a{TEXT-DECORATION: none;}
+a:link {COLOR:#566D94;TEXT-DECORATION: underline;}
+a:visited{COLOR:#566D94;TEXT-DECORATION: underline;}
+a:hover{COLOR:#566D94;TEXT-DECORATION: none;}
+
+.red{color:red;
+margin-left:4px;
+margin-RIGHT:4px;
+}
+
+/**全站form及button样式**/
+
+form{
+margin:0px;
+padding:0px;
+}
+/*区分只读文本框和普通文本框的背景色*/
+input{background-color:expression((this.readOnly && this.readOnly==true)?"#efefef":"")}
+.btn{
+	border:1px solid #D5D5D5;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+	font-family: Verdana, Arial;
+	font-size:12px;
+	font-weight:bold;
+	color:#333;
+	background-image:url(buttonBg.gif);
+	background-position:top;
+	background-color:white;
+	height:24px;
+	vertical-align:top;
+    cursor:hand
+
+}
+
+/*header start*/
+ #header {
+      float:left;
+      width:100%;
+      line-height:normal;
+      }
+    #header ul {
+      margin:0;
+      padding:0px;
+      list-style:none;
+      }
+    #header li {
+      float:left;
+      background:url("topmenu_left1.gif") no-repeat left top;
+      margin:0 2 0 0;
+      padding:0 0 0 4px;
+      border-bottom:1px solid #858FAD;;
+      }
+    #header a {
+      float:left;
+      display:block;
+      background:url("topmenu_right1.gif") no-repeat right top;
+      padding:5px 8px 1px 5px;
+      text-decoration:none;
+      color:#344165;
+            }
+    /* Commented Backslash Hack
+       hides rule from IE5-Mac \*/
+    #header a {float:none;}
+    /* End IE5-Mac hack */
+    #header a:hover {
+      color:#003399;
+      background-image:url("topmenu_right3.gif");
+      }
+    #header #current {
+      background-image:url("topmenu_left2.gif");
+      border-width:0;
+      border-bottom:1px solid #CDD1DD;
+      }
+    #header #current a {
+      background-image:url("topmenu_right2.gif");
+      color:#3A4B65;
+       font-weight:bold;
+      }
+
+#menu{
+background-color:#7288AD;
+border-left:1px solid #fff;
+}
+
+#toolbar a:link{
+
+}
+#toolbar a:link {COLOR:#CDD1DD;TEXT-DECORATION: none;}
+#toolbar a:visited{COLOR:#CDD1DD;TEXT-DECORATION: none;}
+#toolbar a:hover{COLOR:#ffcc00;TEXT-DECORATION: none;}
+
+
+#welcome{
+background-color:#ECE9D8;
+border-bottom:1px solid #999;
+color:#566D94;
+height:20px;
+padding:2px 20px;
+text-align:right;
+font-weight:bold;
+font-family:'arial',sans-serif,'宋体',新宋体,;
+
+}
+/*header-end*/
+#maintop{
+background-color:#F7F7F7;
+padding:10px;
+}
+#main{
+/**padding:15px 0px 0px 15px;**/
+}
+#logo{
+float:left;
+padding:3px 0px 0px 20px;
+}
+#toptool{
+float:right;
+text-align:right;
+height:16px;
+padding:5px 15px 4px 10px;
+}
+#toptool a{
+padding:4px 8px;
+}
+/********当前位置**********************************************************************/
+#location{
+height:25px;
+border-bottom:1px solid #CBD5E1;
+margin-bottom:20px;
+}
+#moduleTitle{
+float:left;
+font-weight:bolder;
+margin-top:5px;
+font-size:14px;
+background:url(dot.gif);
+background-repeat: no-repeat;
+background-position: left center;
+color:#566D94;
+padding-left:20px;
+}
+#tool{
+float:right;
+padding:2px 8px;
+margin-bottom:8px;
+}
+#tool a{
+text-decoration : none;
+color:#566D94;
+}
+/**用户功能操作区域************************************************************************/
+#function{
+margin:10px 12px;
+}
+
+/****left_start************************************************/
+#left{
+background-color:#BEC9DE;
+border-right:1px solid #999;
+}
+#treeBox{
+overflow:auto;
+}
+#treeBox .ec{
+margin:3px 5px 2px 10px;
+
+}
+#treeBox .hasItems{
+height:22px;
+cursor:hand;
+width:100%;
+border-bottom:1px solid #8296B7;
+filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ffffff', endColorStr='#B9BFD0', gradientType='0');
+color:#344165;
+
+}
+#treeBox .Items{
+height:20px;
+cursor:hand;
+color:#344165;
+border:1px solid #EEF0F4; 
+width:100%;
+
+
+
+}
+
+/******copyright*******************************************************************/
+#copyright{
+background-color:#7389AE;
+padding:5px 0px;
+height:30px;
+text-align:center;
+color:#F9FCFF;
+}
+/*******fieldset*******************************************************************/
+fieldset{
+padding:10px;
+width:100%;
+}
+
+/********弹出窗口******************************************************************/
+#popwindows{
+height:100%;
+padding:20px;
+background-color:#F2F4F7;
+/**background:#efefef url(tdbg1.gif) repeat-x top left;**/
+}
+
+/********right********************************************************************/
+#right{
+padding:15px 16px 20px 5px;
+/**
+background:url(title_bg.gif);
+background-position: right top;
+background-repeat: repeat-x;
+**/
+}
+
+
+/****日历*******************************/
+#calendar{
+      border-top:1px solid #4684C1;
+      border-right:1px solid #4684C1;
+      border-bottom:1px solid #4684C1;
+      border-left:1px solid #4684C1;
+   }
+#calendar caption{
+      filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ffffff', endColorStr='#DCE3EC', gradientType='0');
+      border-bottom:2px solid #FF9900;
+      background-color:#79A9D9;
+      color:#21598C;
+      font-weight:bold;
+      line-height:20px;   
+   }
+
+#calendar th{
+   background-color:#7288AD;
+   padding:6px 4px;
+   color:#fff;
+   } 
+#calendar td{
+   padding:6px 4px;
+   } 
+#calendar .monthCalBodyWeekEnd {
+   text-align:right;
+   background-color:#EEF0F7;
+
+}
+   
+#calendar .active{
+   text-align:right;
+   cursor:hand;
+   background-color:#ffffff; 
+   color:#006699 ;
+   font-weight:bold;
+   border:1px solid #4A6E9D;
+    }
+#calendar .monthCalBodyWeekDay{
+   text-align:right;
+    background-color:#F7FAFF; 
+   }   
+#calendar .monthFooter,#calendar .monthFooter a {
+background-color:#DFE3F0;
+font-weight:bold;
+TEXT-DECORATION: none;
+
+}
+#IconDecoration{
+/**background: #FFFFFF url("tdbg1.gif") repeat-x top left;
+border:1px solid #ccc;
+**/
+padding:4px 8px 2px 10px;
+width:320px;
+}
+#alert{
+padding:4px 8px;
+background-color:#ffffff;
+margin-bottom:8px;
+width:50%;
+}

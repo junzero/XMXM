@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM 雇员]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM 订单明细]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM 订单]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[
+
+select 雇员.雇员ID,(雇员.姓氏+雇员.名字) AS 名称,雇员.职务, year(订购日期) AS 年,
+month(订购日期) As 月, 销售额,货主地区,货主城市 
+from 雇员,订单, ( select 订单ID,sum(单价*数量) As 销售额 from 订单明细 group by 订单ID ) AS b
+where 雇员.雇员ID=订单.雇员ID and 订单.订单ID=b.订单ID 
+
+
+]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="17.756181102362206" height="12.99220472440945"/>
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="4"/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[28,19,19,17,19,19,19,19,19,45,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[84,91,69,71,72,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="4" s="0">
+<O>
+<![CDATA[销售业绩综合统计表]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" cs="4" s="1">
+<Expand/>
+</C>
+<C c="0" r="3" cs="3" rs="2" s="2">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[销售总额|产品信息|统计维度]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="货主地区"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="3" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="货主城市"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="0" r="5" cs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="年"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'年']]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="月"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'月']]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[&C6%2==0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-52"/>
+<Scope val="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="销售额"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="0" r="6" s="3">
+<O>
+<![CDATA[销售员业绩]]></O>
+<Expand/>
+</C>
+<C c="1" r="6" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="职务"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="6" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="名称"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[&C7%2==0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-52"/>
+<Scope val="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="3" r="6" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="销售额"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="0" r="8" cs="4" s="5">
+<O>
+<![CDATA[\"销售业绩综合统计表\"说明：]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="0" r="9" cs="4" s="6">
+<O>
+<![CDATA[该表分为较为规则的两片，上半部分按照年份汇总货主所在区域的销售额。下半部分则根据销售员的智能部门统计分析。]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="0" r="10" cs="4" s="7">
+<O>
+<![CDATA[]]></O>
+<Expand upParentDefault="false"/>
+</C>
+</CellElementList>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="6" color="-6894375"/>
+</Border>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="1" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[¤#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

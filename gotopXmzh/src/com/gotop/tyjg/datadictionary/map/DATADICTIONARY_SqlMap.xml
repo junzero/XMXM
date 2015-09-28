@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DATADICTIONARY">
+	
+<!-- 新增数据字典类型 -->
+    <insert id="insert_dict_type" parameterClass="com.gotop.tyjg.datadictionary.model.DictType">
+        insert into eos_dict_type
+            (dicttypeid, dicttypename, rank, parentid, seqno)
+        values(#dicttypeid:VARCHAR#, #dicttypename:VARCHAR#, #rank:VARCHAR#, #parentid:VARCHAR#, #seqno:VARCHAR#)
+    </insert>
+<!-- 删除数据字典类型 -->
+    <delete id="delete_dict_type" parameterClass="com.gotop.tyjg.datadictionary.model.DictType">
+        delete from eos_dict_type t where t.dicttypeid = #dicttypeid:VARCHAR#
+    </delete>
+<!-- 修改数据字典类型 -->
+    <update id="update_dict_type" parameterClass="com.gotop.tyjg.datadictionary.model.DictType">
+        update 
+            eos_dict_type t
+        set
+            t.dicttypename = #dicttypename:VARCHAR#
+        where 1=1
+            and t.dicttypeid = #dicttypeid:VARCHAR#
+    </update>
+<!-- 查询数据字典类型,带分页的查询 -->
+	<select id="query_dict_type_list_page" parameterClass="com.gotop.tyjg.datadictionary.model.DictType"  resultClass="com.gotop.tyjg.datadictionary.model.DictType">
+		
+		select 
+            t.dicttypeid as "dicttypeid",
+            t.dicttypename as "dicttypename" 
+        from eos_dict_type t
+        where 1=1
+		<isNotNull prepend="" property="dicttypeid">
+          and t.dicttypeid like '%' || #dicttypeid# || '%'
+        </isNotNull>
+        <isNotNull prepend="" property="dicttypename">
+          and t.dicttypename like '%' || #dicttypename:VARCHAR# || '%'
+        </isNotNull>
+        order by t.dicttypeid
+		
+	</select>
+<!-- 查询数据字典类型 ，不带分页的查询 -->
+	<select id="query_dict_type_list" parameterClass="com.gotop.tyjg.datadictionary.model.DictType"  resultClass="com.gotop.tyjg.datadictionary.model.DictType">
+		select 
+            t.dicttypeid as "dicttypeid",
+            t.dicttypename as "dicttypename" 
+        from eos_dict_type t
+        where 1=1
+		<isNotNull prepend="" property="dicttypeid">
+          and t.dicttypeid = #dicttypeid:VARCHAR#
+        </isNotNull>
+        <isNotNull prepend="" property="dicttypename">
+          and t.dicttypename like '%' || #dicttypename:VARCHAR# || '%'
+        </isNotNull>
+        order by t.dicttypeid
+	</select>
+<!-- 查询数据字典类型的总个数 -->
+	<select id="query_dict_type_count" parameterClass="com.gotop.tyjg.datadictionary.model.DictType" resultClass="java.lang.Integer">
+        select 
+            count(1) 
+        from eos_dict_type t
+        where 1=1
+        <isNotNull prepend="" property="dicttypeid">
+          and t.dicttypeid like '%' || #dicttypeid:VARCHAR# ||'%'
+        </isNotNull>
+        <isNotNull prepend="" property="dicttypename">
+          and t.dicttypename like '%' || #dicttypename:VARCHAR# || '%'
+        </isNotNull>
+	</select>
+<!-- 新增数据字典实体 -->
+    <insert id="insert_dict_entry" parameterClass="com.gotop.tyjg.datadictionary.model.DictEntry">
+        insert into eos_dict_entry
+            (dicttypeid, dictid, dictname, status, sortno, rank, parentid, seqno, filter1, filter2)
+        values
+            (#dicttypeid:VARCHAR#, #dictid:VARCHAR#, #dictname:VARCHAR#, #status:VARCHAR#, #sortno:DECIMAL:-9999#, #rank:VARCHAR#, #parentid:VARCHAR#, #seqno:VARCHAR#, #filter1:VARCHAR#, #filter2:VARCHAR#)
+    </insert>
+<!-- 删除数据字典实体 -->
+    <delete id="delete_dict_entry" parameterClass="com.gotop.tyjg.datadictionary.model.DictEntry">
+        delete from eos_dict_entry t 
+        where 1=1
+            <isNotNull prepend="" property="dicttypeid">
+            and t.dicttypeid = #dicttypeid:VARCHAR#
+            </isNotNull>
+            <isNotNull prepend="" property="dictid"> 
+            and dictid = #dictid:VARCHAR#
+            </isNotNull>
+    </delete>
+<!-- 修改数据字典实体 -->
+    <update id="update_dict_entry" parameterClass="com.gotop.tyjg.datadictionary.model.DictEntry">
+        update 
+            eos_dict_entry t
+        set
+            t.dictname = #dictname:VARCHAR#,
+            t.status = #status:DECIMAL#,
+            t.sortno = #sortno:DECIMAL:-9999#
+        where 1=1
+            and t.dicttypeid = #dicttypeid:VARCHAR#
+            and t.dictid = #dictid:VARCHAR#
+        <isNotNull prepend="" property="parentid">
+          and t.parentid = #parentid:VARCHAR#
+        </isNotNull>
+        <isNull prepend="" property="parentid">
+          and t.parentid is null
+        </isNull>
+    </update>
+<!-- 查询数据字典实体的总个数 -->
+	<select id="query_dict_entry_count" parameterClass="com.gotop.tyjg.datadictionary.model.DictEntry" resultClass="java.lang.Integer">
+        select 
+            count(1) 
+        from eos_dict_entry t
+        where 1=1
+        <isNotNull prepend="" property="dicttypeid">
+          and t.dicttypeid = #dicttypeid:VARCHAR#
+        </isNotNull>
+        <isNotNull prepend="" property="parentid">
+          and t.parentid = #parentid:VARCHAR#
+        </isNotNull>
+        <isNull prepend="" property="parentid">
+          and t.parentid is null
+        </isNull>
+	</select>
+<!-- 查询数据字典当前类型下的实体 -->
+	<select id="query_dict_entry_list" parameterClass="com.gotop.tyjg.datadictionary.model.DictEntry" resultClass="com.gotop.tyjg.datadictionary.model.DictEntry">
+        select 
+            t.dicttypeid as "dicttypeid",
+            t.dictid as "dictid",
+            t.dictname as "dictname",
+            t.parentid as "parentid",
+            t.status as "status",
+            t.sortno as "sortno"
+        from eos_dict_entry t
+        where 1=1
+        <isNotNull prepend="" property="dicttypeid">
+          and t.dicttypeid = #dicttypeid:VARCHAR#
+        </isNotNull>
+        <isNotNull prepend="" property="dictid">
+          and t.dictid = #dictid:VARCHAR#
+        </isNotNull>
+        <isNotNull prepend="" property="parentid">
+          and t.parentid = #parentid:VARCHAR#
+        </isNotNull>
+        <isNull prepend="" property="parentid">
+          and t.parentid is null
+        </isNull>
+        order by t.sortno,t.dictid
+	</select>
+<!-- 查询数据字典当前类型下的实体 -->
+	<select id="query_dict_entry_list_page" parameterClass="com.gotop.tyjg.datadictionary.model.DictEntry" resultClass="com.gotop.tyjg.datadictionary.model.DictEntry">
+        select 
+            t.dicttypeid as "dicttypeid",
+            t.dictid as "dictid",
+            t.dictname as "dictname",
+            t.status as "status",
+            t.sortno as "sortno"
+        from eos_dict_entry t
+        where 1=1
+        <isNotNull prepend="" property="dicttypeid">
+          and t.dicttypeid = #dicttypeid:VARCHAR#
+        </isNotNull>
+        <isNotNull prepend="" property="parentid">
+          and t.parentid = #parentid:VARCHAR#
+        </isNotNull>
+        <isNull prepend="" property="parentid">
+          and t.parentid is null
+        </isNull>
+        order by t.sortno,t.dictid
+	</select>
+</sqlMap>

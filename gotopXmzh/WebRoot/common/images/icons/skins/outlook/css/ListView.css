@@ -1,0 +1,304 @@
+.listView{
+border-collapse :collapse;
+border:1px solid #828CAC;
+margin:10px 0px;
+width:97%;
+}
+.listView caption{
+text-align:left;
+height:20px;
+font-weight:bold;
+font-size:12px;
+border:1px solid #828CAC;
+background-color:#828CAC;
+background:url("tdbg2.gif");
+color:#fff;
+padding:3px 0px 2px 12px;
+}
+.listView th{
+text-align:center;
+padding:3px 4px;
+white-space:nowrap;
+font-weight:lighter;
+background-color:#E4E8EF;
+border-bottom:1px solid #C9D3E4;
+border-right:1px solid #C9D3E4;
+height:24px;
+}
+.listView tr{
+ background-color:expression((this.rowIndex % 2)==0?"#F2F1F5":"#ffffff");
+ behavior: url(js/itemstyle.htc);
+}
+.listView td{
+ padding:2px 4px;
+ border-bottom:1px solid #C9D3E4;
+ border-right:1px solid #C9D3E4;
+}
+.listView img{
+ margin-right:4px;
+}
+
+
+/*listview 分页*********************************************************************/
+.Pagination{
+width:97%;
+background-color:#efefef;
+border:1px solid #ccc;
+border-collapse :collapse;
+}
+.Pagination td{
+padding:3px 10px;
+}
+.Pagination input{
+border:1px solid #ccc;
+text-align:center;
+margin:0px 4px;
+font-weight:bold;
+color:red;
+}
+.Pagination a{
+font-weight:bold;
+}
+
+
+.Pagination .availability{
+color:#CC0000;
+TEXT-DECORATION: none;
+}
+}
+.Pagination .invalid{
+color:#666;
+TEXT-DECORATION: none;
+}
+
+
+/*****选择部门*******/
+#SelectList{
+border:1px solid #DCE3EC;
+border-bottom:4px solid #DCE3EC;
+border-collapse :collapse;
+}
+#SelectList th{
+background-color:#DCE3EC;
+/*background: #79CCF0 url(headbg.gif) repeat-x top left;*/
+text-align:left;
+padding:5px 10px;
+font-weight:lighter;
+
+}
+#SelectList .overflow{
+overflow:auto;
+height:320px;
+width:220px;
+padding:10px 0px;
+}
+#SelectList a{
+text-decoration:none;
+color:#000;
+width:100%;
+padding:3px 8px 2px 10px;
+border-bottom:1px solid #DCE3EC;
+}
+#SelectList a:hover{
+color:#000;
+
+background-color:#efefef;
+}
+#SelectList a:active{
+color:#000;
+border:1px solid #f90;
+background-color:#efefef;
+}
+/**编辑列表及横向显示数据列表样式1***/
+.viewstyle{
+border-collapse :collapse;
+border:1px solid #828CAC;
+margin:10px 0px;
+width:97%;
+}
+.viewstyle caption{
+text-align:left;
+height:20px;
+font-weight:bold;
+font-size:12px;
+border:1px solid #828CAC;
+background-color:#828CAC;
+background:url("tdbg2.gif");
+color:#fff;
+padding:3px 0px 2px 12px;
+}
+.viewstyle th{
+text-align:left;
+padding:3px 4px;
+white-space:nowrap;
+font-weight:lighter;
+background-color:#EEF0F4;
+border-bottom:1px solid #C9D3E4;
+border-right:1px solid #C9D3E4;
+
+}
+.viewstyle td{
+ padding:3px 4px;
+ border-bottom:1px solid #C9D3E4;
+ border-right:1px solid #C9D3E4;
+ background-color:#fff;
+}
+
+.viewstyle .cue{
+    background-color:#CED6EC;
+    height:22px;
+    font-weight:bold;
+    color:#3E4D7A;
+}
+.viewstyle thead td{
+    background-color:#FFF8DC;
+    }
+
+.viewstyle tfoot td{
+    background-color:#EEEEF6;
+    
+}
+.viewstyle img{margin-right:8px;
+}
+
+
+ /*财政数据表格显示样式*/
+ #dataview{
+ width:100%;
+ border-top:1px solid #000;
+ }
+#dataview caption{
+font-size:24px;
+font-weight:bold;
+padding:20px 0px;
+}
+#dataview th{
+background-color:#ECE9D8;
+border-right:1px solid #666;
+border-left:1px solid #fff;
+border-top:1px solid #fff;
+border-bottom:1px solid #999;
+font-weight:lighter;
+padding:4px 4px;
+height:22px;
+white-space:nowrap;
+}
+#dataview td{
+ padding:4px;
+ border-right:1px solid #000;
+ border-bottom:1px solid #000;
+ }
+#dataview .waitdata{
+BORDER: black 1px solid; 
+PADDING: 4px; 
+MARGIN-LEFT: 18px;
+WIDTH: 240px; 
+BACKGROUND-COLOR: lightyellow;
+     }
+#dataview .yellowbg{
+BACKGROUND-COLOR: lightyellow;
+     }
+    
+#dataview2{
+ background-color:#F0FFFF;
+ border:1px solid #000;
+ }
+#dataview2 table{
+ width:100%;
+ background-color:#fff;
+ border-top:1px solid #000;
+ border-left:1px solid #000;
+ }
+#dataview2 caption{
+font-size:12px;
+font-weight:bold;
+padding:5px 0px;
+text-align:left;
+
+}
+#dataview2 th{
+background-color:#F0FFFF;
+}
+
+#dataview3{
+ background-color:#FFF8DC;
+ border-top:1px solid #000;
+ }
+#dataview3 th{
+background-color:#FFF8DC;
+}
+/**数据最大化显示**/
+#dataviewtool{
+text-align:right;
+margin-top:3px;
+padding-right:5px;
+}
+#dataviewtool a{
+text-decoration : none;
+color:#000;
+}
+/**选项卡样式表格**/
+#secTable {
+border-collapse :collapse;
+margin:10px 12px 0px 15px;
+}
+#secTable td{
+padding:1px 8px 0px 8px;
+}
+#secTable .sec1 {
+cursor: hand;
+text-decoration:none;
+color: #566D94;
+border-right:1px solid #828CAC;
+background-color:#fff;
+float:left;
+background:url("topmenu_left1.gif") no-repeat left top;
+}
+.sec2 {   
+color:#000;
+text-decoration:none;
+border-right:1px solid #828CAC;
+background-color:#FFFFCC;
+background:url("topmenu_left2.gif") no-repeat left top;
+}
+
+ #search{
+width:100%;
+border-collapse :collapse;
+margin:0px 0px 10px 0px;
+ }
+.search{
+background-color:#fff;
+width:97%;
+border-collapse :collapse;
+border:1px solid #828CAC;
+margin:20px 0px 10px 0px;
+}
+.search caption{
+text-align:left;
+padding-LEFT:12px;
+padding-top:3px;
+padding-bottom:2px;
+font-weight:bold;
+font-size:12px;
+border:1px solid #828CAC;
+background-color:#828CAC;
+background:url("tdbg2.gif");
+color:#fff;
+}
+
+.search th{
+font-weight:lighter;
+white-space:nowrap;
+text-align:left;
+padding:5px 5px;
+}
+
+.search .btn{
+ color:#000;
+ background:#CDD1DD url("");
+ border-bottom:1px solid #293A6C;
+ border-right:1px solid #293A6C;
+  height:20px;
+  font-weight:lighter;
+}

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[Province,,.,,Amount,,.,,Time]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.Double,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[A^B*?J058SiFgrbUpaONNkW,Y'0)'>To%`u-M$r.KqGUlpN7gHpEUJfX),uS:mIup6F;Rb0O
+ljO$a:3nYS.uD%'Mas')TU0-U#HgOmu1WHmU&o_Ku#(H&0Mu4iD-'7(cQ0IfK~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false"/>
+</WebPageContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[66,81,69,69,72,72,72,72,72,71,51,72]]></ColumnWidth>
+<FloatElementList>
+<com.fr.report.FloatElement>
+<Location column="0" row="0" leftDistance="0" topDistance="0" width="572.0" height="303.0"/>
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<ChartAttr isJSDraw="true"/>
+<Plot class="com.fr.chart.plot.Bar2DPlot">
+<Plot>
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<ConditionCollection>
+<DefaultAttr class="com.fr.chart.condition.ConditionAttr">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrTrendLine">
+<AttrTrendLine>
+<TrendLine>
+<Attr equation="1" square="6"/>
+<LineStyleInfo>
+<Attr alpha="1.0" lineStyle="8" lineColor="-65536"/>
+</LineStyleInfo>
+</TrendLine>
+<Attr name="北京市销量趋势" forward="0" backward="0"/>
+</AttrTrendLine>
+</Attr>
+</AttrList>
+</ConditionAttr>
+</DefaultAttr>
+</ConditionCollection>
+<Legend>
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="1" lineColor="-8355712" isRoundBorder="true"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<DataSheet>
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="1" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr isVisible="false" isLegendVisible="true"/>
+</DataSheet>
+<CateAttr isStacked="false" bgStagger="false" bgColor="-1"/>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0" color="-16777216"/>
+<SecGridLine style="0" color="-16777216"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr rotation="35" alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<AxisRange/>
+</CategoryAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="1" color="-1184275"/>
+<SecGridLine style="0" color="-16777216"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="false"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+<AxisRange/>
+</ValueAxis>
+<BarAttr isHorizontal="false" overlap="-0.15" interval="1.0"/>
+<Bar2DAttr isSimulation3D="true"/>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<MoreNameCDDefinition>
+<Top topCate="-1" topValue="-1"/>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[ds1]]></Name>
+</TableData>
+<CategoryName value="Time"/>
+<ChartSummaryColumn name="Amount" function="com.fr.data.util.function.SumFunction" customName="Amount"/>
+</MoreNameCDDefinition>
+</O>
+<Style index="0"/>
+</com.fr.report.FloatElement>
+</FloatElementList>
+<CellElementList/>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting orientation="1">
+<Margin top="0.07874015748031496" left="0.15748031496062992" bottom="0.07874015748031496" right="0.15748031496062992"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<ReportWriteAttr/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="false" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<PP class="com.fr.report.parameter.CustomParameterProcessor"/>
+</ReportParameterAttr>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

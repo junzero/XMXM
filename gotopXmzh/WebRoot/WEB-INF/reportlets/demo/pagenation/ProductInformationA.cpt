@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+     类别.类别名称 AS 类别_类别名称,
+     产品.产品ID AS 产品_产品ID,
+     产品.产品名称 AS 产品_产品名称,
+     产品.供应商ID AS 产品_供应商ID
+FROM
+     类别 类别 INNER JOIN 产品 产品 ON 类别.类别ID = 产品.类别ID]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+     订单.雇员ID AS 雇员ID,
+     订单.货主地区 AS 货主地区,
+     订单明细.产品ID AS 产品ID,
+     订单明细.单价*订单明细.数量*(1-订单明细.折扣) AS 金额
+FROM
+     订单明细 订单明细 INNER JOIN 订单 订单 ON 订单明细.订单ID = 订单.订单ID]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" headerHeight="0.0" footerHeight="0.0">
+<FrozenColumnRow columnrow="C6"/>
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="4"/>
+<FR/>
+<HC F="1" T="1"/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[32,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,71,72,72,72,72,72,72,72,72,72,66,35,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<Expand/>
+</C>
+<C c="2" r="0" cs="3" s="1">
+<O>
+<![CDATA[产品销售情况综合统计]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" cs="5" s="2">
+<Expand/>
+</C>
+<C c="0" r="3" cs="2" rs="2" s="3">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[统计维度|数据|产品]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="3">
+<O>
+<![CDATA[按地区统计]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="3">
+<O>
+<![CDATA[按供应商统计]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="3">
+<O>
+<![CDATA[按雇员统计]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主地区"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="3" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="产品_供应商ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="供应商" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="1"/>
+</C>
+<C c="4" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="雇员ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"/>
+<Formula>
+<![CDATA[SELECT 雇员ID,姓氏+名字 as 姓名 FROM 雇员]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="1"/>
+</C>
+<C c="0" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="类别_类别名称"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<SelectCount count="5"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="产品_产品名称"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[产品ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="产品_产品ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="5" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[产品ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="产品_产品ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="5" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[产品ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="产品_产品ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="0" r="6" cs="2" s="3">
+<O>
+<![CDATA[小计]]></O>
+<Expand leftParentDefault="false" left="A6"/>
+</C>
+<C c="2" r="6" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(C6)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="6" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(D6)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="6" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(E6)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="8" cs="2">
+<O>
+<![CDATA[]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="2" r="8" cs="3" s="5">
+<O>
+<![CDATA[产品销售情况综合统计表说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="9" cs="2">
+<O>
+<![CDATA[]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="2" r="9" cs="3" s="6">
+<O>
+<![CDATA[    该表整体分为较为规则的三片。左侧是产品类别与产品名称。右侧规则按照货主地区，供应商，雇员等三个不同的维度进行统计。]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="10" cs="2">
+<O>
+<![CDATA[]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="2" r="10" cs="3" s="7">
+<O>
+<![CDATA[    此报表展示数据部分的长度和宽度都较大，按照自然A4纸大小分页会分成多页。因此设置了不分页展示，并冻结左侧和上方的表头。]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style style_name="RTitle"/>
+<Style>
+<FRFont name="黑体" style="0" size="22" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="6" color="-6894375"/>
+</Border>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

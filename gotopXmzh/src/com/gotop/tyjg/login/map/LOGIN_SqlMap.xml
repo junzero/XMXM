@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="LOGIN">
+
+	<!--获取登录用户的主机构  -->
+	<select id="queryUserOrg" resultClass="java.util.HashMap">
+		<![CDATA[
+			SELECT  A.USERID,A.EMPNAME, C.ORGNAME,C.ORGID
+				  FROM OM_EMPLOYEE A, OM_EMPORG B, OM_ORGANIZATION C
+				 WHERE A.EMPID = B.EMPID
+				   AND B.ORGID = C.ORGID
+				   AND B.ISMAIN = 'y'
+				   AND A.EMPNAME = #username#
+				 ORDER BY C.ORGCODE
+		]]>
+	</select>
+	<!--验证登录用户的密码  -->
+	<select id="validataPassword" resultClass="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(A.OPERATORID) NUM
+			  FROM AC_OPERATOR A
+			 WHERE A.USERID = #userid#
+			   AND A.PASSWORD =#password#
+		]]>
+	</select>
+	<!--查询用户基本信息  -->
+	<select id="select_emp_base_info" resultClass="java.util.HashMap">
+		<![CDATA[
+			 select a.EMPID,
+                 a.USERID,
+                 a.OPERATORNAME,
+                 a.OPERATORID,
+                 a.EMAIL,
+                 c.orgid,
+                 c.orgcode,
+                 c.orgname,
+                 c.jgsx,
+                 c.orgdegree,
+                 c.orgysjgid,
+                 c.orgtype,
+                 c.orgseq,
+                 c.ysjgbh，
+                 a.headpicicon,
+                 a.password,
+                 xb.MOBILENO
+            from ac_operator a, om_emporg b, om_organization c, ABF_T_YGFJXXB XB
+           where a.operatorid = b.empid
+             and b.orgid = c.orgid
+             and xb.empid(+)=a.operatorid
+             and a.userid = #userid#
+             and c.orgid=#orgid#
+		]]>
+	</select>
+	<!--查询用户所在机构的上级实体机构信息  -->
+	<select id="select_emp_org_info" resultClass="java.util.HashMap">
+		<![CDATA[
+ 		select orgid,orgcode,orgname from (       
+	        select parentorgid
+	           from om_organization
+	          where orgtype in ('3','4')
+	          start with orgid = #orgid#
+	         connect by prior parentorgid = orgid
+	         ) parent,om_organization omorg
+	         where parent.parentorgid = omorg.orgid
+		]]>
+	</select>
+	<!--查询用户映射机构信息 -->
+	<select id="select_emp_ysjg_org_info" resultClass="java.util.HashMap">
+		<![CDATA[
+ 		  select orgid,orgcode,orgname from om_organization
+	         where orgcode=#ysjgbh#
+		]]>
+	</select>
+	<!--查询用户拥有的角色 -->
+	<select id="select_emp_all_role_list" resultClass="java.util.HashMap">
+		<![CDATA[
+ 		   select a.* from ac_role a
+        ,ac_operatorrole b where a.roleid=b.roleid and operatorid=#operatorid#
+		]]>
+	</select>
+	<!--sysadmin拥有的角色 -->
+	<select id="select_emp_sysadmin_role_list" resultClass="java.util.HashMap">
+		<![CDATA[
+ 		   select a.* from ac_role a
+		]]>
+	</select>
+	 <!-- 角色功能查询语句  -->
+    <select id="select_getRolefuncTopid" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+    <![CDATA[
+		select * from (
+		  select distinct to_char(ac_funcgroup.funcgroupid) funccode,ac_funcgroup.funcgroupname funcname,'' funcaction,'' parainfo,ac_funcgroup.grouplevel,'n' isleaf,ac_funcgroup.displayorder
+		          from ac_funcgroup
+		          where  ac_funcgroup.grouplevel =1
+		             and ac_funcgroup.parentgroup is null
+		             and ac_funcgroup.appid = 121
+		         START WITH funcgroupid in
+		                    ((select ac_funcgroup.funcgroupid
+		                       from AC_ROLEFUNC,ac_funcgroup,ac_function
+		                      where ROLEID IN 
+	]]>     
+		  <iterate property="roles" conjunction="," open="(" close=")">
+              #roles[]#
+          </iterate>          
+	<![CDATA[   
+		                        and AC_ROLEFUNC.type = 0
+		                        and ac_function.funccode = AC_ROLEFUNC.FUNCCODE
+                                and ac_function.ismenu = 'y'
+		                        and ac_rolefunc.funcgroupid = ac_funcgroup.funcgroupid
+		                        and ac_funcgroup.appid = 121)
+		                    union
+		                     (select funcgroupid from ac_rolefunclock where roleid in 
+	]]>
+		  <iterate property="roles" conjunction="," open="(" close=")">
+              #roles[]#
+          </iterate>
+	<![CDATA[
+		and ac_rolefunclock.islock =1 and ac_rolefunclock.appid=121)
+		                    )
+		  CONNECT BY PRIOR parentgroup = funcgroupid
+		) order by displayorder
+	]]>
+    </select> 
+     <!-- 角色功能查询语句  -->
+    <select id="select_rolefuncByGroupid" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		<![CDATA[
+		select * from 
+		(
+			(select distinct to_char(ac_funcgroup.funcgroupid) funccode,ac_funcgroup.funcgroupname funcname,'' funcaction,'' parainfo,ac_funcgroup.grouplevel,'n' isleaf,ac_funcgroup.displayorder, AC_FUNCGROUP.GROUPICON FUNICON
+		        from ac_funcgroup
+		        where  ac_funcgroup.grouplevel =#grouplevel#
+		           and ac_funcgroup.parentgroup =#parentgroup#
+		           and ac_funcgroup.appid = 121
+		       START WITH funcgroupid in
+		                 ((select ac_funcgroup.funcgroupid
+		                     from AC_ROLEFUNC,ac_funcgroup,ac_function
+		                    where ROLEID IN 
+		]]>                    
+				<iterate property="roles" conjunction="," open="(" close=")">
+              		#roles[]#
+          		</iterate> 		
+		                   
+		<![CDATA[                    
+		                      and AC_ROLEFUNC.type = 0
+		                      and ac_function.funccode = AC_ROLEFUNC.FUNCCODE
+	                          and ac_function.ismenu = 'y'
+		                      and ac_rolefunc.funcgroupid = ac_funcgroup.funcgroupid
+		                      and AC_ROLEFUNC.appid = ac_funcgroup.appid
+		                      and ac_funcgroup.appid = 121
+		                  )
+	                     union
+	                      (select funcgroupid from ac_rolefunclock where roleid in 
+	    ]]>
+	            <iterate property="roles" conjunction="," open="(" close=")">
+              		#roles[]#
+          		</iterate>
+	    <![CDATA[                   
+	                      and ac_rolefunclock.islock =1 and ac_funcgroup.appid = 121
+	                      )
+	                     )           
+	    	 CONNECT BY PRIOR parentgroup = funcgroupid
+	   		)
+	    )
+		union
+		(	 (select ac_function.funccode,ac_function.funcname,ac_function.funcaction,ac_function.parainfo,0 as grouplevel,'y' isleaf,ac_function.displayorder,AC_FUNCTION.FUNICON from ac_function, AC_ROLEFUNC
+			    where ROLEID IN 
+		]]>	    
+			   <iterate property="roles" conjunction="," open="(" close=")">
+              		#roles[]#
+          		</iterate>
+		<![CDATA[ 	    
+			      and AC_ROLEFUNC.type = 0
+			      and ac_function.funccode = AC_ROLEFUNC.Funccode
+			      and ac_function.funcgroupid = #parentgroup#
+	              and ac_function.ismenu = 'y'
+	              and AC_ROLEFUNC.appid=121
+	         )
+	        union
+	         (select ac_function.funccode,
+	                  ac_function.funcname,
+	                  ac_function.funcaction,
+	                  ac_function.parainfo,
+	                  0 as grouplevel,
+	                  'y' isleaf,
+	                  ac_function.displayorder,
+              		AC_FUNCTION.FUNICON
+	             from ac_function,ac_rolefunclock
+	             where ac_rolefunclock.funcgroupid =ac_function.funcgroupid
+	               and ac_rolefunclock.roleid in 
+	       ]]>    
+	            <iterate property="roles" conjunction="," open="(" close=")">
+              		#roles[]#
+          		</iterate>
+	       <![CDATA[    
+	               and ac_rolefunclock.funcgroupid = #parentgroup#
+	               and ac_rolefunclock.islock =1
+	               and ac_function.ismenu = 'y'
+	               and ac_rolefunclock.appid=121
+	         )
+		) order by displayorder
+		]]> 
+    </select>
+    <!-- 用户可登录的机构 -->
+    <select id="loginOrg" resultClass="java.util.HashMap">
+    	SELECT A.ORGID, A.ORGNAME
+			  FROM OM_ORGANIZATION A, OM_EMPORG B
+			 WHERE A.ORGID = B.ORGID
+			   AND B.EMPID = #empid#
+			   AND A.STATUS = 'running'
+			 ORDER BY A.ORGCODE
+    </select>
+    <!-- 保存登录日志 -->
+    <insert id="insertLoginLog" parameterClass="java.util.HashMap">
+    	INSERT INTO T_SYS_LOGINLOG
+			  (RECID, USERID, EMPNAME, LOGIN_IP, LOGIN_TIME, LOGIN_FLAG)
+				VALUES
+				  (T_SYS_LOGINLOG_SEQ.NEXTVAL,
+				   #userId#,
+				   #empName#,
+				   #loginIp#,
+				    TO_CHAR(sysdate,'yyyyMMddHH24mmss'),
+				   '00')
+    </insert>
+    <!-- 查询登录用户群组信息 -->
+    <select id="queryLoginGroup" resultClass="java.util.HashMap">
+    	select groupids.GROUPID
+			  from (select distinct GROUPID
+			          from (select om_organization.orgseq, om_grouprange.groupid
+			                  from om_grouprange, om_organization
+			                 where om_grouprange.grangeid = om_organization.orgid
+			                   and Flag = 2) groupm,
+			               (select om_organization.orgseq
+			                  from om_employee, om_emporg, om_organization
+			                 where om_employee.empid = #empid:VARCHAR#
+			                   and om_employee.empid = om_emporg.empid
+			                   and om_emporg.orgid = om_organization.orgid) emporg
+			         where emporg.orgseq like groupm.orgseq ||'%'
+			        union
+			        select GROUPID
+			          from om_group
+			         where empid = #empid:VARCHAR#
+			           and grouptype = 'personal'
+			           and groupstatus = 'run'
+			        union
+			        select OM_GROUPRANGE.Groupid
+			          from OM_GROUPRANGE, ac_operatorrole
+			         where OM_GROUPRANGE.Flag = 3
+			           and OM_GROUPRANGE.Grangeid = ac_operatorrole.roleid
+			           and ac_operatorrole.operatorid =#empid:VARCHAR#
+			        union
+			        select groupid
+			          from OM_GROUPRANGE
+			         where Flag = 1
+			           and grangeid = #empid:VARCHAR#) groupids,
+			       om_group
+			 where groupids.groupid = om_group.groupid
+			   and om_group.groupstatus = 'run'
+    </select>
+    
+    <!-- 查询用户所属岗位信息 -->
+    <select id="queryPositionByEmp"  resultClass="java.util.HashMap">
+        <![CDATA[
+ 		  select t2.positionid, t2.posicode, t2.posiname
+  from om_empposition t1, om_position t2
+ where t1.positionid = t2.positionid
+   and t1.empid = #empid#
+		]]>
+    </select>
+</sqlMap>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.tyjg.common.action.AttachmentAction" id="attachmentaction" name="attachmentAction" singleton="false">
+    <property name="attachmentService" ref="attachmentService" />
+  </bean>
+	<bean class="com.gotop.tyjg.common.model.ChangeTree" id="changeTree" name="changeTree" singleton="false" />
+	<bean class="com.gotop.tyjg.common.action.MainTreeAction" id="mainTreeAction" name="mainTreeAction" singleton="false">
+		<property name="mainTreeService" ref="mainTreeService" />
+		<property name="changeTree" ref="changeTree" />
+	</bean>
+</beans>

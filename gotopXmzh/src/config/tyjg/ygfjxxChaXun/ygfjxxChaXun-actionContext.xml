@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 人员附加信息查询 -->
+	<bean class="com.gotop.tyjg.ygfjxxChaXun.struts.YgfjxxChaXunAction" id="ygfjxxChaXunAction" name="ygfjxxChaXunAction" singleton="false">
+		<property name="ygfjxxService" ref="ygfjxxService" />
+	</bean>
+	
+	</beans>

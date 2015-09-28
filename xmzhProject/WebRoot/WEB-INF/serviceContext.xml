@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 	xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:aop="http://www.springframework.org/schema/aop" 
+		xmlns:tx="http://www.springframework.org/schema/tx"
+
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		   http://www.springframework.org/schema/aop
+		   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		   http://www.springframework.org/schema/tx
+		   http://www.springframework.org/schema/tx/spring-tx-2.5.xsd" default-autowire="byName">
+		   
+	<import resource="classpath:serviceContext-xfire.xml"/>
+	
+	<bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+		     <value>java:comp/env/xmzhpt</value>
+		</property>
+	</bean>
+	
+	<bean id="conUtils" class="com.gotop.util.dataSource.ConUtils">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>
+	
+ 	<aop:config>
+		<aop:pointcut id="allManagerMethodHibernate1"
+			expression="execution(* com.gotop.*..service.impl.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethodHibernate1" />
+	</aop:config>
+	
+  <tx:advice id="txAdvice">
+       <tx:attributes>
+			<!--新增、修改、删除事务 -->
+          <tx:method name="save*" read-only="false" rollback-for="Exception"/>
+            <tx:method name="add*" read-only="false" rollback-for="Exception"/>
+            <tx:method name="insert*" read-only="false" rollback-for="Exception"/>
+            <tx:method name="update*" read-only="false" rollback-for="Exception"/>
+        	 <tx:method name="delete*" read-only="false" rollback-for="Exception"/>
+       </tx:attributes>
+    </tx:advice>
+    
+	<!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+        <property name="dataSource" ref="dataSource"></property> 
+	</bean>-->
+	
+	<!--<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate"
+		depends-on="dataSource" scope="singleton">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>-->
+	
+	<!-- 自动注解配置 -->
+    <context:annotation-config />
+	
+		<bean id="jbpmSpringHelper" class="org.jbpm.pvm.internal.processengine.SpringHelper"/>
+		<bean id="processEngine" factory-bean="jbpmSpringHelper" factory-method="createProcessEngine"/>
+		
+		<bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService" />
+		<bean id="executionService" factory-bean="processEngine" factory-method="getExecutionService" />
+		<bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService" />
+		<bean id="managementService" factory-bean="processEngine" factory-method="getManagementService" />
+		 <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService" />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		
+		<!-- jbpm表映射文件 -->
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:jbpm.repository.hbm.xml</value>
+				<value>classpath:jbpm.execution.hbm.xml</value>
+				<value>classpath:jbpm.history.hbm.xml</value>
+				<value>classpath:jbpm.task.hbm.xml</value>
+				<value>classpath:jbpm.identity.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9Dialect
+				</prop>
+				<!--<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.ast.ASTQueryTranslatorFactory
+		        </prop>
+				--><prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">25</prop>
+				<!--<prop key="hibernate.format_sql">true</prop> -->
+			</props>
+		</property>
+		 <!-- 使用TransactionAwareDataSourceProxy管理事务与ibatis处于同一事务管理下 --> 
+		<property name="useTransactionAwareDataSource" value="true" />
+	</bean>
+
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory">
+            <ref local="sessionFactory" />
+        </property>
+    </bean>
+    
+	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+        <property name="maxRows" value="10000" />
+    </bean>
+    
+    <bean id="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="simpleJdbcCall" class="org.springframework.jdbc.core.simple.SimpleJdbcCall">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+    
+    <bean id="simpleJdbcInsert" class="org.springframework.jdbc.core.simple.SimpleJdbcInsert">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+
+    <!-- 事务管理 -->
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!-- 事务拦截器 -->
+    <bean id="transactionInterceptor"
+        class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <!-- 注入事务 -->
+        <property name="transactionManager" ref="transactionManager" />
+        <!--配置事务属性 -->
+        <property name="transactionAttributes">
+            <props> 
+                <!-- 以下方法开头需要事务 -->
+                <prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--配置事务代理，所有以Service结尾的类第都会自动进行事务控制，程序中不需要控制 -->
+    <bean id="preformanceThresholdProxyCreator"
+        class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*Service</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>transactionInterceptor</value>
+            </list>
+        </property>
+    </bean>
+</beans>

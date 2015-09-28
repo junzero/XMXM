@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="HOME_INFO_SqlMap" >
+  <resultMap id="abatorgenerated_HomeInfoResult" class="com.gotop.home.model.HomeInfo" >
+    <!--Bean方式返回全表-->
+    <result column="MESSAGE_TYPE" property="messageType" jdbcType="VARCHAR2" />
+    <result column="TYPENAME" property="typeName" jdbcType="VARCHAR2" />
+    <result column="MESSAGE_TITLE" property="messageTitle" jdbcType="VARCHAR2" />
+    <result column="ORGID" property="orgid" jdbcType="VARCHAR2" />
+    <result column="ORGNAME" property="orgname" jdbcType="VARCHAR2" />
+    <result column="CREATE_EMPID" property="createEmpid" jdbcType="DECIMAL" />
+    <result column="EMPNAME" property="empname" jdbcType="VARCHAR2" />
+    <result column="MESSAGE_ID" property="messageId" jdbcType="DECIMAL" />
+    <result column="RN" property="rn" jdbcType="DECIMAL" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR2" />
+    <result column="EXISTS_FILE" property="existsFile" jdbcType="CHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR2" />
+  </resultMap>
+  <resultMap id="abatorgenerated_HomeEventResult" class="com.gotop.home.model.HomeEvent" >
+    <!--Bean方式返回全表-->
+    <result column="CREATE_EMPID" property="wfid" jdbcType="DECIMAL" />
+    <result column="MESSAGE_TYPE" property="eventType" jdbcType="VARCHAR2" />
+    <result column="MESSAGE_TITLE" property="eventContent" jdbcType="VARCHAR2" />
+    <result column="ORGID" property="orgid" jdbcType="VARCHAR2" />
+    <result column="ORGNAME" property="orgname" jdbcType="VARCHAR2" />
+    <result column="CREATE_EMPID" property="subEmpid" jdbcType="DECIMAL" />
+    <result column="EMPNAME" property="subEmpName" jdbcType="VARCHAR2" />
+    <result column="CREATE_DATE" property="subDate" jdbcType="VARCHAR2" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR2" />
+  </resultMap>  
+ <!--  <select id="abatorgenerated_queryHomeMessByEmp" resultMap="abatorgenerated_HomeInfoResult" parameterClass="com.gotop.home.model.CurrUserInfo" >
+	<![CDATA[
+      SELECT MESSAGE_TYPE,
+       MESSAGE_TITLE,
+       ORGID,
+       ORGNAME,
+       CREATE_EMPID,
+       EMPNAME,
+       MESSAGE_ID,
+       '0' STATUS,
+       CREATE_DATE,EXISTS_FILE
+  FROM (SELECT H.MESSAGE_TYPE,
+               H.MESSAGE_TITLE,
+               H.ORGID,
+               om.ORGNAME,
+               H.CREATE_EMPID,
+               EE.EMPNAME,
+               E.MESSAGE_ID,
+               to_char(TO_DATE(H.CREATE_DATE || H.CREATE_TIME,
+                               'yyyy/MM/dd hh24:mi:ss'),
+                       'yyyy-mm-dd hh24:mi:ss') AS CREATE_DATE,
+               EXISTS_FILE,
+               ROW_NUMBER() OVER(PARTITION BY EE.EMPID ORDER BY H.MESSAGE_ID DESC) RN
+          FROM T_MESSAGE_RECEIVE E, T_MESSAGE_PUBLISH H, OM_EMPLOYEE EE,OM_ORGANIZATION   OM
+         WHERE E.MESSAGE_ID = H.MESSAGE_ID
+           AND H.CREATE_EMPID = EE.EMPID
+           and h.orgid=om.orgid
+           AND ((H.PUBLISH_TYPE = '02' AND E.RECEIVE_OBJECT =to_char(#currempid:DECIMAL#)) OR
+               (H.PUBLISH_TYPE = '01' AND EXISTS
+                (SELECT 1
+                    FROM OM_ORGANIZATION N
+                   WHERE N.ORGID =  #currorgid:DECIMAL#
+                   START WITH N.ORGCODE = E.RECEIVE_OBJECT
+                  CONNECT BY PRIOR N.ORGID = N.PARENTORGID)) OR
+                /*(H.PUBLISH_TYPE = '03' AND INSTR(#currRoles:VARCHAR2#, E.RECEIVE_OBJECT) > 0) */
+               (H.PUBLISH_TYPE = '03' AND INSTR(#positionId:VARCHAR2#, E.RECEIVE_OBJECT) > 0)
+                OR(E.TYPE='1' AND E.RECEIVE_OBJECT=to_char(#currempid:DECIMAL#))
+                )
+           AND NOT EXISTS
+         (SELECT 1
+                  FROM T_MESSAGE_RED_PER R
+                 WHERE R.MESSAGE_ID = H.MESSAGE_ID
+                   AND R.EMPID = #currempid:DECIMAL#)
+           AND H.CREATE_DATE >= TO_CHAR(EE.REGDATE, 'yyyymmdd'))
+ WHERE RN <= 10 order by  CREATE_DATE desc    
+ 	]]>    
+</select> -->
+<!-- 2014.9.1 岗位发布，将角色改为岗位 -->
+<!-- <select id="abatorgenerated_queryHomeMessByEmp" resultMap="abatorgenerated_HomeInfoResult" parameterClass="com.gotop.home.model.CurrUserInfo" >
+	<![CDATA[
+      SELECT MESSAGE_TYPE,
+       MESSAGE_TITLE,
+       ORGID,
+       ORGNAME,
+       CREATE_EMPID,
+       EMPNAME,
+       MESSAGE_ID,
+       '0' STATUS,
+       CREATE_DATE,EXISTS_FILE
+  FROM (SELECT H.MESSAGE_TYPE,
+               H.MESSAGE_TITLE,
+               H.ORGID,
+               om.ORGNAME,
+               H.CREATE_EMPID,
+               EE.EMPNAME,
+               E.MESSAGE_ID,
+               to_char(TO_DATE(H.CREATE_DATE || H.CREATE_TIME,
+                               'yyyy/MM/dd hh24:mi:ss'),
+                       'yyyy-mm-dd hh24:mi:ss') AS CREATE_DATE,
+               EXISTS_FILE,
+               ROW_NUMBER() OVER(PARTITION BY EE.EMPID ORDER BY H.MESSAGE_ID DESC) RN
+          FROM T_MESSAGE_RECEIVE E, T_MESSAGE_PUBLISH H, OM_EMPLOYEE EE,OM_ORGANIZATION   OM
+         WHERE E.MESSAGE_ID = H.MESSAGE_ID
+           AND H.CREATE_EMPID = EE.EMPID
+           and h.orgid=om.orgid
+           AND ((H.PUBLISH_TYPE = '02' AND E.RECEIVE_OBJECT =to_char($currempid$)) OR
+               (H.PUBLISH_TYPE = '01' AND EXISTS
+                (SELECT 1
+                    FROM OM_ORGANIZATION N
+                   WHERE N.ORGID =  $currorgid$
+                   START WITH N.ORGCODE = E.RECEIVE_OBJECT
+                  CONNECT BY PRIOR N.ORGID = N.PARENTORGID)) OR
+               (H.PUBLISH_TYPE = '03' AND INSTR($positionId$, E.RECEIVE_OBJECT) > 0)
+                OR(E.TYPE='1' AND E.RECEIVE_OBJECT=to_char(#currempid#))
+                )
+           AND NOT EXISTS
+         (SELECT 1
+                  FROM T_MESSAGE_RED_PER R
+                 WHERE R.MESSAGE_ID = H.MESSAGE_ID
+                   AND R.EMPID = $currempid$)
+           AND H.CREATE_DATE >= TO_CHAR(EE.REGDATE, 'yyyymmdd'))
+ WHERE RN <= 10 order by  CREATE_DATE desc    
+ 	]]>    
+</select> -->
+<select id="abatorgenerated_queryHomeMessByEmp" resultMap="abatorgenerated_HomeInfoResult" parameterClass="com.gotop.home.model.CurrUserInfo" >
+	<![CDATA[
+	WITH TEMP AS
+ (SELECT *
+    FROM OM_ORGANIZATION N
+   START WITH N.ORGID =  #currorgid#
+  CONNECT BY PRIOR N.PARENTORGID = N.ORGID)
+SELECT MESSAGE_TYPE,
+	   TYPENAME,
+       MESSAGE_TITLE,
+       ORGID,
+       ORGNAME,
+       CREATE_EMPID,
+       EMPNAME,
+       MESSAGE_ID,
+       '0' STATUS,
+       CREATE_DATE,
+       EXISTS_FILE,
+       RN
+  FROM (SELECT y.dictname TYPENAME,
+  			   H.MESSAGE_TYPE,
+               H.MESSAGE_TITLE,
+               H.ORGID,
+               OM.ORGNAME,
+               H.CREATE_EMPID,
+               EE.EMPNAME,
+               H.MESSAGE_ID,
+               TO_CHAR(TO_DATE(H.CREATE_DATE || H.CREATE_TIME,
+                               'yyyy/MM/dd hh24:mi:ss'),
+                       'yyyy-mm-dd hh24:mi:ss') AS CREATE_DATE,
+               EXISTS_FILE,
+               ROW_NUMBER() OVER(ORDER BY H.MESSAGE_ID DESC) RN
+          FROM T_MESSAGE_PUBLISH H, OM_EMPLOYEE EE, OM_ORGANIZATION OM,eos_dict_entry y
+         WHERE H.CREATE_EMPID = EE.EMPID
+           AND H.ORGID = OM.ORGID
+           and y.dicttypeid='ZHPT_MESSAGE_TYPE'
+           and y.dictid=H.MESSAGE_TYPE
+           AND ((H.PUBLISH_TYPE = '02' AND EXISTS
+                (SELECT 1
+                    FROM T_MESSAGE_RECEIVE E
+                   WHERE E.MESSAGE_ID = H.MESSAGE_ID
+                     AND E.RECEIVE_OBJECT = #currempid#)) OR
+               (H.PUBLISH_TYPE = '03' AND EXISTS
+                (SELECT 1
+                    FROM T_MESSAGE_RECEIVE E, OM_EMPPOSITION N
+                   WHERE E.MESSAGE_ID = H.MESSAGE_ID
+                     AND E.RECEIVE_OBJECT = TO_CHAR(N.POSITIONID)
+                     AND N.EMPID = #currempid#)) OR
+               (H.PUBLISH_TYPE = '01' AND
+               EXISTS(SELECT 1
+                          FROM temp N, T_MESSAGE_RECEIVE E
+                         where E.MESSAGE_ID = H.MESSAGE_ID
+                           AND n.orgcode=e.RECEIVE_OBJECT)) OR
+               EXISTS (SELECT 1
+                         FROM T_MESSAGE_RECEIVE E
+                        WHERE E.TYPE = '1'
+                          AND E.MESSAGE_ID = H.MESSAGE_ID
+                          AND E.RECEIVE_OBJECT = #currempid#))
+           AND NOT EXISTS (SELECT 1
+                  FROM T_MESSAGE_RED_PER R
+                 WHERE R.MESSAGE_ID = H.MESSAGE_ID
+                   AND R.EMPID = #currempid#)
+           and H.CREATE_DATE >=TO_CHAR(EE.REGDATE, 'yyyymmdd'))
+ WHERE RN <= 4   
+ 	]]>    
+</select>
+  <select id="abatorgenerated_queryHomeEventByEmp" resultMap="abatorgenerated_HomeEventResult" parameterClass="com.gotop.home.model.CurrUserInfo" >
+  
+  </select>
+</sqlMap>

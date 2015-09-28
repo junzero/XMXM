@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="omPosition" class="com.gotop.vo.tyjg.OmPosition"></bean>
+	<!-- 人员管理 -->
+	<bean class="com.gotop.tyjg.empMngr.action.EmpMngrAction" id="empMngrAction" name="empMngrAction" singleton="false">
+		<property name="empMngrService" ref="empMngrService" />
+		<property name="omPosition" ref="omPosition" />
+		<property name="orgService" ref="orgService" />
+	</bean>
+	
+	</beans>

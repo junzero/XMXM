@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts >
+  <package name="mettingApply" namespace="/mettingApply" extends="default" >
+    <action name="tMettingApplyAction_*" class="tMettingApplyAction" method="{1}" >
+      <result name="viewlist" >
+        /jsp/mettingApply/tMettingApplyDatacell.jsp
+      </result>
+      
+      <result name="input" >
+        /jsp/mettingApply/metting_apply_input.jsp
+      </result>
+      
+      <result name="approve" >
+        /jsp/mettingApply/metting_apply_approve.jsp
+      </result>
+      
+      <result name="manage" >
+        /jsp/mettingApply/metting_apply_manage.jsp
+      </result>
+      
+      <result name="info" >
+        /jsp/mettingApply/metting_apply_info.jsp
+      </result>
+      
+    </action>
+  </package>
+</struts>

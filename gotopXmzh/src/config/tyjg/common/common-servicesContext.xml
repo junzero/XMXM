@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.tyjg.common.service.impl.AttachmentService" id="attachmentService">
+    <property name="atFileuploadDAO" ref="atFileuploadDAO" />
+    <property name="attachmentDAO" ref="attachmentDAO" />
+  </bean>
+	<!-- 岗位管理服务-->
+	<bean class="com.gotop.tyjg.common.service.imp.MainTreeService" id="mainTreeService">
+		<property name="mainTreeDao" ref="mainTreeDao" />
+	</bean>
+</beans>

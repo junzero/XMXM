@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<import resource="classpath:serviceContext-xfire.xml"/>
+	<bean id="AuthenticationService" parent="baseWss4jWebClient">
+		<property name="serviceClass"
+			value="com.gotop.tyjg.testwsdl.service.IAuthenticationService" />
+		<property name="wsdlDocumentUrl"
+			value="${xfire.ip}authenticationService.ws?wsdl" />
+	</bean>
+</beans>

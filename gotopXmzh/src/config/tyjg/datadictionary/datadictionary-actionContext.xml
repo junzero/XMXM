@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- 处理业务字典类型以及业务字典项 -->
+    <bean class="com.gotop.tyjg.datadictionary.struts.DictEntryAction" id="dictEntryAction" name="dictEntryAction" singleton="false">
+	    <property name="dictEntryService" ref="dictEntryService" />
+    </bean>
+    <bean class="com.gotop.tyjg.datadictionary.struts.OperatorExcelAction" id="operatorExcelAction" name="operatorExcelAction" singleton="false">
+	    <property name="operatorExcelService" ref="operatorExcelService" />
+    </bean>
+</beans>

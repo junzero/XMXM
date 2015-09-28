@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="menumanagement" namespace="/menumanagement">
+     
+     <action class="menuManagementAction" name="menuManagementAction_*" method="{1}">
+     	<result name="queryApp">/jsp/tyjg/menumanagement/application_query.jsp</result>
+     	<result name="singleApp">/jsp/tyjg/menumanagement/update_application.jsp</result>
+     	<result name="queryAppChildGroupList">/jsp/tyjg/menumanagement/applicatin_function_group_list.jsp</result>
+     	<result name="groupInfo">/jsp/tyjg/menumanagement/func_group_info.jsp</result>
+     	<result name="queryGroupChildGroupList">/jsp/tyjg/menumanagement/child_group_list.jsp</result>
+     	<result name="queryGroupFunMenu">/jsp/tyjg/menumanagement/group_fun_menu_list.jsp</result>
+     	<result name="querySingleFuncMenuInfo">/jsp/tyjg/menumanagement/add_or_update_emnu.jsp</result>
+     </action>
+   </package>
+</struts>

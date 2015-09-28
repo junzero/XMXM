@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<ReportWebAttr>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[提交]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.Verify">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[数据校验]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ShowCellValue">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ImportExcelData">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[导入[Excel]A]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7500000000000001" bottom="0.27" right="0.7500000000000001"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[32,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[12,72,72,51,50,72,137,131,113,72,39,72,29,28,72]]></ColumnWidth>
+<CellElementList>
+<C c="2" r="0" cs="10" s="0">
+<O>
+<![CDATA[通讯录]]></O>
+<Expand/>
+</C>
+<C c="11" r="1" s="1">
+<O>
+<![CDATA[登记日期：]]></O>
+<Expand/>
+</C>
+<C c="12" r="1" cs="3" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="2" r="2" cs="12" s="3">
+<Expand/>
+</C>
+<C c="2" r="3" s="4">
+<O>
+<![CDATA[编号]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="4">
+<O>
+<![CDATA[姓名]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="4">
+<O>
+<![CDATA[性别]]></O>
+<Expand/>
+</C>
+<C c="5" r="3" s="4">
+<O>
+<![CDATA[生日]]></O>
+<Expand/>
+</C>
+<C c="6" r="3" s="4">
+<O>
+<![CDATA[毕业院校]]></O>
+<Expand/>
+</C>
+<C c="7" r="3" s="4">
+<O>
+<![CDATA[专业]]></O>
+<Expand/>
+</C>
+<C c="8" r="3" s="4">
+<O>
+<![CDATA[电子邮件]]></O>
+<Expand/>
+</C>
+<C c="9" r="3" s="4">
+<O>
+<![CDATA[电话号码]]></O>
+<Expand/>
+</C>
+<C c="10" r="3" s="4">
+<O>
+<![CDATA[家乡]]></O>
+<Expand/>
+</C>
+<C c="11" r="3" s="4">
+<O>
+<![CDATA[邮编]]></O>
+<Expand/>
+</C>
+<C c="12" r="3" s="4">
+<O>
+<![CDATA[插入]]></O>
+<Expand/>
+</C>
+<C c="13" r="3" s="4">
+<O>
+<![CDATA[删除]]></O>
+<Expand/>
+</C>
+<C c="1" r="4" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=range(1, $row)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[row() % 2 = 0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-656897"/>
+<Scope val="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="0"/>
+<DBDictAttr tableName="EMPLOYEE" schemaName="" ki="0" vi="0"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="3" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5)==0,"",sql("FRDemo","SELECT empname FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="4" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5)==0,"",sql("FRDemo","SELECT sex FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="5" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5)==0,"",sql("FRDemo","SELECT birthdate FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="6" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5) ==0, "", sql("FRDemo", "SELECT school FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="7" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5)==0,"",sql("FRDemo","SELECT major FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="8" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5)==0,"",sql("FRDemo","SELECT email FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="9" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5) ==0, "", sql("FRDemo", "SELECT tel FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="10" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5) ==0, "", sql("FRDemo", "SELECT origin FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="11" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C5) ==0, "", sql("FRDemo", "SELECT zipcode FROM EMPLOYEE WHERE empid = '" + C5+"'", 1, 1))]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="2"/>
+<Expand/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellPageAttr/>
+</C>
+<C c="12" r="4" s="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.write.AppendRowButton">
+<WidgetAttr/>
+<IconName>
+<![CDATA[add]]></IconName>
+<FixCell row="4" col="1"/>
+</Widget>
+</C>
+<C c="13" r="4" s="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.write.DeleteRowButton">
+<WidgetAttr/>
+<IconName>
+<![CDATA[delete]]></IconName>
+<FixCell row="4" col="1"/>
+</Widget>
+</C>
+<C c="1" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="6" cs="6" s="7">
+<O>
+<![CDATA[“通讯录（自匹配/excel在线导入）”报表说明：]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="8">
+<Expand/>
+</C>
+<C c="9" r="6" s="8">
+<Expand/>
+</C>
+<C c="10" r="6" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" s="9">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="7" cs="6" s="10">
+<O>
+<![CDATA[1、自匹配]]></O>
+<Expand/>
+</C>
+<C c="8" r="7" s="11">
+<Expand/>
+</C>
+<C c="9" r="7" s="11">
+<Expand/>
+</C>
+<C c="10" r="7" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="7" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="7" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="7" s="12">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="8" cs="6" s="10">
+<O>
+<![CDATA[在“编号”列选择编号，其他列自动完成对应于所选编号的内容的填写。]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="11">
+<Expand/>
+</C>
+<C c="9" r="8" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="8" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="12">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="9" cs="6" s="10">
+<O>
+<![CDATA[这个功能的实现是通过在拼接SQL的公式sql()来实现的，例如姓名单元格的值为：]]></O>
+<Expand/>
+</C>
+<C c="8" r="9" s="11">
+<Expand/>
+</C>
+<C c="9" r="9" s="11">
+<Expand/>
+</C>
+<C c="10" r="9" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="9" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="9" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="9" s="12">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="10" cs="8" s="10">
+<O>
+<![CDATA[“=if(len(C5)==0,\"\",sql(\"FRDemo\",\"SELECT empname FROM EMPLOYEE WHERE empid = \'\" + C5+\"\'\", 1, 1))”]]></O>
+<Expand/>
+</C>
+<C c="10" r="10" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="10" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="10" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="10" s="12">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="11" cs="5" s="10">
+<O>
+<![CDATA[2、excel在线导入]]></O>
+<Expand/>
+</C>
+<C c="7" r="11" s="11">
+<Expand/>
+</C>
+<C c="8" r="11" s="11">
+<Expand/>
+</C>
+<C c="9" r="11" s="11">
+<Expand/>
+</C>
+<C c="10" r="11" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="11" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="11" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="11" s="12">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="12" cs="7" s="13">
+<O>
+<![CDATA[选择工具栏中的“导入[Excel]A”按钮，导入“通讯录.xls”，系统会按照excel的内容自动完成填报。]]></O>
+<Expand/>
+</C>
+<C c="9" r="12" s="14">
+<Expand/>
+</C>
+<C c="10" r="12" s="14">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="12" s="14">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="12" s="14">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="12" s="15">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo"/>
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="EMPLOYEE"/>
+<ColumnConfig name="EMPID" isKey="true" skipUnmodified="false">
+<ColumnRow column="2" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="EMPNAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="SEX" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="BIRTHDATE" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="ORIGIN" isKey="false" skipUnmodified="false">
+<ColumnRow column="10" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="SCHOOL" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="MAJOR" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="ZIPCODE" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="EMAIL" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="TEL" isKey="false" skipUnmodified="false">
+<ColumnRow column="9" row="4"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7500000000000001" bottom="0.27" right="0.7500000000000001"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[10,24,12,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[105,97,42,57,72,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="16">
+<O>
+<![CDATA[批量导入行数:]]></O>
+<Expand/>
+</C>
+<C c="1" r="1">
+<O>
+<![CDATA[10]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="row"/>
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="3" r="1" s="17">
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Text>
+<![CDATA[ GO! ]]></Text>
+</Widget>
+</C>
+<C c="4" r="1" cs="4" s="18">
+<O>
+<![CDATA[ * excel源文件位置在WebReport\\通讯录.xls]]></O>
+<Expand/>
+</C>
+<C c="0" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="row"/>
+<O>
+<![CDATA[10]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12" foreground="-16724737"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16724737"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Top style="3" color="-6697729"/>
+<Left style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Top style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Top style="3" color="-6697729"/>
+<Right style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Left style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Right style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Bottom style="3" color="-6697729"/>
+<Left style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Bottom style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Bottom style="3" color="-6697729"/>
+<Right style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="14"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-65536"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

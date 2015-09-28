@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <package extends="default" name="login" namespace="/login">
+   		<!-- 处理用户登录 -->
+   		<action class="loginAction" method="{1}" name="*_login">
+   			<result name="success">/jsp/tyjg/login/loginindex.jsp</result>
+   			<result name="getFuncGroupInfo">/jsp/tyjg/login/right_menu.jsp</result>
+   		</action>
+   </package>
+</struts>

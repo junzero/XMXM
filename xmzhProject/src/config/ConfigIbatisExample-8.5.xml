@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext >
+  <jdbcConnection driverClass="oracle.jdbc.OracleDriver" 
+    	connectionURL="jdbc:oracle:thin:@10.214.40.80:1521:khyx"
+    	userId="xmzhpt" password="xmzhpt" >
+      <!-- 数据库所用jar包,指定数据库jdbc驱动jar包的绝对路径。 -->
+<classPathEntry location="E:\Users\Administrator\Workspaces\MyEclipse 10\gotopXmzh\WebRoot\WEB-INF\lib\ojdbc14.jar" />
+      <!-- 是否返回数据库注释(表、字段注释) -->
+      <property name="remarksReporting" value="true"/>
+    </jdbcConnection>
+ 
+    <javaModelGenerator targetPackage="com.gotop.commonProcess.model" targetProject="xmzhProject">
+    </javaModelGenerator>
+    <actionGenerator targetPackage="com.gotop.commonProcess.action" targetProject="xmzhProject">
+    </actionGenerator>
+    <serviceGenerator targetPackage="com.gotop.commonProcess.service" targetProject="xmzhProject">
+    </serviceGenerator>
+    <sqlMapGenerator targetPackage="com.gotop.commonProcess.map" targetProject="xmzhProject">
+    </sqlMapGenerator>
+
+    <daoGenerator targetPackage="com.gotop.commonProcess.dao" targetProject="xmzhProject" type="SPRING">
+    </daoGenerator>    
+    <table  tableName="T_COMMON_PROCESS" module="xmiimp.commonProcess">
+    </table>    
+  </abatorContext>
+</abatorConfiguration>

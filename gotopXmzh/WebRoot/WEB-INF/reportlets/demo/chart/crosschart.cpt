@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds_1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[Filiale,,.,,Month,,.,,Year,,.,,Amount]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[Kp55J__;KefBR',qH3@j>6IBF/@3G1]AF>eO4AjC$)*pk<(fB-ROWsQWY/g/4GH6M&qRP/*c/
+EY&\DVdTdC8S>^@C^=6XW#+c\s7=:O1Of`;$(>0OC!IN/QOgk?jK-N5JFD!%&XMR#LNL+>*g
+jJ[c7C"c\G:5[7!KK#XR^5R-frjk3NSK."#U[hXiS!%&AR>9W\BpY5H&qSQ3]APR1EFn;PDjT
+(U\LTJ3Mt!1e%ro[adb@9b/RCC5Zkqrpuil%*`).m;7]A:b2duNd='D33`n!nn8o&_0d.&^-N
+2/Z=RFIc\@"uHl<(QIt=kU;1gJ(aOr<kcU[s>~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress=""/>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.page.First">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[首页]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Previous">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[上一页]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Next">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[下一页]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Last">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[末页]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false"/>
+</WebPageContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="16.528" height="23.389"/>
+<Margin top="0.07874015748031496" left="0.15748031496062992" bottom="0.07874015748031496" right="0.15748031496062992"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[26,21,22,22,0,0,245,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[31,52,72,72,72,71,51,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="2" s="0">
+<O>
+<![CDATA[企业销售情况统计（交叉图表）]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" cs="2" s="1">
+<O>
+<![CDATA[单位：台]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" s="2">
+<Expand/>
+</C>
+<C c="1" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="Year"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=concatenate($$$,"年")]]></Attributes>
+</O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="1"/>
+</C>
+<C c="0" r="4" rs="3" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="Filiale"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="Month"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="1" r="5">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="Amount"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="6" s="5">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground>
+<Background name="GradientBackground" color1="-1" color2="-1" direction="1" useCell="true" begin="0.0" finish="0.0" cyclic="false"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="1" lineColor="-6697729" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A7+B4  + "年销售情况统计"]]></Attributes>
+</O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.Bar3DPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false" seriesLabel=""/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+<SeriesAttrMap>
+<Entry index="0">
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrBackground">
+<SeriesAttrBackground>
+<Background name="ColorBackground" color="-13312"/>
+</SeriesAttrBackground>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+</Entry>
+</SeriesAttrMap>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground>
+<Background name="ColorBackground" color="-1"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="1" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="false" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<CateAttr isStacked="false" bgStagger="false" bgColor="-1"/>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O>
+<![CDATA[X轴]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="false"/>
+</Title>
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="1" mainStroke="1.0" len="4" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</CategoryAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O>
+<![CDATA[Y轴]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="false"/>
+</Title>
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="3" color="-8355712"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="1" mainStroke="1.0" len="4" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<AxisRange/>
+<ShowUnit value="万"/>
+</ValueAxis>
+<BarAttr isHorizontal="false" overlap="1.0" interval="2.0"/>
+<Attr3D horizontalDrawBar="false" isCubic3D="false" isCascade="true" seriesIntervalPercent="0.0"/>
+<Projection mode="2" elevation="15" rotation="20" focus="800"/>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<CategoryDefinition value="B5"/>
+<SeriesDefinition name="A7" value="B6"/>
+<SeriesPos value="1"/>
+<BaseOn value="true"/>
+<Top topCate="-1" topValue="-1"/>
+</ReportDataDefinition>
+</O>
+<Expand upParentDefault="false" up="B4"/>
+</C>
+<C c="0" r="8" cs="2" s="6">
+<O>
+<![CDATA[“企业销售统计交叉图表”图表功能应用说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="9" cs="2" s="7">
+<O>
+<![CDATA[1、交叉图表]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="10" cs="2" s="8">
+<O>
+<![CDATA[     该图表在纵向“分公司”及横向“年度”的交叉限制下，显示每月销售情况。FineReport可以利用格子的灵活扩展性处理这样的图表需求。]]></O>
+<Expand/>
+</C>
+</CellElementList>
+<ReportWriteAttr/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="0" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<PP class="com.fr.report.parameter.CustomParameterProcessor"/>
+<Background name="NullBackground"/>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="14" foreground="-16724737"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Left color="-1"/>
+</Border>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0" isVerticalText="1" textDirection="0">
+<FRFont name="SimSun" style="1" size="16" foreground="-13421773"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

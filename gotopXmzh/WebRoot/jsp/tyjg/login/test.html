@@ -1,0 +1,737 @@
+
+	<div class="fl w400 ml10">
+		<span id="date">2014年 9月11日 星期四 19:59:14</span>
+	</div>
+	<div class="fr w200 mr10 tr">
+		版权所有 中国邮政储蓄银行
+	</div>
+	<head><script type="text/javascript">
+	var contextPath = ""; // you should define the contextPath of web application
+	var EOSDEBUG = false;
+	var ctx = "";
+</script>
+<link href="/common/skins/skin0/theme/style.css" type="text/css" rel="stylesheet">
+<link href="/common/skins/skin0/theme/style-component.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/common/skins/skin0/scripts/resource.js"></script>
+
+<link href="/common/theme/style-sys.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/common/javascripts/zh_CN/message.js"></script>
+<script type="text/javascript" src="/common/fckeditor/fckeditor.js"></script>
+<script type="text/javascript" src="/common/scripts/eos-web-all.js"></script>
+<script type="text/javascript" src="/common/lib/mootools.js"></script>
+<script type="text/javascript" src="/common/gotop/web-common.js"></script>
+<script type="text/javascript" src="/common/gotop/role_path.js"></script>
+<script type="text/javascript" src="/common/gotop/webkit_path.js"></script>
+<script type="text/javascript" src="/common/skins/default/scripts/common.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/handlers.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/common/scripts/swfupload/handlers.js"></script>
+<script type="text/javascript" src="/common/gotop/eos-web.js"></script>
+<script type="text/javascript" src="/common/lib/jquery/jquery1.9.js"></script>
+<script type="text/javascript" src="/js/common/check.js"></script>
+<script>
+jQuery.noConflict();
+</script>
+
+<link href="/css/style1/style-custom.css" type="text/css" rel="stylesheet">
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>首页</title>
+<!-- 小提示框-->
+<link href="/css/homePage/tip/tip.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/js/homePage/main/jquery.tip.js"></script>
+<script type="text/javascript" src="/js/homePage/main/jquery.tipAlert.js"></script>
+<script type="text/javascript" src="/js/marketMge/marketActive/wmctlHciListAlert.js" charset="UTF-8"></script>
+ <!--小提示框 -->
+<!-- 新发产品 -->
+<script type="text/javascript" src="/js/homePage/portalets/jquery.waitingsale.js"></script>
+<!-- 新发产品 -->
+<!-- 饼状柱状图 -->
+
+
+
+<script type="text/javascript">
+var ctx = "";
+</script>
+
+<script type="text/javascript" src="/FusionCharts/JS/FusionCharts.js"></script><style media="screen" type="text/css">object.FusionCharts:focus, embed.FusionCharts:focus {outline: none}</style>
+<script type="text/javascript" src="/js/homePage/jqueryPortal/charts.js"></script>
+<!-- 饼状柱状图 -->
+<!-- 首页必须要的 -->
+<link href="/css/homePage/home/public.css" type="text/css" rel="stylesheet">
+<!-- 首页必须要的 -->
+<!-- 自动适应大小  初始化各部分的大小-->
+<script type="text/javascript" src="/js/homePage/main/jquery.main.js"></script>
+ <!--自动适应大小 -->
+<!-- 金融资讯 每日公告 开始 -->
+<script type="text/javascript" src="/js/homePage/portalets/jquery.message.js"></script>
+<script type="text/javascript" src="/js/homePage/portalets/jquery.noticeDaily.js"></script>
+<!-- 金融资讯 每日公告 结束 -->
+<!-- 点击事件 -->
+<script type="text/javascript" src="/js/homePage/main/jquery.click.js"></script>
+<!-- 点击事件 -->
+<!-- center important -->
+<script type="text/javascript" src="/js/homePage/main/jquery.centerAlert.js"></script>
+<!-- center important -->
+<!-- center important -->
+<script type="text/javascript" src="/js/homePage/main/jquery.lefthidden.js"></script>
+<!-- center important -->
+<!-- leftMenuTop -->
+<script type="text/javascript" src="/js/homePage/main/jquery.leftmenuTop.js"></script>
+<!-- leftMenuTop -->
+<script src="/FusionCharts/JS/FusionCharts.HC.js" type="text/javascript"></script><script src="/FusionCharts/JS/FusionCharts.HC.Charts.js" type="text/javascript"></script></head>
+<!--    scroll="no   onload="tipfloatLoad();""-->
+<body id="home" onload="tipfloatLoad( 1 );">
+<div style="width: 1423px;" class="homeBox pr">
+<!--头部start-->
+	
+<script type="text/javascript">
+	/*退出*/
+	function exitSystem(){
+			if(confirm("是否要退出系统？")){
+				var myAjax = new Ajax("/login/systemExit_login.action?checkTxFlag=N");
+				myAjax.submit();
+				var returnValue = myAjax.getValue("/root/data/falg");
+				window.location.href="/jsp/login/login.jsp";
+			}
+		}
+	/*签到*/
+	function topSign(){
+		//提示上一班值班经理是谁
+		var myAjax = new Ajax("/topsign/signFlag.action?checkTxFlag=N");
+		myAjax.submit();
+		var returnValue = myAjax.getValue("/root/data/flag");
+		var flag = "上一班值班经理是"+returnValue+"，是否确认接班？";		
+		if(confirm(flag)){
+				var myAjax = new Ajax("/topsign/topsign.action?checkTxFlag=N");
+				myAjax.submit();
+				var returnValue = myAjax.getValue("/root/data/flag");
+				if(returnValue=="1"){
+					alert("签到成功!");
+				}else{
+					alert("签到失败!");
+				}
+		}		
+		}
+</script>
+<!-- 导航top -->
+<script type="text/javascript" src="/js/homePage/jqueryPortal/jquery.menu.js"></script>
+<!-- 导航top -->
+<!-- top弹窗  -->
+<script type="text/javascript" src="/js/homePage/jqueryPortal/jquery.top.js"></script>
+<!-- top弹窗 -->
+<!--头部-->
+	<div id="head" class="h100 lineS1_b headerBox">
+    	<!--top-->
+        <div class="h30 lh30 bc4">
+            <!--个人信息操作导航-->
+            <div class="fr w500">
+            	<ul class="userNav">
+                	<li><a title="退出" href="javascript:void(0)" onclick="exitSystem();return false;"> <img src="/images/img/userNav/5.gif"></a></li>
+                    <li><a title="个人信息维护" href="javascript:void(0)" onclick="personInfoAlert();"><img src="/images/img/userNav/4.gif"></a></li>
+                     <li><a title="模板下载" href="javascript:void(0)" onclick="demoLoadTop();"><img src="/images/img/userNav/11.gif"></a></li>
+                    <li><a title="密码修改" href="javascript:void(0)" onclick="passwordUpdateAlert();"><img src="/images/img/userNav/3.gif"></a></li>
+                    <li style="display:none;"><a title="签到" href="javascript:void(0)" onclick="topSign();"><img src="/images/img/userNav/2.gif"></a></li>
+                    <li class="pr">
+                    	<a title="站内消息" href="javascript:void(0)" onclick="showTlrMsg();"><img src="/images/img/userNav/23.gif"></a>
+                    	<span class="num tlrMsgNum">0</span>
+                    </li>
+                    <li class="pr" style="">
+                    	<a title="消息提醒" href="javascript:void(0)" onclick="showAlert();"><img src="/images/img/userNav/1.gif"></a>
+                    	<span class="num caimRemdInfoNum">119</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="fl w160 tr ">
+               <img src="/images/img/nav/newTopLeft.gif">
+            </div>
+            <div class=" w500 ">
+          	   厦门分行(自营),
+          	   <font class="c1 fb">傅俐婷</font>
+          	   
+          	   营销管理员,欢迎您!
+            </div>
+           </div>
+        <!--导航部分-->
+        <div class="h70">
+        	<div class="fl w300 h30 pl20 p20"><img src="/images/img/logo.gif"></div>
+        	 <ul class="navBox" id="menus">
+        	 
+            <li style=""><div id="PM" class="lst1">公共管理<div style="display: none;" class="subset"><div style="z-index:100;"><ul id="PM"><li class="pr"><a name="">机构管理</a><div class="subset2"><div style="z-index:100;"><ul id="PM-01"><li><a id="../inst/instAction_index.action" name="PM-01-01">机构查询</a></li><li><a id="../inst/instAction_regIndex.action" name="PM-01-02">机构注册</a></li><li><a id="../inst/instAction_chgStateIndex.action" name="PM-01-03">机构启用停用</a></li><li><a id="../inst/instAction_instChgIndex.action" name="PM-01-04">机构撤并</a></li><li><a id="../inst/instAction_instLvlChgList.action" name="PM-01-05">机构升降格</a></li><li><a id="../network/netWork_queryNetWorkApproveList.action" name="PM-01-07">理财类业务入网审批</a></li><li><a id="../network/netWork_queryOutNetWorkList.action" name="PM-01-08">理财类业务退网、解除强制退网</a></li></ul></div></div></li><li class="pr"><a name="">人员管理</a><div class="subset2"><div style="z-index:100;"><ul id="PM-02"><li><a id="../teller/teller_queryTellerIndex.action" name="PM-02-09">人员查询</a></li><li><a id="../teller/teller_reAddTeller.action" name="PM-02-01">人员注册</a></li><li><a id="../teller/teller_queryBatchTlrRegList.action" name="PM-02-02">人员批量注册</a></li><li><a id="../teller/teller_queryTellerChange.action" name="PM-02-04">人员信息变更审核</a></li><li><a id="../teller/teller_queryChangeTeller.action" name="PM-02-07">人员变动提醒</a></li></ul></div></div></li><li class="pr"><a name="">权限管理</a><div class="subset2"><div style="z-index:100;"><ul id="PM-03"><li class="pr"><a name="">机构权限维护</a><div class="subset2"><div style="z-index:100;"><ul id="PM-03-01"><li><a id="../prvgMgr/instPrvgMgr_instStdPrvg.action" name="PM-03-01-01">机构标准权限</a></li><li><a id="../prvgMgr/instPrvgMgr_instSpecPrvg.action" name="PM-03-01-02">机构自定义权限</a></li><li><a id="../prvgMgr/instPrvgMgr_queryInstPrvgPage.action" name="PM-03-01-03">机构权限查询</a></li></ul></div></div></li><li class="pr"><a name="">角色权限维护</a><div class="subset2"><div style="z-index:100;"><ul id="PM-03-02"><li><a id="../prvgMgr/rolePrvgMgr_roleStdPrvg.action" name="PM-03-02-01">角色标准权限</a></li><li><a id="../prvgMgr/rolePrvgMgr_roleSpecPrvg.action" name="PM-03-02-02">角色自定义权限</a></li><li><a id="../prvgMgr/rolePrvgMgr_queryRolePrvg.action" name="PM-03-02-03">角色权限查询</a></li></ul></div></div></li><li><a id="../prvgMgr/tlrSpecPAction_tlrPrvgAction.action" name="PM-03-03">人员权限维护</a></li></ul></div></div></li><li class="pr"><a name="">参数管理</a><div class="subset2"><div style="z-index:100;"><ul id="PM-04"><li><a id="../para/para_queryParaList.action" name="PM-04-01">参数维护</a></li></ul></div></div></li><li class="pr"><a name="">日志管理</a><div class="subset2"><div style="z-index:100;"><ul id="PM-05"><li><a id="../jnl/jnl_queryJnlList.action" name="PM-05-01">日志查询</a></li><li><a id="../jnl/jnl_queryUsageStat.action" name="PM-05-02">系统使用情况统计查询</a></li></ul></div></div></li></ul></div><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:155; width:150;" frameborder="0" scrolling="no"></iframe><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:155; width:150;" frameborder="0" scrolling="no"></iframe></div></div></li><li><div id="RM" class="lst2">客户关系管理<div class="subset"><div style="z-index:100;"><ul id="RM"><li><a id="../cstmrela/rMAction_showClientRelationAppAdmin.action" name="RM-07">客户关系审批</a></li><li><a id="../cstmrela/rMAction_queryCstmApprovTlrName.action" name="RM-08">客户关系审批查询</a></li></ul></div></div></div></li><li><div id="MM" class="lst3">客户营销管理<div class="subset"><div style="z-index:100;"><ul id="MM"><li class="pr"><a name="">客户信息管理查询</a><div class="subset2"><div style="z-index:100;"><ul id="MM-02"><li><a id="../cstmMgeInfoQuery/cstmMgeInfoQueryAction_initMarketMgeInfoList.action" name="MM-02-01">《客户信息表》查询</a></li><li><a id="../cstmMgeInfoQuery/cstmMgeInfoQueryAction_initCstmInfoComplate.action" name="MM-02-03">《客户信息表》完整度查询</a></li></ul></div></div></li><li class="pr"><a name="">客户联络管理</a><div class="subset2"><div style="z-index:100;"><ul id="MM-04"><li><a id="../marketMge/intentcstm/intentCstm_queryIntentCstmSyn.action" name="MM-04-02">意向客户查询</a></li></ul></div></div></li><li class="pr"><a name="">专题营销管理</a><div class="subset2"><div style="z-index:100;"><ul id="MM-07"><li class="pr"><a name="">专题营销活动创建</a><div class="subset2"><div style="z-index:100;"><ul id="MM-07-01"><li><a id="../marketMge/subjectMarket/showAddActivity.action" name="MM-07-01-01">专题营销活动新增</a></li><li><a id="../marketMge/subjectMarket/queryAlterActivity.action" name="MM-07-01-03">专题营销活动修改</a></li><li><a id="../marketMge/subjectMarket/queryCancelActivity.action" name="MM-07-01-04">专题营销活动撤销</a></li><li><a id="../marketMge/subjectMarket/showQueryActivity.action" name="MM-07-01-05">专题营销活动查询</a></li></ul></div></div></li><li class="pr"><a name="">活动执行情况查询</a><div class="subset2"><div style="z-index:100;"><ul id="MM-07-04"><li><a id="../marketMge/activeDetailQuery/queryTotalInfo.action" name="MM-07-04-02">活动执行情况汇总查询</a></li></ul></div></div></li></ul></div></div></li><li class="pr"><a name="">VIP客户营销管理</a><div class="subset2"><div style="z-index:100;"><ul id="MM-08"><li class="pr"><a name="">VIP卡即时申请管理</a><div class="subset2"><div style="z-index:100;"><ul id="MM-08-01"><li><a id="../marketMge/vip/toQueryVipParameter.action" name="MM-08-01-01">VIP评级参数查询</a></li><li><a id="../marketMge/vip/toAddHandApply.action" name="MM-08-01-04">手工评级申请</a></li><li><a id="../marketMge/vip/toQueryHandApply.action" name="MM-08-01-05">手工评级查询</a></li></ul></div></div></li><li><a id="../marketMge/vip/toQueryApplyVipRate.action" name="MM-08-04">VIP卡申请通过率统计查询</a></li><li class="pr"><a name="">VIP客户专属服务</a><div class="subset2"><div style="z-index:100;"><ul id="MM-08-06"><li class="pr"><a name="">VIP客户服务查询</a><div class="subset2"><div style="z-index:100;"><ul id="MM-08-06-02"><li><a id="../marketMge/vip/toQueryVipServiceStatistics.action" name="MM-08-06-02-02">VIP客户专属服务统计查询</a></li></ul></div></div></li></ul></div></div></li><li><a id="../marketMge/vip/toQueryVipMenuSwitch.action" name="MM-08-07">VIP交易开关设置</a></li></ul></div></div></li><li class="pr"><a name="">日程管理</a><div class="subset2"><div style="z-index:100;"><ul id="MM-09"><li><a id="../marketMge/planevent/planevent_querPlanEvent.action" name="MM-09-01">日程维护</a></li><li><a id="../marketMge/planevent/planevent_querPlanEventForManager.action" name="MM-09-02">员工日程查询</a></li><li><a id="../marketMge/impteventremd/impteventremd_queryImptEventRemd.action" name="MM-09-03">重要事项提醒</a></li></ul></div></div></li></ul></div></div></div></li><li><div id="FP" class="lst4">理财规划<div class="subset"><div style="z-index:100;"><ul id="FP"><li class="pr"><a name="">理财规划参数管理</a><div class="subset2"><div style="z-index:100;"><ul id="FP-01"><li><a id="../fpara/fpact_queryFpctlFilter.action" name="FP-01-01">理财规划基本参数设置</a></li><li><a id="../fpara/fpara_querychildEduList.action" name="FP-01-06">子女教育费用参考表</a></li></ul></div></div></li><li><a id="../fpAction/queryLikeCstm_cstm.action" name="FP-02">理财规划客户登陆管理</a></li><li><a id="../fpAction/getCstmDclPrms_pms.action" name="FP-03">规划服务事前声明承诺签署</a></li><li class="pr"><a name="">客户深度信息收集</a><div class="subset2"><div style="z-index:100;"><ul id="FP-04"><li><a id="../fpAction/queryBasicInfo_bsc.action" name="FP-04-01">客户基础信息收集</a></li><li><a id="../fpAction/queryAssetsInfo_fnc.action" name="FP-04-02">客户财务信息收集</a></li></ul></div></div></li><li><a id="../fpAction/toRisk_rs.action" name="FP-05">风险属性界定</a></li><li><a id="../fpAction/toInv_inv.action" name="FP-06">投资规划</a></li><li class="pr"><a name="">事件规划</a><div class="subset2"><div style="z-index:100;"><ul id="FP-07"><li><a id="../fpAction/queryChild_cld.action" name="FP-07-01">子女教育规划</a></li><li><a id="../fpAction/queryCnsmp_csm.action" name="FP-07-02">消费规划</a></li><li><a id="../fpAction/queryRealestList_rls.action" name="FP-07-03">房产规划</a></li><li><a id="../fpAction/queryPension_psn.action" name="FP-07-04">养老规划</a></li><li class="pr"><a name="">保险规划</a><div class="subset2"><div style="z-index:100;"><ul id="FP-07-05"><li><a id="../fpAction/toBXI_insu.action" name="FP-07-05-01">保险规划I</a></li><li><a id="../fpAction/toBXII_insu.action" name="FP-07-05-02">保险规划II</a></li></ul></div></div></li></ul></div></div></li><li><a id="../fpAction/toGfready_make.action" name="FP-08">综合方案制作</a></li></ul></div></div></div></li><li style=""><div id="CA" class="lst5">营销工具<div style="display: none;" class="subset"><div style="z-index:100;"><ul id="CA"><li class="pr"><a name="">计算器</a><div class="subset2"><div style="z-index:100;"><ul id="CA-01"><li><a id="../mkpage/fdCounter_mkpages.action" name="CA-01-01">基金/券商资管计算器</a></li><li class="pr"><a name="">国债计算器</a><div class="subset2"><div style="z-index:100;"><ul id="CA-01-02"><li><a id="../mkpage/cdCounter_mkpages.action" name="CA-01-02-01">凭证式国债计算器</a></li><li><a id="../mkpage/sdCounter_mkpages.action" name="CA-01-02-02">储蓄国债(电子式)计算器</a></li><li><a id="../mkpage/bdCounter_mkpages.action" name="CA-01-02-03">国债收益对比</a></li></ul></div></div></li><li><a id="../mkpage/gfCounter_mkpages.action" name="CA-01-03">银行理财产品计算器</a></li><li><a id="../mkpage/bxCounter_mkpages.action" name="CA-01-04">保费速查及利益演示</a></li><li><a id="../mkpage/glodCounter_mkpages.action" name="CA-01-05">贵金属计算器</a></li><li><a id="../mkpage/sbCounter_mkpages.action" name="CA-01-06">社保养老计算器</a></li><li><a id="../mkpage/houseCounter_mkpages.action" name="CA-01-07">房贷计算器</a></li><li><a id="../mkpage/saveCounter_mkpages.action" name="CA-01-08">储蓄存款计算器</a></li><li><a id="../mkpage/loanCounter_mkpages.action" name="CA-01-09">贷款计算器</a></li><li><a id="../mkpage/fgCounter_mkpages.action" name="CA-01-10">外汇计算器</a></li></ul></div></div></li><li style=""><a id="../mkpage/pdSerch_mkpages.action" name="CA-02">产品查询及比较</a></li><li class="pr"><a name="">信息提醒</a><div class="subset2"><div style="z-index:100;"><ul id="CA-04"><li><a id="../marketTools/custInfoAlert/queryAlertInfo.action" name="CA-04-03">提醒查询</a></li></ul></div></div></li><li style="" class="pr"><a name="">电子宣传品</a><div style="display: none;" class="subset2"><div style="z-index:100;"><ul id="CA-05"><li class="pr"><a name="">电子宣传品维护</a><div class="subset2"><div style="z-index:100;"><ul id="CA-05-01"><li class="pr"><a name="">短信</a><div class="subset2"><div style="z-index:100;"><ul id="CA-05-01-02"><li><a id="../marketTools/elePublicity/noteAction_toNoteList.action" name="CA-05-01-02-01">短信模板维护</a></li><li><a id="../marketTools/elePnlctyAlert/noteTplt/noteAppro/ntTpltApproAction_toQueryAppro.action" name="CA-05-01-02-02">短信模板审批</a></li></ul></div></div></li></ul></div></div></li></ul></div><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:31; width:150;" frameborder="0" scrolling="no"></iframe></div></li><li><a id="../mkpage/tlrMsg_mkpages.action" name="CA-06">站内消息</a></li></ul></div><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:155; width:150;" frameborder="0" scrolling="no"></iframe><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:155; width:150;" frameborder="0" scrolling="no"></iframe></div></div></li><li><div id="TM" class="lst6">交易管理<div class="subset"><div style="z-index:100;"><ul id="TM"><li><a id="/tm/tmp_redirectPath.action?resPath=tardeSource/PassandAccoutMan/paramManager.jsp" name="TM-14">终端控件参数设置</a></li></ul></div></div></div></li><li style=""><div id="CM" class="lst7">客户经理管理<div style="display: none;" class="subset"><div style="z-index:100;"><ul id="CM"><li><a id="../queryManageList/queryManageAction_initQueryManagerList.action" name="CM-01">客户经理列表查询</a></li><li style="" class="pr"><a name="">客户经理积分管理</a><div style="display: none;" class="subset2"><div style="z-index:100;"><ul id="CM-02"><li class="pr"><a name="">系统积分</a><div class="subset2"><div style="z-index:100;"><ul id="CM-02-01"><li><a id="../systemScore/toScoreRuleSet.action" name="CM-02-01-01">系统积分维护</a></li></ul></div></div></li><li class="pr"><a name="">自定义积分</a><div class="subset2"><div style="z-index:100;"><ul id="CM-02-02"><li><a id="../specScore/toScoreRuleSet.action" name="CM-02-02-01">自定义积分维护</a></li></ul></div></div></li><li class="pr"><a name="">积分查询</a><div class="subset2"><div style="z-index:100;"><ul id="CM-02-03"><li><a id="../cstmMgr/queryScoreRuleInit.action" name="CM-02-03-01">积分规则查询</a></li><li><a id="../cstmMgr/toQueryManager_2.action" name="CM-02-03-03">机构客户经理积分查询</a></li><li><a id="../cstmMgr/toQueryManager_3.action" name="CM-02-03-04">机构汇总积分查询</a></li></ul></div></div></li></ul></div><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:93; width:150;" frameborder="0" scrolling="no"></iframe></div></li></ul></div><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:62; width:150;" frameborder="0" scrolling="no"></iframe><iframe style=" z-index:-1;position:absolute;top:0;left:0; height:62; width:150;" frameborder="0" scrolling="no"></iframe></div></div></li><li><div id="CS" class="lst8">网点经营管理<div class="subset"><div style="z-index:100;"><ul id="CS"><li><a id="../meeting/queryMeeting.action" name="CS-01">晨会管理</a></li><li><a id="../direction/toQueryDirection.action" name="CS-02">一对一指导管理</a></li><li><a id="../actionPlan/toQueryActionPlan.action" name="CS-03">网点行动计划管理</a></li></ul></div></div></div></li><li><div id="SR" class="lst9">统计报表<div class="subset"><div style="z-index:100;"><ul id="SR"><li class="pr"><a name="">营销统计报表</a><div class="subset2"><div style="z-index:100;"><ul id="SR-01"><li class="pr"><a name="">客户类报表</a><div class="subset2"><div style="z-index:100;"><ul id="SR-01-01"><li><a id="../rep/cstmInstNum.action" name="SR-01-01-01">机构客户数量统计表</a></li><li><a id="../rep/cstmAstStcInst.action" name="SR-01-01-03">客户资产结构统计表（机构汇总）</a></li><li><a id="../rep/cstmAstStcMgr.action" name="SR-01-01-04">客户资产结构统计表（客户经理汇总）</a></li></ul></div></div></li><li class="pr"><a name="">VIP客户类报表</a><div class="subset2"><div style="z-index:100;"><ul id="SR-01-02"><li><a id="../rep/vipCardInst.action" name="SR-01-02-01">VIP客户持卡情况统计表(机构汇总)</a></li><li><a id="../rep/vipCardMgr.action" name="SR-01-02-02">VIP客户持卡情况统计表(客户经理汇总)</a></li><li><a id="../rep/vipTxnInst.action" name="SR-01-02-03">VIP客户交易情况统计表（机构汇总）</a></li></ul></div></div></li><li class="pr"><a name="">客户经理类报表</a><div class="subset2"><div style="z-index:100;"><ul id="SR-01-03"><li><a id="../rep/mgrNum.action" name="SR-01-03-01">客户经理数量统计表</a></li><li><a id="../rep/mgrMgtInst.action" name="SR-01-03-02">客户经理客户管理统计表（机构汇总）</a></li><li><a id="../rep/mgrMgtMgr.action" name="SR-01-03-03">客户经理客户管理统计表（客户经理汇总）</a></li><li><a id="../rep/mgrSvcInst.action" name="SR-01-03-04">客户经理服务工作统计表（机构汇总）</a></li><li><a id="../rep/mgrSvcMgr.action" name="SR-01-03-05">客户经理服务工作统计表（客户经理汇总）</a></li><li><a id="../rep/mgrPerfInst.action" name="SR-01-03-06">客户经理业绩统计表（机构汇总）</a></li><li><a id="../rep/mgrPerfMgr.action" name="SR-01-03-07">客户经理业绩统计表（客户经理汇总）</a></li><li><a id="../rep/mgrIntro.action" name="SR-01-03-08">客户经理引见情况统计表(机构汇总)</a></li><li><a id="../sr/mgrStatPerf_queryMgrPerf.action" name="SR-01-03-50">理财经理业绩指标统计</a></li><li><a id="../ni/page_showTxnRptPage.action" name="SR-01-03-51">理财经理其他指标统计表</a></li></ul></div></div></li></ul></div></div></li><li class="pr"><a name="">网点经营报表</a><div class="subset2"><div style="z-index:100;"><ul id="SR-02"><li><a id="../sitesReport/sitesReportAction_initSitesReportInfoPage.action" name="SR-02-01">经营综合月报下载</a></li><li><a id="../rep/netWorkMgr.action" name="SR-02-02">网点经营管理报表</a></li></ul></div></div></li><li class="pr"><a name="">销售进度表</a><div class="subset2"><div style="z-index:100;"><ul id="SR-03"><li><a id="../saleProgress/saleProgressAction_initSaleProgressInfoPage.action" name="SR-03-02">销售进度表管理</a></li></ul></div></div></li></ul></div></div></div></li><li><div id="NI" class="lst10">资讯与公告<div class="subset"><div style="z-index:100;"><ul id="NI"><li><a id="../ni/page_showFinancePage.action" name="NI-01">金融资讯查询</a></li><li><a id="../ni/newsInfo_queryNewsInfoList.action" name="NI-02">要闻</a></li><li><a id="../ni/notice_queryNoticeList.action" name="NI-03">公告</a></li><li><a id="../ni/page_showReposPage.action" name="NI-05">知识库</a></li></ul></div></div></div></li></ul>
+        </div>
+    </div>
+<!--头部end-->
+ 
+<!--头部end-->
+<!--中部start-->
+	<div style="height: 520px;" class=" contentBox">
+    	<!-- left start-->
+    	
+	<!-- 日历部分 -->
+	<link href="/css/homePage/date/swanky-purse/jquery-ui-1.10.3.custom.css" type="text/css" rel="stylesheet">
+	<link href="/css/homePage/date/date.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="/js/homePage/date/jquery-ui-1.9.2.custom.min.js"></script>
+	<script type="text/javascript" src="/js/homePage/date/jquery.ui.datepicker-zh-CN.js"></script>
+	<script type="text/javascript" src="/js/homePage/jqueryPortal/jquery.left.js"></script>
+<div id="left" class="leftBox h">
+	<!-- weblogic不能使用include会出现一条空白  -->
+	<div class=" m2 lineS h190 overh " id="leftContent">
+		<div class="tit">
+			<div></div>
+			快捷操作
+		</div>
+		<div class=" scrollDiv overa  h160 ">
+			<ul class="pl10 pr10 pt10 pb0 lh25 " id="liTopId"></ul>
+		</div>
+	</div>
+	<div class=" m2 lineS h230 overh" id="leftcenter">
+		<div class="tit">
+			<div></div>
+			日程管理
+		</div>
+		<!-- 日历开始 -->
+		<div id="datepicker" class="h200   hasDatepicker"><div style="display: block;" class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="<上月"><span class="ui-icon ui-icon-circle-triangle-w">&lt;上月</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="下月>"><span class="ui-icon ui-icon-circle-triangle-e">下月&gt;</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-year">2014</span>年&nbsp;<span class="ui-datepicker-month">9月</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th><span title="星期一">一</span></th><th><span title="星期二">二</span></th><th><span title="星期三">三</span></th><th><span title="星期四">四</span></th><th><span title="星期五">五</span></th><th class="ui-datepicker-week-end"><span title="星期六">六</span></th><th class="ui-datepicker-week-end"><span title="星期日">日</span></th></tr></thead><tbody><tr><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">6</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">7</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">10</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default ui-state-highlight ui-state-active" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">13</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">14</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">19</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">20</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">21</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">26</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">27</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">28</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="8" data-year="2014"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></div>
+		<!-- 日历结束 -->
+	</div>
+	<div style="height: 179px;" class=" m2 lineS overh h100" id="leftbottom"> 
+		<div class="tit" id="lasttitle">
+			<div></div>
+			日程安排
+		</div>
+		<div style="height: 155px;" class=" overa" id="leftbottomlast">
+		<ul class="pl10 pr10  pt5 pb5 lh25 " id="liId">
+			
+			</ul>
+			</div>
+	</div>
+</div>
+ 
+    	<!-- left end  -->
+    	<!-- right start -->
+    	
+<!-- right弹窗  -->
+<script type="text/javascript" src="/js/homePage/jqueryPortal/jquery.rightalert.js"></script>
+<!-- right弹窗 -->
+<div style="height: 609px;" id="right" class="rightBox h">
+        	<div class="rightNav h">
+        	 
+        			 <a id="ico4" class="ico4" onclick="clickright(
+        			  'quickWay_4' ,
+        			  '快捷菜单',
+        			  '../quickMenu/wmctlQuickMenuAction_queryQuickMenu.action?checkTxFlag=N');" href="javascript:void(0)">
+        			 快捷菜单</a>
+        	 
+        			 <a id="ico5" class="ico5" onclick="clickright(
+        			  'quickWay_5' ,
+        			  '大堂营销',
+        			  '../marketMge/marketActive/marketActiveAction_queryHoseMarketStatic.action');" href="javascript:void(0)">
+        			 大堂营销</a>
+        	 
+        	  <a class="ico3" onclick="rightAlert();" href="javascript:void(0)"> 产品综合屏</a>
+          </div>
+        </div>
+ 
+    	<!-- right end -->
+    	<!-- center start    -->
+    	
+
+
+
+
+<!-- portal布局部分 -->
+<script type="text/javascript" src="/js/homePage/jqueryPortal/jquery.portal.js"></script>
+<!-- portal布局部分 -->
+<div style="width: 1100px; height: 609px;" class="mainBox" id="mainBoxdiv">
+	<div style="height: 609px;" class=" w " id="mainCenterBox">
+	    <script>
+var tabgroup = new TabPane("tabs1");
+tabgroup.width = "100%";
+tabgroup.height = "100%";
+tabgroup.titleAlign = "top";
+</script><div class="tab" id="tabs1_container" style="width:100%;height:100%;"><table style="width:100%;height:100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="height:22px" valign="top">
+<table class="nav " border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style="width: 100%;" id="tabs1_nav_tr"><td class="active">
+<table class="container" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<div class="left"></div></td
+><td nowarp="" class="mid">
+<div style="white-space:nowrap;page-break-before: always;page-break-after: always;">工作首页</div></td>
+<td><div class="right"></div></td></tr></tbody></table></td>
+<td style="overflow: hidden; width: 100%;" class="right-top">&nbsp;</td>
+<td id="tabs1_nav_pilot_container" style="width:100%" class="right-top" align="right"><div style="display:none;white-space:nowrap;" id="tabs1_nav_pilot">	</div></td></tr></tbody></table></td></tr><tr><td style="width:100%;height:100%;">
+<table style="width:100%;height:100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="tab-body" id="tabs1_body" style="width:100%;height:100%" valign="top">
+<div style="width:100%;height:100%;height:100%;scroll:yes;overflow-y:auto;">
+			<table style="" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td eos_tabpage_id="page1" id="page1_container" style="width: 100%; height: 100%;" valign="top">
+				<span id="message" style="color: green"></span>
+				<div style="height: 571px;" id="portlet">
+				
+				<div style="height: 317.222px;" class="w clear" id="pCol0"><div style="height: 317.222px;" class=" fl w30b" id="CustomerAllDir_portalets">
+
+
+
+
+                        <div id="CustomerAll" class=" pl10" style="height: $heightpx;">
+                	<div class="w">
+                		<div class=" h30 pt10 lineS1_b lh25 f16 c1">
+                        	<span class=" icon3 fl"></span>
+                        	客户总览
+                        </div>
+                        
+                        <table class="tableBox" border="0" cellpadding="0" cellspacing="1" height="90%" width="100%">
+                          <tbody><tr>
+						<th>
+							客户类型
+						</th>
+						<th>
+							总客户数
+						</th>
+						<th>
+							总资产(万)
+						</th>
+						<th>
+							总负债(万)
+						</th>
+					</tr>
+                        
+                          <tr>
+                            <td>全部客户</td>
+                            <td>279,779</td>
+                            <td>528,591.75</td>
+                            <td>817,440.43</td>
+                          </tr>
+                        
+                          <tr>
+                            <td>已服务客户</td>
+                            <td>2,305</td>
+                            <td>30,956.99</td>
+                            <td>817,440.43</td>
+                          </tr>
+                        
+                          <tr>
+                            <td>未服务客户</td>
+                            <td>277,474</td>
+                            <td>497,634.76</td>
+                            <td>0</td>
+                          </tr>
+                        
+                          <tr>
+                            <td>金卡级客户</td>
+                            <td>1,086</td>
+                            <td>27,238.23</td>
+                            <td>12,498.59</td>
+                          </tr>
+                        
+                          <tr>
+                            <td>白金卡客户</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                          </tr>
+                        
+                          <tr>
+                            <td>钻石卡客户</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                          </tr>
+                        
+                        </tbody></table>
+					</div>
+                </div>
+  
+
+</div><div style="height: 317.222px;" class=" fl w70b" id="CustomerDistribution">
+ <div class=" pl10" style="height: $heightpx;">
+                	<div class="w">
+                       <div style="width: 100%;height:100%;">
+									<div id="colChart" style="float: left;width:52%;height:270px;"><span style="position: relative; text-align: left; line-height: 100%; display: inline-block; width: 100%; height: 100%; background-color: rgb(255, 255, 255);" id="myChartId2"><svg style="overflow: hidden; -moz-user-select: none; cursor: default; position: relative; left: -0.200012px; background-color: rgb(255, 255, 255);" xmlns="http://www.w3.org/2000/svg" width="393" version="1.1" height="270"><desc>framework 3.3.1.sr2.19840</desc><defs><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0.6611570247933889" x2="1" y1="0" x1="0" id="64326.5290357253543-rgba_183_183_182_1_-rgba_234_234_233_1_"><stop stop-opacity="1" stop-color="#b7b7b6" offset="0%"></stop><stop stop-opacity="1" stop-color="#eaeae9" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="67270-rgb_218.15_218.15_218.7_-rgb_122.2_122.2_122.85000000000001_"><stop stop-opacity="1" stop-color="#dadada" offset="0%"></stop><stop stop-opacity="1" stop-color="#7a7a7a" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="66270-rgb_141_141_141.75_-rgb_65.8_65.8_66.14999999999999_"><stop stop-opacity="1" stop-color="#8d8d8d" offset="0%"></stop><stop stop-opacity="1" stop-color="#414142" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="0.9039301310043667" y1="1" x1="0" id="6547.88862154984296-rgb_146.64000000000001_146.64000000000001_147.42000000000002_-rgb_240.26_240.26_240.48_"><stop stop-opacity="1" stop-color="#929293" offset="0%"></stop><stop stop-opacity="1" stop-color="#f0f0f0" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0.6611570247933889" x2="1" y1="0" x1="0" id="69326.5290357253543-rgba_183_183_182_1_-rgba_234_234_233_1_"><stop stop-opacity="1" stop-color="#b7b7b6" offset="0%"></stop><stop stop-opacity="1" stop-color="#eaeae9" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="123270-rgba_211_233.55_251.15_1_-rgba_113.75_140.4_161.20000000000002_1_"><stop stop-opacity="1" stop-color="#d3e9fb" offset="0%"></stop><stop stop-opacity="1" stop-color="#718ca1" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="122270-rgba_131.25_162_186_1_-rgba_61.24999999999999_75.6_86.8_1_"><stop stop-opacity="1" stop-color="#83a2ba" offset="0%"></stop><stop stop-opacity="1" stop-color="#3d4b56" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="0.7142857142857142" y1="1" x1="0" id="12154.46232220802562-rgba_136.5_168.48000000000002_193.44_1_-rgba_237.4_246.42_253.46_1_"><stop stop-opacity="1" stop-color="#88a8c1" offset="0%"></stop><stop stop-opacity="1" stop-color="#edf6fd" offset="100%"></stop></linearGradient><filter height="200%" width="200%" id="FC08F463-3856-4BED-9C4A-6407F279B6AE"><feOffset dy="-1" dx="1" in="SourceGraphic" result="offOut"></feOffset><feColorMatrix values="0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 1 0" type="matrix" in="offOut" result="matrixOut"></feColorMatrix><feGaussianBlur stdDeviation="1.7320508075688772" in="matrixOut" result="blurOut"></feGaussianBlur><feBlend mode="normal" in2="blurOut" in="SourceGraphic"></feBlend></filter><filter height="200%" width="200%" id="C4E5002F-96BB-4933-BAF6-6C1BC746AD59"><feOffset dy="-1" dx="1" in="SourceGraphic" result="offOut"></feOffset><feColorMatrix values="0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 1 0" type="matrix" in="offOut" result="matrixOut"></feColorMatrix><feGaussianBlur stdDeviation="1.7320508075688772" in="matrixOut" result="blurOut"></feGaussianBlur><feBlend mode="normal" in2="blurOut" in="SourceGraphic"></feBlend></filter><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="126270-rgba_220.35_220.35_220.35_0.000001_-rgba_124.80000000000001_124.80000000000001_124.80000000000001_0.000001_"><stop stop-opacity="0.000001" stop-color="#dcdcdc" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#7c7c7c" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="125270-rgba_144_144_144_0.000001_-rgba_67.19999999999999_67.19999999999999_67.19999999999999_0.000001_"><stop stop-opacity="0.000001" stop-color="#909090" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#434343" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="0.7142857142857142" y1="1" x1="0" id="12454.46232220802562-rgba_149.76_149.76_149.76_0.000001_-rgba_241.14_241.14_241.14_0.000001_"><stop stop-opacity="0.000001" stop-color="#959595" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#f1f1f1" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="129270-rgba_211_233.55_251.15_1_-rgba_113.75_140.4_161.20000000000002_1_"><stop stop-opacity="1" stop-color="#d3e9fb" offset="0%"></stop><stop stop-opacity="1" stop-color="#718ca1" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="128270-rgba_131.25_162_186_1_-rgba_61.24999999999999_75.6_86.8_1_"><stop stop-opacity="1" stop-color="#83a2ba" offset="0%"></stop><stop stop-opacity="1" stop-color="#3d4b56" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="0.7142857142857142" y1="1" x1="0" id="12754.46232220802562-rgba_136.5_168.48000000000002_193.44_1_-rgba_237.4_246.42_253.46_1_"><stop stop-opacity="1" stop-color="#88a8c1" offset="0%"></stop><stop stop-opacity="1" stop-color="#edf6fd" offset="100%"></stop></linearGradient><filter height="200%" width="200%" id="352DB62E-F22A-4BF6-9C81-7FDEF68892D3"><feOffset dy="-1" dx="1" in="SourceGraphic" result="offOut"></feOffset><feColorMatrix values="0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 1 0" type="matrix" in="offOut" result="matrixOut"></feColorMatrix><feGaussianBlur stdDeviation="1.7320508075688772" in="matrixOut" result="blurOut"></feGaussianBlur><feBlend mode="normal" in2="blurOut" in="SourceGraphic"></feBlend></filter><filter height="200%" width="200%" id="FE9A69DA-4E20-4A32-A60C-D3D8E16A1A6B"><feOffset dy="-1" dx="1" in="SourceGraphic" result="offOut"></feOffset><feColorMatrix values="0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 1 0" type="matrix" in="offOut" result="matrixOut"></feColorMatrix><feGaussianBlur stdDeviation="1.7320508075688772" in="matrixOut" result="blurOut"></feGaussianBlur><feBlend mode="normal" in2="blurOut" in="SourceGraphic"></feBlend></filter><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="132270-rgba_220.35_220.35_220.35_0.000001_-rgba_124.80000000000001_124.80000000000001_124.80000000000001_0.000001_"><stop stop-opacity="0.000001" stop-color="#dcdcdc" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#7c7c7c" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="131270-rgba_144_144_144_0.000001_-rgba_67.19999999999999_67.19999999999999_67.19999999999999_0.000001_"><stop stop-opacity="0.000001" stop-color="#909090" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#434343" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="0.7142857142857142" y1="1" x1="0" id="13054.46232220802562-rgba_149.76_149.76_149.76_0.000001_-rgba_241.14_241.14_241.14_0.000001_"><stop stop-opacity="0.000001" stop-color="#959595" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#f1f1f1" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="135270-rgba_211_233.55_251.15_1_-rgba_113.75_140.4_161.20000000000002_1_"><stop stop-opacity="1" stop-color="#d3e9fb" offset="0%"></stop><stop stop-opacity="1" stop-color="#718ca1" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="134270-rgba_131.25_162_186_1_-rgba_61.24999999999999_75.6_86.8_1_"><stop stop-opacity="1" stop-color="#83a2ba" offset="0%"></stop><stop stop-opacity="1" stop-color="#3d4b56" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="0.7142857142857142" y1="1" x1="0" id="13354.46232220802562-rgba_136.5_168.48000000000002_193.44_1_-rgba_237.4_246.42_253.46_1_"><stop stop-opacity="1" stop-color="#88a8c1" offset="0%"></stop><stop stop-opacity="1" stop-color="#edf6fd" offset="100%"></stop></linearGradient><filter height="200%" width="200%" id="4069EE37-F352-46DE-BEA8-C50CE8741BCC"><feOffset dy="-1" dx="1" in="SourceGraphic" result="offOut"></feOffset><feColorMatrix values="0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 1 0" type="matrix" in="offOut" result="matrixOut"></feColorMatrix><feGaussianBlur stdDeviation="1.7320508075688772" in="matrixOut" result="blurOut"></feGaussianBlur><feBlend mode="normal" in2="blurOut" in="SourceGraphic"></feBlend></filter><filter height="200%" width="200%" id="2A8BCBA4-F71D-4EB7-A52B-04F792AA6222"><feOffset dy="-1" dx="1" in="SourceGraphic" result="offOut"></feOffset><feColorMatrix values="0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 0 0.25098039215686274 0 0 0 1 0" type="matrix" in="offOut" result="matrixOut"></feColorMatrix><feGaussianBlur stdDeviation="1.7320508075688772" in="matrixOut" result="blurOut"></feGaussianBlur><feBlend mode="normal" in2="blurOut" in="SourceGraphic"></feBlend></filter><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="138270-rgba_220.35_220.35_220.35_0.000001_-rgba_124.80000000000001_124.80000000000001_124.80000000000001_0.000001_"><stop stop-opacity="0.000001" stop-color="#dcdcdc" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#7c7c7c" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="1" x2="0" y1="0" x1="1.8369701987210297e-16" id="137270-rgba_144_144_144_0.000001_-rgba_67.19999999999999_67.19999999999999_67.19999999999999_0.000001_"><stop stop-opacity="0.000001" stop-color="#909090" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#434343" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="0.7142857142857142" y1="1" x1="0" id="13654.46232220802562-rgba_149.76_149.76_149.76_0.000001_-rgba_241.14_241.14_241.14_0.000001_"><stop stop-opacity="0.000001" stop-color="#959595" offset="0%"></stop><stop stop-opacity="0.000001" stop-color="#f1f1f1" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="6.123233995736766e-17" y1="1" x1="0" id="15990-rgba_175_216_248_1_:0-rgba_175_216_248_1_:30-rgba_223_240_252_1_:60-rgba_175_216_248_1_:90-rgba_175_216_248_1_:100"><stop stop-opacity="1" stop-color="#afd8f8" offset="0%"></stop><stop stop-opacity="1" stop-color="#afd8f8" offset="30%"></stop><stop stop-opacity="1" stop-color="#dff0fc" offset="60%"></stop><stop stop-opacity="1" stop-color="#afd8f8" offset="90%"></stop><stop stop-opacity="1" stop-color="#afd8f8" offset="100%"></stop></linearGradient><clipPath id="6D24DC86-74A2-4BE4-BA50-D32FAAA4E6E8"><rect transform="matrix(1,0,0,1,0,0)" height="169" width="227" y="29" x="87"></rect></clipPath></defs><g class="red-background-56"><rect fill-opacity="1" stroke-width="0" stroke-opacity="1" style="" stroke="#666666" fill="#ffffff" ry="0" rx="0" r="0" height="270" width="393" y="0" x="0"></rect></g><g class="red-canvas-62"><rect stroke-linejoin="miter" stroke-opacity="1" stroke-width="0" style="stroke-linejoin: miter;" stroke="#545454" fill="none" ry="0" rx="0" r="0" height="149" width="207" y="39" x="97"></rect><path fill-opacity="1" opacity="1" stroke-width="0" d="M304,39L307,42.6L307,185L304,188Z" stroke="none" fill="url('http://22.246.1.6:7000/homePage/home.action#64326.5290357253543-rgba_183_183_182_1_-rgba_234_234_233_1_')" style="opacity: 1; fill-opacity: 1;"></path><path stroke-width="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M86,199L87,200L293,200L293,199L304,188L97,188Z" stroke="none" fill="url('http://22.246.1.6:7000/homePage/home.action#6547.88862154984296-rgb_146.64000000000001_146.64000000000001_147.42000000000002_-rgb_240.26_240.26_240.48_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M292,200L292,209L293,209L304,198L304,188L293,199" stroke="none" fill="url('http://22.246.1.6:7000/homePage/home.action#66270-rgb_141_141_141.75_-rgb_65.8_65.8_66.14999999999999_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M293,199L293,209L86,209L86,199Z" stroke="none" fill="url('http://22.246.1.6:7000/homePage/home.action#67270-rgb_218.15_218.15_218.7_-rgb_122.2_122.2_122.85000000000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path d="M97,188H304" stroke="#fbfbfb" fill="none" style=""></path><rect fill-opacity="1" opacity="1" stroke-width="0" style="opacity: 1; fill-opacity: 1;" stroke="none" fill="url('http://22.246.1.6:7000/homePage/home.action#69326.5290357253543-rgba_183_183_182_1_-rgba_234_234_233_1_')" ry="0" rx="0" r="0" height="149" width="207" y="39" x="97"></rect></g><g class="red-axisbottom-70"><g class="red-x-axis-bands-73"></g><g class="red-y-axis-bands-79"></g><g class="red-y-axis-bands-85"></g><g class="red-x-axis-lines-75"></g><g class="red-y-axis-lines-81"><path shape-rendering="crispEdges" stroke-width="1" stroke-opacity="1" d="M97,158.5L304,158.5" stroke="#a4a4a4" fill="none" style="shape-rendering: crispedges;"></path><path shape-rendering="crispEdges" stroke-width="1" stroke-opacity="1" d="M97,128.5L304,128.5" stroke="#a4a4a4" fill="none" style="shape-rendering: crispedges;"></path><path shape-rendering="crispEdges" stroke-width="1" stroke-opacity="1" d="M97,99.5L304,99.5" stroke="#a4a4a4" fill="none" style="shape-rendering: crispedges;"></path><path shape-rendering="crispEdges" stroke-width="1" stroke-opacity="1" d="M97,69.5L304,69.5" stroke="#a4a4a4" fill="none" style="shape-rendering: crispedges;"></path></g><g class="red-y-axis-lines-87"></g><g class="red-x-axis-labels-77"><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="middle" y="222" x="129.83333333333331" style="text-anchor: middle; font-family: Verdana; font-size: 10px;"><tspan x="129.83333333333331" dy="-2">6月</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="middle" y="222" x="195.5" style="text-anchor: middle; font-family: Verdana; font-size: 10px;"><tspan x="195.5" dy="-2">7月</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="middle" y="222" x="261.16666666666663" style="text-anchor: middle; font-family: Verdana; font-size: 10px;"><tspan x="261.16666666666663" dy="-2">8月</tspan></text></g><g class="red-y-axis-labels-83"><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="188" x="93" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="93" dy="4">0</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="158.2" x="93" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="93" dy="4.000003051757801">240,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="128.4" x="93" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="93" dy="4.000006103515631">480,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="98.60000000000001" x="93" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="93" dy="4.000001525878915">720,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="68.80000000000001" x="93" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="93" dy="3.999996948242199">960,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="39" x="93" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="93" dy="4">1,200,000</tspan></text></g><g class="red-y-axis-labels-89"><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="188" x="311" style="text-anchor: start; font-family: Verdana; font-size: 10px;"><tspan x="311" dy="4">0</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="158.2" x="311" style="text-anchor: start; font-family: Verdana; font-size: 10px;"><tspan x="311" dy="4.000003051757801">16,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="128.4" x="311" style="text-anchor: start; font-family: Verdana; font-size: 10px;"><tspan x="311" dy="4.000006103515631">32,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="98.6" x="311" style="text-anchor: start; font-family: Verdana; font-size: 10px;"><tspan x="311" dy="4.000001525878901">48,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="68.8" x="311" style="text-anchor: start; font-family: Verdana; font-size: 10px;"><tspan x="311" dy="3.9999969482421847">64,000</tspan></text><text transform="matrix(1,0,0,1,0,0)" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="39" x="311" style="text-anchor: start; font-family: Verdana; font-size: 10px;"><tspan x="311" dy="4">80,000</tspan></text></g><g class="red-axis-name-90"><text transform="matrix(0,-1,1,0,17.5,114)" font-weight="bold" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="middle" y="0" x="0" style="text-anchor: middle; font-family: Verdana; font-size: 10px; font-weight: bold;"><tspan x="0" dy="10">资产余额(万元)</tspan></text><text transform="matrix(0,1,-1,0,373.5,113)" font-weight="bold" font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="middle" y="0" x="0" style="text-anchor: middle; font-family: Verdana; font-size: 10px; font-weight: bold;"><tspan x="0" dy="11">客户数量</tspan></text></g></g><g class="red-dataset-57"><g style="" class="red-anchor-shadows-141"></g><g class="red-columns-112"><g class="red-negative-values-113"><g></g><g></g><g></g></g><g class="red-positive-values-114"><g><path filter="url('http://22.246.1.6:7000/homePage/home.action#FC08F463-3856-4BED-9C4A-6407F279B6AE')" stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M104.83333333333331,87.04117385833334L105.83333333333331,88.04117385833334L154.83333333333331,88.04117385833334L154.83333333333331,87.04117385833334L164.83333333333331,77.04117385833334L114.83333333333331,77.04117385833334Z" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#12154.46232220802562-rgba_136.5_168.48000000000002_193.44_1_-rgba_237.4_246.42_253.46_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path filter="url('http://22.246.1.6:7000/homePage/home.action#C4E5002F-96BB-4933-BAF6-6C1BC746AD59')" stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M153.83333333333331,88.04117385833334L153.83333333333331,198L154.83333333333331,198L164.83333333333331,188L164.83333333333331,77.04117385833334L154.83333333333331,87.04117385833334" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#122270-rgba_131.25_162_186_1_-rgba_61.24999999999999_75.6_86.8_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M154.83333333333331,87.04117385833334L154.83333333333331,198L104.83333333333331,198L104.83333333333331,87.04117385833334Z" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#123270-rgba_211_233.55_251.15_1_-rgba_113.75_140.4_161.20000000000002_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path></g><g><path filter="url('http://22.246.1.6:7000/homePage/home.action#352DB62E-F22A-4BF6-9C81-7FDEF68892D3')" stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M170.5,61.20543309166669L171.5,62.20543309166669L220.5,62.20543309166669L220.5,61.20543309166669L230.5,51.20543309166669L180.5,51.20543309166669Z" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#12754.46232220802562-rgba_136.5_168.48000000000002_193.44_1_-rgba_237.4_246.42_253.46_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path filter="url('http://22.246.1.6:7000/homePage/home.action#FE9A69DA-4E20-4A32-A60C-D3D8E16A1A6B')" stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M219.5,62.20543309166669L219.5,198L220.5,198L230.5,188L230.5,51.20543309166669L220.5,61.20543309166669" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#128270-rgba_131.25_162_186_1_-rgba_61.24999999999999_75.6_86.8_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M220.5,61.20543309166669L220.5,198L170.5,198L170.5,61.20543309166669Z" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#129270-rgba_211_233.55_251.15_1_-rgba_113.75_140.4_161.20000000000002_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path></g><g><path filter="url('http://22.246.1.6:7000/homePage/home.action#4069EE37-F352-46DE-BEA8-C50CE8741BCC')" stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M236.16666666666663,198L237.16666666666663,199L286.16666666666663,199L286.16666666666663,198L296.16666666666663,188L246.16666666666663,188Z" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#13354.46232220802562-rgba_136.5_168.48000000000002_193.44_1_-rgba_237.4_246.42_253.46_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path filter="url('http://22.246.1.6:7000/homePage/home.action#2A8BCBA4-F71D-4EB7-A52B-04F792AA6222')" stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M285.16666666666663,199L285.16666666666663,198L286.16666666666663,198L296.16666666666663,188L296.16666666666663,188L286.16666666666663,198" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#134270-rgba_131.25_162_186_1_-rgba_61.24999999999999_75.6_86.8_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M286.16666666666663,198L286.16666666666663,198L236.16666666666663,198L236.16666666666663,198Z" stroke="#ffffff" fill="url('http://22.246.1.6:7000/homePage/home.action#135270-rgba_211_233.55_251.15_1_-rgba_113.75_140.4_161.20000000000002_1_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path></g></g></g><g clip-path="" style="" class="red-line-connector-139"><path shape-rendering="default" transform="matrix(1,0,0,1,1,1)" stroke-linejoin="miter" stroke-linecap="round" stroke-width="6" stroke-opacity="0.05" d="M130,92L196,43L261,188" stroke="#404040" fill="none" style="stroke-linecap: round; stroke-linejoin: miter; stroke-opacity: 0.05;"></path><path shape-rendering="default" transform="matrix(1,0,0,1,1,1)" stroke-linejoin="miter" stroke-linecap="round" stroke-width="4" stroke-opacity="0.1" d="M130,92L196,43L261,188" stroke="#404040" fill="none" style="stroke-linecap: round; stroke-linejoin: miter; stroke-opacity: 0.1;"></path><path shape-rendering="default" transform="matrix(1,0,0,1,1,1)" stroke-linejoin="miter" stroke-linecap="round" stroke-width="2" stroke-opacity="0.15000000000000002" d="M130,92L196,43L261,188" stroke="#404040" fill="none" style="stroke-linecap: round; stroke-linejoin: miter; stroke-opacity: 0.15;"></path><path stroke-linejoin="miter" stroke-linecap="round" stroke-opacity="1" stroke-width="2" d="M130,92L196,43L261,188" stroke="#f6bd0f" fill="none" style="stroke-linecap: round; stroke-linejoin: miter;"></path></g><g style="" class="red-line-anchors-140"><path stroke-opacity="1" stroke-width="1" fill-opacity="1" d="M127,92A3,3,0,0,0,133,92A3,3,0,0,0,127,92Z" stroke="#f6bd0f" fill="#ffffff" style=""></path><path stroke-opacity="1" stroke-width="1" fill-opacity="1" d="M193,43A3,3,0,0,0,199,43A3,3,0,0,0,193,43Z" stroke="#f6bd0f" fill="#ffffff" style=""></path><path stroke-opacity="1" stroke-width="1" fill-opacity="1" d="M258,188A3,3,0,0,0,264,188A3,3,0,0,0,258,188Z" stroke="#f6bd0f" fill="#ffffff" style=""></path></g></g><g class="red-axistop-71"><g class="red-x-axis-bands-72"></g><g class="red-y-axis-bands-78"></g><g class="red-y-axis-bands-84"></g><g class="red-x-axis-lines-74"></g><g class="red-y-axis-lines-80"></g><g class="red-y-axis-lines-86"></g><g class="red-x-axis-labels-76"></g><g class="red-y-axis-labels-82"></g><g class="red-y-axis-labels-88"></g></g><g style="" class="red-datalabels-61"></g><g transform="matrix(1,0,0,1,135.5,230.5)" class="red-legend-152"><rect shape-rendering="default" stroke-linecap="round" transform="matrix(1,0,0,1,1,1)" stroke-width="5" stroke-opacity="0.05" style="stroke-opacity: 0.05; stroke-linecap: round;" stroke="#404040" fill="none" ry="0" rx="0" r="0" height="25" width="134" y="0" x="0"></rect><rect shape-rendering="default" stroke-linecap="round" transform="matrix(1,0,0,1,1,1)" stroke-width="3" stroke-opacity="0.1" style="stroke-opacity: 0.1; stroke-linecap: round;" stroke="#404040" fill="none" ry="0" rx="0" r="0" height="25" width="134" y="0" x="0"></rect><rect shape-rendering="default" stroke-linecap="round" transform="matrix(1,0,0,1,1,1)" stroke-width="1" stroke-opacity="0.15000000000000002" style="stroke-opacity: 0.15; stroke-linecap: round;" stroke="#404040" fill="none" ry="0" rx="0" r="0" height="25" width="134" y="0" x="0"></rect><rect fill-opacity="1" stroke-width="1" stroke-opacity="1" style="" stroke="#c8c8c8" fill="#f3f3f3" ry="0" rx="0" r="0" height="25" width="134" y="0" x="0"></rect><rect stroke-width="1" fill-opacity="0.000001" style="cursor: pointer;" stroke="none" fill="#c0c0c0" ry="0" rx="0" r="0" height="17" width="63" y="4" x="4"></rect><text font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="6.5" x="23" style="text-anchor: start; font-family: Verdana; font-size: 10px; cursor: pointer;"><tspan x="23" dy="11">资产余额</tspan></text><path fill-opacity="1" opacity="1" stroke-width="0.5" d="M7,18L7,10.3L9.75,10.3L9.75,18ZM11.125,18L11.125,7L13.875,7L13.875,18ZM15.25,18L15.25,13.6L18,13.6L18,18Z" stroke="#698194" fill="url('http://22.246.1.6:7000/homePage/home.action#15990-rgba_175_216_248_1_:0-rgba_175_216_248_1_:30-rgba_223_240_252_1_:60-rgba_175_216_248_1_:90-rgba_175_216_248_1_:100')" style="opacity: 1; fill-opacity: 1; cursor: pointer;"></path><rect stroke-width="1" fill-opacity="0.000001" style="cursor: pointer;" stroke="none" fill="#c0c0c0" ry="0" rx="0" r="0" height="17" width="63" y="4" x="67"></rect><text font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="6.5" x="86" style="text-anchor: start; font-family: Verdana; font-size: 10px; cursor: pointer;"><tspan x="86" dy="11">客户数量</tspan></text><path stroke-opacity="1" stroke-width="2" d="M70,12.5L81,12.5" stroke="#f6bd0f" fill="none" style="cursor: pointer;"></path><circle stroke-width="1" fill-opacity="1" style="cursor: pointer;" stroke="#f6bd0f" fill="#ffffff" r="3.3" cy="12.5" cx="75.5"></circle></g><g class="red-caption-164"><text font-weight="bold" font-size="12px" font-family="Verdana" fill="#666666" stroke="none" text-anchor="middle" y="15" x="200.5" style="text-anchor: middle; font-family: Verdana; font-size: 12px; font-weight: bold;"><tspan x="200.5" dy="13">客户数量及资产变动分析图</tspan></text></g><g class="red-hot-58"><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M104.83333333333331,87.04117385833334L105.83333333333331,88.04117385833334L154.83333333333331,88.04117385833334L154.83333333333331,87.04117385833334L164.83333333333331,77.04117385833334L114.83333333333331,77.04117385833334Z" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#12454.46232220802562-rgba_149.76_149.76_149.76_0.000001_-rgba_241.14_241.14_241.14_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M153.83333333333331,88.04117385833334L153.83333333333331,198L154.83333333333331,198L164.83333333333331,188L164.83333333333331,77.04117385833334L154.83333333333331,87.04117385833334" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#125270-rgba_144_144_144_0.000001_-rgba_67.19999999999999_67.19999999999999_67.19999999999999_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M154.83333333333331,87.04117385833334L154.83333333333331,198L104.83333333333331,198L104.83333333333331,87.04117385833334Z" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#126270-rgba_220.35_220.35_220.35_0.000001_-rgba_124.80000000000001_124.80000000000001_124.80000000000001_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M170.5,61.20543309166669L171.5,62.20543309166669L220.5,62.20543309166669L220.5,61.20543309166669L230.5,51.20543309166669L180.5,51.20543309166669Z" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#13054.46232220802562-rgba_149.76_149.76_149.76_0.000001_-rgba_241.14_241.14_241.14_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M219.5,62.20543309166669L219.5,198L220.5,198L230.5,188L230.5,51.20543309166669L220.5,61.20543309166669" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#131270-rgba_144_144_144_0.000001_-rgba_67.19999999999999_67.19999999999999_67.19999999999999_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M220.5,61.20543309166669L220.5,198L170.5,198L170.5,61.20543309166669Z" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#132270-rgba_220.35_220.35_220.35_0.000001_-rgba_124.80000000000001_124.80000000000001_124.80000000000001_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M236.16666666666663,196.5L237.16666666666663,197.5L286.16666666666663,197.5L286.16666666666663,196.5L296.16666666666663,186.5L246.16666666666663,186.5Z" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#13654.46232220802562-rgba_149.76_149.76_149.76_0.000001_-rgba_241.14_241.14_241.14_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M285.16666666666663,197.5L285.16666666666663,199.5L286.16666666666663,199.5L296.16666666666663,189.5L296.16666666666663,186.5L286.16666666666663,196.5" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#137270-rgba_144_144_144_0.000001_-rgba_67.19999999999999_67.19999999999999_67.19999999999999_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><path stroke-width="1" stroke-opacity="0.000001" fill-opacity="1" opacity="1" shape-rendering="geometricPrecision" stroke-linejoin="round" d="M286.16666666666663,196.5L286.16666666666663,199.5L236.16666666666663,199.5L236.16666666666663,196.5Z" stroke="#c0c0c0" fill="url('http://22.246.1.6:7000/homePage/home.action#138270-rgba_220.35_220.35_220.35_0.000001_-rgba_124.80000000000001_124.80000000000001_124.80000000000001_0.000001_')" style="stroke-linejoin: round; shape-rendering: geometricprecision; opacity: 1; fill-opacity: 1;"></path><circle fill-opacity="0.000001" stroke-width="1" stroke-opacity="0.000001" style="" stroke="#c0c0c0" fill="#c0c0c0" r="3" cy="92" cx="130"></circle><circle fill-opacity="0.000001" stroke-width="1" stroke-opacity="0.000001" style="" stroke="#c0c0c0" fill="#c0c0c0" r="3" cy="43" cx="196"></circle><circle fill-opacity="0.000001" stroke-width="1" stroke-opacity="0.000001" style="" stroke="#c0c0c0" fill="#c0c0c0" r="3" cy="188" cx="261"></circle></g><g class="red-buttons-60"></g><text font-family="Verdana" font-size="9px" fill-opacity="0.5" fill="#000000" stroke="none" text-anchor="start" y="266" x="6" style="text-anchor: start; font-size: 9px; font-family: Verdana; cursor: pointer;"><tspan x="6" dy="-1.399993896484375">FusionCharts XT Trial</tspan></text></svg></span></div>
+									<div id="pieChart" style="float: left;width:46%;height:270px;"><span style="position: relative; text-align: left; line-height: 100%; display: inline-block; width: 100%; height: 100%; background-color: rgb(255, 255, 255);" id="myChartId1"><svg style="overflow: hidden; -moz-user-select: none; cursor: default; position: relative; left: -0.200012px; background-color: rgb(255, 255, 255);" xmlns="http://www.w3.org/2000/svg" width="348" version="1.1" height="270"><desc>framework 3.3.1.sr2.19840</desc><defs><radialGradient fy="164.94" fx="158.1" cy="139.5" cx="174" r="53" gradientUnits="userSpaceOnUse" id="12xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_255_181_135_1_:0-rgba_242_134_66_1_:100"><stop stop-opacity="1" stop-color="#ffb587" offset="0%"></stop><stop stop-opacity="1" stop-color="#f28642" offset="100%"></stop></radialGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="13360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100"><stop stop-opacity="0" stop-color="#ffffff" offset="0%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="20%"></stop><stop stop-opacity="0.33333333333333337" stop-color="#ffffff" offset="35%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="50%"></stop><stop stop-opacity="0" stop-color="#ffffff" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="16360_121_0_227_0_userSpaceOnUse_-rgba_191_106_52_1_:0-rgba_255_159_97_1_:20-rgba_255_199_163_1_:35-rgba_255_159_97_1_:50-rgba_175_97_48_1_:100"><stop stop-opacity="1" stop-color="#bf6a34" offset="0%"></stop><stop stop-opacity="1" stop-color="#ff9f61" offset="20%"></stop><stop stop-opacity="1" stop-color="#ffc7a3" offset="35%"></stop><stop stop-opacity="1" stop-color="#ff9f61" offset="50%"></stop><stop stop-opacity="1" stop-color="#af6130" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="17360_121_0_227_0_userSpaceOnUse_-rgba_191_106_52_0.5_:0-rgba_255_142_70_0.5_:62-rgba_255_210_181_0.5_:70-rgba_255_142_70_0.5_:78-rgba_191_106_52_0.5_:100"><stop stop-opacity="0.5" stop-color="#bf6a34" offset="0%"></stop><stop stop-opacity="0.5" stop-color="#ff8e46" offset="62%"></stop><stop stop-opacity="0.5" stop-color="#ffd2b5" offset="70%"></stop><stop stop-opacity="0.5" stop-color="#ff8e46" offset="78%"></stop><stop stop-opacity="0.5" stop-color="#bf6a34" offset="100%"></stop></linearGradient><radialGradient fy="164.94" fx="158.1" cy="139.5" cx="174" r="53" gradientUnits="userSpaceOnUse" id="22xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_179_210_89_1_:0-rgba_132_176_0_1_:100"><stop stop-opacity="1" stop-color="#b3d259" offset="0%"></stop><stop stop-opacity="1" stop-color="#84b000" offset="100%"></stop></radialGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="23360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100"><stop stop-opacity="0" stop-color="#ffffff" offset="0%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="20%"></stop><stop stop-opacity="0.33333333333333337" stop-color="#ffffff" offset="35%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="50%"></stop><stop stop-opacity="0" stop-color="#ffffff" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="26360_121_0_227_0_userSpaceOnUse_-rgba_104_139_0_1_:0-rgba_156_196_38_1_:20-rgba_197_221_128_1_:35-rgba_156_196_38_1_:50-rgba_95_128_0_1_:100"><stop stop-opacity="1" stop-color="#688b00" offset="0%"></stop><stop stop-opacity="1" stop-color="#9cc426" offset="20%"></stop><stop stop-opacity="1" stop-color="#c5dd80" offset="35%"></stop><stop stop-opacity="1" stop-color="#9cc426" offset="50%"></stop><stop stop-opacity="1" stop-color="#5f8000" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="27360_121_0_227_0_userSpaceOnUse_-rgba_104_139_0_0.5_:0-rgba_139_186_0_0.5_:62-rgba_209_228_153_0.5_:70-rgba_139_186_0_0.5_:78-rgba_104_139_0_0.5_:100"><stop stop-opacity="0.5" stop-color="#688b00" offset="0%"></stop><stop stop-opacity="0.5" stop-color="#8bba00" offset="62%"></stop><stop stop-opacity="0.5" stop-color="#d1e499" offset="70%"></stop><stop stop-opacity="0.5" stop-color="#8bba00" offset="78%"></stop><stop stop-opacity="0.5" stop-color="#688b00" offset="100%"></stop></linearGradient><radialGradient fy="164.94" fx="158.1" cy="139.5" cx="174" r="53" gradientUnits="userSpaceOnUse" id="32xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_249_212_99_1_:0-rgba_233_179_14_1_:100"><stop stop-opacity="1" stop-color="#f9d463" offset="0%"></stop><stop stop-opacity="1" stop-color="#e9b30e" offset="100%"></stop></radialGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="33360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100"><stop stop-opacity="0" stop-color="#ffffff" offset="0%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="20%"></stop><stop stop-opacity="0.33333333333333337" stop-color="#ffffff" offset="35%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="50%"></stop><stop stop-opacity="0" stop-color="#ffffff" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="36360_121_0_227_0_userSpaceOnUse_-rgba_184_141_11_1_:0-rgba_247_199_51_1_:20-rgba_251_222_135_1_:35-rgba_247_199_51_1_:50-rgba_169_130_10_1_:100"><stop stop-opacity="1" stop-color="#b88d0b" offset="0%"></stop><stop stop-opacity="1" stop-color="#f7c733" offset="20%"></stop><stop stop-opacity="1" stop-color="#fbde87" offset="35%"></stop><stop stop-opacity="1" stop-color="#f7c733" offset="50%"></stop><stop stop-opacity="1" stop-color="#a9820a" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="37360_121_0_227_0_userSpaceOnUse_-rgba_184_141_11_0.5_:0-rgba_246_189_15_0.5_:62-rgba_252_229_159_0.5_:70-rgba_246_189_15_0.5_:78-rgba_184_141_11_0.5_:100"><stop stop-opacity="0.5" stop-color="#b88d0b" offset="0%"></stop><stop stop-opacity="0.5" stop-color="#f6bd0f" offset="62%"></stop><stop stop-opacity="0.5" stop-color="#fce59f" offset="70%"></stop><stop stop-opacity="0.5" stop-color="#f6bd0f" offset="78%"></stop><stop stop-opacity="0.5" stop-color="#b88d0b" offset="100%"></stop></linearGradient><radialGradient fy="164.94" fx="158.1" cy="139.5" cx="174" r="53" gradientUnits="userSpaceOnUse" id="42xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_203_230_250_1_:0-rgba_166_205_235_1_:100"><stop stop-opacity="1" stop-color="#cbe6fa" offset="0%"></stop><stop stop-opacity="1" stop-color="#a6cdeb" offset="100%"></stop></radialGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="43360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100"><stop stop-opacity="0" stop-color="#ffffff" offset="0%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="20%"></stop><stop stop-opacity="0.33333333333333337" stop-color="#ffffff" offset="35%"></stop><stop stop-opacity="0.16666666666666669" stop-color="#ffffff" offset="50%"></stop><stop stop-opacity="0" stop-color="#ffffff" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="46360_121_0_227_0_userSpaceOnUse_-rgba_131_162_186_1_:0-rgba_187_222_249_1_:20-rgba_215_236_252_1_:35-rgba_187_222_249_1_:50-rgba_120_149_171_1_:100"><stop stop-opacity="1" stop-color="#83a2ba" offset="0%"></stop><stop stop-opacity="1" stop-color="#bbdef9" offset="20%"></stop><stop stop-opacity="1" stop-color="#d7ecfc" offset="35%"></stop><stop stop-opacity="1" stop-color="#bbdef9" offset="50%"></stop><stop stop-opacity="1" stop-color="#7895ab" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="47360_121_0_227_0_userSpaceOnUse_-rgba_131_162_186_0.5_:0-rgba_175_216_248_0.5_:62-rgba_223_240_252_0.5_:70-rgba_175_216_248_0.5_:78-rgba_131_162_186_0.5_:100"><stop stop-opacity="0.5" stop-color="#83a2ba" offset="0%"></stop><stop stop-opacity="0.5" stop-color="#afd8f8" offset="62%"></stop><stop stop-opacity="0.5" stop-color="#dff0fc" offset="70%"></stop><stop stop-opacity="0.5" stop-color="#afd8f8" offset="78%"></stop><stop stop-opacity="0.5" stop-color="#83a2ba" offset="100%"></stop></linearGradient><linearGradient gradientTransform="matrix(1,0,0,1,0,0)" y2="0" x2="227" y1="0" x1="121" gradientUnits="userSpaceOnUse" id="50360_121_0_227_0_userSpaceOnUse_-rgba_131_162_186_1_:0-rgba_187_222_249_1_:20-rgba_215_236_252_1_:35-rgba_187_222_249_1_:50-rgba_120_149_171_1_:100"><stop stop-opacity="1" stop-color="#83a2ba" offset="0%"></stop><stop stop-opacity="1" stop-color="#bbdef9" offset="20%"></stop><stop stop-opacity="1" stop-color="#d7ecfc" offset="35%"></stop><stop stop-opacity="1" stop-color="#bbdef9" offset="50%"></stop><stop stop-opacity="1" stop-color="#7895ab" offset="100%"></stop></linearGradient></defs><g class="red-background-0"><rect fill-opacity="1" stroke-width="0" stroke-opacity="1" style="" stroke="#666666" fill="#ffffff" ry="0" rx="0" r="0" height="270" width="348" y="0" x="0"></rect></g><g opacity="1" style="opacity: 1;" class="red-dataset-1"><g transform="matrix(1,0,0,1,0,15)" style="" class="red-bottom-border-5"><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="0.5" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,143.58575743905126,122.13809296445221L174,139.5Z" stroke="#000000" fill="#ff8e46" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,143.58575743905126,122.13809296445221L174,139.5Z" stroke="#ff9958" fill="none" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="0.5" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,143.58575743905126,122.13809296445221L174,139.5Z" stroke="#000000" fill="#8bba00" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,143.58575743905126,122.13809296445221L174,139.5Z" stroke="#96c119" fill="none" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="0.5" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,144.63613074089886,121.85114425404564L174,139.5Z" stroke="#000000" fill="#f6bd0f" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,144.63613074089886,121.85114425404564L174,139.5Z" stroke="#f7c327" fill="none" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="0.5" d="M144.63613074089886,121.85114425404564A53,21.200000000000003,0,1,1,143.57771474622837,122.14034765353568L174,139.5Z" stroke="#000000" fill="#afd8f8" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" d="M144.63613074089886,121.85114425404564A53,21.200000000000003,0,1,1,143.57771474622837,122.14034765353568L174,139.5Z" stroke="#b7dcf8" fill="none" style=""></path></g><g class="red-outer-back-Side-6"><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M174,118.3L174,175.7Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#17360_121_0_227_0_userSpaceOnUse_-rgba_191_106_52_0.5_:0-rgba_255_142_70_0.5_:62-rgba_255_210_181_0.5_:70-rgba_255_142_70_0.5_:78-rgba_191_106_52_0.5_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M174,118.3L174,175.7Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#27360_121_0_227_0_userSpaceOnUse_-rgba_104_139_0_0.5_:0-rgba_139_186_0_0.5_:62-rgba_209_228_153_0.5_:70-rgba_139_186_0_0.5_:78-rgba_104_139_0_0.5_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,144.63613074089886,121.85114425404564v15A53,21.200000000000003,0,0,0,143.58575743905126,137.1380929644522Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#37360_121_0_227_0_userSpaceOnUse_-rgba_184_141_11_0.5_:0-rgba_246_189_15_0.5_:62-rgba_252_229_159_0.5_:70-rgba_246_189_15_0.5_:78-rgba_184_141_11_0.5_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M121,139.5A53,21.200000000000003,0,0,1,143.57771474622837,122.14034765353568v15A53,21.200000000000003,0,0,0,121,154.5ZM227,139.5A53,21.200000000000003,0,0,0,144.63613074089886,121.85114425404564v15A53,21.200000000000003,0,0,1,227,154.5Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#47360_121_0_227_0_userSpaceOnUse_-rgba_131_162_186_0.5_:0-rgba_175_216_248_0.5_:62-rgba_223_240_252_0.5_:70-rgba_175_216_248_0.5_:78-rgba_131_162_186_0.5_:100')" style="opacity: 1; fill-opacity: 1;"></path></g><g class="red-slicingWalls-back-Side-7"><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M174,118.3L174,175.7Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#50360_121_0_227_0_userSpaceOnUse_-rgba_131_162_186_1_:0-rgba_187_222_249_1_:20-rgba_215_236_252_1_:35-rgba_187_222_249_1_:50-rgba_120_149_171_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M144.63613074089886,121.85114425404564L144.63613074089886,136.85114425404564,174,154.5,174,139.5Z" stroke="#b7dcf8" fill="#8cacc6" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M144.63613074089886,121.85114425404564L144.63613074089886,136.85114425404564,174,154.5,174,139.5Z" stroke="#f7c327" fill="#c4970c" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M174,118.3L174,175.7Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#36360_121_0_227_0_userSpaceOnUse_-rgba_184_141_11_1_:0-rgba_247_199_51_1_:20-rgba_251_222_135_1_:35-rgba_247_199_51_1_:50-rgba_169_130_10_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M143.58575743905126,122.13809296445221L143.58575743905126,137.1380929644522,174,154.5,174,139.5Z" stroke="#f7c327" fill="#c4970c" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M143.58575743905126,122.13809296445221L143.58575743905126,137.1380929644522,174,154.5,174,139.5Z" stroke="#96c119" fill="#6f9400" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M174,118.3L174,175.7Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#26360_121_0_227_0_userSpaceOnUse_-rgba_104_139_0_1_:0-rgba_156_196_38_1_:20-rgba_197_221_128_1_:35-rgba_156_196_38_1_:50-rgba_95_128_0_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M143.58575743905126,122.13809296445221L143.58575743905126,137.1380929644522,174,154.5,174,139.5Z" stroke="#96c119" fill="#6f9400" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M143.58575743905126,122.13809296445221L143.58575743905126,137.1380929644522,174,154.5,174,139.5Z" stroke="#ff9958" fill="#cc7138" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M174,118.3L174,175.7Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#16360_121_0_227_0_userSpaceOnUse_-rgba_191_106_52_1_:0-rgba_255_159_97_1_:20-rgba_255_199_163_1_:35-rgba_255_159_97_1_:50-rgba_175_97_48_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M143.58575743905126,122.13809296445221L143.58575743905126,137.1380929644522,174,154.5,174,139.5Z" stroke="#ff9958" fill="#cc7138" style=""></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0.1" stroke-opacity="0.8" fill-opacity="1" d="M143.57771474622837,122.14034765353568L143.57771474622837,137.14034765353568,174,154.5,174,139.5Z" stroke="#b7dcf8" fill="#8cacc6" style=""></path></g><g class="red-inner-back-Side-8"></g><g class="red-inner-front-Side-9"></g><g class="red-slicingWalls-front-Side-10"><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M227,139.5A53,21.200000000000003,0,1,1,121,139.5v15A53,21.200000000000003,0,1,0,227,154.5Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#46360_121_0_227_0_userSpaceOnUse_-rgba_131_162_186_1_:0-rgba_187_222_249_1_:20-rgba_215_236_252_1_:35-rgba_187_222_249_1_:50-rgba_120_149_171_1_:100')" style="opacity: 1; fill-opacity: 1;"></path></g><g class="red-top-Side-11"><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,143.58575743905126,122.13809296445221L174,139.5Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#12xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_255_181_135_1_:0-rgba_242_134_66_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M144.1596110722767,122.95705084348748A52,20.200000000000003,0,0,1,144.1596110722767,122.95705084348748L143.58575743905126,122.13809296445221,143.58575743905126,123.13809296445221A53,21.200000000000003,0,0,0,143.58575743905126,123.13809296445221L143.58575743905126,122.13809296445221Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#13360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,143.58575743905126,122.13809296445221L174,139.5Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#22xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_179_210_89_1_:0-rgba_132_176_0_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M144.1596110722767,122.95705084348748A52,20.200000000000003,0,0,1,144.1596110722767,122.95705084348748L143.58575743905126,122.13809296445221,143.58575743905126,123.13809296445221A53,21.200000000000003,0,0,0,143.58575743905126,123.13809296445221L143.58575743905126,122.13809296445221Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#23360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M143.58575743905126,122.13809296445221A53,21.200000000000003,0,0,1,144.63613074089886,121.85114425404564L174,139.5Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#32xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_249_212_99_1_:0-rgba_233_179_14_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M144.1596110722767,122.95705084348748A52,20.200000000000003,0,0,1,145.1901660099385,122.68363744960952L144.63613074089886,121.85114425404564,144.63613074089886,122.85114425404564A53,21.200000000000003,0,0,0,143.58575743905126,123.13809296445221L143.58575743905126,122.13809296445221Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#33360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M144.63613074089886,121.85114425404564A53,21.200000000000003,0,1,1,143.57771474622837,122.14034765353568L174,139.5Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#42xr_158.1_164.94_53_174_139.5_userSpaceOnUse_rgba_203_230_250_1_:0-rgba_166_205_235_1_:100')" style="opacity: 1; fill-opacity: 1;"></path><path transform="matrix(1,0,0,1,0,0)" stroke-width="0" fill-opacity="1" opacity="1" d="M145.1901660099385,122.68363744960952A52,20.200000000000003,0,1,1,144.151720128375,122.95919917931231L143.57771474622837,122.14034765353568,143.57771474622837,123.14034765353568A53,21.200000000000003,0,1,0,144.63613074089886,122.85114425404564L144.63613074089886,121.85114425404564Z" stroke="#000000" fill="url('http://22.246.1.6:7000/homePage/home.action#43360_121_0_227_0_userSpaceOnUse_-rgba_255_255_255_0_:0-rgba_255_255_255_0.16666666666666669_:20-rgba_255_255_255_0.33333333333333337_:35-rgba_255_255_255_0.16666666666666669_:50-rgba_255_255_255_0_:100')" style="opacity: 1; fill-opacity: 1;"></path></g><text font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="123.9" x="90.7927972022724" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="90.7927972022724" dy="3.9999984741210994">钻石级, 0%</tspan></text><path stroke-opacity="1" stroke-width="0.7" d="M143.58575743905126,122.13809296445221L100.7927972022724,123.9L95.7927972022724,123.9" stroke="#d8dcc5" fill="none" style=""></path><text font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="109.9" x="105.05197405589773" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="105.05197405589773" dy="3.9999984741210994">白金级, 0%</tspan></text><path stroke-opacity="1" stroke-width="0.7" d="M143.58575743905126,122.13809296445221L115.05197405589773,109.9L110.05197405589773,109.9" stroke="#d8dcc5" fill="none" style=""></path><text font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="end" y="95.9" x="134.10879194882125" style="text-anchor: end; font-family: Verdana; font-size: 10px;"><tspan x="134.10879194882125" dy="3.9999984741210994">金卡级, 0.38%</tspan></text><path stroke-opacity="1" stroke-width="0.7" d="M144.10879194882125,121.99335814616111L144.10879194882125,95.9L139.10879194882125,95.9" stroke="#d8dcc5" fill="none" style=""></path><text font-size="10px" font-family="Verdana" fill="#4a4a4a" stroke="none" text-anchor="start" y="184.3231195913072" x="227.99680223321434" style="text-anchor: start; font-family: Verdana; font-size: 10px;"><tspan x="227.99680223321434" dy="3.9999994741197042">普通级, 99.62%</tspan></text><path stroke-opacity="1" stroke-width="0.7" d="M203.89526305590203,164.50553396760426L217.99680223321434,184.3231195913072L222.99680223321434,184.3231195913072" stroke="#d8dcc5" fill="none" style=""></path></g><g class="red-caption-53"><text font-weight="bold" font-size="12px" font-family="Verdana" fill="#666666" stroke="none" text-anchor="middle" y="15" x="174" style="text-anchor: middle; font-family: Verdana; font-size: 12px; font-weight: bold;"><tspan x="174" dy="13">客户结构分布图</tspan></text></g><g class="red-hot-2"></g><g class="red-buttons-4"></g><text font-family="Verdana" font-size="9px" fill-opacity="0.5" fill="#000000" stroke="none" text-anchor="start" y="266" x="6" style="text-anchor: start; font-size: 9px; font-family: Verdana; cursor: pointer;"><tspan x="6" dy="-1.399993896484375">FusionCharts XT Trial</tspan></text></svg></span></div>
+						</div>
+					</div>
+  </div>
+
+</div></div><div style="height: 253.778px;" class="w clear" id="pCol1"><div style="height: 253.778px;" class=" fl w33b" id="NoticeDaily_portalets">
+
+
+
+
+                	<div class=" pl10 " style="height: $heightpx;width: $widthpx">
+		                	<div class=" h30 pt5 lineS1_b lh25 f16 tabTitle tc c2">
+		                    	<div id="mrgg"><span class=" hand w80 h30 lh30 bc5 c1 fl">每日公告</span></div>
+		                    </div>
+                        <div class="tabContent">
+                            <div id="mrggson" class="istab "> 
+                        		<ul>
+                        			  
+				                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+					                        	<a class="fl" href="javascript:void(0)" title="关于开展天弘同利分级债基金持续营销活动的通知" onclick="showNoticeAlert(
+				                            		20140911404
+				                            		);">关于开展天弘同利分级债基金持续</a>
+					                        	<span class="icoNew hand" style=""></span>
+					                        	<span class="fr f10 hand">20140911</span>
+				                        	</li>
+                        			  
+				                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+					                        	<a class="fl" href="javascript:void(0)" title="关于发售邮银财富？债券2014年第63期等20只人民币理财产品的通知" onclick="showNoticeAlert(
+				                            		20140829301
+				                            		);">关于发售邮银财富？债券2014</a>
+					                        	<span class="icoNew hand" style="display:none"></span>
+					                        	<span class="fr f10 hand">20140829</span>
+				                        	</li>
+                        			  
+				                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+					                        	<a class="fl" href="javascript:void(0)" title="嘉实丰益策略定开债开放申购、赎回及转换业务的公告" onclick="showNoticeAlert(
+				                            		20140828202
+				                            		);">嘉实丰益策略定开债开放申购、赎</a>
+					                        	<span class="icoNew hand" style="display:none"></span>
+					                        	<span class="fr f10 hand">20140828</span>
+				                        	</li>
+                        			  
+				                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+					                        	<a class="fl" href="javascript:void(0)" title="关于发售邮银财富·债券2014年第48期等20只人民币理财计划的通知" onclick="showNoticeAlert(
+				                            		20140822201
+				                            		);">关于发售邮银财富·债券2014</a>
+					                        	<span class="icoNew hand" style="display:none"></span>
+					                        	<span class="fr f10 hand">20140822</span>
+				                        	</li>
+                        			  
+                                </ul>
+                                <div class=" tr lh25 h25"><a href="javascript:void(0)" onclick="noticeAlert();">更多</a></div>   
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+
+</div><div style="height: 253.778px;" class=" fl w33b" id="Message_portalets">
+
+
+
+
+                	<div class=" pl10 " style="height: $heightpx;width: $widthpx">
+                    	<div class=" h30 pt5 lineS1_b lh25 f16 tabTitle tc c2">
+                        	<div id="jrzx" onclick="jrzxFun();"><span class=" hand w80 h30 lh30 bc5 c1 fl">金融资讯</span></div>
+                            <div id="yw" onclick="ywFun();"><span class=" hand w80 h30 lh30 fl">要闻</span></div>
+                        </div>
+                        <div class="tabContent">
+                            <div id="jrzxson" class="istab "> 
+                        		<ul>
+                        			
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="" onclick="showFinanceAlert(
+                            		    630348001
+                            		     );">揽入贝尔信20%股权 捷成股份加码智慧城市建设</a> </li>
+                                	
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="" onclick="showFinanceAlert(
+                            		    630344701
+                            		     );">中央部委密集调研 农垦改革启幕</a> </li>
+                                	
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="李克强出席夏季达沃斯论坛致辞 中国经济发展传出新信号" onclick="showFinanceAlert(
+                            		    630344301
+                            		     );">李克强出席夏季达沃斯论坛致辞 中国经济发展传出</a> </li>
+                                	
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="" onclick="showFinanceAlert(
+                            		    630344101
+                            		     );">发改委简政放权 有数量更有“含金量”</a> </li>
+                                	
+                                </ul>
+                                <div class=" tr lh25 h25"><a href="javascript:void(0)" onclick="financeAlert();">更多</a></div>       
+                            </div>
+                            <div id="ywson" class="istab none">
+                            	<ul>
+                                	<ul>
+                                	
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="" onclick="showNewsInfoAlert(
+                            		    20140911509
+                            		     );">行业发展动态日报-20140911</a> </li>
+                                	
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="" onclick="showNewsInfoAlert(
+                            		    20140911508
+                            		     );">行业发展动态日报-20140910</a> </li>
+                                	
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="" onclick="showNewsInfoAlert(
+                            		    20140909507
+                            		     );">行业发展动态日报-20140909</a> </li>
+                                	
+                                		<li class=" h30 lh30 overh pl10 pr10 lineD_b"><a class="fl" href="javascript:void(0)" title="" onclick="showNewsInfoAlert(
+                            		    20140905408
+                            		     );">宏观经济与金融市场日报-20140905</a> </li>
+                                	
+                                   
+                                </ul>
+                                <div class=" tr lh25 h25"><a href="javascript:void(0)" onclick="newsInfoAlert();">更多</a></div>    
+                            </ul></div>
+                        </div>
+                    </div>
+
+</div><div style="height: 253.778px;" class=" fl w33b" id="WaitingSale_portalets">      
+      
+
+
+
+      <script type="text/javascript" src="/js/homePage/portalets/jquery.waitingsale.js"></script>
+                	<div class=" pl10 " style="height: $heightpx;width: $widthpx">
+                    	<div class="  h30 pt10 lineS1_b lh25 f16 c1">
+                        	<span class=" icon4 fl"></span>
+                        	<span class="  fr saleWaiting tc " style="display:inline;">/<a href="javascript:void(0)" onmouseover="waitingSaleChange(5,1,2,3,4);">&nbsp;5&nbsp;</a></span>
+                        	<span class="  fr saleWaiting tc " style="display:inline;">/<a href="javascript:void(0)" onmouseover="waitingSaleChange(4,5,1,2,3);">&nbsp;4&nbsp;</a></span>
+                        	<span class="  fr saleWaiting tc " style="display:inline;">/<a href="javascript:void(0)" onmouseover="waitingSaleChange(3,4,5,1,2);">&nbsp;3&nbsp;</a></span>
+                        	<span class="  fr saleWaiting tc " style="display:inline;">/<a href="javascript:void(0)" onmouseover="waitingSaleChange(2,3,4,5,1);">&nbsp;2&nbsp;</a></span>
+                        	<span class="  fr saleWaiting tc " style="display:inline;">/<a href="javascript:void(0)" onmouseover="waitingSaleChange(1,2,3,4,5);">&nbsp;1&nbsp;</a></span>
+                        	待售产品信息  
+                        </div>
+                        <div id="saleWaiting1" class="">
+                    	<ul>
+	                    	
+	                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400001M09','02');" title="">
+		                        	邮银财富.e享2014年第9期
+		                        	</a> 
+	                        	</li>
+	                        
+	                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006G85','02');" title="">
+		                        	邮银财富.债券2014年第85期（福建）
+		                        	</a> 
+	                        	</li>
+	                        
+	                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006G86','02');" title="">
+		                        	邮银财富.债券2014年第86期（江苏）
+		                        	</a> 
+	                        	</li>
+	                        
+	                        	<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006G89','02');" title="">
+		                        	邮银财富.债券2014年第89期（河南）
+		                        	</a> 
+	                        	</li>
+	                        
+                        </ul>
+                        </div>
+                        
+                        
+                         <div id="saleWaiting2" class="none">
+                    	<ul>
+	                    	
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400001G84','02');" title="">
+		                        	邮银财富.债券2014年第84期（内蒙古）
+		                        	</a> 
+	                        	</li>	                        	
+
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400003G79','02');" title="">
+		                        	邮银财富.债券2014年第79期（广东）
+		                        	</a> 
+	                        	</li>	                        	
+
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400003G80','02');" title="">
+		                        	邮银财富.债券2014年第80期
+		                        	</a> 
+	                        	</li>	                        	
+
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400003G88','02');" title="">
+		                        	邮银财富.债券2014年第88期（吉林）
+		                        	</a> 
+	                        	</li>	                        	
+
+	                        
+                        </ul>
+                        </div>
+                         <div id="saleWaiting3" class="none">
+                    	<ul>
+	                    	
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006G81','02');" title="">
+		                        	邮银财富.债券2014年第81期
+		                        	</a> 
+	                        	</li>
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006G90','02');" title="">
+		                        	邮银财富.债券2014年第90期（安徽）
+		                        	</a> 
+	                        	</li>
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006G92','02');" title="">
+		                        	邮银财富.债券2014年第92期
+		                        	</a> 
+	                        	</li>
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006H18','02');" title="">
+		                        	邮银财富.瑞享2014年第18期
+		                        	</a> 
+	                        	</li>
+	                        
+                        </ul>
+                        </div>
+                        <div id="saleWaiting4" class="none">
+                    	<ul>
+	                    	
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400006M07','02');" title="">
+		                        	邮银财富.e享2014年第7期
+		                        	</a> 
+	                        	</li>
+
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400012G94','02');" title="">
+		                        	邮银财富.债券2014年第94期（安徽）
+		                        	</a> 
+	                        	</li>
+
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400001G93','02');" title="">
+		                        	邮银财富.债券2014年第93期
+		                        	</a> 
+	                        	</li>
+
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400002M08','02');" title="">
+		                        	邮银财富.e享2014年第8期
+		                        	</a> 
+	                        	</li>
+
+	                        
+                        </ul>
+                        </div>
+                         <div id="saleWaiting5" class="none">
+                    	<ul>
+	                    	
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400003G95','02');" title="">
+		                        	邮银财富.债券2014年第95期（浙江）
+		                        	</a> 
+	                        	</li>
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400004G91','02');" title="">
+		                        	邮银财富.债券2014年第91期（山西）
+		                        	</a> 
+	                        	</li>
+	                        
+								<li class=" h30 lh30 overh pl10 pr10 lineD_b">
+		                        	<a class="fl" href="javascript:showWaitingSaleAlert('1400004J07','02');" title="">
+		                        	邮银财富.智享2014年第7期
+		                        	</a> 
+	                        	</li>
+	                        
+                        </ul>
+                        </div>
+                        
+                        <div class=" tr lh25 h25"><a href="javascript:waitingSaleAlert();">更多</a></div>
+                    </div>
+</div></div></div>
+				
+			</td></tr></tbody></table>
+<script>
+var tabpage = new TabPage("page1");
+tabpage.type = "DIV";
+tabpage.title = "工作首页";
+tabpage.cache = false;
+tabpage.allowSelect = true;
+tabpage.allowReload = false;
+tabpage.showCloseButton = false;
+tabpage.init();
+var tabgroup = $o("tabs1");
+tabgroup.append(tabpage);
+</script>
+
+		</div></td></tr></tbody></table></td></tr></tbody></table></div>
+<script>
+var tabgroup = $o("tabs1");
+tabgroup.init();
+</script>
+
+	</div>
+</div>
+ 
+    	<!-- center end -->
+    </div>
+<!--中部end-->
+<!--底部start-->
+
+<script type="text/javascript" src="/js/homePage/jqueryPortal/jquery.bottom.js"></script>
+<!--底部-->
+<div class="foot">
+	<div class="fl w400 ml10">
+		<span id="date">2014年 9月11日 星期四 19:59:31</span>
+	</div>
+	<div class="fr w200 mr10 tr">
+		版权所有 中国邮政储蓄银行
+	</div>
+	</div>
+<!--底部end-->
+ 
+<!--底部end-->
+	<div id="MessageWinId" class="MessageWin" style="display: block; width: 30px;">
+	        <div id="messageLeft" class="MessageLeftInTipChg">
+		   		 变动提醒
+		    </div>
+	        <div style="width: 0px; display: block;" id="tipMessage" class="Message">
+				   <script>
+var tabgroup = new TabPane("tipstips");
+tabgroup.width = "240px;";
+tabgroup.height = "100%";
+tabgroup.titleAlign = "top";
+</script><div class="tab" id="tipstips_container" style="width:240px;;height:100%;"><table style="width:100%;height:100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="height:22px" valign="top">
+<table class="nav " border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style="width: 100%;" id="tipstips_nav_tr"><td class="active"><table class="container" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><div class="left"></div></td><td nowarp="" class="mid"><div id="RD-01" flag="RD-01" style="white-space: nowrap; page-break-before: always; page-break-after: always;">机构柜员变动提醒</div></td><td><div class="right"></div></td></tr></tbody></table></td><td class="nomal"><table class="container" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><div class="left"></div></td><td nowarp="" class="mid"><div id="RD-06" flag="RD-06" style="white-space: nowrap; page-break-before: always; page-break-after: always;">积分系数</div></td><td><div class="right"></div></td></tr></tbody></table></td><td style="overflow: hidden; width: 100%; background: none repeat scroll 0% 0% transparent;" class="right-top">&nbsp;</td><td id="tipstips_nav_pilot_container" style="width: 100%; background: none repeat scroll 0% 0% transparent;" class="right-top" align="right"><div style="display:none;white-space:nowrap;" id="tipstips_nav_pilot">	</div></td></tr></tbody></table></td></tr><tr><td style="width:240px;;height:100%;">
+<table style="width:100%;height:100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="tab-body" id="tipstips_body" style="width:100%;height:100%" valign="top">
+<div style="width:100%;height:100%;">
+				   
+				   <table style="width: 100%; height: 100%;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">	<tbody><tr>		<td id="RD-01_container" style="width: 100%; height: 100%;" valign="top">
+
+
+
+
+
+<div align="center">
+<ul class="personOrgUl" id="personOrgUl">
+		    <li><a onclick="tellerTipAlert();" href="javascript:void(0)" title="">您有（<font style="color:#f00;" id="tellerLiIdTip">9</font>）条人员信息未读</a></li>
+        	<li><a onclick="instTipAlert();" href="javascript:void(0)" title="">您有（<font style="color:#f00;" id="instLiIdTip">0</font>）条机构信息未读</a></li>
+</ul>
+</div>
+
+ </td>	</tr></tbody></table><table style="width: 100%; height: 100%; display: none;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">	<tbody><tr>		<td id="RD-06_container" style="display:none;width:100%;height:100%" valign="top">
+
+
+
+
+
+<div align="center">
+<ul class="scoreUl" id="scoreUl">
+		    <li><a onclick="scoreTipAlert();" href="javascript:void(0)" title="">您有（<font style="color:#f00;" id="scoreLiIdTip">0</font>）条积分系数变动提醒未读</a></li>
+</ul>
+</div>
+
+ </td>	</tr></tbody></table></div></td></tr></tbody></table></td></tr></tbody></table></div>
+<script>
+var tabgroup = $o("tipstips");
+tabgroup.init();
+</script>
+ 
+			</div>			
+	</div>
+</div>
+
+
+ <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div style="position: absolute; top: -9999em; white-space: nowrap; padding: 0px; width: 1px; height: 1px; overflow: hidden;" class="_SmartLabel_Container"><span style="font-family: Verdana; font-weight: bold; font-size: 12px; line-height: 14px; color: rgb(102, 102, 102); display: inline-block;">客户结构分布图</span><canvas style="width: 0px; height: 0px;"></canvas><span style="font-family: Verdana; font-size: 10px; line-height: 12px; color: rgb(74, 74, 74); display: inline-block;">普通级, 99.62%</span><canvas style="width: 0px; height: 0px;"></canvas></div><span style="display: none; position: absolute; text-align: left; margin: 0px; z-index: 999; pointer-events: none; top: 908px; left: 1183px;" id="fusioncharts-tooltip-element"><span style="overflow: hidden; display: block; font-family: Verdana; font-size: 10px; line-height: 12px; color: rgb(74, 74, 74); background-color: rgb(255, 255, 255); border-color: rgb(84, 84, 84); border-width: 1px; padding: 3px; box-shadow: 1px 1px 3px rgba(64, 64, 64, 0.4); border-radius: 0px; border-style: solid; white-space: normal;">普通级, 99.62%</span></span><div style="position: absolute; top: -9999em; white-space: nowrap; padding: 0px; width: 1px; height: 1px; overflow: hidden;" class="_SmartLabel_Container"><span style="font-family: Verdana; font-size: 10px; line-height: 12px; color: rgb(74, 74, 74); display: inline-block;">W</span><canvas style="width: 0px; height: 0px;"></canvas><span style="font-family: Verdana; font-weight: bold; font-size: 10px; line-height: 12px; color: rgb(74, 74, 74); display: inline-block;">资产余额(万元)</span><canvas style="width: 0px; height: 0px;"></canvas><span style="font-family: Verdana; font-weight: bold; font-size: 12px; line-height: 14px; color: rgb(102, 102, 102); display: inline-block;">客户数量及资产变动分析图</span><canvas style="width: 0px; height: 0px;"></canvas></div><div style="display: none;" class="eos-page-mask" id="eos_pageMask_div"></div><div class="eos-page-mask" id="_eos_page_mask" style="display: none; top: 0px; left: 0px; width: 1423px; height: 1321px; z-index: 1002;"></div></body>

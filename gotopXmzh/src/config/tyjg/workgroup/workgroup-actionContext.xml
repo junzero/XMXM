@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- 查询一级工作组 -->
+<bean class="com.gotop.tyjg.workgroup.action.GroupmanagerAction" id="groupmanageraction" name="groupmanagerAction" singleton="false">
+    <property name="groupmanagerService" ref="groupmanagerService" />
+  </bean>
+
+  <bean class="com.gotop.tyjg.workgroup.action.ManagertreeAction" id="managertreeaction" name="managertreeAction" singleton="false">
+    <property name="managertreeService" ref="managertreeService" />
+  </bean>
+  </beans>

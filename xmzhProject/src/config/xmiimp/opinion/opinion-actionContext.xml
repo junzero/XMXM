@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.opinion.action.TApproveOpninionAction" id="tApproveOpninionaction" name="tApproveOpninionAction" singleton="false">
+   <property name="tApproveOpninionService" ref="tApproveOpninionService" />
+   <property name="jbpmService" ref="jbpmService" />
+  </bean>
+
+  <bean class="com.gotop.opinion.action.TDefaultOpinionAction" id="tDefaultOpinionaction" name="tDefaultOpinionAction" singleton="false">
+    <property name="tDefaultOpinionService" ref="tDefaultOpinionService" />
+  </bean>
+  </beans>

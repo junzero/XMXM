@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 保存登录用户信息、机构信息、角色信息的对象 -->
+	<bean class="com.gotop.vo.system.MUOUserSession" id="userSession"></bean>
+	<!-- 用户登录服务 -->
+	<bean class="com.gotop.tyjg.login.service.imp.LoginService" id="loginService">
+		<property name="loginDao" ref="loginDao" />
+		<property name="userSession" ref="userSession" />
+	</bean>
+</beans>

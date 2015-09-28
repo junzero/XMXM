@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Managertree_SqlMap" >
+	<typeAlias alias="organization" type="com.gotop.tyjg.common.model.Organization"/>
+	<typeAlias alias="employee" type="com.gotop.tyjg.common.model.Employee"/>
+	<typeAlias alias="group" type="com.gotop.tyjg.common.model.Group"/>
+	<typeAlias alias="role" type="com.gotop.tyjg.common.model.Role"/>
+	<!-- 查询行政树的根机构信息  -->
+
+	<select id="selectAdminTreeRoot" parameterClass="java.util.HashMap" resultClass="organization">
+		SELECT ORGID     AS orgid,
+		       ORGNAME   AS orgname,
+		       ORGCODE   AS orgcode,
+		       ORGDEGREE AS orgdegree,
+		       ORGTYPE   AS orgtype,
+		       YSJGBH    AS ysjgbh,
+		       ORGSEQ    AS orgseq
+		  FROM OM_ORGANIZATION A
+		 WHERE 1=1
+		 	<isNotNull property="parentid">
+		 		<!-- 查询行政树子机构信息 -->
+		 		AND A.PARENTORGID = #parentid#
+		 	</isNotNull>
+		 	<isNotNull property="parent">
+		 		AND A.PARENTORGID IS NULL
+		 	</isNotNull>
+		 	<isNotNull property="startorgcode">
+		 			AND A.ORGCODE = #startorgcode#
+		 	</isNotNull>
+		 	<isNotNull property="startorgid">
+		 			AND A.ORGID = #startorgid#
+		 	</isNotNull>
+		 	<isNotNull property="orgdegree">
+				 <![CDATA[
+				   AND A.ORGDEGREE <= #orgdegree#
+				   ]]>
+		   </isNotNull>
+		   <isNotNull property="jgsx">
+		   		AND A.JGSX = #jgsx#
+		   </isNotNull>
+		   <isNotNull property="groupID">
+		   		AND A.orgid not in (select MEMBERID from OM_GROUPMEMBER where Flag = 2 and groupid = #groupID#) 
+		   </isNotNull>
+		   AND A.STATUS = 'running'
+		   ORDER BY DISPLAYORDER asc,ORGCODE asc
+	</select>
+	<!-- 查询机构下的人员 -->
+	<select id="selectEmp" parameterClass="java.util.HashMap" resultClass="employee">
+		SELECT OEL.EMPID empid,
+		       OEL.EMPCODE empcode,
+		       OEL.EMPNAME empname,
+		       OEL.GENDER gender,
+		       OEL.CARDTYPE cardtype,
+		       OEL.CARDNO cardno
+		  FROM OM_EMPLOYEE OEL, OM_EMPORG OEO
+		 WHERE OEL.EMPID = OEO.EMPID
+		   <isNotNull property="groupID">
+		   		AND OEL.empid not in (select empid from om_empgroup where groupid = #groupID#) 
+		   </isNotNull>
+		   AND OEO.ORGID = #orgid#
+		 ORDER BY OEL.DISPLAYORDER, OEL.EMPNAME ASC
+	</select>
+	<!-- 查询登录用户可操作的群组 -->
+	<select id="selectGroup" resultClass="group" parameterClass="java.util.HashMap">
+	 <![CDATA[
+		SELECT GROUPID groupid,GROUPNAME groupname FROM OM_GROUP WHERE GROUPID IN 
+			]]>    
+	            <iterate property="groupids" conjunction="," open="(" close=")">
+              		#groupids[]#
+          		</iterate>
+	       <![CDATA[ 
+		ORDER BY GROUPID
+		]]> 
+	</select>
+	<!-- 查询群组下的人员 -->
+	<select id="selectGroupEmp" parameterClass="java.lang.String" resultClass="employee">
+           SELECT OM_EMPLOYEE.EMPID empid,
+                  OM_EMPLOYEE.EMPNAME empname,
+                  OM_EMPLOYEE.EMPCODE empcode,
+                  OM_ORGANIZATION.ORGCODE orgcode,
+                  OM_EMPLOYEE.CARDTYPE cardtype,
+                  OM_EMPLOYEE.CARDNO cardno,
+                  OM_ORGANIZATION.ORGID orgid,
+                  OM_ORGANIZATION.YSJGBH ysjgbh
+             FROM OM_ORGANIZATION, OM_EMPGROUP, OM_EMPLOYEE, OM_EMPORG
+            WHERE OM_EMPORG.ORGID = OM_ORGANIZATION.ORGID
+              AND OM_EMPORG.EMPID = OM_EMPGROUP.EMPID
+              AND OM_EMPLOYEE.EMPID = OM_EMPGROUP.EMPID
+              AND OM_EMPORG.ISMAIN = 'y'
+              AND OM_EMPLOYEE.EMPSTATUS = 'on'
+              AND OM_EMPGROUP.GROUPID = #groupid#
+            ORDER BY OM_ORGANIZATION.ORGDEGREE,
+                     OM_ORGANIZATION.DISPLAYORDER,
+                     OM_EMPLOYEE.DISPLAYORDER
+	</select>
+	<!-- 查询群组下的机构 -->
+	<select id="selectGroupOrg" parameterClass="java.lang.String" resultClass="organization">
+		SELECT OMGROUP.GROUPID groupid,
+		       GROUPMEMBER.FLAG flag,
+		       OMORG.ORGID orgid,
+		       OMORG.ORGCODE orgcode,
+		       OMORG.ORGNAME orgname,
+		       OMORG.ORGDEGREE orgdegree
+		  FROM OM_GROUPMEMBER GROUPMEMBER, OM_GROUP OMGROUP, OM_ORGANIZATION OMORG
+		 WHERE OMORG.ORGID = GROUPMEMBER.MEMBERID
+		   AND OMGROUP.GROUPID = GROUPMEMBER.GROUPID
+		   AND GROUPMEMBER.FLAG = 2
+		   AND OMGROUP.GROUPID = #groupid#
+		 ORDER BY OMORG.ORGDEGREE, OMORG.DISPLAYORDER
+	</select>
+	<select id="selectBusessTreeInfo" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+			SELECT ABF_T_ZZJGSB.ID,
+			       ABF_T_ZZJGSB.ZZJGSMC,
+			       ABF_T_ZZJGSB.GNSM,
+			       ABF_T_ZZJGSB.SXFL
+			  FROM ABF_T_ZZJGSB
+			 WHERE ABF_T_ZZJGSB.ID = #topid#
+	</select>
+	
+	<select id="selectStartId" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT ID
+		  FROM ABF_T_ZZJGGXSB
+		 WHERE ABF_T_ZZJGGXSB.TOPID = #topid#
+		 <isNotNull property="startorgid">
+		   AND ABF_T_ZZJGGXSB.ORGID = #startorgid#
+		   </isNotNull>
+		   <isNotNull property="startorgcode">
+		   AND ABF_T_ZZJGGXSB.ORGCODE =#startorgcode#
+		   </isNotNull>
+	</select>
+	
+	<select id="selectBusessTreeOrg" parameterClass="java.util.HashMap" resultClass="organization">
+		SELECT ABF_T_ZZJGGXSB.ID id,
+		       ABF_T_ZZJGGXSB.ORGID orgid,
+		       ABF_T_ZZJGGXSB.ORGCODE orgcode,
+		       ABF_T_ZZJGGXSB.ORGNAME orgname,
+		       ABF_T_ZZJGGXSB.ORGDEGREE orgdegree,
+		       ABF_T_ZZJGGXSB.ORGTYPE orgtype,
+		       ABF_T_ZZJGGXSB.MAPPID mappid,
+		       ABF_T_ZZJGGXSB.SOURCEORGTYPE sourceorgtype
+		  FROM ABF_T_ZZJGGXSB
+		 WHERE 1 = 1
+		 <isNotNull property="parentid">
+		   		AND ABF_T_ZZJGGXSB.PARENTID =#parentid#
+		   </isNotNull>
+		   <isNotNull property="startid">
+		   		AND ABF_T_ZZJGGXSB.ID =#startid#
+		   </isNotNull>
+		   <isNotNull property="orgdegree">
+		   <![CDATA[
+		   		AND ABF_T_ZZJGGXSB.ORGDEGREE <=#orgdegree#
+		  ]]>
+		   </isNotNull>
+		   		AND ABF_T_ZZJGGXSB.SOURCEORGTYPE = 4
+		   <isNotNull property="jgsx">
+		   		AND ABF_T_ZZJGGXSB.JGSX =#jgsx#
+		   </isNotNull>
+		   <isNotNull property="orgtype">
+		   		AND ABF_T_ZZJGGXSB.ORGTYPE IN 
+		  		<iterate property="orgtype" conjunction="," open="(" close=")">
+		   			#orgtype[]#
+		   		</iterate>
+		   </isNotNull>
+		 ORDER BY ABF_T_ZZJGGXSB.DISPLAYORDER, ABF_T_ZZJGGXSB.ORGCODE
+	</select>
+	<!-- 查询业务角色 -->
+	<select id="selectBusessRole" parameterClass="java.util.HashMap" resultClass="role">
+		SELECT ROLEID        roleid,
+		       ROLENAME      rolename,
+		       ROLETYPE      roletype,
+		       ROLEDESC      roledesc,
+		       APPID         appid,
+		       AUTO          auto,
+		       ROLETYPEFIELD roletypefield
+		  FROM AC_ROLE
+		 WHERE AC_ROLE.ROLETYPEFIELD = #jgsx#
+		   AND AC_ROLE.ROLETYPE = 0
+		   <isNotNull property="groupID">
+		   		AND AC_ROLE.roleid not in (select MEMBERID from OM_GROUPMEMBER where Flag = 3 and groupid = #groupID#) 
+		   </isNotNull>
+	</select>
+	<select id="countBusessRole" parameterClass="java.util.HashMap" resultClass="java.lang.Long">
+				SELECT COUNT(1)
+				FROM AC_ROLE
+				 WHERE AC_ROLE.ROLETYPEFIELD = #jgsx#
+				   AND AC_ROLE.ROLETYPE = 0
+	</select>
+	
+	<!-- 查询AUTO -->
+	<select id="selectAuto" parameterClass="java.lang.String" resultClass="java.lang.String">
+		SELECT auto autovalue FROM AC_ROLE WHERE AC_ROLE.ROLEID =#roleid#
+	</select>
+</sqlMap>

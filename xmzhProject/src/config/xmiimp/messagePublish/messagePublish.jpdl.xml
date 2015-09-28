@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process key="messagePublish" name="messagePublish" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="22,143,48,48" name="start1">
+      <transition g="-17,-24" name="申请" to="信息发布申请"/>
+   </start>
+   <task assignee="${user}" form="/messagePublish/tMessagePublishAction_messagePublish.action" g="151,142,92,52" name="信息发布申请">
+      <transition g="-27,-23" name="提交审核" to="部门领导审核"/>
+      <transition g="-45,-22" name="直接发布" to="发布"/>
+   </task>
+   <task form="/messagePublish/tMessagePublishAction_messagePublishApprove1.action" g="316,143,92,52" name="部门领导审核">
+      <transition g="-2,-22" name="同意" to="分管领导审核"/>
+      <transition g="279,270:-13,-28" name="退回" to="信息发布申请"/>
+      <transition g="0,-19" name="直接发布" to="发布"/>
+   </task>
+   <task form="/messagePublish/tMessagePublishAction_messagePublishApprove2.action" g="496,143,92,52" name="分管领导审核">
+      <transition g="449,268:-15,-32" name="批示" to="部门领导审核"/>
+   </task>
+   <end g="265,23,48,48" name="发布"/>
+</process>

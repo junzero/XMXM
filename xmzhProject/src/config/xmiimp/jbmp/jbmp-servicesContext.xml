@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.jbpm.service.impl.Jbpm4HistActinstService" id="jbpm4HistActinstService">
+    <property name="jbpm4HistActinstDAO" ref="jbpm4HistActinstDAO" />
+  </bean>
+
+  <bean class="com.gotop.jbpm.service.impl.Jbpm4HistTaskService" id="jbpm4HistTaskService">
+    <property name="jbpm4HistTaskDAO" ref="jbpm4HistTaskDAO" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.service.impl.Jbpm4ExecutionService" id="jbpm4ExecutionService">
+    <property name="jbpm4ExecutionDAO" ref="jbpm4ExecutionDAO" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.service.impl.Jbpm4TaskService" id="jbpm4TaskService">
+    <property name="jbpm4TaskDAO" ref="jbpm4TaskDAO" />
+  </bean>
+  </beans>

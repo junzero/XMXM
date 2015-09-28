@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="dataIssued" namespace="/dataIssued">
+    <action class="tSendDataAction" method="{1}" name="tSendDataAction_*">
+      <result name="viewlist">
+        /jsp/dataIssued/tSendDataDatacell.jsp
+      </result>
+      <result name="getOldIssued">
+      	/jsp/dataIssued/issued_add.jsp
+      </result>
+      <result name="addSuccess">
+     	/jsp/leave/next_state.jsp
+      </result>
+      <result name="info">
+      	/jsp/dataIssued/issued_approve.jsp
+      </result>
+      <result name="queryIssued">
+      /jsp/dataIssued/issued_list.jsp
+      </result>
+      <result name = "download">
+      /jsp/dataIssued/issued_download.jsp
+      </result>
+      <result name = "downexl">
+      /jsp/dataIssued/issued_downexl.jsp
+      </result>
+    </action>
+  </package>
+</struts>

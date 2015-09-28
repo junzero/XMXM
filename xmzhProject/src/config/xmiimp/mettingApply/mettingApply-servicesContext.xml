@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean id="tMettingApplyService" class="com.gotop.mettingApply.service.impl.TMettingApplyService" >
+    <property name="tMettingApplyDAO" ref="tMettingApplyDAO" />
+    <property name="tApproveOpninionDAO" ref="tApproveOpninionDAO" />
+    <property name="jbpmService" ref="jbpmService"></property>
+    <property name="tFileResourceTableService" ref="tFileResourceTableService"></property>
+    <property name="tMettingReceiveDAO" ref="tMettingReceiveDAO" />
+    <property name="tMessagePublishDAO" ref="tMessagePublishDAO" />
+  </bean>
+</beans>

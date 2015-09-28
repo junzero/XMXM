@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- 查询一级工作组 -->
+<bean class="com.gotop.tyjg.workgroup.dao.impl.GroupmanagerDAO" id="groupmanagerDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+
+  <bean class="com.gotop.tyjg.workgroup.dao.impl.ManagertreeDAO" id="managertreeDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  </beans>

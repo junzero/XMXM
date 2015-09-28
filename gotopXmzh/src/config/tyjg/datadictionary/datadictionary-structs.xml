@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="datadictionary" namespace="/tyjg/datadictionary">
+     <action class="dictEntryAction" method="queryDictTypePage" name="queryDictTypePage_action"/>
+     <action class="dictEntryAction" method="saveDictType" name="saveDictType_action"/>
+     <action class="dictEntryAction" method="queryDictEntryNode" name="queryDictEntryNode_action"/>
+     <action class="dictEntryAction" method="queryDictEntryChildNode" name="queryDictEntryChildNode_action"/>
+     <action class="dictEntryAction" method="queryDictEntryPage" name="queryDictEntryPage_action"/>
+     <action class="dictEntryAction" method="saveDictEntry" name="saveDictEntry_action"/>
+     <action class="dictEntryAction" method="insertDictEntry" name="insertDictEntry_action"/>
+     <action class="dictEntryAction" method="toUpdateDictEntry" name="toUpdateDictEntry_action">
+         <result name="toUpdateDictEntry">/jsp/tyjg/datadictionary/dictentry_update.jsp</result>
+     </action>
+     <action class="dictEntryAction" method="updateDictEntry" name="updateDictEntry_action"/>
+     <action class="dictEntryAction" method="deleteDictEntry" name="deleteDictEntry_action"/>
+     
+     <action class="operatorExcelAction" method="readFile" name="readFile_action">
+         <result name="readfile">/jsp/tyjg/datadictionary/readExcel.jsp</result>
+     </action>
+     <action class="operatorExcelAction" method="importExcel" name="importExcel_action">
+         <result name="failed">/jsp/tyjg/datadictionary/errorExport.jsp</result>
+         <result name="success">/jsp/tyjg/datadictionary/readExcel.jsp</result>
+     </action>
+     <action class="operatorExcelAction" method="exportExcel" name="exportExcel_action">
+         <result name="failed">/jsp/tyjg/datadictionary/errorExport.jsp</result>
+         <result name="success">/jsp/tyjg/datadictionary/download.jsp</result>
+     </action>
+     <action class="operatorExcelAction" method="importDictTypeExcel" name="importDictTypeExcel_action">
+     </action>
+     <action class="operatorExcelAction" method="importDictEntryExcel" name="importDictEntryExcel_action">
+     </action>
+     <action class="dictEntryAction" method="{1}" name="dictEntryAction_*"/>
+   </package>
+</struts>

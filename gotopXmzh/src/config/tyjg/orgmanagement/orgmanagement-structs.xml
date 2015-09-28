@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <!-- 机构管理 -->
+   <package extends="default" name="orgmanagement" namespace="/orgmanagement">
+   	
+   		<action class="organizationAction" method="{1}" name="organizationAction_*">
+   			<result name="childOrgPageList">/jsp/tyjg/orgmanagement/child_org_list.jsp</result>
+   			<result name="childOrgList">/jsp/tyjg/orgmanagement/org_order.jsp</result>
+   			<result name="orgBaseAndFjxxInfo">/jsp/tyjg/orgmanagement/modify_org_info.jsp</result>
+   			<result name="changeRole">/jsp/tyjg/orgmanagement/party_role.jsp</result>
+   		</action>
+   </package>
+</struts>

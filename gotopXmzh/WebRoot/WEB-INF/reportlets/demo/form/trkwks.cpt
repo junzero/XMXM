@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM 客户跟踪]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.page.First">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[首页]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Previous">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[上一页]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Next">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[下一页]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Last">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[末页]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="true" isShowAsImage="false"/>
+</WebPageContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[提交]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.Verify">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[数据校验]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.Verify">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[数据校验]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.07874015748031496" left="0.0" bottom="0.07874015748031496" right="0.0"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[24,13,19,27,27,27,27,31,32,32,32,38,35,35,38,22,33,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[13,162,134,80,128,103,160,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="6" s="0">
+<O>
+<![CDATA[客户跟踪记录表]]></O>
+<Expand/>
+</C>
+<C c="1" r="2" cs="6" s="1">
+<Expand/>
+</C>
+<C c="1" r="3" s="2">
+<O>
+<![CDATA[* 客  户  编  号]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="客户ID"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[客户名称]]></CNAME>
+<Compare op="0">
+<Parameter>
+<Attributes name="client"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[负责人]]></CNAME>
+<Compare op="0">
+<Parameter>
+<Attributes name="charge"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<TextAttr allowBlank="false"/>
+</Widget>
+</C>
+<C c="3" r="3" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="负责人"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand upParentDefault="false"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="5" r="3" s="2">
+<O>
+<![CDATA[成  立  日  期]]></O>
+<Expand/>
+</C>
+<C c="6" r="3" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="成立日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/>
+</Widget>
+</C>
+<C c="1" r="4" s="2">
+<O>
+<![CDATA[   客  户  名  称 ]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" cs="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="客户名称"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4" upParentDefault="false"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="5" r="4" s="2">
+<O>
+<![CDATA[资  本  额]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="资本额"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/>
+</Widget>
+</C>
+<C c="1" r="5" s="2">
+<O>
+<![CDATA[  地         址]]></O>
+<Expand/>
+</C>
+<C c="2" r="5" cs="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="地址"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="5" r="5" s="2">
+<O>
+<![CDATA[电      话]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="电话"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[数字少于11位]]></EMSG>
+<TextAttr/>
+<Reg class="com.fr.report.web.ui.reg.MobileReg"/>
+</Widget>
+</C>
+<C c="1" r="6" s="2">
+<O>
+<![CDATA[  营  业  类  型]]></O>
+<Expand/>
+</C>
+<C c="2" r="6" cs="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="营业类型"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="国营" value="国营"/>
+<Dict key="私营" value="私营"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[传      真]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="传真"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[33]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<TextAttr allowBlank="false"/>
+<Reg class="com.fr.report.web.ui.reg.PhoneReg"/>
+</Widget>
+</C>
+<C c="1" r="7" s="2">
+<O>
+<![CDATA[ 主 要 往 来 银 行]]></O>
+<Expand/>
+</C>
+<C c="2" r="7" cs="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="主要往来银行"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="5" r="7" s="5">
+<Expand/>
+</C>
+<C c="6" r="7" s="5">
+<Expand/>
+</C>
+<C c="1" r="8" s="2">
+<O>
+<![CDATA[ 其 他 投 资 事 业]]></O>
+<Expand/>
+</C>
+<C c="2" r="8" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="其他投资事业"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="4" r="8" s="2">
+<O>
+<![CDATA[平均每日营业额]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="平均每日营业额"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/>
+</Widget>
+</C>
+<C c="1" r="9" s="2">
+<O>
+<![CDATA[ 主 要 业 务 往 来]]></O>
+<Expand/>
+</C>
+<C c="2" r="9" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="主要业务往来"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="4" r="9" s="2">
+<O>
+<![CDATA[付  款  方 式]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="付款方式"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.RadioGroup">
+<WidgetName name="1"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="现金" value="现金"/>
+<Dict key="支票" value="支票"/>
+<Dict key="客票" value="客票"/>
+<Dict key="其他" value="其他"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="1" r="10" s="2">
+<O>
+<![CDATA[ 与 本 公 司 往 来]]></O>
+<Expand/>
+</C>
+<C c="2" r="10" cs="2" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="与本公司往来"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/>
+</Widget>
+</C>
+<C c="4" r="10" s="2">
+<O>
+<![CDATA[收 款  记 录]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="收款纪录"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4"/>
+<Widget class="com.fr.report.web.ui.RadioGroup">
+<WidgetName name="2"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="优秀" value="优秀"/>
+<Dict key="良好" value="良好"/>
+<Dict key="一般" value="一般"/>
+<Dict key="很差" value="很差"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="1" r="11" s="2">
+<O>
+<![CDATA[ 最近与本公司往来重要记录]]></O>
+<Expand/>
+</C>
+<C c="2" r="11" cs="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="最近与本公司往来重要记录"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4" upParentDefault="false"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="1" r="12" s="2">
+<O>
+<![CDATA[ 最 近 交 易 数 据 跟 踪]]></O>
+<Expand/>
+</C>
+<C c="2" r="12" cs="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="最近交易数据跟踪"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4" upParentDefault="false"/>
+</C>
+<C c="1" r="13" s="2">
+<O>
+<![CDATA[ 客  户  意  见]]></O>
+<Expand/>
+</C>
+<C c="2" r="13" cs="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="客户意见"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4" upParentDefault="false"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="1" r="14" s="2">
+<O>
+<![CDATA[ 信  用  评  定]]></O>
+<Expand/>
+</C>
+<C c="2" r="14" cs="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="信用评定"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4" upParentDefault="false"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="1" r="15" cs="6" s="1">
+<Expand/>
+</C>
+<C c="5" r="16" s="7">
+<O>
+<![CDATA[填  表  人：]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="填表人"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C4" upParentDefault="false"/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="1" r="18">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo"/>
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="客户跟踪"/>
+<ColumnConfig name="客户ID" isKey="true" skipUnmodified="false">
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="客户名称" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="地址" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="营业类型" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="主要往来银行" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="其他投资事业" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="主要业务往来" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="与本公司往来" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="最近与本公司往来重要记录" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="最近交易数据跟踪" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="客户意见" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="信用评定" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="负责人" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="成立日期" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="资本额" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="电话" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="传真" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="平均每日营业额" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="付款方式" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="收款纪录" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="填表人" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="16"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[11,19,11,15,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,111,105,119,33,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="9">
+<O>
+<![CDATA[负责人：]]></O>
+<Expand/>
+</C>
+<C c="1" r="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="charge"/>
+<WidgetAttr/>
+<EMSG>
+<![CDATA[需输入查询信息！]]></EMSG>
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr ki="12" vi="12"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[ds1]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="2" r="1" s="9">
+<O>
+<![CDATA[客户名称：]]></O>
+<Expand/>
+</C>
+<C c="3" r="1">
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="client"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="1" vi="1"/>
+<Formula>
+<![CDATA[SELECT * FROM 客户跟踪 WHERE 负责人='${charge}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+</C>
+<C c="5" r="1">
+<O>
+<![CDATA[查   询]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+<C c="0" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="charge"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="client"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Bottom color="-1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

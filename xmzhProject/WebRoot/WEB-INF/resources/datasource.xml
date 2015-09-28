@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasourceManager xmlVersion="20100901">
+<ConnectionMap>
+<Connection name="FRDemo" class="com.fr.data.impl.JNDIDatabaseConnection">
+<DatabaseAttr/>
+<JNDIDatabaseAttr jndiName="yzjmwd"/>
+</Connection>
+<Connection name="conn" class="com.fr.data.impl.JNDIDatabaseConnection">
+<DatabaseAttr/>
+<JNDIDatabaseAttr jndiName="yzjmwd"/>
+</Connection>
+</ConnectionMap>
+<TableDataMap>
+<TableData name="server" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM STSCORE]]></Query>
+</TableData>
+</TableDataMap>
+<ADHOCMap>
+<TableData name="order" class="com.fr.data.impl.ADHOCSQLTableData">
+<Description>
+<![CDATA[订单信息]]></Description>
+<Semantic>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="1" vi="2"/>
+<DBDictAttr tableName="mapping" ki="1" vi="2"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Semantic>
+<DBConnectionName>
+<![CDATA[FRDemo]]></DBConnectionName>
+<Query>
+<![CDATA[SELECT 
+a.customerid,
+b.customername,
+a.orderid,
+year(a.signdate)&'-'&month(a.signdate) as signdate,
+a.amount
+FROM ORDERS a,customer b
+where a.customerid = b.customerid]]></Query>
+</TableData>
+</ADHOCMap>
+</DatasourceManager>

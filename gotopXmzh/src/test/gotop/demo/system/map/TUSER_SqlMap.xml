@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TUSER_TEST">
+  <select id="selectUserByMap" resultClass="java.util.HashMap">
+  	<include refid="COMMON.oracle_Pagination_Head" />
+	    select USID, PWD, ZCSJ, GMZQ, XZQX, YHNC, YHMC, DLCS, YHZT, BZ, LID, ORGID, EMAIL, MOBILE, FAX,
+	      ROLETYPE, USEDATE
+	    from TUSER
+    <include refid="COMMON.oracle_Pagination_Tail" />
+  </select>
+  <select id="selectFunByMap" resultClass="java.util.HashMap">
+  <!-- datacell -->
+  	<include refid="COMMON.oracle_Pagination_Head" />
+    	select gnmc, gnlx, gndm, mkdm, gntp, gnsj, gnsx from tfunction where 1=1
+	    <dynamic>
+	      <isNotEmpty prepend="and" property="GNMC">
+	        gnmc like '%'|| #GNMC# || '%'
+	      </isNotEmpty>
+	     
+	      <isNotEmpty prepend="and" property="GNDM">
+	        gndm like '%'|| #GNDM# || '%'
+	      </isNotEmpty>
+	      <isNotEmpty prepend="and" property="MKDM">
+	        mkdm like '%'|| upper(#MKDM#) || '%'
+	      </isNotEmpty>
+	    </dynamic>
+    <include refid="COMMON.oracle_Pagination_Tail" />
+  </select>
+  <select id="countUserByMap" resultClass="int">
+    select count(*) from TUSER
+  </select>
+  <select id="countFunByMap" resultClass="int">
+    select count(*) from tfunction
+  </select>
+  <select id="selectUserByMapBox" resultClass="java.util.HashMap">
+  <!-- userComboselect -->
+	    select USID, PWD, ZCSJ, GMZQ, XZQX, YHNC, YHMC, DLCS, YHZT, BZ, LID, ORGID, EMAIL, MOBILE, FAX,
+	      ROLETYPE, USEDATE
+	    from TUSER
+  </select>
+  <select id="selectFunByMapBox" resultClass="java.util.HashMap">
+  	<include refid="COMMON.oracle_Pagination_Head" />
+    	select gnmc, gnlx, gndm, mkdm, gntp, gnsj, gnsx from tfunction where 1!=1
+	    <dynamic>
+	      <isNotEmpty prepend="or" property="GNMC">
+	        gnmc like '%'|| upper(#GNMC#) || '%'
+	      </isNotEmpty>
+	      <isNotEmpty prepend="or" property="GNDM">
+	        gndm like '%'|| upper(#GNDM#) || '%'
+	      </isNotEmpty>
+	      <isNotEmpty prepend="or" property="MKDM">
+	        mkdm like '%'|| upper(#MKDM#) || '%'
+	      </isNotEmpty>
+	    </dynamic>
+    <include refid="COMMON.oracle_Pagination_Tail" />
+  </select>
+  <select id="selectRoleByMapBox" resultClass="java.util.HashMap">
+	    select rid, rolename, jszt, yyzt, orgid from trole
+  </select>
+  <select id="selectRoleById" parameterClass="int" resultClass="java.util.HashMap">
+	    select rid, rolename, jszt, yyzt, orgid from trole where rid = #rid#
+  </select>
+</sqlMap>

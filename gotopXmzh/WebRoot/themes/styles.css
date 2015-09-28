@@ -1,0 +1,53 @@
+body {
+	font-size: 9pt;
+	font-family : "Lucida Grande", "Verdana", "Lucida", "Arial", "Helvetica", "宋体", "sans-serif";
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	background: #fff;
+	line-height: 150%;
+
+}
+td {
+	font-size: 9pt;
+	font-family : "Lucida Grande", "Verdana", "Lucida", "Arial", "Helvetica", "宋体", "sans-serif";
+	text-decoration: none;
+	line-height: 150%;
+
+}
+
+a:link {color: #000; text-decoration:none;}
+a:visited {color: #000;text-decoration:none;}
+a:hover {color: #bc2931; text-decoration:underline;}
+a:active {color: #bc2931;}
+
+.leftmenu {	background-image: url(../images/left_03.gif); height: 24px; color: #005684; font-size: 12px; font-weight: bold; padding-left: 6px; padding-top: 2px; border: 1px solid #83bbd9; margin: 3px;}
+.righttable { border-left: 1px solid #b6d0f5; border-right: 1px solid #b6d0f5; border-bottom: 1px solid #b6d0f5; }
+.rightimg {	background: url(../images/right_04.gif); height: 217px; width: 452; margin-top: 1px; margin-left: 7px;}
+.bottom {	background: url(../images/bottom.gif); height: 27px; }
+
+
+.insipage_table1 {
+	font-size: 9pt;
+	height: 29px;
+	background: #e6e6e6;
+	text-decoration: none;
+	border-bottom: 1px solid #789cc3;
+}
+.insipage_table2 {
+	font-size: 9pt;
+	background: #f8fbff;
+	text-decoration: none;
+	border-right: 1px solid #cbe5ff;
+}
+
+#inside_left a:link {color: #000; text-decoration:none;}
+#inside_left a:visited {color: #000;text-decoration:none;}
+#inside_left a:hover {color: #ff4e00; text-decoration:underline; background: #ffffff; border: 1px solid #a9cfff; padding: 2px;}
+#inside_left a:active {color: #bc2931;}
+/*按钮样式*/
+.WinButton { 
+    padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; 
+	behavior:url(/themes/WinButton.htc);
+	cursor:Hand;
+}  

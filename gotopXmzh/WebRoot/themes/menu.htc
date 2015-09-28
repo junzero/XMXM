@@ -1,0 +1,21 @@
+<attach event="onmouseover" onevent="over()"/>
+<attach event="onmouseout" onevent="out()"/>
+<attach event="onmousedown" onevent="down()"/>
+<attach event="onmouseup" onevent="down()"/>
+<script language="Javascript">
+function over(){
+	style.backgroundColor='#D8D8D8';
+}
+
+function out(){	
+	style.backgroundColor='';
+}
+function down(){	
+	style.backgroundColor='#D8D8D8';
+}
+
+function up(){
+	out();
+}
+</script>
+ 

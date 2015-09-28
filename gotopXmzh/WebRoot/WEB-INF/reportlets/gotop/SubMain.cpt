@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT orderID,customerID,signDate,payMethod,shipMethod,amount,empid FROM ORDERS
+]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT orderID,ordersdetail.productID,productname,ordersdetail.quantity,price FROM ORDERSDETAIL,product where product.productid=ordersdetail.productid
+]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT orderID,ordersdetail.productID,productname,ordersdetail.quantity,price FROM ORDERSDETAIL,product where product.productid=ordersdetail.productid
+]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,914400,381000,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,4114800,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="1" r="1" cs="4" s="0">
+<O>
+<![CDATA[地区销售情况分析]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" s="1">
+<O>
+<![CDATA[订单号：]]></O>
+<Expand leftParentDefault="false" left="B4"/>
+</C>
+<C c="1" r="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="orderID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="3" s="2">
+<Expand/>
+</C>
+<C c="3" r="3" s="2">
+<O>
+<![CDATA[金额：]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" cs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="amount"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="3" s="4">
+<Expand/>
+</C>
+<C c="0" r="4" s="5">
+<Expand/>
+</C>
+<C c="1" r="4">
+<Expand/>
+</C>
+<C c="2" r="4">
+<Expand/>
+</C>
+<C c="3" r="4">
+<Expand/>
+</C>
+<C c="4" r="4">
+<Expand/>
+</C>
+<C c="5" r="4">
+<Expand/>
+</C>
+<C c="6" r="4" s="6">
+<Expand/>
+</C>
+<C c="0" r="5" s="5">
+<Expand/>
+</C>
+<C c="1" r="5" s="7">
+<O>
+<![CDATA[产品编号]]></O>
+<Expand/>
+</C>
+<C c="2" r="5" s="7">
+<O>
+<![CDATA[产品名]]></O>
+<Expand/>
+</C>
+<C c="3" r="5">
+<Expand/>
+</C>
+<C c="4" r="5" s="7">
+<O>
+<![CDATA[订购数量]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="7">
+<O>
+<![CDATA[金额]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="6">
+<Expand/>
+</C>
+<C c="0" r="6" s="5">
+<Expand/>
+</C>
+<C c="1" r="6" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="productID"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[orderID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="orderID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B4"/>
+</C>
+<C c="2" r="6" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="productname"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="6">
+<Expand/>
+</C>
+<C c="4" r="6" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="quantity"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[orderID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="orderID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B4"/>
+</C>
+<C c="5" r="6" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="price"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="6" s="6">
+<Expand/>
+</C>
+<C c="0" r="7" s="9">
+<Expand leftParentDefault="false" left="B4"/>
+</C>
+<C c="1" r="7" s="10">
+<Expand/>
+</C>
+<C c="2" r="7" s="10">
+<Expand/>
+</C>
+<C c="3" r="7" s="10">
+<Expand/>
+</C>
+<C c="4" r="7" s="10">
+<Expand/>
+</C>
+<C c="5" r="7" s="10">
+<Expand/>
+</C>
+<C c="6" r="7" s="11">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="5"/>
+<Left style="5"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="5"/>
+</Border>
+</Style>
+<Style>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#,##0]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="5"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="5"/>
+<Right style="5"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="5"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Right style="5"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="5"/>
+<Left style="5"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="5"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="5"/>
+<Right style="5"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

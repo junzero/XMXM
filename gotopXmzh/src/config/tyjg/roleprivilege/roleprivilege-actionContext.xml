@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- 处理业务字典类型以及业务字典项 -->
+    <bean class="com.gotop.tyjg.roleprivilege.struts.RoleAction" id="roleAction" name="roleAction" singleton="false">
+	    <property name="roleService" ref="roleService" />
+    </bean>
+    <bean class="com.gotop.tyjg.roleprivilege.struts.OperatorRoleAction" id="operatorRoleAction" name="operatorRoleAction" singleton="false">
+	    <property name="operatorRoleService" ref="operatorRoleService" />
+    </bean>
+</beans>

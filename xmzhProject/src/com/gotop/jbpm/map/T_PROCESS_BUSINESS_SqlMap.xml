@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_PROCESS_BUSINESS_SqlMap" >
+  <resultMap id="abatorgenerated_TProcessBusinessResult" class="com.gotop.jbpm.model.TProcessBusiness" >
+    <!--Bean方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+    <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TProcessBusiness_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+    <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+  </resultMap>
+  <!--  -->
+  <resultMap id="tProcessBusiness_HashMapResult" class="com.gotop.jbpm.model.TProcessBusiness" >
+    <!--HashMap方式返回全表-->
+     <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+    <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+      <result column="BUSINESS_COLUMN" property="businessColumn" jdbcType="VARCHAR" />
+    <result column="BUSINESS_TABLE" property="businessTable" jdbcType="VARCHAR" />
+     <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    
+  </resultMap>
+  
+   <resultMap id="tProcessBusinessFile_HashMapResult" class="com.gotop.jbpm.model.TProcessBusiness" >
+    <!--HashMap方式返回全表-->
+     <result column="FILE_ID" property="fileId" jdbcType="DECIMAL" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+  </resultMap>
+  
+   <resultMap id="tProcessBusinessFile_HashMapResult1" class="com.gotop.jbpm.model.TProcessBusiness" >
+       	<result column="blobValue" property="blobValue" jdbcType="VARCHAR" />
+ 		<result column="blobName" property="blobName" jdbcType="VARCHAR" />
+  </resultMap>
+  
+   <!--  <resultMap id="tProcessBusiness_HashMapResult3" class="com.gotop.jbpm.model.TProcessBusiness" >
+    HashMap方式返回全表
+     <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+    <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+     <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+     <result column="SUBMIT_TIME" property="submitTime" jdbcType="VARCHAR" />
+     <result column="SUBMIT_ID" property="submitId" jdbcType="DECIMAL" />
+  </resultMap> -->
+   
+   <!-- <select id="myStartProcessList" resultMap="tProcessBusiness_HashMapResult3"  resultClass="com.gotop.jbpm.model.TProcessBusiness">
+    select t.id,t.business_type,t.business_key,t.business_title,t.execution_id,t.submit_time,t.submit_id from T_PROCESS_BUSINESS t
+    where t.submit_id=$submitId$
+     <isNotNull prepend="and" property="submitTime" >
+            <![CDATA[
+            t.submit_time>= '$submitTime$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="submitTimeAfter" >
+            <![CDATA[
+            t.submit_time<= '$submitTimeAfter$' 
+               ]]>
+      </isNotNull> 
+       <isNotNull prepend="and" property="businessType" >
+     t.business_type = '$businessType$'
+     </isNotNull>
+     
+  </select> -->
+  
+  <!-- 删除草稿-查询业务主键 -->
+  <select id="findProcessBusiness" resultMap="tProcessBusiness_HashMapResult"  resultClass="com.gotop.jbpm.model.TProcessBusiness">
+      select t1.id as ID,t2.business_column as BUSINESS_COLUMN,t2.business_table as BUSINESS_TABLE,t2.business_type as BUSINESS_TYPE,t1.business_key as BUSINESS_KEY,t1.business_title as BUSINESS_TITLE,t1.EXECUTION_ID as EXECUTION_ID
+  from t_process_business t1, t_process_business_config t2
+ where t1.business_type = t2.business_type
+   and t1.execution_id = '$executionId$'
+  </select>
+  
+  <!-- 删除业务数据 -->
+  <delete id="deleteBusiness" parameterClass="java.util.HashMap" >
+       delete from $businessTable$
+    where $businessColumn$ = $businessKey$
+  </delete>
+  
+  <!-- 删除业务-查找业务附件 -->
+ <select id="findProcessBusinessFile" resultMap="tProcessBusinessFile_HashMapResult"  resultClass="com.gotop.jbpm.model.TProcessBusiness">
+	 select t.file_id as FILE_ID,t.file_path as FILE_PATH from t_file_resource_table t where t.resource_id = $businessKey$ and t.resource_type='$businessType$'      
+  </select>
+  
+   <!-- 删除业务附件 -->
+  <delete id="deleteBusinessFile" parameterClass="java.util.HashMap" >
+       delete from t_file_resource_table  where file_id = $fileId$
+  </delete>
+  
+  <delete id="abatorgenerated_deleteByPrimaryKey" parameterClass="com.gotop.jbpm.model.TProcessBusiness" >
+    delete from T_PROCESS_BUSINESS
+    where ID = #id:DECIMAL#
+  </delete>
+  <insert id="abatorgenerated_insert" parameterClass="com.gotop.jbpm.model.TProcessBusiness" >
+    <!--通过主键更新整条数据-->
+       <selectKey resultClass="long" keyProperty="id">
+		SELECT T_PROCESS_BUSINESS_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into T_PROCESS_BUSINESS (ID, BUSINESS_TYPE, BUSINESS_KEY, BUSINESS_TITLE,EXECUTION_ID,SUBMIT_TIME,SUBMIT_ID)
+    values (#id:DECIMAL:-9999#, #businessType:VARCHAR#, #businessKey:DECIMAL:-9999#,
+      #businessTitle:VARCHAR#,#executionId:VARCHAR#,#submitTime:VARCHAR#,#submitId:DECIMAL:-9999#)
+  </insert>
+  <!-- 20140902 修改了督办单出现多条待办的问题 -->
+  <update id="abatorgenerated_updateByPrimaryKey" parameterClass="com.gotop.jbpm.model.TProcessBusiness" >
+    <!--通过主键更新一条全部字段内容-->
+    update T_PROCESS_BUSINESS
+    set BUSINESS_TYPE = #businessType:VARCHAR#,
+      BUSINESS_KEY = #businessKey:DECIMAL:-9999#,
+      BUSINESS_TITLE = #businessTitle:VARCHAR#,
+      EXECUTION_ID = #executionId:VARCHAR#
+    where ID = #id:DECIMAL:-9999#
+  </update>
+    <update id="toTaskConfig1" parameterClass="java.util.HashMap" >
+    <!--通过主键更新一条全部字段内容-->
+    update JBPM4_LOB
+    set blob_value_ = #xml#
+    where deployment_ = #deploymentId#
+  </update>
+  
+    <!-- 获取jbpm4_lob表中的二进制数据 -->
+    <select id="toTaskConfig3"  resultClass="java.util.HashMap">
+		select t.blob_value_ as blobValue,t.name_  as blobName from jbpm4_lob t where t.deployment_='$deploymentId$'
+    </select>
+    
+    <update id="updateJbpmXml" parameterClass="java.util.HashMap" >
+          update JBPM4_LOB
+    set blob_value_ = #fileByte#
+    where deployment_ = #deploymentId#
+    and to_char(name_) = #blobName#
+    </update>
+    
+    
+    
+</sqlMap>

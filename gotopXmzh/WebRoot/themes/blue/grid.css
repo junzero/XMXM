@@ -1,0 +1,236 @@
+/* ---------------------------------------------------- */
+/* Grid                                              */
+/* ---------------------------------------------------- */
+.public.Grid
+{
+	behavior: url(/themes/blue/Grid.htc);  
+	defaultBorderColor: #7F9DB9;
+	hoverBorderColor: #000080;
+	activeBorderColor: #000080;
+	selectedBorderColor: #000080;
+	transparentImageUrl: /images/transparent.gif;
+	sortNoneImageUrl: /images/gdSortBlank.gif;
+	sortUpImageUrl: /images/gdSortUp.gif;
+	sortDownImageUrl: /images/gdSortDown.gif;
+	posUpImageUrl: /images/gdUpArrow.gif;
+	posDownImageUrl: /images/gdDownArrow.gif;
+	sortAscImageUrl: /images/mnuSortAscending.gif;
+	sortDesImageUrl: /images/mnuSortDescending.gif;
+	fieldChooserImageUrl: /images/mnuFieldChooser.gif;
+	color: menutext;
+	border: 1px solid #7F9DB9;
+ 	font: menu;
+	text-align: left;
+	white-space: nowrap;
+	height: 100%;
+	width: 100%;
+	cursor: default;
+	overflow: hidden;
+}
+
+
+
+.public.Grid .gridHead
+{
+	height: 0px;
+	width: 0px;
+	visibility: hidden;
+}
+.public.Grid .gridHead .gridRow
+{
+	height: 0px;
+	width: 0px;
+	color: menutext;
+	cursor: hand;
+}
+.public.Grid .gridHead .gridRow SPAN
+{
+	height: 0px;
+	width: 0px;
+	cursor: hand;
+	overflow: hidden;
+}
+.public.Grid .sortBit
+{
+	color: #ACA899;
+	background-color: transparent;
+	line-height: 5pt;
+	font-family: webdings;
+	font-size: 9pt;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 2px;
+	margin-top: 0px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBack TR TD.leftCell
+{
+	background-image: url(TableHeadLeft.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	height: 20px;
+	width: 8px;
+	padding: 0px 2px 0px 2px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBack TR TD.centerCell
+{
+	background-image: url(TableHeadCenter.gif);
+	background-position: center center;
+ 	font: menu;
+	white-space: nowrap;
+	height: 20px;
+	width: 100%;
+	padding: 0px 0px 0px 0px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBack TR TD.rightCell
+{
+	background-image: url(TableHeadRight.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	height: 20px;
+	width: 8px;
+	padding: 0px 4px 0px 4px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBackOver TR TD.leftCell
+{
+	background-image: url(TableHeadLeftOver.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	height: 20px;
+	width: 8px;
+	padding: 0px 2px 0px 2px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBackOver TR TD.centerCell
+{
+	background-image: url(TableHeadCenterOver.gif);
+	background-position: center center;
+ 	font: menu;
+	white-space: nowrap;
+	height: 20px;
+	width: 100%;
+	padding: 0px 0px 0px 0px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBackOver TR TD.rightCell
+{
+	background-image: url(TableHeadRightOver.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	height: 20px;
+	width: 8px;
+	padding: 0px 4px 0px 4px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBackDown TR TD.leftCell
+{
+	background-image: url(TableHeadLeftDown.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	height: 20px;
+	width: 8px;
+	padding: 0px 2px 0px 2px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBackDown TR TD.centerCell
+{
+	background-image: url(TableHeadCenterDown.gif);
+	background-position: center center;
+ 	font: menu;
+	white-space: nowrap;
+	height: 20px;
+	width: 100%;
+	padding: 0px 0px 0px 0px;
+}
+.public.Grid .gridHead .gridRow SPAN TABLE.clsHeadBackDown TR TD.rightCell
+{
+	background-image: url(TableHeadRightDown.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	height: 20px;
+	width: 8px;
+	padding: 0px 4px 0px 4px;
+}
+.public.Grid .gridBody
+{
+	background-color: #F6F6F6;
+	visibility: hidden;
+	overflow: auto;
+	height: 0px;
+	width: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+.public.Grid .gridBody .gridRow
+{
+	background-color: ButtonFace;
+	border: 0px solid ;
+	height: 0px;
+	width: 0px;
+}
+.public.Grid .gridBody .gridRow SPAN
+{
+	background-color: transparent;
+	/*text-align: left;*/
+	height: 19px;
+	width: 0px;
+	padding: 1px 2px 2px 3px;
+	overflow: hidden;
+	text-overflow : ellipsis ;
+}
+.public.Grid .gridBody .gridRowOver
+{
+	/*background-color: window;*/
+	/*border: 1px solid window;*/
+	border: 0px solid Transparent;
+	height: 0px;
+	width: 0px;
+}
+.Grid .gridBody .gridRowOver SPAN
+{
+ 	color: windowtext;
+	/*text-align: left;*/
+	height: 19px;
+	width: 0px;
+	padding: 1px 2px 2px 3px;
+	overflow: hidden;
+	text-overflow : ellipsis ;
+	/*filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr=#FFF4CC, endColorStr=#FFD091);*/
+	background-color: #c1cdd8;
+}
+.public.Grid .gridBody .gridRowDown
+{
+	background-color: window;
+	border: 0px solid window;
+	height: 0px;
+	width: 0px;
+}
+.public.Grid .gridBody .gridRowDown SPAN
+{
+	color: windowtext;
+	/*text-align: left;*/
+	height: 19px;
+	width: 0px;
+	padding: 1px 2px 2px 3px;
+	overflow: hidden;
+	text-overflow : ellipsis ;
+	/*filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr=#FE914E, endColorStr=#FFD38E);*/
+	background-color: #c1cdd8;
+}
+.public.Grid .gridBody .gridRowHasFocus
+{
+	background-color: window;
+	border: 0px solid window;
+	height: 0px;
+	width: 0px;
+}
+.public.Grid .gridBody .gridRowHasFocus SPAN
+{
+	/*filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr=#FE914E, endColorStr=#FFD38E);*/
+/*	color: white;*/
+	background-color: #c1cdd8;/*#000080;*/
+	/*text-align: left;*/
+	height: 19px;
+	width: 0px;
+	padding: 1px 2px 2px 3px;
+	overflow: hidden;
+	text-overflow : ellipsis ;
+	
+}
+
+

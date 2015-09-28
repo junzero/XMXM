@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL MAP Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+    <settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="32" maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+  <sqlMap resource="com/gotop/jbpm/map/T_PROCESS_CONFIG_SqlMap.xml" />
+
+  <sqlMap resource="com/gotop/jbpm/map/T_PROCESS_CONFIG_PERSON_SqlMap.xml" />
+  
+  <sqlMap resource="com/gotop/jbpm/map/T_PROCESS_TASK_ASSIGNEE_SqlMap.xml" />
+  
+  <sqlMap resource="com/gotop/jbpm/map/T_PROCESS_TASK_ASSIGNEE_PERSON_SqlMap.xml" />
+  
+  <sqlMap resource="com/gotop/jbpm/map/T_PROCESS_TASK_EXE_CONFIG_SqlMap.xml" />
+
+    
+    
+    <sqlMap resource="com/gotop/jbpm/map/T_PROCESS_BUSINESS_SqlMap.xml" />
+    
+    <sqlMap resource="com/gotop/jbpm/map/T_PROCESS_BUSINESS_CONFIG_SqlMap.xml" />
+    </sqlMapConfig>

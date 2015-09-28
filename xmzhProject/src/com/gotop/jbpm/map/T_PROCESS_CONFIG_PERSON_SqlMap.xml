@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_PROCESS_CONFIG_PERSON_SqlMap" >
+      <resultMap id="abatorgenerated_TProcessConfigPersonResult" class="com.gotop.jbpm.model.TProcessConfigPerson" >
+    <!--Bean方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="PROCESS_CONFIG_ID" property="processConfigId" jdbcType="DECIMAL" />
+    <result column="RELATION_ID" property="relationId" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TProcessConfigPerson_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="PROCESS_CONFIG_ID" property="processConfigId" jdbcType="DECIMAL" />
+    <result column="RELATION_ID" property="relationId" jdbcType="VARCHAR" />
+  </resultMap>
+ <insert id="abatorgenerated_insert" parameterClass="com.gotop.jbpm.model.TProcessConfigPerson" >
+    <!--通过主键更新整条数据-->
+      <selectKey resultClass="long" keyProperty="id">
+		SELECT T_PROCESS_CONFIG_PERSON_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into T_PROCESS_CONFIG_PERSON (ID, PROCESS_CONFIG_ID, RELATION_ID)
+    values (#id:DECIMAL:-9999#, #processConfigId:DECIMAL:-9999#, #relationId:VARCHAR#)
+  </insert>
+  <select id="getProcessConfigPersons" parameterClass="java.util.HashMap" resultMap="abatorgenerated_TProcessConfigPersonResult">
+select t.id,t.relation_id,t.process_config_id from t_process_config_person t where t.process_config_id=#processConfigId#      
+  </select>
+  
+  <delete id="abatorgenerated_deleteByPrimaryKey" parameterClass="com.gotop.jbpm.model.TProcessConfigPerson" >
+    <!--通过主键删除一条记录-->
+    delete from T_PROCESS_CONFIG_PERSON
+    where ID = #id:DECIMAL#
+  </delete>
+</sqlMap>

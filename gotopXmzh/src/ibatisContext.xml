@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 	xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:aop="http://www.springframework.org/schema/aop" 
+		xmlns:tx="http://www.springframework.org/schema/tx"
+
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		   http://www.springframework.org/schema/aop
+		   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		   http://www.springframework.org/schema/tx
+		   http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+		   
+	<bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor"   
+	    lazy-init="true" />   
+	    
+	<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler" lazy-init="true">   
+	    <property name="nativeJdbcExtractor">   
+	        <ref local="nativeJdbcExtractor" />   
+	    </property>   
+	</bean>   
+	<!--        正式使用于生产时需改为org.springframework.orm.ibatis.SqlMapClientFactoryBean -->
+	<bean id="sqlMapClient" class="test.develop.ibatis.DySqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:sqlMapConfig.xml</value>
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+        <property name="configLocations">   
+                <list>  
+                        <value>classpath:sqlMapConfig.xml</value> 
+                        <value>classpath:config/*/*/*-ibaitsMap.xml</value>   
+               </list>   
+        </property> 
+        <property name="lobHandler">
+        	 <ref bean="oracleLobHandler" />
+        </property>
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="allManagerMethod"
+			expression="execution(* com.gotop.*..service.*..*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethod" />
+	</aop:config>
+	
+	<bean id="actionMonitorLog" class="com.gotop.util.syslog.ActionMonitorLog"></bean> <!--将日志类注入到bean中。-->
+	<aop:config proxy-target-class="true">
+       	<aop:aspect id="aml" ref="actionMonitorLog"><!--调用日志类-->
+			<aop:pointcut id="action" expression="execution(* com.gotop.*..action.*..*(..))"/><!--配置在action包下所有的类在调用之前都会被拦截-->
+			<aop:before pointcut-ref="action" method="before"/><!--在log包下面所有的类的所有方法被调用之前都调用actionLog中的before方法-->
+			<aop:after pointcut-ref="action" method="after"/><!--在log包下面所有的类的所有方法被调用之前都调用actionLog中的after方法-->
+		</aop:aspect>
+	</aop:config>
+	
+	<context:annotation-config />
+	<!-- 引入所有注释方式 -->
+	<!-- <context:annotation-config />  -->
+	<!-- @Resource 、@PostConstruct、@PreDestroy -->
+	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/> -->
+</beans>

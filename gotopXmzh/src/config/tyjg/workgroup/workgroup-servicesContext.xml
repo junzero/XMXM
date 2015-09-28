@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- 查询一级工作组 -->
+<bean class="com.gotop.tyjg.workgroup.service.impl.GroupmanagerService" id="groupmanagerService">
+    <property name="groupmanagerDAO" ref="groupmanagerDAO" />
+    <property name="omGroupmemberDAO" ref="omGroupmemberDAO" />
+    <property name="omGroupDAO" ref="omGroupDAO" />
+    <property name="omGrouprangeDAO" ref="omGrouprangeDAO" />
+    <property name="omEmpgroupDAO" ref="omEmpgroupDAO" />
+  </bean>
+
+  <bean class="com.gotop.tyjg.workgroup.service.impl.ManagertreeService" id="managertreeService">
+    <property name="managertreeDAO" ref="managertreeDAO" />
+  </bean>
+  </beans>

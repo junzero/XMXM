@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_PROCESS_TASK_ASSIGNEE_SqlMap" >
+	<resultMap class="java.util.HashMap" id="abatorgenerated_TProcessTaskAssignee_HashMapResult_sup">
+	<result column="ID" property="id" jdbcType="DECIMAL" />
+	    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+	    <result column="assignee" property="assignee" jdbcType="VARCHAR" />
+	    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+	    <result column="PRE_TASK_ID" property="preTaskId" jdbcType="VARCHAR" />
+	    <result column="PRE_TASK_ASSINGEE" property="preTaskAssingee" jdbcType="DECIMAL" />
+	    <result column="PRE_TASK_ORG" property="preTaskOrg" jdbcType="DECIMAL" />
+	    <result column="PRE_TASK_TIME" property="preTaskTime" jdbcType="VARCHAR" />
+	    <result column="NEXT_TASK_ID" property="nextTaskId" jdbcType="VARCHAR" />
+	     <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+	    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+	     <result column="preTaskOrgName" property="preTaskOrgName" jdbcType="VARCHAR" />
+	      <result column="preTaskAssingeeName" property="preTaskAssingeeName" jdbcType="VARCHAR" />
+	      <result column="processName" property="processName" jdbcType="VARCHAR" />
+	        <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+	         <result column="PROCESS_TASK_ASSIGNEE_ID" property="processTaskAssigneeId" jdbcType="DECIMAL" />
+	         <result column="PARENT_ID" property="parentId" jdbcType="DECIMAL" />
+	         <result column="ISCHILD" property="isChild" jdbcType="VARCHAR" />
+	         <result column="parentid" property="pid" jdbcType="VARCHAR" />
+	</resultMap>
+	
+   <resultMap id="abatorgenerated_TProcessTaskAssigneeResult" class="com.gotop.jbpm.model.TProcessTaskAssignee" >
+    <!--Bean方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ID" property="preTaskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ASSINGEE" property="preTaskAssingee" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_ORG" property="preTaskOrg" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_TIME" property="preTaskTime" jdbcType="VARCHAR" />
+    <result column="NEXT_TASK_ID" property="nextTaskId" jdbcType="VARCHAR" />
+     <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TProcessTaskAssignee_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    <result column="assignee" property="assignee" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ID" property="preTaskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ASSINGEE" property="preTaskAssingee" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_ORG" property="preTaskOrg" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_TIME" property="preTaskTime" jdbcType="VARCHAR" />
+    <result column="NEXT_TASK_ID" property="nextTaskId" jdbcType="VARCHAR" />
+     <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+     <result column="preTaskOrgName" property="preTaskOrgName" jdbcType="VARCHAR" />
+      <result column="preTaskAssingeeName" property="preTaskAssingeeName" jdbcType="VARCHAR" />
+      <result column="processName" property="processName" jdbcType="VARCHAR" />
+        <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+         <result column="PROCESS_TASK_ASSIGNEE_ID" property="processTaskAssigneeId" jdbcType="DECIMAL" />
+         <result column="PARENT_ID" property="parentId" jdbcType="DECIMAL" />
+         <result column="ISCHILD" property="isChild" jdbcType="VARCHAR" />
+          <result column="BUSINESS_NAME" property="businessName" jdbcType="VARCHAR" />
+  </resultMap>
+  
+    <resultMap id="abatorgenerated_TProcessTaskAssignee_HashMapResult_complete" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ID" property="preTaskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ASSINGEE" property="preTaskAssingee" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_ORG" property="preTaskOrg" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_TIME" property="preTaskTime" jdbcType="VARCHAR" />
+    <result column="NEXT_TASK_ID" property="nextTaskId" jdbcType="VARCHAR" />
+     <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+     <result column="preTaskOrgName" property="preTaskOrgName" jdbcType="VARCHAR" />
+      <result column="preTaskAssingeeName" property="preTaskAssingeeName" jdbcType="VARCHAR" />
+      <result column="processName" property="processName" jdbcType="VARCHAR" />
+      <result column="activityName" property="activityName" jdbcType="VARCHAR" />
+      <result column="startTime" property="startTime" jdbcType="VARCHAR"/>
+      <result column="endTime" property="endTime" jdbcType="VARCHAR" />
+       <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+  </resultMap>
+  
+    <resultMap id="abatorgenerated_TProcessTaskAssignee_HashMapResult_complete1" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ID" property="preTaskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ASSINGEE" property="preTaskAssingee" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_ORG" property="preTaskOrg" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_TIME" property="preTaskTime" jdbcType="VARCHAR" />
+    <result column="NEXT_TASK_ID" property="nextTaskId" jdbcType="VARCHAR" />
+     <result column="BUSINESS_KEY" property="businessKey" jdbcType="DECIMAL" />
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+     <result column="preTaskOrgName" property="preTaskOrgName" jdbcType="VARCHAR" />
+      <result column="preTaskAssingeeName" property="preTaskAssingeeName" jdbcType="VARCHAR" />
+      <result column="processName" property="processName" jdbcType="VARCHAR" />
+      <result column="activityName" property="activityName" jdbcType="VARCHAR" />
+      <result column="startTime" property="startTime" jdbcType="VARCHAR"/>
+      <result column="endTime" property="endTime" jdbcType="VARCHAR" />
+      <result column="currentAssingee" property="currentAssingee" jdbcType="VARCHAR"/>
+      <result column="currentActivityName" property="currentActivityName" jdbcType="VARCHAR" />
+       <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <resultMap class="java.util.HashMap" id="downexl_Map">
+    <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+     <result column="preTaskOrgName" property="preTaskOrgName" jdbcType="VARCHAR" />
+      <result column="preTaskAssingeeName" property="preTaskAssingeeName" jdbcType="VARCHAR" />
+      <result column="startTime" property="startTime" jdbcType="VARCHAR"/>
+      <result column="endTime" property="endTime" jdbcType="VARCHAR" />
+       <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+  </resultMap>
+  
+    <resultMap id="abatorgenerated_TProcessTaskAssignee_HashMapResult_draft" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+      <result column="processName" property="processName" jdbcType="VARCHAR" />
+      <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+       <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+      <result column="activityName" property="activityName" jdbcType="VARCHAR" />
+      <result column="startTime" property="startTime" jdbcType="VARCHAR"/>
+       <result column="BUSINESS_TITLE" property="businessTitle" jdbcType="VARCHAR" />
+         <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+  </resultMap>
+  
+    <resultMap id="abatorgenerated_ByTaskExeConfigId" class="com.gotop.jbpm.model.TProcessTaskAssignee" >
+     <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ID" property="preTaskId" jdbcType="VARCHAR" />
+    <result column="PRE_TASK_ASSINGEE" property="preTaskAssingee" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_ORG" property="preTaskOrg" jdbcType="DECIMAL" />
+    <result column="PRE_TASK_TIME" property="preTaskTime" jdbcType="VARCHAR" />
+     <result column="TASK_EXE_CONFIG_ID" property="taskExeConfigId" jdbcType="DECIMAL" />
+    </resultMap>
+  
+    <!--  -->
+    <select id="selectByTaskExeConfigId"  resultMap="abatorgenerated_ByTaskExeConfigId"  parameterClass="java.util.HashMap" >
+    select ID, EXECUTION_ID, TASK_ID, PRE_TASK_ID, PRE_TASK_ASSINGEE, PRE_TASK_ORG, PRE_TASK_TIME,
+      TASK_EXE_CONFIG_ID
+    from T_PROCESS_TASK_ASSIGNEE
+    where TASK_EXE_CONFIG_ID = #taskExeConfigId#
+    and EXECUTION_ID = #executionId#
+    order by id desc
+  </select>
+ 
+ <!--  我的草稿-->
+    <select id="queryMyDraftsList" resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_draft"  resultClass="java.util.HashMap">
+       select T4.PROCESS_NAME AS processName, 
+       T2.Execution_Id_ AS EXECUTION_ID,
+       T2.DBID_ AS TASK_ID,
+       T2.Activity_Name_ AS activityName,
+        to_char(t2.create_,'yyyymmddhh24miss')        AS startTime,
+        T6.business_title as BUSINESS_TITLE,
+        T6.business_type as BUSINESS_TYPE
+       from 
+JBPM4_EXECUTION T1,
+JBPM4_TASK T2,
+T_PROCESS_CONFIG T4,
+T_PROCESS_BUSINESS T6 
+<dynamic prepend="where" > 
+T1.ID_=T2.EXECUTION_ID_
+AND T2.STATE_='open' 
+AND T1.PROCDEFID_=T4.DEFINITION_ID
+AND not exists (SELECT T.EXECUTION_ID from T_PROCESS_TASK_ASSIGNEE T where T.Execution_Id=T2.Execution_Id_)
+AND T2.Execution_Id_ = T6.execution_id
+AND
+  <isNotNull prepend="and" property="empId" >
+       T2.ASSIGNEE_ = #empId#
+      </isNotNull>
+  <isNotNull prepend="and" property="processName" >
+     T4.PROCESS_NAME like '%$processName$%'
+      </isNotNull>
+    <isNotNull prepend="and" property="businessType" >
+     T6.business_type = '$businessType$'
+     </isNotNull>
+</dynamic>
+order by t2.create_ desc
+    </select>
+  <!-- 我的待办 20140905新增PROCESS_TASK_ASSIGNEE_ID -->
+   <select id="queryMyToDoTasksList"  resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult"  resultClass="java.util.HashMap">
+       SELECT T1.ID,
+         T7.EXECUTION_ID_ as EXECUTION_ID,
+         t2.task_assignee_id as assignee,
+         T1.TASK_ID,
+         T1.PRE_TASK_ID,
+         T1.PRE_TASK_ASSINGEE,
+         T1.PRE_TASK_ORG,
+         to_char(TO_DATE(T1.PRE_TASK_TIME,
+                               'yyyy/MM/dd hh24:mi:ss'),
+                       'yyyy-mm-dd hh24:mi:ss') AS PRE_TASK_TIME,
+         T1.NEXT_TASK_ID,
+         T1.BUSINESS_KEY,
+         T3.EMPNAME           AS preTaskAssingeeName,
+         T4.ORGNAME           AS preTaskOrgName,
+         T6.PROCESS_NAME      AS processName,
+         T6.BUSINESS_TYPE  		AS BUSINESS_TYPE,
+         T2.PROCESS_TASK_ASSIGNEE_ID,
+         T2.PARENT_ID,
+         T2.ISCHILD,
+         T8.business_title as BUSINESS_TITLE,
+         a.dictname AS BUSINESS_NAME
+    FROM T_PROCESS_TASK_ASSIGNEE        T1,
+         T_PROCESS_TASK_ASSIGNEE_PERSON T2,
+         OM_EMPLOYEE                    T3,
+         OM_ORGANIZATION                T4,JBPM4_EXECUTION T5,
+         T_PROCESS_CONFIG               T6,
+         JBPM4_TASK                     T7,
+         T_PROCESS_BUSINESS T8,
+         eos_dict_entry                 a,
+         eos_dict_type                  b
+ 	<dynamic prepend="where" >
+     		T1.ID = T2.PROCESS_TASK_ASSIGNEE_ID
+  	 		AND T1.PRE_TASK_ASSINGEE = T3.EMPID
+   			AND T1.PRE_TASK_ORG = T4.ORGID
+   			AND T5.PROCDEFID_=T6.DEFINITION_ID
+   			AND T5.ID_= T7.EXECUTION_ID_
+   			AND T2.TASK_ID = T7.DBID_
+   			 AND  T7.STATE_='open'
+   			 AND T1.EXECUTION_ID = T8.EXECUTION_ID
+   			 AND T1.Business_Type = a.dictid
+             AND a.dicttypeid = b.dicttypeid
+             AND b.dicttypeid = 'ZHPT_BUSINESS_TYPE'
+   			AND
+       <isNotNull prepend="and" property="relationids" >
+           	T2.TASK_ASSIGNEE_ID IN ($relationids$)
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskAssingeeName" >
+          T3.EMPNAME LIKE '%$preTaskAssingeeName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        T4.ORGNAME LIKE '%$preTaskOrgName$%'
+      </isNotNull>
+        <isNotNull prepend="and" property="preTaskTimeStart" >
+            <![CDATA[
+            substr(T1.PRE_TASK_TIME,0,8) >= '$preTaskTimeStart$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeEnd" >
+       <![CDATA[
+        substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeEnd$'
+        ]]>
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskTimeStartAfter" >
+            <![CDATA[
+            substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeStartAfter$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeEnd" >
+       <![CDATA[
+        substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeEnd$'
+        ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="businessType" >
+    	 T8.business_type = #businessType#
+     </isNotNull>
+ 	</dynamic>
+ 	order by T1.PRE_TASK_TIME desc
+    </select>
+    
+         <!-- 我发起的流程-->
+    <select id="myStartProcessList"  resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_complete1"  resultClass="java.util.HashMap">
+   select * from (
+        select * from (
+select T1.ID,
+               T1.EXECUTION_ID,
+               T1.TASK_ID,
+               T1.PRE_TASK_ID,
+               T1.PRE_TASK_ASSINGEE,
+               T1.PRE_TASK_ORG,
+               T1.PRE_TASK_TIME,
+               T1.NEXT_TASK_ID,
+               T1.BUSINESS_KEY,
+               T3.EMPNAME AS preTaskAssingeeName,
+               T4.ORGNAME AS preTaskOrgName,
+               t6.process_name  AS processName,
+               t9.business_title,
+               t6.business_type,
+               t8.activity_name_ AS activityName,
+               t1.NEXT_ACTIVITY_NAME as currentActivityName, 
+               to_char(T8.START_, 'yyyymmddhh24miss') AS startTime,
+               to_char(T8.END_, 'yyyymmddhh24miss') AS endTime,
+               t1.NEXT_ASSINGEE_NAME as currentAssingee,
+               T8.END_,
+                 row_number() over(partition by t1.execution_id order by t1.id desc ) rn
+          from JBPM4_HIST_PROCINST     t5,
+               T_PROCESS_CONFIG        t6,
+               T_PROCESS_BUSINESS      t9,
+               T_PROCESS_TASK_ASSIGNEE t1,
+               JBPM4_HIST_TASK         t7,
+               om_employee             t3,
+               OM_ORGANIZATION         T4,
+               JBPM4_HIST_ACTINST      t8
+   <dynamic prepend="where" >
+         t5.procdefid_ = t6.definition_id
+           and t9.execution_id = t5.id_
+           AND T1.PRE_TASK_ORG = T4.ORGID
+           and t1.execution_id = t9.execution_id
+           and t7.execution_ = t1.execution_id
+           and t3.empid = t1.pre_task_assingee
+           and t8.htask_ = t1.pre_task_id
+             AND
+        <isNotNull prepend="and" property="empId" >
+              t9.submit_id= $empId$
+      </isNotNull>
+      <isNotNull prepend="and" property="businessType" >
+    	 T9.business_type = $businessType$
+     </isNotNull>
+      <isNotNull prepend="and" property="submitTime" >
+            <![CDATA[
+            t9.submit_time>= '$submitTime$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="submitTimeAfter" >
+            <![CDATA[
+            t9.submit_time<= '$submitTimeAfter$' 
+               ]]>
+      </isNotNull>
+   </dynamic>
+   )
+where rn=1
+ 
+ )  t
+ order by t.END_ desc
+    </select>
+    
+        <!-- 我的已办 20140901修改
+     
+     20140901 添加下个节点名称
+     20140902 添加下个节点办理人
+     -->
+    <select id="queryMyCompletedTasksList"  resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_complete1"  resultClass="java.util.HashMap">
+  select * from (
+select T1.ID,
+               T1.EXECUTION_ID,
+               T1.TASK_ID,
+               T1.PRE_TASK_ID,
+               T1.PRE_TASK_ASSINGEE,
+               T1.PRE_TASK_ORG,
+               T1.PRE_TASK_TIME,
+               T1.NEXT_TASK_ID,
+               T1.BUSINESS_KEY,
+               T3.EMPNAME AS preTaskAssingeeName,
+               T4.ORGNAME AS preTaskOrgName,
+               t6.process_name  AS processName,
+               t9.business_title,
+               t6.business_type,
+               t8.activity_name_ AS activityName,
+               t1.NEXT_ACTIVITY_NAME as currentActivityName, 
+               to_char(T8.START_, 'yyyymmddhh24miss') AS startTime,
+               to_char(T8.END_, 'yyyymmddhh24miss') AS endTime,
+                (select wm_concat(e.empname)
+                  from T_PROCESS_TASK_ASSIGNEE_PERSON n, om_employee e
+                 where n.task_assignee_id = e.empid
+                   and n.task_id = t1.next_task_id
+                 group by n.execution_id) as currentAssingee ,
+               T8.END_,
+                 row_number() over(partition by t1.execution_id order by t1.id desc ) rn
+          from JBPM4_HIST_PROCINST     t5,
+               T_PROCESS_CONFIG        t6,
+               T_PROCESS_BUSINESS      t9,
+               T_PROCESS_TASK_ASSIGNEE t1,
+               JBPM4_HIST_TASK         t7,
+               om_employee             t3,
+               OM_ORGANIZATION         T4,
+               JBPM4_HIST_ACTINST      t8
+   <dynamic prepend="where" >
+         t5.procdefid_ = t6.definition_id
+           and t9.execution_id = t5.id_
+           AND T1.PRE_TASK_ORG = T4.ORGID
+           and t1.execution_id = t9.execution_id
+           and t7.execution_ = t1.execution_id
+           and t3.empid = t1.pre_task_assingee
+           and t8.htask_ = t1.pre_task_id
+             AND
+        <isNotNull prepend="and" property="empId" >
+             T7.ASSIGNEE_= $empId$
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskAssingeeName" >
+          T3.EMPNAME LIKE '%$preTaskAssingeeName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        T4.ORGNAME LIKE '%$preTaskOrgName$%'
+      </isNotNull>
+      <isNotNull prepend="and" property="businessType" >
+    	 T9.business_type = $businessType$
+     </isNotNull>
+       <isNotNull prepend="and" property="startTime" >
+            <![CDATA[
+            substr(to_char(T8.START_, 'yyyymmddhh24miss') ,0,8) >= '$startTime$' 
+               ]]>
+      </isNotNull>
+       <isNotNull prepend="and" property="startTimeAfter" >
+            <![CDATA[
+            substr(to_char(T8.START_, 'yyyymmddhh24miss') ,0,8) <= '$startTimeAfter$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="endTime" >
+       <![CDATA[
+       		 substr(to_char(T8.END_, 'yyyymmddhh24miss'),0,8) <= '$endTime$'
+        ]]>
+        </isNotNull>
+         <isNotNull prepend="and" property="endTimeAfter" >
+            <![CDATA[
+            substr(to_char(T8.END_, 'yyyymmddhh24miss') ,0,8) <= '$endTimeAfter$' 
+               ]]>
+      </isNotNull>
+   </dynamic>
+   )
+where rn=1 order by END_ desc
+    </select>
+    <!-- 已办下载exl -->
+    <select id="downexl" resultMap="downexl_Map">
+    select *
+          from (select 
+                       t9.business_title,
+                       t6.business_type,
+                       to_char(T8.END_, 'yyyymmddhh24miss') AS endTime,
+                       t12.empname as preTaskAssingeeName,
+                       t14.orgname as preTaskOrgName,
+                       t9.submit_time as startTime,
+                       t8.end_,
+                       row_number() over(partition by t1.execution_id order by t1.id desc) rn
+                  from JBPM4_HIST_PROCINST     t5,
+                       T_PROCESS_CONFIG        t6,
+                       T_PROCESS_BUSINESS      t9,
+                       T_PROCESS_TASK_ASSIGNEE t1,
+                       JBPM4_HIST_TASK         t7,
+                       JBPM4_HIST_ACTINST      t8,
+                       om_employee             t12,
+                       om_emporg               t13,
+                       om_organization         t14
+             <dynamic prepend="where" >
+                 	t5.procdefid_ = t6.definition_id
+                   and t9.execution_id = t5.id_
+                   and t1.execution_id = t9.execution_id
+                   and t7.execution_ = t1.execution_id
+                   and t8.htask_ = t1.pre_task_id
+                   AND t9.submit_id = t12.empid
+                   AND t12.empid = t13.empid
+                   AND t13.orgid = t14.orgid
+                   AND
+        <isNotNull prepend="and" property="empId" >
+             T7.ASSIGNEE_= $empId$
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskAssingeeName" >
+          T3.EMPNAME LIKE '%$preTaskAssingeeName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        T4.ORGNAME LIKE '%$preTaskOrgName$%'
+      </isNotNull>
+      <isNotNull prepend="and" property="businessType" >
+    	 T9.business_type = $businessType$
+     </isNotNull>
+       <isNotNull prepend="and" property="startTime" >
+            <![CDATA[
+            substr(to_char(T8.START_, 'yyyymmddhh24miss') ,0,8) >= '$startTime$' 
+               ]]>
+      </isNotNull>
+       <isNotNull prepend="and" property="startTimeAfter" >
+            <![CDATA[
+            substr(to_char(T8.START_, 'yyyymmddhh24miss') ,0,8) <= '$startTimeAfter$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="endTime" >
+       <![CDATA[
+       		 substr(to_char(T8.END_, 'yyyymmddhh24miss'),0,8) <= '$endTime$'
+        ]]>
+        </isNotNull>
+         <isNotNull prepend="and" property="endTimeAfter" >
+            <![CDATA[
+            substr(to_char(T8.END_, 'yyyymmddhh24miss') ,0,8) <= '$endTimeAfter$' 
+               ]]>
+      </isNotNull>
+   </dynamic>
+   )
+where rn=1 order by END_ desc
+    </select>
+    
+        <!-- 我的已办 -->
+    <select id="queryMyCompletedTasksList1"  resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_complete"  resultClass="java.util.HashMap">
+    SELECT T1.ID,
+       T1.EXECUTION_ID,
+       T1.TASK_ID,
+       T1.PRE_TASK_ID,
+       T1.PRE_TASK_ASSINGEE,
+       T1.PRE_TASK_ORG,
+       T1.PRE_TASK_TIME,
+       T1.NEXT_TASK_ID,
+       T1.BUSINESS_KEY,
+       T1.BUSINESS_TYPE,
+       T3.EMPNAME           AS preTaskAssingeeName,
+       T4.ORGNAME           AS preTaskOrgName,
+       T6.PROCESS_NAME      AS processName,
+       T8.ACTIVITY_NAME_  AS activityName,
+       to_char(T8.START_,'yyyymmddhh24miss')        AS startTime,
+       to_char(T8.END_,'yyyymmddhh24miss')          AS endTime,
+       T9.business_title as BUSINESS_TITLE
+FROM T_PROCESS_TASK_ASSIGNEE        T1,
+       T_PROCESS_TASK_ASSIGNEE_PERSON T2,
+       OM_EMPLOYEE                    T3,
+       OM_ORGANIZATION                T4，
+       JBPM4_HIST_PROCINST            T5,
+       T_PROCESS_CONFIG               T6,
+       JBPM4_HIST_TASK                T7,
+       JBPM4_HIST_ACTINST             T8,
+       T_PROCESS_BUSINESS T9
+   <dynamic prepend="where" >
+          T1.ID = T2.PROCESS_TASK_ASSIGNEE_ID
+           AND T1.PRE_TASK_ASSINGEE = T3.EMPID
+           AND T1.PRE_TASK_ORG = T4.ORGID
+           AND T1.EXECUTION_ID = T7.EXECUTION_
+           AND T5.PROCDEFID_=T6.DEFINITION_ID
+           AND T1.EXECUTION_ID=T5.ID_
+           AND T5.ID_ = T8.EXECUTION_
+           AND  T7.STATE_='completed'
+            AND T1.PRE_TASK_ID=T8.HTASK_
+              AND T7.DBID_=T8.HTASK_
+              AND T1.EXECUTION_ID=T9.EXECUTION_ID
+             AND
+      <!--  <isNotNull prepend="and" property="relationids" >
+             T2.TASK_ASSIGNEE_ID IN ($relationids$)
+      </isNotNull> -->
+        <isNotNull prepend="and" property="empId" >
+             T7.ASSIGNEE_= $empId$
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskAssingeeName" >
+          T3.EMPNAME LIKE '%$preTaskAssingeeName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        T4.ORGNAME LIKE '%$preTaskOrgName$%'
+      </isNotNull>
+      <isNotNull prepend="and" property="businessType" >
+    	 T9.business_type = #businessType#
+     </isNotNull>
+   </dynamic>
+   order by T8.END_ desc
+    </select>
+    
+<!--     查找督办
+     20140904
+    <select id="querySuperviseList" resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_sup"  resultClass="java.util.HashMap">
+    	SELECT a.* from(SELECT T1.ID,
+       T7.EXECUTION_ID_ as EXECUTION_ID,
+       t2.task_assignee_id as assignee,
+       T1.TASK_ID,
+       T1.PRE_TASK_ID,
+       T1.PRE_TASK_ASSINGEE,
+       T1.PRE_TASK_ORG,
+       to_char(TO_DATE(T1.PRE_TASK_TIME, 'yyyy/MM/dd hh24:mi:ss'),
+               'yyyy-mm-dd hh24:mi:ss') AS PRE_TASK_TIME,
+       T1.NEXT_TASK_ID,
+       T1.BUSINESS_KEY,
+       T3.EMPNAME AS preTaskAssingeeName,
+       T4.ORGNAME AS preTaskOrgName,
+       T6.PROCESS_NAME AS processName,
+       T6.BUSINESS_TYPE AS BUSINESS_TYPE,
+       T2.PROCESS_TASK_ASSIGNEE_ID,
+       T2.PARENT_ID,
+       T2.ISCHILD,
+       T8.business_title as BUSINESS_TITLE,
+       T2.id as parentid
+    FROM T_PROCESS_TASK_ASSIGNEE        T1,
+         T_PROCESS_TASK_ASSIGNEE_PERSON T2,
+         OM_EMPLOYEE                    T3,
+         OM_ORGANIZATION                T4,JBPM4_EXECUTION T5,
+         T_PROCESS_CONFIG               T6,
+         JBPM4_TASK                     T7,
+         T_PROCESS_BUSINESS T8 
+ 	<dynamic prepend="where" >
+     		T1.ID = T2.PROCESS_TASK_ASSIGNEE_ID
+  	 		AND T1.PRE_TASK_ASSINGEE = T3.EMPID
+   			AND T1.PRE_TASK_ORG = T4.ORGID
+   			 AND  T5.ID_ like T1.EXECUTION_ID||'%'
+   			AND T5.PROCDEFID_=T6.DEFINITION_ID
+   			AND T5.ID_= T7.EXECUTION_ID_
+   			AND T2.TASK_ID = T7.DBID_
+   			 AND  T7.STATE_='open'
+   			 AND  T2.TASK_ASSIGNEE_STATE in('0','10')
+   			 AND T1.EXECUTION_ID = T8.EXECUTION_ID
+   			AND T6.Business_Type = '02'
+   			AND
+       <isNotNull prepend="and" property="relationids" >
+       	<isNotEqual compareProperty="flag" compareValue="1">
+           	T2.TASK_ASSIGNEE_ID IN ($relationids$)
+        </isNotEqual>
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskAssingeeName" >
+          T3.EMPNAME LIKE '%$preTaskAssingeeName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        T4.ORGNAME LIKE '%$preTaskOrgName$%'
+      </isNotNull>
+        <isNotNull prepend="and" property="preTaskTimeStart" >
+            <![CDATA[
+            substr(T1.PRE_TASK_TIME,0,8) >= '$preTaskTimeStart$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeEnd" >
+       <![CDATA[
+        substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeEnd$'
+        ]]>
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskTimeStartAfter" >
+            <![CDATA[
+            substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeStartAfter$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeEnd" >
+       <![CDATA[
+        substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeEnd$'
+        ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="businessType" >
+    	 T8.business_type = #businessType#
+     </isNotNull>
+ 	</dynamic>
+ 	order by T1.PRE_TASK_TIME desc) a,T_PROCESS_TASK_ASSIGNEE_PERSON b
+ 	 where
+ 	<isEqual compareProperty="flag" compareValue="2">
+  		(a.parentid = b.parent_id and b.task_assignee_state='10') or
+  	</isEqual>
+   a.parentid = b.id
+    </select> -->
+    
+     <!-- 查找督办
+     20140904 -->
+    <select id="querySuperviseList" resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_sup"  resultClass="java.util.HashMap">
+<!--     	SELECT a.* from(SELECT T1.ID,
+       T7.EXECUTION_ID_ as EXECUTION_ID,
+       t2.task_assignee_id as assignee,
+       T1.TASK_ID,
+       T1.PRE_TASK_ID,
+       T1.PRE_TASK_ASSINGEE,
+       T1.PRE_TASK_ORG,
+       to_char(TO_DATE(T1.PRE_TASK_TIME, 'yyyy/MM/dd hh24:mi:ss'),
+               'yyyy-mm-dd hh24:mi:ss') AS PRE_TASK_TIME,
+       T1.NEXT_TASK_ID,
+       T1.BUSINESS_KEY,
+       T3.EMPNAME AS preTaskAssingeeName,
+       T4.ORGNAME AS preTaskOrgName,
+       T6.PROCESS_NAME AS processName,
+       T6.BUSINESS_TYPE AS BUSINESS_TYPE,
+       T2.PROCESS_TASK_ASSIGNEE_ID,
+       T2.PARENT_ID,
+       T2.ISCHILD,
+       T8.business_title as BUSINESS_TITLE,
+       T2.id as parentid
+    FROM T_PROCESS_TASK_ASSIGNEE        T1,
+         T_PROCESS_TASK_ASSIGNEE_PERSON T2,
+         OM_EMPLOYEE                    T3,
+         OM_ORGANIZATION                T4,JBPM4_EXECUTION T5,
+         T_PROCESS_CONFIG               T6,
+         JBPM4_TASK                     T7,
+         T_PROCESS_BUSINESS T8 
+ 	where
+     		T1.ID = T2.PROCESS_TASK_ASSIGNEE_ID
+  	 		AND T1.PRE_TASK_ASSINGEE = T3.EMPID
+   			AND T1.PRE_TASK_ORG = T4.ORGID 
+   			AND T5.PROCDEFID_=T6.DEFINITION_ID
+   			AND T5.ID_= T7.EXECUTION_ID_
+   			AND T2.TASK_ID = T7.DBID_
+   			 AND  T7.STATE_='open' 
+   			 AND T1.EXECUTION_ID = T8.EXECUTION_ID
+   			AND T6.Business_Type = '02'
+       <isNotNull prepend="and" property="relationids" >
+           	T2.TASK_ASSIGNEE_ID IN ($relationids$)
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskAssingeeName" >
+          T3.EMPNAME LIKE '%$preTaskAssingeeName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        T4.ORGNAME LIKE '%$preTaskOrgName$%'
+      </isNotNull>
+        <isNotNull prepend="and" property="preTaskTimeStart" >
+            <![CDATA[
+            substr(T1.PRE_TASK_TIME,0,8) >= '$preTaskTimeStart$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeEnd" >
+       <![CDATA[
+        substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeEnd$'
+        ]]>
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskTimeStartAfter" >
+            <![CDATA[
+            substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeStartAfter$' 
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeEnd" >
+       <![CDATA[
+        substr(T1.PRE_TASK_TIME,0,8) <= '$preTaskTimeEnd$'
+        ]]>
+      </isNotNull>
+ 	order by T1.PRE_TASK_TIME desc) a,T_PROCESS_TASK_ASSIGNEE_PERSON b
+ 	 where
+ 	<isEqual compareProperty="flag" compareValue="2">
+  		(a.parentid = b.parent_id and b.task_assignee_state='10') or
+  	</isEqual>
+   a.parentid = b.id -->
+SELECT *
+  FROM (SELECT '' ID,
+               '' TASK_ID,
+               '' PRE_TASK_ID,
+               '' PRE_TASK_ORG,
+               TO_CHAR(TO_DATE(E.COMPLETE_DATE,'yyyyMMdd'),'yyyy-MM-dd') PRE_TASK_TIME,
+               E.SUPERVISE_ID AS BUSINESS_KEY,
+               N.TASK_ID NEXT_TASK_ID,
+               E.FLOW_ID EXECUTION_ID,
+               '02' BUSINESS_TYPE,
+               '' PRE_TASK_ASSINGEE,
+               N.TASK_ASSIGNEE_ID ASSIGNEE,
+               N.PARENT_ID,
+               N.ISCHILD,
+               E.SUPERVISE_ITEM BUSINESS_TITLE,
+               '' PRETASKASSINGEENAME,
+               '' PRETASKORGNAME,
+               '' PROCESSNAME,
+               N.PROCESS_TASK_ASSIGNEE_ID,
+               '' PARENTID,
+               ROW_NUMBER() OVER(PARTITION BY N.EXECUTION_ID ORDER BY N.ID DESC) RN
+          FROM T_SUPERVISE_TABLE              E,
+               T_PROCESS_TASK_ASSIGNEE_PERSON N,
+               JBPM4_TASK                     K
+         WHERE E.FLOW_ID = N.EXECUTION_ID
+           AND K.STATE_ = 'open'
+           AND K.EXECUTION_ID_ =N.EXECUTION_ID
+           AND K.DBID_ = N.TASK_ID
+           <isEqual property="flag" compareValue="0">
+               AND N.TASK_ASSIGNEE_ID =#empid#
+           </isEqual>
+           <isEqual property="flag" compareValue="1">
+           </isEqual>
+           <isEqual property="flag" compareValue="2">
+               AND e.remind_id LIKE '%'||#empid#||'%'
+           </isEqual>
+           <isEqual property="flag" compareValue="3">
+               AND (E.IMP_UNIT LIKE '%' ||#orgcode# || '%' OR E.CO_UNIT LIKE '%' ||#orgcode# || '%')
+           </isEqual>                                 
+           )
+ WHERE RN = 1   
+    order by PRE_TASK_TIME asc
+    </select>
+    <!-- 我的已办 20140828测试修改-->
+    <select id="queryMyCompletedTasksList2"  resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_complete1"  resultClass="java.util.HashMap">
+    select * from (
+select T1.ID,
+               T1.EXECUTION_ID,
+               T1.TASK_ID,
+               T1.PRE_TASK_ID,
+               T1.PRE_TASK_ASSINGEE,
+               T1.PRE_TASK_ORG,
+               T1.PRE_TASK_TIME,
+               T1.NEXT_TASK_ID,
+               T1.BUSINESS_KEY,
+               T3.EMPNAME AS preTaskAssingeeName,
+               T4.ORGNAME AS preTaskOrgName,
+               t6.process_name  AS processName,
+               t9.business_title,
+               t6.business_type,
+               t8.activity_name_ AS activityName,
+               t10.activity_name_ as currentActivityName, 
+               to_char(T8.START_, 'yyyymmddhh24miss') AS startTime,
+               to_char(T8.END_, 'yyyymmddhh24miss') AS endTime,
+               (select wm_concat(e.empname)
+                  from T_PROCESS_TASK_ASSIGNEE_PERSON n, om_employee e
+                 where n.task_assignee_id = e.empid
+                   and n.task_id = t1.next_task_id
+                 group by n.execution_id) as currentAssingee,
+                 row_number() over(partition by t1.execution_id order by t1.id desc ) rn
+          from JBPM4_HIST_PROCINST     t5,
+               T_PROCESS_CONFIG        t6,
+               T_PROCESS_BUSINESS      t9,
+               T_PROCESS_TASK_ASSIGNEE t1,
+               JBPM4_HIST_TASK         t7,
+               om_employee             t3,
+               OM_ORGANIZATION         T4,
+               JBPM4_HIST_ACTINST      t8,
+               JBPM4_HIST_ACTINST      t10
+   <dynamic prepend="where" >
+         t5.procdefid_ = t6.definition_id
+           and t9.execution_id = t5.id_
+           AND T1.PRE_TASK_ORG = T4.ORGID
+           and t1.execution_id = t9.execution_id
+           and t7.execution_ = t1.execution_id
+           and t3.empid = t1.pre_task_assingee
+           and t8.htask_ = t1.pre_task_id
+           and t10.htask_ = t1.next_task_id
+             AND
+        <isNotNull prepend="and" property="empId" >
+             T7.ASSIGNEE_= $empId$
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskAssingeeName" >
+          T3.EMPNAME LIKE '%$preTaskAssingeeName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        T4.ORGNAME LIKE '%$preTaskOrgName$%'
+      </isNotNull>
+      <isNotNull prepend="and" property="businessType" >
+    	 T9.business_type = $businessType$
+     </isNotNull>
+   </dynamic>
+     order by T8.END_ desc) where rn=1
+    </select>
+    <insert id="abatorgenerated_insert" parameterClass="com.gotop.jbpm.model.TProcessTaskAssignee" >
+        <selectKey resultClass="long" keyProperty="id">
+		SELECT T_PROCESS_TASK_ASSIGNEE_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+   insert into T_PROCESS_TASK_ASSIGNEE (ID, EXECUTION_ID, PRE_TASK_ID, PRE_TASK_ASSINGEE,
+      PRE_TASK_ORG, PRE_TASK_TIME, NEXT_TASK_ID, TASK_ID, BUSINESS_KEY, BUSINESS_TYPE,NEXT_ACTIVITY_NAME,NEXT_ASSINGEE_NAME,TASK_EXE_CONFIG_ID)
+    values (#id:DECIMAL:-9999#, #executionId:VARCHAR#, #preTaskId:VARCHAR#,
+      #preTaskAssingee:DECIMAL:-9999#, #preTaskOrg:DECIMAL:-9999#, #preTaskTime:VARCHAR#,
+      #nextTaskId:VARCHAR#, #taskId:VARCHAR#, #businessKey:DECIMAL:-9999#, #businessType:VARCHAR#,#nextActivityName:VARCHAR#,#nextAssingeeName:VARCHAR#,#taskExeConfigId:DECIMAL:-9999#)
+  </insert>
+   <update id="abatorgenerated_updateByPrimaryKeySelective" parameterClass="com.gotop.jbpm.model.TProcessTaskAssignee" >
+    <!--通过主键更新部分字段，部分字段说明：当字段为null时不更新，当字段值为''空值是更新为空值-->
+    update T_PROCESS_TASK_ASSIGNEE
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="executionId" >
+        EXECUTION_ID = #executionId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="taskId" >
+        TASK_ID = #taskId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="preTaskId" >
+        PRE_TASK_ID = #preTaskId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="preTaskAssingee" >
+        PRE_TASK_ASSINGEE = #preTaskAssingee:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="preTaskOrg" >
+        PRE_TASK_ORG = #preTaskOrg:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="preTaskTime" >
+        PRE_TASK_TIME = #preTaskTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="nextTaskId" >
+        NEXT_TASK_ID = #nextTaskId:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where ID = #id:DECIMAL#
+  </update> 
+    <select id="querySuperviseRemMore" resultMap="abatorgenerated_TProcessTaskAssignee_HashMapResult_sup"  resultClass="java.util.HashMap">
+SELECT *
+  FROM (SELECT '' ID,
+               '' TASK_ID,
+               '' PRE_TASK_ID,
+               '' PRE_TASK_ORG,
+               EE.PRE_TASK_TIME PRE_TASK_TIME,
+               E.SUPERVISE_ID AS BUSINESS_KEY,
+               N.TASK_ID NEXT_TASK_ID,
+               E.FLOW_ID EXECUTION_ID,
+               '02' BUSINESS_TYPE,
+               ee.PRE_TASK_ASSINGEE,
+               N.TASK_ASSIGNEE_ID ASSIGNEE,
+               N.PARENT_ID,
+               N.ISCHILD,
+               E.SUPERVISE_ITEM BUSINESS_TITLE,
+               YE.EMPNAME PRETASKASSINGEENAME,
+               ORG.ORGNAME PRETASKORGNAME,
+               '' PROCESSNAME,
+               N.PROCESS_TASK_ASSIGNEE_ID,
+               '' PARENTID,
+               E.COMPLETE_DATE,
+               ROW_NUMBER() OVER(PARTITION BY N.EXECUTION_ID ORDER BY N.ID DESC) RN
+          FROM T_SUPERVISE_TABLE              E,
+               T_PROCESS_TASK_ASSIGNEE_PERSON N,
+               JBPM4_TASK                     K,
+               T_PROCESS_TASK_ASSIGNEE        EE,
+               OM_EMPLOYEE                    YE,
+               OM_ORGANIZATION                ORG
+         WHERE E.FLOW_ID = N.EXECUTION_ID
+           AND K.STATE_ = 'open'
+           AND K.EXECUTION_ID_ =N.EXECUTION_ID
+           AND K.DBID_ = N.TASK_ID
+           AND N.PROCESS_TASK_ASSIGNEE_ID = EE.ID
+           AND YE.EMPID = EE.PRE_TASK_ASSINGEE
+           AND ORG.ORGID = EE.PRE_TASK_ORG
+           <isEqual property="flag" compareValue="1">
+           </isEqual>
+           <isEqual property="flag" compareValue="2">
+               AND e.remind_id LIKE '%'||#empid#||'%'        
+           </isEqual>
+           <isEqual property="flag" compareValue="3">
+               AND (E.IMP_UNIT LIKE '%' ||#orgcode# || '%' OR E.CO_UNIT LIKE '%' ||#orgcode# || '%')      
+           </isEqual>
+          <isEqual property="flag" compareValue="0">
+              AND N.TASK_ASSIGNEE_ID =#empid#       
+           </isEqual>
+      <isNotNull prepend="and" property="preTaskAssingeeName" >
+          ye.EMPNAME LIKE '%'||#preTaskAssingeeName#||'%'
+      </isNotNull>
+       <isNotNull prepend="and" property="preTaskOrgName" >
+        org.ORGNAME LIKE '%'||#preTaskOrgName#||'%'
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeStart" >
+            <![CDATA[
+            substr(ee.PRE_TASK_TIME,0,8) >= #preTaskTimeStart#
+               ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="preTaskTimeEnd" >
+       <![CDATA[
+        substr(ee.PRE_TASK_TIME,0,8) <= #preTaskTimeEnd#
+        ]]>
+      </isNotNull>         
+           )
+ WHERE RN = 1       
+ order by COMPLETE_DATE asc
+    </select> 
+  </sqlMap>

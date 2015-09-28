@@ -1,0 +1,4 @@
+keytool -genkey -alias ws_security -keypass keygotopord -keystore privatestore.jks -storepass keystoregotopord -dname "cn=ws_security" -keyalg RSA
+keytool -selfcert -alias ws_security -keystore privatestore.jks -storepass keystoregotopord -keypass keygotopord
+keytool -export -alias ws_security -file key.rsa -keystore privatestore.jks -storepass keystoregotopord
+keytool -import -alias ws_security  -file key.rsa -keystore publicstore.jks -storepass keystoregotopord

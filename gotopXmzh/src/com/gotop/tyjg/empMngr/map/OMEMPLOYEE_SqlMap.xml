@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="OMEMPLOYEE">
+	
+	<typeAlias alias="OmEmporg" type="com.gotop.tyjg.empMngr.model.OmEmporg"/>
+	<typeAlias alias="omPosition" type="com.gotop.vo.tyjg.OmPosition"/>
+  <select id="select_OrgMangs" resultClass="java.util.HashMap">
+    <![CDATA[
+    	select * from (
+			select omorg.*,'' ismain from om_organization omorg,ABF_T_RYKGLJG rykgljg where omorg.orgid = rykgljg.orgid and empid = #empid#
+			union
+			select omorg.*,om_emporg.ismain from om_organization omorg,om_emporg where om_emporg.orgid = omorg.orgid and empid = #empid#
+		) order by displayorder,orgcode
+	]]>
+	</select>
+  
+    <resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="childMap">
+		<result property="orgId" jdbcType="Long" column="ORGID"/>
+		<result property="orgName" jdbcType="String" column="ORGNAME"/>
+		<result property="orgSeq" jdbcType="String" column="ORGSEQ"/>
+		<result property="jgsx" jdbcType="String" column="JGSX"/>
+		<result property="orgDegree" jdbcType="String" column="ORGDEGREE"/>
+		<result property="orgType" jdbcType="String" column="ORGTYPE"/>
+		<result property="status" jdbcType="String" column="STATUS"/>
+	</resultMap>
+	<select id="queryOrgNodes" resultMap="childMap">
+		<![CDATA[
+		  SELECT ORGID, ORGNAME,ORGSEQ,JGSX,ORGDEGREE,ORGTYPE,STATUS
+		        FROM OM_ORGANIZATION
+		       WHERE 1=1
+	    ]]>
+	  <isEqual prepend="and" property="parentOrgId" compareValue="0">
+	  <![CDATA[ OM_ORGANIZATION.PARENTORGID IS NULL ]]>
+	   </isEqual>
+	   <isGreaterThan prepend="and" property="parentOrgId" compareValue="0">
+	   <![CDATA[	OM_ORGANIZATION.PARENTORGID = #parentOrgId# ]]>
+	   </isGreaterThan>
+	   <isNotNull prepend="and" property="orgDegree">
+			 <![CDATA[OM_ORGANIZATION.ORGDEGREE <= #orgDegree#]]>
+	   </isNotNull>
+	   <isNotNull prepend="and" property="jgsx">
+			OM_ORGANIZATION.JGSX = #jgsx#
+	   </isNotNull>
+	  <![CDATA[ ORDER BY OM_ORGANIZATION.DISPLAYORDER, OM_ORGANIZATION.ORGCODE ]]>
+	</select>
+	
+	<resultMap class="com.gotop.vo.tyjg.Omemployee" id="empNodeMap">
+		<result property="empid" jdbcType="Long" column="empid"/>
+		<result property="empName" jdbcType="String" column="empname"/>
+		<result property="userid" jdbcType="String" column="userid"/>
+		<result property="gender" jdbcType="String" column="gender"/>
+	</resultMap>
+	<select id="selectEmpNodes" resultMap="empNodeMap">
+		<![CDATA[
+			select y.empid,y.empname,y.userid,y.gender from om_employee y,om_emporg g where y.empid=g.empid and g.orgid=#orgid# order by y.displayorder
+		]]>
+	</select>
+  
+  	<resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="select_result">
+	    <result column="orgid" jdbcType="VARCHAR" property="orgId" />
+	    <result column="orgname" jdbcType="VARCHAR" property="orgName" />
+	    <result column="orglevel" jdbcType="INT" property="orgLevel" />
+	    <result column="orgcode" jdbcType="VARCHAR" property="orgCode" />
+	    <result column="orgtype" jdbcType="VARCHAR" property="orgType" />
+	    <result column="jgsx" jdbcType="INT" property="jgsx" />
+	    <result column="ysjgbh" jdbcType="VARCHAR" property="ysjgbh" />
+  	</resultMap>
+  	<select id="selectOrg" resultMap="select_result" parameterClass="java.lang.String">
+	    select g.orgid,g.orgname,g.orglevel,g.orgcode,g.orgdegree,g.orgtype,g.jgsx,g.ysjgbh 
+	    from om_organization g where g.orgid=#orgid#
+	</select>
+	
+  	
+  	<resultMap id="empMap" class="com.gotop.vo.tyjg.Omemployee">
+		<result column="empid" property="empid" jdbcType="INT" />
+		<result column="empcode" property="empCode" jdbcType="VARCHAR" />
+		<result column="operatorid" property="operatorid" jdbcType="INT" />
+		<result column="userid" property="userid" jdbcType="VARCHAR" />
+		<result column="empname" property="empName" jdbcType="VARCHAR" />
+		<result column="position" property="position" jdbcType="INT" />
+		<result column="empstatus" property="empStatus" jdbcType="CHAR" />
+		<result column="orgid" property="orgid" jdbcType="INT" />
+	</resultMap>
+  	<!-- 查询机构员工信息 -->
+	<select id="queryEmpid" parameterClass="java.util.HashMap" resultMap="empMap">
+		select y.empid,y.empcode,y.operatorid,y.userid,y.empname,y.position,y.empstatus,
+		y.orgid from om_employee y where 1 = 1
+		<isNotNull prepend="and" property="orgid">
+			y.orgid = #orgid#
+		</isNotNull>
+	</select>
+  	
+  	<select id="select_EmpOrgList"  resultClass="java.util.HashMap">
+    <![CDATA[
+    	select * from om_emporg g where g.empid=#empid# and g.orgid=#orgid#
+	]]>
+	</select>
+	
+	<select id="select_EmpOrgid"  resultClass="OmEmporg" parameterClass="java.util.HashMap">
+    <![CDATA[
+    	select * from om_emporg g where g.empid=#empid# and g.ismain='y'
+	]]>
+	</select>
+  	
+  	<select id="query_orgList"  resultClass="java.util.HashMap">
+    <![CDATA[
+    	select * from om_organization r where r.orgid=#orgid#
+	]]>
+	</select>
+  	
+  	<insert id="insert_om_emporg" parameterClass="java.util.HashMap">
+	    insert into om_emporg (EMPID, ORGID, ISMAIN, MODFLAG, LASTUPDATE,DATASOURCE)
+	    values (#empid#, #orgid#, #ismain#, #modflag#, #lastUpdate#,#datasource#)
+	</insert>
+  	
+  	<update id="update_om_employee" parameterClass="java.util.HashMap">
+     update om_employee set orgid = #orgid# where empid =#empid#
+    </update>
+  	
+   <delete id="del_om_emporg" parameterClass="java.util.HashMap">
+     delete from om_emporg where orgid = #orgid# and empid =#empid#
+   </delete>
+  
+   <select id="empUnOrg_countNums"  parameterClass="java.util.HashMap" resultClass="int">
+    <!--通过查询实例，统计总数-->
+    	select count(1) from om_emporg e where e.orgid=#orgid#
+  </select>
+  
+  
+  
+  <resultMap id="empInfoMap" class="com.gotop.tyjg.empMngr.model.EmpUnOrgBean">
+		<result column="empid" property="empid" jdbcType="NUMBER" />
+		<result column="empcode" property="empcode" jdbcType="VARCHAR" />
+		<result column="empname" property="empname" jdbcType="VARCHAR" />
+		<result column="empstatus" property="empstatus" jdbcType="VARCHAR" />
+		<result column="orgname" property="orgname" jdbcType="VARCHAR" />
+		<result column="displayorder" property="displayorder" jdbcType="VARCHAR" />
+	</resultMap>
+  <select id="query_empUnOrgList" parameterClass="java.util.HashMap" resultMap="empInfoMap">
+   <!-- 查询机构下人员信息datacell列表 -->
+    <!--通过Bean方式的动态条件，查询分页数据-->
+    <include refid="COMMON.oracle_Pagination_Head" />
+    select y.empid,y.empcode,y.empname,y.empstatus,g.orgname,y.displayorder 
+    from om_emporg a,om_employee y,om_organization g 
+  	where a.empid =y.empid and g.orgid =a.orgid and a.orgid =#orgid# order by y.displayorder asc
+    <include refid="COMMON.oracle_Pagination_Tail" />
+  </select>
+  
+  
+  <select id="selectEmpOrg" parameterClass="java.util.HashMap" resultClass="OmEmporg">
+	  	SELECT A.ORGNAME orgname,
+	       C.EMPID   empid,
+	       C.ORGID   orgid,
+	       C.ISMAIN  ismain,
+	       A.ORGTYPE orgtype
+	  FROM OM_ORGANIZATION A, OM_EMPLOYEE B, OM_EMPORG C
+	 WHERE A.ORGID = C.ORGID
+	   AND B.EMPID = C.EMPID
+	   AND B.EMPID = #empid#
+	 ORDER BY C.ISMAIN DESC, A.ORGCODE
+  </select>
+  
+  
+  <select id="countEmpOrg" resultClass="java.lang.Integer">
+	  	SELECT count(1)
+	  FROM OM_ORGANIZATION A, OM_EMPLOYEE B, OM_EMPORG C
+	 WHERE A.ORGID = C.ORGID
+	   AND B.EMPID = C.EMPID
+	   AND B.EMPID = #empid#
+	 ORDER BY C.ISMAIN DESC, A.ORGCODE  	
+  </select>
+  
+  <!-- 统计岗位数量 -->
+  <select id="countPositionNum" resultClass="java.lang.Integer">
+  		SELECT COUNT(1) NUM FROM OM_POSITION M 
+  		WHERE 1 = 1
+  		 <isNotEmpty prepend="AND" property="posiName">
+	    	M.POSINAME =#posiName#
+	    </isNotEmpty>
+  </select>
+   <!-- 修改排序 -->
+   <update id="update_employee_order" parameterClass="java.util.HashMap">
+     update om_employee set displayorder= #displayorder# where empid = #empid#
+   </update>
+  
+  
+  <resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="singleOrgInfoMap">
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="orgCode" jdbcType="string" column="ORGCODE"/>
+		<result property="orgName" jdbcType="string" column="ORGNAME"/>
+		<result property="orgType" jdbcType="string" column="ORGTYPE"/>
+		<result property="displayOrder" jdbcType="string" column="DISPLAYORDER"/>
+		<result property="orgLevel" jdbcType="string" column="ORGLEVEL"/>
+		<result property="orgDegree" jdbcType="string" column="ORGDEGREE"/>
+		<result property="whry" jdbcType="string" column="WHRY"/>
+		<result property="whsj" jdbcType="string" column="WHSJ"/>
+		<result property="orgSeq" jdbcType="string" column="ORGSEQ"/>
+		<result property="status" jdbcType="string" column="STATUS"/>
+		<result property="area" jdbcType="string" column="AREA"/>
+		<result property="subCount" jdbcType="string" column="SUBCOUNT" nullValue="0"/>
+		<result property="orgManager" jdbcType="string" column="ORGMANAGER"/>
+		<result property="isLeaf" jdbcType="string" column="ISLEAF"/>
+		<result property="remark" jdbcType="string" column="REMARK"/>
+		<result property="realName" jdbcType="string" column="REALNAME"/>
+		<result property="zipCode" jdbcType="string" column="ZIPCODE"/>
+		<result property="snbz" jdbcType="string" column="SNBZ"/>
+		<result property="orgTypeField" jdbcType="string" column="ORGTYPEFIELD" nullValue="0"/>
+		<result property="ysjgbh" jdbcType="string" column="YSJGBH"/>
+		<result property="parentOrgId" jdbcType="string" column="PARENTORGID"  nullValue="0"/>
+		<result property="areaType" jdbcType="string" column="AREATYPE"/>	
+		<result property="zhjb" jdbcType="string" column="ZHJB"/>
+		<result property="jgsx" jdbcType="string" column="JGSX"/>	
+		<result property="parentName" jdbcType="string" column="PARENTNAME"/>	
+	</resultMap>
+  <!-- 根据机构编号查询某个机构的基本信息 -->
+	<select id="singleOrgInfo" resultMap="singleOrgInfoMap">
+		<![CDATA[
+		SELECT A.ORGID,
+               A.ORGCODE,
+               A.ORGNAME,
+               A.ORGLEVEL,
+               A.ORGDEGREE,
+               A.PARENTORGID,
+               A.ORGSEQ,
+               A.ORGTYPE,
+               A.STATUS,
+               A.AREA,
+               A.LASTUPDATE,
+               A.UPDATOR,
+               A.SUBCOUNT,
+               A.ORGMANAGER,
+               A.ISLEAF,
+               A.REMARK,
+               A.REALNAME,
+               A.ZIPCODE,
+               A.ORGTYPEFIELD,
+               A.SNBZ,
+               A.ZHJB,
+               A.JGSX,
+               A.YSJGBH,
+               A.DISPLAYORDER,
+               A.AREATYPE,
+               A.WHRY,
+               TO_CHAR(A.WHSJ, 'yyyy-MM-dd HH24:mi:ss') WHSJ,
+               (SELECT B.ORGNAME FROM OM_ORGANIZATION B WHERE B.ORGID = A.PARENTORGID) PARENTNAME
+          FROM OM_ORGANIZATION A
+         WHERE A.ORGID = #orgid#
+		 ]]>
+	</select>
+  
+  
+   <resultMap class="com.gotop.tyjg.orgmanagement.model.Abftjgfjxx" id="singleOrgfjxxInfoMap">
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="webUrl" jdbcType="string" column="WEBURL"/>
+		<result property="createTime" jdbcType="string" column="CREATETIME"/>
+		<result property="startDate" jdbcType="string" column="STARTDATE"/>
+		<result property="endDate" jdbcType="string" column="ENDDATE"/>
+		<result property="linkMan" jdbcType="string" column="LINKMAN"/>
+		<result property="linkTel" jdbcType="string" column="LINKTEL"/>
+		<result property="email" jdbcType="string" column="EMAIL"/>
+		<result property="orgAddr" jdbcType="string" column="ORGADDR"/>
+	</resultMap>
+  <!-- 根据机构编号查询某个机构的附加信息 -->
+	<select id="singleOrgfjxxInfo" resultMap="singleOrgfjxxInfoMap">
+		<![CDATA[
+			SELECT A.ORGID,
+			       A.WEBURL,
+			       TO_CHAR(A.CREATETIME, 'yyyy-MM-dd hh24:mi:ss') CREATETIME,
+			       TO_CHAR(A.STARTDATE, 'yyyy-MM-dd') STARTDATE,
+			       TO_CHAR(A.ENDDATE, 'yyyy-MM-dd') ENDDATE,
+			       A.LINKMAN,
+			       A.LINKTEL,
+			       A.EMAIL,
+			       A.ORGADDR
+			  FROM ABF_T_JGFJXXB A
+			 WHERE A.ORGID = #orgid#
+		 ]]>
+	</select>
+  
+  
+  	<resultMap class="com.gotop.tyjg.empMngr.model.EmployeeTm" id="empBaseInfoMap">
+		<result property="empid" jdbcType="string" column="EMPID"/>
+		<result property="orgid" jdbcType="string" column="ORGID"/>
+		<result property="empCode" jdbcType="string" column="EMPCODE"/>
+		<result property="empName" jdbcType="string" column="EMPNAME"/>
+		<result property="realName" jdbcType="string" column="REALNAME"/>
+		<result property="empStatus" jdbcType="string" column="EMPSTATUS"/>
+		<result property="gender" jdbcType="string" column="GENDER"/>
+		<result property="birthDate" jdbcType="string" column="BIRTHDATE"/>
+		<result property="cardType" jdbcType="string" column="CARDTYPE"/>
+		<result property="cardNo" jdbcType="string" column="CARDNO"/>
+		<result property="indate" jdbcType="string" column="INDATE"/>
+		<result property="outdate" jdbcType="string" column="OUTDATE"/>
+		<result property="degree" jdbcType="string" column="DEGREE"/>
+		<result property="orgidlist" jdbcType="string" column="ORGIDLIST"/>
+		<result property="orgnamelist" jdbcType="string" column="ORGNAMELIST"/>
+		<result property="specialty" jdbcType="string" column="SPECIALTY"/>
+		<result property="emergNote" jdbcType="string" column="EMERGNOTE"/>
+		<result property="expNote" jdbcType="string" column="EXPNOTE"/>
+		<result property="genNote" jdbcType="string" column="GENNOTE"/>
+		<result property="displayOrder" jdbcType="string" column="DISPLAYORDER"/>
+	</resultMap>
+  	<!-- 查询员工基本信息 -->
+	<select id="queryEmpBaseInfo" resultMap="empBaseInfoMap">
+		   select Y.EMPID,
+             Y.ORGID,
+             Y.EMPCODE,
+             Y.EMPNAME,
+             Y.REALNAME,
+             Y.EMPSTATUS,
+             Y.GENDER,
+             TO_CHAR(Y.BIRTHDATE, 'yyyy-MM-dd') BIRTHDATE,
+             Y.CARDTYPE,
+             Y.CARDNO,
+             TO_CHAR(Y.INDATE, 'yyyy-MM-dd') INDATE,
+             TO_CHAR(Y.OUTDATE, 'yyyy-MM-dd') OUTDATE,
+             Y.DEGREE,
+             M.ORGIDLIST,
+             M.ORGNAMELIST,
+             Y.SPECIALTY,
+             Y.EMERGNOTE,
+             Y.EXPNOTE,
+             Y.GENNOTE,
+             Y.DISPLAYORDER
+        from OM_EMPLOYEE Y, (
+		        select WMSYS.WM_CONCAT(orgname) ORGNAMELIST,WMSYS.WM_CONCAT(orgid) ORGIDLIST,empid from ABF_T_RYKGLJG
+				where empid=#empid#
+				group by empid) M
+       WHERE  Y.EMPID =M.EMPID(+)
+       AND Y.EMPID = #empid#
+	</select>
+  
+  
+  	<resultMap class="com.gotop.vo.tyjg.Abftygfjxxb" id="ygfjxxMap">
+		<result property="empid" jdbcType="string" column="EMPID"/>
+		<result property="mobShow" jdbcType="string" column="MOBSHOW"/>
+		<result property="htShow" jdbcType="string" column="HTSHOW"/>
+		<result property="otel" jdbcType="string" column="OTEL"/>
+		<result property="oemail" jdbcType="string" column="OEMAIL"/>
+		<result property="mobileNo" jdbcType="string" column="MOBILENO"/>
+		<result property="htel" jdbcType="string" column="HTEL"/>
+		<result property="faxNo" jdbcType="string" column="FAXNO"/>
+		<result property="msn" jdbcType="string" column="MSN"/>
+		<result property="haddress" jdbcType="string" column="HADDRESS"/>
+		<result property="oaddress" jdbcType="string" column="OADDRESS"/>
+		<result property="hzipCode" jdbcType="string" column="HZIPCODE"/>
+		<result property="pemail" jdbcType="string" column="PEMAIL"/>
+		<result property="party" jdbcType="string" column="PARTY"/>
+		<result property="ozipCode" jdbcType="string" column="OZIPCODE"/>
+	</resultMap>
+  	<!-- 查询员工基本信息 -->
+	<select id="queryygfjxx" resultMap="ygfjxxMap">
+		 SELECT B.EMPID,B.MOBSHOW,B.HTSHOW,B.OTEL,B.OEMAIL,B.MOBILENO,B.HTEL,B.FAXNO,B.MSN,B.HADDRESS,
+		 B.OADDRESS,B.HZIPCODE,B.PEMAIL,B.PARTY,B.OZIPCODE from ABF_T_YGFJXXB B WHERE B.EMPID=#empid#
+	</select>
+  
+  
+    <resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="empOrgInfoMap">
+  		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="jgsx" jdbcType="string" column="JGSX"/>
+		<result property="orgDegree" jdbcType="string" column="ORGDEGREE"/>
+	</resultMap>
+  	<!-- 查询员工机构信息 -->
+	<select id="queryEmpOrgInfo" resultMap="empOrgInfoMap">
+		SELECT G.ORGID,G.JGSX,G.ORGDEGREE from OM_ORGANIZATION G WHERE G.ORGID=#orgid#
+	</select>
+	
+	<resultMap class="com.gotop.vo.tyjg.AcOperator" id="empAcOperInfoMap">
+  		<result property="userid" jdbcType="string" column="USERID"/>
+		<result property="operatorid" jdbcType="string" column="OPERATORID"/>
+		<result property="status" jdbcType="string" column="STATUS"/>
+		<result property="password" jdbcType="string" column="PASSWORD"/>
+		<result property="menuType" jdbcType="string" column="MENUTYPE"/>
+		<result property="invalDate" jdbcType="string" column="INVALDATE"/>
+		<result property="authMode" jdbcType="string" column="AUTHMODE"/>
+		
+	    <result property="authmode" jdbcType="string" column="AUTHMODE"/>
+	    <result property="unlocktime" jdbcType="TIMESTAMP" column="UNLOCKTIME"/>
+	    <result property="startdate" jdbcType="TIMESTAMP" column="STARTDATE"/>
+	    <result property="enddate" jdbcType="TIMESTAMP" column="ENDDATE"/>
+	</resultMap>
+  	<!-- 查询员工角色信息 -->
+	<select id="queryEnpAcOperInfo" resultMap="empAcOperInfoMap">
+		select T.USERID,T.OPERATORID,T.STATUS,T.PASSWORD,T.MENUTYPE,to_char(T.INVALDATE,'yyyy-MM-dd HH24:mm:ss') INVALDATE,T.AUTHMODE
+			  ,T.authmode,T.unlocktime,T.startdate,T.enddate
+		 from AC_OPERATOR T WHERE T.USERID=#userid#
+	</select>
+	
+
+  	<resultMap class="com.gotop.tyjg.orgmanagement.model.PartyRole" id="alreadGrantRoleMap">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="specialTyname" jdbcType="string" column="ROLENAME"/>
+	</resultMap>
+  	<!-- 查询已设置机构拥有的角色 -->
+	<select id="queryAlreadyGrantRoles" resultMap="alreadGrantRoleMap">
+		   SELECT WMSYS.WM_CONCAT(c.ROLEID) ROLEID, WMSYS.WM_CONCAT(B.ROLENAME) ROLENAME
+			  FROM OM_PARTYROLE C,
+			       (SELECT AC_ROLE.ROLENAME, AC_ROLE.ROLEID
+			          FROM AC_ROLE
+			         WHERE EXISTS (SELECT 1
+			                  FROM (SELECT ROLEID
+			                          FROM OM_PARTYROLE
+			                         WHERE PARTYID =  #orgid#
+			                           AND PARTYTYPE = 'organization') A
+			                 WHERE A.ROLEID = AC_ROLE.ROLEID)) B
+			 WHERE C.PARTYID =  #orgid#
+			   AND C.PARTYTYPE = 'organization'
+			   and B.ROLEID = C.ROLEID
+	</select>
+
+
+	<resultMap class="com.gotop.vo.tyjg.AcRole" id="empAlreadGrantRoleMap">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="roleName" jdbcType="string" column="ROLENAME"/>
+	</resultMap>
+	<!-- 查询员工已设置的系统角色 -->
+	<select id="queryEmpAlreadyGrantRoles" resultMap="empAlreadGrantRoleMap">
+		  SELECT WMSYS.WM_CONCAT(B.ROLEID) ROLEID, WMSYS.WM_CONCAT(B.ROLENAME) ROLENAME
+          FROM (
+                  SELECT AC_ROLE.ROLENAME, AC_ROLE.ROLEID
+                    FROM AC_ROLE 
+                     WHERE AC_ROLE.ROLETYPE=#roleType#
+                     AND EXISTS (
+                               SELECT * FROM 
+                               (
+                               	 SELECT ROLEID
+                                     FROM AC_OPERATORROLE R,AC_OPERATOR T,OM_EMPLOYEE Y
+                                    WHERE T.USERID=Y.USERID AND R.OPERATORID=T.OPERATORID 
+                                    AND Y.EMPID=#empid#
+                                ) A WHERE A.ROLEID = AC_ROLE.ROLEID
+                               )
+              ) B
+	</select>
+	
+	
+	<select id="countEmpNumsByno"  parameterClass="java.util.HashMap" resultClass="int">
+    <!--  根据身份证查询员工人数  -->
+    	SELECT count(1) FROM OM_EMPLOYEE Y WHERE Y.CARDTYPE='01' AND Y.CARDNO=#cardNo# 
+    	<isNotNull property="empid">
+    		AND Y.EMPID != #empid#
+    	</isNotNull>
+  	</select>
+  	
+
+    <select id="selectPromtMess" resultClass="java.lang.String">
+		SELECT '该身份证号码已被'||G.ORGNAME||'的用户'||Y.EMPNAME||'注册' PROMMESS FROM OM_EMPLOYEE Y,OM_ORGANIZATION G, OM_EMPORG E 
+		WHERE Y.EMPID=E.EMPID AND E.ISMAIN='y' AND E.ORGID=G.ORGID AND Y.CARDNO=#cardNo# 
+		<isNotNull property="empid">
+		AND Y.EMPID != #empid#
+		</isNotNull>
+	</select>
+	
+	
+	<resultMap id="empOrgBelnMap" class="com.gotop.tyjg.empMngr.model.EmpOrgBelong">
+		<result column="empid" property="empid" jdbcType="VARCHAR" />
+		<result column="orgid" property="orgid" jdbcType="VARCHAR" />
+		<result column="orgname" property="orgName" jdbcType="VARCHAR" />
+		<result column="ismain" property="isMain" jdbcType="VARCHAR" />
+		<result column="orgtype" property="orgType" jdbcType="VARCHAR" />
+	</resultMap>
+  	<select id="query_empOrgBelongDataCell" parameterClass="java.util.HashMap" resultMap="empOrgBelnMap">
+    <!-- 查询机构下人员信息datacell列表 -->
+    <!--通过Bean方式的动态条件，查询分页数据-->
+    <include refid="COMMON.oracle_Pagination_Head" />
+	    select r.empid,g.orgid,g.orgname,r.ismain,g.orgtype from om_emporg r,om_organization g
+ 		 where r.orgid =g.orgid and r.empid=#empid# order by g.orgid asc
+    <include refid="COMMON.oracle_Pagination_Tail" />
+    </select>
+  	
+  	<!-- 新增用户,保存om_employee -->
+  	<insert id="insert_om_employee" parameterClass="java.util.HashMap">
+	    insert into OM_EMPLOYEE
+			  (EMPID
+			   ,EMPCODE
+			   ,OPERATORID
+			   ,USERID
+			   ,EMPNAME
+			   <isNotNull property="gender">
+			   ,GENDER
+			   </isNotNull>
+			   <isNotNull property="birthDateDt">
+			   ,BIRTHDATE
+			   </isNotNull>
+			   ,EMPSTATUS
+			   ,CARDTYPE
+			   ,CARDNO
+			   <isNotNull property="indateDt">
+			   ,INDATE
+			   </isNotNull>
+			   <isNotNull property="outdateDt">
+			   ,OUTDATE
+			   </isNotNull>
+			   <isNotNull property="degree">
+			   ,DEGREE
+			   </isNotNull>
+			   <isNotNull property="specialty">
+			   ,SPECIALTY
+			   </isNotNull>
+			    <isNotNull property="expNote">
+			   ,EXPNOTE
+			   </isNotNull>
+			   <isNotNull property="emergNote">
+			   ,EMERGNOTE
+			   </isNotNull>
+			   <isNotNull property="genNote">
+			   ,GENNOTE
+			   </isNotNull>
+			   <isNotNull property="realName">
+			   	,REALNAME
+			   </isNotNull>
+			   )
+			values
+			  (#empid#
+			   ,#empCode#
+			   ,#operatorid#
+			   ,#userid#
+			   ,#empName#
+			   <isNotNull property="gender">
+			   ,#gender#
+			   </isNotNull>
+			   <isNotNull property="birthDateDt">
+			   ,#birthDateDt#
+			   </isNotNull>
+			   ,#empStatus#
+			   ,#cardType#
+			   ,#cardNo#
+			   <isNotNull property="indateDt">
+			   ,#indateDt#
+			   </isNotNull>
+			   <isNotNull property="outdateDt">
+			   ,#outdateDt#
+			   </isNotNull>
+			   <isNotNull property="degree">
+			   ,#degree#
+			   </isNotNull>
+			   <isNotNull property="specialty">
+			   ,#specialty#
+			   </isNotNull>
+			    <isNotNull property="expNote">
+			   ,#expNote#
+			   </isNotNull>
+			   <isNotNull property="emergNote">
+			   ,#emergNote#
+			   </isNotNull>
+			   <isNotNull property="genNote">
+			   ,#genNote#
+			   </isNotNull>
+			   <isNotNull property="realName">
+			   	,#realName#
+			   </isNotNull>
+			   )
+	</insert>
+  	
+  	<!-- 新增用户,保存ABF_T_YGFJXXB -->
+  	<insert id="insert_abf_ygfjxxb" parameterClass="java.util.HashMap">
+	    insert into ABF_T_YGFJXXB (EMPID, OTEL, OADDRESS, OZIPCODE,OEMAIL,FAXNO,MOBILENO,MOBSHOW,MSN,HTEL,
+	    HTSHOW,HADDRESS,HZIPCODE,PARTY,CREATETIME,pemail) 
+	    values (#empid:VARCHAR#,#otel:VARCHAR#,#oaddress:VARCHAR#,#ozipCode:VARCHAR#,#oemail:VARCHAR#,#faxNo:VARCHAR#,#mobileNo:VARCHAR#,#mobShow:VARCHAR#, #msn:VARCHAR#, #htel:VARCHAR#, 
+	    #htShow:VARCHAR#,#haddress:VARCHAR#,#hzipCode:VARCHAR#,#party:VARCHAR#,#createTime:VARCHAR#,#pemail:VARCHAR#)
+	</insert>
+	
+	<!-- 新增用户,保存AC_OPERATOR -->
+  	<insert id="insert_ac_operator" parameterClass="java.util.HashMap">
+	    insert into AC_OPERATOR (OPERATORID, USERID, PASSWORD, INVALDATE,OPERATORNAME,STATUS,MENUTYPE,EMPID,AUTHMODE,UNLOCKTIME,STARTDATE,ENDDATE) 
+	    values (#operatorid:VARCHAR#,#userid:VARCHAR#,#password:VARCHAR#,#indateDt:VARCHAR#,#empName:VARCHAR#,#status:VARCHAR#,#menuType:VARCHAR#, #empid:VARCHAR#
+	    		,#authmode:VARCHAR#,TO_DATE(#unlocktime:VARCHAR#,'yyyy-mm-dd hh24:mi:ss'),TO_DATE(#startdate:VARCHAR#,'yyyy-mm-dd'),TO_DATE(#enddate:VARCHAR#,'yyyy-mm-dd'))
+	</insert>
+	
+	<!-- 新增用户,保存AC_OPERATOR -->
+  	<insert id="insert_om_empOrg" parameterClass="java.util.HashMap">
+	    insert into OM_EMPORG (EMPID,ORGID,ISMAIN,MODFLAG,LASTUPDATE,DATASOURCE) 
+	    values (#empid:VARCHAR#,#orgid:VARCHAR#,#ismain:VARCHAR#,#modflag:VARCHAR#,#lastUpdate:VARCHAR#,#datasource:VARCHAR#)
+	</insert>
+	
+	<!-- 密码重置 -->
+   <update id="update_oper_pwd" parameterClass="java.util.HashMap">
+     update AC_OPERATOR set PASSWORD= #password# where OPERATORID = #operatorid#
+   </update>
+	
+	
+	<!-- 获取序列 -->
+	<select id="getNextSeqValue" resultClass="java.lang.Long">
+		SELECT $seqName$.NEXTVAL FROM DUAL
+	</select>
+	
+	<resultMap class="com.gotop.vo.tyjg.AcRole" id="extendAcRoleMap">
+  		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="roleName" jdbcType="string" column="ROLENAME"/>
+		<result property="roleType" jdbcType="string" column="ROLETYPE"/>
+		<result property="roleDesc" jdbcType="string" column="ROLEDESC"/>
+		<result property="appid" jdbcType="string" column="APPID"/>
+		<result property="auto" jdbcType="string" column="AUTO"/>
+		<result property="roleTypeField" jdbcType="string" column="ROLETYPEFIELD"/>
+	</resultMap>
+  	<!-- 查询员工角色信息 -->
+	<select id="queryAcRoleAuto" resultMap="extendAcRoleMap">
+		select R.ROLEID,R.ROLENAME,R.ROLETYPE,R.ROLEDESC,R.APPID,R.AUTO,R.ROLETYPEFIELD 
+		from AC_ROLE R WHERE R.ROLEID =#roleid#
+	</select>
+	
+	
+	
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.PartyRole" id="grantRoleToEmpMap">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="roleName" jdbcType="string" column="ROLENAME"/>
+		<result property="roleType" jdbcType="string" column="ROLETYPE"/>
+		<result property="auto" jdbcType="string" column="AUTO"/>
+		<result property="roleTypeField" jdbcType="string" column="ROLETYPEFIELD"/>
+	</resultMap>
+	
+	
+	<!-- 查询员工已设置的业务角色，orgdegree =4 -->
+	<select id="queryAllRolesToGrantOn4" resultMap="grantRoleToEmpMap">
+       <include refid="COMMON.oracle_Pagination_Head" />
+       SELECT AC_ROLE.ROLEID, AC_ROLE.ROLENAME,AC_ROLE.AUTO,AC_ROLE.ROLETYPE,AC_ROLE.ROLETYPEFIELD 
+        FROM AC_ROLE 
+        WHERE AC_ROLE.ROLETYPE=#roleType# 
+<!--
+        AND AC_ROLE.ROLETYPEFIELD=#jgsx# 
+-->
+ 		AND AC_ROLE.AUTO in ('3','4')
+ 		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	
+	
+	<select id="getRoleByRoleTypeOn4_countNums" resultClass="java.lang.Long">
+    <!--通过查询实例，统计总数-->
+    	select count(1) num FROM AC_ROLE 
+        WHERE AC_ROLE.ROLETYPE=#roleType# 
+<!--
+        AND AC_ROLE.ROLETYPEFIELD=#jgsx# 
+-->
+ 		AND AC_ROLE.AUTO in ('3','4')
+  	</select>
+  	
+	
+	<!-- 查询员工已设置的业务角色，orgdegree !=4 -->
+	<select id="queryAllRolesToGrantNot4" resultMap="grantRoleToEmpMap">
+       <include refid="COMMON.oracle_Pagination_Head" />
+       SELECT AC_ROLE.ROLEID, AC_ROLE.ROLENAME,AC_ROLE.AUTO,AC_ROLE.ROLETYPE,AC_ROLE.ROLETYPEFIELD
+        FROM AC_ROLE 
+        WHERE AC_ROLE.ROLETYPE=#roleType# 
+<!--
+        AND AC_ROLE.ROLETYPEFIELD=#jgsx# 
+-->
+ 		AND AC_ROLE.AUTO >=#orgDegree#
+ 		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	
+	
+	<select id="getRoleByRoleTypeNot4_countNums" resultClass="java.lang.Long">
+    <!--通过查询实例，统计总数-->
+    	select count(1) num FROM AC_ROLE 
+        WHERE AC_ROLE.ROLETYPE=#roleType# 
+<!--
+        AND AC_ROLE.ROLETYPEFIELD=#jgsx# 
+-->
+ 		AND AC_ROLE.AUTO =#orgDegree#
+  	</select>
+  	
+  	
+	<!-- 查询员工已设置的业务角色，orgdegree !=4 -->
+	<select id="queryAllRolesToGrant" resultMap="grantRoleToEmpMap">
+       <include refid="COMMON.oracle_Pagination_Head" />
+       SELECT AC_ROLE.ROLEID, AC_ROLE.ROLENAME,AC_ROLE.AUTO,AC_ROLE.ROLETYPE,AC_ROLE.ROLETYPEFIELD 
+        FROM AC_ROLE 
+        WHERE AC_ROLE.ROLETYPE=#roleType# 
+<!--
+        AND AC_ROLE.ROLETYPEFIELD=#jgsx# 
+-->
+ 		AND AC_ROLE.AUTO >=#orgDegree#
+ 		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	
+	
+	<select id="getRoleByRoleType_countNums" resultClass="java.lang.Long">
+    <!--通过查询实例，统计总数-->
+    	select count(1) num FROM AC_ROLE 
+        WHERE AC_ROLE.ROLETYPE=#roleType# 
+<!--
+        AND AC_ROLE.ROLETYPEFIELD=#jgsx# 
+-->
+ 		AND AC_ROLE.AUTO >=#orgDegree#
+  	</select>
+  	
+  	
+  	<!-- 修改时保存omemployee信息 -->
+  	<update id="update_save_omemployee" parameterClass="java.util.HashMap">
+	     update om_employee
+		   set EMPNAME    = #empName:VARCHAR#
+				   ,REALNAME = #realName:VARCHAR#
+		       		,GENDER     = #gender:VARCHAR#
+		       		,BIRTHDATE  = TO_DATE(TO_CHAR(#birthDateDt:VARCHAR#,'yyyy-MM-dd'), 'yyyy-MM-dd')
+		       		,EMPSTATUS  = #empStatus:VARCHAR#
+		       		,CARDTYPE   = #cardType:VARCHAR#
+		       		<isNotNull property="cardNo">
+		       		,CARDNO     = #cardNo:VARCHAR#
+		       		</isNotNull>
+		       		,INDATE     = TO_DATE(TO_CHAR(#indateDt:VARCHAR#,'yyyy-MM-dd'), 'yyyy-MM-dd')
+		       		,OUTDATE    = TO_DATE(TO_CHAR(#outdateDt:VARCHAR#,'yyyy-MM-dd'), 'yyyy-MM-dd')
+		       		,DEGREE     = #degree:VARCHAR#
+		       		,EXPNOTE    = #expNote:VARCHAR#
+		       		,EMERGNOTE  = #emergNote:VARCHAR#
+		       		,GENNOTE    = #genNote:VARCHAR#
+		 where empid = #empid:VARCHAR#
+    </update>
+    
+    
+    <!-- 修改时保存ABF_T_YGFJXXB -->
+    <update id="update_save_ygfjxxb" parameterClass="java.util.HashMap">
+     update ABF_T_YGFJXXB
+   			set 
+		   		OTEL     = #otel:VARCHAR#,
+		       OADDRESS = #oaddress:VARCHAR#,
+		       OZIPCODE = #ozipCode:VARCHAR#,
+		       OEMAIL   = #oemail:VARCHAR#,
+		       FAXNO    = #faxNo:VARCHAR#,
+		       MOBILENO = #mobileNo:VARCHAR#,
+		       MOBSHOW  = #mobShow:VARCHAR#,
+		       MSN      = #msn:VARCHAR#,
+		       HTEL     = #htel:VARCHAR#,
+		       HTSHOW   = #htShow:VARCHAR#,
+		       HADDRESS = #haddress:VARCHAR#,
+		       HZIPCODE = #hzipCode:VARCHAR#,
+		       PARTY    = #party:VARCHAR#,
+		       PEMAIL   = #pemail:VARCHAR#
+		 where empid = #empid:VARCHAR#
+    </update>
+    
+    <!-- 修改时保存AC_OPERATOR -->
+    <update id="update_save_acoperator" parameterClass="java.util.HashMap">
+      update AC_OPERATOR
+			  SET
+			       USERID    = #userid:VARCHAR#,
+			       INVALDATE = TO_DATE(#invalDate:VARCHAR#, 'yyyy-MM-dd'),
+			       STATUS    = #status:VARCHAR#,
+			       OPERATORNAME = #empName:VARCHAR#,
+			       AUTHMODE  = #authmode:VARCHAR#,
+			       UNLOCKTIME = TO_DATE(#unlocktime:VARCHAR#, 'yyyy-mm-dd hh24:mi:ss'),
+			       STARTDATE    = TO_DATE(#startdate:VARCHAR#, 'yyyy-MM-dd'),
+			       ENDDATE = TO_DATE(#enddate:VARCHAR#, 'yyyy-MM-dd')
+			 where empid = to_number(#empid:VARCHAR#)
+    </update>
+    
+	    
+	<select id="queryOrgByStartId" resultMap="childMap">
+		<![CDATA[
+			SELECT ORGID, ORGNAME,ORGSEQ,JGSX,ORGDEGREE ,ORGTYPE,STATUS
+			  FROM OM_ORGANIZATION
+			 WHERE 1=1 
+		]]>
+		<isNotNull prepend="and" property="startOrgid">
+			OM_ORGANIZATION.ORGID = #startOrgid# 
+		</isNotNull>
+		<isNotNull prepend="and" property="jgsx">
+			OM_ORGANIZATION.JGSX = #jgsx#
+		</isNotNull>
+		<![CDATA[ ORDER BY OM_ORGANIZATION.ORGCODE ]]>
+	</select>
+	<select id="queryEmpManagerOrg" resultMap="childMap">
+		    SELECT A.ORGID,
+		           A.ORGNAME,
+		           A.ORGSEQ,
+		           A.JGSX,
+		           A.ORGDEGREE,
+		           A.ORGTYPE,
+		           A.STATUS
+		      FROM OM_ORGANIZATION A
+		     WHERE exists (select 1
+		              from ABF_T_RYKGLJG B
+		             WHERE B.ORGID = A.ORGID
+		               AND B.EMPID = #empid#)
+		       AND A.PARENTORGID IS NULL
+		     ORDER BY A.DISPLAYORDER, A.ORGCODE
+	</select>
+	
+	
+	<select id="queryOrgByStartCode" resultMap="childMap">
+		<![CDATA[
+			SELECT ORGID, ORGNAME,ORGSEQ,JGSX,ORGDEGREE,ORGTYPE,STATUS
+			  FROM OM_ORGANIZATION
+			 WHERE 1=1 
+		]]>
+		<isNotNull prepend="and" property="startOrgcode">
+			OM_ORGANIZATION.ORGCODE = #startOrgcode# 
+		</isNotNull>
+		<isNotNull prepend="and" property="jgsx">
+			OM_ORGANIZATION.JGSX = #jgsx#
+		</isNotNull>
+		<![CDATA[ ORDER BY OM_ORGANIZATION.ORGCODE ]]>
+	</select>
+	
+	
+	<select id="queryOrgByJgsx" resultMap="childMap">
+		<![CDATA[
+			SELECT ORGID, ORGNAME,ORGSEQ,JGSX,ORGDEGREE,ORGTYPE,STATUS 
+			  FROM OM_ORGANIZATION
+			 WHERE OM_ORGANIZATION.PARENTORGID IS NULL
+		]]>
+		<isNotNull prepend="and" property="jgsx">
+			OM_ORGANIZATION.JGSX = #jgsx#
+		</isNotNull>
+		<![CDATA[ ORDER BY OM_ORGANIZATION.ORGCODE ]]>
+	</select>
+	
+	
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="cdTreeOrgMap">
+		<result property="orgId" jdbcType="Long" column="ORGID"/>
+		<result property="orgName" jdbcType="String" column="ORGNAME"/>
+		<result property="orgSeq" jdbcType="String" column="ORGSEQ"/>
+		<result property="orgDegree" jdbcType="String" column="ORGDEGREE"/>
+		<result property="orgCode" jdbcType="String" column="ORGCODE"/>
+		<result property="orgType" jdbcType="String" column="ORGTYPE"/>
+		<result property="ysjgbh" jdbcType="String" column="YSJGBH"/>
+		<result property="jgsx" jdbcType="String" column="JGSX"/>
+	</resultMap>
+	<select id="queryTreeChildOrgNodes" resultMap="cdTreeOrgMap">
+		<![CDATA[
+			SELECT ORGID, ORGNAME, ORGSEQ, ORGDEGREE , ORGCODE, ORGTYPE, YSJGBH, JGSX
+			  FROM OM_ORGANIZATION
+			 WHERE 1=1 
+	    ]]>
+	    
+	   <isNotNull prepend="and" property="orgId">
+	   <![CDATA[	OM_ORGANIZATION.PARENTORGID = #orgId# ]]>
+	   </isNotNull>
+	   <isNotNull prepend="and" property="ostate">
+			OM_ORGANIZATION.STATUS = #ostate#
+	   </isNotNull>
+	   <isNotNull prepend="and" property="orgDegree">
+	   <![CDATA[
+			OM_ORGANIZATION.ORGDEGREE <= #orgDegree#
+		]]>
+	   </isNotNull>
+	   <isNotNull prepend="and" property="jgsx">
+			OM_ORGANIZATION.JGSX = #jgsx#
+	   </isNotNull>
+	   
+	  <![CDATA[ ORDER BY OM_ORGANIZATION.DISPLAYORDER,OM_ORGANIZATION.ORGCODE ]]>
+	</select>
+	
+  	<resultMap id="select_orgemp_org_resultMap" class="com.gotop.vo.tyjg.Omemployee">
+		<result column="empid" property="empid" jdbcType="INT" />
+		<result column="empcode" property="empCode" jdbcType="VARCHAR" />
+		<result column="empname" property="empName" jdbcType="VARCHAR" />
+		<result column="gender" property="gender" jdbcType="VARCHAR" />
+		<result column="gender" property="cardType" jdbcType="VARCHAR" />
+		<result column="cardNo" property="cardNo" jdbcType="VARCHAR" />
+	</resultMap>
+	<!-- 查询机构下人员节点 -->
+	<select id="select_orgemp_org" parameterClass="java.util.HashMap" resultMap="select_orgemp_org_resultMap">
+	   SELECT Y.EMPID,Y.EMPCODE,Y.EMPNAME,Y.GENDER,Y.CARDTYPE,Y.CARDNO
+        FROM OM_EMPLOYEE Y, OM_EMPORG G
+       where Y.EMPID = G.EMPID
+        <isNotEmpty prepend="AND" property="orgid">
+        	G.ORGID =#orgid#
+        </isNotEmpty>
+        <isNotEmpty prepend="AND" property="orgId">
+        	G.ORGID =#orgId#
+        </isNotEmpty>
+	    <isNotEmpty prepend="AND" property="estatus">
+	    	(Y.EMPSTATUS in (#estatus#)
+	    	or Y.EMPSTATUS is null)
+	    </isNotEmpty>
+	    <isNotEmpty prepend="AND" property="roleids">
+	    	Y.OPERATORID in
+        	(SELECT R.OPERATORID 
+		       from AC_OPERATORROLE R
+		       WHERE R.ROLEID in (#roleids#))
+	    </isNotEmpty>
+	    order by Y.DISPLAYORDER,Y.EMPNAME asc
+	</select>  
+	
+	
+	<resultMap class="com.gotop.vo.tyjg.OmPosition" id="omPositObjMap">
+		<result property="positionId" jdbcType="Long" column="POSITIONID"/>
+		<result property="posiName" jdbcType="String" column="POSINAME"/>
+		<result property="posiCode" jdbcType="String" column="POSICODE"/>
+		<result property="posiLevel" jdbcType="String" column="POSILEVEL"/>
+		<result property="posiDesc" jdbcType="String" column="POSIDESC"/>
+		<result property="posiType" jdbcType="String" column="POSITYPE"/>
+		<result property="sortLevel" jdbcType="String" column="SORTLEVEL"/>
+	</resultMap>
+	  <select id="queryOmpositObjList" resultMap="omPositObjMap">
+		<include refid="COMMON.oracle_Pagination_Head" />
+		<![CDATA[
+			select M.POSITIONID,M.POSINAME,M.POSICODE,M.POSILEVEL,M.POSIDESC,M.POSITYPE,
+			   M.SORTLEVEL from OM_POSITION M 
+			 WHERE 1=1 
+	    ]]>
+	    <isNotEmpty prepend="AND" property="posiName">
+	    	M.POSINAME =#posiName#
+	    </isNotEmpty>
+	    ORDER BY M.POSITIONID
+	    <include refid="COMMON.oracle_Pagination_Tail" />
+  	</select>
+  	
+  	<!-- 删除用户拥有的系统角色和业务角色 -->
+  	<delete id="delOperroleByOpid" parameterClass="java.util.HashMap">
+     delete from ac_operatorrole r where r.operatorid =#empid#
+   </delete>
+   
+   <!-- 插入用户拥有的系统角色和业务角色 -->
+   <!-- agency=0 表示业务角色， agency=1 表示 系统角色 -->
+   <insert id="insert_ac_operrole" parameterClass="java.util.HashMap">
+	    insert into ac_operatorrole(operatorid,roleid,agency) 
+	    values (#empid#,#roleid#,#agency#)
+	</insert>
+	
+	<!-- 删除用户的可管理机构 -->
+  	<delete id="delrykgljggByEmpid" parameterClass="java.util.HashMap">
+     delete from ABF_T_RYKGLJG  where empid=#empid#
+   </delete>
+   
+   <!-- 查询机构信息 -->
+   <select id="queryOrgStrList" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+   	SELECT ORGID,ORGCODE,ORGNAME FROM OM_ORGANIZATION WHERE ORGID IN ($ORGID$)
+   </select>
+   
+   
+   <!-- 插入用户可管理机构 -->
+   <insert id="insert_abft_kgljg" parameterClass="java.util.HashMap">
+	    insert into ABF_T_RYKGLJG (id,empid,Orgid,Remark,orgcode,ORGNAME,Userid,Operatorname) 
+	    values (SEQ_ABF_SYS.nextval,#empid#,#ORGID#,'',#ORGCODE#,#ORGNAME#,#EMPCODE#,#EMPNAME#)
+	</insert>
+  	
+  	<!-- 新增人员归属机构信息 -->
+  	<insert id="insertEmpOrg" parameterClass="OmEmporg">
+  		       INSERT INTO OM_EMPORG
+			         (EMPID, ORGID, ISMAIN, LASTUPDATE, DATASOURCE)
+			       VALUES
+			         (#empid#, #orgid#, #ismain#, SYSDATE, '1')
+  	</insert>
+  	<!-- 删除人员归属机构信息 -->
+  	<delete id="deleteEmpOrg" parameterClass="OmEmporg">
+  		DELETE FROM OM_EMPORG
+			 WHERE EMPID = #empid#
+			   AND ORGID = #orgid#
+  	</delete>
+  	<!-- 更新人员归属机构 -->
+  	<update id="updateEmpOrg" parameterClass="OmEmporg">
+  		UPDATE OM_EMPORG
+		   SET ISMAIN     = #ismain#,
+		       LASTUPDATE = SYSDATE
+		 WHERE EMPID = #empid#
+		   AND ORGID = #orgid#
+  	</update>
+  	
+  	<!-- 验证人员empcode是否已存在 -->
+  	<select id="checkEmpCode" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+		SELECT COUNT(1) NUM
+		  FROM OM_EMPLOYEE
+		 WHERE OM_EMPLOYEE.EMPCODE = #empcode#
+  	</select>
+  	
+  	<!-- 删除人员岗位 -->
+  	<delete id="deletePosition" parameterClass="java.lang.String">
+  		DELETE FROM OM_EMPPOSITION WHERE EMPID = #empid#
+  	</delete>
+  	<!-- 新增人员岗位 -->
+  	<insert id="insertPosition" parameterClass="java.util.HashMap">
+  		INSERT INTO OM_EMPPOSITION
+				  (POSITIONID, EMPID)
+				VALUES
+				  (#positionid#, #empid#)
+  	</insert>
+  	<!-- 查询人员岗位 -->
+  	<select id="selectEmpPosition" resultClass="omPosition">
+  		SELECT WMSYS.WM_CONCAT(B.POSITIONID) positionId, WMSYS.WM_CONCAT(B.POSINAME) posiName
+				  FROM OM_EMPPOSITION A, OM_POSITION B
+				 WHERE A.POSITIONID = B.POSITIONID
+				   AND A.EMPID =#empid#
+  	</select>
+  	
+  	<!-- 修改用户密码 -->
+  	<update id="updateOperatorPassword" parameterClass="java.util.HashMap">
+  		UPDATE AC_OPERATOR
+		   SET AC_OPERATOR.PASSWORD = #newPassword#
+		 WHERE AC_OPERATOR.OPERATORID =#empid#
+  	</update>
+</sqlMap>

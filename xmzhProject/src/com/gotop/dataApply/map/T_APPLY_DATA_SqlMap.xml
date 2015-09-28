@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_APPLY_DATA_SqlMap" >
+  <resultMap id="abatorgenerated_TApplyDataResult" class="com.gotop.dataApply.model.TApplyData" >
+    <!--Bean方式返回全表-->
+    <result column="DA_ID" property="daId" jdbcType="DECIMAL" />
+    <result column="EMP_ID" property="empId" jdbcType="DECIMAL" />
+    <result column="EMPNAME" property="empName" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgId" jdbcType="DECIMAL" />
+    <result column="ORGNAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="DA_TITLE" property="daTitle" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="DA_CONTENT" property="daContent" jdbcType="VARCHAR" />
+    <result column="DA_MATTER" property="daMatter" jdbcType="VARCHAR" />
+    <result column="DA_REASON" property="daReason" jdbcType="VARCHAR" />
+    <result column="DA_TLIMIT" property="daTlimit" jdbcType="VARCHAR" />
+    <result column="DA_FREQ" property="daFreq" jdbcType="VARCHAR" />
+    <result column="DA_REQ" property="daReq" jdbcType="VARCHAR" />
+    <result column="DA_RANGE" property="daRange" jdbcType="VARCHAR" />
+    <result column="IS_SDATA" property="isSdata" jdbcType="VARCHAR" />
+    <result column="USE_TLIMIT" property="useTlimit" jdbcType="VARCHAR" />
+    <result column="E_EMP_ID" property="eEmpId" jdbcType="DECIMAL" />
+    <result column="EEMPNAME" property="eEmpName" jdbcType="VARCHAR" />
+    <result column="E_ORG_ID" property="eOrgId" jdbcType="DECIMAL" />
+    <result column="EORGNAME" property="eOrgName" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="REMPNAME" property="rEmpName" jdbcType="VARCHAR"/>
+    <result column="RISK" property="risk" jdbcType="VARCHAR" />
+    <result column="DEMPNAME" property="dEmpName" jdbcType="VARCHAR"/>
+    <result column="DA_FETCH" property="daFetch" jdbcType="VARCHAR" />
+    <result column="DATA_USER" property="dataUser" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="RLEADER" property="rleader" jdbcType="VARCHAR" />
+    <result column="ROPIN" property="ropin" jdbcType="VARCHAR" />
+    <result column="DLEADER" property="dleader" jdbcType="VARCHAR" />
+    <result column="DOPIN" property="dopin" jdbcType="VARCHAR" />
+    <result column="freqType" property="freqType" jdbcType="VARCHAR" />
+    <result column="freqNo" property="freqNo" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TApplyData_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+       <result column="DA_ID" property="daId" jdbcType="DECIMAL" />
+    <result column="EMP_ID" property="empId" jdbcType="DECIMAL" />
+    <result column="EMPNAME" property="empName" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgId" jdbcType="DECIMAL" />
+    <result column="ORGNAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="DA_TITLE" property="daTitle" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="DA_CONTENT" property="daContent" jdbcType="VARCHAR" />
+    <result column="DA_MATTER" property="daMatter" jdbcType="VARCHAR" />
+    <result column="DA_REASON" property="daReason" jdbcType="VARCHAR" />
+    <result column="DA_TLIMIT" property="daTlimit" jdbcType="VARCHAR" />
+    <result column="DA_FREQ" property="daFreq" jdbcType="VARCHAR" />
+    <result column="DA_REQ" property="daReq" jdbcType="VARCHAR" />
+    <result column="DA_RANGE" property="daRange" jdbcType="VARCHAR" />
+    <result column="IS_SDATA" property="isSdata" jdbcType="VARCHAR" />
+    <result column="USE_TLIMIT" property="useTlimit" jdbcType="VARCHAR" />
+    <result column="E_EMP_ID" property="eEmpId" jdbcType="DECIMAL" />
+    <result column="EEMPNAME" property="eEmpName" jdbcType="VARCHAR" />
+    <result column="E_ORG_ID" property="eOrgId" jdbcType="DECIMAL" />
+    <result column="EORGNAME" property="eOrgName" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="RISK" property="risk" jdbcType="VARCHAR" />
+    <result column="DA_FETCH" property="daFetch" jdbcType="VARCHAR" />
+    <result column="DATA_USER" property="dataUser" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="RLEADER" property="rleader" jdbcType="VARCHAR" />
+    <result column="ROPIN" property="ropin" jdbcType="VARCHAR" />
+    <result column="DLEADER" property="dleader" jdbcType="VARCHAR" />
+    <result column="DOPIN" property="dopin" jdbcType="VARCHAR" />
+    <result column="freqType" property="freqType" jdbcType="VARCHAR" />
+    <result column="freqNo" property="freqNo" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap class="com.gotop.dataApply.model.TApplyData" id="riskAnalyst">
+  	<result column="DA_ID" property="daId" jdbcType="DECIMAL" />
+    <result column="EMP_ID" property="empId" jdbcType="DECIMAL" />
+    <result column="EMPNAME" property="empName" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgId" jdbcType="DECIMAL" />
+    <result column="ORGNAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="DA_TITLE" property="daTitle" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="DA_CONTENT" property="daContent" jdbcType="VARCHAR" />
+    <result column="DA_MATTER" property="daMatter" jdbcType="VARCHAR" />
+    <result column="DA_REASON" property="daReason" jdbcType="VARCHAR" />
+    <result column="DA_TLIMIT" property="daTlimit" jdbcType="VARCHAR" />
+    <result column="DA_FREQ" property="daFreq" jdbcType="VARCHAR" />
+    <result column="DA_REQ" property="daReq" jdbcType="VARCHAR" />
+    <result column="DA_RANGE" property="daRange" jdbcType="VARCHAR" />
+    <result column="IS_SDATA" property="isSdata" jdbcType="VARCHAR" />
+    <result column="USE_TLIMIT" property="useTlimit" jdbcType="VARCHAR" />
+    <result column="E_EMP_ID" property="eEmpId" jdbcType="DECIMAL" />
+    <result column="EEMPNAME" property="eEmpName" jdbcType="VARCHAR" />
+    <result column="E_ORG_ID" property="eOrgId" jdbcType="DECIMAL" />
+    <result column="EORGNAME" property="eOrgName" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="RISK" property="risk" jdbcType="VARCHAR" />
+    <result column="R_EMP_ID" property="rEmpId" jdbcType="DECIMAL" />
+    <result column="REMPNAME" property="rEmpName" jdbcType="VARCHAR" />
+    <result column="DA_FETCH" property="daFetch" jdbcType="VARCHAR" />
+    <result column="DATA_USER" property="dataUser" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="RLEADER" property="rleader" jdbcType="VARCHAR" />
+    <result column="ROPIN" property="ropin" jdbcType="VARCHAR" />
+    <result column="DLEADER" property="dleader" jdbcType="VARCHAR" />
+    <result column="DOPIN" property="dopin" jdbcType="VARCHAR" />
+    <result column="freqType" property="freqType" jdbcType="VARCHAR" />
+    <result column="freqNo" property="freqNo" jdbcType="VARCHAR" />
+  </resultMap>
+    <resultMap class="com.gotop.dataApply.model.TApplyData" id="dataAnalyst">
+  	<result column="DA_ID" property="daId" jdbcType="DECIMAL" />
+    <result column="EMP_ID" property="empId" jdbcType="DECIMAL" />
+    <result column="EMPNAME" property="empName" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgId" jdbcType="DECIMAL" />
+    <result column="ORGNAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="DA_TITLE" property="daTitle" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="DA_CONTENT" property="daContent" jdbcType="VARCHAR" />
+    <result column="DA_MATTER" property="daMatter" jdbcType="VARCHAR" />
+    <result column="DA_REASON" property="daReason" jdbcType="VARCHAR" />
+    <result column="DA_TLIMIT" property="daTlimit" jdbcType="VARCHAR" />
+    <result column="DA_FREQ" property="daFreq" jdbcType="VARCHAR" />
+    <result column="DA_REQ" property="daReq" jdbcType="VARCHAR" />
+    <result column="DA_RANGE" property="daRange" jdbcType="VARCHAR" />
+    <result column="IS_SDATA" property="isSdata" jdbcType="VARCHAR" />
+    <result column="USE_TLIMIT" property="useTlimit" jdbcType="VARCHAR" />
+    <result column="E_EMP_ID" property="eEmpId" jdbcType="DECIMAL" />
+    <result column="EEMPNAME" property="eEmpName" jdbcType="VARCHAR" />
+    <result column="E_ORG_ID" property="eOrgId" jdbcType="DECIMAL" />
+    <result column="EORGNAME" property="eOrgName" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="RISK" property="risk" jdbcType="VARCHAR" />
+    <result column="DA_FETCH" property="daFetch" jdbcType="VARCHAR" />
+    <result column="D_EMP_ID" property="dEmpId" jdbcType="DECIMAL" />
+    <result column="DEMPNAME" property="dEmpName" jdbcType="VARCHAR" />
+    <result column="DATA_USER" property="dataUser" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="RLEADER" property="rleader" jdbcType="VARCHAR" />
+    <result column="ROPIN" property="ropin" jdbcType="VARCHAR" />
+    <result column="DLEADER" property="dleader" jdbcType="VARCHAR" />
+    <result column="DOPIN" property="dopin" jdbcType="VARCHAR" />
+    <result column="freqType" property="freqType" jdbcType="VARCHAR" />
+    <result column="freqNo" property="freqNo" jdbcType="VARCHAR" />
+  </resultMap>
+    <resultMap class="com.gotop.dataApply.model.TApplyData" id="analyst">
+  	<result column="DA_ID" property="daId" jdbcType="DECIMAL" />
+    <result column="EMP_ID" property="empId" jdbcType="DECIMAL" />
+    <result column="EMPNAME" property="empName" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgId" jdbcType="DECIMAL" />
+    <result column="ORGNAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="DA_TITLE" property="daTitle" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="DA_CONTENT" property="daContent" jdbcType="VARCHAR" />
+    <result column="DA_MATTER" property="daMatter" jdbcType="VARCHAR" />
+    <result column="DA_REASON" property="daReason" jdbcType="VARCHAR" />
+    <result column="DA_TLIMIT" property="daTlimit" jdbcType="VARCHAR" />
+    <result column="DA_FREQ" property="daFreq" jdbcType="VARCHAR" />
+    <result column="DA_REQ" property="daReq" jdbcType="VARCHAR" />
+    <result column="DA_RANGE" property="daRange" jdbcType="VARCHAR" />
+    <result column="IS_SDATA" property="isSdata" jdbcType="VARCHAR" />
+    <result column="USE_TLIMIT" property="useTlimit" jdbcType="VARCHAR" />
+    <result column="E_EMP_ID" property="eEmpId" jdbcType="DECIMAL" />
+    <result column="EEMPNAME" property="eEmpName" jdbcType="VARCHAR" />
+    <result column="E_ORG_ID" property="eOrgId" jdbcType="DECIMAL" />
+    <result column="EORGNAME" property="eOrgName" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="RISK" property="risk" jdbcType="VARCHAR" />
+    <result column="R_EMP_ID" property="rEmpId" jdbcType="DECIMAL" />
+    <result column="REMPNAME" property="rEmpName" jdbcType="VARCHAR" />
+    <result column="DA_FETCH" property="daFetch" jdbcType="VARCHAR" />
+    <result column="D_EMP_ID" property="dEmpId" jdbcType="DECIMAL" />
+    <result column="DEMPNAME" property="dEmpName" jdbcType="VARCHAR" />
+    <result column="DATA_USER" property="dataUser" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="RLEADER" property="rleader" jdbcType="VARCHAR" />
+    <result column="ROPIN" property="ropin" jdbcType="VARCHAR" />
+    <result column="DLEADER" property="dleader" jdbcType="VARCHAR" />
+    <result column="DOPIN" property="dopin" jdbcType="VARCHAR" />
+    <result column="freqType" property="freqType" jdbcType="VARCHAR" />
+    <result column="freqNo" property="freqNo" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="abatorgenerated_selectByPrimaryKey" resultMap="abatorgenerated_TApplyDataResult" parameterClass="com.gotop.dataApply.model.TApplyData" >
+    <!--通过主键查询一条数据-->
+   select a.DA_ID, a.EMP_ID, e1.EMPNAME, a.ORG_ID, o1.ORGNAME, a.FLOW_ID, a.DA_TITLE, a.PHONE_NO, a.DA_CONTENT, a.DA_MATTER, a.DA_REASON,
+      a.DA_TLIMIT, a.DA_FREQ, a.DA_REQ, a.DA_RANGE, a.IS_SDATA, a.E_ORG_ID, o2.ORGNAME as EORGNAME, a.E_EMP_ID, e2.EMPNAME as EEMPNAME, a.USE_TLIMIT, a.CREATE_TIME,
+      a.CREATE_DATE, a.RISK, a.DA_FETCH, a.DATA_USER, a.USERNAME,a.rleader, a.ropin, a.dleader, a.dopin, '' rEmpName, '' dEmpName, a.freqType, a.freqNo
+    from T_APPLY_DATA a, OM_EMPLOYEE e1, OM_EMPLOYEE e2, OM_ORGANIZATION o1,OM_ORGANIZATION o2
+    where a.DA_ID = #daId:DECIMAL# and e1.empid = a.emp_id and e2.EMPID = a.E_EMP_ID and o1.ORGID = a.ORG_ID and o2.ORGID = a.E_ORG_ID
+  </select>
+  
+  <select id="selectAnalyst" resultMap="analyst" parameterClass="Long" >
+    <!--通过主键查询一条包含所有分析人的数据-->
+   select a.DA_ID, a.EMP_ID, e1.EMPNAME, a.ORG_ID, o1.ORGNAME, a.FLOW_ID, a.DA_TITLE, a.PHONE_NO, a.DA_CONTENT, a.DA_MATTER, a.DA_REASON,
+      a.DA_TLIMIT, a.DA_FREQ, a.DA_REQ, a.DA_RANGE, a.IS_SDATA, a.E_ORG_ID, o2.ORGNAME as EORGNAME, a.E_EMP_ID, e2.EMPNAME as EEMPNAME, a.USE_TLIMIT, a.CREATE_TIME,
+      a.CREATE_DATE, a.RISK, a.R_EMP_ID, e3.EMPNAME as REMPNAME, a.D_EMP_ID, e4.EMPNAME as DEMPNAME, a.DA_FETCH, a.DATA_USER, a.USERNAME,
+      a.rleader, a.ropin, a.dleader, a.dopin, a.freqType, a.freqNo
+    from T_APPLY_DATA a, OM_EMPLOYEE e1, OM_EMPLOYEE e2, OM_EMPLOYEE e3, OM_EMPLOYEE e4, OM_ORGANIZATION o1,OM_ORGANIZATION o2
+    where a.DA_ID = #daId# and e1.empid = a.emp_id and e2.EMPID = a.E_EMP_ID and o1.ORGID = a.ORG_ID and o2.ORGID = a.E_ORG_ID and e3.EMPID = a.R_EMP_ID and e4.EMPID = a.D_EMP_ID
+  </select>
+  
+  <select id="selectRiskAnalyst" resultMap="riskAnalyst" parameterClass="Long" >
+    <!--通过主键查询一条包含风险可行性分析人的数据-->
+  select a.DA_ID, a.EMP_ID, e1.EMPNAME, a.ORG_ID, o1.ORGNAME, a.FLOW_ID, a.DA_TITLE, a.PHONE_NO, a.DA_CONTENT, a.DA_MATTER, a.DA_REASON,
+      a.DA_TLIMIT, a.DA_FREQ, a.DA_REQ, a.DA_RANGE, a.IS_SDATA, a.E_ORG_ID, o2.ORGNAME as EORGNAME, a.E_EMP_ID, e2.EMPNAME as EEMPNAME, a.USE_TLIMIT, a.CREATE_TIME,
+      a.CREATE_DATE, a.RISK, a.R_EMP_ID, e3.EMPNAME as REMPNAME, a.DA_FETCH, a.DATA_USER, a.USERNAME,a.rleader, a.ropin, a.dleader, a.dopin, a.freqType, a.freqNo
+    from T_APPLY_DATA a, OM_EMPLOYEE e1, OM_EMPLOYEE e2, OM_EMPLOYEE e3, OM_ORGANIZATION o1,OM_ORGANIZATION o2
+    where a.DA_ID = #daId# and e1.empid = a.emp_id and e2.EMPID = a.E_EMP_ID and o1.ORGID = a.ORG_ID and o2.ORGID = a.E_ORG_ID and e3.EMPID = a.R_EMP_ID
+  </select>
+  
+    <select id="selectDataAnalyst" resultMap="dataAnalyst" parameterClass="Long" >
+    <!--通过主键查询一条包含提取可行性分析人的数据-->
+  select a.DA_ID, a.EMP_ID, e1.EMPNAME, a.ORG_ID, o1.ORGNAME, a.FLOW_ID, a.DA_TITLE, a.PHONE_NO, a.DA_CONTENT, a.DA_MATTER, a.DA_REASON,
+      a.DA_TLIMIT, a.DA_FREQ, a.DA_REQ, a.DA_RANGE, a.IS_SDATA, a.E_ORG_ID, o2.ORGNAME as EORGNAME, a.E_EMP_ID, e2.EMPNAME as EEMPNAME, a.USE_TLIMIT, a.CREATE_TIME,
+      a.CREATE_DATE, a.RISK, e3.EMPNAME as DEMPNAME, a.DA_FETCH, a.D_EMP_ID, e3.EMPNAME as DEMPNAME, a.DATA_USER, a.USERNAME,
+      a.rleader, a.ropin, a.dleader, a.dopin, a.freqType, a.freqNo
+    from T_APPLY_DATA a, OM_EMPLOYEE e1, OM_EMPLOYEE e2, OM_EMPLOYEE e3, OM_ORGANIZATION o1,OM_ORGANIZATION o2
+    where a.DA_ID = #daId# and e1.empid = a.emp_id and e2.EMPID = a.E_EMP_ID and o1.ORGID = a.ORG_ID and o2.ORGID = a.E_ORG_ID and e3.EMPID = a.D_EMP_ID
+  </select>
+  
+  <select id="getLeaveByFlowId" resultMap="abatorgenerated_TApplyDataResult" parameterClass="String" >
+    select a.DA_ID,
+       a.EMP_ID,
+       e1.EMPNAME,
+       a.ORG_ID,
+       o1.ORGNAME,
+       a.FLOW_ID,
+       a.DA_TITLE,
+       a.PHONE_NO,
+       a.DA_CONTENT,
+       a.DA_MATTER,
+       a.DA_REASON,
+       a.DA_TLIMIT,
+       a.DA_FREQ,
+       a.DA_REQ,
+       a.DA_RANGE,
+       a.IS_SDATA,
+       a.E_ORG_ID,
+       o2.ORGNAME    as EORGNAME,
+       a.E_EMP_ID,
+       e2.EMPNAME    as EEMPNAME,
+       a.USE_TLIMIT,
+       a.CREATE_TIME,
+       a.CREATE_DATE,
+       e3.EMPNAME as REMPNAME,
+       a.RISK,
+       e4.EMPNAME as DEMPNAME,
+       a.DA_FETCH,
+       a.DATA_USER,
+       a.USERNAME,
+       a.rleader, a.ropin, a.dleader, a.dopin, a.freqType, a.freqNo
+  from T_APPLY_DATA    a,
+       OM_EMPLOYEE     e1,
+       OM_EMPLOYEE     e2,
+       OM_EMPLOYEE     e3,
+       OM_EMPLOYEE     e4,
+       OM_ORGANIZATION o1,
+       OM_ORGANIZATION o2
+ where a.FLOW_ID = #executionId#
+   and e1.empid = a.emp_id
+   and e2.EMPID = a.E_EMP_ID
+   and o1.ORGID = a.ORG_ID
+   and o2.ORGID = a.E_ORG_ID
+   and e3.empid(+) = a.r_emp_id
+   and e4.empid(+) = a.d_emp_id
+  </select>
+  
+  <insert id="abatorgenerated_insert" parameterClass="com.gotop.dataApply.model.TApplyData" >
+  <selectKey keyProperty="daId" resultClass="long">
+		SELECT SQ_T_APPLY_DATA_1.NEXTVAL AS VALUE FROM DUAL
+	</selectKey>
+    <!--通过主键更新整条数据-->
+    insert into T_APPLY_DATA (DA_ID, EMP_ID, ORG_ID, FLOW_ID, DA_TITLE, PHONE_NO, DA_CONTENT,
+      DA_MATTER, DA_REASON, DA_TLIMIT, DA_FREQ, DA_REQ, DA_RANGE, IS_SDATA, E_ORG_ID, E_EMP_ID,
+      USE_TLIMIT, CREATE_TIME, CREATE_DATE, RISK, DA_FETCH, DATA_USER, USERNAME, freqType, freqNo)
+    values (#daId:DECIMAL:-9999#, #empId:DECIMAL:-9999#, #orgId:DECIMAL:-9999#, #flowId:VARCHAR#,#daTitle:VARCHAR#,
+      #phoneNo:VARCHAR#, #daContent:VARCHAR#, #daMatter:VARCHAR#, #daReason:VARCHAR#, 
+      #daTlimit:VARCHAR#, #daFreq:VARCHAR#, #daReq:VARCHAR#, #daRange:VARCHAR#,
+      #isSdata:VARCHAR#, #eOrgId:DECIMAL:-9999#, #eEmpId:DECIMAL:-9999#, #useTlimit:VARCHAR#,
+      #createTime:VARCHAR#, #createDate:VARCHAR#, #risk:VARCHAR#, #daFetch:VARCHAR#,
+      #dataUser:VARCHAR#, #username:VARCHAR#, #freqType:VARCHAR#, #freqNo:VARCHAR#)
+  </insert>
+  <update id="abatorgenerated_updateByPrimaryKey" parameterClass="com.gotop.dataApply.model.TApplyData" >
+    <!--通过主键更新部分字段，部分字段说明：当字段为null时不更新，当字段值为''空值是更新为空值-->
+    update T_APPLY_DATA
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="empId" >
+        EMP_ID = #empId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="orgId" >
+        ORG_ID = #orgId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="flowId" >
+        FLOW_ID = #flowId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daTitle" >
+        DA_TITLE = #daTitle:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="phoneNo" >
+        PHONE_NO = #phoneNo:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daContent" >
+        DA_CONTENT = #daContent:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daMatter" >
+        DA_MATTER = #daMatter:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daReason" >
+        DA_REASON = #daReason:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daTlimit" >
+        DA_TLIMIT = #daTlimit:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daFreq" >
+        DA_FREQ = #daFreq:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daReq" >
+        DA_REQ = #daReq:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daRange" >
+        DA_RANGE = #daRange:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="isSdata" >
+        IS_SDATA = #isSdata:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="eOrgId" >
+        E_ORG_ID = #eOrgId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="eEmpId" >
+        E_EMP_ID = #eEmpId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="useTlimit" >
+        USE_TLIMIT = #useTlimit:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="risk" >
+        RISK = #risk:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="rEmpId" >
+        R_EMP_ID = #rEmpId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="daFetch" >
+        DA_FETCH = #daFetch:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dEmpId" >
+        D_EMP_ID = #dEmpId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="rleader" >
+        RLEADER = #rleader:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="ropin" >
+        ROPIN = #ropin:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dleader" >
+        DLEADER = #dleader:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dopin" >
+        DOPIN = #dopin:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="freqType" >
+        freqType = #freqType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="freqNo" >
+        freqNo = #freqNo:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where DA_ID = #daId:DECIMAL#
+  </update>
+  
+  <select id="queryAllDataApply" parameterClass="com.gotop.dataApply.model.TApplyData" resultMap="abatorgenerated_TApplyDataResult">
+  	select a.DA_ID, a.EMP_ID, e1.EMPNAME, a.ORG_ID, o1.ORGNAME, a.FLOW_ID, a.DA_TITLE, a.PHONE_NO, a.DA_CONTENT, a.DA_MATTER, a.DA_REASON,
+      a.DA_TLIMIT, a.DA_FREQ, a.DA_REQ, a.DA_RANGE, a.IS_SDATA, a.E_ORG_ID, o2.ORGNAME as EORGNAME, a.E_EMP_ID, e2.EMPNAME as EEMPNAME, a.USE_TLIMIT, a.CREATE_TIME,
+      a.CREATE_DATE, a.RISK, a.R_EMP_ID, e3.EMPNAME as REMPNAME, a.D_EMP_ID, e4.EMPNAME as DEMPNAME, a.DA_FETCH, a.DATA_USER, a.USERNAME,
+      a.rleader, a.ropin, a.dleader, a.dopin, a.freqType, a.freqNo
+    from T_APPLY_DATA a, OM_EMPLOYEE e1, OM_EMPLOYEE e2, OM_EMPLOYEE e3, OM_EMPLOYEE e4, OM_ORGANIZATION o1,OM_ORGANIZATION o2
+    where e1.empid = a.emp_id and e2.EMPID = a.E_EMP_ID and o1.ORGID = a.ORG_ID and o2.ORGID = a.E_ORG_ID and e3.EMPID = a.R_EMP_ID and e4.EMPID = a.D_EMP_ID
+    <isNotNull property="empName">
+    <isNotEmpty prepend="and" property="empName" >
+        e1.EMPNAME like '%$empName$%'
+      </isNotEmpty>
+      </isNotNull>
+      <isNotNull property="empId">
+      	<isNotEmpty prepend="and" property="empId">
+      		a.emp_id = #empId#
+      	</isNotEmpty>
+      </isNotNull>
+          <isNotNull property="orgId">
+      <isNotEmpty prepend="and" property="orgId" >
+        a.ORG_ID = #orgId#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="flowId">
+      <isNotEmpty prepend="and" property="flowId" >
+        a.FLOW_ID = #flowId#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daTitle">
+      <isNotEmpty prepend="and" property="daTitle" >
+        a.DA_TITLE like '%$daTitle$%'
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="phoneNo">
+      <isNotEmpty prepend="and" property="phoneNo" >
+        a.PHONE_NO = #phoneNo#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daContent">
+      <isNotEmpty prepend="and" property="daContent" >
+        a.DA_CONTENT = #daContent#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daMatter">
+      <isNotEmpty prepend="and" property="daMatter" >
+        a.DA_MATTER = #daMatter#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daReason">
+      <isNotEmpty prepend="and" property="daReason" >
+        a.DA_REASON = #daReason#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daTlimit">
+      <isNotEmpty prepend="and" property="daTlimit" >
+        a.DA_TLIMIT = #daTlimit#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daFreq">
+      <isNotEmpty prepend="and" property="daFreq" >
+        a.DA_FREQ = #daFreq#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daReq">
+      <isNotEmpty prepend="and" property="daReq" >
+        a.DA_REQ = #daReq#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daRange">
+      <isNotEmpty prepend="and" property="daRange" >
+        a.DA_RANGE = #daRange#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="isSdata">
+      <isNotEmpty prepend="and" property="isSdata" >
+        a.IS_SDATA = #isSdata#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="eOrgId">
+      <isNotEmpty prepend="and" property="eOrgId" >
+        a.E_ORG_ID = #eOrgId#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="eEmpId">
+      <isNotEmpty prepend="and" property="eEmpId" >
+        a.E_EMP_ID = #eEmpId#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="useTlimit">
+      <isNotEmpty prepend="and" property="useTlimit" >
+        a.USE_TLIMIT = #useTlimit#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="startTime">
+      <isNotEmpty prepend="and" property="startTime" >
+        <![CDATA[CREATE_DATE >= #startTime#]]>
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="endTime">
+      <isNotEmpty prepend="and" property="endTime" >
+        <![CDATA[CREATE_DATE <= #endTime#]]>
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="risk">
+      <isNotEmpty prepend="and" property="risk" >
+        RISK = #risk#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="rEmpId">
+      <isNotEmpty prepend="and" property="rEmpId" >
+        R_EMP_ID = #rEmpId#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="daFetch">
+      <isNotEmpty prepend="and" property="daFetch" >
+        DA_FETCH = #daFetch#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="dEmpId">
+      <isNotEmpty prepend="and" property="dEmpId" >
+        D_EMP_ID = #dEmpId#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="rleader">
+      <isNotEmpty prepend="and" property="rleader" >
+        RLEADER = #rleader#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="ropin">
+      <isNotEmpty prepend="and" property="ropin" >
+        ROPIN = #ropin#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="dleader">
+      <isNotEmpty prepend="and" property="dleader" >
+        DLEADER = #dleader#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="dopin">
+      <isNotEmpty prepend="and" property="dopin" >
+        DOPIN = #dopin#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="freqType">
+      <isNotEmpty prepend="and" property="freqType" >
+        freqType = #freqType#
+      </isNotEmpty>
+      </isNotNull>
+          <isNotNull property="freqNo">
+      <isNotEmpty prepend="and" property="freqNo" >
+        freqNo = #freqNo#
+      </isNotEmpty>
+      </isNotNull>
+      order by a.DA_ID desc
+  </select>
+</sqlMap>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean class="com.gotop.jbpm.action.JbpmDemoAction" id="jbpmDemoAction" name="jbpmDemoAction" singleton="false">
+		<property name="jbpmDemoService" ref="jbpmDemoService" />
+		<property name="jbpmService" ref="jbpmService" />
+		<property name="processConfigService" ref="tProcessConfigService" />
+		<property name="processConfigPersonService" ref="tProcessConfigPersonService" />
+		<property name="processTaskExeConfigService" ref="tProcessTaskExeConfigService" />
+		 <property name="processBusinessService" ref="tProcessBusinessService" />
+		<property name="applyLeaveService" ref="tApplyLeaveService" />
+		 <property name="fileResourceTableService" ref="tFileResourceTableService" />
+		  <property name="processTaskAssigneeService" ref="tProcessTaskAssigneeService" />
+
+	</bean>
+
+	<bean class="com.gotop.jbpm.action.TProcessConfigAction" id="tProcessConfigaction" name="tProcessConfigAction" singleton="false">
+		<property name="tProcessConfigService" ref="tProcessConfigService" />
+		<property name="fileResourceTableService" ref="tFileResourceTableService" />
+		<property name="jbpmService" ref="jbpmService" />
+		<property name="configPersonService" ref="tProcessConfigPersonService" />
+	</bean>
+
+	<bean class="com.gotop.jbpm.action.TProcessConfigPersonAction" id="tProcessConfigPersonaction" name="tProcessConfigPersonAction" singleton="false">
+		<property name="tProcessConfigPersonService" ref="tProcessConfigPersonService" />
+	</bean>
+
+	<bean class="com.gotop.jbpm.action.TProcessTaskAssigneeAction" id="tProcessTaskAssigneeaction" name="tProcessTaskAssigneeAction" singleton="false">
+		<property name="tProcessTaskAssigneeService" ref="tProcessTaskAssigneeService" />
+		<property name="tProcessTaskAssigneePersonService" ref="tProcessTaskAssigneePersonService" />
+		<property name="jbpmDemoService" ref="jbpmDemoService" />
+	</bean>
+
+	<bean class="com.gotop.jbpm.action.TProcessTaskAssigneePersonAction" id="tProcessTaskAssigneePersonaction" name="tProcessTaskAssigneePersonAction" singleton="false">
+		<property name="tProcessTaskAssigneePersonService" ref="tProcessTaskAssigneePersonService" />
+	</bean>
+
+	<bean class="com.gotop.jbpm.action.TProcessTaskExeConfigAction" id="tProcessTaskExeConfigaction" name="tProcessTaskExeConfigAction" singleton="false">
+		<property name="tProcessTaskExeConfigService" ref="tProcessTaskExeConfigService" />
+	</bean>
+
+	
+	<bean class="com.gotop.jbpm.action.TProcessBusinessAction" id="tProcessBusinessaction" name="tProcessBusinessAction" singleton="false">
+    <property name="tProcessBusinessService" ref="tProcessBusinessService" />
+  </bean>
+	
+	<bean class="com.gotop.jbpm.action.TProcessBusinessConfigAction" id="tProcessBusinessConfigaction" name="tProcessBusinessConfigAction" singleton="false">
+    <property name="tProcessBusinessConfigService" ref="tProcessBusinessConfigService" />
+  </bean>
+	</beans>

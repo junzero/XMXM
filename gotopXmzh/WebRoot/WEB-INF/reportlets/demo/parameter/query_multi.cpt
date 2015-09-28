@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[orderid,,.,,customerid,,.,,title,,.,,empid,,.,,signdate,,.,,paymethod,,.,,shipmethod,,.,,shipport,,.,,amount]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.Double,java.lang.String,java.lang.String,java.sql.Timestamp,java.lang.String,java.lang.String,java.lang.String,java.lang.Double]]></ColumnTypes>
+<RowData>
+<![CDATA[NEaS`,rlH@a*^>S^]AdA[cRp:K4YR>i'Ku>h.iAu2Z\GKS@K(`B#g8+<@EF8X<Si?[lZ%$B!+
+QFRY^Lurj7W;IJ%bjUg["UcpE)%QhYqiWT`-#OPAUTI^JDlIIK-eTrpBC%gQ1a2?U&H>S%%7
+A^QlRQ[&#2_hU"(*?Z4h/[bj8uqW6i+O6q5aYsGq5jXHG+_=^LJ5QA'[aV%ER\QlY<'eYi1I
+<M8gJEBDm#%<>[`-9CMKDFUYfY*i!*!Z]AYfQ&/l_Z=hr4>bL8(4AR@\8XCBRl,g34`BNo)aU
+KRWoN00Ym"lm;]AI6qoAo_lEd`CHKq!dNKWp-jDi!"HCL6g9rj#h6\G1e&)KMe7n6D$D#6Jq8
+>60TtTV)42rV"!8oOpRL3mGRI8"E4=DbAYWAGl^]AMGrBW#gllSa[(hk]A@d?99HmGN:2Y[@k,
+0-3hiS1RChAQBK=T+Ai-rX?O'><&:2/fTETER1]A8$ksI\?oRE[nT.<4uNC4:7H%^J#a/mXmT
+dqo*_(FRusl8]A>3pM3i/f/OT=;RmV2e0_A(8Ao_<to9,\=*i@f7/_G:J<@=0h0%XK^qZDtK;
+P7"PB*#YX3]A)Fq\d!h"C@=;O%5PcY!u7Ql]A!Obn6A:R^"Z&0"/N_MXrQ"g0[kFqW%_S^C?b_
+#7H[kk]AoihU+S>!#\mMlt.SR/CJ-+TP@V^uDdI.!A3,Vf4sYIES%_ZjP,2Q0^%oQ3U`Ms8\)
+aC!tpr6"^)U8:W:Z]Am=6j\)-bfF;eS"J@-B'#>#0W28<-kCOY)!_9_QE_DpS't[-#n#6O9_Y
+fuqKb"79_`<D@oGru(9&dZ2P&nS\NrOS*rUnXC"fSs2qi;s%.[F`1Z308>LB7NtELZ!ud?tK
+2aQ2c<-_<+>5Bcc6dF#Ck>fld]A`kp*UM]A35j81QrFPSVoL!]A`@oh(ISMZ;YR=+7/D!';Q7%O
+;61\ON=ht?a:A!(mXkdk3/LXF<0M"5:\"'C1O!M?CCrSYY&jWLXZBN"jC:Yi?8'L*$0e[[ER
+LqLq>ckWFr*lLjPkb6NIV5/i7obBkHB,bb2M@1\K>HBTt5j.8</S@EW`se@mXke+[=Kla/^I
+Q8M%51BX_RkKB/>XB)P,QZf8a=:cB\KW&mX^d7=@IbeVqZ)G#u%!62tW?V4/3?Y?HEF@'O-4
++321t)Qo4meoJpEMQ,?_22"N>/ul?!NmOSgahqb$6,PQ2H(Yfu@6U?cQKRcjD/$%nJ=Q$8.H
+H<:_XV?.AR+p0)MLVcmp[hQOq>A9Z?tm3<`M\S#GK#9a-N@.SJB\QZ_@'9+&)_=:rk[?haUV
+`i8k>Z'$X+pX,?>)8c.NClBENuaIdhGk&\l&(<B7nS,-pl(fC'$$"(HmaB@M?&Lp&f@WeREA
+4M7"E5B/dMk/G;VZZ0<+h.b39([fES9oQb%5VND"P;:M8ilKTAU;5?SdQK@[l:mcd&hGh=c+
+%V)lWSCfpB>&&l*BNdZ1lB28mho]AW7-ZX+HbW,/ilO(<i<`qcWSiK?XPRW3h0@s`,L:S_26Q
+2gs4(r^\Z]Af#FVf\X=WW\eOPC%k$FqN'2q2q[Ui\5a);4jM<>abO&"N"%d$?`VRm$;ukClK(
+C"GVAp@tgV,I_8q;c?VJCbKKe+IpT2N",:m")qr>2l?8]AS#/@XbnEQ048E<#5l2q_bdOuN"U
+GSH>KQqoXEYr.XZ$RN^k5ZZR&.Lk:9=Y;T>C07'Y96isO]A4N)!9]AW:^rJq('T9,THe@lWIt,
+Nu1.fQOWB_-hJ>\G>L[?"N`E8+FFrYkB;buSj`M$/+R)%020q17>*3uG8_.edl1^/oI.?0bs
+O0\,>-=D^J?<#rUd:7`?7KA#jgIPr6V^a31p4LM;f@aPTNV)[]A@0J<CQnaG:(9%\C0"q;jk(
+=.fH%nM?LjnU*40_5TE1/CeR\_7kTmV7Y'@-T^2ARfn5uR.n\3KUI"jkUIGBG%RKT[XoWPb7
+qglS-"MNX=2iohu^B0%ApRH5:S;EKphiGE@Z]AO*_Sd7a^8bU41nj3l%m1u440$T(gB5+La`.
+.J_67uZ%:IYSR#Dn0GOI;"TOnF-P#CC&EBR]AQ0o*@D=P,n$5kN+1k&OeD!"72"E,;sNjdHE;
+MOI"#IJ?(aqr`rW+6ak0EP4.0FC(nJa2<$n*8I3//ia"]A(qXXg9IoIh3nLVp!!>#.2W>6/d8
+SjgaZTaaH(VFR2]APbAi6/1,$MK-r(7-bY:lRO6gP_GuXXD/IW5VNjM;D=X<FAldS%@j-_-2:
+CCbQE]AqFfc:L+%n'Eoo7R3C=Pi9d)<SK'C//^Le[22J:TTus:4oDlA;!31a/p<f8(pbnQc!t
+ln#"Z"C6kJp.ASOjJVM&4;+a2$*AL>30&KV)lT!2EQ9/0.AYiD95*!hXV`R9gPa3n77EnMuD
+GS-dfTM$T=A!n,!eo#Er*UJF8A^Ssn^P]ARl>8@0ET1<U=3tp!#ul4O9:5r2X!oEtiBX:.1iu
+0[-G1'E2j,QC$5U$LEGoAhd)&$Tl6S.Yn]A.6p(@gt";,<G0j77PO&Ui_kAp_q<I+NUS1T`uB
+k(5%=k@'pcipbU.=BP=*HlYQD"G>(fUf@o;%l`A3H)`AO9j#1\n?&Ajo7mqaZp>%:kC>(%+;
+6`sK&C)-9hQ?9-V7*^Hj?osb:-]A1&,M>#M;EC0=VlCQ_ce3\pA%/d1Qd790M"qOg.l'_]Ar7.
+hK$dJ!fk]AC^g9<_h.YK[e_Qr79LTh>E;pPkOUR#0ZW)FhW47-&/D=)p@eu)0gZY^KbLMABdX
+T`XA4G=Q':Yk"1,$^I#8U>2nm]A#V\Ip[hR]AZ1PifE!_t./4kBE5F$lXs"78N-pTE@I3b+ICU
+A`d5LJ^;cIl]AqNTdF'r^*j5!aI-cP&./Ju>'[/iaa]As.e9L,^s`A(Q8&c=ufO2[KO4VJ8#Kn
+HO6C0mji0Nfd>oBK-AFoZ6?`Co:W1u5&[ka+p]A)/9q;1L0_]A\0L8\#;`;JMLXGVa'OB0Y;Y?
+Cm)i;2)MC8iHEr-0flZh?'\Pq7<UF?!j:'<u`J$O>Uh0.*AG-'?qAAMi+lS36&AWGP309n)&
+8Xh_m?9X?=]AR'_GZY<K`mI3V#sC3QV(oh2IcU^a=;RERr%6Pg$227P9amfpZm)+l7W=tN@82
+eD]A$-[8RfDcod_R7W34UM5]AQ<H+$I^`on.mbKXKVS[JW/GUW2KL+0q%o'e^G\-K+,["X-F.G
+LD<-O(r'RNQjmV#qX/Ls2_`F2Il7UXnPf(JfZ3_^X3e)tgM9Z;G0LKWfbaE'm`GMb\2Ji6>j
+1S2<hPMEp6PPqT#m:]A8o=GZ(q=]A^LY-/7p1J@aZ4gaZ%\\&]A4\PbcO;&!pqh4lfDm#/Y'.?_
+WCdh,e/(cjHN[^0ons+ZNT2)SdbpFWm/NLUW1cX^AZ"(Y3q#)XPTk*#n]AN)PJ<'!spng6F1/
+;?Y?*te^g>MBLd]AfT0Z]A)Y`.a8'>D3X65]Ao-Y8YFWh;af8pAh))bFbbbQ-)BG/CTF<n'l<h2
+qLuGSdg1sEd<dB(9"TbD,V9s^a^b;-%1tHRC3$l,Gjqic\Y*f4N0<Q8sg<$F-Q:b449b7CW4
+c8:iHKYL3=YhM#^T5"Jgm)$$A%$7.>iJ1`iP.RFq7k7>rK<J^]ArB%[Brma:7Q/r=!flCQ+DE
+RK%5G'_5Sg70n)X.9!LH#nl[#WJD)iEX7^MX75t8~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,23,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[85,63,72,78,76,72,61,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="8" rs="2" s="0">
+<O>
+<![CDATA[产品销售情况查询]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" cs="8" s="1">
+<Expand/>
+</C>
+<C c="0" r="4" s="2">
+<O>
+<![CDATA[编号]]></O>
+<Expand/>
+</C>
+<C c="1" r="4" s="2">
+<O>
+<![CDATA[客户编号]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" s="2">
+<O>
+<![CDATA[员工编号]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" s="2">
+<O>
+<![CDATA[发货时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="2">
+<O>
+<![CDATA[付款方式]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" s="2">
+<O>
+<![CDATA[运输方式]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" s="2">
+<O>
+<![CDATA[港口]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" s="2">
+<O>
+<![CDATA[总额]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORDERID"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORDERID]]></CNAME>
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if($ORDERID=='',nofilter,$ORDERID)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[CUSTOMERID]]></CNAME>
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if($CUSTOMERID=='',nofilter,$CUSTOMERID)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[EMPID]]></CNAME>
+<Compare op="12">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if($EMPID=='',nofilter,$EMPID)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SIGNDATE]]></CNAME>
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if($SIGNDATE=='',nofilter,$SIGNDATE)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[PAYMETHOD]]></CNAME>
+<Compare op="12">
+<Parameter>
+<Attributes name="PAYMETHOD"/>
+<O>
+<![CDATA[credit]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[orderid]]></CNAME>
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if($AMOUNT=='',nofilter,$AMOUNT)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SHIPMETHOD]]></CNAME>
+<Compare op="12">
+<Parameter>
+<Attributes name="SHIPMETHOD"/>
+<O>
+<![CDATA[UPS]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SHIPPORT]]></CNAME>
+<Compare op="12">
+<Parameter>
+<Attributes name="SHIPPORT"/>
+<O>
+<![CDATA[A]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CUSTOMERID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMPID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SIGNDATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="PAYMETHOD"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SHIPMETHOD"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SHIPPORT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AMOUNT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportSettings shrinkToFitMode="0" headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.07874015748031496" left="0.15748031496062992" bottom="0.07874015748031496" right="0.15748031496062992"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,22,10,23,11,23,19,26,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,109,69,92,72,109,105,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="6">
+<O>
+<![CDATA[订单编号：]]></O>
+<Expand/>
+</C>
+<C c="1" r="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="ORDERID"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=VALUE("ds1",1)]]></FormulaDict>
+</Dictionary>
+</Widget>
+</C>
+<C c="2" r="1" s="6">
+<O>
+<![CDATA[客户编号：]]></O>
+<Expand/>
+</C>
+<C c="3" r="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="CUSTOMERID"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=VALUE("ds1",2)]]></FormulaDict>
+</Dictionary>
+</Widget>
+</C>
+<C c="4" r="1" s="6">
+<O>
+<![CDATA[员工编号：]]></O>
+<Expand/>
+</C>
+<C c="5" r="1">
+<O t="I">
+<![CDATA[1001]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.TreeComboBoxEditor">
+<WidgetName name="EMPID"/>
+<WidgetAttr/>
+<TreeAttr mutiSelect="true"/>
+<TreeNodeAttr>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=VALUE("ds1",3)]]></FormulaDict>
+</Dictionary>
+</TreeNodeAttr>
+<TreeNodeAttr>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=VALUE("ds1",4,3,@1)]]></FormulaDict>
+</Dictionary>
+</TreeNodeAttr>
+</Widget>
+</C>
+<C c="6" r="1" s="7">
+<O>
+<![CDATA[注：下拉树功能]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" s="6">
+<O>
+<![CDATA[签订日期：]]></O>
+<Expand/>
+</C>
+<C c="1" r="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetName name="SIGNDATE"/>
+<WidgetAttr/>
+<DateAttr start="" end="" returnDate="true"/>
+</Widget>
+</C>
+<C c="2" r="3" s="6">
+<O>
+<![CDATA[订单总额：]]></O>
+<Expand/>
+</C>
+<C c="3" r="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetName name="AMOUNT"/>
+<WidgetAttr/>
+<NumberAttr/>
+</Widget>
+</C>
+<C c="4" r="3" s="6">
+<O>
+<![CDATA[运输方式：]]></O>
+<Expand/>
+</C>
+<C c="5" r="3">
+<O>
+<![CDATA[UPS]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboCheckBox">
+<WidgetName name="SHIPMETHOD"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=VALUE("ds1",7)]]></FormulaDict>
+</Dictionary>
+</Widget>
+</C>
+<C c="0" r="5" s="6">
+<O>
+<![CDATA[发货港口：]]></O>
+<Expand/>
+</C>
+<C c="1" r="5" cs="2">
+<O>
+<![CDATA[A]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.CheckBoxGroup">
+<WidgetName name="SHIPPORT"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=UNIQUEARRAY(VALUE("ds1",8))]]></FormulaDict>
+</Dictionary>
+</Widget>
+</C>
+<C c="3" r="5" s="6">
+<O>
+<![CDATA[付款方式：]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" cs="2">
+<O>
+<![CDATA[credit]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.RadioGroup">
+<WidgetName name="PAYMETHOD"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=UNIQUEARRAY(VALUE("ds1",6))]]></FormulaDict>
+</Dictionary>
+</Widget>
+</C>
+<C c="3" r="7">
+<O>
+<![CDATA[查询]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+</CellElementList>
+<ReportSettings shrinkToFitMode="0" headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ParameterUI>
+<Parameter>
+<Attributes name="ORDERID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="CUSTOMERID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="EMPID"/>
+<O>
+<![CDATA[1001]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="SIGNDATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="PAYMETHOD"/>
+<O>
+<![CDATA[credit]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="SHIPMETHOD"/>
+<O>
+<![CDATA[UPS]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="SHIPPORT"/>
+<O>
+<![CDATA[A]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="AMOUNT"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Background name="ColorBackground" color="-1184275"/>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[¤#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-65536"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

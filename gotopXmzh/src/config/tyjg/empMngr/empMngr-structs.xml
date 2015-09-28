@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="empMngr" namespace="/empMngr">
+     	
+	    <!-- 根据父节点查询子节点 -->
+     	<action class="empMngrAction" method="queryOrgNodes" name="queryOrgNodes_empMngr">
+	    </action>
+     	
+     	<!-- 查询机构下子机构和用户节点 -->
+     	<action class="empMngrAction" method="queryOrgAndEmp" name="queryOrgAndEmp_empMngr">
+	    </action>
+     	
+     	<!-- 拷贝或移动用户节点 -->
+     	<action class="empMngrAction" method="moveEmpNode" name="moveEmpNode_empMngr">
+	    </action>
+     	
+     	<!-- 查询机构下datacell人员信息列表 -->
+     	<action class="empMngrAction" method="queryEmpOrgDataGrid" name="queryEmpOrgDataGrid_empMngr">
+	    </action>
+	    
+	    <!-- 修改人员信息排序 -->
+     	<action class="empMngrAction" method="upDataGridOrder" name="upDataGridOrder_empMngr">
+	    </action>
+	    
+	    <!-- 修改dataCell -->
+     	<action class="empMngrAction" method="queryEmpOrgDataGrid" name="upDataGrid_empMngr">
+	    </action>
+	    
+	    <!-- ajax判断身份证是否重复 -->
+     	<action class="empMngrAction" method="cardNoIsExist" name="cardNoIsExist_empMngr">
+	    </action>
+	    
+	    <!-- 查询员工归属机构datacell列表 -->
+     	<action class="empMngrAction" method="empOrgBelongDataCell" name="empOrgBelongDataCell_empMngr">
+	    </action>
+	    
+	    <!-- 新增用户信息时，保存用户信息 -->
+     	<action class="empMngrAction" method="insertSaveEmpInfo" name="insertSaveEmpInfo_empMngr">
+	    </action>
+	    
+	    <!-- 修改用户时，保存用户信息 -->
+     	<action class="empMngrAction" method="updateSaveEmpInfo" name="updateSaveEmpInfo_empMngr">
+	    </action>
+	    
+	    <!-- 获取人员信息的首拼信息 -->
+     	<action class="empMngrAction" method="getShouSpell" name="getShouSpell_empMngr">
+	    </action>
+	    
+	    
+	    <!-- 初始化lookup选择机构树 -->
+     	<action class="empMngrAction" method="initEntityParam" name="initEntityParam_empMngr">
+	    </action>
+	    
+	    <!-- 根据roleid查询AcRole对象，返回auto字段 -->
+     	<action class="empMngrAction" method="getOrgDegreeByRoleid" name="getOrgDegreeByRoleid_empMngr">
+	    </action>
+	    
+	    
+	    <!-- 设置系统角色时获取系统角色datacell列表 -->
+     	<action class="empMngrAction" method="getXtAcRoleListByRoleType" name="getXtAcRoleListByRoleType_empMngr">
+	    </action>
+	    
+	    
+	    <!-- 设置系统角色时获取系统角色datacell列表 -->
+     	<action class="empMngrAction" method="getYwAcRoleListByRoleType" name="getYwAcRoleListByRoleType_empMngr">
+	    </action>
+	    
+	    
+	    <!-- 人员管理里面设置可管理机构树 -->
+     	<action class="empMngrAction" method="queryMngorgOfLogon" name="queryMngorgOfLogon_empMngr">
+	    </action>
+	    
+	    
+	    <!-- 查询机构节点下的的子机构、岗位、员工 -->
+     	<action class="empMngrAction" method="queryTreeChildNodes" name="queryTreeChildNodes_empMngr">
+	    </action>
+	    
+	    
+	    <!-- 查询机构节点下的的子机构 -->
+     	<action class="empMngrAction" method="querySelectTreeNodes" name="querySelectTreeNodes_empMngr">
+	    </action>
+	    
+     	
+     	<action class="empMngrAction" method="{1}" name="*_empMngr">
+	      <!-- 查询用户可管理机构列表 -->
+	      <result name="mngrlist">/jsp/tyjg/empMngr/per_tree.jsp</result>
+	      <!-- 人员排序 -->
+	      <result name="orderViewlist">/jsp/tyjg/empMngr/synEmp_order.jsp</result>
+	      <!-- 查询机构基本和附加信息 -->
+	      <result name="orginfo">/jsp/tyjg/empMngr/per_modify.jsp</result>
+	      <!-- 查询用户基本信息 -->
+	      <result name="empBaseAndFjxx">/jsp/tyjg/empMngr/emp_baseinfo.jsp</result>
+	      <!-- 初始化业务角色 -->
+	      <result name="setXtAcRoleRespo">/jsp/tyjg/empMngr/xt_party_power_maintain_exp.jsp</result>
+	      <!-- 初始化系统角色 -->
+	      <result name="setYwAcRoleRespo">/jsp/tyjg/empMngr/yw_party_power_maintain_exp.jsp</result>
+	      <!-- 可管理机构树打开模态窗口 -->
+	      <result name="selectDialogOrgType">/jsp/tyjg/empMngr/select_dialog_opType.jsp</result>
+	      <!-- 初始化可授权岗位列表页面 -->
+	      <result name="om_posit_list">/jsp/tyjg/empMngr/positionSelectWin2.jsp</result>
+	      <!-- 初始化可授权岗位列表页面 -->
+	      <result name="reDirect_mmgOrg">/jsp/tyjg/empMngr/mngorg_atree.jsp</result>
+	      <!-- 组织归属选择树 -->
+	      <result name="orgSelect_mmgOrg">/jsp/tyjg/empMngr/org_select.jsp</result>
+	      <result name="setSingleEmpInfo">/jsp/tyjg/empMngr/set_single_emp_info.jsp</result>
+	    </action>
+	    
+	    
+	         	
+  </package>
+</struts>

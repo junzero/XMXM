@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_PROCESS_TASK_ASSIGNEE_PERSON_SqlMap" >
+ <resultMap id="abatorgenerated_TProcessTaskAssigneePersonResult" class="com.gotop.jbpm.model.TProcessTaskAssigneePerson" >
+    <!--Bean方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="PROCESS_TASK_ASSIGNEE_ID" property="processTaskAssigneeId" jdbcType="DECIMAL" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="TASK_ASSIGNEE_ID" property="taskAssigneeId" jdbcType="DECIMAL" />
+     <result column="TASK_ASSIGNEE_STATE" property="taskAssigneeState" jdbcType="DECIMAL" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TProcessTaskAssigneePerson_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="PROCESS_TASK_ASSIGNEE_ID" property="processTaskAssigneeId" jdbcType="DECIMAL" />
+    <result column="EXECUTION_ID" property="executionId" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="TASK_ASSIGNEE_ID" property="taskAssigneeId" jdbcType="DECIMAL" />
+      <result column="TASK_ASSIGNEE_STATE" property="taskAssigneeState" jdbcType="DECIMAL" />
+  </resultMap>
+  <insert id="abatorgenerated_insert" parameterClass="com.gotop.jbpm.model.TProcessTaskAssigneePerson" >
+    <!--通过主键更新整条数据-->
+    <selectKey resultClass="long" keyProperty="id">
+		SELECT T_PROCESS_TASK_ASSIGNEEP_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into T_PROCESS_TASK_ASSIGNEE_PERSON (ID, PROCESS_TASK_ASSIGNEE_ID, EXECUTION_ID, TASK_ID,
+      TASK_ASSIGNEE_ID,PARENT_ID)
+    values (#id:DECIMAL:-9999#, #processTaskAssigneeId:DECIMAL:-9999#, #executionId:VARCHAR#,
+      #taskId:VARCHAR#, #taskAssigneeId:DECIMAL:-9999#,#id:DECIMAL:-9999#)
+  </insert>
+  <!--添加20140906 -->
+  <insert id="abatorgenerated_insert1" parameterClass="com.gotop.jbpm.model.TProcessTaskAssigneePerson" >
+    <!--通过主键更新整条数据-->
+    <selectKey resultClass="long" keyProperty="id">
+		SELECT T_PROCESS_TASK_ASSIGNEEP_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into T_PROCESS_TASK_ASSIGNEE_PERSON (ID, PROCESS_TASK_ASSIGNEE_ID, EXECUTION_ID, TASK_ID,
+      TASK_ASSIGNEE_ID,PARENT_ID,ISCHILD,TASK_ASSIGNEE_STATE)
+    values (#id:DECIMAL:-9999#, #processTaskAssigneeId:DECIMAL:-9999#, #executionId:VARCHAR#,
+      #taskId:VARCHAR#, #taskAssigneeId:DECIMAL:-9999#,#parentId#,#isChild#,#taskAssigneeState#)
+  </insert>
+  
+  <update id="updateTaskAssigneeState" parameterClass="java.util.HashMap" >
+    update T_PROCESS_TASK_ASSIGNEE_PERSON set
+        TASK_ASSIGNEE_STATE =  '$taskAssgineeState$'
+   where EXECUTION_ID = '$executionId$' 
+   and   task_assignee_id =    '$taskAssingee$'
+  </update>
+  
+<!--   <update id="updateTaskAssigneeState1" parameterClass="java.util.HashMap" >
+    update T_PROCESS_TASK_ASSIGNEE_PERSON set
+        TASK_ASSIGNEE_STATE =  '$taskAssgineeState$'
+   where EXECUTION_ID = '$executionId$' 
+     <isNotNull prepend="and" property="taskAssingee" >
+       task_assignee_id =    '$taskAssingee$'
+     </isNotNull>
+     <isNotNull prepend="and" property="parentId" >
+       parent_id = '$parentId$'
+     </isNotNull>
+     <isNotNull prepend="and" property="isUpdate" >
+     TASK_ASSIGNEE_STATE=#isUpdate#
+     </isNotNull>
+   and  ischild='1'
+  </update> -->
+  
+   <!-- 20140907修改 -->
+  <update id="updateTaskAssigneeState1" parameterClass="java.util.HashMap" >
+    update T_PROCESS_TASK_ASSIGNEE_PERSON set
+        TASK_ASSIGNEE_STATE =  '$taskAssgineeState$'
+   where EXECUTION_ID = '$executionId$' 
+     <isNotNull prepend="and" property="taskAssingee" >
+       task_assignee_id =    '$taskAssingee$'
+     </isNotNull>
+     <isNotNull prepend="and" property="parentId" >
+       parent_id = '$parentId$'
+     </isNotNull>
+      <isNotNull prepend="and" property="objId" >
+       id = '$objId$'
+     </isNotNull>
+     <isNotNull prepend="and" property="isUpdate" >
+     TASK_ASSIGNEE_STATE=#isUpdate#
+     </isNotNull>
+     <isNotNull prepend="and" property="ischild" >
+      ischild=#ischild#
+     </isNotNull>
+  </update>
+  
+  
+  <select id="getUnCompleted" resultMap="abatorgenerated_TProcessTaskAssigneePersonResult" parameterClass="java.util.HashMap" >
+    select ID, PROCESS_TASK_ASSIGNEE_ID, EXECUTION_ID, TASK_ID, TASK_ASSIGNEE_ID,TASK_ASSIGNEE_STATE
+    from T_PROCESS_TASK_ASSIGNEE_PERSON
+   where
+    EXECUTION_ID = '$executionId$' 
+     and    TASK_ASSIGNEE_STATE =  '$taskAssgineeState$'
+     and TASK_ID='$taskId$'
+  </select>
+  
+  
+  <!-- 查询部室下未办理的信息 -->
+  <select id="getBsUnCompleted" resultMap="abatorgenerated_TProcessTaskAssigneePersonResult" parameterClass="java.util.HashMap" >
+    select ID, PROCESS_TASK_ASSIGNEE_ID, EXECUTION_ID, TASK_ID, TASK_ASSIGNEE_ID,TASK_ASSIGNEE_STATE
+    from T_PROCESS_TASK_ASSIGNEE_PERSON
+   where
+    EXECUTION_ID = '$executionId$' 
+     and    TASK_ASSIGNEE_STATE =  '$taskAssgineeState$'
+     and TASK_ID='$taskId$'
+     and  ischild='$isChild$'
+  </select>
+  <delete id="abatorgenerated_deleteByTemplate" parameterClass="com.gotop.jbpm.model.TProcessTaskAssigneePerson" >
+    <!--根据Bean数据模板查询条件删除记录-->
+    delete from T_PROCESS_TASK_ASSIGNEE_PERSON
+    <dynamic prepend="where" >
+      <isNotEmpty prepend="and" property="id" >
+        ID = #id:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="processTaskAssigneeId" >
+        PROCESS_TASK_ASSIGNEE_ID = #processTaskAssigneeId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="executionId" >
+        EXECUTION_ID = #executionId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="taskId" >
+        TASK_ID = #taskId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="taskAssigneeId" >
+        TASK_ASSIGNEE_ID = #taskAssigneeId:DECIMAL#
+      </isNotEmpty>
+    </dynamic>
+  </delete> 
+ <update id="abatorgenerated_updateByExampleSelective" >
+    <!--通过查询实例，更新非null字段-->
+    update T_PROCESS_TASK_ASSIGNEE_PERSON
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="record.id" >
+        ID = #record.id:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.processTaskAssigneeId" >
+        PROCESS_TASK_ASSIGNEE_ID = #record.processTaskAssigneeId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.executionId" >
+        EXECUTION_ID = #record.executionId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.taskId" >
+        TASK_ID = #record.taskId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.taskAssigneeId" >
+        TASK_ASSIGNEE_ID = #record.taskAssigneeId:DECIMAL:-9999#
+      </isNotNull>
+    </dynamic>
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+    </isParameterPresent>
+  </update>
+<update id="abatorgenerated_updateEntityByTemplate" >
+    <!--根据Bean数据模板查询条件更新记录-->
+    update T_PROCESS_TASK_ASSIGNEE_PERSON
+    <dynamic prepend="set" >
+      <isNotEmpty prepend="," property="record.id" >
+        ID = #record.id:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.processTaskAssigneeId" >
+        PROCESS_TASK_ASSIGNEE_ID = #record.processTaskAssigneeId:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.executionId" >
+        EXECUTION_ID = #record.executionId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.taskId" >
+        TASK_ID = #record.taskId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.taskAssigneeId" >
+        TASK_ASSIGNEE_ID = #record.taskAssigneeId:DECIMAL:-9999#
+      </isNotEmpty>
+    </dynamic>
+    <dynamic prepend="where" >
+      <isNotEmpty prepend="and" property="template.id" >
+        ID = #template.id:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.processTaskAssigneeId" >
+        PROCESS_TASK_ASSIGNEE_ID = #template.processTaskAssigneeId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.executionId" >
+        EXECUTION_ID = #template.executionId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.taskId" >
+        TASK_ID = #template.taskId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.taskAssigneeId" >
+        TASK_ASSIGNEE_ID = #template.taskAssigneeId:DECIMAL#
+      </isNotEmpty>
+    </dynamic>
+  </update>  
+</sqlMap>

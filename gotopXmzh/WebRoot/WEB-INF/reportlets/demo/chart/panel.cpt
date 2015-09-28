@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[Filiale,,.,,HardwareCost,,.,,SoftwareCost]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[HeL:Saf[LkL'D&$B`b0AT'kD6FSe0q1Ph\a<,ft%B3U[BRR..:bohVO@/Zs1;,.LTb%D_.?8
+h961k>oN6Ngakh>_<?9W/Cs;n--bh>_S&-`7h]A-(*\<ZD6a=f'Q;O3%[gt[P*-8Ii_Pqe3:%
+5IEPql?NIJ=@L<)~
+]]></RowData>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[Equipment,,.,,Ratio]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[Ha.JGdj=CASAkb<0>L7/:3.9$RFBLsb&lT!KeZjn/I_[~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress=""/>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.page.First">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[首页]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Previous">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[上一页]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Next">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[下一页]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Last">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[末页]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false"/>
+</WebPageContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="11.693" height="16.536"/>
+<Margin top="0.07874015748031496" left="0.15748031496062992" bottom="0.07874015748031496" right="0.15748031496062992"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[26,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,15,40,19,19,28,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[112,95,103,92,72,72,72,72,72,36,55,80,101,114,76,85,70,99,72]]></ColumnWidth>
+<FloatElementList>
+<com.fr.report.FloatElement>
+<Location column="0" row="4" leftDistance="0" topDistance="0" width="798.0" height="297.0"/>
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground>
+<Background name="GradientBackground" color1="-1" color2="-1" direction="1" useCell="true" begin="0.0" finish="0.0" cyclic="false"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Plot class="com.fr.chart.plot.MeterPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-65536" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="0.029999999329447746"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false"/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrPosition">
+<SeriesAttrPosition>
+<Attr position="1"/>
+</SeriesAttrPosition>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+<SeriesAttrMap>
+<Entry index="0">
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false"/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrPosition">
+<SeriesAttrPosition>
+<Attr position="1"/>
+</SeriesAttrPosition>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false"/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrPosition">
+<SeriesAttrPosition>
+<Attr position="1"/>
+</SeriesAttrPosition>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+</Entry>
+</SeriesAttrMap>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<MeterStyle>
+<Attr meterAngle="270" startValue="0.0" endValue="400.0" tickSize="50.0" tickColor="-8355712" units="单位" needleColor="-10066330" dialBackgroundColor="-657931" tickLabelsVisible="true" dialShape="CIRCLE"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<IntervalList>
+<MeterInterval label="分段区域1(默认)" beginValue="0.0" endValue="150.0" backgroudColor="-39322" outlineColor="-1" outlineSize="5.0"/>
+<MeterInterval label="分段区域2(默认)" beginValue="150.0" endValue="300.0" backgroudColor="-256" outlineColor="-1" outlineSize="5.0"/>
+<MeterInterval label="分段区域3(默认)" beginValue="300.0" endValue="400.0" backgroudColor="-16724737" outlineColor="-1" outlineSize="5.0"/>
+</IntervalList>
+</MeterStyle>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<MoreNameCDDefinition>
+<Top topCate="-1" topValue="-1"/>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[ds2]]></Name>
+</TableData>
+<CategoryName value="Equipment"/>
+<ChartSummaryColumn name="Ratio" function="com.fr.data.util.function.SumFunction" customName="Ratio"/>
+</MoreNameCDDefinition>
+</O>
+<Style index="0"/>
+</com.fr.report.FloatElement>
+<com.fr.report.FloatElement>
+<Location column="0" row="24" leftDistance="0" topDistance="2" width="395.0" height="338.0"/>
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground>
+<Background name="GradientBackground" color1="-1" color2="-1" direction="1" useCell="true" begin="0.0" finish="0.0" cyclic="false"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="0.6899999976158142"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O>
+<![CDATA[]]></O>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.RadarPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="0.7900000214576721"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="0.38999998569488525"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false" seriesLabel=""/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+<SeriesAttrMap>
+<Entry index="0">
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrLine">
+<SeriesAttrLine>
+<Attr lineStyle="1" lineColor="-26164"/>
+</SeriesAttrLine>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false" seriesLabel=""/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+</Entry>
+<Entry index="1">
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="0.5799999833106995"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrLine">
+<SeriesAttrLine>
+<Attr lineStyle="1" lineColor="-6697729"/>
+</SeriesAttrLine>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false" seriesLabel=""/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+</Entry>
+</SeriesAttrMap>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground>
+<Background name="ColorBackground" color="-657931"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="1" lineColor="-14117142" isRoundBorder="true"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<RadarAttr showMarker="true" showLine="true" isFilled="true"/>
+<RadarAxis class="com.fr.chart.axis.RadarAxis">
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="3" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</RadarAxis>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<MoreNameCDDefinition>
+<Top topCate="-1" topValue="-1"/>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[ds1]]></Name>
+</TableData>
+<CategoryName value="Filiale"/>
+<ChartSummaryColumn name="HardwareCost" function="com.fr.data.util.function.SumFunction" customName="HardwareCost"/>
+<ChartSummaryColumn name="SoftwareCost" function="com.fr.data.util.function.SumFunction" customName="SoftwareCost"/>
+</MoreNameCDDefinition>
+</O>
+<Style index="1"/>
+</com.fr.report.FloatElement>
+<com.fr.report.FloatElement>
+<Location column="3" row="24" leftDistance="84" topDistance="2" width="403.0" height="337.0"/>
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="0.5799999833106995"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O>
+<![CDATA[]]></O>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.RadarPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false"/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrPosition">
+<SeriesAttrPosition>
+<Attr position="1"/>
+</SeriesAttrPosition>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground>
+<Background name="ColorBackground" color="-657931"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="1" lineColor="-14117142" isRoundBorder="true"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<RadarAttr showMarker="true" showLine="true" isFilled="false"/>
+<RadarAxis class="com.fr.chart.axis.RadarAxis">
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="3" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</RadarAxis>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<MoreNameCDDefinition>
+<Top topCate="-1" topValue="-1"/>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[ds1]]></Name>
+</TableData>
+<CategoryName value="Filiale"/>
+<ChartSummaryColumn name="HardwareCost" function="com.fr.data.util.function.SumFunction" customName="HardwareCost"/>
+<ChartSummaryColumn name="SoftwareCost" function="com.fr.data.util.function.SumFunction" customName="SoftwareCost"/>
+</MoreNameCDDefinition>
+</O>
+<Style index="0"/>
+</com.fr.report.FloatElement>
+</FloatElementList>
+<CellElementList>
+<C c="0" r="0" cs="10" s="2">
+<O>
+<![CDATA[信息处设备内存利用率(仪表盘)]]></O>
+<Expand/>
+</C>
+<C c="10" r="0">
+<Expand/>
+</C>
+<C c="11" r="0">
+<Expand/>
+</C>
+<C c="0" r="1" s="3">
+<O>
+<![CDATA[查询日期：]]></O>
+<Expand/>
+</C>
+<C c="1" r="1" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="2" r="1">
+<Expand/>
+</C>
+<C c="3" r="1">
+<Expand/>
+</C>
+<C c="4" r="1">
+<Expand/>
+</C>
+<C c="5" r="1">
+<Expand/>
+</C>
+<C c="6" r="1">
+<Expand/>
+</C>
+<C c="7" r="1">
+<Expand/>
+</C>
+<C c="8" r="1">
+<Expand/>
+</C>
+<C c="9" r="1">
+<Expand/>
+</C>
+<C c="10" r="1">
+<Expand/>
+</C>
+<C c="11" r="1">
+<Expand/>
+</C>
+<C c="0" r="3" cs="10" s="5">
+<Expand/>
+</C>
+<C c="7" r="18">
+<Expand/>
+</C>
+<C c="0" r="20" cs="10" s="2">
+<O>
+<![CDATA[采购成本分布(雷达图)]]></O>
+<Expand/>
+</C>
+<C c="0" r="21" s="3">
+<O>
+<![CDATA[查询日期：]]></O>
+<Expand/>
+</C>
+<C c="1" r="21" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="2" r="21">
+<Expand/>
+</C>
+<C c="3" r="21">
+<Expand/>
+</C>
+<C c="4" r="21">
+<Expand/>
+</C>
+<C c="5" r="21">
+<Expand/>
+</C>
+<C c="6" r="21" cs="2">
+<Expand/>
+</C>
+<C c="0" r="23" cs="10" s="5">
+<Expand/>
+</C>
+<C c="4" r="24">
+<Expand/>
+</C>
+<C c="9" r="25">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="35">
+<Expand/>
+</C>
+<C c="1" r="35">
+<Expand/>
+</C>
+<C c="2" r="35">
+<Expand/>
+</C>
+<C c="3" r="35">
+<Expand/>
+</C>
+<C c="4" r="35">
+<Expand/>
+</C>
+<C c="5" r="35">
+<Expand/>
+</C>
+<C c="6" r="35">
+<Expand/>
+</C>
+<C c="0" r="36">
+<Expand/>
+</C>
+<C c="1" r="36">
+<Expand/>
+</C>
+<C c="2" r="36">
+<Expand/>
+</C>
+<C c="3" r="36">
+<Expand/>
+</C>
+<C c="4" r="36">
+<Expand/>
+</C>
+<C c="5" r="36">
+<Expand/>
+</C>
+<C c="6" r="36">
+<Expand/>
+</C>
+<C c="1" r="43">
+<Expand/>
+</C>
+</CellElementList>
+<ReportWriteAttr/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="0" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<Image width="1000" height="500">
+<![CDATA[mG,g$*Cg_Gd/X,F:Tu-Biq+;VV%s+^@0_DsOa/QuQ6NAMWk:1"hqpjj6psF26psF26psF26p
+sF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF
+26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26
+psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26ps
+F26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF2
+6psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26p
+sF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF26psF
+26psF26psF26psF2A4#,g7'&Tb&J5Te&cG8%57nJ>&J5WR8At?<&J5Te&^cZXq@aGQ&J5W&O
+7X[%r^9.B6psH8,I.596psF27._`&8?>#f&J5Te&cG8%57nJ>&c(qnfA#%+mjH+^`;18^&J5
+WL8+1*g7BCtN&J5UpJ(2f`pkr8S+sJ3Tir80?N5(2A0-VSa,4:Ng\JTf.lX*%J6q#fP]Aq=sD
+@f;4@LkplaUOFi8?c;dW&J5TepIF[bI>M)++sJ3TSaIT#T0N;RF8Gj;qtjHun*]A3Ph4NN\J+
+rP)p-.C#&)ZQ@^E6p4h62gqY2e\oD#J^1rEMR2^CgG"rm9!aF8anj(?;<bqu5pEqRM(Cr"8+
+]AIW#.d:ZneK[==1.n^GgdJ+'S5lf[[pU7^0^qRM'XT3L2^r:G'nMghh$lfZP8EPC]A#k0NmG^
+)CAUfD$4JrS78Drqa0SmX?DW\c&4olf\,Toe"0Z5BjhDs8'9Tmed[[Rso8SXAA#[n[3k+TCL
+CVXaffCTBk\.2klr!+8WNsY+JqU@f3+qF1?7?^LiF:RsofGrrD5?q(Y,*k%FO?+6^F&:]ALC=
+0D'=U&"Xk^5%8ufch1fFe+fT.URsX*!9]A:90gGNFIdZql^X1;H5'VOlq2"i45M(t`:ZI(VNd
+gDD".V%,a8G/aqRPMPr'EWgq;D&Lk9K*orEMRq5E-3M3Vp;X%<0%K+7l8"lfW`3o*bNP(c`[
+#5N$q-r1K\Ja7cG$63#5Z^Zt@ZpC[;Co6\7PqgQg$ldPhf5/nE1"88(1DLUporS7;7kNM*k&
+*%GS!;fDRa8W?X]AV"f5qQta2O7C3eJGl=:RihMt5PKX'3Vp;^_t]AZB_#Dd.Z%&i.n#)d^TD"
+?90ts"sYeTgOo4.gakMB!!7mAq^(glk:fO+J8p5en.rUb0se,D'c`Y\4Kp6U5GIdA0Th#$@!
+ki_*S)E5CmLL'?RVuQ[0]A>(!.1VT:7QgX17qtdDn52#tM^R`DXqY>4/q6g+tmXDq.]Ag$eVhY
+UZ0f$F"^j6-EFTBk\6^[JB*k5/nBh=(#Xc_mDI+4sr?&,k;X;a7`Uoh56g5PKTRch1ZD>^t>
+Noh4?.ri_s[kOu[ZYQ!\]AC4>"-olJHWTDSHXQgmF-p\iUfm8*[Y5M+50?hAF<=$P<_h7rSTj
+6-EFTBk\6^[JB*k5/nBh=(#Xc_mE4q=^0F6U1>DeBdMXrDGl3c[B0mF8]A0)f?`9fgb4YZqnI
+T_TA0C[^\XGgX8-nQf?ZUPmlpg?a-]A'k!!)XQo*56qJ:<:L!rr<d^GC?>!!)5,Qp1QN!;&AE
+#64aSIY[_$!!#:!1OfB)zzzzzzz!!!"<TXXZ2`WuPE!;(=4!!(BlN=Q!h!9iSG!!&[alfS6J
+!2,qd!!%OuY+Gdr!.]AM.zzzzzzzz!#2uWh,?alJ+iL&5(D8c^AIM'YE/&5X&_AIdsqD^cgUg
+IfD"p0^\dgdIJln?ISV%mcfb9"8)pYBlf\,TI]Af=/YMN')G(*VEqRQU'TBk\:\ae4rolL(:5
+M+6SF8\Wof?a,2rQ=_WJ,RdilKA#SI]Af=/kPD7Re"<2'et7Dos#D1oF8anhlKA#SI]Af=/kPD
+`<Un?u9qRM(:q7OKABRKJorEMS=ch2AXebeUWc;3b%5M,q*O6/qs2no.!I]Af=/kPD`<Xrlok
+qRM'X?[4j(Y<Nq4rEMS=ch2AX>^uEqqQoeBqU<d`5Neg;dEhK@@e]AV4`WuPE!;(=4!!(BlN=
+Q!h!9iSG!!&[alfS6J!2,qd!!%OuY+Gdr!.]AM.!!!#q2:di]A"#tc1!8MLsIK8OA!.aqUerTJ
++3.Co.gi'EG!9XjmJGTf,O7`T7IfKK(Dm4ZjkDq>!!8MLsI]AOX,q#^WTIY7:q3.Hkt!;QPCr
+6LGh5(;&.+8u/ks1\BV[si)D:\XN>rVW8Ds16Okolp-.WVZNK^LrV2^[M!4Sp^N5mhbi2I\i
+Z@5PhqZO++7(]ADq3[k#XdfpJjG%^?\ks\UJGpki_@EqRM'XTBg^t\bX_#m19/#5M*+2F6c=\
+p\iLcolKkWrS7>9kP2dVkK\;M8jCqRXWRMsrBW["ch2AX:-U[eqRQQuTBk\:Q%!WLki]AZEqR
+M(Cri_r`?i:u%=8gqMY+P%CqRQ9oT=[>OkPD`<Y2AL,k"e4N5P0$q>ee_5XWRMspI@I"ce\W
+oF7ZH)j85jK:['N_rJC@;fK[S%bl.DQfO#JF_"iNVe^)J^ki^n$@f-8iKCcqW)B\ntoQ.7O0
+`HUo!V<@aRm59G_=tqD"3q/7KD@AgqDmd&@"2V_!TsRI=$JWnTV$l*Mt%%B&'bFOCOGbqd*K
+Q-1.K8*E'@ZYolK^0qDn>b(k2Mczzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+zzzzzzzz!!%P3?>jbKVEb+QpY1+D:S49GpRaX!]A<@:Oc`cWsp\T<@TA@hSe%^t"kL]AZOn+AL
+8I`:"']A7+XWlf\,TId[.)rUg![2uQuGG<aU'ID=U1olL!t5M+6SF8]A?.p\XW)rEMQG^?F`>h
+t;&+>X-idolK;_n#,'H^ZjqX\bi(LmecDNXIm,^lKA#SI]Af=/kC10pY+P%C`Y\RnkIZ1\J*?
+(l\UNuEo)84Xof)hS5Bf?Ac[ERaTCm:">Q$iPf?a,2rS6knch2AXh"[V9j*]AJ)m19/#5M+5P
+?bW.]A^]A(+&lf[\kqRQ((qt$&$%eO?4)h6o.rMo:hc2d/@XT(H(n+?YZA,QGR#NK`M]AUsY5r<
+:ceI]Af:F^/#Sqj.i5NhprlOs2Ii!\,HBjKCLlahG6AVrW;Cm5M+3^h^=Atn^5[bDsIq8J)dH
+!>CV1p_>"rkn#)dfIt@9rTBkZjmh<^upupnl\+L!W^[]Ae!XZsVs@/Q"FpX@Hn^VK]Atch2>Zz
+zzzzzzzzzzzzzzzzzzzzzz,+e8TN)=EhN3E3/q;4t45J$;:q]AG<UFT.[mlN?Jar>bc@5BjgC
+3<.@O_>Z6>qRQFRch2AV+7O]A#rg?":"7-Qs*;s,,f?XJfJ*?''ru"'"h#-L$qRQ24n9oEXR6
+U!>ljs%7rEMS=cN0PckiZ@R)*e)Tr9NPB\apR*I<>IV5O/F<&,dLH>X-id!M"Z'kOeE;HG:0
+]A=&6=&V:G1>rdFG7U<fJ1o2eua(]AF0Wo:u3X7Fto>h^>GEJ,9/5^4*-/kN^qhrVdM%hs0e\H
+[SAuDq0=ZmQSDA^CT#Xhu3MSa1$Bo]A"_VGqWcqp]A>&i=5KI/<qRM'XTBk\:\UL]ARlf\,TI]Af
+=/kPD`<Y+P%CqRM'XTBk\:\UL]ARlf\,TI]Af=/kPD`<Y+P%CqRM'XTBk\:\UL]ARlf\,TI]Af=/
+kPD`<Y+P%CqRM'XTBk\:\UL]ARlf\,TI]Af=/kPD`<Y+P%CqRM'XTBk\:\UL]ARlf\,TI]Af=/kP
+D`<Y+P%CqRM'XTBk\:\UL]ARlf\,TI]Af=/kPD`<Y+P%CqRM'XTBk\:\UL]ARlf\,TI]Af=/k?[q
+0o_E]Ath1#G*_#;dX)1U\-o`G2Eql0*AI`<Jq#64bZ:Q;":2uZoD!!'O$)F*7pr3:\N!5SQ_p
+_eSAO7`STJGZ>91Od=clN[CigeWp%nMgGL56(\nT,KrSBD_c1zzzzzzzzzzzzzzzTZZ<\mF(
+q,Hb3et=?ccc!;_t0DZ'P8!2,tMkLL.D!.]ANpT3FM[!!)6GqRQ8$!!&[!l0$V.!!!#q\UJGp
+!!!#_=8KK#!rr=KCqj,b"\!oipZLl1/QqH9k-*[pn'?I_BKr[Bs6BR1I=Gkt^Zk4%qteQ$?Y
+6M1q"^<SpYkQ7TDJ/Qqu3"srqF2-mX@Ch^;$_`hmMpVTBk\:\UL]ARlf\,Tql,%ITBk\:\arT
+]Af?a,2rEMS=ch2AX>X-idolL(:5M+6SF7aPP>X-idolL(:5M+6SF8&W3>X-idolK;gI]Af=/k
+PD`<Y+P%CqRM'XTBk\:\UL]ARlf[KpqRM'XTBk\:\UL]ARlf[]A6qRM'XTBk[c5Q+hOf?a,2rS7
+8"ch2AX>X-idolL(:5M+6/ch2AX>X-idolL(:5M+6;:\Af->X-idSU^LHIXY$Vms]AcWr3I9u
+g#ISYr(ZXPp94#&r-Nq[:]A862[f3CYN3@\Jr:G'r"7u![_>;[-Z2Ujij,8AhTA.-##P7E_Ys
+7mpqqLtVr\;.`\ae.pXUf'+q=jkrIHouts43h476fDMm9en+q=jm@TDFECD>d]A=(gm6sq!$u
+8Qglg1hB/gpr>b.\qD5kLkPDafCO@i9hB2Vn5I%u*J*S3:X.L=qrS7B-53Cc"KCu49"5s%_!
+!!#_k5YJ^TUu;d!!)jU!!!#_k5YJ^J:7t.!!)jU!!!"lT*#&nqFT6+TAHdD6NH:*=FXF[J:;
+D6!H:54rF(+W?XSBKkKZQtk;-4i=C6T-DYsNS5%FP"I9BobJ*Q4B7f_^.=FXF[J:;D6!H:54
+rF(+W?XSBKkKZQtk;-4i=C6T-DYsNS5%FP"I9BnWc<nB_jEr_3@/nrq!7$)W5N$oEIXqA)JF
+akuq.0E=rj@4VSH$la_"hO=!;dQ4k<FLganUGcC]A=Gqs.01?o?$b.p+HEkIfSYqnH8[?rWR9
+?49#?EPOSbA?N:'+zzzzzzzzzzzzzzz!!(rT+#!@]A`WuPE!;(=4!!(BlolC*5!79$m!!#8Kf
+?XHt!'iaR!!!#t>X&Gn!!)tf'@mu)rF^LucaV`nVu-3sp\CG1^.t<Xm.'Il5F[-%g\q$.qf_
+]A/k57:;r,dEKqu3Relf\,TI]Af=/kPD`<Y+P%CmN;;9I]Af=/kP@3QO8?D9Y+P%CmLT0)I]Af=/
+kPD`<mf&rQlf\,TI]Af=/kPD`<Y+P%CqRQKYI]Af=/kPD`<Npi`lY+P%CqRQKUI]Af=/kPD`<Y+
+N>@ki_fQI]Af=/kPD`<Y+P%CqRM(Crh5tMkPD`<Y+MJ]Alf\,TI]Af<T5Nq;,\UL]ARlf\,Tqhop
++TBk[[7mGVOolL(:5M+6SF8$4D>X-idolL'OzzzzzzzzzzzzzzzzzzzzzzzT[ri@@fuc3!;\
+\U!!)6G`WlJD!;(=4!!(BlolC*5!79$m!!#8Kf?XHt!'iaR!!%O0rH[Z'FtM@mQTm\_H[N^%
+PPtF$5<jSp7Fu2%B=pUjr)N(^r8#]AVLP>6o%^*S7k?%BVY?jHPn*fcE;>tto5/11^6hPr$l+
+TB_pV60Dma%MS54-)`VOpZ\\UL]ARlfZ">qRM'XTBk\:\UL]ARlf\,TI]Af=/kPD`<Y+P%CqRM'
+XTBk\:\UL]ARlf\,TI]Af=/kPD`<mea,Ylf\,TI]Af=/kPD`<Y+P%CqRM'XTBk\:\UL]ARlf\,TI
+]Af=/kPD`<Y+P%CqRM'XTBk[Shtjm4Y+P%CqRM'XTBk\:\UL]ARlf\,TI]Af=/kPD`<Y+P%CqRM
+'XTBk\:\UL]ARlf\,TId[*8TBk\:\UL]ARlf\,TI]Af=/k?ZB2nGOoM^BC/nrV_?*\)![[rP(#R
+mgmOon"4&"`N%h!qYSWfrE#&pnX[A.Vk:0Kmk<MSYPnAHh[cWW5L]AA)qf2"QJ&pJrqRM'XTB
+k\:\UL]ARlf\,TI]Af=/kPD`<Y+P%CqRM(Cr6`j`F8]A?.2no.!I]Af=/kPDadZ$rjJlf\,TI]Af=
+/kPD`<Y+P%CqRM'XTBk\:\UL]ARlfZP8rEMS=ch2A>X.S_@qRM'XT=Z32kPD`<Y+P%CqRM'XT
+Bk\:\UL]ARlf\,TI]Af=/kPD`<mekJYolL(:5<$=Q\UL]ARlf\,TqltUQTBk\:\UL]ARlf\,TI]Af
+=/kPD`<Y+P%CqY=dsoBH"1l2*ht3dZ<9H[^2=re(/nDLZX)SULM&#JQg4J,6_SDgg[FAc6-=
+l0%o4ojRd25JF>pT71[,0u*.S@/oKSc9LKqmt^?Zet7D/s'+BjIp)g(J,6_TApp%RmuQq<rM
+Q9W?d,_N.G0.H\b"/ClhfZ>Z2XB:qqq7irQG&XrmT3d2s\BZH@L<Lm6CR)r*k-2:Vm%Zc^fR
+2?f)C_O7fECg]A,h`mU+O0p7Hf:^KDZ@fDB'+=l6Xc]A)0ft50k8loBZBmrd=auZX6mCf!"niq
+;Qk%TBk\:\UNuEe^*&Yh4Le[k;UsFm^L235M+6SF6An]AfD1>RNdbko=hj)@kDT52I]Af=/kPD
+a\=$LnYFaph`SDRG`\DJ2hrEMS=c^eFg?fs*=3Vp;X)tT-^`ViUtf?a,2rS74LT=_kL5?f5T
+Dld=$DiLB<Y+P%Cc7e@ao,%?FrS74.q8`<jI]A/n)kPD`<mekV]Ah-]A!1XUjSReh?I#`Xea%mj
+lB`E;fmrHj=V>!BC)ZE4uG"0B3-orr@#P"$"$qS::MuhZ;o,o*]AO:!T8>1E..gIrr@#P"3rR
+_(Z>2n_"eJuquUj:!T8>1Ierd1HH@"4r<!$"kU0d:!rr>tM11'L%fcU&T7HSF!!)41q?b`f0
+`h=ToFnJ.!<<,u6pJNa2b!cIJ:7RN56(]A`mJ^-<qu/VSrMRuVosshr[D-IKYP\.LrV`UcDq!
+l^qYHTYIbi>bl1`Bcp]A'K-Im/;\m(WHo+!:Gd5M+6SF8]A?.f?a,2rEMS=ch2AX>X-idolL(:
+5M+6/ceVt#F8]A?.f?a,2rEMS=ch2AX>X-idolL(:5M+6SF8]A?.f?a,2rEMS=ch2AX>X-iddE
+gWUoQ0t95M+6SF8]A?.f?a,2rEOj!ch2AX>X-idolL(:5M+6SF8]A?.f?a,2rEMS=cZO(&h#0Z
++f?a,2rEMS=ch2AX>X-ido`tG#5M+6SF8]A?.f?a,2rEMS=ch6mXqYBt*DMO.0cboAQ;Z6Q-p
+&$?7T\.SOcVO$,?hX)8s*h43lN?I&ht954mh;W!IJ*73HhuV9l$iWrkPD`<Y+PU*@!r"TeGj
+ql5M+6SF8]AAD_YO64d*HA!oD$YXf)>QJs8DTc!FWtJrt,51.'rsJkPkKiB)hlqmCrRuS\M@h
+0+4t=MiH&_?`eg,b^07icel@,a6+fs3r\sH;_*3B!;(@2>X,]AHoQ0YGrEMS=ch2AX*:!\,i%
+sglqRM'XTBk\:(Y/gns.B+9g%V-,o2GVe]A<@k+pHRP*lW6=&ch2AXh#3G_p#X6c-"DW*S,91
+6Y+P%CmSE#Jhp^BtN03o@!!(+7ji>R'D@8+bIfP"/7/OmoIZsa0g!?!JIQFibY+K/%!<Db5r
+EMS=ch0*<56([K[XZ"U+7=:1)=n@=E/\I[R,2beh`q#6ZH#arcLpqLe)=UKShU0E!6847Zfo
+0Mf)>QRT.bQhr!f_$qUNnGrr<&q\UL]ARUS$jbR"#)9rEMS=cZemA2ZWX'?One5eNZ:qrD+Mb
+!8unJK*%^<lfS7uILZ>X!'J$rnb!1gIZaSWl2LYHrqib:*rs[6!RT0cF8['YoQ($)F8]A?.#6
+=C;z!!!"tnb]AeL097:8h]AI6[kjK%CDt*S&kMI<u^-AsU\+R*%qD,ec!;a6TY+MJ]AURqVg\=X
+elc[YigG\Qo$T)JZCn"8\:?-U^\pSY4`@"2tlpT*H&(Oc;EqC:pr]A8qI6he2t:B70.FB90h'
+XkfW"l_jXVRXVtFT-)sghWKN?Y+P%CqRM'XTBk\:\c/IuRihUTq50e]A539!:IfT~
+]]></Image>
+</Background>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16739659"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-16739659"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+</StyleList>
+</WorkBook>

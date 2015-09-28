@@ -1,0 +1,40 @@
+<attach event="onmouseover" onevent="over()"/>
+<attach event="onmouseout" onevent="out()"/>
+<attach event="onmousedown" onevent="down()"/>
+<attach event="onmouseup" onevent="down()"/>
+<script language="Javascript">
+function over(){
+	style.position='relative';
+	style.left='0px';
+	style.top='0px';
+	style.borderRight='0px solid #606060';
+	style.borderBottom='0px solid #606060';
+	style.borderLeft='1px solid #EEEEEE';
+	style.borderTop='0px solid #EEEEEE';
+}
+
+function out(){
+	style.borderLeft='0px solid #D4D0C8';
+	style.borderTop='0px solid #D4D0C8';
+	style.borderRight='0px solid #D4D0C8';
+	style.borderBottom='0px solid #D4D0C8';
+	style.position='relative';
+	style.left='0px';
+	style.top='0px';
+}
+
+function down(){
+	style.position='relative';
+	style.left='1px';
+	style.top='1px';
+	style.borderLeft='0px solid #808080';
+	style.borderTop='0px solid #808080';
+	style.borderRight='0px solid #FFFFFF';
+	style.borderBottom='0px solid #FFFFFF';
+}
+
+function up(){
+	out();
+}
+</script>
+ 

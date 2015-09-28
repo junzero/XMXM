@@ -1,0 +1,95 @@
+/* CSS Document */
+/*----- form--------- */
+.clear{ clear:both;}
+.button{
+    margin-left:2px;
+    padding:1px 2px;
+    border: #8093B1 1px solid;
+	font-size: 12px; 
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+    StartColorStr=#ffffff, EndColorStr=#E1E7EE;
+	cursor: pointer; 
+	height:19px;
+	width:auto;
+}
+fieldset{ 
+    margin: 12px 0;
+	padding: 12px;
+	text-align:left;
+	border : 1px solid #8997AB ;
+	background-color:#FBFCFF}
+legend {
+	font-weight: bold;
+	font-size:14px; 
+	color:#304256;
+	height:25px;
+}
+.required{ font-size:12px; color:#FF6600;}
+label {
+	color:#383F63;
+	width:8em;
+	float:left;
+	text-align:right;
+}
+textarea {
+	width: 200px;
+	height: 100px;
+}
+label.feedback {
+	position: absolute;
+	margin-left:132px;
+	left: 200px;
+    right: 0;
+	font-weight: bold;
+	color:red;
+	padding-left: 18px;
+	text-align:left;
+	width:150px;
+	height:50px;
+	background:red url(/image/error.png) left top;
+}
+* html .feedback{
+  width: 300px;
+} 
+input {
+  width: 200px;
+}
+input.radio, input.checkbox,{
+  width: auto;
+}
+input.fromtext,textarea{
+    border-top: 2px solid #7B8BAB;
+	border-left:2px solid #7B8BAB;
+	border-right:1px solid #7E8DAD;
+    border-buttom:1px solid #7E8DAD;
+ }
+form{    
+    font-size: 1.4em;
+	width: 40em;}
+form p {
+  position: relative;
+  width: 98%;
+  margin:6px 0px;
+}
+/* Date of Birth form styling */
+
+#monthOfBirthLabel, #yearOfBirthLabel {
+   text-indent: -9999px;
+   font-size:0px;
+   overflow:hidden;
+	width: 0;
+}
+
+#dateOfBirth {
+  width: 36px;
+	margin-right: 6px;
+}
+
+#monthOfBirth {
+  width: 100px;
+	margin-right: 6px;
+}
+
+#yearOfBirth {
+  width: 6px;
+}

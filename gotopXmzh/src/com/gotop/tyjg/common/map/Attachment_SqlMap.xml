@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Attachment_SqlMap">
+  <resultMap class="com.gotop.tyjg.stable.model.AtFileupload" id="queryWithDB_AttachmentBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="FILE_ID" jdbcType="VARCHAR" property="fileId" />
+    <result column="FILE_CATALOG" jdbcType="VARCHAR" property="fileCatalog" />
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="FILE_NEW_NAME" jdbcType="VARCHAR" property="fileNewName" />
+    <result column="FILE_PATH" jdbcType="VARCHAR" property="filePath" />
+    <result column="ABSOLUTEPATH" jdbcType="VARCHAR" property="absolutepath" />
+    <result column="FILE_SIZE" jdbcType="NUMERIC" property="fileSize" />
+    <result column="FILE_TYPE" jdbcType="VARCHAR" property="fileType" />
+    <result column="FILE_TIME" jdbcType="TIMESTAMP" property="fileTime" />
+    <result column="FILE_SAVE" jdbcType="CHAR" property="fileSave" />
+    <result column="OPERATORID" jdbcType="NUMERIC" property="operatorid" />
+    <result column="OPERATORNAME" jdbcType="VARCHAR" property="operatorname" />
+    <result column="RELATION_ID" jdbcType="VARCHAR" property="relationId" />
+    <result column="GROUP_ID" jdbcType="VARCHAR" property="groupId" />
+    <result column="ATTACHMENT_SRC_ID" jdbcType="VARCHAR" property="attachmentSrcId" />
+    <result column="ATTACHMENT_SRC_CD" jdbcType="VARCHAR" property="attachmentSrcCd" />
+  </resultMap>
+  <resultMap class="com.gotop.tyjg.stable.model.AtFileupload" id="queryWithDBOfBlob_AttachmentBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="FILE_ID" jdbcType="VARCHAR" property="fileId" />
+    <result column="FILE_CATALOG" jdbcType="VARCHAR" property="fileCatalog" />
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="FILE_NEW_NAME" jdbcType="VARCHAR" property="fileNewName" />
+    <result column="FILE_PATH" jdbcType="VARCHAR" property="filePath" />
+    <result column="ABSOLUTEPATH" jdbcType="VARCHAR" property="absolutepath" />
+    <result column="FILE_SIZE" jdbcType="NUMERIC" property="fileSize" />
+    <result column="FILE_TYPE" jdbcType="VARCHAR" property="fileType" />
+    <result column="FILE_TIME" jdbcType="TIMESTAMP" property="fileTime" />
+    <result column="FILE_SAVE" jdbcType="CHAR" property="fileSave" />
+    <result column="RELATION_ID" jdbcType="VARCHAR" property="relationId" />
+    <result column="GROUP_ID" jdbcType="VARCHAR" property="groupId" />
+    <result column="CONTENT" jdbcType="BLOB" property="content" />
+  </resultMap>
+  <select id="queryWithDBBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="queryWithDB_AttachmentBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+		select file_id,
+		 file_catalog,
+		 file_name,
+		 file_new_name,
+		 file_path,
+		 absolutepath,
+		 file_size,
+		 file_type,
+		 file_time,
+		 file_save,
+		 operatorid,
+		 operatorname,
+		 relation_id,
+		 group_id,
+		 attachment_src_id,
+		 attachment_src_cd
+ 	  from
+      at_fileupload
+	]]>
+	<dynamic prepend="where">
+		<isNotEmpty prepend="and" property="fileTimeStart">
+			file_Time>=TO_DATE(#fileTimeStart:VARCHAR#, 'yyyy-MM-dd')
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="fileTimeEnd">
+    		<![CDATA[
+			file_Time<=TO_DATE(#fileTimeEnd:VARCHAR#, 'yyyy-MM-dd')
+			]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="fileSizeStart">
+			file_Size>=#fileSizeStart#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="fileSizeEnd">
+			<![CDATA[
+			file_Size<=#fileSizeEnd#
+			]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="operatorname">
+			operatorname like '%'|| #operatorname# ||'%'
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="fileCatalog">
+			file_Catalog = #fileCatalog#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="fileSave">
+			file_Save = #fileSave#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="relationId">
+			relation_Id = #relationId#
+		</isNotEmpty>
+	</dynamic>
+	order by file_time desc,file_id desc
+  </select>
+	<!-- 插入一条附件记录 -->
+	<insert id="insert_attachmentinfo" parameterClass="java.util.HashMap">
+    <![CDATA[
+		insert into test_attachment_info 
+			(ATTACHMENT_INFO_ID, 
+			ATTACHMENT_NAME, 
+			STORAGE_PATH, 
+			SPACE_SIZE, 
+			ATTACHMENT_SRC_CD, 
+			ATTACHMENT_SRC_ID, 
+			ATTACHMENT_STATUS_CD, 
+			CREATE_TIME, 
+			UPDATE_TIME)
+		values
+			(SEQ_ABF_SYS.Nextval, 
+			#ATTACHMENT_NAME#, 
+			#STORAGE_PATH#, 
+			#SPACE_SIZE#, 
+			#ATTACHMENT_SRC_CD#, 
+			#ATTACHMENT_SRC_ID#, 
+			'01', 
+			sysdate, 
+			sysdate)
+		
+	]]>
+	</insert>
+	<!-- 插入一条附件记录 -->
+	<insert id="insert_attachmentinfo_status" parameterClass="java.util.HashMap">
+    <![CDATA[
+		insert into test_attachment_info 
+			(ATTACHMENT_INFO_ID, 
+			ATTACHMENT_NAME, 
+			STORAGE_PATH, 
+			SPACE_SIZE, 
+			ATTACHMENT_SRC_CD, 
+			ATTACHMENT_SRC_ID, 
+			ATTACHMENT_STATUS_CD, 
+			CREATE_TIME, 
+			UPDATE_TIME,
+			attachment_curr_status)
+		values
+			(SEQ_ABF_SYS.Nextval, 
+			#ATTACHMENT_NAME#, 
+			#STORAGE_PATH#, 
+			#SPACE_SIZE#, 
+			#ATTACHMENT_SRC_CD#, 
+			#ATTACHMENT_SRC_ID#, 
+			'01', 
+			sysdate, 
+			sysdate,
+			#attachmentStatus#)
+		
+	]]>
+	</insert>
+
+	<!-- 查询一条附件记录 -->
+
+	<select id="select_attachmentinfo" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+    <![CDATA[
+		select 
+			ATTACHMENT_NAME,
+			STORAGE_PATH 
+		from test_attachment_info 
+		where ATTACHMENT_INFO_ID = #ATTACHMENT_INFO_ID# and ATTACHMENT_STATUS_CD='01'
+		
+	]]>
+	</select>
+	
+	
+	<!-- 查询一条附件记录以及数据字典PATH -->
+	<select id="select_attachmentinfodictpath" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+    <![CDATA[
+   		select 
+		   	a.attachment_name,
+		   	a.storage_path,
+		   	b.dictname as dictpath 
+	   	from 
+	   		test_attachment_info a , 
+   			eos_dict_entry b 
+   		where 
+   			a.attachment_info_id = #ATTACHMENT_INFO_ID# and
+   			a.attachment_status_cd = '01' and 
+   			b.dicttypeid = 'IMP_FILEDIR_PATH' and 
+   			a.attachment_src_cd  = b.dictid
+	]]>
+	</select>
+	
+	
+	
+	<!-- 查询业务逻辑相关联附件记录 -->
+  	<select id="select_attachmentlist" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+    <![CDATA[
+		select 
+			ATTACHMENT_INFO_ID,
+			ATTACHMENT_NAME,
+			STORAGE_PATH,
+			SPACE_SIZE,
+			CREATE_TIME,
+			UPDATE_TIME 
+		from test_attachment_info t 
+		where t.ATTACHMENT_SRC_CD = #ATTACHMENT_SRC_CD# and t.ATTACHMENT_SRC_ID=#ATTACHMENT_SRC_ID# and ATTACHMENT_STATUS_CD='01'
+	]]>
+	</select>
+	
+	
+	<!-- 逻辑删除一条附件记录 -->
+  	<update id="del_attachmentinfo" parameterClass="java.lang.String">
+    <![CDATA[
+		update test_attachment_info set 
+			ATTACHMENT_STATUS_CD = '02',
+			UPDATE_TIME=sysdate
+		where ATTACHMENT_INFO_ID = #ATTACHMENT_INFO_ID#
+	]]>
+	
+	</update>
+	
+	<!-- 逻辑删除业务逻辑相关联附件记录 -->
+  	<update id="del_attachmentlist" parameterClass="java.util.HashMap">
+    <![CDATA[
+		update test_attachment_info set 
+			ATTACHMENT_STATUS_CD = '02',
+			UPDATE_TIME=sysdate
+		where ATTACHMENT_SRC_ID = #ATTACHMENT_SRC_ID# and ATTACHMENT_SRC_CD = #ATTACHMENT_SRC_CD#
+	]]>
+	</update>
+	
+	
+	<!-- 逻辑删除业务逻辑相关联附件记录 -->
+  	<update id="del_attachmentinfos" parameterClass="java.util.HashMap">
+    <![CDATA[
+		update test_attachment_info set 
+			ATTACHMENT_STATUS_CD = '02',
+			UPDATE_TIME=sysdate
+		where ATTACHMENT_SRC_CD = #ATTACHMENT_SRC_CD# and ATTACHMENT_SRC_ID in ($ATTACHMENT_SRC_IDS$)
+	]]>
+	</update>
+	
+	<!-- 移动文件 -->
+  	<update id="move_attachmentinfo" parameterClass="java.util.HashMap">
+    <![CDATA[
+		update test_attachment_info set 
+			ATTACHMENT_SRC_ID = #ATTACHMENT_SRC_ID#,
+			ATTACHMENT_SRC_CD = #ATTACHMENT_SRC_CD#,
+			UPDATE_TIME=sysdate
+		where ATTACHMENT_INFO_ID = #ATTACHMENT_INFO_ID#
+	]]>
+	</update>
+	
+	
+	<!-- 获取附件业务字典以及目录 -->
+  	<select id="select_dic_path" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+    <![CDATA[
+	    select DICTID,DICTNAME from EOS_DICT_ENTRY where DICTTYPEID = 'IMP_FILEDIR_PATH' and DICTID= #SRC_CD#
+	]]>
+	</select>
+	
+	
+		<!-- 获取上传路径 -->
+  	<select id="select_uploadpath" resultClass="java.util.HashMap">
+  	 <![CDATA[
+		select 
+			DICTNAME 
+		from 
+			EOS_DICT_ENTRY 
+		where 
+			DICTTYPEID = 'IMP_FILEDIR_PATH' 
+			and DICTID= '0000'
+	]]>
+	</select>
+	
+	
+	<!-- 获取文件限制 -->
+
+  	<select id="select_attachmentlimit" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+  	 <![CDATA[
+		select 
+			DICTNAME 
+		from 
+			EOS_DICT_ENTRY 
+		where 
+			DICTID= #DICTID# and
+			DICTTYPEID = 'TEST_FILE_NUMBER_SIZE' 
+		
+	]]>
+	</select>
+	<!-- 获取文件限制 -->
+
+  	<select id="select_attachmentlimitAll" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+  	 <![CDATA[
+		select 
+			DICTNAME 
+		from 
+			EOS_DICT_ENTRY 
+		where  DICTID=#DICTID# AND
+			DICTTYPEID = 'TEST_FILE_NUMBER_SIZE' 
+	]]>
+	</select>
+		<!--and
+			-->
+	
+	
+	<!-- 拷贝附件 -->
+	<insert id="copy_attachmentinfos" parameterClass="java.util.HashMap">
+    <![CDATA[
+		insert into test_attachment_info 
+		value
+		  	(select SEQ_ABF_SYS.nextval as ATTACHMENT_INFO_ID,
+		          #ATTACHMENT_SRC_ID# as ATTACHMENT_SRC_ID,
+		          ATTACHMENT_SRC_CD,
+		          ATTACHMENT_NAME,
+		          STORAGE_PATH,
+		          SPACE_SIZE,
+		          ATTACHMENT_STATUS_CD,
+		          CREATE_TIME,
+		          UPDATE_TIME
+		     from test_attachment_info
+		    where ATTACHMENT_INFO_ID in  ($ATTACHMENT_INFO_IDS$))
+		
+	]]>
+	</insert>
+	
+  <select id="atFileupload_SelectByMap" parameterClass="com.gotop.tyjg.stable.model.AtFileupload" resultMap="queryWithDB_AttachmentBeanResult">
+    <!--通过Map方式的动态条件，查询分页数据-->
+    select FILE_ID, FILE_CATALOG, FILE_NAME, FILE_NEW_NAME, FILE_PATH, ABSOLUTEPATH, FILE_SIZE,
+      FILE_TYPE, FILE_TIME, FILE_SAVE, CONTENT, OPERATORID, OPERATORNAME, RELATION_ID, GROUP_ID,
+      ATTACHMENT_SRC_ID, ATTACHMENT_SRC_CD
+    from AT_FILEUPLOAD
+    <dynamic prepend="where">
+      <isNotNull prepend="and" property="fileId">
+        FILE_ID = #fileId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileCatalog">
+        FILE_CATALOG = #fileCatalog:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileName">
+        FILE_NAME = #fileName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileNewName">
+        FILE_NEW_NAME = #fileNewName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="filePath">
+        FILE_PATH = #filePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="absolutepath">
+        ABSOLUTEPATH = #absolutepath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileSize">
+        FILE_SIZE = #fileSize:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileType">
+        FILE_TYPE = #fileType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileTime">
+        FILE_TIME = #fileTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileSave">
+        FILE_SAVE = #fileSave:CHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="content">
+        CONTENT = #content:BLOB#
+      </isNotNull>
+      <isNotNull prepend="and" property="operatorid">
+        OPERATORID = #operatorid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="operatorname">
+        OPERATORNAME = #operatorname:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="relationId">
+        RELATION_ID = #relationId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="groupId">
+        GROUP_ID = #groupId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="attachmentSrcId">
+        ATTACHMENT_SRC_ID = #attachmentSrcId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="attachmentSrcCd">
+        ATTACHMENT_SRC_CD = #attachmentSrcCd:VARCHAR#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <select id="atFileupload_withDBByGroup" parameterClass="java.util.HashMap" resultMap="queryWithDBOfBlob_AttachmentBeanResult">
+    <!--通过Map方式的动态条件，查询分页数据-->
+    select FILE_ID, FILE_CATALOG, FILE_NAME, FILE_NEW_NAME, FILE_PATH, ABSOLUTEPATH, FILE_SIZE,
+      FILE_TYPE, FILE_TIME, FILE_SAVE, CONTENT, OPERATORID, OPERATORNAME, RELATION_ID, GROUP_ID,
+      ATTACHMENT_SRC_ID, ATTACHMENT_SRC_CD
+    from AT_FILEUPLOAD
+    <dynamic prepend="where">
+      <isNotEmpty prepend="and" property="fileIds">
+        FILE_ID in ($fileIds$)
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="relationId">
+        RELATION_ID = #relationId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="groupId">
+        GROUP_ID = #groupId:VARCHAR#
+      </isNotEmpty>
+    </dynamic>
+  </select>
+  <delete id="atFileupload_deleteNotEffective">
+  	<!--删除上个月未确认的附件数据-->
+ 	<![CDATA[
+ 		delete from AT_FILEUPLOAD where FILE_PATH is not null and file_time < add_months(sysdate,-1)
+ 	]]>
+  </delete>
+</sqlMap>

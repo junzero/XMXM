@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="supplierID"/>
+<O>
+<![CDATA[1,2,3,4,5,6,7,8,9,10]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="categoryID"/>
+<O>
+<![CDATA[1]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM 产品 where 供应商ID in (${supplierID}) and 类别ID = ${categoryID}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="start"/>
+<O>
+<![CDATA[1996-07-04]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="month"/>
+<O>
+<![CDATA[7]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="year"/>
+<O>
+<![CDATA[1996]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[1996-07-08]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="type"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="end"/>
+<O>
+<![CDATA[1998-07-04]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+     订单.客户ID AS 客户ID,
+     订单.订购日期 AS 订购日期,
+     订单明细.产品ID AS 产品ID,
+     订单明细.单价*订单明细.数量*(1-订单明细.折扣) AS 金额,
+     订单.是否已付 AS 是否已付,
+     订单.运货费 AS 运货费
+FROM
+     订单明细 订单明细 INNER JOIN 订单 订单 ON 订单明细.订单ID = 订单.订单ID
+where 1=1 
+${if(type='日报表'," and format(订单.订购日期,'yyyy-mm-dd') = '" + date + "'","")}
+${if(type='月报表'," and month(订单.订购日期) = "+ month + " and year(订单.订购日期) = " + year,"")}
+${if(type='年报表'," and year(订单.订购日期) = " + year,"")}
+${if(len(type)=0," and format(订单.订购日期,'yyyy-mm-dd') >= '" + start+ "' and format(订单.订购日期,'yyyy-mm-dd')<='"+end+"'","")}
+]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.07874015748031496" left="0.15748031496062992" bottom="0.07874015748031496" right="0.15748031496062992"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[27,19,19,19,19,19,19,19,19,19,32,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[129,129,129,129,129,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="5" s="0">
+<O>
+<![CDATA[产品销售额与运费类别分析]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" cs="5" s="1">
+<Expand/>
+</C>
+<C c="0" r="3" s="2">
+<O>
+<![CDATA[类别]]></O>
+<Expand/>
+</C>
+<C c="1" r="3" s="2">
+<O>
+<![CDATA[供应商]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="2">
+<O>
+<![CDATA[产品]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="2">
+<O>
+<![CDATA[销售额]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="2">
+<O>
+<![CDATA[运货费]]></O>
+<Expand/>
+</C>
+<C c="0" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="类别ID"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="类别" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="供应商ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="供应商" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="产品ID"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[产品ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds1" columnName="产品ID"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[是否已付]]></CNAME>
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if($pay=='true',true,false)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="产品" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="金额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="运货费"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="0" r="6" s="5">
+<Expand/>
+</C>
+<C c="1" r="6" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="6" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="5">
+<Expand/>
+</C>
+<C c="4" r="6" s="5">
+<Expand/>
+</C>
+<C c="0" r="7" cs="5" s="6">
+<O>
+<![CDATA[查询界面说明：]]></O>
+<Expand/>
+</C>
+<C c="0" r="8" cs="5" s="7">
+<O>
+<![CDATA[1、产品类别为下拉框，数据单选；供应商为下拉复选框，可选多条记录。]]></O>
+<Expand/>
+</C>
+<C c="0" r="9" cs="5" s="7">
+<O>
+<![CDATA[2、选择不同的统计维度后，相应的日期选择框会相应的更换为可见或不可见。]]></O>
+<Expand/>
+</C>
+<C c="0" r="10" cs="5" s="8">
+<O>
+<![CDATA[3、如果不使用已定义的统计维度，则可以自行选择起始时间或结束时间。当选择了起始时间之后，统计维度的选择变为不可编辑。]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings orientation="1" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[10,23,6,19,6,23,5,23,11,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[10,90,96,96,96,6,96,96,95,66,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="1" r="0">
+<Expand/>
+</C>
+<C c="3" r="0">
+<Expand/>
+</C>
+<C c="4" r="0">
+<Expand/>
+</C>
+<C c="5" r="0">
+<Expand/>
+</C>
+<C c="6" r="0">
+<Expand/>
+</C>
+<C c="7" r="0">
+<Expand/>
+</C>
+<C c="8" r="0">
+<Expand/>
+</C>
+<C c="0" r="1">
+<Expand/>
+</C>
+<C c="1" r="1" s="9">
+<O>
+<![CDATA[产 品 类 别：]]></O>
+<Expand/>
+</C>
+<C c="2" r="1">
+<O>
+<![CDATA[1]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="categoryID"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="类别" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+</C>
+<C c="3" r="1" s="9">
+<O>
+<![CDATA[供 应 商：]]></O>
+<Expand/>
+</C>
+<C c="4" r="1">
+<O t="I">
+<![CDATA[1]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboCheckBox">
+<WidgetName name="supplierID"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="供应商" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+<RAAttr isArray="false"/>
+</Widget>
+</C>
+<C c="5" r="1">
+<Expand/>
+</C>
+<C c="7" r="1">
+<Expand/>
+</C>
+<C c="8" r="1">
+<Expand/>
+</C>
+<C c="1" r="3" s="9">
+<O>
+<![CDATA[订单支付状态：]]></O>
+<Expand/>
+</C>
+<C c="2" r="3">
+<O>
+<![CDATA[true]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="pay"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="true" value="订单已支付"/>
+<Dict key="false" value="订单未支付"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="3" r="3" s="9">
+<O>
+<![CDATA[选择起始日期：]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="10">
+<O>
+<![CDATA[1996-07-04]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetName name="start"/>
+<WidgetAttr/>
+<Listener event="afteredit">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var form = this.options.form;
+var typeWidget = form.getWidgetByName("type");
+var value = this.getValue();
+if(value){
+   typeWidget.disable();
+}]]></Content>
+</JavaScript>
+</Listener>
+<DateAttr start="" end=""/>
+</Widget>
+</C>
+<C c="5" r="3" s="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="3" s="9">
+<O>
+<![CDATA[选择结束日期：]]></O>
+<Expand/>
+</C>
+<C c="7" r="3" s="10">
+<O>
+<![CDATA[1998-07-04]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetName name="end"/>
+<WidgetAttr/>
+<DateAttr start="" end=""/>
+</Widget>
+</C>
+<C c="0" r="4">
+<Expand/>
+</C>
+<C c="1" r="4" s="12">
+<Expand/>
+</C>
+<C c="3" r="4">
+<Expand/>
+</C>
+<C c="4" r="4">
+<Expand/>
+</C>
+<C c="5" r="4">
+<Expand/>
+</C>
+<C c="6" r="4">
+<Expand/>
+</C>
+<C c="7" r="4">
+<Expand/>
+</C>
+<C c="8" r="4">
+<Expand/>
+</C>
+<C c="0" r="5">
+<Expand/>
+</C>
+<C c="1" r="5" s="9">
+<O>
+<![CDATA[统 计 维 度：]]></O>
+<Expand/>
+</C>
+<C c="2" r="5" s="13">
+<O>
+<![CDATA[（动态显示）]]></O>
+<Expand/>
+</C>
+<C c="3" r="5" cs="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.RadioGroup">
+<WidgetName name="type"/>
+<WidgetAttr/>
+<Listener event="statechange">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var form = this.options.form;
+var value = this.getValue();
+if(value == "日报表"){
+   form.invisible(["year","month"]A,"td");
+   form.visible(["date"]A,"td");
+   
+}else if(value == "月报表"){
+ form.invisible(["date"]A,"td");
+ form.visible(["year","month"]A,"td");
+
+}else if(value == "年报表"){
+  form.invisible(["date","month"]A,"td");
+ form.visible(["year"]A,"td");
+}else{
+ form.invisible(["date","year","month"]A,"td");
+}]]></Content>
+</JavaScript>
+</Listener>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="日报表" value="日报表"/>
+<Dict key="月报表" value="月报表"/>
+<Dict key="年报表" value="年报表"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="5" r="5">
+<Expand/>
+</C>
+<C c="6" r="5">
+<O>
+<![CDATA[1996-07-08]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetName name="date"/>
+<WidgetAttr invisible="true"/>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<DateAttr start="" end=""/>
+</Widget>
+</C>
+<C c="7" r="5">
+<O>
+<![CDATA[1996]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="year"/>
+<WidgetAttr invisible="true"/>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"/>
+<Formula>
+<![CDATA[SELECT year(订购日期) FROM 订单 group by year(订购日期)]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+</C>
+<C c="8" r="5">
+<O>
+<![CDATA[7]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="month"/>
+<WidgetAttr invisible="true"/>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=range(1,12)]]></FormulaDict>
+<EFormulaDict>
+<![CDATA[=$$$+"月"]]></EFormulaDict>
+</Dictionary>
+</Widget>
+</C>
+<C c="0" r="6">
+<Expand/>
+</C>
+<C c="1" r="6" s="12">
+<Expand/>
+</C>
+<C c="3" r="6">
+<Expand/>
+</C>
+<C c="4" r="6">
+<Expand/>
+</C>
+<C c="5" r="6">
+<Expand/>
+</C>
+<C c="6" r="6">
+<Expand/>
+</C>
+<C c="7" r="6">
+<Expand/>
+</C>
+<C c="8" r="6">
+<Expand/>
+</C>
+<C c="0" r="7">
+<Expand/>
+</C>
+<C c="4" r="7">
+<O>
+<![CDATA[查  询]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+<C c="5" r="7">
+<Expand/>
+</C>
+<C c="6" r="7">
+<Expand/>
+</C>
+<C c="7" r="7">
+<Expand/>
+</C>
+<C c="8" r="7">
+<Expand/>
+</C>
+<C c="0" r="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="pay"/>
+<O>
+<![CDATA[false]]></O>
+</Parameter>
+<Background name="ColorBackground" color="-1184275"/>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="0" size="22" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="微软雅黑" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4" vertical_alignment="3">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style vertical_alignment="3">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-65536"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

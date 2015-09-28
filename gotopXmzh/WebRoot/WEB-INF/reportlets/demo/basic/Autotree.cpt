@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds_1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[ID,,.,,All,,.,,Type,,.,,Concretion,,.,,Amount]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[SX<,E)aP<kcf;3cP:6&Om87(B"j^shRY<V'P,==FUtA.`YSBG2;L@Vo?p?9G2@0;MCgp0=Kn
+aDe52M?gNMdciRCr.8qp+QB;_"%J`GkQ"rHpg*p3q85]At<\AXq$290%8\CFRLD:]AXk`3([5(
+PG^>MGrhfXtiqDLcmJU?>h.,[<jF#bMhJ;?=lmBFD;KV-iYKM%^N>V<F:4D=F1cj<Z@o.L@B
+ls,[p+m^G*B<9W-c*j,^9_V<_MiVX@E+`9%/\M(i<f[L?;kM^BP_l@0<s^E1U@-*E&02kNW(
+<Zc4":<M6_t/Yo^8R8Nl=u5i*>-;mU+#iuDqpJ^s<^QC0VjZ<1tq3mN=f-n9!HLQaWkk^#YC
+1FkMHj]A,G[eq<;E[!1TaBe3k/N5]ATf'-ka-!301qW4aOUjn^s:-#r/*Cci$q`fi[7jQr>"0#
+k%d3uVCkEk2r(a]A@&AiCkB;JIJh(2H1[&lR2rVl=cLBP0&s-P;m:[mR)[3W@X2T<m3;08hkk
+h<$:&#,1_@4;9N=B,Y6UN+L]AHJed_]A4:'IriXLTm=od#PZ^>^ECR@Ei#fIb,`[0[C\VaAdXY
+:R]A6h=UK?kNl_6HfqZ$m:Kg<h?^nTZN<uOB/t=d-S<ZTa`5+STn&H+BIi_&p-Oj?*%PC>-6^
+?#'Xn-V^,QOJOVekW1"Ha5+CA_'V@oe@XThM'(e)7SK]AB;hN+0Kek?'6q_Gt#54A7*"Vb`2g
+E4/:G9B@"+"T\=/@YNgcQ6t`Um4e8&0Ufq'1l(`<a8/('k=s"Vr0G=EFuWWUd$Hfu`-r,N"Z
+=@>,)"+4&J4Cl$!Z0VhddcMMfeo=&(PGMpJAOa7>@Q0RU_F3P!Y@cFX)ferN]APW08juOdb".
+b?e6rZ?,'?uo30LYL1.u6`e3E?O9Yr<(.]ABB#]AR/giU1(<0"N+Cd;tp,c%-;/**-#YCBt4tW
++0gMS@l$lG9c)oYoh5!5K0mVOMH<+(B.L`R>TW*>B/<cjcAQ.+3e4Y`NalR^j\<[EF'Hnl]AB
+*R3b5M-%dCUkOKQ2*1([HRfca=s7nk=M`Y.bhYiA%-B7WI[`BqAg%VSqB21I'Td8&[`86H?o
+Or.6D0fk"*^iCodV=q\mb$nq[j7=H;pi9arCm@;fPP#b3bsL?H%B44MWpNjFbnQ#n9T^08at
+ZC8!X,!l;"R%OT^eAf)LknknX$u0?ht[jl"g3nC8!S=`jSg(U!,FC`;qPbd8oHkO><Qg.rM?
+_kDc-8VqWdf#P,iSfM$:d)^MYYN^\G@AW?>WV#;hS>!>4V`.e\V'fANeFL)P01]Al\&)l`]A!o
+m.6gq(,*rW_X8GN]AG*k&HLHY"enf9XJpXe2Oe-M(AdY_&nd=OZ(aN>-RVVs<APuYO]AHN_4P_
+*/GaGglS92RJg:cDE]A`e65P]A&4TQbtNeF&i2A~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress=""/>
+<ServerPrinter/>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="11.693" height="16.536"/>
+<Margin top="0.27" left="0.19881889763779528" bottom="0.27" right="0.19881889763779528"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[34,19,23,19,19,25,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[64,175,72,72,52,52,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="6" s="0">
+<O>
+<![CDATA[企业员工考勤一览表]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<Expand/>
+</C>
+<C c="1" r="1" s="1">
+<Expand/>
+</C>
+<C c="2" r="1" s="1">
+<Expand/>
+</C>
+<C c="3" r="1" s="1">
+<Expand/>
+</C>
+<C c="4" r="1" s="1">
+<Expand/>
+</C>
+<C c="5" r="1" s="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" cs="6" s="2">
+<Expand/>
+</C>
+<C c="6" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" s="1">
+<Expand/>
+</C>
+<C c="1" r="3" rs="2" s="3">
+<O>
+<![CDATA[企业名称]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" rs="2" s="3">
+<O>
+<![CDATA[部门]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" rs="2" s="4">
+<O>
+<![CDATA[员工]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" cs="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="Type"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="0" r="4" s="1">
+<Expand/>
+</C>
+<C c="4" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="Concretion"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="5" r="4" s="4">
+<O>
+<![CDATA[总计]]></O>
+<Expand/>
+</C>
+<C c="6" r="4">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="ID"/>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(ID) = 4]]></Formula>
+</Condition>
+<Complex reselect="true"/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="1" r="5" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="All"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr showAsImage="true"/>
+<Expand dir="0"/>
+<Widget class="com.fr.report.web.ui.impl.form.TreeNodeToogleButton">
+<WidgetAttr/>
+</Widget>
+</C>
+<C c="2" r="5" s="7">
+<O>
+<![CDATA[分公司部门]]></O>
+<Expand/>
+</C>
+<C c="3" r="5" s="7">
+<O>
+<![CDATA[分公司员工]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(e8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="5" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(f8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="5" s="8">
+<Expand/>
+</C>
+<C c="0" r="6" s="9">
+<Expand/>
+</C>
+<C c="1" r="6" s="10">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="ID"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="6">
+<ColumnRow column="0" row="5"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(ID) = 8]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex reselect="true"/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ForegroundHighlightAction">
+<Foreground color="-1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0" leftParentDefault="false" left="B6"/>
+</C>
+<C c="2" r="6" s="11">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="All"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+<Widget class="com.fr.report.web.ui.impl.form.TreeNodeToogleButton">
+<WidgetAttr/>
+</Widget>
+</C>
+<C c="3" r="6" s="11">
+<O>
+<![CDATA[部门员工]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="4" r="6" s="11">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(e8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="6" s="11">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(f8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="6" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="9">
+<Expand/>
+</C>
+<C c="1" r="7" s="10">
+<Expand/>
+</C>
+<C c="2" r="7" s="7">
+<Expand/>
+</C>
+<C c="3" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="All"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="6">
+<ColumnRow column="1" row="6"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(ID) = 12]]></Formula>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex reselect="true"/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="C7"/>
+</C>
+<C c="4" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="Amount"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="7" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="8" s="1">
+<Expand/>
+</C>
+<C c="1" r="8" s="12">
+<Expand/>
+</C>
+<C c="2" r="8" s="12">
+<Expand/>
+</C>
+<C c="3" r="8" s="1">
+<Expand/>
+</C>
+<C c="4" r="8" s="1">
+<Expand/>
+</C>
+<C c="5" r="8" s="1">
+<Expand/>
+</C>
+<C c="0" r="9" cs="6" s="13">
+<O>
+<![CDATA[树状报表：      ]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="10" cs="6" s="14">
+<O>
+<![CDATA[请在op=sheet下查看]]></O>
+<Expand/>
+</C>
+<C c="0" r="11" cs="6" s="14">
+<O>
+<![CDATA[注意B6和C7的两个控件设置]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="12" cs="6" s="14">
+<O>
+<![CDATA[以B6为例，在B6上设置树节点按钮。那么这个节点按钮可以展开其子格的扩展区域，并且其子格的扩展属性与B6相同]]></O>
+<Expand/>
+</C>
+<C c="0" r="13" cs="6" s="15">
+<O>
+<![CDATA[例如B6是纵向扩展时，会纵向伸缩其子格的扩展区域]]></O>
+<Expand/>
+</C>
+</CellElementList>
+<ReportWriteAttr/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="0" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="1" size="22" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom color="-1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="微软雅黑" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="微软雅黑" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" textStyle="2">
+<FRFont name="宋体" style="1" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="宋体" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="1" color="-6894375"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="微软雅黑" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Right style="1" color="-6894375"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="宋体" style="0" size="12" foreground="-10066330"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Left style="1" color="-14116629"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" textStyle="1">
+<FRFont name="宋体" style="0" size="12" foreground="-10066330"/>
+<Background name="ColorBackground" color="-525313"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="微软雅黑" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Top style="3" color="-6697729"/>
+<Left style="3" color="-6697729"/>
+<Right style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Left style="3" color="-6697729"/>
+<Right style="3" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1184275"/>
+<Border>
+<Bottom style="3" color="-6697729"/>
+<Left style="3" color="-6697729"/>
+<Right style="3" color="-6697729"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

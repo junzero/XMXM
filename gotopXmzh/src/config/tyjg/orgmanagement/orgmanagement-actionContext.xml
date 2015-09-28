@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+<bean class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="tomorganization" singleton="false"></bean>
+<bean class="com.gotop.tyjg.orgmanagement.model.Abftjgfjxx" id="abftjgfjxx" singleton="false"></bean>
+<bean class="com.gotop.tyjg.orgmanagement.model.PartyRole" id="partyRole" singleton="false"></bean>
+<bean class="com.gotop.tyjg.orgmanagement.action.OrganizationAction" id="organizationAction" name="organizationAction" singleton="false">
+	<property name="orgService" ref="orgService"></property>
+	<property name="tomorganization" ref="tomorganization"></property>
+	<property name="abftjgfjxx" ref="abftjgfjxx"></property>
+	<property name="partyRole" ref="partyRole"></property>
+</bean>
+	</beans>

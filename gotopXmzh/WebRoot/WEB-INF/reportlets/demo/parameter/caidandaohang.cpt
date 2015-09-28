@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT *
+FROM
+     SALES_COST SALES_COST INNER JOIN SALES_BASIC SALES_BASIC ON SALES_COST.销售员 = SALES_BASIC.销售员]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[96,96,96,72,96,96,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="6" rs="2" s="0">
+<O>
+<![CDATA[各地区销量表]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" s="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="1" r="3" s="1">
+<Expand/>
+</C>
+<C c="2" r="3" s="1">
+<Expand/>
+</C>
+<C c="3" r="3" s="1">
+<Expand/>
+</C>
+<C c="4" r="3" s="1">
+<Expand/>
+</C>
+<C c="5" r="3" s="1">
+<Expand/>
+</C>
+<C c="0" r="4" s="2">
+<O>
+<![CDATA[地区]]></O>
+<Expand/>
+</C>
+<C c="1" r="4" s="2">
+<O>
+<![CDATA[产品类型]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" s="2">
+<O>
+<![CDATA[产品]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" s="2">
+<O>
+<![CDATA[销售员]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="2">
+<O>
+<![CDATA[销量]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="data"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="5" r="4" s="2">
+<O>
+<![CDATA[成本]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="data"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="0" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="地区"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[地区]]></CNAME>
+<Compare op="0">
+<Parameter>
+<Attributes name="area"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[产品类型]]></CNAME>
+<Compare op="0">
+<Parameter>
+<Attributes name="type"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[产品]]></CNAME>
+<Compare op="0">
+<Parameter>
+<Attributes name="product"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[销售员]]></CNAME>
+<Compare op="12">
+<Parameter>
+<Attributes name="man"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="产品类型"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="产品"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="销售员"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="销量"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="销售成本"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.07874015748031496" left="0.15748031496062992" bottom="0.07874015748031496" right="0.15748031496062992"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[8,13,22,12,4,22,5,6,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[69,42,91,2,17,119,2,107,2,106,2,112,164,87,36,72,39,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="4">
+<Expand/>
+</C>
+<C c="1" r="1" cs="9" rs="3" s="5">
+<O>
+<![CDATA[FineReport报表系统]]></O>
+<Expand/>
+</C>
+<C c="10" r="1" s="4">
+<Expand/>
+</C>
+<C c="11" r="1" s="4">
+<Expand/>
+</C>
+<C c="12" r="1" s="4">
+<Expand/>
+</C>
+<C c="13" r="1" s="4">
+<Expand/>
+</C>
+<C c="14" r="1" s="4">
+<Expand/>
+</C>
+<C c="15" r="1" s="4">
+<Expand/>
+</C>
+<C c="16" r="1" s="4">
+<Expand/>
+</C>
+<C c="17" r="1" s="4">
+<Expand/>
+</C>
+<C c="0" r="2" s="4">
+<Expand/>
+</C>
+<C c="10" r="2" s="4">
+<Expand/>
+</C>
+<C c="11" r="2" s="4">
+<Expand/>
+</C>
+<C c="12" r="2" s="4">
+<Expand/>
+</C>
+<C c="13" r="2" s="6">
+<O>
+<![CDATA[区域：]]></O>
+<Expand/>
+</C>
+<C c="14" r="2" cs="3" s="4">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="area"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"/>
+<Formula>
+<![CDATA[SELECT * FROM SALES_BASIC]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+</C>
+<C c="17" r="2" s="4">
+<Expand/>
+</C>
+<C c="0" r="3" s="4">
+<Expand/>
+</C>
+<C c="10" r="3" s="4">
+<Expand/>
+</C>
+<C c="11" r="3" s="4">
+<Expand/>
+</C>
+<C c="12" r="3" s="4">
+<Expand/>
+</C>
+<C c="13" r="3" s="4">
+<Expand/>
+</C>
+<C c="14" r="3" s="4">
+<Expand/>
+</C>
+<C c="15" r="3" s="4">
+<Expand/>
+</C>
+<C c="16" r="3" s="4">
+<Expand/>
+</C>
+<C c="17" r="3" s="4">
+<Expand/>
+</C>
+<C c="11" r="4">
+<Expand/>
+</C>
+<C c="0" r="5" rs="2" s="7">
+<O>
+<![CDATA[菜单导航]]></O>
+<Expand/>
+</C>
+<C c="1" r="5" cs="2" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="type"/>
+<WidgetAttr/>
+<Listener event="afteredit">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var product = this.options.form.getWidgetByName("product");
+product.visible();
+]]></Content>
+</JavaScript>
+</Listener>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="2" vi="2"/>
+<Formula>
+<![CDATA[SELECT * FROM SALES_BASIC  where 地区 = '${area}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+</C>
+<C c="3" r="5" s="8">
+<Expand/>
+</C>
+<C c="4" r="5" cs="2" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="product"/>
+<WidgetAttr invisible="true"/>
+<Listener event="afteredit">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var man = this.options.form.getWidgetByName("man");
+man.visible();]]></Content>
+</JavaScript>
+</Listener>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="3" vi="3"/>
+<Formula>
+<![CDATA[SELECT * FROM SALES_BASIC where 产品类型 = '${type}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+</C>
+<C c="6" r="5" s="8">
+<Expand/>
+</C>
+<C c="7" r="5" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboCheckBox">
+<WidgetName name="man"/>
+<WidgetAttr invisible="true"/>
+<Listener event="afteredit">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var data = this.options.form.getWidgetByName("data");
+data.visible();
+
+
+
+
+]]></Content>
+</JavaScript>
+</Listener>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="1" vi="1"/>
+<Formula>
+<![CDATA[SELECT * FROM SALES_BASIC where 产品 = '${product}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+</C>
+<C c="8" r="5" s="8">
+<Expand/>
+</C>
+<C c="9" r="5" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboCheckBox">
+<WidgetName name="data"/>
+<WidgetAttr invisible="true"/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="销量" value="销量"/>
+<Dict key="成本" value="成本"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="10" r="5">
+<Expand/>
+</C>
+<C c="11" r="5" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="8">
+<Expand/>
+</C>
+<C c="13" r="5" s="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="8">
+<Expand/>
+</C>
+<C c="15" r="5" s="8">
+<Expand/>
+</C>
+<C c="16" r="5" s="9">
+<O>
+<![CDATA[查 询]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+<C c="17" r="5" s="8">
+<Expand/>
+</C>
+<C c="1" r="6" s="10">
+<Expand/>
+</C>
+<C c="2" r="6" s="10">
+<Expand/>
+</C>
+<C c="3" r="6" s="10">
+<Expand/>
+</C>
+<C c="4" r="6" s="10">
+<Expand/>
+</C>
+<C c="5" r="6" s="10">
+<Expand/>
+</C>
+<C c="6" r="6" s="10">
+<Expand/>
+</C>
+<C c="7" r="6" s="10">
+<Expand/>
+</C>
+<C c="8" r="6" s="10">
+<Expand/>
+</C>
+<C c="9" r="6" s="10">
+<Expand/>
+</C>
+<C c="10" r="6" s="10">
+<Expand/>
+</C>
+<C c="11" r="6" s="10">
+<Expand/>
+</C>
+<C c="12" r="6" s="10">
+<Expand/>
+</C>
+<C c="13" r="6" s="10">
+<Expand/>
+</C>
+<C c="14" r="6" s="10">
+<Expand/>
+</C>
+<C c="15" r="6" s="10">
+<Expand/>
+</C>
+<C c="16" r="6" s="10">
+<Expand/>
+</C>
+<C c="17" r="6" s="10">
+<Expand/>
+</C>
+</CellElementList>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting orientation="1">
+<Margin top="0.27" left="0.7500000000000001" bottom="0.27" right="0.7500000000000001"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ParameterUI>
+<Parameter>
+<Attributes name="area"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="type"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="product"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="man"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="data"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Background name="ColorBackground" color="-1"/>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1446414"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="幼圆" style="2" size="30"/>
+<Background name="ColorBackground" color="-1446414"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4" vertical_alignment="3">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-1446414"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="宋体" style="1" size="13"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="6" color="-1446414"/>
+<Bottom style="6" color="-1446414"/>
+<Left style="6" color="-1446414"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="6" color="-1446414"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" textStyle="1">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="6" color="-1446414"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="6" color="-1446414"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_DEVICE_SqlMap" >
+  <resultMap id="tDeviceResult" class="com.gotop.deviceManagement.model.DevicePo" >
+    <!--Bean方式返回全表-->
+    <result column="DEVICEID" property="deviceId" jdbcType="DECIMAL" />
+    <result column="DEVICENAME" property="deviceName" jdbcType="VARCHAR" />
+    <result column="DEVICEMODEL" property="deviceModel" jdbcType="VARCHAR" />
+    <result column="IPADRESS" property="ipAdress" jdbcType="VARCHAR" />
+    <result column="PRODUCTIONMACHINENAME" property="productionMachineName" jdbcType="VARCHAR" />
+    <result column="CPUCODE" property="cpuCode" jdbcType="VARCHAR" />
+    <result column="MEMORY" property="memory" jdbcType="VARCHAR" />
+    <result column="HARDDISK" property="hardDisk" jdbcType="VARCHAR" />
+    <result column="OSVERSION" property="osVersion" jdbcType="VARCHAR" />
+    <result column="SOFTWAREVERSION" property="softwareVersion" jdbcType="VARCHAR" />
+    <result column="IEVERSION" property="ieVersion" jdbcType="VARCHAR" />
+    <result column="USEFUL_2" property="useful" jdbcType="VARCHAR" />
+    <result column="TERMINALNUMBER" property="terminalNumber" jdbcType="VARCHAR" />
+    <result column="USERS" property="user" jdbcType="VARCHAR" />
+    <result column="PLUGIN" property="plugIn" jdbcType="VARCHAR" />
+    <result column="PERIPHERAL" property="peripheral" jdbcType="VARCHAR" />
+    <result column="OTHERONE" property="otherOne" jdbcType="VARCHAR" />
+    <result column="REMARKSONE" property="remarksOne" jdbcType="VARCHAR" />
+    <result column="ORGNAME" property="orgname" jdbcType="VARCHAR" />
+    <result column="ORGCODE" property="orgcode" jdbcType="VARCHAR" />  
+    <result column="DEVICE_STATE" property="deviceState" jdbcType="CHAR" />    
+  </resultMap>
+  <resultMap id="tDeviceResult2" class="com.gotop.deviceManagement.model.DevicePo" >
+    <!--HashMap方式返回全表-->
+	<result column="DEVICEID" property="deviceId" jdbcType="DECIMAL" />
+    <result column="DEVICENAME" property="deviceName" jdbcType="VARCHAR" />
+    <result column="DEVICEMODEL" property="deviceModel" jdbcType="VARCHAR" />
+    <result column="IPADRESS" property="ipAdress" jdbcType="VARCHAR" />
+    <result column="PRODUCTIONMACHINENAME" property="productionMachineName" jdbcType="VARCHAR" />
+    <result column="CPUCODE" property="cpuCode" jdbcType="VARCHAR" />
+    <result column="MEMORY" property="memory" jdbcType="VARCHAR" />
+    <result column="HARDDISK" property="hardDisk" jdbcType="VARCHAR" />
+    <result column="OSVERSION" property="osVersion" jdbcType="VARCHAR" />
+    <result column="SOFTWAREVERSION" property="softwareVersion" jdbcType="VARCHAR" />
+    <result column="IEVERSION" property="ieVersion" jdbcType="VARCHAR" />
+    <result column="USEFUL" property="useful" jdbcType="VARCHAR" />
+    <result column="TERMINALNUMBER" property="terminalNumber" jdbcType="VARCHAR" />
+    <result column="USERS" property="user" jdbcType="VARCHAR" />
+    <result column="PLUGIN" property="plugIn" jdbcType="VARCHAR" />
+    <result column="PERIPHERAL" property="peripheral" jdbcType="VARCHAR" />
+    <result column="OTHERONE" property="otherOne" jdbcType="VARCHAR" />
+    <result column="REMARKSONE" property="remarksOne" jdbcType="VARCHAR" />
+    <result column="ORGNAME" property="orgname" jdbcType="VARCHAR" />
+    <result column="ORGCODE" property="orgcode" jdbcType="VARCHAR" />  
+    <result column="DEVICE_STATE" property="deviceState" jdbcType="CHAR" />  
+  </resultMap>
+  
+  <resultMap id="dict_HashMapResult" class="java.util.HashMap" >
+    <result column="DICTID" property="DICTID" jdbcType="VARCHAR" />
+    <result column="DICTNAME" property="DICTNAME" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <!-- 查询设备列表 -->
+  <select id="queryList" resultMap="tDeviceResult" parameterClass="java.util.HashMap" >
+ 	select T3.*, o.orgname from (
+ /*查询peripheral(对应的外设)对应的数据字典名，通过合并函数 合并*/
+select T2.*, WM_CONCAT(distinct d.DICTNAME) as PERIPHERAL_2
+  from (
+        /*查询plugin(插件)对应的数据字典名，通过合并函数 合并*/        
+        select T1.*, WM_CONCAT(distinct c.DICTNAME) as PLUGIN_2
+          from ( 
+                  /*查询userful(用途)对应的数据字典名，通过合并函数 合并*/               
+                 select a.*,WM_CONCAT(distinct b.DICTNAME) as USEFUL_2
+                   from t_new_deviceManagement a, EOS_DICT_ENTRY b
+                  where b.DICTTYPEID = 'DEVICE_USEFUL'
+                    and a.USEFUL LIKE '%' || b.DICTID || '%'
+                  GROUP BY a.DEVICEID, a.DEVICENAME, a.DEVICEMODEL, a.IPADRESS, a.PRODUCTIONMACHINENAME,
+                            a.CPUCODE, a.MEMORY, a.HARDDISK, a.OSVERSION, a.SOFTWAREVERSION,
+                            a.IEVERSION, a.USEFUL, a.TERMINALNUMBER, a.PLUGIN, a.PERIPHERAL,
+                            a.OTHERONE, a.REMARKSONE, a.USERS, a.ORGCODE,a.DEVICE_STATE
+                ) T1, EOS_DICT_ENTRY c
+         where c.DICTTYPEID = 'DEVICE_PLUGIN'
+           and T1.PLUGIN LIKE '%' || c.DICTID || '%'
+         GROUP BY T1.DEVICEID, T1.DEVICENAME, T1.DEVICEMODEL, T1.IPADRESS, T1.PRODUCTIONMACHINENAME,
+                   T1.CPUCODE, T1.MEMORY, T1.HARDDISK, T1.OSVERSION, T1.SOFTWAREVERSION,
+                   T1.IEVERSION, T1.USEFUL, T1.TERMINALNUMBER, T1.PLUGIN, T1.PERIPHERAL,
+                   T1.OTHERONE, T1.REMARKSONE, T1.USERS, T1.ORGCODE, T1.DEVICE_STATE, T1.USEFUL_2       
+        ) T2, EOS_DICT_ENTRY d
+ where d.DICTTYPEID = 'DEVICE_PERIPHERAL'
+   and T2.PERIPHERAL LIKE '%' || d.DICTID || '%'
+ GROUP BY T2.DEVICEID, T2.DEVICENAME, T2.DEVICEMODEL, T2.IPADRESS, T2.PRODUCTIONMACHINENAME,
+          T2.CPUCODE, T2.MEMORY, T2.HARDDISK, T2.OSVERSION, T2.SOFTWAREVERSION,
+          T2.IEVERSION, T2.USEFUL, T2.TERMINALNUMBER, T2.PLUGIN, T2.PERIPHERAL,
+          T2.OTHERONE, T2.REMARKSONE, T2.USERS, T2.ORGCODE, T2.DEVICE_STATE,
+          T2.USEFUL_2, T2.PLUGIN_2
+)T3 , om_organization o
+where T3.orgcode = o.orgcode
+      <isNotNull prepend="and" property="orgcode" >
+        T3.ORGCODE = #orgcode#
+      </isNotNull>
+      <isNotNull prepend="and" property="deviceName" >
+        T3.DEVICENAME = #deviceName#
+      </isNotNull>
+      <isNotNull prepend="and" property="deviceModel" >
+        T3.DEVICEMODEL = #deviceModel#
+      </isNotNull>
+      <isNotNull prepend="and" property="deviceState" >
+         T3.DEVICE_STATE = #deviceState#
+      </isNotNull>
+      <isNotNull prepend="and" property="memoryMin" >
+         T3.MEMORY > #memoryMin#
+      </isNotNull>
+      <isNotNull prepend="and" property="memoryMax" >
+      		<![CDATA[  T3.MEMORY < #memoryMax# ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="hardDiskMin" >
+         T3.HARDDISK > #hardDiskMin#
+      </isNotNull>
+      <isNotNull prepend="and" property="hardDiskMax" >
+         <![CDATA[  T3.HARDDISK < #hardDiskMax# ]]>
+      </isNotNull>
+       <isNotNull prepend="and" property="osVersion" >
+         T3.OSVERSION = #osVersion#
+      </isNotNull>
+      <isNotNull prepend="and" property="softwareVersion" >
+        T3.SOFTWAREVERSION like '%'|| #softwareVersion# ||'%'
+      </isNotNull>
+      <isNotNull prepend="and" property="ieVersion" >
+         T3.IEVERSION = #ieVersion#
+      </isNotNull>
+      <isNotNull prepend="and" property="useful" >
+        T3.USEFUL like '%'|| #useful# ||'%'
+      </isNotNull>
+      <isNotNull prepend="and" property="plugIn" >
+         T3.PLUGIN  like '%'|| #plugIn# ||'%'
+      </isNotNull>
+      <isNotNull prepend="and" property="peripheral" >
+        T3.PERIPHERAL  like '%'|| #peripheral# ||'%'
+      </isNotNull>
+  order by T3.orgcode 
+  </select>
+  
+  <!--通过主键查询一条数据-->
+   <select id="selectByPrimaryKey" resultMap="tDeviceResult2" parameterClass="com.gotop.deviceManagement.model.DevicePo" >
+   select a.*, b.orgname from t_new_deviceManagement a,om_organization b
+where a.orgcode = b.orgcode
+ 	and a.DEVICEID = #deviceId:DECIMAL# 
+  </select>
+
+<!--新增一条新记录-->
+<insert id="insert" parameterClass="com.gotop.deviceManagement.model.DevicePo" >
+      <selectKey resultClass="long" keyProperty="deviceId">
+		SELECT seq_t_new_deviceManagement.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into t_new_deviceManagement 
+    (DEVICEID, DEVICENAME, DEVICEMODEL, IPADRESS, PRODUCTIONMACHINENAME, CPUCODE, MEMORY, HARDDISK
+    , OSVERSION, SOFTWAREVERSION, IEVERSION, USEFUL, TERMINALNUMBER, USERS, PLUGIN, PERIPHERAL, OTHERONE, REMARKSONE
+    , ORGCODE, DEVICE_STATE)
+    values (#deviceId:DECIMAL:-9999#,  #deviceName:VARCHAR#,  #deviceModel:VARCHAR#,  #ipAdress:VARCHAR#,  #productionMachineName:VARCHAR#
+    ,  #cpuCode:VARCHAR# , #memory:VARCHAR# ,  #hardDisk:VARCHAR# ,  #osVersion:VARCHAR# ,  #softwareVersion:VARCHAR# ,  #ieVersion:VARCHAR# ,  #useful:VARCHAR#
+     ,  #terminalNumber:VARCHAR# ,  #user:VARCHAR# ,  #plugIn:VARCHAR# ,  #peripheral:VARCHAR# ,  #otherOne:VARCHAR# ,  #remarksOne:VARCHAR# 
+     ,  #orgcode:VARCHAR# ,  #deviceState:CHAR# )
+  </insert>
+  
+  <!--通过主键更新一条全部字段内容-->
+  <update id="updateByPrimaryKey" parameterClass="com.gotop.deviceManagement.model.DevicePo" >
+    update t_new_deviceManagement
+    set DEVICENAME = #deviceName:VARCHAR#,
+      DEVICEMODEL = #deviceModel:VARCHAR#,
+      IPADRESS = #ipAdress:VARCHAR#,
+      PRODUCTIONMACHINENAME = #productionMachineName:VARCHAR#,
+      CPUCODE = #cpuCode:VARCHAR#,
+      MEMORY = #memory:VARCHAR#,
+      HARDDISK = #hardDisk:VARCHAR#,
+      OSVERSION = #osVersion:VARCHAR#,
+      SOFTWAREVERSION = #softwareVersion:VARCHAR#,
+      IEVERSION = #ieVersion:VARCHAR#,
+      USEFUL = #useful:VARCHAR#,
+      TERMINALNUMBER = #terminalNumber:VARCHAR#,
+      USERS = #user:VARCHAR#,
+      PLUGIN = #plugIn:VARCHAR#,
+      PERIPHERAL = #peripheral:VARCHAR#,
+      OTHERONE = #otherOne:VARCHAR#,
+      REMARKSONE = #remarksOne:VARCHAR#,
+      ORGCODE = #orgcode:VARCHAR#,
+      DEVICE_STATE = #deviceState:CHAR#   
+    where DEVICEID = #deviceId:DECIMAL#
+  </update>
+  
+  <!--通过主键删除一条记录-->
+  <delete id="deleteByPrimaryKey" parameterClass="com.gotop.deviceManagement.model.DevicePo" >
+    delete from t_new_deviceManagement
+    where DEVICEID = #deviceId:DECIMAL#
+  </delete>
+  
+  <select id="queryDict" resultMap="dict_HashMapResult" parameterClass="java.util.HashMap" >
+  select dictid,dictname from EOS_DICT_ENTRY 
+  where DICTTYPEID = #dicttypeid#
+  </select>
+</sqlMap>

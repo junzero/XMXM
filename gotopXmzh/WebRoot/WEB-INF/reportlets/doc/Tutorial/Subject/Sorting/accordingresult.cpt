@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="project" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[项目名称,,.,,ID]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[HbO%JP<H7Dm-9&*A(JhW4.ji*a(]A5.ojl[;QORoJ&_GL?3C*CQ)n%lr=:#^"2Wf<H^[LFT>q
+iu!f@/;f:NfNdnkBP'So.mBeFg0RVSpsa!!~
+]]></RowData>
+</TableData>
+<TableData name="zs" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[ID,,.,,数量]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[1Gn/L1u^8Ii\WRO1,e8O!g4n#VM8>&5]ALit;ZfcN,6.~
+]]></RowData>
+</TableData>
+<TableData name="cz" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[ID,,.,,金额]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[%EH9s!&+Z[YW#;Z"a0jil73YWP"H6>bD('@40/^9CLY0l~
+]]></RowData>
+</TableData>
+<TableData name="dz" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[ID,,.,,金额]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[%E5RQ!$D[OYSjSEBsms?QtD27?(r.8`<7R'_MhSd,dqZo#6~
+]]></RowData>
+</TableData>
+<TableData name="qt" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[ID,,.,,金额]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[%E-'p!&+Z[YW#6#TUu$Vf&dPN2J&\B$238d)n']Aq:*Fl~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,18,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,102,63,58,72,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="7" s="0">
+<O>
+<![CDATA[某市2008年度政府投资项目计划汇总表]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" rs="2" s="1">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="1" r="1" rs="2" s="1">
+<O>
+<![CDATA[项目名称]]></O>
+<Expand/>
+</C>
+<C c="2" r="1" rs="2" s="1">
+<O>
+<![CDATA[项目总数（个）]]></O>
+<Expand/>
+</C>
+<C c="3" r="1" rs="2" s="2">
+<O>
+<![CDATA[2008年度投资计划（万元）]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="order"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="order"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="4" r="1" cs="3" s="1">
+<O>
+<![CDATA[2008年度需安排资金数（万元）]]></O>
+<Expand/>
+</C>
+<C c="4" r="2" s="1">
+<O>
+<![CDATA[需财政安排数]]></O>
+<Expand/>
+</C>
+<C c="5" r="2" s="1">
+<O>
+<![CDATA[单位自筹]]></O>
+<Expand/>
+</C>
+<C c="6" r="2" s="1">
+<O>
+<![CDATA[其它资金]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=&B4]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="B4"/>
+</C>
+<C c="1" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="project" columnName="ID"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex order="1"/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<SortFormula>
+<![CDATA[if($order=='asc',sum(cz.select(金额,ID=$$$))+sum(dz.select(金额,ID=$$$))+sum(qt.select(金额,ID=$$$)),-(sum(zs.select(数量,ID=$$$))+sum(dz.select(金额,ID=$$$))+sum(qt.select(金额,ID=$$$))))]]></SortFormula>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr ki="1" vi="0"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[project]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="2" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="zs" columnName="数量"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="3"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="3" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(E4:G4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="cz" columnName="金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="3"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="dz" columnName="金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="3"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="qt" columnName="金额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="3"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="0" r="4" cs="2" s="1">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(c4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="4" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(d4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="4" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(e4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="4" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(f4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="4" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(g4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="order"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-16776961" underline="1"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

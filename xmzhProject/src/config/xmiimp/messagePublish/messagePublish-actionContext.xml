@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean name="tMessagePublishAction" id="tMessagePublishaction" class="com.gotop.messagePublish.action.TMessagePublishAction" singleton="false" >
+    <property name="tMessagePublishService" ref="tMessagePublishService" />
+    <property name="tDefaultOpinionService" ref="tDefaultOpinionService" />
+  </bean>
+</beans>

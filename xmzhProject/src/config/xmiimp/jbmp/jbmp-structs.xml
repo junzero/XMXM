@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="jbmp" namespace="/jbmp">
+    <action class="jbpm4HistActinstAction" method="{1}" name="jbpm4HistActinstAction_*">
+      <result name="viewlist">
+        /jsp/jbmp/jbpm4HistActinstDatacell.jsp
+      </result>
+    </action>
+  
+    <action class="jbpm4HistTaskAction" method="{1}" name="jbpm4HistTaskAction_*">
+      <result name="viewlist">
+        /jsp/jbmp/jbpm4HistTaskDatacell.jsp
+      </result>
+    </action>
+    
+    <action class="jbpm4ExecutionAction" method="{1}" name="jbpm4ExecutionAction_*">
+      <result name="viewlist">
+        /jsp/jbmp/jbpm4ExecutionDatacell.jsp
+      </result>
+    </action>
+    
+    <action class="jbpm4TaskAction" method="{1}" name="jbpm4TaskAction_*">
+      <result name="viewlist">
+        /jsp/jbmp/jbpm4TaskDatacell.jsp
+      </result>
+    </action>
+    </package>
+</struts>

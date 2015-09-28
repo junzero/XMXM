@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 页面控件演示 -->
+	<bean class="com.gotop.tyjg.empMngr.service.impl.EmpMngrServiceImpl" id="empMngrService">
+		<property name="empMngrDao" ref="empMngrDao" />
+	</bean>
+	
+	
+	</beans>

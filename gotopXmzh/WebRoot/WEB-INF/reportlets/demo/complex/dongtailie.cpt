@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="chaobiaomingxi" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[用户号,,.,,用户名称,,.,,联系电话,,.,,用气性质,,.,,用气地址,,.,,气表型号,,.,,本月起数,,.,,本月止数,,.,,本月用量,,.,,气价,,.,,本月气费,,.,,抄表日期,,.,,抄表人,,.,,收费/冲减日期,,.,,通气日期,,.,,预收款余额,,.,,当前表,,.,,用气比例]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[V-2JP,0LUIcMJ>h/YB/1F(LrPqe(E]AU57N?X,+.SfI_^'MLbOXQ`T01r5+Gh5S90Q:V3W'$`
+_uD,@\]ARP[_M.+G(b8X-pT#0`<6Q?M^S5@Wkp%S,]ACW6]Ato;-0*'/STc"La;bshIb1YBRA]AL
+^/o1%&::"ZKjNZAc3N0fs_+rO^mm^)sp?nSUM,X:[Fs3f%8&n\e@-/]AN\42ER6p4/(<8&#T1
+WF_^o6I?u=kPT(p%[JBqaH8>_YETfdCVm1$2_5en:,,4MFKns`b[ek[>468BCV2odJBhF03C
+>iBuRSm^9>QjMR-OVnRubihS"fi-R0lRp6!]A?;;J.cKuYN<&9'TWBGUhD:q3-W)_^a7VC?V^
+d6?hP\'/p,7fb+i"nU8h$=TVBQ^0[l<E%)V"2anqBRP/29Ip^K3Cd!>#SG@eVl)84UPpUE0G
+6dI34j'sb>J5VguX1%6F_#GT%ce%n.cNJ"kB_oqoV2M\YIW`2/`kALKT!\V->h'7T_&F.t\G
+<+<E3[SfC'=4Y;%H=2WDL4Rl_(@5/DY6),DV2hPj.h#:m=.C68o*9?,=VHNb02B#,#lt_2!1
+>eDR+aL8Lq%;t`1Sb1D!YUE9RNO2I#DFpa!$<NF?@+.uVbmt>LQK_W.NKPu-:JEFV6FFCp3e
+im'Xf[3eu<qDK5*ql43Ze\H*u*l=XIZ3.1oWb$*8ZA66(f(P=fWYM9.28WIpKm/l6FW>YH@U
+2ZR/9=EsuLl81.7d=KNWPYhlY1Hn(>eJ?AT_)-(EE8J$Gdl]A?(O(7GZ,N=XBZnZ'LHZXe1)N
+NLD?mXFW4;j(qq-XI'h'do5-%^h"j;&UT,u`WTgbe?IW-/TJj78Ppqi>'hEBWJ#@YL%Ua9VK
+3anpa;rfm2:f$+b[%gF#-XgasJ(G8r^)[GoPZ;!<tUo%,e'<&^MLP=g?1%Isk/2fbkW\;,OH
+$#KWq(j5H:lFe1AV0u5!7oi"g"m-P0@:.A7(r1m0ni;KH>&<o84r8Z+7&HbAZmpGd:s,tb;?
+t"DN0aPTNs`pQiJl-VA!VLI$YN;BsaW8-/t^'_:[TPWZ.g?Jg7uX!bc8!"AanCl,?VB8KC&d
+N*hKQlTd^Ug+u;GkU.DrPJ]A,2o,YGb@CP+Sr$?[D1mN*/?@asUWbgmR9Mc:es/"05S!JF'.F
+@OVp_YYhfXFJLYdJ.:-^N]Aa7;uQ!8fF7APGGj8>*=JGkVBnY/!N%Cnp\TL>m@d9@I>&L&#rK
+/3=\",h*hJG#&?[Zce4#r6&#boF;%@T:J[3,8#RgXjWV2"pI^o9e^a/0.p,LT7>jG(;T:&_)
+.;nid[bP"hR<0DDJeR9hZV7edJ4a"Liej/R>?<4-A`"$lV2,gUYUZSMHZ>a,t&<FAsX<"Wnc
+'5$lAGHdh86WL8>NianHl:jO._BQP+9L5`<s#O<.(?Ne3mi_;9HVZLeWI-L4;B;&GOmo25u,
+b4('PCl&ckX3Wa='nSmrPddA]A)hK3!qXD2mV''nsp2UK=;<o_DA1Q%6GWBHC?pXk(fZA`WS"
+R?&_.sao(-@Kro<o%bI;;QmjpkOX$/hT&4\/O*=j!r,iBshtB+(0=)^$g8!tA_3GSB%Ep;+]A
+iWFm<SaJ_&6g;QKY'Gf8OD]A;9VB[Clup0!6jWCC,FFrJ`ODrf]A@*iQXm+LWE$.\T,dYB]A!7-
+BOVB2^TdQK!?OkV1OI9huQOTGJ@bP!Eg83(6[5RjupAb#1A53-I&m?3;muYVh42+?@&]A#p:H
+RA\@=d8^s0"3i;'$HS7+KpboE)%+t+!r;XqU3I!A=m5^u$'mFfr2`B?nl0Q=QPho3D*;1*in
+8!H#p1.Um1/Wqg165#*BH.W-KF(#MPiSqOOln)"Wj39\U$s(]AG?!8pBGY1_>,ol22b_e^d@i
+D@pZQ<,HS`aLu)`MYOT@6F0&>>dXh+")`1IMO]AIBum1B@l*bPK^?SX'FNT$;BSIkU4S'S4XX
+V+[i-hKXi`u,,UIn*F^.]Aj95=_Q)FPTmDOL&mb2P:V*2>%X6-'83\1'"M&I(_17e&U/u6P\T
+FT!M>Oh;S<60L[E(>Wll<,lg,^<n(M2.Q:0Vo$=0/-(&Vu&?B[.:/Eg1ds@%=K!U0RMOQGk_
+hWrs\<;_O"P,Gmp9O_u#=*IYCanB9#_sa%!0jZBI]A&&/4GF5-QCkIB!O<bS_,0mo24:VYLq`
+>_-$4q,U`_l-71>C)A\'PDc_*iH?edg]A=+0C)X-kP(7(9$'[.4)h"je:W9./J<rTB3ZGO%%!
+_`f'`a+H4(^(6ll/O>$[8`5e<2TSh/M\,=DWtV%fuUHG#9[87-fM(T%9)5a5nY=>bKoGBOSq
+d49HB]A5!jU+^7G.M"$E"7/h)FXa.CEBkUV_k;a=iJ"ia<a'ZJ=_q0F*`/dAjD>9?ekK&7#d4
+adV,m6t:X20RR1<-6I)[P7YocXF6skFZP)%phLT_1TRE>Nq6`SMVHRB;biE2X<Be2gp%%Zj&
+E!cZP\%;p2[1TO(@iT&dXDiUYB=kCg_m$hm!15<j\>6aG@HS#\EQ>j<V!':_rHL73OrEBS&g
+5mtQ]A6?m)Mg2,hE-(XCF\H5*O"?lr.4d!+<;IGfD-iG3bRMlrD1HNYf?pe%R/#KToD62I)F!
+c`UG)hqbVUNVTkIQ#ddH[dg0NJ'k#tsWaae2/5I&SnE%(#\2Yjr'[_kbUEB04@2Mf*JXPWne
+t;JP@8fWAPKCs/k5A=6'GXJ]Ap(Pum,d_:7Qo"]AT^?-&E)Lb#A;STZN`]AiD5aIVVUU`/<[m%T
+*;)"R3sY9aRGc#$cp0kfkq(.mBd<;dTA5lV(bu.1:aPN=p^Ns:$Obg)_S);"KRqGXngG'(t@
+JP@I2JFd(9*tXM8[$4O0hndPG\R-+p#_7<%->V3b`j`K4:jcN##VUUBg!L%njfQHb!8f(OH=
+_o&D(2^U=ss!5BG[4@<rIH-*';#+[X/a<]Ae+B/:sP8L4RZO7_Dkp\Xs[6HH^!-`Sq7s(/R3Q
+*`jqbs5R'$ldsh1$BXlRSHG%9'LnidKX>jO;`:Yq&H&$):@FgpEhjHd<0AP[Q88@[9GYAuMA
+IQg?Z`cRdVes-l8#B<O>"JR+J-.5:>7XoBI~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user=""/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.page.First">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[首页]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Previous">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[上一页]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Next">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[下一页]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Last">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[末页]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PageSetup">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[页面设置]]></Text>
+<IconName>
+<![CDATA[pagesetup]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="true" isShowAsImage="false"/>
+</WebPageContent>
+<WebFormContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.AppletPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[Applet打印]]></Text>
+<IconName>
+<![CDATA[appletprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[Excel(O)]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebFormContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="ColorBackground" color="-3355393"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" shrinkToFitMode="2" isHorizontalCenterOnPage="true" isVerticalCenterOnPage="true" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[32,24,24,24,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[50,120,72,72,72,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="2" s="0">
+<O>
+<![CDATA[抄表明细查询]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<Expand/>
+</C>
+<C c="1" r="1" s="1">
+<Expand/>
+</C>
+<C c="0" r="2" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="1" r="2" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$param]]></Attributes>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="0" r="3" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=chaobiaomingxi.select(#0)]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="3" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=chaobiaomingxi.value(A4, B3)]]></Attributes>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings isHorizontalCenterOnPage="true" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[64,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[61,114,61,61,61,61,61,61,61,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="9" s="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.CheckBoxGroup">
+<WidgetName name="param"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>
+<![CDATA[=TABLEDATAFIELDS("chaobiaomingxi")]]></FormulaDict>
+</Dictionary>
+</Widget>
+</C>
+<C c="9" r="0" s="4">
+<O>
+<![CDATA[查询]]></O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+</Widget>
+</C>
+</CellElementList>
+</ParameterUI>
+<Parameter>
+<Attributes name="param"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Background name="ColorBackground" color="-6697729"/>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<Image width="271" height="20">
+<![CDATA[mF0BR"#1A-nTPZZ5m.c&T>Z?_%iu@lA.O:=]ADnpMTI@cJI@)Y:P?=.s1UHJW*kmC?]ABpr/fj
+D&FYBE)6!2I``)$$%0HiS\&CjsnBf=LeT/2s^n^.sKPs.Z`(h:VSI4YQK'X]Aq5Ajc[f\1bTW
+a8F,I8QZ@o!^6I3WcBHP3FQQ3agumHafh5sMb-^eFPCG1VVYN\kVUqd!K2fU\pXZ,qNaHtd1
+,Z)'26%+ugM"S%<!2bq%G^Q)c#o65_m5?RReP-(gNc?ZM;MS^EUEbgVs-(M@tINAACg:=F`R
+/-U7TkI&FOW8P\L=E=0K]Ac/+U(8FX_siA"Tmd+Xl6i)mTa,T"JN\bukNCrn9Nek,S58]AeD)F
+hp0RHq&9=dS\5)Th<@R^:@ZOGk@pON`jl8L5$ZEX=[g[&iWbe1<nNU7eoh/Wm+/\=Y")3q_)
+%DRN`&$149L,in^@mHb`3_F_!Z.C!-SSX!+<9c%fgd"G5u$[HOBgs4#[.I[sd'6JD&Kg!8)]A
+%~
+]]></Image>
+</Background>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style style_name="Head2"/>
+<Style style_name="cell"/>
+</StyleList>
+</WorkBook>

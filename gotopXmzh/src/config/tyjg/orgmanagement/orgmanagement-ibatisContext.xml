@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 机构管理 -->
+	<bean class="com.gotop.tyjg.orgmanagement.dao.imp.OrganizationDao" id="organizationDao">
+		<property name="sqlMapClient" ref="sqlMapClient" ></property>
+	</bean>
+	</beans>

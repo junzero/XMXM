@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Groupmanager_SqlMap">
+  <resultMap class="com.gotop.tyjg.workgroup.model.QuerySGroupBean" id="querySGroup_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="PARENTGROUPID" jdbcType="NUMERIC" property="parentgroupid" />
+    <result column="GROUPLEVEL" jdbcType="NUMERIC" property="grouplevel" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPDESC" jdbcType="VARCHAR" property="groupdesc" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSEQ" jdbcType="VARCHAR" property="groupseq" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="MANAGER" jdbcType="VARCHAR" property="manager" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="LASTUPDATE" jdbcType="TIMESTAMP" property="lastupdate" />
+    <result column="UPDATOR" jdbcType="NUMERIC" property="updator" />
+    <result column="ISLEAF" jdbcType="CHAR" property="isleaf" />
+    <result column="SUBCOUNT" jdbcType="NUMERIC" property="subcount" />
+    <result column="CREATEUSERID" jdbcType="VARCHAR" property="createuserid" />
+    <result column="EMPID" jdbcType="NUMERIC" property="empid" />
+  </resultMap>
+  <resultMap class="com.gotop.tyjg.stable.model.OmGroup" id="querySGroup_OmGroupBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="PARENTGROUPID" jdbcType="NUMERIC" property="parentgroupid" />
+    <result column="GROUPLEVEL" jdbcType="NUMERIC" property="grouplevel" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPDESC" jdbcType="VARCHAR" property="groupdesc" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSEQ" jdbcType="VARCHAR" property="groupseq" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="MANAGER" jdbcType="VARCHAR" property="manager" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="LASTUPDATE" jdbcType="TIMESTAMP" property="lastupdate" />
+    <result column="UPDATOR" jdbcType="NUMERIC" property="updator" />
+    <result column="ISLEAF" jdbcType="CHAR" property="isleaf" />
+    <result column="SUBCOUNT" jdbcType="NUMERIC" property="subcount" />
+    <result column="CREATEUSERID" jdbcType="VARCHAR" property="createuserid" />
+    <result column="EMPID" jdbcType="NUMERIC" property="empid" />
+  </resultMap>
+  <select id="querySGroupBeanByMap" parameterClass="java.util.HashMap" resultMap="querySGroup_OmGroupBeanResult">
+    <!--通过Map方式查询bean结果，不分页-->
+    <![CDATA[
+select * from om_group where groupid =#groupid#
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.ManageGroupEmpBean" id="manageGroupEmp_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+  <select id="manageGroupEmpBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="manageGroupEmp_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+ select 
+ distinct g.groupid,
+ g.orgid,
+ o.orgname,
+ g.groupname,
+
+      g.grouptype,
+ g.groupstatus,
+ g.startdate,
+ g.enddate
+ from om_group g,om_organization o
+      where o.orgid(+)=g.orgid
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.ManageGroupRoleBean" id="manageGroupRole_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+  <select id="manageGroupRoleBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="manageGroupRole_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+ select 
+ distinct g.groupid,
+ g.orgid,
+ o.orgname,
+ g.groupname,
+
+      g.grouptype,
+ g.groupstatus,
+ g.startdate,
+ g.enddate
+ from om_group g,om_organization o
+      where o.orgid(+)=g.orgid
+	]]>
+  </select>
+  
+  
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryGroupEmpOrgBean" id="queryGroupEmpOrg_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+  <select id="queryGroupEmpOrgBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="queryGroupEmpOrg_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+ select 
+ distinct g.groupid,
+ g.orgid,
+ o.orgname,
+ g.groupname,
+
+      g.grouptype,
+ g.groupstatus,
+ g.startdate,
+ g.enddate
+ from om_group g,om_organization o
+      where o.orgid(+)=g.orgid
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.ManagePositionRoleBean" id="managePositionRole_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+  <select id="managePositionRoleBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="managePositionRole_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+ select 
+ distinct g.groupid,
+ g.orgid,
+ o.orgname,
+ g.groupname,
+
+      g.grouptype,
+ g.groupstatus,
+ g.startdate,
+ g.enddate
+ from om_group g,om_organization o
+      where o.orgid(+)=g.orgid
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryPositionEmpBean" id="queryPositionEmp_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="EOID" jdbcType="NUMERIC" property="eoid" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="EOTYPE" jdbcType="CHAR" property="eotype" />
+    <result column="EOTYPENAME" jdbcType="CHAR" property="eotypename" />
+</resultMap>
+  <select id="queryPositionEmpBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="queryPositionEmp_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+select * from (
+	select omgroup.groupid,
+	       omorg.orgid as eoid,
+	       omorg.orgcode as code,
+	       omorg.orgname as name,
+	       '1' as eotype,
+	       '机构' as eotypename
+	  from OM_GROUPMEMBER GROUPMEMBER, om_group omgroup, om_organization omorg
+	 where omorg.orgid = GROUPMEMBER.MEMBERID
+	   and omgroup.groupid = GROUPMEMBER.GROUPID
+	   and GROUPMEMBER.Flag = 2
+	union
+	select omgroup.groupid,
+	       0 as eoid,
+	       ac.roleid as code,
+	       ac.rolename as name,
+	       '3' as eotype,
+	       '角色' as eotypename
+	  from OM_GROUPMEMBER GROUPMEMBER, om_group omgroup, ac_role ac
+	 where ac.roleid = GROUPMEMBER.MEMBERID
+	   and omgroup.groupid = GROUPMEMBER.GROUPID
+	   and GROUPMEMBER.Flag = 3
+	union
+	select a.groupid,
+	       a.empid as eoid,
+	       b.empcode as code,
+	       b.empname as name,
+	       '2' as eotype,
+	       '人员' as eotypename
+	  from om_empgroup a, om_employee b
+	 where a.empid = b.empid
+)
+where groupid = #groupid#
+	]]>
+	<isNotEmpty prepend="and" property="code">
+		upper(code) like '%'|| upper(#code#) ||'%'
+	</isNotEmpty>
+	<isNotEmpty prepend="and" property="name">
+		upper(name) like '%'|| upper(#name#) ||'%'
+	</isNotEmpty>
+  </select>
+  
+  
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryGroupPosiBean" id="queryGroupPosi_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+  <select id="queryGroupPosiBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="queryGroupPosi_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+ select 
+ distinct g.groupid,
+ g.orgid,
+ o.orgname,
+ g.groupname,
+
+      g.grouptype,
+ g.groupstatus,
+ g.startdate,
+ g.enddate
+ from om_group g,om_organization o
+      where o.orgid(+)=g.orgid
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.UpdateSelfGroupBean" id="updateSelfGroup_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+  <select id="updateSelfGroupBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="updateSelfGroup_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+ select 
+ distinct g.groupid,
+ g.orgid,
+ o.orgname,
+ g.groupname,
+
+      g.grouptype,
+ g.groupstatus,
+ g.startdate,
+ g.enddate
+ from om_group g,om_organization o
+      where o.orgid(+)=g.orgid
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryGroupBean" id="queryGroup_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+  <select id="queryGroupBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="queryGroup_GroupmanagerBeanResult">
+	    <![CDATA[
+	    select 
+	    distinct g.groupid,
+	    g.orgid,
+	    o.orgname,
+	    g.groupname,
+	    g.grouptype,
+	    g.groupstatus,
+	    g.startdate,
+	    g.enddate
+	    from om_group g,om_organization o where o.orgid(+)=g.orgid
+	    and g.empid=#empid#
+	    ]]>
+	    <isNotEmpty prepend="and" property="grouptype">
+	    	 <![CDATA[ g.grouptype='$grouptype$']]>
+	    </isNotEmpty>
+	    <isNotEmpty prepend="and" property="groupstatus">
+	    	 <![CDATA[ g.groupstatus='$groupstatus$']]>
+	    </isNotEmpty>
+	    <isNotEmpty prepend="and" property="groupname">
+	    	 <![CDATA[ g.groupname like '%$groupname$%']]>
+	    </isNotEmpty>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryGroupMemberByEmpBean" id="queryGroupMemberByEmp_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="FLAG" jdbcType="CHAR" property="flag" />
+    <result column="EMPID" jdbcType="NUMERIC" property="empid" />
+    <result column="EMPCODE" jdbcType="VARCHAR" property="empcode" />
+    <result column="EMPNAME" jdbcType="VARCHAR" property="empname" />
+  </resultMap>
+  <select id="queryGroupMemberByEmpBeanByMap" parameterClass="java.util.HashMap" resultMap="queryGroupMemberByEmp_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，不分页-->
+    <![CDATA[
+			 select a.groupid, 1as FLAG, a.empid, b.empcode, b.empname
+			   from om_empgroup a, om_employee b
+			  where a.empid = b.empid
+			 and groupid=#groupid#
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryGroupMemberByRoleBean" id="queryGroupMemberByRole_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="FLAG" jdbcType="CHAR" property="flag" />
+    <result column="ROLEID" jdbcType="VARCHAR" property="roleid" />
+    <result column="ROLENAME" jdbcType="VARCHAR" property="rolename" />
+    <result column="ROLETYPE" jdbcType="VARCHAR" property="roletype" />
+  </resultMap>
+  <select id="queryGroupMemberByRoleBeanByMap" parameterClass="java.util.HashMap" resultMap="queryGroupMemberByRole_GroupmanagerBeanResult">
+    <!--群组下所挂角色-->
+    <![CDATA[
+			select
+      omgroup.groupid,GROUPMEMBER.Flag,role.roleid,role.rolename,role.roletype
+			 from
+      OM_GROUPMEMBER GROUPMEMBER, om_group omgroup, ac_role role
+			 where role.roleid = GROUPMEMBER.MEMBERID
+			 and omgroup.groupid = GROUPMEMBER.GROUPID
+			 and GROUPMEMBER.Flag = 3
+      		 and omgroup.groupid=#groupid#
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryGroupMemberByOrgBean" id="queryGroupMemberByOrg_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="FLAG" jdbcType="CHAR" property="flag" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="ORGCODE" jdbcType="VARCHAR" property="orgcode" />
+    <result column="ORGNAME" jdbcType="VARCHAR" property="orgname" />
+    <result column="ORGDEGREE" jdbcType="VARCHAR" property="orgdegree" />
+  </resultMap>
+  <select id="queryGroupMemberByOrgBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="queryGroupMemberByOrg_GroupmanagerBeanResult">
+    <!--群组下所挂机构-->
+    <![CDATA[
+			select
+      omgroup.groupid,GROUPMEMBER.Flag,omorg.orgid,omorg.orgcode,omorg.orgname,omorg.orgdegree
+			
+      from OM_GROUPMEMBER GROUPMEMBER, om_group omgroup, om_organization omorg
+			 where omorg.orgid = GROUPMEMBER.MEMBERID
+			 and omgroup.groupid = GROUPMEMBER.GROUPID
+			 and GROUPMEMBER.Flag = 2
+			 and omgroup.groupid=#groupid#
+			 order by omorg.orgdegree,omorg.displayorder
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryGroupPositionEmpByParentBean" id="queryGroupPositionEmpByParent_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="PARENTGROUPID" jdbcType="NUMERIC" property="parentgroupid" />
+    <result column="GROUPLEVEL" jdbcType="NUMERIC" property="grouplevel" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPDESC" jdbcType="VARCHAR" property="groupdesc" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSEQ" jdbcType="VARCHAR" property="groupseq" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="MANAGER" jdbcType="VARCHAR" property="manager" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="LASTUPDATE" jdbcType="TIMESTAMP" property="lastupdate" />
+    <result column="UPDATOR" jdbcType="NUMERIC" property="updator" />
+    <result column="ISLEAF" jdbcType="CHAR" property="isleaf" />
+    <result column="SUBCOUNT" jdbcType="NUMERIC" property="subcount" />
+    <result column="CREATEUSERID" jdbcType="VARCHAR" property="createuserid" />
+    <result column="EMPID" jdbcType="NUMERIC" property="empid" />
+  </resultMap>
+  <select id="queryGroupPositionEmpByParentBeanByMap" parameterClass="java.util.HashMap" resultMap="queryGroupPositionEmpByParent_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，不分页-->
+    <![CDATA[
+select * from om_group where parentgroupid = #groupid#
+	]]>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryRootGroupBean" id="queryRootGroup_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="GROUPID" jdbcType="NUMERIC" property="groupid" />
+    <result column="ORGID" jdbcType="NUMERIC" property="orgid" />
+    <result column="PARENTGROUPID" jdbcType="NUMERIC" property="parentgroupid" />
+    <result column="GROUPLEVEL" jdbcType="NUMERIC" property="grouplevel" />
+    <result column="GROUPNAME" jdbcType="VARCHAR" property="groupname" />
+    <result column="GROUPDESC" jdbcType="VARCHAR" property="groupdesc" />
+    <result column="GROUPTYPE" jdbcType="VARCHAR" property="grouptype" />
+    <result column="GROUPSEQ" jdbcType="VARCHAR" property="groupseq" />
+    <result column="STARTDATE" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
+    <result column="GROUPSTATUS" jdbcType="VARCHAR" property="groupstatus" />
+    <result column="MANAGER" jdbcType="VARCHAR" property="manager" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="LASTUPDATE" jdbcType="TIMESTAMP" property="lastupdate" />
+    <result column="UPDATOR" jdbcType="NUMERIC" property="updator" />
+    <result column="ISLEAF" jdbcType="CHAR" property="isleaf" />
+    <result column="SUBCOUNT" jdbcType="NUMERIC" property="subcount" />
+    <result column="CREATEUSERID" jdbcType="VARCHAR" property="createuserid" />
+    <result column="EMPID" jdbcType="NUMERIC" property="empid" />
+  </resultMap>
+  <select id="queryRootGroupBeanByMap" parameterClass="java.util.HashMap" resultMap="queryRootGroup_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，不分页-->
+select * from Om_Group where grouptype=#grouptype# 
+	<isNotEmpty prepend="and" property="empid">
+		empid = #empid#
+	</isNotEmpty>
+  </select>
+  <resultMap class="com.gotop.tyjg.workgroup.model.QueryRootGroupTypeBean" id="queryRootGroupType_GroupmanagerBeanResult">
+    <!--Bean方式返回全表-->
+    <result column="grouptype" jdbcType="VARCHAR" property="grouptype" />
+    <result column="dictName" jdbcType="VARCHAR" property="dictName" />
+  </resultMap>
+  <select id="queryRootGroupTypeBeanByMapAndPage" parameterClass="java.util.HashMap" resultMap="queryRootGroupType_GroupmanagerBeanResult">
+    <!--通过Map方式查询bean结果，查询分页数据-->
+    <![CDATA[
+		select dictid grouptype,dictname dictName from eos_dict_entry where dicttypeid = 'ABF_GROUPTYPE'
+	]]>
+  </select>
+  
+  <resultMap class="java.util.HashMap" id="queryEmpOfOmGrouprangeResult">
+    <result column="empname" jdbcType="VARCHAR" property="empname" />
+    <result column="empid" jdbcType="VARCHAR" property="empid" />
+  </resultMap>
+  <select id="queryEmpOfOmGrouprange" parameterClass="long" resultMap="queryEmpOfOmGrouprangeResult">
+    <!--拥有该群组的人员-->
+    <![CDATA[ 
+    	select om_employee.empname,om_employee.empid
+				from OM_GROUPRANGE, om_employee
+				where OM_GROUPRANGE.Flag = '1'
+				and om_employee.empid = OM_GROUPRANGE.GRANGEID
+				and OM_GROUPRANGE.groupid = #groupid#
+	]]>
+  </select>
+  <resultMap class="java.util.HashMap" id="queryOrgOfOmGrouprangeResult">
+    <result column="orgid" jdbcType="VARCHAR" property="orgid" />
+    <result column="orgname" jdbcType="VARCHAR" property="orgname" />
+  </resultMap>
+  <select id="queryOrgOfOmGrouprange" parameterClass="long" resultMap="queryOrgOfOmGrouprangeResult">
+  	<!--拥有该群组的机构-->
+    <![CDATA[ 
+    	select om_organization.orgid,om_organization.orgname 
+			from OM_GROUPRANGE, om_organization 
+			where OM_GROUPRANGE.Flag = '2' 
+			and om_organization.orgid = OM_GROUPRANGE.GRANGEID 
+			and OM_GROUPRANGE.groupid = #groupid#
+	]]>
+  </select>
+  <resultMap class="java.util.HashMap" id="queryRoleOfOmGrouprangeResult">
+    <result column="roleid" jdbcType="VARCHAR" property="roleid" />
+    <result column="rolename" jdbcType="VARCHAR" property="rolename" />
+  </resultMap>
+  <select id="queryRoleOfOmGrouprange" parameterClass="long" resultMap="queryRoleOfOmGrouprangeResult">
+    <!--拥有该群组的角色-->
+    <![CDATA[ 
+    	select ac_role.roleid,ac_role.rolename
+			from OM_GROUPRANGE, ac_role 
+			where OM_GROUPRANGE.Flag = '3' 
+			and ac_role.roleid = OM_GROUPRANGE.GRANGEID 
+			and OM_GROUPRANGE.groupid = #groupid#
+	]]>
+  </select>
+</sqlMap>

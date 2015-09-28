@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ROLEPRIVILEGE">
+
+    <typeAlias alias="AcFuncGroup1" type="com.gotop.tyjg.roleprivilege.model.AcFuncGroup"/>
+    <typeAlias alias="AcFunction1" type="com.gotop.tyjg.roleprivilege.model.AcFunction"/>
+    <typeAlias alias="AcRoleFunc1" type="com.gotop.tyjg.roleprivilege.model.AcRoleFunc"/>
+    <typeAlias alias="AcRoleFuncLock1" type="com.gotop.tyjg.roleprivilege.model.AcRoleFuncLock"/>
+    <typeAlias alias="AcApplication1" type="com.gotop.tyjg.roleprivilege.model.AcApplication"/>
+    <typeAlias alias="AcOperatorRole" type="com.gotop.tyjg.roleprivilege.model.AcOperatorRole"/>
+    <typeAlias alias="OmPartyRole" type="com.gotop.tyjg.roleprivilege.model.OmPartyRole"/>
+    
+    
+	<resultMap class="AcFuncGroup1" id="acFuncGroupMap">
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="funcGroupId" jdbcType="string" column="FUNCGROUPID"/>
+		<result property="funcGroupName" jdbcType="string" column="FUNCGROUPNAME"/>
+		<result property="parentGroup" jdbcType="string" column="PARENTGROUP"/>
+		<result property="groupLevel" jdbcType="string" column="GROUPLEVEL"/>
+		<result property="isLock" jdbcType="string" column="ISLOCK"/>
+		<result property="type" jdbcType="string" column="TYPE"/>
+	</resultMap>
+	<resultMap class="AcFunction1" id="acFunctionMap">
+		<result property="funcCode" jdbcType="string" column="FUNCCODE"/>
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="funcName" jdbcType="string" column="FUNCNAME"/>
+		<result property="funcGroupId" jdbcType="string" column="FUNCGROUPID"/>
+		<result property="funcType" jdbcType="string" column="FUNCTYPE"/>
+	</resultMap>
+	<resultMap class="AcRoleFunc1" id="acRoleFuncMap">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="funcCode" jdbcType="string" column="FUNCCODE"/>
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="funcGroupId" jdbcType="string" column="FUNCGROUPID"/>
+		<result property="isLock" jdbcType="string" column="ISLOCK"/>
+	</resultMap>
+	<resultMap class="AcRoleFuncLock1" id="acRoleFuncLockMap">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="funcGroupId" jdbcType="string" column="FUNCGROUPID"/>
+	</resultMap>
+	<resultMap class="AcApplication1" id="acApplicationMap">
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="appCode" jdbcType="string" column="APPCODE"/>
+		<result property="appName" jdbcType="string" column="APPNAME"/>
+	</resultMap>
+	<resultMap class="AcOperatorRole" id="acOperatorRoleMap">
+	    <result property="userId" jdbcType="string" column="USERID"/>
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="operatorId" jdbcType="string" column="OPERATORID"/>
+		<result property="agency" jdbcType="string" column="AGENCY"/>
+		<result property="roleName" jdbcType="string" column="ROLENAME"/>
+		<result property="empName" jdbcType="string" column="EMPNAME"/>
+		<result property="orgName" jdbcType="string" column="ORGNAME"/>
+		<result property="orgCode" jdbcType="string" column="ORGCODE"/>
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+	</resultMap>
+	<resultMap class="AcOperatorRole" id="acOperatorRoleMap1">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="operatorId" jdbcType="string" column="OPERATORID"/>
+		<result property="empName" jdbcType="string" column="EMPNAME"/>
+	</resultMap>
+    <resultMap class="OmPartyRole" id="OmPartyRoleMap">
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="orgCode" jdbcType="string" column="ORGCODE"/>
+		<result property="orgName" jdbcType="string" column="ORGNAME"/>
+		<result property="orgType" jdbcType="string" column="ORGTYPE"/>
+		<result property="status" jdbcType="string" column="STATUS"/>
+		<result property="area" jdbcType="string" column="AREA"/>
+	</resultMap>
+	<resultMap class="OmPartyRole" id="OmPartyRoleMap1">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+        <result property="partyType" jdbcType="string" column="PARTYTYPE"/>
+        <result property="partyId" jdbcType="string" column="ORGID"/>
+        <result property="orgCode" jdbcType="string" column="ORGCODE"/>
+        <result property="orgName" jdbcType="string" column="ORGNAME"/>
+        <result property="area" jdbcType="string" column="AREA"/>
+        <result property="orgType" jdbcType="string" column="ORGTYPE"/>
+        <result property="status" jdbcType="string" column="STATUS"/>
+	</resultMap>
+	
+	<!-- 新增角色机构关系 -->
+	<insert id="insert_ompartyrole" parameterClass="com.gotop.tyjg.roleprivilege.model.OmPartyRole">
+        insert into om_partyrole 
+            (roleid, partytype, partyid)
+        values
+            (#roleId#, #partyType#, #partyId#)
+	</insert>
+	
+	<!-- 删除角色机构关系 -->
+	<delete id="delete_ompartyrole" parameterClass="com.gotop.tyjg.roleprivilege.model.OmPartyRole">
+        delete from om_partyrole t 
+        where 1=1
+            <isNotNull property="roleId">
+            and t.roleid = #roleId# 
+            </isNotNull>
+            <isNotNull property="partyType">
+            and t.partytype = #partyType#
+            </isNotNull>
+            <isNotNull property="partyId">
+            and t.partyid = #partyId#
+            </isNotNull>
+	</delete>
+	<!-- 查询角色机构关系的机构列表 -->
+    <select id="query_ompartyrole_count" parameterClass="com.gotop.tyjg.roleprivilege.model.OmPartyRole"  resultClass="java.lang.Integer">
+		select count(1) from om_partyrole where partytype = 'organization'
+            <isNotNull property="roleId">
+                and roleid = #roleId:VARCHAR#
+            </isNotNull>  
+	 		 <isNotEmpty prepend="" property="orgId">
+				and partyid = #orgId:VARCHAR#
+			 </isNotEmpty>
+	</select>
+	<select id="query_ompartyrole_list" parameterClass="com.gotop.tyjg.roleprivilege.model.OmPartyRole"  resultMap="OmPartyRoleMap1">
+        select
+            t.roleid,
+            t.partytype,
+            t1.orgid,
+            t1.orgcode,
+            t1.orgname,
+            t1.area,
+            t1.orgtype,
+            t1.status
+        from om_partyrole t,om_organization t1
+        where t.partyid = t1.orgid
+        	and t.partytype = 'organization'
+            <isNotNull property="roleId">
+                and t.roleid = #roleId:VARCHAR#
+            </isNotNull>  
+	 		 <isNotEmpty prepend="" property="orgId">
+				and t.partyid = #orgId:VARCHAR#
+			 </isNotEmpty>
+        order by t1.orgcode
+	</select>
+	<!-- 查询没有设置角色机构关系的机构列表（包括实体机构和部门） -->
+	<select id="query_ompartyrolenot_count" parameterClass="com.gotop.tyjg.roleprivilege.model.OmPartyRole"  resultClass="java.lang.Integer">
+     select
+          count(1)
+    from om_organization 
+    where om_organization.orgid not in (select partyid from om_partyrole where partytype='organization' and roleid=#roleId#)
+    <isNotNull property="orgName">
+          and om_organization.orgname like '%'||#orgName#||'%'
+    </isNotNull>  
+    <isNotNull property="orgCode">
+          and om_organization.orgcode like '%'||#orgCode#||'%'
+    </isNotNull>  
+     <isNotNull property="orgType">
+           and (om_organization.orgtype like '%'||#orgType#||'%' or om_organization.orgtype is null or om_organization.orgtype='')
+    </isNotNull>  
+     <isNotNull property="auto">
+         <![CDATA[
+           and om_organization.orgdegree <= #auto#
+          ]]>
+    </isNotNull>  
+     <isNotNull property="jgsx">
+           and om_organization.jgsx = #jgsx#
+    </isNotNull>  
+    <isNotNull property="orgId">
+           and om_organization.orgseq like #orgId#||'%'
+    </isNotNull>  
+    order by om_organization.orgcode
+	</select>
+	
+	<select id="query_ompartyrolenot_list" parameterClass="com.gotop.tyjg.roleprivilege.model.OmPartyRole"  resultMap="OmPartyRoleMap">
+     select
+          om_organization.orgid,
+          om_organization.orgcode,
+          om_organization.orgname,
+          om_organization.orgtype,
+          om_organization.status,
+          om_organization.area 
+    from om_organization 
+    where om_organization.orgid not in (select partyid from om_partyrole where partytype='organization' and roleid=#roleId#)
+    <isNotNull property="orgName">
+          and om_organization.orgname like '%'||#orgName#||'%'
+    </isNotNull>  
+    <isNotNull property="orgCode">
+          and om_organization.orgcode like '%'||#orgCode#||'%'
+    </isNotNull>  
+     <isNotNull property="orgType">
+           and (om_organization.orgtype like '%'||#orgType#||'%' or om_organization.orgtype is null or om_organization.orgtype='')
+    </isNotNull>  
+     <isNotNull property="auto">
+         <![CDATA[
+           and om_organization.orgdegree <= #auto#
+          ]]>
+    </isNotNull>  
+    <isNotNull property="orgId">
+           and om_organization.orgseq like #orgId#||'%'
+    </isNotNull>
+     <isNotNull property="jgsx">
+           and om_organization.jgsx = #jgsx#
+    </isNotNull>  
+    order by om_organization.orgcode
+	</select>
+	<!-- 查询已选人员角色列表 -->
+	<select id="query_acoperatorrole_emp" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole"  resultMap="acOperatorRoleMap1">
+        select
+            t.roleid,
+            t.operatorid,
+            t3.empname
+        from ac_operatorrole t
+            left join om_employee t3 on t.operatorid = t3.empid
+        where 1=1
+            and t.roleid = #roleId:VARCHAR#
+        order by t.operatorid
+	</select>
+<!-- 查询人员角色列表 -->
+	<select id="query_acoperatorrole_list1" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole"  resultMap="acOperatorRoleMap">
+        select
+            t.roleid,
+            t.operatorid,
+            t.auth,
+            t.agency,
+            t1.rolename,
+            t3.empname,
+            t4.orgname,
+            t4.orgcode,
+            t4.orgid
+        from ac_operatorrole t
+            left join ac_role t1 on t.roleid = t1.roleid
+            left join om_emporg t2 on t.operatorid = t2.empid
+            left join om_employee t3 on t.operatorid = t3.empid
+            left join om_organization t4 on t2.orgid = t4.orgid
+        where 1=1
+            and t.roleid = #roleId:VARCHAR#
+        order by t4.orgid,t.operatorid 
+	</select>
+	<!-- 查询角色拥有的人员列表 -->
+	<select id="query_acoperatorrole_list_br" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole"  resultClass="java.util.HashMap">
+        select t1.operatorId "operatorId"
+		  from ac_operatorrole t1,om_emporg t2
+	    where t1.roleid = #roleId:VARCHAR#
+	      and t1.operatorid = t2.empid
+ 		 <isNotEmpty prepend="" property="orgId">
+			and t2.orgid = #orgId:VARCHAR#
+		 </isNotEmpty>
+	    order by t1.rowid desc
+	</select>
+	<select id="query_acoperatorrole_list_ls" parameterClass="java.util.HashMap" resultMap="acOperatorRoleMap">
+	  <![CDATA[
+			select t4.operatorId,t4.userid, t4.empname, t5.orgname, t5.orgcode, t5.orgid,'' roleId,'' agency, '' roleName
+			  from om_organization t5, om_employee t4, om_emporg t3
+			 where t5.orgid = t3.orgid
+			   and t4.empid = t3.empid
+			   and t3.ismain = 'y'
+			   and t4.empid in 
+	  ]]> 
+		 <iterate property="empIds" conjunction="," open="(" close=")">
+              #empIds[]# 
+          </iterate>          
+		<![CDATA[ 
+		    order by t5.orgid desc,t4.operatorid
+		]]> 
+	</select>
+	<select id="query_acoperatorrole_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole"  resultMap="acOperatorRoleMap">
+        select
+            t.userid,
+            t1.roleid,
+            t1.operatorid,
+            t1.auth,
+            t1.agency,
+            t2.rolename,
+            t4.empname,
+            t5.orgname,
+            t5.orgcode,
+            t5.orgid
+        from ac_operator t
+            left join ac_operatorrole t1 on t.operatorid = t1.operatorid
+            left join ac_role t2 on t1.roleid = t2.roleid
+            left join om_emporg t3 on t.operatorid = t3.empid
+            left join om_employee t4 on t.operatorid = t4.empid
+            left join om_organization t5 on t3.orgid = t5.orgid
+        where t1.roleid = #roleId:VARCHAR#
+        order by t5.orgid,t1.operatorid
+	</select>
+<!-- 查询人员角色列表统计 -->
+	<select id="query_acoperatorrole_count" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole"  resultClass="java.lang.Integer">
+        select count(*) from ac_operatorrole t1,om_emporg t2 where t1.roleid = #roleId:VARCHAR#
+        													   and t1.operatorid = t2.empid
+        													 <isNotEmpty prepend="" property="orgId">
+        													   and t2.orgid = #orgId#
+        													 </isNotEmpty>
+	</select>
+	
+<!-- 查询应用 -->
+	<select id="query_acapplication_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcApplication"  resultMap="acApplicationMap">
+        select 
+            t.appid,
+            t.appcode,
+            t.appname
+        from ac_application t 
+        where 1=1
+            and t.appid = 121
+	</select>
+<!-- 查询角色功能组对应关系列表 -->
+	<select id="query_acrolefunclock_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRoleFuncLock"  resultMap="acRoleFuncLockMap">
+        select 
+            t.roleid,
+            t.appid,
+            t.funcgroupid
+        from ac_rolefunclock t 
+        where 1=1
+            and t.roleid = #roleId:VARCHAR#
+        order by t.funcgroupid
+	</select>
+    
+<!-- 查询角色功能对应关系列表 -->
+	<select id="query_acrolefunc_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRoleFunc"  resultMap="acRoleFuncMap">
+        select
+            t.roleid,
+            t.funccode,
+            t.appid,
+            t.funcgroupid,
+            t.islock 
+        from ac_rolefunc t 
+        where t.type = 0
+            and t.roleid = #roleId:VARCHAR#
+        order by t.funcgroupid, t.funccode
+	</select>
+	<select id="query_acrolefuncgroup_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRoleFunc"  resultMap="acRoleFuncMap">
+        select
+            t.roleid,
+            t.funccode,
+            t.appid,
+            t.funcgroupid,
+            t.islock 
+        from ac_rolefunc t 
+        where t.type = 1
+            and t.roleid = #roleId:VARCHAR#
+        order by t.funcgroupid, t.funccode
+	</select>
+<!-- 查询功能信息列表 -->
+	<select id="query_acfunction_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcFunction"  resultMap="acFunctionMap">
+        select
+            t.funccode,
+            t.funcname,
+            t.funcgroupid,
+            t1.appid,
+            t.functype
+        from ac_function t
+            left join ac_funcgroup t1 on t1.funcgroupid = t.funcgroupid
+        where 1=1
+        order by t.funcgroupid , t.funcdesc
+	</select>
+<!-- 查询顶级功能组列表 -->
+	<select id="query_acfuncgroup_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcFuncGroup" resultMap="acFuncGroupMap">
+        select
+            t.funcgroupid,
+            t.appid,
+            t.funcgroupname,
+            t.parentgroup,
+            t.grouplevel,
+            t.islock,
+            t.type
+        from ac_funcgroup t
+        where 1=1
+            and t.grouplevel = '1'
+        order by t.funcgroupid
+	</select>
+<!-- 查询子功能组列表 -->
+	<select id="query_acfuncgroup_sublist" parameterClass="com.gotop.tyjg.roleprivilege.model.AcFuncGroup" resultMap="acFuncGroupMap">
+        select
+            t.funcgroupid,
+            t.appid,
+            t.funcgroupname,
+            t.parentgroup,
+            t.grouplevel,
+            t.islock,
+            t.type
+        from ac_funcgroup t
+        where 1=1
+            and t.grouplevel not in('1')
+        order by t.funcgroupid
+	</select>
+<!-- 查询角色app -->
+	<select id="query_roletype_byoperid" parameterClass="java.lang.String" resultClass="java.lang.String">
+        select
+            t.roletype as "roleType"
+        from ac_role t, ac_operatorrole t1
+        where 1=1
+            and t.roleid = t1.roleid
+            and t1.operatorid = #operatorId:VARCHAR#
+	</select>
+<!-- 查询角色列表 -->
+	<select id="query_acrole_list" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole" resultClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        select
+            t.roleid as "roleId",
+            t.rolename as "roleName",
+            t.roletype as "roleType",
+            t.roledesc as "roleDesc",
+            t.auto as "auto",
+            t.roletypefield as "roleTypeField"
+        from ac_role t 
+        where 1=1
+            <isNotNull prepend="" property="roleName">
+            and t.rolename like '%'||#roleName:VARCHAR#||'%'
+            </isNotNull>
+            <isNotNull prepend="" property="roleType">
+            and t.roletype = #roleType:VARCHAR#
+            </isNotNull>
+	</select>
+<!-- 查询角色列表用于校验 -->
+	<select id="query_acrole_list1" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole" resultClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        select
+            t.roleid as "roleId",
+            t.rolename as "roleName",
+            t.roletype as "roleType",
+            t.roledesc as "roleDesc",
+            t.auto as "auto",
+            t.roletypefield as "roleTypeField"
+        from ac_role t 
+        where 1=1
+            <isNotNull prepend="" property="roleId">
+            and t.roleid = #roleId:VARCHAR#
+            </isNotNull>
+            <isNotNull prepend="" property="roleType">
+            and t.roletype = #roleType:VARCHAR#
+            </isNotNull>
+	</select>
+<!-- 查询角色列表总数 -->
+	<select id="query_acrole_count" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole" resultClass="java.lang.Integer">
+        select
+            count(1)
+        from ac_role t 
+        where 1=1
+            <isNotNull prepend="" property="roleName">
+            and t.rolename like '%'||#roleName:VARCHAR#||'%'
+            </isNotNull>
+            <isNotNull prepend="" property="roleType">
+            and t.roletype = #roleType:VARCHAR#
+            </isNotNull>
+	</select>
+<!-- 新增角色 -->
+	<insert id="insert_acrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        insert into ac_role
+            (roleid, rolename, roletype, roledesc, appid, auto, roletypefield)
+        values
+            (#roleId:VARCHAR#,#roleName:VARCHAR#,#roleType:VARCHAR#,#roleDesc:VARCHAR#,#appId:VARCHAR#,#auto:VARCHAR#,#roleTypeField:VARCHAR#)
+	</insert>
+<!-- 新增人员角色表 -->
+	<insert id="insert_acoperatorrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole">
+        insert into ac_operatorrole
+            (operatorid, roleid, auth, agency)
+        values
+            (#operatorId:VARCHAR#,#roleId:VARCHAR#,#auth:VARCHAR#,#agency#)
+	</insert>
+	<select id="query_acoperatorrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole" resultClass="java.lang.Integer">
+        select count(1) from ac_operatorrole where operatorid = #operatorId:VARCHAR# and roleid = #roleId:VARCHAR#
+	</select>
+<!-- 删除角色 -->
+	<delete id="delete_acrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_role t
+        where t.roleid = #roleId:VARCHAR#
+            and t.rolename = #roleName:VARCHAR#
+	</delete>
+<!-- 删除人员角色关系 -->
+	<delete id="delete_acoperatorrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcOperatorRole">
+        delete from ac_operatorrole t
+        where 1=1
+        <isNotNull prepend="" property="operatorId">
+            and t.operatorid = #operatorId:VARCHAR#
+        </isNotNull>
+        <isNotNull prepend="" property="roleId">
+            and t.roleid = #roleId:VARCHAR#
+        </isNotNull>
+        <isNotNull prepend="" property="agency">
+            and t.agency = #agency:VARCHAR#
+        </isNotNull>
+	</delete>
+<!-- 删除角色组织对应关系（联级授权） -->
+	<delete id="delete_acrolefunclock" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_rolefunclock t where t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 删除角色具有的数据权限 -->
+	<delete id="delete_acroledatapriv" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_roledatapriv t where t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 删除角色与实体字段的关系 -->
+	<delete id="delete_acentityfieldrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_entityfieldrole t where t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 删除角色与实体关系 -->
+	<delete id="delete_acentityrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_entityrole t where t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 删除人员角色 -->
+	<delete id="delete_acoperatorrole1" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_operatorrole t
+        where 1=1
+            and t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 删除角色与功能的关系 -->
+	<delete id="delete_acfunc" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_rolefunc t where t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 删除角色与组织对象的关系 -->
+	<delete id="delete_acrolefunc" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_rolefunc t where t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 删除角色 -->
+	<delete id="delete_acrole1" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+        delete from ac_role t where t.roleid = #roleId:VARCHAR#
+	</delete>
+<!-- 修改角色 -->
+	<update id="update_acrole" parameterClass="com.gotop.tyjg.roleprivilege.model.AcRole">
+	    update 
+	        ac_role t
+	    set
+	        t.rolename = #roleName:VARCHAR#,
+	        t.roletype = #roleType:VARCHAR#,
+	        t.auto = #auto:VARCHAR#
+	    where 1=1
+	        and t.roleid = #roleId:VARCHAR#
+	</update>
+<!-- 新增角色功能关系 -->
+	<insert id="insert_acrolefunc" parameterClass="java.util.HashMap">
+        insert into ac_rolefunc(roleid, funccode, appid, funcgroupid, islock)
+        values(#roleId:VARCHAR#,#funcCode:VARCHAR#,#appId:VARCHAR#,#funcGroupId:VARCHAR#,#isLock:VARCHAR#)
+	</insert>
+	<insert id="insert_acroleFuncGroup" parameterClass="java.util.HashMap">
+        insert into ac_rolefunc(roleid, funccode, appid, funcgroupid, islock,TYPE)
+        values(#roleId:VARCHAR#,#funcGroupId:VARCHAR#,#appId:VARCHAR#,#funcGroupId:VARCHAR#,#isLock:VARCHAR#,1)
+	</insert>
+	<!-- 新增角色功能组关系 -->
+    <insert id="insert_acrolefunclock" parameterClass="java.util.HashMap">
+        insert into ac_rolefunclock(roleid, appid, islock, funccode, funcgroupid)
+        values(#roleId:VARCHAR#,#appId#,#isLock:VARCHAR#,#funcCode:VARCHAR#,#funcGroupId#)
+	</insert>
+</sqlMap>

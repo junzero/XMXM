@@ -1,0 +1,77 @@
+
+#main_search {
+	width: 100%; margin-bottom:5px
+}
+#search_field {
+	border:1px solid #ccc; padding:2px; font-size:12px;
+}
+.search_title {
+	color: #000066; font-weight:bold;
+}
+
+#search_tip {
+	padding-right: 7px; background: url(../images/icon_detail_arrow.gif) no-repeat right bottom; color: #ccc
+}
+
+#search_table {
+	margin-top:4px; width:100%; background:#f0f0f0;
+}
+
+.search_list_table {
+	width: 100%; height: 100%; font-size:12px; font-size: 12px
+}
+
+.search_td_bg {
+	text-align: right; width: 100px; padding-right: 5px; background: #f0f0f6; height: 100%; vertical-align: top; border-right: #fff 1px solid; padding-top: 5px; white-space£ºnowrap;
+}
+
+.search_td_bg_value {
+	text-align: right; width: 40px; color: #7e7f81; vertical-align: top; padding-top: 5px
+}
+
+.search_td_value {
+	padding-left: 3px; vertical-align: top; 
+
+}
+
+.search_td_bg_value1 {
+	position: absolute; text-align: center; width: 14px; color: #7e7f81; margin-left: -16px; vertical-align: top;  padding-top: 5px
+}
+
+.input_text_search {
+	border:1px solid #ccc; line-height: 20px; width: 90%; height: 20px;
+}
+
+.input_text_searchDate {
+	border:1px solid #ccc; line-height: 20px; width: 30%; height: 20px;
+}
+
+.input_select_search {
+	width: 90%;
+}
+.input_text_search_edit {
+	border-bottom: 1px solid #ccc; line-height: 20px; width: 120px; height: 20px; 
+}
+.input_text_search_read {
+	border:1px solid #ccc; line-height: 20px; width: 118px; background: #f0f0f6; height: 20px; color: #a0a0a0; 
+}
+.trig_icon_search {
+	position: absolute; margin-top: 3px; margin-left: -20px; cursor: pointer
+}
+#list_container {
+	width: 100%; border:1px solid #ccc;
+}
+.align_left {
+	text-align: left; color: #808080
+}
+.align_right {
+	text-align: right; color: #808080
+}
+.align_center {
+	text-align: center; color: #808080
+}
+.align_center_title {
+	text-align: center; padding:0 3px; color:#000;
+}
+
+

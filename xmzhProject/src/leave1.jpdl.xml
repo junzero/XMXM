@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process id="leave" name="leave" xmlns="http://jbpm.org/4.4/jpdl">
+
+	<start g="64,159,48,48" name="start1">
+
+		<transition to="申请请假"/>
+
+	</start>
+
+	<task assignee="#{user}" form="apply_do.jsp" g="233,159,92,52" name="申请请假">
+
+		<transition to="教师审批"/>
+
+	</task>
+
+	<task assignee="1" form="teacher_do.jsp" g="447,158,92,52" name="教师审批">
+		<!-- 进入活动的事件 -->
+		<on event="start">
+			<event-listener class="com.gotop.jbpm.service.EventListenerImpl"/>
+		</on>
+		<!--离开活动的事件 -->
+		<on event="end">
+			<event-listener class="com.gotop.jbpm.service.EventListenerImpl"/>
+		</on>
+      <transition g="491,97;426,97;278,97:-69,-22" name="不同意" to="申请请假"/>
+      <transition g="-50,-22" name="同意" to="end1"/>
+
+	</task>
+
+	<end g="718,161,48,48" name="end1">
+                     <!-- 结束活动中只有进入活动的事件 -->
+		<on event="start">
+			<event-listener class="com.gotop.jbpm.service.EventListenerImpl"/>
+		</on>
+	</end>
+
+</process>

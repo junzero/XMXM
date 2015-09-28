@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL MAP Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+  <settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="32" maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+
+	<typeHandler jdbcType="BLOB" javaType="[B"   
+	        callback="org.springframework.orm.ibatis.support.BlobByteArrayTypeHandler" />   
+	<typeHandler jdbcType="CLOB" javaType="java.lang.String"   
+					callback="org.springframework.orm.ibatis.support.ClobStringTypeHandler" />
+
+  <sqlMap resource="com/gotop/tyjg/stable/map/OM_GROUP_SqlMap.xml" />
+
+  <sqlMap resource="com/gotop/tyjg/stable/map/OM_GROUPMEMBER_SqlMap.xml" />
+  
+  <sqlMap resource="com/gotop/tyjg/stable/map/OM_EMPGROUP_SqlMap.xml" />
+  
+  <sqlMap resource="com/gotop/tyjg/stable/map/OM_GROUPRANGE_SqlMap.xml" />
+  
+  <sqlMap resource="com/gotop/tyjg/stable/map/AT_FILEUPLOAD_SqlMap.xml" />
+  </sqlMapConfig>

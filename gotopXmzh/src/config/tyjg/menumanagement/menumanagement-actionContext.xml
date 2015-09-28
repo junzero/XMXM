@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean class="com.gotop.tyjg.menumanagement.model.AcApplication" id="acApplication" singleton="false"></bean>
+	<bean class="com.gotop.tyjg.menumanagement.model.AcFunctionGroup" id="acFunctionGroup" singleton="false"></bean>
+	<bean class="com.gotop.tyjg.menumanagement.model.AcFunction" id="acFunction" singleton="false"></bean>
+	<bean class="com.gotop.tyjg.menumanagement.action.MenuManagementAction" id="menuManagementAction" name="menuManagementAction" singleton="false">
+		<property name="menuService" ref="menuService" />
+		<property name="acApplication" ref="acApplication" />
+		<property name="acFunctionGroup" ref="acFunctionGroup" />
+		<property name="acFunction" ref="acFunction" />
+	</bean>
+	</beans>

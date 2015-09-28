@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="dataApply" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="48,114,48,48" name="start1">
+      <transition to="发起申请"/>
+   </start>
+   <task assignee="#{user}" form="/dataApply/tApplyDataAction_getApplyDataforApply.action" g="149,113,108,52" name="发起申请">
+      <transition g="-14,-25" name="提交" to="部门领导审核"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforApprove1.action" g="313,111,115,52" name="部门领导审核">
+      <transition g="-17,-28" name="同意" to="提交申请人"/>
+      <transition g="286,66:-11,-22" name="退回" to="发起申请"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforShow.action" g="479,111,104,52" name="提交申请人">
+      <transition g="-16,-21" name="提交" to="风险可行性分析"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforRisk.action" g="632,113,110,52" name="风险可行性分析">
+      <transition g="4,-8" name="提交" to="风险管理部部门领导审核"/>
+      <transition g="449,229:-12,-26" name="退回" to="发起申请"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforApprove2.action" g="611,206,152,52" name="风险管理部部门领导审核">
+      <transition g="5,-4" name="同意" to="申请人处理"/>
+      <transition g="737,185:4,-10" name="退回" to="风险可行性分析"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforShow.action" g="640,289,92,52" name="申请人处理">
+      <transition g="-5,-22" name="提交" to="提取可行性分析"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforFetch.action" g="147,287,108,52" name="提取可行性分析">
+      <transition g="2,-14" name="提交领导审核" to="信息科技部部门领导审核"/>
+      <transition g="-6,-21" name="提交" to="申请处理"/>
+      <transition g="5,-5" name="退回" to="发起申请"/>
+      <transition g="-6,-21" name="结束" to="结束"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforApprove3.action" g="330,372,155,52" name="信息科技部部门领导审核">
+      <transition g="200,393:21,5" name="提交" to="提取可行性分析"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforApprove4.action" g="5,393,113,52" name="分管行领导审核">
+      <transition g="103,366:1,-8" name="批示" to="申请处理"/>
+   </task>
+   <task form="/dataApply/tApplyDataAction_getApplyDataforShow.action" g="14,284,92,52" name="申请处理">
+      <transition g="60,375:-32,-21" name="提交" to="分管行领导审核"/>
+      <transition name="提交分析员" to="提取可行性分析" g="129,264:-29,-21"/>
+   </task>
+   <end g="319,216,48,48" name="结束"/>
+</process>

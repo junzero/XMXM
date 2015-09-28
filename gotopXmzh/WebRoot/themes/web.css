@@ -1,0 +1,180 @@
+/***********************************************
+ * Copyright 2007, botong. All rights reserved.
+ * autor:
+ * Design:
+ * time:2007-07
+ ***********************************************/
+ /*----public---*/ 
+*{ margin:0px; padding:0px; font-size:12px;}
+.CL-red{ font-size:12px; color:red;}
+img{ border:none;}
+/*-----serch----------*/
+#search{ top:29px; left:0px; position:absolute; padding:4px 0px; text-align:center;z-index:98; width:100%; color:red;background-color:#F6F9FF;}
+#search .text .select{ 
+    margin-left:4px;
+    width:120px;  
+    border-top: 2px solid #7B8BAB;
+	border-left:2px solid #7B8BAB;
+	border-right:1px solid #7E8DAD;
+    border-buttom:1px solid #7E8DAD;}
+/*--------worn----------- */
+#ts[id] {display: table; position: static;}
+#ts {height: 100%; overflow: hidden; position: relative;width: 100%; }
+#ts_bar{background:url(/image/ts_bg.gif) left top; color:#2B72B0; height:24px; line-height:24px;}
+#ts_bar span{ background:url(/images/tsico.gif) no-repeat center center; width:27px; float:left;}
+#ts_middle[id]{display: table-cell; vertical-align: middle; position: static;}
+#ts_middle {position: absolute; top: 50%;text-align:center;} /* for explorer only*/
+#ts_content{ border:1px #E7F0F9 solid; color:#055698; background-color:#fff; padding:30px; line-height:22px;}
+#ts_content img{ background:url(/image/ok.gif) no-repeat; display:block; float:left;margin-right:10px;}
+#ts_foot{ padding:5px 0px; text-align:center;border:1px #fff solid; background-color:#EEF1F6;}
+*+html #ts[id]{position: relative;}
+*+html #ts_middle[id]{position: absolute; }
+#ts_inner {position: relative; top: -50%;width: 400px;margin: 0 auto;text-align:left;}/*for explorer only */
+div.greenBorder {border: 1px solid #8DA0AF; background-color: #FFF;}
+/*----- form--------- */
+.clear{ clear:both;}
+.button{
+    margin-left:2px;
+    padding:1px 2px;
+    border: #8093B1 1px solid;
+	font-size: 12px; 
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+    StartColorStr=#ffffff, EndColorStr=#E1E7EE;
+	cursor: pointer; 
+	height:19px;  
+	width:auto;
+}
+fieldset{ 
+    margin:20px 0px; 
+	padding: 12px;
+	text-align:left;
+	border : 1px solid #8997AB ;
+	background-color:#FBFCFF}
+.required{ font-size:12px; color:#FF6600;}
+.feedback {
+	position: absolute;
+	margin-left:132px;
+	left: 200px;
+        right: 0;
+	font-weight: bold;
+	color:red;
+	padding-left: 18px;
+	text-align:left;
+	background: url(/image/error.png) no-repeat left top;
+}
+* html .feedback{
+  width: 120px;
+}
+.text,textarea{
+    margin:0 1px;
+    border-top: 2px solid #7B8BAB;
+	border-left:2px solid #7B8BAB;
+	border-right:1px solid #7E8DAD;
+    border-buttom:1px solid #7E8DAD;
+ }
+/*----star top---*/
+#banner{ 
+ width:100%; 
+ height:61px; 
+ background:url(/images/topbg1.gif) repeat;
+ overflow:hidden;
+}
+#banlef{ width:205px; height:61px; float:right; background:url(/images/topbg2.gif) no-repeat;}
+#banlef ul{ list-style-type:none; margin:20px 5px;}
+#banlef li{ display:inline;}
+#nav{ 
+ width:100%; 
+ height:30px; 
+ line-height:30px;
+ background:url(../image/libg.gif) repeat; list-style-type:none;
+ clear:both;
+ overflow:hidden;
+ }
+#nav .firstli{width:1px; height:30px; background:url(../image/libg.gif) no-repeat left 0px;}
+#nav .explain{width:auto;height:27px; padding:0px 10px; color:#FFFFCC;line-height:27px; background:none;}
+#nav li{ 
+ float:left;
+ width:70px; 
+ height:30px;
+ line-height:30px;
+ font-family:"宋体"; 
+ font-size:12px; 
+ text-align:center; 
+ color:#fff; 
+ background:url(../image/libg.gif) no-repeat left 0px;
+}
+#nav li a{ display:block;text-decoration:none;color:#fff; background:url(../image/libg.gif) no-repeat left 0px;}
+#nav li a:hover{ display:block;text-decoration:none;color:#fff; background:url(../image/libg.gif) no-repeat left -30px;}
+/*----end top-----*/
+/*----star right-----*/
+#rightout{ width:100%;height:100%; right:-1px;position:absolute;top:0;bottom:-1px;left:0;}
+#Rmenu{ width:100%; height:29px; position: absolute; background:url(/images/rightbg.gif) repeat;z-index:99;}
+#Rmenu .menu{ float:right; width:auto;}
+#Rmenu ul{ list-style-type:none;}
+#Rmenu li{ 
+ float:left; 
+ display:block; 
+ width:auto;
+ padding:2px;
+ margin-right:6px;
+ text-align:center; 
+}
+#Rcontent{ height:100%; width:100%; position: absolute;overflow:auto;}
+#contentout{ padding:30px 0px 0px 0px; text-align:center;}
+/*------star left------*/
+.leftbg{ background:url(/images/leftbg.gif) repeat-y right top;}
+.leftcontent{ padding:5px; height:auto;}
+/*------middle--------*/
+.middlebg{ background-color:#8190A5;}
+#arrow {
+position:absolute;
+left:50%;
+top:50%;
+width:10px;
+height:30px;
+margin-top:-15px;
+margin-left:-5px;
+}
+/*----table style-------*/
+table caption{ height:30px; line-height:30px; padding:5px 0px;font-size:14px; color:#304256; font-weight:bold;}
+#normal_tb{ border-collapse:collapse;border:solid #8997AB 1px;border-right:none;border-bottom:none;}
+#normal_tb th{ 
+ font-size:12px; 
+ color:#383F63; 
+ border:solid #8997AB 1px;
+ border-top:none;
+ border-left:none; 
+ background-color:#F1F4FA;}
+#normal_tb td{ 
+ font-size:12px; 
+ color:#000; 
+ border:solid #8997AB 1px;
+ border-top:none;
+ border-left:none; 
+ background-color:#FBFCFF;}
+.td_TL{ 
+ border:1px #8997AB solid; 
+ border-right:none; 
+ border-bottom:none; 
+ border-collapse:collapse;}
+.td_th{ 
+ font-size:12px;
+ color:#383F63; 
+ border:1px #8997AB solid; 
+ border-top:none;
+ border-left:none; 
+ background-color:#F1F4FA;}
+.td_RB{ 
+ font-size:12px;
+ color:#000; 
+ border:1px #8997AB solid; 
+ border-top:none; 
+ border-left:none;
+ background-color:#FBFCFF; }
+/*按钮样式*/
+.WinButton { 
+    padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; 
+	behavior:url(/themes/WinButton.htc);
+	cursor:Hand;
+}  
+

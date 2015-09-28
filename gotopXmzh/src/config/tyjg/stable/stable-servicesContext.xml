@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.tyjg.stable.service.impl.OmGroupService" id="omGroupService">
+    <property name="omGroupDAO" ref="omGroupDAO" />
+  </bean>
+
+  <bean class="com.gotop.tyjg.stable.service.impl.OmGroupmemberService" id="omGroupmemberService">
+    <property name="omGroupmemberDAO" ref="omGroupmemberDAO" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.service.impl.OmEmpgroupService" id="omEmpgroupService">
+    <property name="omEmpgroupDAO" ref="omEmpgroupDAO" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.service.impl.OmGrouprangeService" id="omGrouprangeService">
+    <property name="omGrouprangeDAO" ref="omGrouprangeDAO" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.service.impl.AtFileuploadService" id="atFileuploadService">
+    <property name="atFileuploadDAO" ref="atFileuploadDAO" />
+  </bean>
+  
+<!-- 
+	<bean class="com.gotop.tyjg.testwsdl.service.impl.AuthenticationService" id="authenticationService">
+	</bean>
+	<bean id="authenticationServiceWS" parent="baseWss4jWebService">
+	   <property name="serviceBean" ref="authenticationService" />
+	   <property name="serviceClass" value="com.gotop.tyjg.testwsdl.service.IAuthenticationService" />
+	   <property name="name" value="authenticationService.ws"></property>
+	</bean>
+ -->
+  </beans>

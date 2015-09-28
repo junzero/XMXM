@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts >
+  <package name="dataApply" namespace="/dataApply" extends="default" >
+    <action name="tApplyDataAction_*" class="tApplyDataAction" method="{1}" >
+      <result name="viewlist" >
+        /jsp/dataApply/tApplyDataDatacell.jsp
+      </result>
+      <result name="getOldApply">
+      	/jsp/dataApply/dataApply_add.jsp
+      </result>
+      <result name="approve1">
+      	/jsp/dataApply/dataApply_approve1.jsp
+      </result>
+      <result name="approve2">
+      	/jsp/dataApply/dataApply_approve2.jsp
+      </result>
+      <result name="approve3">
+      	/jsp/dataApply/dataApply_approve3.jsp
+      </result>
+      <result name="approve4">
+      	/jsp/dataApply/dataApply_approve4.jsp
+      </result>
+      <result name="show">
+      	/jsp/dataApply/dataApply_show.jsp
+      </result>
+      <result name="analysis">
+      	/jsp/dataApply/dataApply_analysis.jsp
+      </result>
+      <result name="list">
+      	/jsp/dataApply/dataApply_list.jsp
+      </result>
+      <result name="downexl">
+      	/jsp/dataApply/dataApply_downexl.jsp
+      </result>
+    </action>
+  </package>
+</struts>

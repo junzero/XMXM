@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+     订单明细.产品ID as 订单明细_产品ID,
+     订单.货主城市 AS 订单_货主城市,
+     sum(订单明细.单价*订单明细.数量*(1-订单明细.折扣)) as 营业额,
+     sum(订单明细.进价*订单明细.数量) as 成本
+FROM
+     订单 订单 INNER JOIN 订单明细 订单明细 ON 订单.订单ID = 订单明细.订单ID
+WHERE 订单.货主城市='北京' or 订单.货主城市='成都' or 订单.货主城市='大连' or 订单.货主城市='昆明' or 订单.货主城市='南京' or 订单.货主城市='南昌' or 订单.货主城市='上海' or 订单.货主城市='深圳'
+group by 订单.货主城市,订单明细.产品ID]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+     产品.产品名称 AS 产品_产品名称,
+     产品.产品ID AS 产品_产品ID,
+     类别.类别名称 AS 类别_类别名称
+FROM
+     产品 产品 INNER JOIN 类别 类别 ON 产品.类别ID = 类别.类别ID
+     where 类别.类别ID<=3]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="11.653818897637796" height="11.693000000000001"/>
+<Margin top="0.27" left="0.7500000000000002" bottom="0.27" right="0.7500000000000002"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,19,21,21,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[200,200,200,200,200,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="5" rs="15">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="true"/>
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O>
+<![CDATA[按分公司统计]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.CustomPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.CustomAttr">
+<CustomAttr>
+<SeriesAttr/>
+<customattr renderer="1" axisPosition="LEFT"/>
+</CustomAttr>
+</SeriesAttr>
+<SeriesAttrMap>
+<Entry index="0">
+<SeriesAttr class="com.fr.chart.plot.CustomAttr">
+<CustomAttr>
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrBackground">
+<SeriesAttrBackground>
+<Background name="ColorBackground" color="-3935233"/>
+</SeriesAttrBackground>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+<customattr renderer="1" axisPosition="LEFT"/>
+</CustomAttr>
+</SeriesAttr>
+</Entry>
+<Entry index="1">
+<SeriesAttr class="com.fr.chart.plot.CustomAttr">
+<CustomAttr>
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrBackground">
+<SeriesAttrBackground>
+<Background name="ColorBackground" color="-6216"/>
+</SeriesAttrBackground>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+<customattr renderer="1" axisPosition="LEFT"/>
+</CustomAttr>
+</SeriesAttr>
+</Entry>
+<Entry index="2">
+<SeriesAttr class="com.fr.chart.plot.CustomAttr">
+<CustomAttr>
+<SeriesAttr/>
+<customattr renderer="2" axisPosition="RIGHT"/>
+</CustomAttr>
+</SeriesAttr>
+</Entry>
+</SeriesAttrMap>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="1" lineColor="-8355712" isRoundBorder="true"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<CateAttr isStacked="false" bgStagger="false" bgColor="-1"/>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</CategoryAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="1" color="-1184275"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+<AxisRange/>
+</ValueAxis>
+<Attr value="false" isShowLine="true" isShowMarker="true" isLineNullValueBreak="true" isAreaNullValueBreak="true" seriesOverlapPercent="-0.15" categoryIntervalPercent="1.0" isSimulation3D="true"/>
+<SecondValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="4"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="1" color="-1184275"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</SecondValueAxis>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<CategoryDefinition value="A19"/>
+<SeriesDefinition name="B17,D17,E17" value="B18,D18,E18"/>
+<SeriesPos value="0"/>
+<BaseOn value="true"/>
+<Top topCate="-1" topValue="-1"/>
+</ReportDataDefinition>
+</O>
+<Expand/>
+</C>
+<C c="0" r="15" cs="5" s="0">
+<Expand/>
+</C>
+<C c="0" r="16" s="1">
+<O>
+<![CDATA[城市]]></O>
+<Expand/>
+</C>
+<C c="1" r="16" s="1">
+<O>
+<![CDATA[营业额]]></O>
+<Expand/>
+</C>
+<C c="2" r="16" s="1">
+<Expand/>
+</C>
+<C c="3" r="16" s="1">
+<O>
+<![CDATA[利润]]></O>
+<Expand/>
+</C>
+<C c="4" r="16" s="1">
+<O>
+<![CDATA[利润率]]></O>
+<Expand/>
+</C>
+<C c="0" r="17" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="订单_货主城市"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="17" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="营业额"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[订单明细_产品ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds2" columnName="产品_产品ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="2" r="17" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="成本"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[订单明细_产品ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds2" columnName="产品_产品ID"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="3" r="17" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=B18 - C18]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="17" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D18 / B18]]></Attributes>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]Ad2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4iebJi;<TD!-WQ)u!;iUeW~
+]]></Image>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1577999"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[¤#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

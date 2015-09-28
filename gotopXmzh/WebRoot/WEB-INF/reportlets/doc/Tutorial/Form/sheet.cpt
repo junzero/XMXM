@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<XMLVersion>20091130</XMLVersion><TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM FORM1_营业税]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="信息表">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_基本信息"/>
+<ColumnConfig name="纳税人识别号" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="纳税人名称" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="登记注册类型" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="注册地址" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="邮政编码" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="联系电话" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="生产经营地址" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="工商机关名称" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="证件名称" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="证件号码" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="设立日期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="核算方式" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="适用会计制度" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="从业人数" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="15"/>
+</ColumnConfig>
+<ColumnConfig name="单位性质" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="16"/>
+</ColumnConfig>
+<ColumnConfig name="国标行业主行业" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="国标行业附属行业" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="18"/>
+</ColumnConfig>
+<ColumnConfig name="经营范围" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="19"/>
+</ColumnConfig>
+<ColumnConfig name="法定代表人" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="法人身份证件名称" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="21"/>
+</ColumnConfig>
+<ColumnConfig name="法人身份证件号码" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="22"/>
+</ColumnConfig>
+<ColumnConfig name="法人固定电话" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="23"/>
+</ColumnConfig>
+<ColumnConfig name="法人移动电话" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="24"/>
+</ColumnConfig>
+<ColumnConfig name="财务负责人" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="25"/>
+</ColumnConfig>
+<ColumnConfig name="财务负责人身份证件名称" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="26"/>
+</ColumnConfig>
+<ColumnConfig name="财务负责人身份证件号码" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="27"/>
+</ColumnConfig>
+<ColumnConfig name="财务负责人固定电话" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="28"/>
+</ColumnConfig>
+<ColumnConfig name="财务负责人移动电话" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="29"/>
+</ColumnConfig>
+<ColumnConfig name="注册资本" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="30"/>
+</ColumnConfig>
+<ColumnConfig name="投资方名称" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="31"/>
+</ColumnConfig>
+<ColumnConfig name="机构类型" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="32"/>
+</ColumnConfig>
+<ColumnConfig name="投资方纳税人识别号" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="33"/>
+</ColumnConfig>
+<ColumnConfig name="投资方纳税人名称" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="34"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[55,19,21,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[70,164,414,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="3" s="0"><O><![CDATA[基本信息表]]></O>
+</C>
+<C c="0" r="1" cs="3" s="1"></C>
+<C c="0" r="2" cs="2" s="2"><O><![CDATA[纳税人识别号]]></O>
+</C>
+<C c="2" r="2" s="3"><O t="BigInteger">32010623434999</O>
+</C>
+<C c="0" r="3" cs="2" s="2"><O><![CDATA[纳税人名称]]></O>
+</C>
+<C c="2" r="3" s="4"><O><![CDATA[文本]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="4" cs="2" s="2"><O><![CDATA[登记注册类型]]></O>
+</C>
+<C c="2" r="4" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TreeComboBoxEditor">
+<WidgetAttr/>
+<noRepeat>false</noRepeat><TreeAttr width="200"/><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="2"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select * from FORM1_COMPANYTYPE WHERE PREID='0']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="2"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select * from FORM1_COMPANYTYPE WHERE PREID='${@1}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="2" vi="2"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select * from FORM1_COMPANYTYPE WHERE PREID='${@2}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr></Widget>
+</C>
+<C c="0" r="5" cs="2" s="2"><O><![CDATA[注册地址]]></O>
+</C>
+<C c="2" r="5" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="0" r="6" cs="2" s="2"><O><![CDATA[邮政编码]]></O>
+</C>
+<C c="2" r="6" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /><Reg class="com.fr.report.web.ui.reg.PostCardReg">
+</Reg>
+</Widget>
+</C>
+<C c="0" r="7" cs="2" s="2"><O><![CDATA[联系电话]]></O>
+</C>
+<C c="2" r="7" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /><Reg class="com.fr.report.web.ui.reg.PhoneReg">
+</Reg>
+</Widget>
+</C>
+<C c="0" r="8" cs="2" s="2"><O><![CDATA[生产经营地址]]></O>
+</C>
+<C c="2" r="8" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="0" r="9" cs="2" s="2"><O><![CDATA[工商机关名称]]></O>
+</C>
+<C c="2" r="9" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="0" r="10" cs="2" s="2"><O><![CDATA[证件名称]]></O>
+</C>
+<C c="2" r="10" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"></FormulaDictAttr>
+<Formula><![CDATA[select ID+' '+TYPE from FORM1_COMPANYLICENSE]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</Widget>
+</C>
+<C c="0" r="11" cs="2" s="2"><O><![CDATA[证件号码]]></O>
+</C>
+<C c="2" r="11" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="0" r="12" cs="2" s="2"><O><![CDATA[设立日期]]></O>
+</C>
+<C c="2" r="12" s="5"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetAttr/>
+<DateAttr start="" end=""/></Widget>
+</C>
+<C c="0" r="13" cs="2" s="2"><O><![CDATA[核算方式]]></O>
+</C>
+<C c="2" r="13" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="01 独立核算" value="01 独立核算"/>
+<Dict key="02 非独立核算" value="02 非独立核算"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="0" r="14" cs="2" s="2"><O><![CDATA[适用会计制度]]></O>
+</C>
+<C c="2" r="14" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"></FormulaDictAttr>
+<Formula><![CDATA[select ID+' '+ACCOUNTTING FROM FORM1_ACCOUNTTINGSYSTEM]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</Widget>
+</C>
+<C c="0" r="15" cs="2" s="2"><O><![CDATA[从业人数]]></O>
+</C>
+<C c="2" r="15" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="0" r="16" cs="2" s="2"><O><![CDATA[单位性质]]></O>
+</C>
+<C c="2" r="16" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="01 企业" value="01 企业"/>
+<Dict key="02 事业单位" value="02 事业单位"/>
+<Dict key="03 社会团体" value="03 社会团体"/>
+<Dict key="04 民办非企业单位" value="04 民办非企业单位"/>
+<Dict key="05 其它" value="05 其它"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="0" r="17" cs="2" s="2"><O><![CDATA[国标行业(主行业)]]></O>
+</C>
+<C c="2" r="17" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TreeComboBoxEditor">
+<WidgetAttr/>
+<noRepeat>false</noRepeat><TreeAttr/><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select PREID,ID+' '+INDUSTRY from FORM1_INDUSTRY where PREID='0']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select PREID,ID+' '+INDUSTRY from FORM1_INDUSTRY where PREID='${@1}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select ID+' '+INDUSTRY from FORM1_INDUSTRY where PREID='${@2}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr></Widget>
+</C>
+<C c="0" r="18" cs="2" s="2"><O><![CDATA[国标行业(附属行业)]]></O>
+</C>
+<C c="2" r="18" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TreeComboBoxEditor">
+<WidgetAttr/>
+<noRepeat>false</noRepeat><TreeAttr/><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select PREID,ID+' '+INDUSTRY from FORM1_INDUSTRY where PREID='0']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select PREID,ID+' '+INDUSTRY from FORM1_INDUSTRY where PREID='${@1}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr><TreeNodeAttr><Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"><Condition class="com.fr.data.condition.ListCondition"></Condition>
+</FormulaDictAttr>
+<Formula><![CDATA[select ID+' '+INDUSTRY from FORM1_INDUSTRY where PREID='${@2}']]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary>
+</TreeNodeAttr></Widget>
+</C>
+<C c="0" r="19" cs="2" s="2"><O><![CDATA[经营范围]]></O>
+</C>
+<C c="2" r="19" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="0" r="20" rs="5" s="2"><O><![CDATA[法定代表人(负责人)]]></O>
+</C>
+<C c="1" r="20" s="2"><O><![CDATA[法定代表人(负责人)]]></O>
+</C>
+<C c="2" r="20" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="1" r="21" s="2"><O><![CDATA[身份证件名称]]></O>
+</C>
+<C c="2" r="21" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="10 身份证" value="10 身份证"/>
+<Dict key="20 护照" value="20 护照"/>
+<Dict key="30 军官证" value="30 军官证"/>
+<Dict key="40 其它证件" value="40 其它证件"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="1" r="22" s="2"><O><![CDATA[证件号码]]></O>
+</C>
+<C c="2" r="22" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /><Reg class="com.fr.report.web.ui.reg.NoneReg">
+</Reg>
+</Widget>
+</C>
+<C c="1" r="23" s="2"><O><![CDATA[固定电话]]></O>
+</C>
+<C c="2" r="23" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /><Reg class="com.fr.report.web.ui.reg.PhoneReg">
+</Reg>
+</Widget>
+</C>
+<C c="1" r="24" s="2"><O><![CDATA[移动电话]]></O>
+</C>
+<C c="2" r="24" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /><Reg class="com.fr.report.web.ui.reg.MobileReg">
+</Reg>
+</Widget>
+</C>
+<C c="0" r="25" rs="5" s="2"><O><![CDATA[财务负责人]]></O>
+</C>
+<C c="1" r="25" s="2"><O><![CDATA[财务负责人]]></O>
+</C>
+<C c="2" r="25" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="1" r="26" s="2"><O><![CDATA[身份证件名称]]></O>
+</C>
+<C c="2" r="26" s="4"><O><![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="10 身份证" value="10 身份证"/>
+<Dict key="20 护照" value="20 护照"/>
+<Dict key="30 军官证" value="30 军官证"/>
+<Dict key="40 其它证件" value="40 其它证件"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="1" r="27" s="2"><O><![CDATA[证件号码]]></O>
+</C>
+<C c="2" r="27" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /><Reg class="com.fr.report.web.ui.reg.NoneReg">
+</Reg>
+</Widget>
+</C>
+<C c="1" r="28" s="2"><O><![CDATA[固定电话]]></O>
+</C>
+<C c="2" r="28" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /><Reg class="com.fr.report.web.ui.reg.PhoneReg">
+</Reg>
+</Widget>
+</C>
+<C c="1" r="29" s="2"><O><![CDATA[移动电话]]></O>
+</C>
+<C c="2" r="29" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /><Reg class="com.fr.report.web.ui.reg.MobileReg">
+</Reg>
+</Widget>
+</C>
+<C c="0" r="30" cs="2" s="2"><O><![CDATA[注册资本或投资总额(万元)]]></O>
+</C>
+<C c="2" r="30" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><NumberAttr/></Widget>
+</C>
+<C c="0" r="31" cs="2" s="2"><O><![CDATA[投资方名称]]></O>
+</C>
+<C c="2" r="31" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="0" r="32" cs="2" s="2"><O><![CDATA[机构类型]]></O>
+</C>
+<C c="2" r="32" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="0" r="33" cs="2" s="2"><O><![CDATA[纳税人识别号(集团)]]></O>
+</C>
+<C c="2" r="33" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+<C c="0" r="34" cs="2" s="2"><O><![CDATA[纳税人名称(集团)]]></O>
+</C>
+<C c="2" r="34" s="4"><Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<allowBlank>false</allowBlank><TextAttr allowBlank="false" /></Widget>
+</C>
+</CellElementList>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="营业税">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="税率" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="8"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL2">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="5"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL3">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="6"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL4">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="4"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="7"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL6">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="10"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL8">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="11"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL9">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="12"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL10">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="13"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL11">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<O><![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="15"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="15"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL12">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="16"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="16"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL13">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="17"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL14">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="19"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="19"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="19"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL15">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="FORM1_营业税"/>
+<ColumnConfig name="项目大类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="0" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="项目小类" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="本期" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="年累" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="20"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[57,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,20,20,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[71,36,206,31,143,72,143,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="7" s="0"><O><![CDATA[营业税纳税申报表]]></O>
+</C>
+<C c="0" r="2" cs="7" s="1"><O><![CDATA[]]></O>
+</C>
+<C c="0" r="3" cs="3" s="6"><O><![CDATA[项目]]></O>
+</C>
+<C c="3" r="3" s="6"><O><![CDATA[栏次]]></O>
+</C>
+<C c="4" r="3" s="6"><O><![CDATA[本期数]]></O>
+</C>
+<C c="6" r="3" s="6"><O><![CDATA[本年累计]]></O>
+</C>
+<C c="0" r="4" rs="4" s="7"><O><![CDATA[营业额]]></O>
+</C>
+<C c="1" r="4" cs="2" s="7"><O><![CDATA[应税收入]]></O>
+</C>
+<C c="3" r="4" s="7"><O t="I">1</O>
+</C>
+<C c="4" r="4" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="4"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[项目小类]]></CNAME><Compare op="0">
+<ColumnRow column="2" row="4"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<HighlightList><Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction">
+</HighlightAction>
+</Highlight>
+</HighlightList><Expand dir="0" />
+</C>
+<C c="6" r="4" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E5+F5]]></Attributes></O>
+</C>
+<C c="1" r="5" cs="2" s="7"><O><![CDATA[应税减除项目金额]]></O>
+</C>
+<C c="3" r="5" s="7"><O t="I">2</O>
+</C>
+<C c="4" r="5" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="5"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[项目小类]]></CNAME><Compare op="0">
+<ColumnRow column="2" row="5"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="6" r="5" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E6+F6]]></Attributes></O>
+</C>
+<C c="1" r="6" cs="2" s="7"><O><![CDATA[应税营业额（3=1-2）]]></O>
+</C>
+<C c="3" r="6" s="7"><O t="I">3</O>
+</C>
+<C c="4" r="6" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=E5 - E6]]></Attributes></O>
+</C>
+<C c="5" r="6"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="6"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="6" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E7+F7]]></Attributes></O>
+</C>
+<C c="1" r="7" cs="2" s="7"><O><![CDATA[免税收入]]></O>
+</C>
+<C c="3" r="7" s="7"><O t="I">4</O>
+</C>
+<C c="4" r="7" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="7"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="7"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="7" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E8+F8]]></Attributes></O>
+</C>
+<C c="0" r="8" cs="3" s="7"><O><![CDATA[税率(%)]]></O>
+</C>
+<C c="3" r="8" s="7"><O t="I">5</O>
+</C>
+<C c="4" r="8" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="8"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="8" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E9+F9]]></Attributes></O>
+</C>
+<C c="0" r="9" rs="3" s="7"><O><![CDATA[本期税款计算]]></O>
+</C>
+<C c="1" r="9" cs="2" s="7"><O><![CDATA[小计（6=7+8）]]></O>
+</C>
+<C c="3" r="9" s="7"><O t="I">6</O>
+</C>
+<C c="4" r="9" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=E11 + E12]]></Attributes></O>
+</C>
+<C c="5" r="9"><Expand dir="0" />
+</C>
+<C c="6" r="9" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E10+F11+F12]]></Attributes></O>
+</C>
+<C c="1" r="10" cs="2" s="7"><O><![CDATA[本期应纳税额（7=(3-4)*5）]]></O>
+</C>
+<C c="3" r="10" s="7"><O t="I">7</O>
+</C>
+<C c="4" r="10" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=(E7 - E8) * E9 / 100]]></Attributes></O>
+</C>
+<C c="5" r="10"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="10" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E11+F11]]></Attributes></O>
+</C>
+<C c="1" r="11" cs="2" s="7"><O><![CDATA[免（减）税额（8=4*5）]]></O>
+</C>
+<C c="3" r="11" s="7"><O t="I">8</O>
+</C>
+<C c="4" r="11" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=E8 * E9 / 100]]></Attributes></O>
+</C>
+<C c="5" r="11"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="11"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="11" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E12+F12]]></Attributes></O>
+</C>
+<C c="0" r="12" rs="9" s="7"><O><![CDATA[税款缴纳]]></O>
+</C>
+<C c="1" r="12" cs="2" s="7"><O><![CDATA[期初欠缴税额]]></O>
+</C>
+<C c="3" r="12" s="7"><O t="I">9</O>
+</C>
+<C c="4" r="12" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="12"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="12"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="12" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E13+F13]]></Attributes></O>
+</C>
+<C c="1" r="13" cs="2" s="7"><O><![CDATA[前期多缴税额]]></O>
+</C>
+<C c="3" r="13" s="7"><O t="I">10</O>
+</C>
+<C c="4" r="13" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="13"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="13"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="13" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E14+F14]]></Attributes></O>
+</C>
+<C c="1" r="14" rs="4" s="7"><O><![CDATA[本期已缴税额]]></O>
+</C>
+<C c="2" r="14" s="7"><O><![CDATA[小计（11=12+13+14）]]></O>
+</C>
+<C c="3" r="14" s="7"><O t="I">11</O>
+</C>
+<C c="4" r="14" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=E16 + E17 + E18]]></Attributes></O>
+</C>
+<C c="5" r="14"><Expand dir="0" />
+</C>
+<C c="6" r="14" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E15+F16+F17+F18]]></Attributes></O>
+</C>
+<C c="2" r="15" s="7"><O><![CDATA[已缴本期应纳税额]]></O>
+</C>
+<C c="3" r="15" s="7"><O t="I">12</O>
+</C>
+<C c="4" r="15" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="15"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="15"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="15" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E16+F16]]></Attributes></O>
+</C>
+<C c="2" r="16" s="7"><O><![CDATA[本期已被扣缴税额]]></O>
+</C>
+<C c="3" r="16" s="7"><O t="I">13</O>
+</C>
+<C c="4" r="16" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="16"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="16"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="16" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E17+F17]]></Attributes></O>
+</C>
+<C c="2" r="17" s="7"><O><![CDATA[本期已欠缴缴税额]]></O>
+</C>
+<C c="3" r="17" s="7"><O t="I">14</O>
+</C>
+<C c="4" r="17" s="4"><Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="17"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="17"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="17" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E18+F18]]></Attributes></O>
+</C>
+<C c="1" r="18" rs="3" s="7"><O><![CDATA[本期应缴税额计算]]></O>
+</C>
+<C c="2" r="18" s="7"><O><![CDATA[小计（15=16+17）]]></O>
+</C>
+<C c="3" r="18" s="7"><O t="I">15</O>
+</C>
+<C c="4" r="18" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=E20 + E21]]></Attributes></O>
+</C>
+<C c="5" r="18"><Expand dir="0" />
+</C>
+<C c="6" r="18" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E19+F20+F21]]></Attributes></O>
+</C>
+<C c="2" r="19" s="7"><O><![CDATA[本期期末应缴税额（16=7-12-13）]]></O>
+</C>
+<C c="3" r="19" s="7"><O t="I">16</O>
+</C>
+<C c="4" r="19" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=E11 - E16 - E17]]></Attributes></O>
+</C>
+<C c="5" r="19"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="19"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="19" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E20+F20]]></Attributes></O>
+</C>
+<C c="2" r="20" s="7"><O><![CDATA[本期期末应缴欠缴税额（17=9-10-14）]]></O>
+</C>
+<C c="3" r="20" s="7"><O t="I">17</O>
+</C>
+<C c="4" r="20" s="4"><O t="Formula" class="Formula"><Attributes><![CDATA[=E13 - E14 - E18]]></Attributes></O>
+</C>
+<C c="5" r="20"><O t="DSColumn"><Attributes dsName="ds1" columnName="年累" />
+<Condition class="com.fr.data.condition.CommonCondition"><Compare op="0">
+<ColumnRow column="2" row="20"/>
+</Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="20" s="3"><O t="Formula" class="Formula"><Attributes><![CDATA[=E21+F21]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="方正楷体简体" style="1" size="24" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ImageBackground"
+ specifiedImageWidth="-1.0"
+ specifiedImageHeight="-1.0"
+ layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]Ad2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+
+4iebJi;<TD!-WQ)u!;iUeW~
+
+]]>
+</Image>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="宋体" style="1" size="12" />
+<Background name="ColorBackground"
+ color="-1577999">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="TextureBackground"
+>
+<TexturePaint>
+<Rectangle2D x="0.0" y="0.0" width="58.0" height="42.0" />
+<Image width="58" height="42">
+<![CDATA[NLDqH,#Jn?pV-iLK,$@)nMh_5@*':S1M4eX6&.8HbTO<Dk'cMph7E8nY1N",qtp9anaZ-jI=
+6P"hlhNYj-oH*n*g#J1Pb::\_QY
+u>jfpR`h1T?qsX.TmHs:Rgs#AYlton8^V.s@jrgR5@dU_
+Yg[[(:hL3\@O,MmTf;pj5q/+E1Nb2!lF78epor\DXYs*EqZXr)WT=I
+&grH!C9rd#Efh+,L10
+Di)9D=@H#)s:efI'3GG^=gNsD#87f3ibBElb./Eq/'rd]A!ge!ms-"'c+SDIRU\_FQ8pbHCWq
+"`?k';&
+o<F#:";[+/I56<7b\QWV2qsRFg!_pPHec*CRs^_<^"Godcj0Qc(tM&Dlu%*1Sc,Z`
+?XCMBk<&PYV^&NrU)<ISkJ\@G?Y-W/k54r
+E[ap24g;.:]Abd3W.L+KbPkHY&'S8@QE^?#mcZh
+u`A7]A-!0I)Y]Am&*%8/^5q.G%0)_3d"C@HIFmX::92iH!ulbV`YjR,D#K=a
+JPYWcCnAOWc9$+
++)90Jh`T2bPo9+*3S,'^U0lIur`f@TbZ_7X%!W/N[E+T&6SPB^NCd2bVC$_:TIqOf;Un#pln
+UY^"p+`c#`o`
+B!"nHg)nmm$aZ,Q]ANIs10'hP4FAG>IBEj=KHe`n?@+m.9-Nmb$[OkK>IPS*b
+a?*#jiD0S[i1GL&"q2o_-SbG3;ECugT;'tB3)0
+t(^93&(o$qf;#H,o.W0IC7_Ca"4hWpFJLQ
+?f&m\S8Y,0ADqaq\G!bu_DZ*JXo=5%bAZ5oDq'R-ht8r"RW4DEb[HM:jK.4qZ/5CT
+He!Tb^U
+J9%nU#4G0'T]A#h^O>K8*^iM7Vloo[%/2KlL43Q\05a4J&h!62hoJYjiZ<)>h3/nj)*+_VW6T
+H5C[l`YfXN-6.Y@V\(
+\*94LtV"T$r#;2D#u=K=S_cf[bl@@`K7#%`^H1YhudAA&k+[^'T7W5
+IR/**'($sc.h0gGq8Wk1\:KEUViM==DOXOKQ46h$BW.bC
+otCidH1cTcPH]A0o&8/cc,XWngB^
+q6Mrj#YI#$=^3o'T(]A'Vf5?]A;Hg%eJ&E43)&Bc=^E)*RtX(S21ZS22>FgIHst;+l,)mIp
+2a#
+`m#+3FE;eVT/]AtkBO.sdg)/q=iI7BiDX.BfCiRtW(bAh!p9Ec>c+UT6_AK(4*Sm/+SF\ZL2'
++\WPh2GW3HhdM1:"8'l+3\
+(&(c!kdC<e9H@0M3qPNl^/T/'ggNm8fDsJEjH@=h_q+,itfUr)
+qok\W(:QpRG?YMa39q0lUDs]AKpn(F;&lN?IbI66a1r[Qg6cF
+83R97)BbL5b)33ul-tkPC33m
+GDn!f;u'_jZVa<F/M%MB5%7ugp_Qb@pJuBHJ*V,i,YkGN"^Salb='bbhLFL[sn19hmb=J/h>
+f%
+YDcoietm?B`eWZCUHI3Hnn7,]Am9PuegA>kCFmE6lNZsst;kMicmH/B5!usZdqm_B)>hC`6
+R4YVQD9I-,B/mVN9ui[AY28b0ieh
+a-^&rcr@a\-0<=VBFF8<-`>iQ.fZldd]AZi.K2I,h5PTm
+]AshaaIpU6FY_F0C0U4Y!;7,kdAaFS/\pZ]ACe@VGG#oPEH>RSf)9a
+_\@K(nGSW(nm[tZipuU.
+9>?#OC1X1EX?ZVp`a*6.<?G#`Ij+Q.=rdg*fj`88is6W"iB_,Qu\M&r5R\OfkX*Lg-[CU8eU
+btS^\#
+kEp+(pRB]A5s&0.F(f"3rUNC]AY(m>oQJWUF"j5iq:F1rfUecp"u_4%?b:c8ff=5&N.&
+F$Ir3NqI($/tjgqhF/!&!-RcXlg`Got
+As2fJWp%c&1JSXIDDW@TO_1j2hX)Z`2DOLH1O$;TC
+*nKKbr@^G7n>Ng+r\>!DB5J/kGh@0=QClodIQkO>8R6i<q1R()+)DF1PkR
+5jjo6']AZi)G$Mu
+Gq0fC#.m>FP5ALUN!<B2VmAIVf%&[.W^cLEdmVgir[5NO_26l<;q`mL>NM;7/X8hIa=O]A!EL
+W"o~
+
+]]>
+</Image>
+</TexturePaint>
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat"><![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-1577999">
+</Background>
+<Border><Top style="1" color="-6894375"
+ /><Bottom style="1" color="-6894375"
+ /><Left style="1" color="-6894375"
+ /><Right style="1" color="-6894375"
+ /></Border>
+</Style>
+<Style style_name="Head1" />
+</StyleList>
+</WorkBook>

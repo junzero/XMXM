@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="common" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="13,150,48,48" name="start1">
+      <transition g="-8,-23" name="提交" to="申请"/>
+   </start>
+   <task g="134,145,92,52" name="申请" form="/commonProcess/tCommonProcessAction_getCommonProcessForinput.action">
+      <transition g="-50,-6" name="提交审核" to="部门领导审核"/>
+      <transition g="-14,-22" name="提交" to="管理部门"/>
+   </task>
+   <task g="133,23,92,52" name="部门领导审核" form="/commonProcess/tCommonProcessAction_getCommonProcessForapprove.action">
+      <transition g="222,113:5,-7" name="批示" to="申请"/>
+   </task>
+   <task g="323,145,92,52" name="管理部门" form="/commonProcess/tCommonProcessAction_getCommonProcessForapprove.action">
+      <transition g="-17,-18" name="提交会签" to="会签处理"/>
+      <transition g="-29,-5" name="提交" to="审核"/>
+      <transition g="278,205:-13,4" name="批示" to="申请"/>
+      <transition g="-35,-9" name="结束" to="结束"/>
+   </task>
+   <task g="323,27,92,52" name="审核" form="/commonProcess/tCommonProcessAction_getCommonProcessForapprove.action">
+      <transition g="-15,-26" name="提交" to="行领导"/>
+      <transition g="418,109:-32,-5" name="批示" to="管理部门"/>
+   </task>
+   <task g="527,146,92,52" name="会签处理" form="/commonProcess/tCommonProcessAction_getCommonProcessForapprove.action">
+      <transition g="461,205:-20,3" name="批示" to="管理部门"/>
+   </task>
+   <task g="552,25,92,52" name="行领导" form="/commonProcess/tCommonProcessAction_getCommonProcessForapprove.action">
+      <transition g="477,90:-6,4" name="批示" to="审核"/>
+   </task>
+   <end g="346,266,48,48" name="结束"/>
+</process>

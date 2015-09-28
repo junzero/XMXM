@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean id="homeInfoService" class="com.gotop.home.service.impl.HomeInfoService" >
+    <property name="homeInfoDAO" ref="homeInfoDAO" />
+  </bean>
+</beans>

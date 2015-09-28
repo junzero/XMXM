@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="xmzhProject"
+  id="myeclipse.1403746478958"
+  context-root="/xmzhProject"
+  j2ee-spec="5.0"
+  archive="xmzhProject.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

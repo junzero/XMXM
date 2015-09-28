@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="roleprivilege" namespace="/tyjg/roleprivilege">
+     <!-- 进入角色管理界面前的数据准备 -->
+     <action class="roleAction" method="toQueryRolePage" name="toQueryRolePage_action">
+         <result name="success">/jsp/tyjg/roleprivilege/role_manager.jsp</result>
+     </action>
+     
+     <!-- ajax进行角色查询操作 -->
+     <action class="roleAction" method="queryRolePage" name="queryRolePage_action"/>
+     
+     <!-- ajax进行角色的保存操作，包括增、删、改 -->
+     <action class="roleAction" method="saveRole" name="saveRole_action"/>
+     
+     <!-- 转到角色权限的管理 -->
+     <action class="roleAction" method="toManagePrivelege" name="toManagePrivelege_acton">
+         <result name="success">/jsp/tyjg/roleprivilege/privilege_manager.jsp</result>
+     </action>
+     
+     <!-- 保存角色权限设置 -->
+     <action class="roleAction" method="savePrivelege" name="savePrivelege_action"/>
+     
+     <!-- 转到角色人员设置 -->
+     <action class="operatorRoleAction" method="toDistributeOperatorRole" name="toDistributeOperatorRole_roleprivilege">
+         <result name="success">/jsp/tyjg/roleprivilege/role_assign_operator.jsp</result>
+     </action>
+     <!-- 保存角色权限设置 -->
+     <action class="operatorRoleAction" method="deleteOperatorRole" name="deleteOperatorRole_roleprivilege"/>
+     <!-- 查询一个角色下的人员 -->
+     <action class="operatorRoleAction" method="queryOperatorRoleEmp" name="queryOperatorRoleEmp_roleprivilege"/>
+     <!-- 保存人员角色包括新增删除的 -->
+     <action class="operatorRoleAction" method="saveOperatorRole" name="saveOperatorRole_roleprivilege"/>
+     <!-- 转到保存机构角色关系 -->
+     <action class="operatorRoleAction" method="toDistributeOrgRole" name="toDistributeOrgRole_roleprivilege">
+         <result name="success">/jsp/tyjg/roleprivilege/role_assign_organ.jsp</result>
+     </action>
+     <!-- 转到角色机构添加页面 -->
+     <action class="operatorRoleAction" method="toInsertOmPartyRole" name="toInsertOmPartyRole_roleprivilege">
+         <result name="success">/jsp/tyjg/roleprivilege/organization_add.jsp</result>
+     </action>
+     <!-- 新增角色机构关系-->
+     <action class="operatorRoleAction" method="insertOmPartyRole" name="insertOmPartyRole_roleprivilege"/>
+     <!-- 删除角色机构关系-->
+     <action class="operatorRoleAction" method="deleteOmPartyRole" name="deleteOmPartyRole_roleprivilege"/>
+     
+     <action class="roleAction" method="{1}" name="roleAction_*"/>
+   </package>
+</struts>

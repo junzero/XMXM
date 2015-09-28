@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ygfjxx_mngr">
+  
+	<resultMap class="com.gotop.vo.tyjg.Abftygfjxxb" id="ygfjxxMap">
+		<result property="empid" jdbcType="Long" column="EMPID"/>
+		<result property="birthDate" jdbcType="String" column="BIRTHDATE"/>
+		<result property="otel" jdbcType="String" column="OTEL"/>
+		<result property="oaddress" jdbcType="String" column="OADDRESS"/>
+		<result property="ozipCode" jdbcType="String" column="OZIPCODE"/>
+		<result property="oemail" jdbcType="String" column="OEMAIL"/>
+		<result property="faxNo" jdbcType="String" column="FAXNO"/>
+		<result property="mobileNo" jdbcType="String" column="MOBILENO"/>
+		<result property="msn" jdbcType="String" column="MSN"/>
+		<result property="htel" jdbcType="String" column="HTEL"/>
+		<result property="haddress" jdbcType="String" column="HADDRESS"/>
+		<result property="hzipCode" jdbcType="String" column="HZIPCODE"/>
+		<result property="pemail" jdbcType="String" column="PEMAIL"/>
+		<result property="party" jdbcType="String" column="PARTY"/>
+		<result property="major" jdbcType="String" column="MAJOR"/>
+		<result property="workExp" jdbcType="String" column="WORKEXP"/>
+		<result property="regDate" jdbcType="String" column="REGDATE"/>
+		<result property="createTime" jdbcType="String" column="CREATETIME"/>
+		<result property="lastModyTime" jdbcType="String" column="LASTMODYTIME"/>
+		<result property="remark" jdbcType="String" column="REMARK"/>
+	</resultMap>
+	<select id="query_ygfjxx_info" resultMap="ygfjxxMap">
+		<include refid="COMMON.oracle_Pagination_Head" />
+		<![CDATA[
+			SELECT B.EMPID,B.BIRTHDATE,B.OTEL,B.OADDRESS,B.OZIPCODE,B.OEMAIL,B.FAXNO,B.MOBILENO,
+			B.MSN,B.HTEL,B.HADDRESS,B.HZIPCODE,B.PEMAIL,B.PARTY,B.MAJOR,B.WORKEXP,to_char(B.REGDATE,'yyyy-Mm-dd') REGDATE,
+			to_char(B.CREATETIME,'yyyy-Mm-dd') CREATETIME,to_char(B.LASTMODYTIME,'yyyy-Mm-dd') LASTMODYTIME,B.REMARK
+			FROM ABF_T_YGFJXXB B WHERE 1=1 
+		]]>
+		<isNotNull prepend="and" property="empid">
+			B.EMPID = #empid#
+		</isNotNull>
+		<isNotNull prepend="and" property="birthdate">
+			B.BIRTHDATE = #birthdate#
+		</isNotNull>
+		<isNotNull prepend="and" property="otel">
+			B.OTEL = #otel#
+		</isNotNull>
+		<isNotNull prepend="and" property="oaddress">
+			B.OADDRESS = #oaddress#
+		</isNotNull>
+		<isNotNull prepend="and" property="ozipcode">
+			B.OZIPCODE = #ozipcode#
+		</isNotNull>
+		<isNotNull prepend="and" property="oemail">
+			B.OEMAIL = #oemail#
+		</isNotNull>
+		<isNotNull prepend="and" property="faxno">
+			B.FAXNO = #faxno#
+		</isNotNull>
+		<isNotNull prepend="and" property="mobileno">
+			B.MOBILENO = #mobileno#
+		</isNotNull>
+		<isNotNull prepend="and" property="msn">
+			B.MSN = #msn#
+		</isNotNull>
+		<isNotNull prepend="and" property="htel">
+			B.HTEL = #htel#
+		</isNotNull>
+		<isNotNull prepend="and" property="haddress">
+			B.HADDRESS = #haddress#
+		</isNotNull>
+		
+		
+		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	
+	
+	<select id="query_ygfjxx_list" parameterClass="com.gotop.vo.tyjg.Abftygfjxxb"  resultClass="com.gotop.vo.tyjg.Abftygfjxxb">
+		<include refid="COMMON.oracle_Pagination_Head" />
+		<![CDATA[
+			SELECT B.EMPID empid,B.BIRTHDATE birthDate,B.OTEL otel,B.OADDRESS oaddress,B.OZIPCODE ozipCode,
+			B.OEMAIL oemail,B.FAXNO faxNo,B.MOBILENO mobileNo,B.MSN msn,B.HTEL htel,B.HADDRESS haddress,
+			B.HZIPCODE hzipCode,B.PEMAIL pemail,B.PARTY party,B.MAJOR major,B.WORKEXP workExp,
+			to_char(B.REGDATE,'yyyy-Mm-dd') regDate,to_char(B.CREATETIME,'yyyy-Mm-dd') createTime,
+			to_char(B.LASTMODYTIME,'yyyy-Mm-dd') lastModyTime,B.REMARK remark
+			FROM ABF_T_YGFJXXB B WHERE 1=1 
+		]]>
+		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	
+	
+	<!-- 获取下级机构总记录数 -->
+	<select id="countYgfjxxByCondit" resultClass="java.lang.Long">
+		SELECT COUNT(1) FROM ABF_T_YGFJXXB B WHERE 1=1 
+	</select>
+	
+	<!-- 根据id删除员工附加信息 -->
+    <delete id="deleteYgfjxxByid" parameterClass="com.gotop.vo.tyjg.Abftygfjxxb">
+        DELETE FROM ABF_T_YGFJXXB T WHERE T.EMPID = #empid#
+    </delete>
+	
+	<!-- 新增员工附加信息记录 -->
+	<insert id="insert_ygfjxx_obj" parameterClass="com.gotop.vo.tyjg.Abftygfjxxb">
+        INSERT INTO ABF_T_YGFJXXB
+            (EMPID, BIRTHDATE, OTEL, OADDRESS, OZIPCODE, OEMAIL, FAXNO, MOBILENO, MSN, HTEL, HADDRESS,
+            HZIPCODE, PEMAIL, PARTY, MAJOR,WORKEXP,REGDATE,CREATETIME,LASTMODYTIME,REMARK)
+        values(#empid:VARCHAR#, #birthDate:VARCHAR#, #otel:VARCHAR#, #oaddress:VARCHAR#, #ozipCode:VARCHAR#, #oemail:VARCHAR#,#faxNo:VARCHAR#,
+        #mobileNo:VARCHAR#, #msn:VARCHAR#, #htel:VARCHAR#, #hzipCode:VARCHAR#, #pemail:VARCHAR#, #party:VARCHAR#, #major:VARCHAR#, 
+        #workExp:VARCHAR#, #regDate:VARCHAR#, #createTime:VARCHAR#, #lastModyTime:VARCHAR#, #remark:VARCHAR#)
+    </insert>
+    
+    
+   <!-- 修改数据字典类型 -->
+    <update id="update_ygfjxx_obj" parameterClass="com.gotop.vo.tyjg.Abftygfjxxb">
+        UPDATE 
+            ABF_T_YGFJXXB t
+        SET
+            BIRTHDATE = #birthDate#, OTEL= #otel#, OADDRESS= #oaddress#, OZIPCODE= #ozipCode#, OEMAIL= #oemail#, 
+            FAXNO= #faxNo#, MOBILENO= #mobileNo#, MSN= #msn#, HTEL= #htel#, HADDRESS= #haddress#, 
+            HZIPCODE= #hzipCode#, PEMAIL= #pemail#, PARTY= #party#, MAJOR= #major#, WORKEXP= #workExp#, 
+             REGDATE= #regDate#, CREATETIME= #createTime#, LASTMODYTIME= to_date(#lastModyTime:VARCHAR#,"yyyy-MM-dd hh24:mm:ss"), REMARK= #remark#
+        where EMPID=#empid#
+    </update>
+  	
+</sqlMap>

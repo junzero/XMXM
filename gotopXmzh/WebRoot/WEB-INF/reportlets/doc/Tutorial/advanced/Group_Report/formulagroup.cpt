@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<TableDataMap>
+<TableData name="Embedded1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<Semantic>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="0"></FormulaDictAttr>
+<DBDictAttr tableName="" schemaName="" ki="0" vi="0"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+</Connection></Dictionary></Semantic>
+<ColumnNames><![CDATA[providerID,,.,,districtID,,.,,provider,,.,,count]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[1Ggd>i(W4EG%'R;;sSY2ht_'6WDeR)D7t>Ur4SZ%:[d=#j>$k;80sqGO>DabjS<)>:G"_Mrm
+XusA;rR4_57=Z?F"Y6q-Ua8D;9p
+uRu19*R;?#9c4nQF:Nl-ZnaY>,SP'H2#.a$ALD/hn.KB
+~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[30,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[66,65,68,164,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0"><O><![CDATA[范围]]></O>
+</C>
+<C c="1" r="0" s="0"><O><![CDATA[供应商ID]]></O>
+</C>
+<C c="2" r="0" s="0"><O><![CDATA[供应地区ID]]></O>
+</C>
+<C c="3" r="0" s="0"><O><![CDATA[供应商]]></O>
+</C>
+<C c="4" r="0" s="0"><O><![CDATA[统计]]></O>
+</C>
+<C c="0" r="1" s="1"><O t="DSColumn"><Attributes dsName="Embedded1" columnName="providerID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Custom isCustom="true" /><FC><![CDATA[providerID+districtID]]></FC></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="1" s="1"><O t="DSColumn"><Attributes dsName="Embedded1" columnName="providerID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="2" r="1" s="1"><O t="DSColumn"><Attributes dsName="Embedded1" columnName="districtID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+</C>
+<C c="3" r="1" s="1"><O t="DSColumn"><Attributes dsName="Embedded1" columnName="provider" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" leftParentDefault="false" left="A2" />
+</C>
+<C c="4" r="1" s="1"><O t="DSColumn"><Attributes dsName="Embedded1" columnName="count" />
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+</O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3342388">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-52">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

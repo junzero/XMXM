@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  * FROM 订单明细,产品 where 订单明细.产品ID=产品.产品ID]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="7"/>
+<FR F="11" T="26"/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[34,26,28,20,20,19,20,19,20,20,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[10,29,34,43,104,104,104,104,104,104,80,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="10" s="0">
+<O>
+<![CDATA[产品库存信息统计_标题重复(页内合计)]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="0" r="1" cs="10" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="3">
+<Expand/>
+</C>
+<C c="2" r="3">
+<Expand/>
+</C>
+<C c="3" r="3">
+<Expand/>
+</C>
+<C c="4" r="3" cs="6" s="2">
+<Expand/>
+</C>
+<C c="4" r="4" s="3">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" s="3">
+<O>
+<![CDATA[产品名称]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" s="3">
+<O>
+<![CDATA[单价]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" s="3">
+<O>
+<![CDATA[数量]]></O>
+<Expand/>
+</C>
+<C c="8" r="4" s="3">
+<O>
+<![CDATA[折扣]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" s="3">
+<O>
+<![CDATA[金额]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="4">
+<O>
+<![CDATA[产品类别：]]></O>
+<Expand leftParentDefault="false" left="F7"/>
+</C>
+<C c="5" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="类别ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="类别" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7">
+<Expand/>
+</C>
+<C c="0" r="8" s="6">
+<Expand/>
+</C>
+<C c="1" r="8" s="6">
+<O t="I">
+<![CDATA[10]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand leftParentDefault="false" left="F7"/>
+</C>
+<C c="2" r="8" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand leftParentDefault="false" left="F7"/>
+</C>
+<C c="3" r="8" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(C10{})]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand leftParentDefault="false" left="F7"/>
+</C>
+<C c="4" r="8" s="6">
+<Expand/>
+</C>
+<C c="5" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="产品ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="F7"/>
+</C>
+<C c="6" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="单价"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.AverageFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="F9"/>
+</C>
+<C c="7" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="数量"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.AverageFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="F9"/>
+</C>
+<C c="8" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="折扣"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.AverageFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="F9"/>
+</C>
+<C c="9" r="8" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G9 * H9 * (1 - I9)]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="F9"/>
+</C>
+<C c="0" r="9" s="6">
+<Expand/>
+</C>
+<C c="1" r="9" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(B11%B9 ==0, int(B11/ B9), int(B11/ B9 + 1))]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="F7"/>
+</C>
+<C c="2" r="9" rs="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=range(1, B10)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[IF(C10==B10, false, true)]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.PageHighlightAction">
+<P i="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0" leftParentDefault="false" left="F7"/>
+</C>
+<C c="3" r="9" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=range(1, B9)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[ROW() % 2 == 1]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-3999753"/>
+<Scope val="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0" leftParentDefault="false" left="C10"/>
+</C>
+<C c="4" r="9" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(C10 - 1) * B9 + D10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="9" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F9{}[E10]A]]></Attributes>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="产品" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand leftParentDefault="false" left="D10"/>
+</C>
+<C c="6" r="9" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G9{}[E10]A]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="D10"/>
+</C>
+<C c="7" r="9" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H9{}[E10]A]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="D10"/>
+</C>
+<C c="8" r="9" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I9{}[E10]A]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="D10"/>
+</C>
+<C c="9" r="9" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J9{}[E10]A]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="D10"/>
+</C>
+<C c="0" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="1" r="10" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=count(F9)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand leftParentDefault="false" left="F7"/>
+</C>
+<C c="3" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="4" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="5" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="6" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="7" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="8" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="9" r="10" s="6">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="0" r="11" s="6">
+<Expand/>
+</C>
+<C c="1" r="11" s="6">
+<Expand/>
+</C>
+<C c="3" r="11" cs="5" s="9">
+<O>
+<![CDATA[页内统计：]]></O>
+<Expand leftParentDefault="false" left="C10"/>
+</C>
+<C c="8" r="11" cs="2" s="10">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(J10{})]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="C10"/>
+</C>
+<C c="0" r="12" s="6">
+<Expand/>
+</C>
+<C c="1" r="12" s="6">
+<Expand/>
+</C>
+<C c="3" r="12" cs="5" s="11">
+<O>
+<![CDATA[类别总金额:]]></O>
+<Expand leftParentDefault="false" left="C10"/>
+</C>
+<C c="8" r="12" cs="2" s="11">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=i14]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="C10"/>
+</C>
+<C c="8" r="13" cs="2" s="12">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(i12{})]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand leftParentDefault="false" left="E7"/>
+</C>
+<C c="0" r="16" s="13">
+<Expand/>
+</C>
+<C c="1" r="16" s="13">
+<Expand/>
+</C>
+<C c="2" r="16" s="13">
+<Expand/>
+</C>
+<C c="3" r="16" s="13">
+<Expand/>
+</C>
+<C c="4" r="16" s="13">
+<Expand/>
+</C>
+<C c="5" r="16" s="13">
+<Expand/>
+</C>
+<C c="6" r="16" s="13">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="16" s="13">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="8" r="16" s="13">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="9" r="16" s="13">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="10" r="16">
+<O>
+<![CDATA[·]]></O>
+<Expand/>
+</C>
+<C c="2" r="17" cs="8" s="14">
+<O>
+<![CDATA[“动态重复标题”报表功能应用说明：]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="18" cs="8" s="15">
+<O>
+<![CDATA[1、动态重复标题行]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="19" cs="8" s="15">
+<O>
+<![CDATA[     如该报表标题栏会跟随下方对应的数据动态重复显示。]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="20" cs="8" s="15">
+<O>
+<![CDATA[2、分组式编号]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="21" cs="8" s="15">
+<O>
+<![CDATA[     如该报表中第一层为类别名称，第二层为每个订单对应的产品名称。]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="22" cs="8" s="15">
+<O>
+<![CDATA[3、页内固定行数]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="23" cs="8" s="15">
+<O>
+<![CDATA[     该报表主要按照c10个数进行分页]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="24" cs="8" s="15">
+<O>
+<![CDATA[4、页内汇总统计]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="25" cs="8" s="16">
+<O>
+<![CDATA[   如该报表中根据该页汇总订单数量和类别总金额]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="1" r="26">
+<Expand leftParentDefault="false" left="E7"/>
+<CellInsertPolicy/>
+<CellPageAttr pageAfterRow="true"/>
+</C>
+</CellElementList>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="16" foreground="-16724737"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style style_name="harry_单元格背景"/>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1" color="-6894375"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-3934217"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="微软雅黑" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

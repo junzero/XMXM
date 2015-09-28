@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select year(now())-year(出生日期)+1 AS AGE,地区,雇员ID 
+from 雇员]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[37,19,19,45,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[123,99,65,54,46,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="2" s="0">
+<O>
+<![CDATA[不同地区员工年龄分布表]]></O>
+<Expand/>
+</C>
+<C c="0" r="1">
+<Expand/>
+</C>
+<C c="1" r="1">
+<Expand/>
+</C>
+<C c="0" r="2" cs="2" s="1">
+<Expand/>
+</C>
+<C c="0" r="3" s="2">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[地区|人数|年龄段]]></O>
+<Expand/>
+</C>
+<C c="1" r="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="地区"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.CustomGrouper">
+<Attr other="1" force="true"/>
+<ConditionListGroup>
+<Display>
+<![CDATA[华南]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[地区]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[华南]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[西北]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[地区]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[西北]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[华东]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[地区]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[东北]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[东北]]></Display>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[华中]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[地区]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[华中]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="0" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AGE"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.CustomGrouper">
+<Attr other="0" odisplay="其他" force="true"/>
+<ConditionListGroup>
+<Display>
+<![CDATA[20~25]]></Display>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="3">
+<O t="I">
+<![CDATA[20]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="4">
+<O t="I">
+<![CDATA[25]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[25~30]]></Display>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="3">
+<O t="I">
+<![CDATA[25]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="4">
+<O t="I">
+<![CDATA[30]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[30~35]]></Display>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="3">
+<O t="I">
+<![CDATA[30]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="4">
+<O t="I">
+<![CDATA[35]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[35~40]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="4">
+<O t="I">
+<![CDATA[40]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[40岁以上]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AGE]]></CNAME>
+<Compare op="3">
+<O t="I">
+<![CDATA[40]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[&A5 % 2 == 0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-1446414"/>
+<Scope val="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="雇员ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.CountFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="0" r="5" cs="2" s="4">
+<O>
+<![CDATA[“年龄按地区统计汇总分析”功能应用说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="6" cs="2" s="5">
+<O>
+<![CDATA[     该表分年龄断和地区统计雇员个数]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="0" size="22" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="6" color="-6894375"/>
+</Border>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

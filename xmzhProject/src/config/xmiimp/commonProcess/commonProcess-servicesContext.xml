@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean id="tCommonProcessService" class="com.gotop.commonProcess.service.impl.TCommonProcessService" >
+    <property name="tCommonProcessDAO" ref="tCommonProcessDAO" />
+    <property name="jbpmService" ref="jbpmService" />
+    <property name="fileResourceTableService" ref="tFileResourceTableService" />
+    <property name="tMessagePublishDAO" ref="tMessagePublishDAO" />
+    <property name="tApproveOpninionDAO" ref="tApproveOpninionDAO" />
+    <property name="tProcessTaskAssigneePersonDAO" ref="tProcessTaskAssigneePersonDAO" />
+    <property name="tProcessTaskAssigneeDAO" ref="tProcessTaskAssigneeDAO" />
+    <property name="tSuperviseTableDAO" ref="tSuperviseTableDAO" />
+    <property name="tSuperviseTableService" ref="tSuperviseTableService" />
+  </bean>
+</beans>

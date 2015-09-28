@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <!-- 岗位管理 -->
+   <package extends="default" name="positionmanagement" namespace="/positionmanagement">
+   		<action class="positionAction" method="{1}" name="positionAction_*">
+   			<result name="queryPositionList">/jsp/tyjg/positionmanagement/position_list.jsp</result>
+   			<result name="querySinglePosition">/jsp/tyjg/positionmanagement/add_or_updat_eposition.jsp</result>
+   		</action>
+   </package>
+</struts>

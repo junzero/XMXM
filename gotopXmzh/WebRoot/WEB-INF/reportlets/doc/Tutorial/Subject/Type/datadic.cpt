@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<XMLVersion>20091224</XMLVersion><TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM EMPLOYEE]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,97,72,72,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0"><O><![CDATA[雇员]]></O>
+</C>
+<C c="1" r="0" s="0"><O><![CDATA[性别]]></O>
+</C>
+<C c="2" r="0" s="0"><O><![CDATA[联系方式]]></O>
+</C>
+<C c="3" r="0" s="0"><O><![CDATA[语言水平]]></O>
+</C>
+<C c="4" r="0" s="0"><O><![CDATA[薪资]]></O>
+</C>
+<C c="0" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMPID" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"></FormulaDictAttr>
+<DBDictAttr tableName="EMPLOYEE" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="1" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="SEX" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="Male" value="男"/>
+<Dict key="Female" value="女"/>
+</CustomDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="2" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="EMAIL" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr ki="16" vi="17"></FormulaDictAttr>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name><![CDATA[ds1]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="3" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="LEVER" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="1" vi="0"></FormulaDictAttr>
+<Formula><![CDATA[SELECT LANGUAGE,LEVER FROM EMPLOYEE]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection></Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="4" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="SALARY" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.FormulaDictionary">
+<FormulaDict>=$$$</FormulaDict><EFormulaDict>=&quot;￥&quot;+$$$</EFormulaDict></Dictionary></Present>
+<Expand dir="0" />
+</C>
+<C c="7" r="1"><O><![CDATA[]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

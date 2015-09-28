@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="workgroup" namespace="/workgroup">
+    <!-- 查询一级工作组 -->
+	<action class="groupmanagerAction" method="{1}" name="groupmanagerAction_*">
+      <result name="viewlist">
+        /jsp/tyjg/workgroup/QueryRootGroupTypeGroupmanagerQueryBySql.jsp
+      </result>
+      <result name="queryGroup">
+        /jsp/tyjg/workgroup/group_child_list.jsp
+      </result>
+      <result name="updateSelfGroup">
+        /jsp/tyjg/workgroup/subgroup_input.jsp
+      </result>
+      <result name="queryGroupEmpOrg">
+        /jsp/tyjg/workgroup/group_OrgEmp_list.jsp
+      </result>
+      <result name="queryPositionEmp">
+        /jsp/tyjg/workgroup/emp_position_list.jsp
+      </result>
+      <result name="manageGroupRole">
+        /jsp/tyjg/workgroup/party_power_maintain.jsp
+      </result>
+      <result name="manageGroupEmp">
+        /jsp/tyjg/workgroup/emp_power_maintain.jsp
+      </result>
+      <result name="addGroup">
+        /jsp/tyjg/workgroup/subgroup_input.jsp
+      </result>
+      <result name="toTab">
+        /jsp/tyjg/workgroup/group_tabs.jsp
+      </result>
+      <result name="mngorgMainTree">
+        /jsp/tyjg/workgroup/mngorg_atree_panl.jsp
+      </result>
+    </action>
+  
+    <action class="managertreeAction" method="{1}" name="managertreeAction_*">
+ 		<result name="initMainTree">/jsp/tyjg/workgroup/managerTree/main_tree.jsp</result>
+		<result name="adminTree">/jsp/tyjg/workgroup/managerTree/admin_tree.jsp</result>
+ 		<result name="initGroupTree">/jsp/tyjg/workgroup/managerTree/group_tree.jsp</result>
+ 		<result name="initBusessTree">/jsp/tyjg/workgroup/managerTree/busess_tree.jsp</result>
+ 		<result name="initBusessRole">/jsp/tyjg/workgroup/managerTree/busess_role.jsp</result>
+    </action>
+    </package>
+</struts>

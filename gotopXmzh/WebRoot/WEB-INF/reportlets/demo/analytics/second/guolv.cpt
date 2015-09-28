@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[24,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[110,94,72,15,67,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<O>
+<![CDATA[选择条件:]]></O>
+<Expand/>
+</C>
+<C c="1" r="0" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$colname]]></Attributes>
+</O>
+<Expand/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="colname"/>
+<WidgetAttr width="0" height="0"/>
+<TextAttr/>
+</Widget>
+</C>
+<C c="2" r="0">
+<Expand/>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="opt"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="=" value="="/>
+<Dict key="&gt;" value="&gt;"/>
+<Dict key="&gt;=" value="&gt;="/>
+<Dict key="&lt;" value="&lt;"/>
+<Dict key="&lt;=" value="&lt;="/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+</C>
+<C c="4" r="0">
+<Expand/>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetName name="value"/>
+<WidgetAttr width="0" height="0"/>
+<NumberAttr/>
+</Widget>
+</C>
+</CellElementList>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</PaperSetting>
+</ReportSettings>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

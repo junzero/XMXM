@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MENUMANAGEMENT">
+	<typeAlias alias="AcApplication" type="com.gotop.tyjg.menumanagement.model.AcApplication"/>
+	<typeAlias alias="AcFunction" type="com.gotop.tyjg.menumanagement.model.AcFunction"/>
+	<typeAlias alias="AcFunctionGroup" type="com.gotop.tyjg.menumanagement.model.AcFunctionGroup"/>
+	
+	<resultMap class="AcApplication" id="menuRootMap">
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="appCode" jdbcType="string" column="APPCODE"/>
+		<result property="appName" jdbcType="string" column="APPNAME"/>
+	</resultMap>
+	
+	<resultMap class="AcFunctionGroup" id="menuGroupMap">
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="funcGroupId" jdbcType="string" column="FUNCGROUPID"/>
+		<result property="funcGroupName" jdbcType="string" column="FUNCGROUPNAME"/>
+		<result property="groupLevel" jdbcType="string" column="GROUPLEVEL"/>
+		<result property="isLeaf" jdbcType="string" column="ISLEAF"/>
+		<result property="funcGroupSeq" jdbcType="string" column="FUNCGROUPSEQ"/>
+		<result property="displayOrder" jdbcType="string" column="DISPLAYORDER"/>
+		<result property="groupAction" jdbcType="string" column="GROUPACTION"/>
+	</resultMap>
+	
+	<resultMap class="AcFunctionGroup" id="appChildGroupList">
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="funcGroupId" jdbcType="string" column="FUNCGROUPID"/>
+		<result property="funcGroupName" jdbcType="string" column="FUNCGROUPNAME"/>
+		<result property="groupLevel" jdbcType="string" column="GROUPLEVEL"/>
+		<result property="isLeaf" jdbcType="string" column="ISLEAF"/>
+		<result property="parentGroup" jdbcType="string" column="PARENTGROUP"/>
+		<result property="funcGroupSeq" jdbcType="string" column="FUNCGROUPSEQ"/>
+		<result property="displayOrder" jdbcType="string" column="DISPLAYORDER"/>
+		<result property="parentGroupName" jdbcType="string" column="PARENTGROUPNAME"/>
+		<result property="groupAction" jdbcType="string" column="GROUPACTION"/>
+		<result property="type" jdbcType="string" column="TYPE"/>
+	</resultMap>
+	
+	<resultMap class="AcFunction" id="menuMap">
+		<result property="funcCode" jdbcType="string" column="FUNCCODE"/>
+		<result property="funcGroupId" jdbcType="string" column="FUNCGROUPID"/>
+		<result property="funcName" jdbcType="string" column="FUNCNAME"/>
+	</resultMap>
+	
+	<resultMap class="AcApplication" id="systemMap">
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="appCode" jdbcType="string" column="APPCODE"/>
+		<result property="appName" jdbcType="string" column="APPNAME"/>
+		<result property="apptype" jdbcType="string" column="APPTYPE"/>
+		<result property="isOpen" jdbcType="string" column="ISOPEN"/>
+		<result property="openDate" jdbcType="string" column="OPENDATE"/>
+		<result property="url" jdbcType="string" column="URL"/>
+		<result property="appDesc" jdbcType="string" column="APPDESC"/>
+		<result property="ipPort" jdbcType="string" column="IPPORT"/>
+		<result property="ipAddr" jdbcType="string" column="IPADDR"/>
+	</resultMap>
+	
+	<resultMap class="AcApplication" id="singleMap">
+		<result property="appId" jdbcType="string" column="APPID"/>
+		<result property="appCode" jdbcType="string" column="APPCODE"/>
+		<result property="appName" jdbcType="string" column="APPNAME"/>
+		<result property="apptype" jdbcType="string" column="APPTYPE"/>
+		<result property="isOpen" jdbcType="string" column="ISOPEN"/>
+		<result property="openDate" jdbcType="string" column="OPENDATE"/>
+		<result property="url" jdbcType="string" column="URL"/>
+		<result property="appDesc" jdbcType="string" column="APPDESC"/>
+		<result property="ipPort" jdbcType="string" column="IPPORT"/>
+		<result property="ipAddr" jdbcType="string" column="IPADDR"/>
+		<result property="isSyn" jdbcType="string" column="ISSYN"/>
+		<result column="SSO_MODE" jdbcType="string" property="ssoMode" />
+	    <result column="PARA_COUNT" jdbcType="string" property="paraCount" />
+	    <result column="PARA_CODE1" jdbcType="string" property="paraCode1" />
+	    <result column="PARA_NAME1" jdbcType="string" property="paraName1" />
+	    <result column="PARA_CODE2" jdbcType="string" property="paraCode2" />
+	    <result column="PARA_NAME2" jdbcType="string" property="paraName2" />
+	    <result column="PARA_CODE3" jdbcType="string" property="paraCode3" />
+	    <result column="PARA_NAME3" jdbcType="string" property="paraName3" />
+	    <result column="PARA_CODE4" jdbcType="string" property="paraCode4" />
+	    <result column="PARA_NAME4" jdbcType="string" property="paraName4" />
+	    <result column="PARA_CODE5" jdbcType="string" property="paraCode5" />
+	</resultMap>
+	
+	<!-- 查询需要同步的应用系统编号字符串 -->
+	<select id="queryIssynApp" resultClass="java.lang.String">
+		SELECT WMSYS.WM_CONCAT(DICTID) DICTID
+			  FROM EOS_DICT_ENTRY
+			 WHERE EOS_DICT_ENTRY.DICTTYPEID = 'ABF_ISSYNSYSTEM'
+	</select>
+	
+	<!-- 查询应用菜单根 -->
+	<select id="queryAppRoot" resultMap="menuRootMap">
+	 <![CDATA[  
+		SELECT A.APPID, A.APPCODE, A.APPNAME
+		  FROM AC_APPLICATION A
+		 WHERE A.APPID IN
+	 ]]>    
+         <iterate property="appid" conjunction="," open="(" close=")">
+          		#appid[]#
+      	 </iterate>
+	</select>
+	<!-- 查询菜单组信息 -->
+	<select id="queryMenuGroup" resultMap="menuGroupMap">
+		SELECT A.FUNCGROUPID,
+		       A.APPID,
+		       A.FUNCGROUPNAME,
+		       A.GROUPLEVEL,
+		       A.ISLEAF,
+		       A.FUNCGROUPSEQ,
+		       A.DISPLAYORDER,
+		       A.GROUPACTION
+		  FROM AC_FUNCGROUP A
+		 WHERE A.APPID = #appid#
+		   AND A.GROUPLEVEL = 1
+		 ORDER BY A.DISPLAYORDER ASC, A.GROUPLEVEL DESC
+	</select>
+	<!-- 查询菜单组子功能组信息 -->
+	<select id="queryMenuChildGroup" resultMap="menuGroupMap">
+		SELECT A.FUNCGROUPID,
+		       A.APPID,
+		       A.FUNCGROUPNAME,
+		       A.GROUPLEVEL,
+		       A.ISLEAF,
+		       A.FUNCGROUPSEQ,
+		       A.DISPLAYORDER,
+		       A.GROUPACTION
+		  FROM AC_FUNCGROUP A
+		 WHERE A.parentgroup = #groupid#
+		   AND A.GROUPLEVEL = #grouplevel#
+		 ORDER BY A.DISPLAYORDER ASC, A.FUNCGROUPSEQ DESC
+	</select>
+	<!-- 查询菜单组子菜单信息 -->
+	<select id="queryMenu" resultMap="menuMap">
+		SELECT B.FUNCCODE, B.FUNCGROUPID, B.FUNCNAME
+		  FROM AC_FUNCTION B
+		 WHERE B.FUNCGROUPID = #groupid#
+		 ORDER BY B.DISPLAYORDER
+	</select>
+	
+	<!-- 查询应用系统 -->
+	<select id="querySystemApp" resultMap="systemMap">
+		<include refid="COMMON.oracle_Pagination_Head" />
+			SELECT A.APPID,
+		       A.APPCODE,
+		       A.APPNAME,
+		       A.APPTYPE,
+		       A.ISOPEN,
+		       TO_CHAR(A.OPENDATE,'yyyy-MM-dd') OPENDATE,
+		       A.URL,
+		       A.APPDESC,
+		       A.IPPORT,
+		       A.IPADDR
+		  FROM AC_APPLICATION A
+		  WHERE 1 = 1
+		  <isNotNull property="appname">
+		  	AND A.APPNAME LIKE '%'||#appname:VARCHAR#||'%'
+		  </isNotNull>
+		  <isNotNull property="apptype">
+		  	AND A.APPTYPE = #apptype#
+		  </isNotNull>
+		  ORDER BY APPID
+	  	<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	<select id="querySystemAppCount" resultClass="java.lang.Long">
+			SELECT COUNT(1)
+		  FROM AC_APPLICATION A
+		  WHERE 1 = 1
+		  <isNotNull property="appname">
+		  	AND A.APPNAME LIKE '%'||#appname:VARCHAR#||'%'
+		  </isNotNull>
+		  <isNotNull property="apptype">
+		  	AND A.APPTYPE = #apptype#
+		  </isNotNull>
+	</select>
+	<!-- 新增应用系统 -->
+	<insert id="addApp" parameterClass="AcApplication">
+		INSERT INTO AC_APPLICATION
+				  (APPID,
+				   APPCODE
+				   ,APPNAME
+				   ,APPTYPE
+				   ,ISOPEN
+				   <isNotEmpty  property="openDate">
+				   ,OPENDATE
+				   </isNotEmpty>
+				   <isNotEmpty  property="url">
+				   ,URL
+				     </isNotEmpty>
+				      <isNotEmpty  property="appDesc">
+				  , APPDESC
+				   </isNotEmpty>
+				    <isNotEmpty  property="ipAddr">
+				   ,IPADDR
+				   </isNotEmpty>
+				    <isNotEmpty  property="ipPort">
+				   ,IPPORT
+				   </isNotEmpty>
+				   ,ISSYN
+				    <isNotEmpty  property="ssoMode">
+				   ,SSO_MODE
+				    </isNotEmpty>
+				     <isNotEmpty  property="paraCount">
+				   ,PARA_COUNT
+				   </isNotEmpty>
+				    <isNotEmpty  property="paraCode1">
+				   ,PARA_CODE1
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraName1">
+				   ,PARA_NAME1
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraCode2">
+				   ,PARA_CODE2
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraName2">
+				   ,PARA_NAME2
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraCode3">
+				   ,PARA_CODE3
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraName3">
+				   ,PARA_NAME3
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraCode4">
+				   ,PARA_CODE4
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraName4">
+				   ,PARA_NAME4
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraCode5">
+				   ,PARA_CODE5
+				    </isNotEmpty>
+				    <isNotEmpty  property="paraName5">
+				   ,PARA_NAME5
+				   </isNotEmpty>
+				   <isNotEmpty  property="appIcon">
+				   ,APP_ICON
+				   </isNotEmpty>
+				   )
+				VALUES
+				  (SEQ_ABF_SYS.nextval,
+				   #appCode#
+				   ,#appName#
+				   ,#apptype#
+				   ,#isOpen#
+				   <isNotEmpty  property="openDate">
+				  ,TO_DATE(#openDate#,'yyyy-MM-dd')
+				  </isNotEmpty>
+				  <isNotEmpty  property="url">
+				   ,#url#
+				   </isNotEmpty>
+				   <isNotEmpty property="appDesc">
+				   ,#appDesc#
+				   </isNotEmpty>
+				   <isNotEmpty  property="ipAddr">
+				   ,#ipAddr#
+				   </isNotEmpty>
+				   <isNotEmpty  property="ipPort">
+				   ,#ipPort#
+				   </isNotEmpty>
+				   ,'y'
+				   <isNotEmpty  property="ssoMode">
+				   ,#ssoMode#
+				   </isNotEmpty>
+				    <isNotEmpty  property="paraCount">
+				   ,#paraCount#
+				   </isNotEmpty>
+				    <isNotEmpty  property="paraCode1">
+				   ,#paraCode1#
+				   </isNotEmpty>
+				      <isNotEmpty  property="paraName1">
+				   ,#paraName1#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraCode2">
+				   ,#paraCode2#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraName2">
+				   ,#paraName2#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraCode3">
+				   ,#paraCode3#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraName3">
+				   ,#paraName3#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraCode4">
+				   ,#paraCode4#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraName4">
+				   ,#paraName4#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraCode5">
+				   ,#paraCode5#
+				   </isNotEmpty>
+				   <isNotEmpty  property="paraName5">
+				   ,#paraName5#
+				   </isNotEmpty>
+				    <isNotEmpty  property="appIcon">
+				   ,#appIcon#
+				   </isNotEmpty>
+				   )
+	</insert>
+	<!-- 验证应用系统应用代码是否已存在 -->
+	<select id="checkAppCode" resultClass="java.lang.Long">
+		SELECT COUNT(1) num
+		  FROM AC_APPLICATION
+		 WHERE AC_APPLICATION.APPCODE = #appcode#
+		 <isNotNull prepend="and" property="appid">
+		 	AC_APPLICATION.APPID != #appid#
+		 </isNotNull>
+	</select>
+	<!-- 删除应用系统 -->
+	<delete id="delApp">
+		DELETE FROM AC_APPLICATION WHERE AC_APPLICATION.APPID = #appid#
+	</delete>
+	<!-- 删除应用菜单与角色的关联 -->
+	<delete id="delMenuRole">
+		DELETE FROM AC_ROLEFUNC WHERE APPID=#appid#
+	</delete>
+	<!-- 删除应用菜单 -->
+	<delete id="delAppFuncMenu">
+		DELETE FROM AC_FUNCTION
+			 WHERE AC_FUNCTION.FUNCGROUPID IN
+			       (SELECT AC_FUNCGROUP.FUNCGROUPID FROM AC_FUNCGROUP WHERE APPID = #appid#)
+	</delete>
+	<!-- 删除应用菜单组 -->
+	<delete id="delAppGroup">
+		DELETE  FROM AC_FUNCGROUP WHERE APPID=#appid#
+	</delete>
+	<!-- 更新应用系统 -->
+	<update id="updateApp" parameterClass="AcApplication">
+		UPDATE AC_APPLICATION
+			   SET APPCODE                = #appCode#,
+			       APPNAME                = #appName#,
+			       APPTYPE                = #apptype#,
+			       ISOPEN                 = #isOpen#,
+			       OPENDATE               = TO_DATE(#openDate#, 'yyyy-MM-dd'),
+			       URL                    = #url#,
+			       APPDESC                = #appDesc#,
+			       IPADDR                 = #ipAddr#,
+			       IPPORT                 = #ipPort#,
+			       SSO_MODE               = #ssoMode#,
+			       PARA_CODE1             = #paraCode1#,
+			       PARA_NAME1             = #paraName1#,
+			       PARA_CODE2             = #paraCode2#,
+			       PARA_NAME2             = #paraName2#,
+			       PARA_CODE3             = #paraCode3#,
+			       PARA_NAME3             = #paraName3#,
+			       PARA_CODE4             = #paraCode4#,
+			       PARA_NAME4             = #paraName4#,
+			       PARA_CODE5             = #paraCode5#,
+			       PARA_NAME5             = #paraName5#
+			       <isNotNull property="isSyn" prepend=",">
+			       issyn                  = #isSyn#
+			       </isNotNull>
+			       <isNotNull property="appIcon" prepend=",">
+			       app_icon                  = #appIcon#
+			       </isNotNull>
+			 WHERE APPID                  = #appId#
+	</update>
+	<!-- 查询单个系统应用信息 -->
+	<select id="querySignleApp" resultMap="singleMap">
+		SELECT AC_APPLICATION.APPID,
+		       AC_APPLICATION.APPCODE,
+		       AC_APPLICATION.APPNAME,
+		       AC_APPLICATION.APPTYPE,
+		       AC_APPLICATION.ISOPEN,
+		       TO_CHAR(AC_APPLICATION.OPENDATE,'yyyy-MM-dd') OPENDATE,
+		       AC_APPLICATION.URL,
+		       AC_APPLICATION.APPDESC,
+		       AC_APPLICATION.ISSYN,
+		       AC_APPLICATION.IPADDR,
+		       AC_APPLICATION.IPPORT,
+		       AC_APPLICATION.SSO_MODE,
+		       AC_APPLICATION.PARA_COUNT,
+		       AC_APPLICATION.PARA_CODE1,
+		       AC_APPLICATION.PARA_NAME1,
+		       AC_APPLICATION.PARA_CODE2,
+		       AC_APPLICATION.PARA_NAME2,
+		       AC_APPLICATION.PARA_CODE3,
+		       AC_APPLICATION.PARA_NAME3,
+		       AC_APPLICATION.PARA_CODE4,
+		       AC_APPLICATION.PARA_NAME4,
+		       AC_APPLICATION.PARA_CODE5,
+		       AC_APPLICATION.PARA_NAME5
+		  FROM AC_APPLICATION
+		 WHERE APPID = #appid#
+	</select>
+	<!-- 新增功能组 -->
+	<insert id="addFuncGroup" parameterClass="AcFunctionGroup">
+			INSERT INTO AC_FUNCGROUP
+				  (FUNCGROUPID,
+				   APPID,
+				   FUNCGROUPNAME,
+				   PARENTGROUP,
+				   GROUPLEVEL,
+				   FUNCGROUPSEQ,
+				   ISLEAF,
+				   GROUPACTION)
+				VALUES
+				  (SEQ_AC_FUNCGROUP.NEXTVAL,
+				   #appId:VARCHAR#,
+				   #funcGroupName:VARCHAR#,
+				   TO_NUMBER(#parentGroup:VARCHAR#),
+				   TO_NUMBER(#groupLevel:VARCHAR#),
+				   <isNotNull property="funcGroupSeq">
+				   		#funcGroupSeq:VARCHAR# ||SEQ_AC_FUNCGROUP.Currval||'.',
+				   </isNotNull>
+				   <isNull property="funcGroupSeq">
+				   '.'||SEQ_AC_FUNCGROUP.Currval||'.',
+				   </isNull>
+				   #isLeaf:VARCHAR#,
+				   #groupAction:VARCHAR#)
+	</insert>
+	<!-- 查询某个应用下的子功能组列表 -->
+	<select id="selectAppChildGroup" resultMap="appChildGroupList">
+		<include refid="COMMON.oracle_Pagination_Head" />
+			SELECT AC_FUNCGROUP.FUNCGROUPID,
+			       AC_FUNCGROUP.APPID,
+			       AC_FUNCGROUP.FUNCGROUPNAME,
+			       AC_FUNCGROUP.PARENTGROUP,
+			       (SELECT A.FUNCGROUPNAME
+			          FROM AC_FUNCGROUP A
+			         WHERE A.FUNCGROUPID = AC_FUNCGROUP.PARENTGROUP) PARENTGROUPNAME,
+			       AC_FUNCGROUP.GROUPLEVEL,
+			       AC_FUNCGROUP.FUNCGROUPSEQ,
+			       AC_FUNCGROUP.ISLEAF,
+			       AC_FUNCGROUP.DISPLAYORDER,
+			       AC_FUNCGROUP.TYPE,
+			       AC_FUNCGROUP.GROUPACTION
+			  FROM AC_FUNCGROUP
+			 WHERE AC_FUNCGROUP.APPID = #appid#
+	  		 AND AC_FUNCGROUP.GROUPLEVEL = '1'
+	  		 ORDER BY AC_FUNCGROUP.DISPLAYORDER
+	   <include refid="COMMON.oracle_Pagination_Tail" />
+	</select>	
+	<!-- 统计某个应用下的子功能组数量 -->
+	<select id="countAppChildGroup" resultClass="java.lang.Long">
+			SELECT COUNT(1)
+			  FROM AC_FUNCGROUP
+			 WHERE AC_FUNCGROUP.APPID = #appid#
+	  		 AND AC_FUNCGROUP.GROUPLEVEL = '1'
+	  		 ORDER BY AC_FUNCGROUP.DISPLAYORDER
+	</select>	
+	<!-- 更新应用下的工作组显示顺序 -->
+	<update id="updateAppGroupDisplayOrder" parameterClass="java.util.HashMap">
+		UPDATE AC_FUNCGROUP
+		   SET AC_FUNCGROUP.DISPLAYORDER = #displayOrder#
+		 WHERE AC_FUNCGROUP.FUNCGROUPID = #groupid#
+	</update>
+	<!-- 更新工作组名称 -->
+	<update id="updateGroupName" parameterClass="AcFunctionGroup">
+		UPDATE AC_FUNCGROUP
+		   SET AC_FUNCGROUP.FUNCGROUPNAME = #funcGroupName#
+		 WHERE AC_FUNCGROUP.FUNCGROUPID = #funcGroupId#
+	</update>
+	<!-- 删除工作组 -->
+	<delete id="deleteGroup" parameterClass="java.util.HashMap">
+		 DELETE FROM AC_FUNCGROUP
+		  WHERE AC_FUNCGROUP.FUNCGROUPID IN
+		        (SELECT A.FUNCGROUPID
+		           FROM AC_FUNCGROUP A
+		          WHERE A.PARENTGROUP = #groupid#
+		             OR A.FUNCGROUPID = #groupid#)
+	</delete>
+	<!-- 删除工作组时级联删除工作组或子组下的菜单 -->
+	<delete id="deleteFunc" parameterClass="java.util.HashMap">
+		 DELETE FROM AC_FUNCTION
+			 WHERE AC_FUNCTION.FUNCGROUPID IN
+			       (SELECT A.FUNCGROUPID
+			          FROM AC_FUNCGROUP A
+			         WHERE A.PARENTGROUP = #groupid#
+			            OR A.FUNCGROUPID = #groupid#)
+	</delete>
+	<!-- 删除工作组时级联删除工作组或子组下的菜单的授权 -->
+	<delete id="deleteRoleFunc" parameterClass="java.util.HashMap">
+			DELETE FROM AC_ROLEFUNC
+			 WHERE AC_ROLEFUNC.FUNCGROUPID IN
+			       (SELECT A.FUNCGROUPID
+			          FROM AC_FUNCGROUP A
+			         WHERE A.PARENTGROUP = #groupid#
+			            OR A.FUNCGROUPID = #groupid#)
+	</delete>
+	<!-- 根据工作组编号查询工作组信息 -->
+	<select id="queryGroupinfo" parameterClass="AcFunctionGroup" resultMap="appChildGroupList">
+		SELECT A.FUNCGROUPID,
+		       A.APPID,
+		       A.FUNCGROUPNAME,
+		       A.GROUPLEVEL,
+		       A.ISLEAF,
+		       A.parentGroup,
+		       A.FUNCGROUPSEQ,
+		       A.DISPLAYORDER,
+		       A.GROUPACTION,
+		       A.TYPE,
+		       (SELECT B.FUNCGROUPNAME
+		          FROM AC_FUNCGROUP B
+		         WHERE B.FUNCGROUPID = A.PARENTGROUP) PARENTGROUPNAME
+		  FROM AC_FUNCGROUP A
+		 WHERE A.Funcgroupid = #funcGroupId#
+	</select>
+	<!-- 更新工作组信息 -->
+	<update id="updateGroupInfo" parameterClass="AcFunctionGroup">
+		UPDATE AC_FUNCGROUP
+		   SET FUNCGROUPNAME = #funcGroupName#,
+		       DISPLAYORDER  = #displayOrder#,
+		   <isNotNull property="type">
+		       type   = #type#,
+		   </isNotNull>
+		       GROUPACTION   = #groupAction#
+		 WHERE FUNCGROUPID = #funcGroupId#
+	</update>
+	<!-- 查询某个组下的子功能组列表 -->
+	<select id="selectGroupChildGroup" resultMap="appChildGroupList">
+		<include refid="COMMON.oracle_Pagination_Head" />
+			SELECT AC_FUNCGROUP.FUNCGROUPID,
+			       AC_FUNCGROUP.APPID,
+			       AC_FUNCGROUP.FUNCGROUPNAME,
+			       AC_FUNCGROUP.PARENTGROUP,
+			       (SELECT A.FUNCGROUPNAME
+			          FROM AC_FUNCGROUP A
+			         WHERE A.FUNCGROUPID = AC_FUNCGROUP.PARENTGROUP) PARENTGROUPNAME,
+			       AC_FUNCGROUP.GROUPLEVEL,
+			       AC_FUNCGROUP.FUNCGROUPSEQ,
+			       AC_FUNCGROUP.ISLEAF,
+			       AC_FUNCGROUP.DISPLAYORDER,
+			       AC_FUNCGROUP.type,
+			       AC_FUNCGROUP.GROUPACTION
+			  FROM AC_FUNCGROUP
+			 WHERE AC_FUNCGROUP.APPID = #appid#
+			 AND AC_FUNCGROUP.PARENTGROUP = #funcGroupId#
+	  		 AND AC_FUNCGROUP.GROUPLEVEL = #groupLevel#
+	  		 ORDER BY AC_FUNCGROUP.DISPLAYORDER
+	   <include refid="COMMON.oracle_Pagination_Tail" />
+	</select>	
+	<!-- 统计某个组下的子功能组数量 -->
+	<select id="countGroupChildGroup" resultClass="java.lang.Long">
+			SELECT COUNT(1)
+			  FROM AC_FUNCGROUP
+			 WHERE AC_FUNCGROUP.APPID = #appid#
+	  		 AND AC_FUNCGROUP.PARENTGROUP = #funcGroupId#
+	  		 AND AC_FUNCGROUP.GROUPLEVEL = #groupLevel#
+	  		 ORDER BY AC_FUNCGROUP.DISPLAYORDER
+	</select>	
+	<!-- 查询某个工作组下的功能菜单列表 -->
+	<select id="queryGroupFunc" resultClass="AcFunction" parameterClass="java.util.HashMap">
+		<include refid="COMMON.oracle_Pagination_Head" />
+			SELECT FUNCCODE as funcCode,
+			       FUNCGROUPID as funcGroupId,
+			       FUNCNAME as funcName,
+			       FUNCTYPE as funcType,
+			       ISMENU as isMenu,
+			       DISPLAYORDER as displayOrder,
+			       (SELECT FUNCGROUPNAME FROM AC_FUNCGROUP A WHERE A.FUNCGROUPID = #funcGroupId#) as parentGroupName
+			  FROM AC_FUNCTION
+			 WHERE AC_FUNCTION.FUNCGROUPID = #funcGroupId#
+			 ORDER BY AC_FUNCTION.DISPLAYORDER
+		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	<!-- 统计某个组下的功能菜单数量 -->
+	<select id="countGroupFuncMenu" resultClass="java.lang.Long">
+			SELECT count(1)
+			  FROM AC_FUNCTION
+			 WHERE AC_FUNCTION.FUNCGROUPID = #funcGroupId#
+	</select>
+	<!-- 查询单个菜单信息 -->
+	<select id="querySingleFuncMenu" resultClass="AcFunction" parameterClass="AcFunction">
+			  SELECT FUNCCODE as funcCode,
+                  FUNCGROUPID as funcGroupId,
+                  FUNCNAME as funcName,
+                  FUNCTYPE as funcType,
+                  ISMENU as isMenu,
+                  DISPLAYORDER as displayOrder,
+                  AC_FUNCTION.FUNCDESC as funcCode,
+                  AC_FUNCTION.FUNCACTION as funcAction,
+                  AC_FUNCTION.FUNICON as funIcon,
+                  AC_FUNCTION.ISLOCK as isLock,
+                  Parainfo as paraInfo,
+                  (SELECT FUNCGROUPNAME
+                     FROM AC_FUNCGROUP A
+                    WHERE A.FUNCGROUPID = #funcGroupId#) as parentGroupName
+             FROM AC_FUNCTION
+            WHERE AC_FUNCTION.FUNCCODE = #funcCode#
+	</select>
+	<!-- 新增功能菜单 -->
+	<insert id="addMenu" parameterClass="AcFunction">
+		  INSERT INTO AC_FUNCTION
+				    (FUNCCODE,
+				     FUNCGROUPID,
+				     FUNCNAME,
+				     FUNCDESC,
+				     <isNotNull property="funcAction">
+					     <isNotEmpty property="funcAction">
+					     	FUNCACTION,
+					     </isNotEmpty>
+				     </isNotNull>
+				     PARAINFO,
+				     FUNCTYPE,
+				     ISMENU,
+				     FUNICON)
+				  VALUES
+				    (#funcCode:VARCHAR#,
+				     #funcGroupId:VARCHAR#,
+				     #funcName:VARCHAR#,
+				     #funcDesc:VARCHAR#,
+				     <isNotNull property="funcAction">
+				      	<isNotEmpty property="funcAction">
+				     		#funcAction:VARCHAR#,
+				    	 </isNotEmpty>
+				     </isNotNull>
+				     #paraInfo:VARCHAR#,
+				     #funcType:VARCHAR#,
+				     #isMenu:VARCHAR#,
+				     #funIcon:VARCHAR#)
+	</insert>
+	<!-- 更新菜单信息 -->
+	<update id="updateMenu" parameterClass="AcFunction">
+		UPDATE AC_FUNCTION
+		   SET FUNCCODE = #funcCode#,
+		   	   FUNCGROUPID = #funcGroupId#,
+		       FUNCNAME    = #funcName#,
+		       FUNCDESC    = #funcDesc#,
+		       <isNotNull property="displayOrder">
+		      	 		DISPLAYORDER  = #displayOrder#,
+		       </isNotNull>
+		       <isNotNull property="funcAction">
+		        	<isNotEmpty property="funcAction">
+		      	 		FUNCACTION  = #funcAction#,
+		       		</isNotEmpty>
+		       </isNotNull>
+		       PARAINFO    = #paraInfo#,
+		       FUNCTYPE    = #funcType#,
+		       <isNotNull property="funIcon">
+		       		FUNICON   = #funIcon#, 
+		       </isNotNull>
+		       ISMENU      = #isMenu#
+		 WHERE FUNCCODE = #oldFuncCode#
+	</update>
+	<!-- 删除菜单与角色的关系 -->
+	<delete id="deleteRoleFun" parameterClass="AcFunction">
+		<![CDATA[  
+			DELETE FROM AC_ROLEFUNC WHERE AC_ROLEFUNC.FUNCCODE  = #funcCode#
+      	]]> 
+	</delete>
+	<!-- 删除菜单-->
+	<delete id="deleteFun" parameterClass="AcFunction">
+		DELETE FROM AC_FUNCTION WHERE AC_FUNCTION.FUNCCODE  = #funcCode#
+	</delete>
+	<!-- 更新菜单显示顺序 -->
+	<update id="updateMenuDisplayOrder" parameterClass="java.util.HashMap">
+		UPDATE AC_FUNCTION
+			   SET AC_FUNCTION.DISPLAYORDER = #displayOrder#
+			 WHERE AC_FUNCTION.FUNCCODE = #funcCode#
+	</update>
+	<!-- 验证待新增或修改的功能代码是否存在 -->
+	<!-- oldFuncCode为空说明是新增不用排除本身 -->
+	<select id="checkFuncCode" parameterClass="AcFunction" resultClass="java.lang.Long">
+		SELECT COUNT(1)
+			  FROM AC_FUNCTION A
+			 WHERE A.FUNCCODE = #funcCode#
+			 <isNotNull property="oldFuncCode" prepend="and">
+   				A.FUNCCODE != #oldFuncCode#
+   			 </isNotNull>
+	</select>
+	<!--移动 -->
+	<update id="moveTreeNode" parameterClass="java.util.HashMap">
+		<isEqual property="execType" compareValue="menuToGroup">
+		UPDATE AC_FUNCTION
+			   SET AC_FUNCTION.FUNCGROUPID = #toFuncGroupId#
+			 WHERE AC_FUNCTION.FUNCCODE = #fromFuncCode#
+		</isEqual>	 
+		<isEqual property="execType" compareValue="groupToGroup">
+			 UPDATE AC_FUNCGROUP
+		   SET AC_FUNCGROUP.GROUPLEVEL   = #groupLevel#,
+		   		AC_FUNCGROUP.PARENTgROUP = #toFuncGroupId#,
+		       AC_FUNCGROUP.FUNCGROUPSEQ = #toFuncGroupSeq# || #fromFuncGroupId# || '.'
+		 WHERE AC_FUNCGROUP.FUNCGROUPID = #fromFuncGroupId#
+		 </isEqual>
+		<isEqual property="execType" compareValue="groupToApp">
+			UPDATE AC_FUNCGROUP
+				   SET AC_FUNCGROUP.GROUPLEVEL   = '1',
+				       AC_FUNCGROUP.Parentgroup  = to_number(''),
+				       AC_FUNCGROUP.FUNCGROUPSEQ = '.' || #toFuncGroupId# || '.'
+				 WHERE AC_FUNCGROUP.FUNCGROUPID = #toFuncGroupId#
+		 </isEqual>
+	</update>
+</sqlMap>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="ygfjxxChaXun" namespace="/ygfjxxChaXun">
+     	
+	    <!-- datacell中submitAction方法 -->
+     	<action class="ygfjxxChaXunAction" method="queryYgfjxxByCondit" name="queryYgfjxxByCondit_ygfjxxChaXun">
+	    </action>
+	    
+	    <!-- 根据条件查询员工附加信息表 -->
+     	<action class="ygfjxxChaXunAction" method="dataCellSubmit" name="dataCellSubmit_ygfjxxChaXun">
+	    </action>
+     	
+  </package>
+</struts>

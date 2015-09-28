@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 获取登录用户信息、机构信息、角色信息的数据库操作对象 -->
+	<bean class="com.gotop.tyjg.login.dao.imp.LoginDao" id="loginDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+</beans>

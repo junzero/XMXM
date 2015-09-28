@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FunctionManager xmlVersion="20100901">
+<FunctionDefList>
+<FunctionDef name="Upc">
+<Class className="com.fr.function.Upc"/>
+<Description>
+<![CDATA[]]></Description>
+</FunctionDef>
+</FunctionDefList>
+</FunctionManager>

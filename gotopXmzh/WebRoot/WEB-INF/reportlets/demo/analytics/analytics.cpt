@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="sex"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="order"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="optvalweight"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="optvalheight"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="optvalsale"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM EMPLOYEE
+where 1=1
+${if(len(sex)==0,""," and sex =" + sex )}
+${if(len(optvalheight)==0,""," and height " + optvalheight)}
+${if(len(optvalweight)==0,""," and weight " + optvalweight)}
+${if(len(optvalsale)==0,""," and salary " + optvalsale)}
+order by ${if(len(order)==0,"birthdate",cname + " " + order)}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.page.First">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[首页]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Previous">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[上一页]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Next">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[下一页]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Last">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[末页]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[95,19,19,19,19,108,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[133,133,133,133,133,185,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="6" s="0">
+<O>
+<![CDATA[员工基本信息查询分析表]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" s="7">
+<O>
+<![CDATA[员工姓名]]></O>
+<Expand/>
+</C>
+<C c="1" r="2" s="7">
+<O>
+<![CDATA[性别]]></O>
+<Expand/>
+</C>
+<C c="2" r="2" s="7">
+<O>
+<![CDATA[生日]]></O>
+<Expand/>
+</C>
+<C c="3" r="2" s="7">
+<O>
+<![CDATA[身高]]></O>
+<Expand/>
+</C>
+<C c="4" r="2" s="7">
+<O>
+<![CDATA[体重]]></O>
+<Expand/>
+</C>
+<C c="5" r="2" s="7">
+<O>
+<![CDATA[薪水]]></O>
+<Expand/>
+</C>
+<C c="0" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMPNAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<SelectCount count="if(len($n) = 0, -1, $n)"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="3" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="3" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="BIRTHDATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="3" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="HEIGHT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[indexofarray(split($heightview, ","), 1) = "height"]]></Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(indexofarray(split($heightview,","),2)=="=",indexofarray(split($heightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="2">
+<O t="Formula" class="Formula">
+<Attributes reserveInWeb="false">
+<![CDATA[=if(indexofarray(split($heightview,","),2)==">",indexofarray(split($heightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="3">
+<O t="Formula" class="Formula">
+<Attributes reserveInWeb="false">
+<![CDATA[=if(indexofarray(split($heightview,","),2)==">=",indexofarray(split($heightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="4">
+<O t="Formula" class="Formula">
+<Attributes reserveInWeb="false">
+<![CDATA[=if(indexofarray(split($heightview,","),2)=="<",indexofarray(split($heightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="5">
+<O t="Formula" class="Formula">
+<Attributes reserveInWeb="false">
+<![CDATA[=if(indexofarray(split($heightview,","),2)=="<=",indexofarray(split($heightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-16744448"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="4" r="3" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="WEIGHT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[indexofarray(split($weightview, ","), 1) = "weight"]]></Formula>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(indexofarray(split($weightview,","),2)=="=",indexofarray(split($weightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(indexofarray(split($weightview,","),2)==">",indexofarray(split($weightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(indexofarray(split($weightview,","),2)==">=",indexofarray(split($weightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(indexofarray(split($weightview,","),2)=="<",indexofarray(split($weightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(indexofarray(split($weightview,","),2)=="<=",indexofarray(split($weightview,","),3),nofilter)]]></Attributes>
+</O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ForegroundHighlightAction">
+<Foreground color="-65536"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="5" r="3" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SALARY"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="5" cs="6" rs="3" s="6">
+<O>
+<![CDATA[说明：\\n数据分析：op=view，依据选中的值对当前列的数据进行筛选。\\n列表选项：是否显示某组数据。\\n升序：按当前列数值升序排列。\\n降序：按当前列数值降序排列。\\n条件筛选：依据设定的条件，过滤数据。]]></O>
+<Expand leftParentDefault="false"/>
+</C>
+</CellElementList>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<PaperSize width="10.51208661417323" height="11.693000000000001"/>
+<Margin top="0.27" left="0.7500000000000002" bottom="0.27" right="0.7500000000000002"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="微软雅黑" style="1" size="23" foreground="-10066279"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[m94ctPjQ)4m#gj>,SChp.l&?k1.`+aN3u*JAJe%m6^jfqP9h@i>E$B0.f3%7MmfmN2-\3UA]A
+\iPgs:q]ApO.P+o/l-=o>d7`Hli$'h:M52Y5;Dj)0utp1Sb2VioK1[jB0C?`Pp*8MMIOJ%I`T
+4]AL(pCnF:E/(),LJ/0_B"@^jk<m5r9U7&6)ZFt2iE,*?>4.dHmFeTN1!MD,\ZDJj@Ke\%C&X
+P'DZ9k9aQs7es2!V*@Fm+>XKZYYD!f<MQ^@q"7)d9f7M&B)H%_Y?A(*u7m8Fq.9M<ST^;!C?
+]A,&1\,-)_3uh#7!=PGj>ao6gX+ueo0<<aghFhbI-/o?dUMhBpJJ0-SGWsC48btcFDZfk1M/m
+8P")]AUm/6F/5g2cnii?;>)0HqlQ"=&1GpttYWR+,`7]A4p0m<7m#?Nj.&'lb4hYoHP"U+gM46
+U!=ACUSA#;Q!a64,G)/Y/-r1cI)&TWkA^>lO$]AS$s.$hLDK+UXh@\2Dqskl2(7Y]A;N-AIpcf
+/D#Do'jOEf1C_mJt`j5C88%[=Q]A3*b>g"<iC]A3&/u@=iXg*8C1+Y1H'_ffF'(Y3<?Ps'U*"P
+F((a#a:k^B3]A1r2G,+,lkk:J@p&Gs)0Y%iA_E5TbBC9YCY;j@s+$[PKRtNj9DZul5GZJL=e,
+MEDuZiR.N:S!@P/jNX5/h;3n.lo0m@B5)J\+bOUgWS$Y<,Igl_5,V;R\$/P)?*Ji6t)j#!Dr
+Def44B+sHQA*M@2'T,`,'1!]A(jCl!T8^rud1*$uibV_D>ql+gs[Q=PIM8/RLS):"TGHI2AYt
+<B;Y.eI2[?q6\0pN\DdV1TihLAg?A3^`!IeegBXXu3W;+uaO]AJ#`ump!%Y\E8Fb9>Gsd8KEE
+8GM%ps^^ap$jpm^Z>+:!YeOs.H]AE6Z#2pa)kO3mTM+IsM5a^e\iaI7__kir_7m2m.^MCl/0H
++,'0c5"!8jkrWJ^0B;hP;ohkg5r#9.V_Nm+Ze\kBOH=0$:Q6);`Wdm4(".1\!j!MP88<A!f7
+4@m]Ak=)2]A\[$rJc.4*hafaquGA,7#)+Tl&_MfDT'e;M,A!u5fGtM(/V/Kee9neaRBK'o:h?a
+H\tA*$G:l&@nGbDZN'hc(82tb('De0/QpZ]AF%I'l8\U#p0`!:?@dS`+<lQ^?ql'dLotM4bL]A
+B`+d^G+MZF'8/_tMoT0S#r6>V@fTAk3k;X2Ta\M0oC(NQ*QLVH`bT/-(XSM`ag/_%;@>,VI_
+P8r'Q$Epd_`Pq>OK(L;\d5]AU[i2J`C$0A:dW;e>66!n-0Rlq+PH[S*[/?@fGH@Oo9PLV[0!W
+q5.%19=kN,!M\]AMADFTHaP+P4a5#2X37Om@sjKX-q:u`-piS8/l`b5ji&nW@+3^BBE;=#J?A
+Z2@R"%9%#9Ymrl'uU^DKktPIO/a%>&Wt!e[=<;=$%?(#kkr;hFF%'%F0Mq/48:J-BoJ"`a&P
+qbL*lpe:k#oQCGUCa:B*D\bLn=g`')7>Q1`&3`0OIGQWk:O4eZ\H)"o(^rStFAAaYNe,h=/"
+8="MN$#X.04]AT,[fC@>e>N!C#+/$*Vq4!9p6#b.XQoEZ$ul`RB6J,&a,.Cj,U!(5m5?,+%AM
+e+rqRV?cr_6-4h$:pl9NZ93KRCR+'*m-<#Ht@rP?aJOhaaLO`T=.o@fF@V<`#SO\6'>'Rse?
+j=<e9A@t1cM*Y['ZrhXE;N*^f]AJDj1-Oj8$&H0[rM1bT2),:SJQDVLBT`(RquA\JM\D"&0Kh
+7n$dt=)o_0Z-dWT5(/-:/@aD0;m/!#:ho+Cs9f^bL\]AU'7$aH:RXM#,tBdr+9IWd2"5N6GoU
+5Ih":.I\Ld78o]A54?`(j;&/Asq]A7fJgj_MbT\"&;kL<AYK_Gr'Rs!W"f;t8)1A(X@G@1%BRN
+#aHK1s/0,N$eG9i$jZ4Yi%19$]As64)m@KfK0Qkn[knkIO$O8VAi\;mBdrUb(6\@Pl9=B7@!/
+'p3rdXkYZldo?*8RMOe4:,]AG#H&]A;<Rhl:%!A@OYl_Tt,I#:o(QMBr>t'[@c/BWRU"V8^J4_
+M*_[%Y"1DFWN@aCt+=FTdQKuG#qV;6Qsqd3b4S#VfruaJ3=3gZu3``0JE9CEff(-dqj*.Hs*
+Y(Vpqe+e9!A%IQW@hmtZA`p1KFOmDqVnQT\9EZ0MMId(P-+:9<0RO1'*NgXTMhP>+/pEWA9e
+2>2=(Np1dc+.W'OAkZb]A]A;^kh8djQLif)_XA=3ZA6<en5A8XF22JM._qVdAhT";SUjKo7@9a
+:jfRq<u5g4o%lVkUW;;W)L>X[hV54ar-&H6^^\YpB7dgFq+7]AL,PCXCr*]AGb^+W*:bK,TgtN
+>0!,R+3Y\(E+Bd92FD.@.OMl#TV*i"$E:Y:6XUU\2p\k6B'CfRh+s!Sh\lNqWN*[ZDr)-@r%
+3:dS,tEmQ'c%Q8\g*1-%-Vb/W?slsC8nKd,f:2CD[YZ`qakm#;m'kYY+D9`4KV\9<a,XISm@
+sJ/<fULi7[Eu&/=`cn$MY3N;e8'[lRGFig<lU#2($<bb7Ca%_2$<+A8&tL4-gM7(_EG3'#i7
+.8HEDa]A]ApR]A#LaB^n[IJ;a=&HXW8PA\IrZhnnWBT:9:5G]A-H=fS5YY&M#l0GEj]AJ2A[Du.NV
+Vjc]A68[=rKR9GZ>mIMY.ECeJ!U0+JFaZXZg('h3hub[R'<KuTVoAS/pn,Cd+XAiJWdX^(=sF
+smVO"*Ee4d0g/$t*hl`P4I;tHFlU:4%am;8[7lOLPC-.s0q[nT(+'8pIo<-sij&,AbrK]A\i^
+<=f3f:m*E/C2V^]A=[[uD_'VCG+Rm"TlZr?`<heM9`i?lOoSN>/Ag\i<7*%^n@XhXm0E%hm5+
+J+%uVISXI]AbNn+n`nZe&fUV4nsO6li+9r+-+9R)G6tln/8>UEeV2KV.W!4C=o"IIhi:8mh*A
+EA!t1p&l['PI4A0>P+>rE<#^&T`K`"4$<GbDT51CJZ?*lTi=]A>[4)b79d>N@[[;S-[N"XPOI
+-lpdfIKTAt"5Q7=D'RgiY<lCMXj8J2dm[E"%U<$J^__^g.Ht\B\(j^Jf*.,gE1lmUp;(:A,C
+Q`CDIG)f?Zj`suThIM;OdAJDe)[-k16d.Wnk"nYT7GlCH)=AjjPlp$:2^!B.K=Mp_<7L'2To
+WY60IK*T6IhE%g,,"cA5Jp)2.laNe"i;63)jqbUVeg,MPf=T@VR_656X-GSfQ>9UeVf5O03J
+jubZNPH1MN[of9Zs)=B%Y[I!n;m>H)FQP0)A,mRhdeUUPg\oSCpM1cSIHEPOlB##AKBQ-D!>
+#'>B<O0]A^/a%\$e*o&1JaW7ZAEI+qn2BP&U@A#K/RO3?eVQKMmCW)!6qda.lC7c\T@$_[M:S
+WTH3Cno7^Hj==\MSgmC@:rhNUH)Wn%[;sGA.raC;.mFj_!ZXT7`7bQJiloB2(,`N.((H.(i5
+<Yn9_7R2BDsL!+>u%Y>[i3FhTeNJJ4W@*J9VKeflZZj,#k58;f-F]A@3K/-DXj]AYc0nfWQVGr
+G0:q9Q5.@JQe_<q9^+$g6F)WA`!pAOQZb:oLo?U@=(8AN!@"21I'p<Yd.C/)8]A["JDnmTOBg
+lt'6Y=#7e(#TH3Y>TZ0slVJqrs9lC7&k10rU/_/d\_M3K`iI!H.C*\_Qsah]A<arfK-L0R'_q
+,pG0JqguM^l@=S*W/D?!h&t'9h7R*'bRb-hW*V-u?J0ICW38,pF5M'J2=J@PL,sSO$2-\t!p
+'6"=4hh93ct35SETfZEct7Wfean)qDEpE(I,m"`2bldY62dI.QpRhEo47tKf>L3B1#^ATMk^
+(>1Li\-q,9oM_T[mHquo,PLl!TWQ1Y]AXiVO<>f79SVkWhAYahX#asE&XXiaD)k8>ffdnsmW4
+VRCd`%1%,bBnBPi6Y,6;Uq)l0tOr7g[,?C%\c\?i5/MVANn\q-B5(Dbss[TXs=`=SOf9]AH5$
+%\]AJQ@1^!fM;,c\Tj,ep5SAn7Og/*@<UrF6JOX!,@bhS!oEN?g'8Grg2%N_006_&h#Nq(Z8o
+l.c'_WCLUb:r9otA[1^bN!peuRPHX8Eu-7qlJ`iO`HF;WO@mjkp8tiu2Rr4M]AUdZ@n8i"nP/
+g*1W8"k*`mPu$PLuo&SplW&G]AUXjI_?G0gUieNS/]ANU1'T<KC&F<gn>4H-&1G&tF6h04\5,!
+N%+"n90&eFoZ$l:kYDMLlF07+jR!WioHk*]Au&f-c;/pFFp6f2i%`j:JrC(!+Q-H%n2\fk&B\
+TRL<Ne#Y)NM6=qk+>FdYH@2[360cn_-%t18hRrLf;C6AGW>OFc2-2+[.@CZqf?kXZJ?$N.Im
+2Ke$>Ir6hcWuGEYDg7BO;BEEd;RC>:\3mjCR`>q4Zoh52\:0I"?H5P(@CfVZ,AY3=,1*<":N
+>+R,/It-%OG%a[VW6JA40.Kesgr%o.[h-Fa@smC)mK.-7^YZ[@in=2ik8i(DcHCPuUI4UInc
+NA\I;'.Knh&E*I*[ZR`kAjp4;kj,DFs0$d*X!e>;BPGR?+9+F)1e]AD1Rr:pB%2"hl_4Z?G#+
+04m+'[ZT\D6Idb@smT!=@`S*[pEBFO:X+l?ioC$?pm<RbpoW==DQY&-sCjd?eib#2%O;)G'R
+VaQ;A0<TPSb*\TY>V/H_5a$ehO]A&<Dg#WY.OfTa2Y$nQThQ?l+i'J9d.ji!A48g)L==Li>*[
+#a_5U.q*)-$/beie,g0hOWW+5fe,>0dJA-=]A&^K?WXiO#J?8&00ZS?rGFm3t*W#U]A;\XtNi`
+=>:=G'q<j`1UXJuMDB\pW1D9+G_%Q%*fE)D0UJY#?4.`4IZ@dV:8m'#,*]AsM=@q:,DIFmR-$
+saU+k5CBaeCpj?uBI"IhO2]A]A?Xl#+0_Jc&XhrS'Hq]A*?*H,>!=K-R)6\HLm:SKZ9RAc`jE3E
+:G'QKu(T6:(43`&?SKoB&#\U5JiGjmo!o%7r>f`;R@c%cuo(NE99k:Oq2J.YUm_K';jLTr%/
+"fI`ilRj;HqorQ-L"A'j8S4j"1]Af%kMW$@7Pgj3(d&6+3NY.g?Q5%:(1B3c1*@ql$p4LES:X
+4N;O`Nnrb8Pc/b?##5>Jkr\!'DhLq@W,aPqFWPo`K)BX/5PNYb<+FXKWG%oib\M!f&::q+Y$
+OBrEc:'\3Q7g]AS!O7A#je2IS>'bcZ"M"mIC(?pe)`RdOZ_3ZoVh>.Ig4sK:7Y=I36<!4mqf<
+8H>bL0!u.\[D/g1:cAo3amOT7R$+b:'tFL,Nt63#rgtO9bniFaZDl<6"_f;@;OHQ("+;?Z!t
+:6=/4R/:qtRMXnOu:gkGNfn[MAhd)7+L7_90kF0"CoK7^88ItA@'n5s5c/"?UN9f?[g4]Ap5%
+$i"2"$kOH\V1M&k0]Ak?Q%>KK_aZl/BI.'[,:"O3%Trp&GVe.@AbR*An`N7n]A%DU0>BkOuEEA
+J=(EG!W9\8fr5KY/+>kkQU_0,7#k%MkhH:'NZjh#pr)s@49FbN&J;5W/k"QRl]A%'EAApS/([
+PEK2j%"pLT3Nbl$lt06-%j"B"EgKH[IlQ"$0%p'b@T1[PE/g#;o.^Jui48"_7:B1"pU=Hm`R
+A&#]AsR"gp,E=XY^n^!30LsR>K3m)N=_Jf8K#7?E_YJKn-hU7(>JmHc]A7[pf3CDDZtR^Wbe;-
+ld@@eX4!a]AV__.*?1?Yg\g;-!rXC`DW8_AlcXIJr9m8%fl.FqZ=pP4cR.uuE)L[LX?Q23Q[W
+<L*+`EAZM8L[o@rW]A&R(Hf)O=Dg;Bg8leZA#[&*8>7A*frQq+^4Z@MT$35fpKe4oG3[?ZLsq
+Iie\o)1jr-b,5-U_e"hW)_S@^+MHR@[QKO=P[&")Zh+eqiAp?&:W<?B%ecQ;>Vbu"Jf<Tn$'
+S7#-SbV(@r/ir5JFF.-N?-W>M)^8sZURAuB'D8=m6L,emf?,)e'eMYaL>-^).IJ8RB"(QHI*
+RMBHMi\fO.-U9Ne*l`PoWo^2C%?OC,3p0d>mW2m;?..XtJC3oh[-Zg4JC?H;k.Ddm`t*mZ+;
+Y!j,0ERZ5r_9n_AfDmWABQ:6JH881KKs5BD]A0._).f'B>q,_Q3X@$d*W\+Qn6EGHY0r9Ekr/
+)?*M5Us]ApW;'WtFQABr@[a:,AN>$CD-="qoi\llp<8]Am_*7j<6.Y0/B_h.ngE#(t&8RX2@as
+]A)KnB#>gJ:`9fq4LE48,%7Jn?$FXNgUO_eHsH;hbDQq9fqYg,idh+c&duH*D;S%)1&%DAW#p
+Qhc86\cl[P4mKtopH*emHD4co"<Q/AkE55`+&9OsbHq-aB8$J,Vd7KZ,h&,tjRMJuYQrF1Sl
+;hmP,:QASK;X?BQk''[H"SIABA?7Z&]ABO3kT3Mn>8R^OgCqLD9''?;_*qO=,0jKFLn`<<"[p
+i2:bc?kMSiN3>?Nf?/BTHf/nkJ1RelFCW8B3VJkAK^O7r]A?\Dq%6B;tFBHeq:Kf)C^>O*$Wk
+"\@g,M^7NQZCbr-n:CX\bP=%SG(!)6l`-ehdC/lYg0jo^8kB"`J\r*CE,$=Hdg.BLkKF'Hh!
+&r-jaq%;LU=+m<>"0j@EnUfh@9+bl)MCY'"3LCY>Jj:5k;=:6Y9Kn/UDi\ldD1WD8@3h&WY"
+j\&T$KXt!&Nn,YK/CZpr1jO)b?ufQ6[.&[XHba%"C,#:iDNrJ;'\X&0mlt3]AhVXit$AuY#CK
+&,Fr2hi$/S;G`9V4`5GH/M["gap/i=5cT&TV6IKI5**fk-rIUgc[Ea-Xf?<cr8Y#A*<#N!4W
+k<5%_D%i?bk12Bgi]A28@Sm`C]Au^h4Q$,4E;SaKQ0eIP",TXd:iAlARAM)IlF6o&'f6]APmE/*
+2^lkL'GecQQ5RW"rbCIM&]Ac=Xmun$p@]A;C>.5;]ARFMu0DV![9)W;**3%BJ]AX#Ad3n$'rn`>a
+6sS3=A[)74ko91Hqd!fiHLem4S=Z@,XO8<6oBDrQ7a5Fr>h>#f#+'&M.(3RoX^)SVP"[MuBr
+H#LnN6=n'0DG0&+I/1lF1[=JbnVE3kb"#9GA.<ithd1Le!87MkZ1r+Vfrng7WrXV3_$uou5e
+Gbhp.[a546p,:\YcLGZq_U>K]AfmNMd>3EDU&HKnE+@)XW!;?PBWsWksnJj+DAT\'W@jhJ,?Y
+dCl_Hb$0WGsB[>na_.4GjNoY<(G0MF-O<4PW3uK7ip+5PsM_ddWY?]A46ABAERqM-/R8X%4.q
+N+gNCg?<H%o3g`\VD2+oc3-e)CH\g\%KE1b,F[0kalJK,C$u[LMREh23pF=ldtuf(uZ'=Ym7
+Q'3-L'7NE6.=Yl'\diP>/B4uQ`E@1N+FH^s.=K$`P"FF=n65:UZe&.CIdhtBhMMWP_(.@XWI
+E]Am[hc3DZSln,,&!WZ8L2eP-3e9JWBgpQ"*M@Z]A:Er#4qp)$7.f8,\dS@FDkF"lorp"6!3KP
+/]Ak!G-?J_M\0/\b+RU\2N,tS9q15lj\RX6B?Pa)6H8FdX%/8pGluum$l4traXOepaEY`DpCo
+OgdN0X*K9bW6AO@\co)o$'!D1P?+6O6A`,1pc/q]Ap-i3$<R1;ZBKKXL4JaC2sbVe+m-;TX7^
+=RmPA[3dp2SJU-=^$GR@o-*Paf+0GYbAQF(5-eP^c<8Ak=^5`R*F%k*tmf?GSUD6BJ#'X%N;
+J-cQWa9R"uFK[!omdbkX;pH^^4=P?a:-B(im6X;..J;61KI0+r()1FN84T!tAME;MLr:rP4J
+mp<uNLVZt,E9NZSS^@.*Wu*Z#&)7[8RQX>`8'bXYSTB5'^Y`iFS;R\GqVO[&CNLr\deX6o:D
+a:2fMg/'B7XVrN@*@"SQmN+F:)-X9"4s'.98*c]Ag`=PK,#H-_'_s=e9/?F>#Kg+7>Xq1[(n;
+f%3U\[+`,)5#>r\dr[YQF5?EK@RQZnf:8j&;I@HU>q]A.LN!_IWJ$VrHV[NiJ+k/X?7L73K"J
+G@\^@WG-!d`/H#H%jIl"j:huK-["qL$J</Xd;Y$F.+@2#NikmlA5`*G,:9]ALRM2.aIasD0PE
++p;>W#i[0?8m<G[e;eW7?MTC!PRZNS"b0GRQdm!X6'DTsmIc'DGGd=-puHde^JOI4B^N19@S
+hD>k=b1`><?i7q.`9b;X@?#$p2<I;a#4q/O-PKo%p9QfdW%:T]ApDi\37VT2tj8<6@qdatfn1
+)G\n>X4&59m0#rgK/gWU1!L'4bG+cd_S8PL=N[2_o$6_TB%=_d<Wge7s>tf.UN6JA:=Nj/5R
+,!=A<Nlb]Ac%EGFnn+j#GCkGVJ3PlZZ'b*.9-d`9Rp>,-9D,L*O&\\=]A".0apk^+"4[m4S),J
+%6_4:,mn4^BOc$poV4Q'r7(6@CSuC6h\Y=%iW8cB2:8H9=I9;Xc&8/'//!87h/_>RGIYZCb+
+A!=o=d,*2gZ&=:Q8DUthb?A(CP92/C3;PgXEgPu><0hegsGKS?J3<ERbmlE1QGLg;.I5\>_<
+A-F%X0(c*MM,^)_YZ#kPR=-++I/ND]Ac7OYu'r4>]AWgON(/08fDkqR^uFQB02oIq;KoiK#d:i
+M5knZifM`]A(sP&<YflUh+!PD0CaI%)s4cE/QO5+Z^<U$7;jW#?83RkIUdr,DJ'#otI^`H;Af
+XF)k0K+d!?j%ZL<ZD.7&8_i-*:<qmjnIs`!]A]A&iH/n]ALiN]Asj5ap0o8Q([9;cZ?m@V'#3K?f
+$#-97b]AuXc)[0?VKC&Kf:u0HNp.Xh^:qDuUG-o"&bY"!c;@oI=_Gmk.r4SB_@7M,E?]A#RiiX
+Z=RUo&=ZueqI/Q!SIpchMupY:#I/[ha_!62XPhPTC`NHf03b9QLsT<K&dD_,BgD,1Q]AEFe%j
+no&>@9R2T?gM#6!RL<VPlb_Q_AERC(0+?AFTnf]AWf=Zn+2_c-e:j+Y?OfSIR'B2.'75+QiMs
+%N(J1jafle_E9U;V)L6=L@nMQHJHf"u&BT#!.(ld@58(+rCF%"[r`$T&2f/hHWY!4O_r5+u>
+ah(hu.f5bor=Z%&'f#oWF`pBY`QOU'@%/fmKSCDq=,aFGIF\hae,mQ<i\Xtdp8IoWjUQts4S
+[9.)>[X\O8_bsc^[@0r>ek_(^`88D0NPP,98YV@.K"^o!(`X=!=e&=[?q"!L7/E##$I#-;3d
+Q:i31JXS7;-k?sBG\V^Fu^3oDf^f(7P.N?KTZX2<H823LXt9^a2aGa%tDeESD`W$Ds`_G8>3
+Qi0Vf:SL#b2Zobb%-o\q?q@Na6#eh?(HYb#&%T<S.'A:]Ab5!)fckjRNN#<#$/U'Mi5n:4,Yb
+rJPpW+Ebm+4K9"_SJZa%NTsQ4D518'b8=Vd'(u[ibAppnJlY<SaNhhQKcL)D3-'T%`pbIG\T
+!CqCg#HhX[6-l]A5,i7TgQY6gKW>ga+GhpK/f4%;"nT6Ata[.R9i?e$&^VsclPK@ue9j.%E;k
+f(0>o!##+3cr0BCl\88S9/es@$FI2]AO%s>Effq.V@(L)*u6XU_P*^o;0e`:9G0Q)jaRntEcK
+XH5Ni[5FumPd9`Vg-W?h7jrjV8Fq$'F:FJ&R'9D0&jGJA''aV]Ag_[Oh"JJ$o8_XadO?9R5aa
+)>+IX`u>p]A>,P5@;N0<?dj.[rEIE5+FNDcGG=r>X9tNTGRh?F*6>MK^A[Z?Ll,,H>^3Jr]Ap/
+CIa@'%-,1_]A-#6g[<;%0MfAUtR!e#>cpX0R)I5%:HeHcK1I=\E?,pdakO^jsOiU+RLG97Uen
+=>HuJHGA#@qS'85?0_Lf@f$^8Wm=TM:[0oHf,!XDb]ABn]Au#+1)E9G87:R;:"3J(XjAEq]AmAQ
+XSg:Wt00\P;BZdFs"#+Hkg>U?PG6MpTGiGYM><]AQ;p/.atSBT&@2Jm.kbT)L$RInCQA\RUOS
+Du]Ac)\X!GP$$\JmeFcq*3D##HTGW7l3]AAkPr4Q_7f*VF.h[i%FA(U:q`[_\=K&!7oSYJ!R!"
+j593GTP@rpGpT?j5:c!F(hZFZr&#UllF5,5"9Bag%%)MdlWl;D9]A_>%orWfD*"Mmo5*gB*&N
+;#C'NIP5<8G;G_ZiW]A3B4#m5XV@X)Q39qI.EDep8uu[Osr*R"#/&[C#4`l/%G^!/c\\%9#eI
+s&q!&?]Ak(DC*4b*r!eZL86u(m:WK(5pDK$'_%DsK2`IR+A=_>GEfTNcTqcI50kS`n`TVhdlb
+c;RGqr3TI33;&qo"Y<T*RY_9ChENamgIE[2qNN)5A3pF^E;Re-W-1C[4P;,s8@eho62G_G&F
+CpNV^ZXZ#@FW$WYAhcWB6`1f)>D&"K#T36)[j-ZcBs*0P-n:K\Ak4OtlNXZ5o/7Zpn\-Oc!o
+Wb(-2Qk<__7#$tPZTt7q?!a=E32%oV[*b;F+8m/T!nP0?eu&I=``gaH7#Ufq'Wn)4qMD6V3b
+Q]AiZ`spC_J[5@8\)qlcq"a]AeIooJi#fh4e"Q=dL,gOgF/5"p)_sOplEM"]APJ-l\-HCSFjJ6+
+%`Ve6n&7\1^k,NWm2OLmRSi_RN10diQ)-5tLDm=!Jcfk?kcCFn^$/E0IhXGL*'gDDo$"11b6
+o;d9T$nj<5O"9$FNTEO2>Y]A1`qU0jZ78U)6>fSk"PKG!<$aUmX4HNEO5o/of&a^q-E%R9)'8
+$4]AdI'#EfZo4.NJOOkfs,2~
+]]></IM>
+</Background>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" foreground="-13421773"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[qg[Z+D$FVW%Q64g2HC<2G'6VU%PAe7?64!%*_@M`IM#^3Gr]A"V)&WSm4`poS*G$*+%<G5a"%
+*_8'7"^n>72Yp4_#-MO<KRQS=D^s4;,<>&k7a6MFJkDrs'B/3#G%#q,nQ"(mkFDR0=I2PSjB
+A@?>,0?t<gO!sU/]AA7B.ZARjo]AjPg@nfIF\P`5p0H`59a@b/+4EXTcj'YR%NA.2k7Q#mVf_.
+i!pY2,7DtU$T/VTP2]Ak%k>Rj789:W@cA#`;Q=Ks)OahVVIns+Q<)9`Y&<YKSmK5VTjcmlO\s
+4LWG1T7R9@KTV.Ja'PuZ'\X_mGGSR%F+:RO7\qM^iK(+ijuFP64".p$TA]AOgE;m5oLZ3ct/<
+d::3mS31rYns-9-Y2?a7lf"VZ:S'asro3%?O.SUcq>0LUO.X0PraKDGAqU2drXoA1Mi!.AR=
+u[B01MgZO9.]A`<^fA6+ickA`'RlYUIG_*Vhkd?*op9Y%f.<:<-46q9Z?(dl:6rf^cj!g@ngM
+0%.5j'^MYdqYqQ7>&*Qam#()(XoiD#l)ssf/J,djQk^Mj>^]A+]AqZsV<@gQfP9q#3ordC)9CC
+gJ.X*Ad`p?WR!hahRj3/6I;;i7B-T;5li1[5-k'A67/?KrcJLDSD8\JI[<f&c_kX!!~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[qg[Z+D$FVW%Q64g2HC<2G'6VU%PAe7?64!%*_@M`IM#^3Gr]A"V)&WSm4`poS*G$*+%<G5a"%
+*_8'7"^n>72Yp4_#-MO<KRQS=D^s4;,<>&k7a6MFJkDrs'B/3#G%#q,nQ"(mkFDR0=I2PSjB
+A@?>,0?t<gO!sU/]AA7B.ZARjo]AjPg@nfIF\P`5p0H`59a@b/+4EXTcj'YR%NA.2k7Q#mVf_.
+i!pY2,7DtU$T/VTP2]Ak%k>Rj789:W@cA#`;Q=Ks)OahVVIns+Q<)9`Y&<YKSmK5VTjcmlO\s
+4LWG1T7R9@KTV.Ja'PuZ'\X_mGGSR%F+:RO7\qM^iK(+ijuFP64".p$TA]AOgE;m5oLZ3ct/<
+d::3mS31rYns-9-Y2?a7lf"VZ:S'asro3%?O.SUcq>0LUO.X0PraKDGAqU2drXoA1Mi!.AR=
+u[B01MgZO9.]A`<^fA6+ickA`'RlYUIG_*Vhkd?*op9Y%f.<:<-46q9Z?(dl:6rf^cj!g@ngM
+0%.5j'^MYdqYqQ7>&*Qam#()(XoiD#l)ssf/J,djQk^Mj>^]A+]AqZsV<@gQfP9q#3ordC)9CC
+gJ.X*Ad`p?WR!hahRj3/6I;;i7B-T;5li1[5-k'A67/?KrcJLDSD8\JI[<f&c_kX!!~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style vertical_alignment="1">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6894375"/>
+<Bottom style="1" color="-6894375"/>
+<Left style="1" color="-6894375"/>
+<Right style="1" color="-6894375"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12" foreground="-16764160"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[qg[Z+D$FVW%Q64g2HC<2G'6VU%PAe7?64!%*_@M`IM#^3Gr]A"V)&WSm4`poS*G$*+%<G5a"%
+*_8'7"^n>72Yp4_#-MO<KRQS=D^s4;,<>&k7a6MFJkDrs'B/3#G%#q,nQ"(mkFDR0=I2PSjB
+A@?>,0?t<gO!sU/]AA7B.ZARjo]AjPg@nfIF\P`5p0H`59a@b/+4EXTcj'YR%NA.2k7Q#mVf_.
+i!pY2,7DtU$T/VTP2]Ak%k>Rj789:W@cA#`;Q=Ks)OahVVIns+Q<)9`Y&<YKSmK5VTjcmlO\s
+4LWG1T7R9@KTV.Ja'PuZ'\X_mGGSR%F+:RO7\qM^iK(+ijuFP64".p$TA]AOgE;m5oLZ3ct/<
+d::3mS31rYns-9-Y2?a7lf"VZ:S'asro3%?O.SUcq>0LUO.X0PraKDGAqU2drXoA1Mi!.AR=
+u[B01MgZO9.]A`<^fA6+ickA`'RlYUIG_*Vhkd?*op9Y%f.<:<-46q9Z?(dl:6rf^cj!g@ngM
+0%.5j'^MYdqYqQ7>&*Qam#()(XoiD#l)ssf/J,djQk^Mj>^]A+]AqZsV<@gQfP9q#3ordC)9CC
+gJ.X*Ad`p?WR!hahRj3/6I;;i7B-T;5li1[5-k'A67/?KrcJLDSD8\JI[<f&c_kX!!~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

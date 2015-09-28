@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean name="tApplyDataAction" id="tApplyDataaction" class="com.gotop.dataApply.action.TApplyDataAction" singleton="false" >
+    <property name="tApplyDataService" ref="tApplyDataService" />
+    <property name="tMessagePublishDAO" ref="tMessagePublishDAO" />
+    <property name="jbpmService" ref="jbpmService" />
+    <property name="tDefaultOpinionService" ref="tDefaultOpinionService" />
+  </bean>
+</beans>

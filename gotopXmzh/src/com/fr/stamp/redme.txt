@@ -1,0 +1,71 @@
+最近用到Java动态生成背景透明的图片功能，从gif和png中选择了png格式，自动添加链接地址:http://www.my400800.cn 去网站上的图片中。现把搜索结果总结如下：
+　　1. 生成png图片
+　　int width = 400;
+　　int height = 300;
+　　// 创建BufferedImage对象
+　　BufferedImage image = new BufferedImage(width, height,     BufferedImage.TYPE_INT_RGB);
+　　// 获取Graphics2D
+　　Graphics2D g2d = image.createGraphics();
+　　// 画图
+　　g2d.setColor(new Color(255,0,0));
+　　g2d.setStroke(new BasicStroke(1));
+　　g2d.draw
+　　//释放对象
+　　g2d.dispose();
+　　// 保存文件
+　　ImageIO.write(image, "png", new File("c:/test.png"));
+　　int width = 400;
+　　int height = 300;
+　　// 创建BufferedImage对象
+　　BufferedImage image = new BufferedImage(width, height,     BufferedImage.TYPE_INT_RGB);
+　　// 获取Graphics2D
+　　Graphics2D g2d = image.createGraphics();
+　　// 画图
+　　g2d.setColor(new Color(255,0,0));
+　　g2d.setStroke(new BasicStroke(1));
+　　g2d.draw
+　　//释放对象
+　　g2d.dispose();
+　　// 保存文件
+　　ImageIO.write(image, "png", new File("c:/test.png"));
+　　这只是绘制图形的代码，其背景是黑色的，如何才能背景透明呢？继续搜索，没有得到结果，不过搜出以下代码，它只是把自己绘制的图形设置为透明或半透明，背景并不透明，如下：
+　　2. 绘制半透明图形
+　　int width = 400;
+　　int height = 300;
+　　// 创建BufferedImage对象
+　　BufferedImage image = new BufferedImage(width, height,     BufferedImage.TYPE_INT_RGB);
+　　// 获取Graphics2D
+　　Graphics2D g2d = image.createGraphics();
+　　// 设置透明度
+　　g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, 1.0f));  // 1.0f为透明度 ，值从0-1.0，依次变得不透明
+　　// 画图
+　　g2d.setColor(new Color(255,0,0));
+　　g2d.setStroke(new BasicStroke(1));
+　　g2d.draw
+　　//释放对象
+　　//透明度设置 结束
+　　g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER));
+　　g2d.dispose();
+　　// 保存文件
+　　ImageIO.write(image, "png", new File("c:/test.png"));
+　　这样绘制的图形应该说是前景透明的，背景依然是黑色，:(
+　　网上没有看到有益的代码，在csdn上一位说自己实现了，但却没有说怎么实现的，没办法只能自己摸索了，耗了半个多小时，几乎查看了BufferedImage 和Graphics2D 所有方法和属性，终于找到了解决方案，只不过是增加两行代码而已，如下：
+　　int width = 400;
+　　int height = 300;
+　　// 创建BufferedImage对象
+　　BufferedImage image = new BufferedImage(width, height,     BufferedImage.TYPE_INT_RGB);
+　　// 获取Graphics2D
+　　Graphics2D g2d = image.createGraphics();
+　　// ----------  增加下面的代码使得背景透明  -----------------
+　　image = g2d.getDeviceConfiguration().createCompatibleImage(width, height, Transparency.TRANSLUCENT);
+　　g2d.dispose();
+　　g2d = image.createGraphics();
+　　// ----------  背景透明代码结束  -----------------
+　　// 画图
+　　g2d.setColor(new Color(255,0,0));
+　　g2d.setStroke(new BasicStroke(1));
+　　g2d.draw
+　　//释放对象
+　　g2d.dispose();
+　　// 保存文件
+　　ImageIO.write(image, "png", new File("c:/test.png"));

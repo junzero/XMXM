@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="rentFee" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[BILL_ID,,.,,FEE_ITEM_ID,,.,,ITEM_NAME,,.,,UNPAY_AMOUNT]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.math.BigDecimal]]></ColumnTypes>
+<RowData>
+<![CDATA[ZS43l1,(E?ZnO?;!D?2Fr4J2OS4\LBe5QU4r7k8*i7-i9U<Jcm:1Fq>/dkY?L7D"q`L4gT0M
+QGaWF./sFV^pqVC(GiA10Db(8Z&?(mtF*~
+]]></RowData>
+</TableData>
+<TableData name="voiceFee" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[BILL_ID,,.,,FEE_ITEM_ID,,.,,ITEM_NAME,,.,,UNPAY_AMOUNT]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.math.BigDecimal]]></ColumnTypes>
+<RowData>
+<![CDATA[ZS43l1,(EAZnO37!>Eb_r645$L%>/9Cu('JdNXDC4Pd["&d;$/6N[EC$a=AE_Q#2I9jt%2@&
+hJEW]AaWm3%YSubgGM]A3W1,4+j*-0'@Tl?N@g+]A9E>~
+]]></RowData>
+</TableData>
+<TableData name="valueaddFee" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[BILL_ID,,.,,FEE_ITEM_ID,,.,,ITEM_NAME,,.,,UNPAY_AMOUNT]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.math.BigDecimal]]></ColumnTypes>
+<RowData>
+<![CDATA[ZS43l1,(EEZnO37!^dVrQc,%TL!\htoMeQf/dnnb!E@XkPVXjFV_hDi0dS,'73OXuW%9_bQ.
+*t0g_<JZTcp=`So.kLM*c0!0rK^H9\ooQ4iV*2VIgSD~
+]]></RowData>
+</TableData>
+<TableData name="cust_name" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[BILL_ID,,.,,NAME]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.math.BigDecimal,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[ZS43l1,(E?FNhp$jK\c,N&]AYaM^kA>@nt(7<#EZ/dj6k)Y7eu6"_pY*blIe~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.23622047244094493">
+<Margin top="0.27" left="0.7500000000000001" bottom="0.27" right="0.7500000000000001"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList>
+<HFElement className="com.fr.report.core.headerfooter.PageNumberHFElement">
+<FRFont name="SimSun" style="0" size="12"/>
+<![CDATA[1]]></HFElement>
+</CenterList>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[30,19,19,19,19,19,19,19,24,126,19,19,19,19,30,19,19,36,30,19,30,38,19,19,19,19,25,30,19,19,19,34,19,28,19,19,30,30,23,22,19,20,30,21,24,21,21,21,21,19,19,19,19,25,19,19,19,19,22,19,19,19,19,22,30,19,19,19,23,30,19,19,19,24,19,19,19,19,25,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[46,47,74,77,27,63,77,90,67,56,3,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="cust_name" columnName="NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="0">
+<O t="DSColumn">
+<Attributes dsName="cust_name" columnName="BILL_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="4" r="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="0">
+<Expand/>
+</C>
+<C c="6" r="0">
+<Expand/>
+</C>
+<C c="7" r="0">
+<Expand/>
+</C>
+<C c="8" r="0">
+<Expand/>
+</C>
+<C c="0" r="1" cs="5" s="1">
+<O>
+<![CDATA[Fee Item]]></O>
+<Expand leftParentDefault="false" left="A1"/>
+</C>
+<C c="5" r="1" s="1">
+<Expand/>
+</C>
+<C c="6" r="1" s="1">
+<Expand/>
+</C>
+<C c="7" r="1" s="1">
+<O>
+<![CDATA[Fee]]></O>
+<Expand leftParentDefault="false" left="A1"/>
+</C>
+<C c="8" r="1">
+<Expand/>
+</C>
+<C c="9" r="1">
+<Expand/>
+</C>
+<C c="0" r="2" cs="5" s="2">
+<O>
+<![CDATA[1 Recurring Fee]]></O>
+<Expand leftParentDefault="false" left="A1"/>
+</C>
+<C c="5" r="2" s="3">
+<Expand/>
+</C>
+<C c="6" r="2" s="3">
+<Expand/>
+</C>
+<C c="7" r="2" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="2" s="4">
+<Expand/>
+</C>
+<C c="9" r="2">
+<Expand/>
+</C>
+<C c="0" r="3" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="rentFee" columnName="FEE_ITEM_ID"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[BILL_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0" leftParentDefault="false" left="A1"/>
+</C>
+<C c="2" r="3" cs="3">
+<O t="DSColumn">
+<Attributes dsName="rentFee" columnName="ITEM_NAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="3">
+<Expand/>
+</C>
+<C c="7" r="3">
+<O t="DSColumn">
+<Attributes dsName="rentFee" columnName="UNPAY_AMOUNT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="3" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=count(H4)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性2]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="9" r="3">
+<Expand/>
+</C>
+<C c="0" r="4" cs="5" s="5">
+<O>
+<![CDATA[2 Voice Fee]]></O>
+<Expand leftParentDefault="false" left="A1"/>
+</C>
+<C c="5" r="4">
+<Expand/>
+</C>
+<C c="6" r="4">
+<Expand/>
+</C>
+<C c="7" r="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H6)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="4" s="6">
+<Expand/>
+</C>
+<C c="9" r="4">
+<Expand/>
+</C>
+<C c="0" r="5" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="voiceFee" columnName="FEE_ITEM_ID"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[BILL_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0" leftParentDefault="false" left="A1"/>
+</C>
+<C c="2" r="5" cs="3">
+<O t="DSColumn">
+<Attributes dsName="voiceFee" columnName="ITEM_NAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="5">
+<Expand/>
+</C>
+<C c="7" r="5">
+<O t="DSColumn">
+<Attributes dsName="voiceFee" columnName="UNPAY_AMOUNT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="5" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=count(H6)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性2]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="9" r="5">
+<Expand/>
+</C>
+<C c="0" r="6" cs="5" s="5">
+<O>
+<![CDATA[3 Value Added Service]]></O>
+<Expand leftParentDefault="false" left="A1"/>
+</C>
+<C c="5" r="6">
+<Expand/>
+</C>
+<C c="6" r="6">
+<Expand/>
+</C>
+<C c="7" r="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="6" s="6">
+<Expand/>
+</C>
+<C c="9" r="6">
+<Expand/>
+</C>
+<C c="0" r="7" cs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="valueaddFee" columnName="FEE_ITEM_ID"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[BILL_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0" leftParentDefault="false" left="A1"/>
+</C>
+<C c="2" r="7" cs="3" s="7">
+<O t="DSColumn">
+<Attributes dsName="valueaddFee" columnName="ITEM_NAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="7">
+<Expand/>
+</C>
+<C c="7" r="7">
+<O t="DSColumn">
+<Attributes dsName="valueaddFee" columnName="UNPAY_AMOUNT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=count(H8)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性2]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="9" r="7">
+<Expand/>
+</C>
+<C c="0" r="8" cs="5" s="8">
+<O>
+<![CDATA[Total:]]></O>
+<Expand leftParentDefault="false" left="A1"/>
+</C>
+<C c="5" r="8" s="9">
+<Expand/>
+</C>
+<C c="6" r="8" s="9">
+<Expand/>
+</C>
+<C c="7" r="8" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H3+H5+H7)]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="A1"/>
+</C>
+<C c="8" r="8" s="10">
+<Expand/>
+</C>
+<C c="9" r="8">
+<Expand/>
+</C>
+<C c="0" r="9" cs="9" s="11">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Plot class="com.fr.chart.plot.Bar2DPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr/>
+</SeriesAttr>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="1" lineColor="-8355712" isRoundBorder="true"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<CateAttr isStacked="false" bgStagger="false" bgColor="-1"/>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</CategoryAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="1" color="-1184275"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+<AxisRange/>
+<Log value="true"/>
+</ValueAxis>
+<BarAttr isHorizontal="false" overlap="-0.15" interval="1.0"/>
+<Bar2DAttr isSimulation3D="true"/>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<CategoryDefinition value="A1"/>
+<SeriesPos value="1"/>
+<BaseOn value="false"/>
+<SeriesList>
+<SeriesEntry name="A3">
+<O>
+<![CDATA[H3]]></O>
+</SeriesEntry>
+<SeriesEntry name="A5">
+<O>
+<![CDATA[H5]]></O>
+</SeriesEntry>
+<SeriesEntry name="A7">
+<O>
+<![CDATA[H7]]></O>
+</SeriesEntry>
+</SeriesList>
+<Top topCate="-1" topValue="-1"/>
+</ReportDataDefinition>
+</O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="6" r="12">
+<Expand/>
+</C>
+</CellElementList>
+<WorkSheetAttr direction="0" start="35" end="49" columnOrRowCount="1"/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="1" size="16"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-65536"/>
+<Left style="1" color="-65536"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-65536"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-65536"/>
+<Right style="1" color="-65536"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="1" color="-65536"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Right style="1" color="-65536"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1" color="-65536"/>
+<Left style="1" color="-65536"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1" color="-65536"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1" color="-65536"/>
+<Right style="1" color="-65536"/>
+</Border>
+</Style>
+<Style style_name="Title"/>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.tyjg.stable.dao.impl.OmGroupDAO" id="omGroupDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+
+  <bean class="com.gotop.tyjg.stable.dao.impl.OmGroupmemberDAO" id="omGroupmemberDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.dao.impl.OmEmpgroupDAO" id="omEmpgroupDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.dao.impl.OmGrouprangeDAO" id="omGrouprangeDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.dao.impl.AtFileuploadDAO" id="atFileuploadDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  </beans>

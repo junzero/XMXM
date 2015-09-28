@@ -1,0 +1,49 @@
+select *
+  from (select row_.*, rownum rownum_
+          from (select b.v_sjmc,
+                       b.v_dsjmc,
+                       b.v_xsjmc,
+                       a.v_jgid as v_jmwdjgid,
+                       a.v_jgmc as v_jmwdjgmc,
+                       sum(a.f_zje) as f_zje,
+                       count(a.f_zje) as n_zbs,
+                       c.v_sszxzjjgid,
+                       c.v_wdlx,
+                       c.v_jmwdzlmc,
+                       c.v_sszxzjmc
+                  from (select ywsj.*,
+                               ywcpgx.v_dlywdm,
+                               ywcpgx.v_dlywmc,
+                               ywcpgx.v_czmk,
+                               ywcpgx.v_mkmc
+                          from sfwd_t_ywsj ywsj, sfwd_v_ywcpgx ywcpgx
+                         where ywsj.v_ywcpdm = ywcpgx.v_ywdm
+                           and ywsj.v_jfbz = 1
+                           and ywsj.v_cgbs = 1) a,
+                       zhw_v_jggxb b,
+                       sfwd_t_jmjgxxb c
+                 where a.v_jgid = b.V_JMWDJGID
+                   and a.v_jgid = c.v_jmwdjgid
+                   AND a.v_qdbs = 09
+                   AND TO_CHAR(a.d_zwrq, 'yyyy-MM-dd') >= '2012-04-27'
+                   AND TO_CHAR(a.d_zwrq, 'yyyy-MM-dd') <= '2013-04-03'
+                   AND c.v_sszxzjjgid in
+                       (select orgid
+                          from torganization
+                         start with orgid = '350000000001'
+                        connect by prior orgid = parentorgid)
+                   and a.v_czmk in (select ygjsdzb.v_czmk
+                                      from sfwd_t_ygjsdzb ygjsdzb
+                                     where 1 = 1
+                                       AND ygjsdzb.v_jsdh = 5)
+                 group by b.v_sjmc,
+                          b.v_dsjmc,
+                          b.v_xsjmc,
+                          a.v_jgid,
+                          a.v_jgmc,
+                          c.v_sszxzjjgid,
+                          c.v_wdlx,
+                          c.v_jmwdzlmc,
+                          c.v_sszxzjmc) row_
+         where rownum <= 10)
+ where rownum_ > 0

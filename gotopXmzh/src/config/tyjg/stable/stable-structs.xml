@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="stable" namespace="/stable">
+    <action class="omGroupAction" method="{1}" name="omGroupAction_*">
+      <result name="viewlist">
+        /jsp/stable/omGroupDatacell.jsp
+      </result>
+    </action>
+  
+    <action class="omGroupmemberAction" method="{1}" name="omGroupmemberAction_*">
+      <result name="viewlist">
+        /jsp/stable/omGroupmemberDatacell.jsp
+      </result>
+    </action>
+    
+    <action class="omEmpgroupAction" method="{1}" name="omEmpgroupAction_*">
+      <result name="viewlist">
+        /jsp/stable/omEmpgroupDatacell.jsp
+      </result>
+    </action>
+    
+    <action class="omGrouprangeAction" method="{1}" name="omGrouprangeAction_*">
+      <result name="viewlist">
+        /jsp/stable/omGrouprangeDatacell.jsp
+      </result>
+    </action>
+    
+    <action class="atFileuploadAction" method="{1}" name="atFileuploadAction_*">
+      <result name="viewlist">
+        /jsp/stable/atFileuploadDatacell.jsp
+      </result>
+    </action>
+    </package>
+</struts>

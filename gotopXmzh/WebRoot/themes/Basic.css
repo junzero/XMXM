@@ -1,0 +1,47 @@
+/* Cursor 样式*/
+.CS-hand {
+	cursor: hand;
+}
+.CS-help {
+	cursor: help;
+}
+
+/*水平线 样式*/
+hr.HR-CL-D8D8D8 {
+	color: #8D8D8D;
+	height: 1px;
+}
+hr.HR-CL-000000 {
+	color: #000000;
+	height: 1px;
+}
+/* Text 样式 */
+.bold {
+	font-weight: bold;
+}
+.CL-black {
+	color: #000000;
+}
+.CL-red {
+	color: #FF0000;
+}
+.CL-blue {
+	color: #0000FF;
+}
+.CL-gray {
+	color: #666666;
+}
+.SZ-9px {
+	font-size: 9px;
+	font-family: "Verdana", "Arial";
+
+}
+.SZ-11px {
+	font-size: 11px;
+}
+.SZ-12px {
+	font-size: 12px;
+}
+.SZ-14px {
+	font-size: 14px;
+}

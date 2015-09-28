@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean id="tMessagePublishService" class="com.gotop.messagePublish.service.impl.TMessagePublishService" >
+    <property name="tMessagePublishDAO" ref="tMessagePublishDAO" />
+    <property name="tApproveOpninionDAO" ref="tApproveOpninionDAO" />
+    <property name="empMngrDao" ref="empMngrDao" />
+    <property name="tSuperviseTableDAO" ref="tSuperviseTableDAO" />
+    <property name="jbpmService" ref="jbpmService"></property>
+    <property name="tFileResourceTableService" ref="tFileResourceTableService"></property>
+    <property name="tMessageReceiveDAO" ref="tMessageReceiveDAO" />
+  </bean>
+</beans>

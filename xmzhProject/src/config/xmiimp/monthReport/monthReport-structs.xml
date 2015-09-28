@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="monthReport" namespace="/monthReport">
+    <action class="tWorkMonthReportsAction" method="{1}" name="tWorkMonthReportsAction_*">
+      <result name="list">
+        /jsp/monthReport/tWorkMonthReportsDatacell.jsp
+      </result>
+      <result name="input">
+        /jsp/monthReport/month_report_input.jsp
+      </result>
+      <result name="approve">
+        /jsp/monthReport/month_report_apporve.jsp
+      </result>
+      <result name="instructions">
+        /jsp/monthReport/month_report_instructions.jsp
+      </result>
+      <result name="gather">
+        /jsp/monthReport/month_report_gather.jsp
+      </result>
+    </action>
+  </package>
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.jbpm.dao.impl.Jbpm4HistActinstDAO" id="jbpm4HistActinstDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+
+  <bean class="com.gotop.jbpm.dao.impl.Jbpm4HistTaskDAO" id="jbpm4HistTaskDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.dao.impl.Jbpm4ExecutionDAO" id="jbpm4ExecutionDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.dao.impl.Jbpm4TaskDAO" id="jbpm4TaskDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  </beans>

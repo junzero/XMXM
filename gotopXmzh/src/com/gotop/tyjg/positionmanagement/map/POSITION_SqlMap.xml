@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="POSITION">
+	<typeAlias alias="OmPosition" type="com.gotop.vo.tyjg.OmPosition"/>
+	<!-- 查询岗位列表 -->
+	<select id="queryPositionList" parameterClass="OmPosition" resultClass="OmPosition">
+		<include refid="COMMON.oracle_Pagination_Head" />
+			SELECT OM_POSITION.POSITIONID AS positionId,
+			       OM_POSITION.POSICODE   AS posiCode,
+			       OM_POSITION.POSINAME   AS posiName,
+			       OM_POSITION.POSILEVEL  AS posiLevel,
+			       OM_POSITION.POSISORT   AS posiSort,
+			       OM_POSITION.POSIDESC   AS posiDesc,
+			       OM_POSITION.SORTLEVEL  AS sortLevel
+			  FROM OM_POSITION
+			  WHERE 1 = 1
+		  		<isNotNull prepend="" property="posiName">
+		  			<isNotEmpty prepend="and" property="posiName">
+		  				OM_POSITION.POSINAME LIKE '%'||#posiName:VARCHAR#||'%'
+		  			</isNotEmpty>
+		  		</isNotNull>
+		  		<isNotNull prepend="" property="posiCode">
+		  			<isNotEmpty prepend="and" property="posiCode">
+		  				OM_POSITION.POSICODE = #posiCode#
+		  			</isNotEmpty>
+		  		</isNotNull>
+		  		<isNotNull prepend="" property="posiSort">
+		  			<isNotEmpty prepend="and" property="posiSort">
+		  				OM_POSITION.POSISORT = #posiSort#
+		  			</isNotEmpty>
+		  		</isNotNull>
+		  		<isNotNull prepend="" property="posiLevel">
+		  			<isNotEmpty prepend="and" property="posiLevel">
+		  				OM_POSITION.POSILEVEL = #posiLevel#
+		  			</isNotEmpty>
+		  		</isNotNull>
+		  		ORDER BY OM_POSITION.SORTLEVEL
+		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	<!-- 统计满足条件的岗位数量 -->
+	<select id="countPosition" parameterClass="OmPosition" resultClass="java.lang.Long">
+			SELECT COUNT(1)
+			  FROM OM_POSITION
+			  WHERE 1 = 1
+		  		<isNotNull prepend="" property="posiName">
+		  			<isNotEmpty prepend="and" property="posiName">
+		  				OM_POSITION.POSINAME LIKE '%'||#posiName:VARCHAR#||'%'
+		  			</isNotEmpty>
+		  		</isNotNull>
+		  		<isNotNull prepend="" property="posiCode">
+		  			<isNotEmpty prepend="and" property="posiCode">
+		  				OM_POSITION.POSICODE = #posiCode#
+		  			</isNotEmpty>
+		  		</isNotNull>
+		  		<isNotNull prepend="" property="posiSort">
+		  			<isNotEmpty prepend="and" property="posiSort">
+		  				OM_POSITION.POSISORT = #posiSort#
+		  			</isNotEmpty>
+		  		</isNotNull>
+		  		<isNotNull prepend="" property="posiLevel">
+		  			<isNotEmpty prepend="and" property="posiLevel">
+		  				OM_POSITION.POSILEVEL = #posiLevel#
+		  			</isNotEmpty>
+		  		</isNotNull>
+	</select>
+	<!-- 新增岗位信息 -->
+	<insert id="addPosition" parameterClass="OmPosition">
+		INSERT INTO OM_POSITION
+			  (POSITIONID
+			   ,POSICODE
+			   ,POSINAME
+			   <isNotNull property="posiLevel">
+			   		<isNotEmpty property="posiLevel">
+			   		,POSILEVEL
+			     	</isNotEmpty>
+			   </isNotNull>
+			   ,POSITIONSEQ
+			   ,CREATETIME
+			   ,LASTUPDATE
+			   ,UPDATOR
+			   ,ISLEAF
+			   ,SUBCOUNT
+			    <isNotNull property="posiDesc">
+			   		<isNotEmpty property="posiDesc">
+			   			,POSIDESC
+			   		</isNotEmpty>
+			   </isNotNull>
+			   <isNotNull property="posiSort">
+			   		<isNotEmpty property="posiSort">
+			   			,POSISORT
+			   		</isNotEmpty>
+			   </isNotNull>
+			   <isNotNull property="sortLevel">
+			   		<isNotEmpty property="sortLevel">
+			   			,SORTLEVEL
+			   		</isNotEmpty>
+			    </isNotNull>
+			   )
+			VALUES
+			  (SEQ_OM_POSITION.NEXTVAL
+			   ,#posiCode#
+			   ,#posiName#
+			   <isNotNull property="posiLevel">
+			   	<isNotEmpty property="posiLevel">
+			   		,#posiLevel#
+			   	</isNotEmpty>
+			   </isNotNull>
+			   ,'.' || SEQ_OM_POSITION.CURRVAL || '.'
+			  , sysdate
+			  , sysdate
+			   ,#updator#
+			   ,'y'
+			   ,0
+			    <isNotNull property="posiDesc">
+			   		<isNotEmpty property="posiDesc">
+			   			,#posiDesc#
+			   		</isNotEmpty>
+			    </isNotNull>
+			    <isNotNull property="posiSort">
+			   		<isNotEmpty property="posiSort">
+			   			,#posiSort#
+			   		</isNotEmpty>
+			    </isNotNull>
+			    <isNotNull property="sortLevel">
+			   		<isNotEmpty property="sortLevel">
+			   	,#sortLevel#
+			   		</isNotEmpty>
+			    </isNotNull>
+			   )
+	</insert>
+	<!-- 查询某个岗位信息 -->
+	<select id="querySingle" parameterClass="OmPosition" resultClass="OmPosition">
+		SELECT POSITIONID AS positionId,
+		       POSICODE   AS posiCode,
+		       POSINAME   AS posiName,
+		       POSIDESC   AS posiDesc,
+		       POSISORT   AS posiSort,
+		       POSILEVEL  AS posiLevel,
+		       SORTLEVEL  AS sortLevel
+		  FROM OM_POSITION
+		 WHERE OM_POSITION.POSITIONID = #positionId#
+	</select>
+	<!-- 更新岗位信息 -->
+	<update id="updatePosition" parameterClass="OmPosition">
+		UPDATE OM_POSITION
+		   SET POSICODE   = #posiCode#
+		       ,POSINAME   = #posiName#
+		        <isNotNull property="posiLevel">
+			   		<isNotEmpty property="posiLevel">
+		       ,POSILEVEL  = #posiLevel#
+		            </isNotEmpty>
+			    </isNotNull>
+		       ,CREATETIME = sysdate
+		       ,LASTUPDATE = sysdate
+		       ,UPDATOR    = #updator#
+		       ,ISLEAF     = 'y'
+		       ,SUBCOUNT   = 0
+		         <isNotNull property="posiDesc">
+			   		<isNotEmpty property="posiDesc">
+		       ,POSIDESC   = #posiDesc#
+		        </isNotEmpty>
+			    </isNotNull>
+		       <isNotNull property="posiSort">
+			   		<isNotEmpty property="posiSort">
+		       ,POSISORT   = #posiSort#
+		       </isNotEmpty>
+			    </isNotNull>
+		       <isNotNull property="sortLevel">
+			   		<isNotEmpty property="sortLevel">
+		       	,SORTLEVEL  = #sortLevel#
+		       </isNotEmpty>
+			    </isNotNull>
+		 WHERE POSITIONID = #positionId#
+	</update>
+	<!-- 批量删除岗位信息 -->
+	<delete id="deleteBeathPosition" parameterClass="java.util.HashMap">
+	  <![CDATA[
+		DELETE FROM OM_POSITION WHERE OM_POSITION.POSITIONID IN 
+	  ]]> 	
+		 <iterate property="posIds" conjunction="," open="(" close=")">
+              #posIds[]#
+          </iterate>
+	</delete>
+	<!-- 批量删除人员岗位信息 -->
+	<delete id="deleteBeathEmpPosition" parameterClass="java.util.HashMap">
+	   <![CDATA[
+		DELETE FROM OM_EMPPOSITION WHERE OM_EMPPOSITION.POSITIONID IN
+	   ]]> 	
+		 <iterate property="posIds" conjunction="," open="(" close=")">
+              #posIds[]#
+          </iterate>
+	</delete>
+</sqlMap>

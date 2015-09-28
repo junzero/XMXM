@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM [Stock]A]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<Margin top="266400" left="727200" bottom="986400" right="727200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,0,1008000,1008000,1008000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[381000,4608000,4608000,4608000,4608000,4608000,4608000,4608000,4608000,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="8" rs="13">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<ChartAttr isJSDraw="true"/>
+<Title>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-1"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="0.3"/>
+</AttrAlpha>
+</GI>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[='NA1366       南京帆软软件          -日K线图                                      '+today()]]></Attributes>
+</O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="80"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.StockPlot">
+<Plot>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="1" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-6908266"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr hotTooltip="${VALUE}" isNullValueBreak="true" isHighChart="true" interactiveBorder="true" interactiveHighlight="false" interactiveOuterlight="true" interactiveAxisTooltip="true" paintInSeries="false"/>
+<HotTooltipStyle>
+<AttrStyle/>
+</HotTooltipStyle>
+<ConditionCollection>
+<DefaultAttr class="com.fr.chart.condition.ConditionAttr">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrTrendLine">
+<AttrTrendLineNew>
+<TrendLineList>
+<ConditionTrendLine>
+<TrendLine>
+<Attr equation="5" square="6" trendLineName="MA5" moveAverage="5"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrLine>
+<newAttr lineStyle="1"/>
+<Background name="ColorBackground" color="-16776961"/>
+</AttrLine>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+<Attr forward="0" backward="0" paneName="趋势线1"/>
+</ConditionTrendLine>
+<ConditionTrendLine>
+<TrendLine>
+<Attr equation="5" square="6" trendLineName="MA10" moveAverage="10"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrLine>
+<newAttr lineStyle="1"/>
+<Background name="ColorBackground" color="-256"/>
+</AttrLine>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+<Attr forward="0" backward="0" paneName="趋势线2"/>
+</ConditionTrendLine>
+<ConditionTrendLine>
+<TrendLine>
+<Attr equation="5" square="6" trendLineName="MA25" moveAverage="25"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrLine>
+<newAttr lineStyle="1"/>
+<Background name="ColorBackground" color="-26164"/>
+</AttrLine>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+<Attr forward="0" backward="0" paneName="趋势线3"/>
+</ConditionTrendLine>
+</TrendLineList>
+</AttrTrendLineNew>
+</Attr>
+</AttrList>
+</ConditionAttr>
+</DefaultAttr>
+</ConditionCollection>
+<Legend>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr position="1" legendNum="10" visible="false" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="72"/>
+</Legend>
+<DataSheet>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="1" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr isVisible="false" isLegendVisible="true"/>
+</DataSheet>
+<OuterLight>
+<Attr outerSize="0" outerAlpha="0.0"/>
+</OuterLight>
+<Shadow>
+<Attr shadowSize="4" shadowAlpha="0.0"/>
+</Shadow>
+<Type value="1"/>
+<CategoryAxis>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<AxisLineStyle AxisStyle="1" MainGridStyle="1" SecondGridStyle="0"/>
+<AxisLineBackground>
+<Background name="ColorBackground" color="-5197648"/>
+</AxisLineBackground>
+<MainGridBackground>
+<Background name="ColorBackground" color="-1184275"/>
+</MainGridBackground>
+<SecondGridBackground>
+<Background name="NullBackground"/>
+</SecondGridBackground>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="72"/>
+</Attr>
+</TextAttr>
+<AxisLabelCount value="=12"/>
+<AxisRange/>
+</CategoryAxis>
+</CategoryAxis>
+<PriceAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLineStyle AxisStyle="1" MainGridStyle="1" SecondGridStyle="0"/>
+<AxisLineBackground>
+<Background name="ColorBackground" color="-5197648"/>
+</AxisLineBackground>
+<MainGridBackground>
+<Background name="ColorBackground" color="-1184275"/>
+</MainGridBackground>
+<SecondGridBackground>
+<Background name="NullBackground"/>
+</SecondGridBackground>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisLabelCount value="=0"/>
+<AxisRange/>
+<AxisRangeIncr isCustomIncrement="false" value="=0"/>
+</ValueAxis>
+</PriceAxis>
+<VolumeAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLineStyle AxisStyle="1" MainGridStyle="1" SecondGridStyle="0"/>
+<AxisLineBackground>
+<Background name="ColorBackground" color="-5197648"/>
+</AxisLineBackground>
+<MainGridBackground>
+<Background name="NullBackground"/>
+</MainGridBackground>
+<SecondGridBackground>
+<Background name="NullBackground"/>
+</SecondGridBackground>
+<AxisPosition value="4"/>
+<AxisLabelPosition value="3"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisLabelCount value="=0"/>
+<AxisRange/>
+<AxisRangeIncr isCustomIncrement="false" value="=0"/>
+</ValueAxis>
+</VolumeAxis>
+<Close style="0" color="-16777216">
+<Marker class="com.fr.chart.marker.DowJonesMarker">
+<Marker>
+<Style size="5.0"/>
+<Background name="NullBackground"/>
+</Marker>
+</Marker>
+</Close>
+<HighLow style="1" color="-8355712"/>
+<UpLine style="0">
+<Background name="ColorBackground" color="-65485"/>
+</UpLine>
+<UpBackground>
+<Background name="ColorBackground" color="-65536"/>
+</UpBackground>
+<DownLine style="0">
+<Background name="ColorBackground" color="-10040320"/>
+</DownLine>
+<DownBackground>
+<Background name="ColorBackground" color="-16711936"/>
+</DownBackground>
+<BG bgStagger="false" color="-1"/>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<MoreNameCDDefinition>
+<Top topCate="-1" topValue="-1"/>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[ds1]]></Name>
+</TableData>
+<CategoryName value="日期"/>
+<ChartSummaryColumn name="开盘" function="com.fr.data.util.function.NoneFunction" customName="开盘"/>
+<ChartSummaryColumn name="盘高" function="com.fr.data.util.function.NoneFunction" customName="盘高"/>
+<ChartSummaryColumn name="盘低" function="com.fr.data.util.function.NoneFunction" customName="盘低"/>
+<ChartSummaryColumn name="收盘" function="com.fr.data.util.function.NoneFunction" customName="收盘"/>
+</MoreNameCDDefinition>
+</O>
+<Expand/>
+</C>
+<C c="9" r="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="13" cs="9" rs="8">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<ChartAttr isJSDraw="true"/>
+<Title>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-1"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="0.3"/>
+</AttrAlpha>
+</GI>
+<O>
+<![CDATA[]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="72"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.Bar2DPlot">
+<Plot>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="1" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-6908266"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr hotTooltip="${VALUE}" isNullValueBreak="true" isHighChart="false" interactiveBorder="true" interactiveHighlight="false" interactiveOuterlight="true" interactiveAxisTooltip="true" paintInSeries="false"/>
+<HotTooltipStyle>
+<AttrStyle/>
+</HotTooltipStyle>
+<ConditionCollection>
+<DefaultAttr class="com.fr.chart.condition.ConditionAttr">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrTrendLine">
+<AttrTrendLineNew>
+<TrendLineList>
+<ConditionTrendLine>
+<TrendLine>
+<Attr equation="5" square="6" trendLineName="趋势线" moveAverage="5"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrLine>
+<newAttr lineStyle="1"/>
+<Background name="ColorBackground" color="-13382452"/>
+</AttrLine>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+<Attr forward="0" backward="0" paneName="趋势线1"/>
+</ConditionTrendLine>
+<ConditionTrendLine>
+<TrendLine>
+<Attr equation="5" square="6" trendLineName="趋势线" moveAverage="10"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrLine>
+<newAttr lineStyle="1"/>
+<Background name="ColorBackground" color="-6737050"/>
+</AttrLine>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+<Attr forward="0" backward="0" paneName="趋势线2"/>
+</ConditionTrendLine>
+<ConditionTrendLine>
+<TrendLine>
+<Attr equation="5" square="6" trendLineName="趋势线" moveAverage="15"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrLine>
+<newAttr lineStyle="1"/>
+<Background name="ColorBackground" color="-26368"/>
+</AttrLine>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+<Attr forward="0" backward="0" paneName="趋势线3"/>
+</ConditionTrendLine>
+</TrendLineList>
+</AttrTrendLineNew>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="1" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-1"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+</ConditionAttr>
+</DefaultAttr>
+<ConditionAttrList>
+<List index="0">
+<ConditionAttr name="条件属性1">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-65485"/>
+</AttrBackground>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列名称]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[AAA]]></O>
+</Compare>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="1">
+<ConditionAttr name="条件属性2">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-16711936"/>
+</AttrBackground>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列名称]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[BBB]]></O>
+</Compare>
+</Condition>
+</ConditionAttr>
+</List>
+</ConditionAttrList>
+</ConditionCollection>
+<Legend>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="1" isRoundBorder="true"/>
+<Background name="ColorBackground" color="-8355712"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr position="3" legendNum="10" visible="false" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="72"/>
+</Legend>
+<DataSheet>
+<GI>
+<AttrBackground>
+<Background name="NullBackground"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="1" isRoundBorder="false"/>
+<Background name="ColorBackground" color="-16777216"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr isVisible="false" isLegendVisible="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+</DataSheet>
+<OuterLight>
+<Attr outerSize="14" outerAlpha="0.0" outerColor="-1"/>
+</OuterLight>
+<Shadow>
+<Attr shadowSize="0" shadowAlpha="0.0"/>
+</Shadow>
+<CateAttr isStacked="false" bgStagger="false" bgColor="-1"/>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<AxisLineStyle AxisStyle="1" MainGridStyle="1" SecondGridStyle="0"/>
+<AxisLineBackground>
+<Background name="ColorBackground" color="-5197648"/>
+</AxisLineBackground>
+<MainGridBackground>
+<Background name="ColorBackground" color="-1184275"/>
+</MainGridBackground>
+<SecondGridBackground>
+<Background name="NullBackground"/>
+</SecondGridBackground>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="0"/>
+<TickLine type="2" mainStroke="1.0" len="0" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="72"/>
+</Attr>
+</TextAttr>
+<AxisLabelCount value="=0"/>
+<AxisRange/>
+</CategoryAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLineStyle AxisStyle="1" MainGridStyle="1" SecondGridStyle="0"/>
+<AxisLineBackground>
+<Background name="ColorBackground" color="-5197648"/>
+</AxisLineBackground>
+<MainGridBackground>
+<Background name="ColorBackground" color="-1184275"/>
+</MainGridBackground>
+<SecondGridBackground>
+<Background name="NullBackground"/>
+</SecondGridBackground>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="72"/>
+</Attr>
+</TextAttr>
+<AxisLabelCount value="=0"/>
+<AxisRange/>
+<AxisRangeIncr isCustomIncrement="false" value="=0"/>
+</ValueAxis>
+<BarAttr isHorizontal="false" overlap="1.0" interval="1.0"/>
+<Bar2DAttr isSimulation3D="false"/>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<Category>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A22]]></Attributes>
+</O>
+</Category>
+<Series>
+<SeriesDefinition>
+<SeriesName>
+<O>
+<![CDATA[AAA]]></O>
+</SeriesName>
+<SeriesValue>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F22]]></Attributes>
+</O>
+</SeriesValue>
+</SeriesDefinition>
+<SeriesDefinition>
+<SeriesName>
+<O>
+<![CDATA[BBB]]></O>
+</SeriesName>
+<SeriesValue>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G22]]></Attributes>
+</O>
+</SeriesValue>
+</SeriesDefinition>
+</Series>
+<Top topCate="-1" topValue="-1"/>
+</ReportDataDefinition>
+</O>
+<Expand/>
+</C>
+<C c="9" r="20">
+<Expand/>
+</C>
+<C c="0" r="21">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="21">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="开盘"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="21">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="收盘"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="21">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C22-B22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="21">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="成交量"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="21">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(D22>0,E22,0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="21">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(D22<0,E22,0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="21">
+<Expand/>
+</C>
+<C c="8" r="21">
+<Expand/>
+</C>
+<C c="9" r="21">
+<Expand/>
+</C>
+<C c="0" r="22">
+<Expand/>
+</C>
+<C c="1" r="22">
+<Expand/>
+</C>
+<C c="2" r="22">
+<Expand/>
+</C>
+<C c="3" r="22">
+<Expand/>
+</C>
+<C c="4" r="22">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="22">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="22">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="22">
+<Expand/>
+</C>
+<C c="8" r="22">
+<Expand/>
+</C>
+<C c="9" r="22">
+<Expand/>
+</C>
+<C c="0" r="23">
+<Expand/>
+</C>
+<C c="1" r="23">
+<Expand/>
+</C>
+<C c="2" r="23">
+<Expand/>
+</C>
+<C c="3" r="23">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="23">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="23">
+<Expand/>
+</C>
+<C c="6" r="23">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="23">
+<Expand/>
+</C>
+<C c="8" r="23">
+<Expand/>
+</C>
+<C c="9" r="23">
+<Expand/>
+</C>
+<C c="5" r="24">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="24">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList/>
+</WorkBook>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--将来所有的web服务信息就要写在这里了。-->
+	<!-- 引入XFire预配置信息 -->
+	<import resource="classpath:org/codehaus/xfire/spring/xfire.xml" />
+	
+	<!-- 输入流模型处理类 -->
+	<bean name="domInHandler" class="org.codehaus.xfire.util.dom.DOMInHandler"/>
+	<!-- 输出流模型处理类 -->
+	<bean name="domOutHandler" class="org.codehaus.xfire.util.dom.DOMOutHandler"/>
+	
+	<!-- 使用XFire导出器 -->
+	<bean id="baseWebService" class="org.codehaus.xfire.spring.remoting.XFireExporter" lazy-init="false" abstract="true">
+	   <!-- 引用xfire.xml中定义的工厂 -->
+	   <property name="serviceFactory" ref="xfire.serviceFactory" />
+	   <!-- 引用xfire.xml中的xfire实例 -->
+	   <property name="xfire" ref="xfire" />
+	</bean>
+
+	<bean id="baseWebClient"
+		class="org.codehaus.xfire.spring.remoting.XFireClientFactoryBean" lazy-init="false" abstract="true">
+	</bean>
+	
+	<!-- 服务端 -->
+    <bean id="wss4jInHandlerSign" class="org.codehaus.xfire.security.wss4j.WSS4JInHandler">   
+        <property name="properties">   
+          <props>   
+            <prop key="action">Signature</prop>   
+            <prop key="signaturePropFile">com/gotop/util/wss4j/server_security_sign.properties</prop>
+            <prop key="passwordCallbackClass">com.gotop.util.wss4j.PasswordHandler</prop>   
+          </props>   
+        </property>   
+    </bean>    
+	
+	<bean id="wss4jInHandlerEnc" class="org.codehaus.xfire.security.wss4j.WSS4JInHandler">
+		<property name="properties">
+			<props>
+				<prop key="action">Encrypt</prop>
+				<prop key="decryptionPropFile">com/gotop/util/wss4j/security_enc.properties</prop>
+				<prop key="passwordCallbackClass">com.gotop.util.wss4j.PasswordHandler</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="wss4jInHandlerEncSign" class="org.codehaus.xfire.security.wss4j.WSS4JInHandler">
+		<property name="properties">
+			<props>
+				<prop key="action">Encrypt Signature</prop>
+				<prop key="decryptionPropFile">com/gotop/util/wss4j/security_enc.properties</prop>
+				<prop key="signaturePropFile">com/gotop/util/wss4j/server_security_sign.properties</prop>
+				<prop key="passwordCallbackClass">com.gotop.util.wss4j.PasswordHandler</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 以下为客户端 -->
+	<bean id="wss4jOutHandlerSig" class="org.codehaus.xfire.security.wss4j.WSS4JOutHandler">
+	     <property name="properties">
+	     	<props>
+	     		<prop key="action">Signature</prop>	     		
+	     		<!-- 请求加密用户名 -->
+	     		<prop key="signaturePropFile">com/gotop/util/wss4j/client_security_sign.properties</prop>
+	     		<prop key="passwordCallbackClass">com.gotop.util.wss4j.PasswordHandler</prop>
+	     		<prop key="user">ws_security</prop>
+	     	</props>
+	     </property>
+	</bean>
+	
+	<bean id="wss4jOutHandlerEnc" class="org.codehaus.xfire.security.wss4j.WSS4JOutHandler">
+	     <property name="properties">
+	     	<props>
+	     		<prop key="action">Encrypt</prop>	     		
+	     		<!-- 请求加密用户名 -->
+	     		<prop key="encryptionUser">ws_security</prop>
+	     		<prop key="encryptionPropFile">com/gotop/util/wss4j/security_enc.properties</prop><!-- 签名 -->
+	     		<prop key="passwordCallbackClass">com.gotop.util.wss4j.PasswordHandler</prop>
+ 			    <prop key="user">ws_security</prop><!-- 用此用户名对应的密码,加密 -->
+	     	</props>
+	     </property>
+	</bean>
+	
+	<bean id="wss4jOutHandlerEncSig" class="org.codehaus.xfire.security.wss4j.WSS4JOutHandler">
+	     <property name="properties">
+	     	<props>
+	     		<prop key="action">Encrypt Signature</prop>	     		
+	     		<!-- 请求加密用户名 -->
+	     		<prop key="encryptionUser">ws_security</prop>
+	     		<prop key="encryptionPropFile">com/gotop/util/wss4j/security_enc.properties</prop><!-- 签名 -->
+	     		<prop key="signaturePropFile">com/gotop/util/wss4j/client_security_sign.properties</prop>
+	     		<prop key="passwordCallbackClass">com.gotop.util.wss4j.PasswordHandler</prop>
+ 			    <prop key="user">ws_security</prop><!-- 用此用户名对应的密码,加密 -->
+	     	</props>
+	     </property>
+	</bean>
+	
+	<!-- 使用XFire导出器 -->
+	<bean id="baseWss4jWebService" class="org.codehaus.xfire.spring.remoting.XFireExporter" lazy-init="false" abstract="true">
+	   <!-- 引用xfire.xml中定义的工厂 -->
+	   <property name="serviceFactory" ref="xfire.serviceFactory" />
+	   <!-- 引用xfire.xml中的xfire实例 -->
+	   <property name="xfire" ref="xfire" />
+       <!-- 对输入流的操作 -->
+		<property name="inHandlers">
+			<list>
+				<ref bean="domInHandler"/><!-- 负责将STAX流模型的SOAP转换为DOM模型类 -->
+				<ref bean="wss4jInHandlerEncSign"/><!-- 对用户名和密码进行检查 -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="baseWss4jWebClient" class="org.codehaus.xfire.spring.remoting.XFireClientFactoryBean" lazy-init="false" abstract="true">
+       <property name="outHandlers">
+       		<list>
+	     		<ref bean="domOutHandler"/> 
+	     		<ref bean="wss4jOutHandlerEncSig"/>
+	     	</list>       
+       </property>  
+	</bean>
+</beans>

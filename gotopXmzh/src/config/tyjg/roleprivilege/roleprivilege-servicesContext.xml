@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 处理角色 -->
+	<bean class="com.gotop.tyjg.roleprivilege.service.imp.RoleService" id="roleService" name="roleService" singleton="false">
+	    <property name="roleDao" ref="roleDao" />
+	    <property name="privilegeDao" ref="privilegeDao" />
+	    <property name="operatorRoleDao" ref="operatorRoleDao" />
+	</bean>
+	<!-- 处理角色 -->
+	<bean class="com.gotop.tyjg.roleprivilege.service.imp.OperatorRoleService" id="operatorRoleService" name="operatorRoleService" singleton="false">
+	    <property name="roleDao" ref="roleDao" />
+	    <property name="privilegeDao" ref="privilegeDao" />
+	    <property name="operatorRoleDao" ref="operatorRoleDao" />
+	</bean>
+</beans>

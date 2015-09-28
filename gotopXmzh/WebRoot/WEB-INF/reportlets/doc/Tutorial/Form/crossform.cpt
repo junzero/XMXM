@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<XMLVersion>20091130</XMLVersion><TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM project]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM projectsum]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM projectfinance]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM projectselffund]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes maxMemRowCount="-1" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[SELECT * FROM projectother]]></Query>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="project"/>
+<ColumnConfig name="project" isKey="false" skipUnmodified="false" >
+<ColumnRow column="1" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="ID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="3"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL2">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="projectsum"/>
+<ColumnConfig name="ID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="sum" isKey="false" skipUnmodified="false" >
+<ColumnRow column="2" row="3"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL3">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="projectfinance"/>
+<ColumnConfig name="ID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="money" isKey="false" skipUnmodified="false" >
+<ColumnRow column="4" row="3"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL4">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="projectselffund"/>
+<ColumnConfig name="ID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="money" isKey="false" skipUnmodified="false" >
+<ColumnRow column="5" row="3"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL5">
+<Attributes dsName="FRDemo" />
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="projectother"/>
+<ColumnConfig name="ID" isKey="true" skipUnmodified="false" >
+<ColumnRow column="0" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="money" isKey="false" skipUnmodified="false" >
+<ColumnRow column="6" row="3"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,18,19,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,102,63,58,72,72,72,23,23,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="7" s="0"><O><![CDATA[某市2008年度政府投资项目计划汇总表]]></O>
+</C>
+<C c="0" r="1" rs="2" s="1"><O><![CDATA[ID]]></O>
+</C>
+<C c="1" r="1" rs="2" s="1"><O><![CDATA[项目名称]]></O>
+</C>
+<C c="2" r="1" rs="2" s="1"><O><![CDATA[项目总数（个）]]></O>
+</C>
+<C c="3" r="1" rs="2" s="1"><O><![CDATA[2008年度投资计划（万元）]]></O>
+</C>
+<C c="4" r="1" cs="3" s="1"><O><![CDATA[2008年度需安排资金数（万元）]]></O>
+</C>
+<C c="7" r="1" rs="2" s="1"><O><![CDATA[增]]></O>
+</C>
+<C c="8" r="1" rs="2" s="1"><O><![CDATA[删]]></O>
+</C>
+<C c="4" r="2" s="1"><O><![CDATA[需财政安排数]]></O>
+</C>
+<C c="5" r="2" s="1"><O><![CDATA[单位自筹]]></O>
+</C>
+<C c="6" r="2" s="1"><O><![CDATA[其它资金]]></O>
+</C>
+<C c="0" r="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="ID" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="1" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="project" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+</O>
+<Expand dir="0" />
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr /></Widget>
+</C>
+<C c="2" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds2" columnName="sum" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="3" r="3" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(E4:G4)]]></Attributes></O>
+</C>
+<C c="4" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds3" columnName="money" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="5" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds4" columnName="money" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="6" r="3" s="1"><O t="DSColumn"><Attributes dsName="ds5" columnName="money" />
+<Condition class="com.fr.data.condition.CommonCondition"><CNAME><![CDATA[ID]]></CNAME><Compare op="0">
+<AnDSColumn dsName="ds1" columnName="ID" /></Compare>
+</Condition>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN><![CDATA[com.fr.data.util.function.SumFunction]]></FN></RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr/></Widget>
+</C>
+<C c="7" r="3" s="2"><Widget class="com.fr.report.web.ui.impl.write.AppendRowButton">
+<WidgetAttr/>
+<Text>插入行</Text><IconName>add</IconName>
+<FixCell row="3" col="0"/><OldCell row="3" col="7"/></Widget>
+</C>
+<C c="8" r="3" s="2"><Widget class="com.fr.report.web.ui.impl.write.DeleteRowButton">
+<WidgetAttr/>
+<Text>删除行</Text><IconName>delete</IconName>
+<FixCell row="3" col="0"/><OldCell row="3" col="8"/></Widget>
+</C>
+<C c="0" r="4" cs="2" s="1"><O><![CDATA[合计]]></O>
+</C>
+<C c="2" r="4" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(c4)]]></Attributes></O>
+</C>
+<C c="3" r="4" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(d4)]]></Attributes></O>
+</C>
+<C c="4" r="4" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(e4)]]></Attributes></O>
+</C>
+<C c="5" r="4" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(f4)]]></Attributes></O>
+</C>
+<C c="6" r="4" s="1"><O t="Formula" class="Formula"><Attributes><![CDATA[=sum(g4)]]></Attributes></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

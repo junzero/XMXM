@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process key="euipApply" name="euipApply" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="31,145,48,48" name="start1">
+      <transition to="设备申请"/>
+   </start>
+   <task assignee="${user}" form="/euipApply/tApplyEuipAction_input.action" g="109,142,92,52" name="设备申请">
+      <transition g="-21,-25" name="申请" to="部门领导审核"/>
+   </task>
+   <task form="/euipApply/tApplyEuipAction_input1.action" g="232,31,92,52" name="部门领导审核">
+      <transition g="156,57:-34,15" name="退回" to="设备申请"/>
+      <transition g="-25,-23" name="同意" to="信息部设备管理员审核"/>
+   </task>
+   <task form="/euipApply/tApplyEuipAction_input1.action" g="410,31,148,52" name="信息部设备管理员审核">
+      <transition g="-40,-9" name="同意" to="运维主管审核"/>
+      <transition name="退回" to="部门领导审核" g="371,90:-5,5"/>
+   </task>
+   <task form="/euipApply/tApplyEuipAction_input1.action" g="440,130,92,52" name="运维主管审核">
+      <transition g="-30,-22" name="同意" to="设备管理员"/>
+      <transition name="退回" to="信息部设备管理员审核" g="532,106:12,-7"/>
+   </task>
+   <task form="/euipApply/tApplyEuipAction_input.action" g="439,237,92,52" name="设备管理员">
+      <transition g="-12,-19" name="采购" to="完成"/>
+      <transition name="退回" to="运维主管审核" g="537,212:6,-9"/>
+   </task>
+   <end g="313,242,48,48" name="完成"/>
+</process>

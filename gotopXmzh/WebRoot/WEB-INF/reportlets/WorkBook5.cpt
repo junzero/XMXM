@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var tr = $("tr");  //获取行   
+for (var i = 0; i < tr.length; i++) {     //循环所有行   
+	tr[i]A.onmouseover = function() {  //当前行设置鼠标移动到文字, 就会触发 mouseout   
+	this.style.background = "red"    //鼠标放到行上显示为红色，颜色可以随意改变   
+	};   
+	tr[i]A.onmouseout = function() {      //鼠标一离开, 就会触发onmouseout   
+		this.style.background = "White"   //鼠标离开变为白色   
+	}
+}]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<O t="I">
+<![CDATA[1]]></O>
+<Expand/>
+</C>
+<C c="1" r="0">
+<O t="I">
+<![CDATA[4]]></O>
+<Expand/>
+</C>
+<C c="0" r="1">
+<O t="I">
+<![CDATA[2]]></O>
+<Expand/>
+</C>
+<C c="1" r="1">
+<O t="I">
+<![CDATA[5]]></O>
+<Expand/>
+</C>
+<C c="0" r="2">
+<O t="I">
+<![CDATA[3]]></O>
+<Expand/>
+</C>
+<C c="1" r="2">
+<O t="I">
+<![CDATA[66]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList/>
+</WorkBook>

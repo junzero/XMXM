@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process key="superviseTable" name="superviseTable" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="59,204,48,48" name="start1">
+      <transition g="-29,-24" name="发起" to="督办申请"/>
+   </start>
+   <task assignee="${user}" form="/supervise/tSuperviseTableAction_input.action" g="173,203,92,52" name="督办申请">
+      <transition g="-33,-14" name="同意" to="分管行领导审核"/>
+      <transition g="-26,-25" name="提交办理" to="办理部室"/>
+   </task>
+   <task form="/supervise/tSuperviseTableAction_input2.action" g="270,91,109,52" name="分管行领导审核">
+      <transition g="220,117:-28,21" name="批示" to="督办申请"/>
+   </task>
+   <task form="/supervise/tSuperviseTableAction_input4.action" g="376,312,100,52" name="办公室督办人员">
+      <transition g="-9,-20" name="汇总" to="行领导"/>
+      <transition g="-41,3" name="提交审核" to="分管行领导"/>
+      <transition g="496,280:4,-6" name="退回重办" to="办理部室"/>
+      <transition name="结束" to="结束" g="-39,-8"/>
+   </task>
+   <task form="/supervise/tSuperviseTableAction_input2.action" g="160,308,92,52" name="行领导">
+      <transition g="317,284:-10,-21" name="批示" to="办公室督办人员"/>
+   </task>
+   <task form="/supervise/tSuperviseTableAction_input3.action" g="382,202,92,52" name="办理部室">
+      <transition g="-28,-12" name="反馈" to="办公室督办人员"/>
+   </task>
+   <task form="/supervise/tSuperviseTableAction_input2.action" g="577,426,92,52" name="分管行领导">
+      <transition g="625,336:0,-15" name="批示" to="办公室督办人员"/>
+   </task>
+   <end g="401,424,48,48" name="结束"/>
+</process>

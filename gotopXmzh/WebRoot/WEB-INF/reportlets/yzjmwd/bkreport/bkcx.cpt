@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="dhjbzl" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="V_CXH"/>
+<O>
+<![CDATA[3501120002025754]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT *
+FROM
+     sfwd_t_dhjbzl sfwd_t_dhjbzl
+WHERE
+     sfwd_t_dhjbzl.V_CXH = '[?V_CXH?]A']]></Query>
+</TableData>
+<TableData name="SDJLB" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="V_CXH"/>
+<O>
+<![CDATA[3501120002025754]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT SFWD_T_SDJLB.*,TO_CHAR(SFWD_T_SDJLB.D_SDRQ,'YYYY-MM-dd') SDRQ
+FROM
+     SFWD_T_SDJLB SFWD_T_SDJLB
+WHERE
+     SFWD_T_SDJLB.V_CXH = [?V_CXH?]A
+	AND
+     SFWD_T_SDJLB.N_SCBZ=0]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,27,24,19,19,32,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[74,149,87,83,72,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="3" rs="2" s="0">
+<O>
+<![CDATA[报刊订阅信息]]></O>
+<Expand/>
+</C>
+<C c="0" r="2">
+<O>
+<![CDATA[查询号：]]></O>
+<Expand/>
+</C>
+<C c="1" r="2" cs="3">
+<O t="DSColumn">
+<Attributes dsName="dhjbzl" columnName="V_CXH"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="3">
+<O>
+<![CDATA[电话号码：]]></O>
+<Expand/>
+</C>
+<C c="1" r="3">
+<O t="DSColumn">
+<Attributes dsName="dhjbzl" columnName="V_DHHM"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="3">
+<O>
+<![CDATA[订阅日期：]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" cs="2">
+<O t="DSColumn">
+<Attributes dsName="SDJLB" columnName="SDRQ"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="4" s="1">
+<O>
+<![CDATA[报刊代号]]></O>
+<Expand/>
+</C>
+<C c="1" r="4" s="1">
+<O>
+<![CDATA[报刊名称]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" s="1">
+<O>
+<![CDATA[起订期]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" s="1">
+<O>
+<![CDATA[止订期]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="1">
+<O>
+<![CDATA[份数]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" s="1">
+<O>
+<![CDATA[金额]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" s="1">
+<O t="DSColumn">
+<Attributes dsName="SDJLB" columnName="V_BKDH"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false" left="B3"/>
+</C>
+<C c="1" r="5" s="1">
+<O t="DSColumn">
+<Attributes dsName="SDJLB" columnName="V_BKMC"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" s="1">
+<O t="DSColumn">
+<Attributes dsName="SDJLB" columnName="C_QDQ"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="1">
+<O t="DSColumn">
+<Attributes dsName="SDJLB" columnName="C_ZDQ"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="5" s="1">
+<O t="DSColumn">
+<Attributes dsName="SDJLB" columnName="N_FS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="1">
+<O t="DSColumn">
+<Attributes dsName="SDJLB" columnName="F_ZZF"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="6">
+<O>
+<![CDATA[受理单位：]]></O>
+<Expand/>
+</C>
+<C c="1" r="6">
+<O t="DSColumn">
+<Attributes dsName="dhjbzl" columnName="V_JMWDJGMC"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="6">
+<O>
+<![CDATA[总金额：]]></O>
+<Expand/>
+</C>
+<C c="5" r="6">
+<O t="DSColumn">
+<Attributes dsName="dhjbzl" columnName="F_SSKE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</PaperSetting>
+</ReportSettings>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<Parameter>
+<Attributes name="V_CXH"/>
+<O>
+<![CDATA[3501120002025754]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="19"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

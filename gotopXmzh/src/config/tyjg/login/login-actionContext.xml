@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 操作员对象 -->
+	<bean class="com.gotop.tyjg.login.model.AcOperator" id="acOperator" singleton="false"></bean>
+	<!-- 登录action -->
+	<bean class="com.gotop.tyjg.login.action.LoginActionTyjg" id="loginAction" name="loginAction" singleton="false">
+		<property name="acOperator" ref="acOperator"></property>
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+</beans>

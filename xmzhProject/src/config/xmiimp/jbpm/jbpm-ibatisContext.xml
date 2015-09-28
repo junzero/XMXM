@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean class="com.gotop.jbpm.dao.impl.TProcessConfigDAO" id="tProcessConfigDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+
+  <bean class="com.gotop.jbpm.dao.impl.TProcessConfigPersonDAO" id="tProcessConfigPersonDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.dao.impl.TProcessTaskAssigneeDAO" id="tProcessTaskAssigneeDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.dao.impl.TProcessTaskAssigneePersonDAO" id="tProcessTaskAssigneePersonDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.dao.impl.TProcessTaskExeConfigDAO" id="tProcessTaskExeConfigDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+
+    
+    <bean class="com.gotop.jbpm.dao.impl.TProcessBusinessDAO" id="tProcessBusinessDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+    
+    <bean class="com.gotop.jbpm.dao.impl.TProcessBusinessConfigDAO" id="tProcessBusinessConfigDAO">
+    <property name="sqlMapClient" ref="sqlMapClient" />
+  </bean>
+    </beans>

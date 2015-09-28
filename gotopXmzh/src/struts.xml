@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+     <include file="struts-default.xml" />
+     <constant name="struts.multipart.maxSize" value="104857600" />
+      <package abstract="true" extends="struts-default" name="default">
+     	<result-types>
+     		<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+     		<result-type class="org.apache.struts2.views.freemarker.FreemarkerResult" name="freemarker" />
+     	</result-types>
+        <interceptors>
+        	<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+            <interceptor name="authority" class="com.gotop.util.SessionIterceptor">
+            </interceptor>
+            <interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack">  
+				    <param name="exception.logEnabled">true</param>  
+				    <param name="exception.logLevel">error</param>  
+				</interceptor-ref>
+				<interceptor-ref name="authority"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="mydefault" />
+     	<global-results>
+     		<result name="publicSuccess" type="redirect">/jsp/util/dialogsuccess.jsp</result>
+     		<result name="publicFailure" type="redirect">/jsp/util/dialogfailure.jsp</result>
+     		<result name="failure" type="redirect">/jsp/util/failure.jsp</result>
+     		<result name="errorAction" type="dispatcher">/jsp/util/errorAction.jsp</result>
+     		<result name="errorAjax" type="dispatcher">/jsp/util/errorAjax.jsp</result>
+     		<result name="success" type="redirect">/jsp/util/success.jsp</result>
+     		<result name="home" type="redirect">/jsp/default.jsp</result>
+     		<result name="impFailure" type="redirect">/jsp/util/impfailure.jsp</result>
+     		<result name="download" type="redirect">/downloadfile.dlf</result>
+     		<result name="invalid.token">/common/error_token.jsp</result>
+     		<result name="login">/jsp/tyjg/login/temp_login.jsp</result>
+     		<result name="close">/jsp/util/close.jsp</result>
+     		<result name="ruturnJsonStr" type="json"><param name="root">resultJson</param></result>
+     	</global-results>
+     </package>
+     
+     <!-- 对外UI不需要登录 -->
+      <package abstract="true" extends="struts-default" name="pro-default">
+     	<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+     		<result-type name="freemarker" class="org.apache.struts2.views.freemarker.FreemarkerResult"/>
+     	</result-types>
+        <interceptors>
+        	<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+            <interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack">  
+				    <param name="exception.logEnabled">true</param>  
+				    <param name="exception.logLevel">error</param>  
+				</interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="mydefault" />
+     	<global-results>
+     		<result name="publicSuccess" type="redirect">/jsp/util/dialogsuccess.jsp</result>
+     		<result name="publicFailure" type="redirect">/jsp/util/dialogfailure.jsp</result>
+     		<result name="failure" type="redirect">/jsp/util/failure.jsp</result>
+     		<result name="errorAction" type="dispatcher">/jsp/util/errorAction.jsp</result>
+     		<result name="errorAjax" type="dispatcher">/jsp/util/errorAjax.jsp</result>
+     		<result name="success" type="redirect">/jsp/util/success.jsp</result>
+     		<result name="home" type="redirect">/jsp/default.jsp</result>
+     		<result name="impFailure" type="redirect">/jsp/util/impfailure.jsp</result>
+     		<result name="download" type="redirect">/downloadfile.dlf</result>
+     		<result name="invalid.token">/common/error_token.jsp</result>
+     		<result name="login">/jsp/tyjg/login/temp_login.jsp</result>
+			<result name="ruturnJsonStr" type="json"><param name="root">resultJson</param></result> 
+     	</global-results>
+     </package>
+	<include file="config/*/*/*-structs.xml" />
+</struts>

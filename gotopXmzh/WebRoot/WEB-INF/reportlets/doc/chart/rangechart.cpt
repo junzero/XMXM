@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72]]></ColumnWidth>
+<FloatElementList>
+<com.fr.report.FloatElement>
+<Location column="0" row="0" leftDistance="33" topDistance="12" width="500.0" height="270.0"/>
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<AttrBackground>
+<Background name="ColorBackground" color="-3355393"/>
+</AttrBackground>
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="0.4000000059604645"/>
+</AttrAlpha>
+</GI>
+<ChartAttr isJSDraw="true"/>
+<Title>
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<O>
+<![CDATA[图表标题]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.RangePlot">
+<Plot>
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="1" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<ConditionCollection>
+<DefaultAttr class="com.fr.chart.condition.ConditionAttr">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+</AttrList>
+</ConditionAttr>
+</DefaultAttr>
+<ConditionAttrList>
+<List index="0">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-13159"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-13159"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-13159"/>
+</AttrLine>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="1">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-65281"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-65281"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-65281"/>
+</AttrLine>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="2">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-65536"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-65536"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-65536"/>
+</AttrLine>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="3">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-3342337"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-3342337"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-3342337"/>
+</AttrLine>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="4">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-65281"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-65281"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-65281"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="5">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-65536"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-65536"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-65536"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="6">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-3342337"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-3342337"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-3342337"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="7">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="8">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-65536"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-65536"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-65536"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="9">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-3342337"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-3342337"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="1" lineColor="-3342337"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="10">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="11">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="12">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrColor">
+<AttrColor>
+<Attr color="-3342337"/>
+</AttrColor>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBackground">
+<AttrBackground>
+<Background name="ColorBackground" color="-3342337"/>
+</AttrBackground>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="0" lineColor="-3342337"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="13">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="0"/>
+</AttrLine>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="14">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="0"/>
+</AttrLine>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="15">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="0"/>
+</AttrLine>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="16">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="0"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[0]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="17">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrBorder">
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="0"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="18">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrLine">
+<AttrLine>
+<Attr lineStyle="0"/>
+</AttrLine>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+<List index="19">
+<ConditionAttr name="">
+<AttrList>
+<Attr class="com.fr.chart.condition.AttrAlpha">
+<AttrAlpha>
+<Attr alpha="0.6000000238418579"/>
+</AttrAlpha>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrContents">
+<AttrContents>
+<Attr showLine="false"/>
+</AttrContents>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrPosition">
+<AttrPosition>
+<Attr position="1"/>
+</AttrPosition>
+</Attr>
+<Attr class="com.fr.chart.condition.AttrStyle">
+<AttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</AttrStyle>
+</Attr>
+</AttrList>
+<Condition class="com.fr.data.condition.ChartCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[系列序号]]></CNAME>
+<Compare op="0">
+<O t="I">
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionAttr>
+</List>
+</ConditionAttrList>
+</ConditionCollection>
+<Legend>
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<DataSheet>
+<GI>
+<AttrBackground/>
+<AttrBorder>
+<Attr lineStyle="1" lineColor="-16777216" isRoundBorder="false"/>
+</AttrBorder>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+</GI>
+<Attr isVisible="false" isLegendVisible="true"/>
+</DataSheet>
+<MiddleLine color="-16777216" style="1"/>
+<MinColor color="-39322"/>
+<MaxColor color="-10027162"/>
+<SeriesWidth value="8.0"/>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLine style="1" color="-5197648"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="0"/>
+<TickLine type="3" mainStroke="1.0" len="20" secType="3" secStroke="1.0" secLen="10"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+<AxisRange/>
+</ValueAxis>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<Category>
+<O>
+<![CDATA[分数]]></O>
+</Category>
+<Series>
+<SeriesDefinition>
+<SeriesName>
+<O>
+<![CDATA[最低分]]></O>
+</SeriesName>
+<SeriesValue>
+<O>
+<![CDATA[50]]></O>
+</SeriesValue>
+</SeriesDefinition>
+<SeriesDefinition>
+<SeriesName>
+<O>
+<![CDATA[最高分]]></O>
+</SeriesName>
+<SeriesValue>
+<O>
+<![CDATA[99]]></O>
+</SeriesValue>
+</SeriesDefinition>
+<SeriesDefinition>
+<SeriesName>
+<O>
+<![CDATA[平均分]]></O>
+</SeriesName>
+<SeriesValue>
+<O>
+<![CDATA[86]]></O>
+</SeriesValue>
+</SeriesDefinition>
+<SeriesDefinition>
+<SeriesName>
+<O>
+<![CDATA[当前分]]></O>
+</SeriesName>
+<SeriesValue>
+<O>
+<![CDATA[65]]></O>
+</SeriesValue>
+</SeriesDefinition>
+</Series>
+<Top topCate="-1" topValue="-1"/>
+</ReportDataDefinition>
+</O>
+<Style index="0"/>
+</com.fr.report.FloatElement>
+</FloatElementList>
+<CellElementList/>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+</PaperSetting>
+</ReportSettings>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

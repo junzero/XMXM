@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts >
+  <package name="euipApply" namespace="/euipApply" extends="default" >
+    <action name="tApplyEuipAction_*" class="tApplyEuipAction" method="{1}" >
+      <result name="viewlist" >
+        /jsp/euipApply/tApplyEuipDatacell.jsp
+      </result>
+      
+      <result name="input" >
+        /jsp/euipApply/euip_apply_input.jsp
+      </result>
+       <result name="input1" >
+        /jsp/euipApply/euip_apply_approve.jsp
+      </result>
+      
+    </action>
+  </package>
+</struts>

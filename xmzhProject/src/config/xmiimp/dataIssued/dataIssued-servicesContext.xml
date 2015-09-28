@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.dataIssued.service.impl.TSendDataService" id="tSendDataService">
+    <property name="tSendDataDAO" ref="tSendDataDAO" />
+    <property name="fileResourceTableService" ref="tFileResourceTableService" />
+    <property name="jbpmService" ref="jbpmService" />
+    <property name="tApproveOpninionDAO" ref="tApproveOpninionDAO" />
+    <property name="rangeUserDAO" ref="tRangeUserDAO"></property>
+  </bean>
+</beans>

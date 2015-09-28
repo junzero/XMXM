@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process key="mettingApply" name="mettingApply" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="20,174,48,48" name="start1">
+      <transition g="-23,-25" name="申请" to="会议申请"/>
+   </start>
+   <task form="/mettingApply/tMettingApplyAction_input1.action" g="132,173,92,52" name="会议申请">
+      <transition g="-13,6" name="提交" to="部门领导审核"/>
+   </task>
+   <task form="/mettingApply/tMettingApplyAction_input2.action" g="285,175,92,52" name="部门领导审核">
+      <transition g="-34,-22" name="同意1" to="办公室会议管理员"/>
+      <transition g="-34,-2" name="同意2" to="人力资源部管理员"/>
+      <transition g="256,142:-16,-21" name="退回" to="会议申请"/>
+   </task>
+   <task form="/mettingApply/tMettingApplyAction_manage.action" g="456,176,114,52" name="办公室会议管理员">
+      <transition g="-27,2" name="同意" to="行领导"/>
+      <transition g="420,143:-7,-18" name="退回" to="部门领导审核"/>
+      <transition g="-26,-24" name="发布" to="直接发布"/>
+   </task>
+   <task form="/mettingApply/tMettingApplyAction_input2.action" g="447,322,131,52" name="人力资源部管理员">
+      <transition g="-32,-9" name="同意" to="办公室会议管理员"/>
+      <transition g="329,347:-29,-12" name="退回" to="部门领导审核"/>
+   </task>
+   <task form="/mettingApply/tMettingApplyAction_input2.action" g="465,50,92,52" name="行领导">
+      <transition g="560,143:4,-6" name="提交" to="办公室会议管理员"/>
+   </task>
+   <end g="645,177,48,48" name="直接发布"/>
+</process>

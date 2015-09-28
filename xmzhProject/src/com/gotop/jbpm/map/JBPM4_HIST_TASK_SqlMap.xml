@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="JBPM4_HIST_TASK_SqlMap" >
+  <resultMap id="abatorgenerated_Jbpm4HistTaskResult" class="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--Bean方式返回全表-->
+    <result column="DBID_" property="dbid" jdbcType="DECIMAL" />
+    <result column="DBVERSION_" property="dbversion" jdbcType="DECIMAL" />
+    <result column="EXECUTION_" property="execution" jdbcType="VARCHAR" />
+    <result column="OUTCOME_" property="outcome" jdbcType="VARCHAR" />
+    <result column="ASSIGNEE_" property="assignee" jdbcType="VARCHAR" />
+    <result column="PRIORITY_" property="priority" jdbcType="DECIMAL" />
+    <result column="STATE_" property="state" jdbcType="VARCHAR" />
+    <result column="CREATE_" property="create" jdbcType="TIMESTAMP" />
+    <result column="END_" property="end" jdbcType="TIMESTAMP" />
+    <result column="DURATION_" property="duration" jdbcType="DECIMAL" />
+    <result column="NEXTIDX_" property="nextidx" jdbcType="DECIMAL" />
+    <result column="SUPERTASK_" property="supertask" jdbcType="DECIMAL" />
+  </resultMap>
+  <resultMap id="abatorgenerated_Jbpm4HistTask_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="DBID_" property="dbid" jdbcType="DECIMAL" />
+    <result column="DBVERSION_" property="dbversion" jdbcType="DECIMAL" />
+    <result column="EXECUTION_" property="execution" jdbcType="VARCHAR" />
+    <result column="OUTCOME_" property="outcome" jdbcType="VARCHAR" />
+    <result column="ASSIGNEE_" property="assignee" jdbcType="VARCHAR" />
+    <result column="PRIORITY_" property="priority" jdbcType="DECIMAL" />
+    <result column="STATE_" property="state" jdbcType="VARCHAR" />
+    <result column="CREATE_" property="create" jdbcType="TIMESTAMP" />
+    <result column="END_" property="end" jdbcType="TIMESTAMP" />
+    <result column="DURATION_" property="duration" jdbcType="DECIMAL" />
+    <result column="NEXTIDX_" property="nextidx" jdbcType="DECIMAL" />
+    <result column="SUPERTASK_" property="supertask" jdbcType="DECIMAL" />
+  </resultMap>
+  <select id="abatorgenerated_selectByPrimaryKey" resultMap="abatorgenerated_Jbpm4HistTaskResult" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--通过主键查询一条数据-->
+    select DBID_, DBVERSION_, EXECUTION_, OUTCOME_, ASSIGNEE_, PRIORITY_, STATE_, CREATE_, END_,
+      DURATION_, NEXTIDX_, SUPERTASK_
+    from JBPM4_HIST_TASK
+    where DBID_ = #dbid:DECIMAL#
+  </select>
+  <select id="abatorgenerated_selectByExample" resultMap="abatorgenerated_Jbpm4HistTaskResult" parameterClass="com.gotop.jbpm.model.Jbpm4HistTaskExample" >
+    <!--通过查询实体,查询满足条件的记录-->
+    select DBID_, DBVERSION_, EXECUTION_, OUTCOME_, ASSIGNEE_, PRIORITY_, STATE_, CREATE_, END_,
+      DURATION_, NEXTIDX_, SUPERTASK_
+    from JBPM4_HIST_TASK
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+      <isNotNull property="orderByClause" >
+        order by $orderByClause$
+      </isNotNull>
+    </isParameterPresent>
+  </select>
+  <select id="abatorgenerated_expandEntityByTemplate" resultMap="abatorgenerated_Jbpm4HistTaskResult" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+    select DBID_, DBVERSION_, EXECUTION_, OUTCOME_, ASSIGNEE_, PRIORITY_, STATE_, CREATE_, END_,
+      DURATION_, NEXTIDX_, SUPERTASK_
+    from JBPM4_HIST_TASK where <![CDATA[ rownum<2 ]]>
+    <dynamic >
+      <isNotNull prepend="and" property="dbid" >
+        DBID_ = #dbid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="dbversion" >
+        DBVERSION_ = #dbversion:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="execution" >
+        EXECUTION_ = #execution:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="outcome" >
+        OUTCOME_ = #outcome:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="assignee" >
+        ASSIGNEE_ = #assignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="priority" >
+        PRIORITY_ = #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="state" >
+        STATE_ = #state:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="create" >
+        CREATE_ = #create:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="end" >
+        END_ = #end:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="duration" >
+        DURATION_ = #duration:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="nextidx" >
+        NEXTIDX_ = #nextidx:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="supertask" >
+        SUPERTASK_ = #supertask:DECIMAL#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <select id="abatorgenerated_queryEntitiesByTemplate" resultMap="abatorgenerated_Jbpm4HistTaskResult" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+    select DBID_, DBVERSION_, EXECUTION_, OUTCOME_, ASSIGNEE_, PRIORITY_, STATE_, CREATE_, END_,
+      DURATION_, NEXTIDX_, SUPERTASK_
+    from JBPM4_HIST_TASK
+    <dynamic prepend="where" >
+      <isNotNull prepend="and" property="dbid" >
+        DBID_ = #dbid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="dbversion" >
+        DBVERSION_ = #dbversion:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="execution" >
+        EXECUTION_ = #execution:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="outcome" >
+        OUTCOME_ = #outcome:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="assignee" >
+        ASSIGNEE_ = #assignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="priority" >
+        PRIORITY_ = #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="state" >
+        STATE_ = #state:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="create" >
+        CREATE_ = #create:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="end" >
+        END_ = #end:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="duration" >
+        DURATION_ = #duration:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="nextidx" >
+        NEXTIDX_ = #nextidx:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="supertask" >
+        SUPERTASK_ = #supertask:DECIMAL#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <delete id="abatorgenerated_deleteByPrimaryKey" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--
+      WARNING - This element is automatically generated by Abator for iBATIS, do not modify.
+      This element was generated on .
+    -->
+    <!--通过主键删除一条记录-->
+    delete from JBPM4_HIST_TASK
+    where DBID_ = #dbid:DECIMAL#
+  </delete>
+  <delete id="abatorgenerated_deleteByExample" parameterClass="com.gotop.jbpm.model.Jbpm4HistTaskExample" >
+    <!--通过查询实例，删除满足条件的数据-->
+    delete from JBPM4_HIST_TASK
+    <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+  </delete>
+  <delete id="abatorgenerated_deleteByTemplate" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--根据Bean数据模板查询条件删除记录-->
+    delete from JBPM4_HIST_TASK
+    <dynamic prepend="where" >
+      <isNotEmpty prepend="and" property="dbid" >
+        DBID_ = #dbid:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="dbversion" >
+        DBVERSION_ = #dbversion:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="execution" >
+        EXECUTION_ = #execution:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="outcome" >
+        OUTCOME_ = #outcome:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="assignee" >
+        ASSIGNEE_ = #assignee:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="priority" >
+        PRIORITY_ = #priority:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="state" >
+        STATE_ = #state:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="create" >
+        CREATE_ = #create:TIMESTAMP#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="end" >
+        END_ = #end:TIMESTAMP#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="duration" >
+        DURATION_ = #duration:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="nextidx" >
+        NEXTIDX_ = #nextidx:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="supertask" >
+        SUPERTASK_ = #supertask:DECIMAL#
+      </isNotEmpty>
+    </dynamic>
+  </delete>
+  <insert id="abatorgenerated_insert" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--通过主键更新整条数据-->
+    insert into JBPM4_HIST_TASK (DBID_, DBVERSION_, EXECUTION_, OUTCOME_, ASSIGNEE_, PRIORITY_,
+      STATE_, CREATE_, END_, DURATION_, NEXTIDX_, SUPERTASK_)
+    values (#dbid:DECIMAL:-9999#, #dbversion:DECIMAL:-9999#, #execution:VARCHAR#, #outcome:VARCHAR#,
+      #assignee:VARCHAR#, #priority:DECIMAL:-9999#, #state:VARCHAR#, #create:TIMESTAMP#,
+      #end:TIMESTAMP#, #duration:DECIMAL:-9999#, #nextidx:DECIMAL:-9999#, #supertask:DECIMAL:-9999#)
+  </insert>
+  <update id="abatorgenerated_updateByPrimaryKey" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--通过主键更新一条全部字段内容-->
+    update JBPM4_HIST_TASK
+    set DBVERSION_ = #dbversion:DECIMAL:-9999#,
+      EXECUTION_ = #execution:VARCHAR#,
+      OUTCOME_ = #outcome:VARCHAR#,
+      ASSIGNEE_ = #assignee:VARCHAR#,
+      PRIORITY_ = #priority:DECIMAL:-9999#,
+      STATE_ = #state:VARCHAR#,
+      CREATE_ = #create:TIMESTAMP#,
+      END_ = #end:TIMESTAMP#,
+      DURATION_ = #duration:DECIMAL:-9999#,
+      NEXTIDX_ = #nextidx:DECIMAL:-9999#,
+      SUPERTASK_ = #supertask:DECIMAL:-9999#
+    where DBID_ = #dbid:DECIMAL#
+  </update>
+  <update id="abatorgenerated_updateByPrimaryKeySelective" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" >
+    <!--通过主键更新部分字段，部分字段说明：当字段为null时不更新，当字段值为''空值是更新为空值-->
+    update JBPM4_HIST_TASK
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="dbversion" >
+        DBVERSION_ = #dbversion:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="execution" >
+        EXECUTION_ = #execution:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outcome" >
+        OUTCOME_ = #outcome:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="assignee" >
+        ASSIGNEE_ = #assignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="priority" >
+        PRIORITY_ = #priority:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="state" >
+        STATE_ = #state:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="create" >
+        CREATE_ = #create:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="end" >
+        END_ = #end:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="duration" >
+        DURATION_ = #duration:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="nextidx" >
+        NEXTIDX_ = #nextidx:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="supertask" >
+        SUPERTASK_ = #supertask:DECIMAL:-9999#
+      </isNotNull>
+    </dynamic>
+    where DBID_ = #dbid:DECIMAL#
+  </update>
+  <select id="abatorgenerated_countByExample" parameterClass="com.gotop.jbpm.model.Jbpm4HistTaskExample" resultClass="java.lang.Integer" >
+    <!--通过查询实例，统计总数-->
+    select count(*) from JBPM4_HIST_TASK
+    <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+  </select>
+  <select id="abatorgenerated_countByTemplate" parameterClass="com.gotop.jbpm.model.Jbpm4HistTask" resultClass="java.lang.Integer" >
+    <!--通过查询Bean数据模板，统计总数-->
+    select count(*) from JBPM4_HIST_TASK
+    <dynamic prepend="where" >
+      <isNotNull prepend="and" property="dbid" >
+        DBID_ = #dbid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="dbversion" >
+        DBVERSION_ = #dbversion:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="execution" >
+        EXECUTION_ = #execution:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="outcome" >
+        OUTCOME_ = #outcome:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="assignee" >
+        ASSIGNEE_ = #assignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="priority" >
+        PRIORITY_ = #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="state" >
+        STATE_ = #state:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="create" >
+        CREATE_ = #create:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="end" >
+        END_ = #end:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="duration" >
+        DURATION_ = #duration:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="nextidx" >
+        NEXTIDX_ = #nextidx:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="supertask" >
+        SUPERTASK_ = #supertask:DECIMAL#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <update id="abatorgenerated_updateByExampleSelective" >
+    <!--通过查询实例，更新非null字段-->
+    update JBPM4_HIST_TASK
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="record.dbid" >
+        DBID_ = #record.dbid:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.dbversion" >
+        DBVERSION_ = #record.dbversion:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.execution" >
+        EXECUTION_ = #record.execution:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.outcome" >
+        OUTCOME_ = #record.outcome:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.assignee" >
+        ASSIGNEE_ = #record.assignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.priority" >
+        PRIORITY_ = #record.priority:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.state" >
+        STATE_ = #record.state:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.create" >
+        CREATE_ = #record.create:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="record.end" >
+        END_ = #record.end:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="record.duration" >
+        DURATION_ = #record.duration:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.nextidx" >
+        NEXTIDX_ = #record.nextidx:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.supertask" >
+        SUPERTASK_ = #record.supertask:DECIMAL:-9999#
+      </isNotNull>
+    </dynamic>
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+    </isParameterPresent>
+  </update>
+  <update id="abatorgenerated_updateByExample" >
+    <!--通过查询实例，更新全部字段-->
+    update JBPM4_HIST_TASK
+    set DBID_ = #record.dbid:DECIMAL:-9999#,
+      DBVERSION_ = #record.dbversion:DECIMAL:-9999#,
+      EXECUTION_ = #record.execution:VARCHAR#,
+      OUTCOME_ = #record.outcome:VARCHAR#,
+      ASSIGNEE_ = #record.assignee:VARCHAR#,
+      PRIORITY_ = #record.priority:DECIMAL:-9999#,
+      STATE_ = #record.state:VARCHAR#,
+      CREATE_ = #record.create:TIMESTAMP#,
+      END_ = #record.end:TIMESTAMP#,
+      DURATION_ = #record.duration:DECIMAL:-9999#,
+      NEXTIDX_ = #record.nextidx:DECIMAL:-9999#,
+      SUPERTASK_ = #record.supertask:DECIMAL:-9999#
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+    </isParameterPresent>
+  </update>
+  <update id="abatorgenerated_updateEntityByTemplate" >
+    <!--根据Bean数据模板查询条件更新记录-->
+    update JBPM4_HIST_TASK
+    <dynamic prepend="set" >
+      <isNotEmpty prepend="," property="record.dbid" >
+        DBID_ = #record.dbid:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.dbversion" >
+        DBVERSION_ = #record.dbversion:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.execution" >
+        EXECUTION_ = #record.execution:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.outcome" >
+        OUTCOME_ = #record.outcome:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.assignee" >
+        ASSIGNEE_ = #record.assignee:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.priority" >
+        PRIORITY_ = #record.priority:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.state" >
+        STATE_ = #record.state:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.create" >
+        CREATE_ = #record.create:TIMESTAMP#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.end" >
+        END_ = #record.end:TIMESTAMP#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.duration" >
+        DURATION_ = #record.duration:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.nextidx" >
+        NEXTIDX_ = #record.nextidx:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.supertask" >
+        SUPERTASK_ = #record.supertask:DECIMAL:-9999#
+      </isNotEmpty>
+    </dynamic>
+    <dynamic prepend="where" >
+      <isNotEmpty prepend="and" property="template.dbid" >
+        DBID_ = #template.dbid:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.dbversion" >
+        DBVERSION_ = #template.dbversion:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.execution" >
+        EXECUTION_ = #template.execution:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.outcome" >
+        OUTCOME_ = #template.outcome:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.assignee" >
+        ASSIGNEE_ = #template.assignee:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.priority" >
+        PRIORITY_ = #template.priority:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.state" >
+        STATE_ = #template.state:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.create" >
+        CREATE_ = #template.create:TIMESTAMP#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.end" >
+        END_ = #template.end:TIMESTAMP#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.duration" >
+        DURATION_ = #template.duration:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.nextidx" >
+        NEXTIDX_ = #template.nextidx:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.supertask" >
+        SUPERTASK_ = #template.supertask:DECIMAL#
+      </isNotEmpty>
+    </dynamic>
+  </update>
+  <select id="abatorgenerated_selectByMapAndPage" resultMap="abatorgenerated_Jbpm4HistTask_HashMapResult" parameterClass="java.util.HashMap" >
+    <!--通过Map方式的动态条件，查询分页数据-->
+    select DBID_, DBVERSION_, EXECUTION_, OUTCOME_, ASSIGNEE_, PRIORITY_, STATE_, CREATE_, END_,
+      DURATION_, NEXTIDX_, SUPERTASK_
+    from JBPM4_HIST_TASK
+    <dynamic prepend="where" >
+      <isNotNull prepend="and" property="dbid" >
+        DBID_ = #dbid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="dbversion" >
+        DBVERSION_ = #dbversion:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="execution" >
+        EXECUTION_ = #execution:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="outcome" >
+        OUTCOME_ = #outcome:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="assignee" >
+        ASSIGNEE_ = #assignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="priority" >
+        PRIORITY_ = #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="state" >
+        STATE_ = #state:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="create" >
+        CREATE_ = #create:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="end" >
+        END_ = #end:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="and" property="duration" >
+        DURATION_ = #duration:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="nextidx" >
+        NEXTIDX_ = #nextidx:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="supertask" >
+        SUPERTASK_ = #supertask:DECIMAL#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <select id="abatorgenerated_selectByExampleAndPage" resultMap="abatorgenerated_Jbpm4HistTaskResult" parameterClass="com.gotop.jbpm.model.Jbpm4HistTaskExample" >
+    <!--通过Bean方式的动态条件，查询分页数据-->
+    select DBID_, DBVERSION_, EXECUTION_, OUTCOME_, ASSIGNEE_, PRIORITY_, STATE_, CREATE_, END_,
+      DURATION_, NEXTIDX_, SUPERTASK_
+    from JBPM4_HIST_TASK
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+    </isParameterPresent>
+  </select>
+</sqlMap>

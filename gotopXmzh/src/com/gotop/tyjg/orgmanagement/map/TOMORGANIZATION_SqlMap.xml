@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TOMORGANIZATION">
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="childMap">
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="orgName" jdbcType="string" column="ORGNAME"/>
+		<result property="orgSeq" jdbcType="string" column="ORGSEQ"/>
+		<result property="orgCode" jdbcType="string" column="ORGCODE"/>
+		<result property="area" jdbcType="string" column="AREA"/>
+	</resultMap>
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="childOrgList">
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="orgCode" jdbcType="string" column="ORGCODE"/>
+		<result property="orgName" jdbcType="string" column="ORGNAME"/>
+		<result property="orgType" jdbcType="string" column="ORGTYPE"/>
+		<result property="status" jdbcType="string" column="STATUS"/>
+		<result property="displayOrder" jdbcType="string" column="DISPLAYORDER"/>
+	</resultMap>
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.Tomorganization" id="singleOrgInfoMap">
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="orgCode" jdbcType="string" column="ORGCODE"/>
+		<result property="orgName" jdbcType="string" column="ORGNAME"/>
+		<result property="orgType" jdbcType="string" column="ORGTYPE"/>
+		<result property="displayOrder" jdbcType="string" column="DISPLAYORDER"/>
+		<result property="orgLevel" jdbcType="string" column="ORGLEVEL"/>
+		<result property="orgDegree" jdbcType="string" column="ORGDEGREE"/>
+		<result property="whry" jdbcType="string" column="WHRY"/>
+		<result property="whsj" jdbcType="string" column="WHSJ"/>
+		<result property="orgSeq" jdbcType="string" column="ORGSEQ"/>
+		<result property="status" jdbcType="string" column="STATUS"/>
+		<result property="area" jdbcType="string" column="AREA"/>
+		<result property="subCount" jdbcType="string" column="SUBCOUNT" nullValue="0"/>
+		<result property="orgManager" jdbcType="string" column="ORGMANAGER"/>
+		<result property="isLeaf" jdbcType="string" column="ISLEAF"/>
+		<result property="remark" jdbcType="string" column="REMARK"/>
+		<result property="realName" jdbcType="string" column="REALNAME"/>
+		<result property="zipCode" jdbcType="string" column="ZIPCODE"/>
+		<result property="snbz" jdbcType="string" column="SNBZ"/>
+		<result property="orgTypeField" jdbcType="string" column="ORGTYPEFIELD" nullValue="0"/>
+		<result property="ysjgbh" jdbcType="string" column="YSJGBH"/>
+		<result property="parentOrgId" jdbcType="string" column="PARENTORGID"  nullValue="0"/>
+		<result property="areaType" jdbcType="string" column="AREATYPE"/>	
+		<result property="zhjb" jdbcType="string" column="ZHJB"/>
+		<result property="jgsx" jdbcType="string" column="JGSX"/>	
+		<result property="parentName" jdbcType="string" column="PARENTNAME"/>	
+	</resultMap>
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.Abftjgfjxx" id="singleOrgfjxxInfoMap">
+		<result property="orgId" jdbcType="string" column="ORGID"/>
+		<result property="webUrl" jdbcType="string" column="WEBURL"/>
+		<result property="createTime" jdbcType="string" column="CREATETIME"/>
+		<result property="startDate" jdbcType="string" column="STARTDATE"/>
+		<result property="endDate" jdbcType="string" column="ENDDATE"/>
+		<result property="linkMan" jdbcType="string" column="LINKMAN"/>
+		<result property="linkTel" jdbcType="string" column="LINKTEL"/>
+		<result property="email" jdbcType="string" column="EMAIL"/>
+		<result property="orgAddr" jdbcType="string" column="ORGADDR"/>
+	</resultMap>
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.PartyRole" id="roleMap">
+		<result property="roleId" jdbcType="string" column="ROLEID"/>
+		<result property="roleName" jdbcType="string" column="ROLENAME"/>
+		<result property="roleType" jdbcType="string" column="ROLETYPE"/>
+		<result property="auto" jdbcType="string" column="AUTO"/>
+		<result property="roleTypeField" jdbcType="string" column="ROLETYPEFIELD"/>
+	</resultMap>
+	<resultMap class="com.gotop.tyjg.orgmanagement.model.PartyRole" id="alreadGrantRoleMap">
+		<result property="roleId" jdbcType="string" column="roleid"/>
+		<result property="specialTyname" jdbcType="string" column="rolename"/>
+	</resultMap>
+	<!-- 获取树根节点与子节点 -->
+	<select id="selectByChildOrg" resultMap="childMap">
+		<![CDATA[
+		SELECT ORGID, ORGNAME,ORGSEQ,ORGCODE,AREA
+			  FROM OM_ORGANIZATION
+			 WHERE 1 = 1
+			 ]]>
+			 <isEqual prepend="and" property="parentOrgId" compareValue="0">
+			  <![CDATA[ OM_ORGANIZATION.PARENTORGID IS NULL ]]>
+			 </isEqual>
+			 <isGreaterThan prepend="and" property="parentOrgId" compareValue="0">
+			   <![CDATA[	OM_ORGANIZATION.PARENTORGID = #parentOrgId# ]]>
+			 </isGreaterThan>
+			 <![CDATA[ ORDER BY OM_ORGANIZATION.DISPLAYORDER,OM_ORGANIZATION.ORGCODE ]]>
+			
+	</select>
+	<!-- 查询指定机构的下级机构列表 -->
+	<select id="selectByOrgChild" resultMap="childOrgList">
+		<![CDATA[
+			SELECT OM_ORGANIZATION.ORGID,
+				   OM_ORGANIZATION.ORGNAME,
+			       OM_ORGANIZATION.ORGCODE,
+			       OM_ORGANIZATION.ORGTYPE,
+			       OM_ORGANIZATION.STATUS,
+			       OM_ORGANIZATION.DISPLAYORDER
+			  FROM OM_ORGANIZATION
+			 WHERE OM_ORGANIZATION.PARENTORGID = #orgid#
+			 ORDER BY OM_ORGANIZATION.DISPLAYORDER
+		]]>
+	</select>
+	<!-- 获取下级机构总记录数 -->
+	<select id="childOrgCount" resultClass="java.lang.Integer">
+		SELECT COUNT(1)
+			  FROM OM_ORGANIZATION
+			 WHERE OM_ORGANIZATION.PARENTORGID = #orgid#
+			 ORDER BY OM_ORGANIZATION.DISPLAYORDER
+	</select>
+	<!-- 调整机构顺序 -->
+	<update id="updateChildOrgOrder">
+		UPDATE OM_ORGANIZATION
+			SET OM_ORGANIZATION.DISPLAYORDER = #display#
+			WHERE OM_ORGANIZATION.ORGID = #orgid#
+	</update>
+	<!-- 根据机构编号查询某个机构的基本信息 -->
+	<select id="singleOrgInfo" resultMap="singleOrgInfoMap">
+		<![CDATA[
+		SELECT A.ORGID,
+               A.ORGCODE,
+               A.ORGNAME,
+               A.ORGLEVEL,
+               A.ORGDEGREE,
+               A.PARENTORGID,
+               A.ORGSEQ,
+               A.ORGTYPE,
+               A.STATUS,
+               A.AREA,
+               A.LASTUPDATE,
+               A.UPDATOR,
+               A.SUBCOUNT,
+               A.ORGMANAGER,
+               A.ISLEAF,
+               A.REMARK,
+               A.REALNAME,
+               A.ZIPCODE,
+               A.ORGTYPEFIELD,
+               A.SNBZ,
+               A.ZHJB,
+               A.JGSX,
+               A.YSJGBH,
+               A.DISPLAYORDER,
+               A.AREATYPE,
+               A.WHRY,
+               TO_CHAR(A.WHSJ, 'yyyy-MM-dd HH24:mi:ss') WHSJ,
+               (SELECT B.ORGNAME FROM OM_ORGANIZATION B WHERE B.ORGID = A.PARENTORGID) PARENTNAME
+          FROM OM_ORGANIZATION A
+         WHERE A.ORGID = #orgid#
+		 ]]>
+	</select>
+	<!-- 根据机构编号查询某个机构的附加信息 -->
+	<select id="singleOrgfjxxInfo" resultMap="singleOrgfjxxInfoMap">
+		<![CDATA[
+			SELECT A.ORGID,
+			       A.WEBURL,
+			       TO_CHAR(A.CREATETIME, 'yyyy-MM-dd hh24:mi:ss') CREATETIME,
+			       TO_CHAR(A.STARTDATE, 'yyyy-MM-dd') STARTDATE,
+			       TO_CHAR(A.ENDDATE, 'yyyy-MM-dd') ENDDATE,
+			       A.LINKMAN,
+			       A.LINKTEL,
+			       A.EMAIL,
+			       A.ORGADDR
+			  FROM ABF_T_JGFJXXB A
+			 WHERE A.ORGID = #orgid#
+		 ]]>
+	</select>
+	<!--验证该机构下是否存在子机构 -->
+	<select id="checkExistsChildOrgNum" resultClass="java.lang.Long">
+		<![CDATA[
+				SELECT COUNT(A.ORGID) num
+				  FROM OM_ORGANIZATION A
+				 WHERE A.STATUS = 'running'
+				  AND A.ORGID != #orgid#
+				 START WITH A.ORGID = #orgid#
+				CONNECT BY PRIOR A.ORGID = A.PARENTORGID
+		 ]]>
+	</select>
+	<!--验证该机构下是否存在人员 -->
+	<select id="checkExistsChildOrgEmpNum" resultClass="java.lang.Long">
+		<![CDATA[
+				SELECT COUNT(B.EMPID) num FROM OM_EMPORG B WHERE B.ORGID = #orgid#
+		 ]]>
+	</select>
+	<!-- 更新机构基本信息 -->
+	<update id="updateBaseInfo" parameterClass="com.gotop.tyjg.orgmanagement.model.Tomorganization">
+		UPDATE OM_ORGANIZATION
+		   SET
+		       ORGNAME      = #orgName:VARCHAR#,
+		       ORGLEVEL     = #orgLevel:VARCHAR#,
+		       ORGDEGREE    = #orgDegree:VARCHAR#,
+		       	<isNotEmpty property="parentOrgId">
+		       		<isNotEqual property="parentOrgId" compareValue="0">
+		       			PARENTORGID  = #parentOrgId#,
+		        	</isNotEqual>
+		       </isNotEmpty>
+		       ORGTYPE      = #orgType:VARCHAR#,
+		       ZIPCODE      = #zipCode:VARCHAR#,
+		       STATUS       = #status:VARCHAR#,
+		       AREA         = #area:VARCHAR#,
+		       SUBCOUNT     = (SELECT COUNT(1)
+		                                         FROM OM_ORGANIZATION
+		                                        WHERE PARENTORGID = #orgId#),
+		       ORGTYPEFIELD = #orgTypeField:VARCHAR#,
+		       REMARK       = #remark:VARCHAR#,
+		       REALNAME     = #realName:VARCHAR#,
+		       DISPLAYORDER = #displayOrder:VARCHAR#,
+		       SNBZ         = #snbz:VARCHAR#,
+		       WHRY         = #whry:VARCHAR#,
+		       WHSJ         = sysdate,
+		       YSJGBH       = #ysjgbh:VARCHAR#,
+		       ZHJB         = #zhjb:VARCHAR#,
+		       AREATYPE     = TO_NUMBER('$areaType$')
+		 WHERE ORGID = #orgId#
+	</update>
+	<!-- 更新机构附加信息 -->
+	<update id="updateJgfjxx" parameterClass="com.gotop.tyjg.orgmanagement.model.Abftjgfjxx">
+		UPDATE ABF_T_JGFJXXB
+		   SET ABF_T_JGFJXXB.ORGLEVEL  = #orgLevel:VARCHAR#,
+		       ABF_T_JGFJXXB.WEBURL    = #webUrl:VARCHAR#,
+		       ABF_T_JGFJXXB.STARTDATE = TO_DATE(#startDate:VARCHAR#, 'yyyy-MM-dd'),
+		       ABF_T_JGFJXXB.ENDDATE   = TO_DATE(#endDate:VARCHAR#, 'yyyy-MM-dd'),
+		       ABF_T_JGFJXXB.LINKMAN   = #linkMan:VARCHAR#,
+		       ABF_T_JGFJXXB.LINKTEL   = #linkTel:VARCHAR#,
+		       ABF_T_JGFJXXB.ORGADDR   = #orgAddr:VARCHAR#,
+		       ABF_T_JGFJXXB.EMAIL     = #email:VARCHAR#
+		 WHERE ABF_T_JGFJXXB.ORGID = #orgId:VARCHAR#
+	</update>
+	
+	<!-- 获取子机构 -->
+	<select id="query_child_orgid" resultClass="java.util.HashMap">
+	<![CDATA[
+		 SELECT ORGID, PARENTORGID
+			   FROM OM_ORGANIZATION
+			  WHERE ORGID != #fromOrgid#
+			  START WITH ORGID = #fromOrgid#
+			 CONNECT BY PRIOR ORGID = PARENTORGID
+	]]>		 
+	</select>
+	<!-- 移动机构 -->
+	<update id="updateChildOrg">
+			UPDATE OM_ORGANIZATION
+			   SET OM_ORGANIZATION.PARENTORGID =#parentOrgid#,
+			       OM_ORGANIZATION.ORGSEQ      = (SELECT A.ORGSEQ || #fromOrgid#||'.'
+			                                        FROM OM_ORGANIZATION A
+			                                       WHERE A.ORGID = #parentOrgid#
+			                                        ),
+			        OM_ORGANIZATION.SUBCOUNT = (SELECT COUNT(1) FROM OM_ORGANIZATION B WHERE B.PARENTORGID = #fromOrgid#)
+			 WHERE OM_ORGANIZATION.ORGID =#fromOrgid#
+	</update>
+	<!-- 更新当前要移动机构的信息 -->
+	<update id="updateCurrentOrg">
+			UPDATE OM_ORGANIZATION
+			   SET OM_ORGANIZATION.PARENTORGID =#toOrgid#,
+			       OM_ORGANIZATION.ORGSEQ      = (SELECT A.ORGSEQ || #fromOrgid#||'.'
+			                                        FROM OM_ORGANIZATION A
+			                                       WHERE A.ORGID = #toOrgid#),
+			        OM_ORGANIZATION.SUBCOUNT = (SELECT COUNT(1) FROM OM_ORGANIZATION B WHERE B.PARENTORGID = #fromOrgid#)
+			 WHERE OM_ORGANIZATION.ORGID =#fromOrgid#
+	</update>
+	<!-- 机构置顶 -->
+	<update id="updateOrgTop">
+		UPDATE OM_ORGANIZATION
+			SET OM_ORGANIZATION.PARENTORGID = TO_NUMBER('')
+		WHERE OM_ORGANIZATION.ORGID = #orgid#
+	</update>
+	
+	<!-- 获取序列 -->
+	<select id="getPrimary" resultClass="java.lang.String" parameterClass="java.util.HashMap" >
+		<![CDATA[
+	    SELECT "$seqName$".NEXTVAL   FROM DUAL
+	    ]]>		 
+	</select>
+		<!-- 新增机构的基本信息 -->
+	<insert id="insertOrgBase" parameterClass="com.gotop.tyjg.orgmanagement.model.Tomorganization">
+	    INSERT INTO OM_ORGANIZATION
+		  (ORGID,
+		   ORGCODE,
+		   ORGNAME,
+		   ORGLEVEL,
+		   ORGDEGREE,
+		   <isNotEqual property="parentOrgId" compareValue="0">
+		   PARENTORGID,
+		   </isNotEqual>
+		   ORGSEQ,
+		   ORGTYPE,
+		   ZIPCODE,
+		   STATUS,
+		   AREA,
+		   ISLEAF,
+		   SUBCOUNT,
+		   REMARK,
+		   REALNAME,
+		   DISPLAYORDER,
+		   ORGYSJGID,
+		   SNBZ,
+		   WHRY,
+		   WHSJ,
+		   JGSX,
+		   YSJGBH,
+		   ZHJB,
+		   AREATYPE)
+		VALUES
+		  (
+		  	#orgId#,
+		  	#orgCode#,
+		  	#orgName#,
+		  	#orgLevel#,
+		  	#orgDegree#,
+		  	<isNotEqual property="parentOrgId" compareValue="0">
+		      #parentOrgId#,
+		    </isNotEqual>
+		    #orgSeq#||#orgId#||'.',
+		    #orgType#,
+		    #zipCode#,
+		    #status#,
+		    #area#,
+		    'n',
+		    #subCount#,
+		    #remark#,
+		    #realName#,
+		    #displayOrder#,
+		    #orgId#,
+		    #snbz#,
+		    #whry#,
+		    sysdate,
+			#jgsx#,
+		    #ysjgbh#,
+		    #zhjb#,
+		    #areaType#
+		  )
+	</insert>
+	<!-- 新增机构的附加信息 -->
+	<insert id="insertOrgJgfjxx" parameterClass="com.gotop.tyjg.orgmanagement.model.Abftjgfjxx">
+		INSERT INTO ABF_T_JGFJXXB
+		  (ORGID,
+		   WEBURL,
+		   CREATETIME,
+		   STARTDATE,
+		   ENDDATE,
+		   EMAIL,
+		   LINKMAN,
+		   LINKTEL,
+		   ORGADDR)
+		VALUES
+		  (#orgId#,
+		   #webUrl#,
+		   sysdate,
+		   TO_DATE(#startDate#, 'yyyy-MM-dd'),
+		   TO_DATE(#endDate#, 'yyyy-MM-dd'),
+		   #email#,
+		   #linkMan#,
+		   #linkTel#,
+		   #orgAddr#)
+	</insert>
+	<!-- 新增机构后要更新父机构子机构数量字段 -->
+	<update id="updateParentSubCount" parameterClass="com.gotop.tyjg.orgmanagement.model.Tomorganization">
+		UPDATE OM_ORGANIZATION
+			   SET SUBCOUNT = (SELECT COUNT(1) FROM OM_ORGANIZATION WHERE PARENTORGID =#parentOrgId#)
+			 WHERE ORGID = #parentOrgId#
+	</update>
+	<!-- 验证新增机构ORGCODE是否存在 -->
+	<select id="getCountOrgCode" resultClass="java.lang.Long">
+		SELECT COUNT(1) FROM OM_ORGANIZATION WHERE ORGCODE = #orgcode#
+	</select>
+	<!-- 查询机构可以授权的角色 -->
+	<select id="queryOrgRole" resultMap="roleMap">
+		<include refid="COMMON.oracle_Pagination_Head" />
+			SELECT ROLEID, ROLENAME, ROLETYPE, AUTO, ROLETYPEFIELD
+			  FROM AC_ROLE
+			 WHERE AC_ROLE.ROLETYPEFIELD =#jgsx#
+			 <isEqual compareProperty="orgdegree" compareValue="-1">
+			   AND AC_ROLE.ROLETYPE = #orgdegree#
+			 </isEqual>
+			 <![CDATA[
+			   AND AC_ROLE.AUTO >= #orgdegree#
+			 ]]>
+		<include refid="COMMON.oracle_Pagination_Tail" />
+	</select>
+	<!-- 查询机构可以授权的角色数量 -->
+	<select id="countOrgRole" resultClass="java.lang.Long">
+			SELECT count(1) num
+			  FROM AC_ROLE
+			 WHERE AC_ROLE.ROLETYPEFIELD =#jgsx#
+			   AND AC_ROLE.ROLETYPE = #orgdegree#
+			   AND AC_ROLE.AUTO >= 1
+	</select>
+	<!-- 查询已设置机构拥有的角色 -->
+	<select id="queryAlreadyGrantRoles" resultMap="alreadGrantRoleMap">
+		   SELECT WMSYS.WM_CONCAT(c.ROLEID) roleid, WMSYS.WM_CONCAT(B.ROLENAME) rolename
+			  FROM OM_PARTYROLE c,
+			       (SELECT AC_ROLE.ROLENAME, AC_ROLE.ROLEID
+			          FROM AC_ROLE
+			         WHERE EXISTS (SELECT 1
+			                  FROM (SELECT ROLEID
+			                          FROM OM_PARTYROLE
+			                         WHERE PARTYID =  #orgid#
+			                           AND PARTYTYPE = 'organization') A
+			                 WHERE A.ROLEID = AC_ROLE.ROLEID)) B
+			 WHERE c.PARTYID =  #orgid#
+			   AND c.PARTYTYPE = 'organization'
+			   and B.ROLEID = c.ROLEID
+	</select>
+	<!-- 保存机构授权角色 -->
+	<insert id="addOrgRole">
+		INSERT INTO OM_PARTYROLE
+			  (ROLEID, PARTYTYPE, PARTYID)
+			VALUES
+			  (#ROLEID#, 'organization', #ORGID#)
+	</insert>
+	<!-- 删除已授权的机构角色 -->
+	<delete id="delOrgRoles">
+		DELETE FROM OM_PARTYROLE WHERE PARTYID=#ORGID#
+	</delete>
+	<!-- 查询登录用户可管理机构 -->
+	<select id="OrgMangs" resultClass="com.gotop.tyjg.orgmanagement.model.Tomorganization">
+		select orgseq orgSeq
+			  from (select omorg.*, '' ismain
+			          from om_organization omorg, ABF_T_RYKGLJG rykgljg
+			         where omorg.orgid = rykgljg.orgid
+			           and empid = #empid#
+			        union
+			        select omorg.*, om_emporg.ismain
+			          from om_organization omorg, om_emporg
+			         where om_emporg.orgid = omorg.orgid
+			           and empid =#empid#)
+			 order by displayorder, orgcode
+	</select>
+	
+	<resultMap id="Znzd_JgfjxxBeanResult" class="com.gotop.tyjg.orgmanagement.model.TdjgfjBean" >
+    	<!--机构附加信息 -->
+	    <result column="N_ID" property="nId" jdbcType="NUMERIC" />
+	    <result column="ORGID" property="orgid" jdbcType="NUMERIC" />
+	    <result column="C_JGSX" property="cJgsx" jdbcType="CHAR" />
+	    <result column="C_JGBZ" property="cJgbz" jdbcType="CHAR" />
+	    <result column="C_CQBZ" property="cCqbz" jdbcType="CHAR" />
+	    <result column="C_TDYWSX" property="cTdywsx" jdbcType="CHAR" />
+	    <result column="N_ZDS" property="nZds" jdbcType="NUMERIC" />
+	    <result column="N_ZTDBC" property="nZtdbc" jdbcType="NUMERIC" />
+	    <result column="C_DCLJ" property="cDclj" jdbcType="CHAR" />
+	    <result column="C_DDYJ" property="cDdyj" jdbcType="CHAR" />
+  	</resultMap>
+	<!-- 查询机构附加信息 -->
+	<select id="queryTdjgfjxx" resultMap="Znzd_JgfjxxBeanResult">
+		   SELECT N_ID,ORGID,C_JGSX,C_JGBZ,C_CQBZ,C_TDYWSX,N_ZDS,N_ZTDBC,C_DCLJ,C_DDYJ
+			 FROM ZNZD_T_TDJGB t 
+			 WHERE t.ORGID =  #orgid#
+			 AND ROWNUM=1
+	</select>
+</sqlMap>

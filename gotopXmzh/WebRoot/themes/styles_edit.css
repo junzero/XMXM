@@ -1,0 +1,80 @@
+
+body {
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+	font-size: 9pt;
+	font-family: "Arial", "ËÎÌו";
+	background-color: #fff;
+	text-decoration: none;
+}
+td {
+	color: #000;
+	font-size: 9pt;
+	font-family: "Arial", "ËÎÌו";
+	text-decoration: none;
+}
+
+.td_hfont {
+	font-size:9pt;
+	color:#000000;
+	border-top:none;
+	border-left:none;
+	background-color:#c2e3ff;
+	text-align:center;
+}
+
+.td_RB {
+	padding-left:2px;
+	text-align:left;
+	font-size:9pt;
+	color:#000000;
+	border-top:none;
+	border-left:none;
+	background-color:#eef7ff;
+}
+.table {
+	border: 1px solid #8aadd2;
+	font-weight: bold;
+	color: #033886;
+	font-size: 9pt;
+	text-decoration: none;
+	
+}
+.table1 {
+	font-weight: bold;
+	background: #d4e3f4;
+	color: #033886;
+	font-size: 9pt;
+	text-decoration: none;
+	border-bottom: 1px solid #8aadd2;
+	height: 4px;
+}
+.table2 {
+	font-weight: bold;
+	color: #033886;
+	font-size: 9pt;
+	text-decoration: none;
+	border-top: 0px none;
+	border-right: 1px solid #8aadd2;
+	border-bottom: 1px solid #8aadd2;
+	border-left: 1px solid #8aadd2;
+}
+.table3 {
+	color: #033886;
+	font-size: 9pt;
+	text-decoration: none;
+	border-bottom: 1px solid #8aadd2;
+	margin-bottom: 6px;
+}
+
+.editButton { 
+	border:0px;
+	width:'67';height:'26';
+    padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; 
+	behavior:url(/themes/WinButton.htc);
+	cursor:Hand;
+}
+
+.font-b { font-size: 9pt; color="#175087"}
+.style1 {color: #0000FF}

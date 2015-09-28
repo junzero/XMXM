@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[企业名称,,.,,学历,,.,,人数]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[FcT6,JhRa*fB"j[1O;2Ye3o:Q`4uH-(a13QKaTa`k\[2n`t6-*/.UG/g4$6jnC$P.T//#3Ts
+fe=SV7H3qSi+^qI"5PA"?q@)%,S9Pt<P$J#?M0<K?01\;e^A'eT)>1AA=B*rmZ;!na!,1?"k
+mJqbO^JYTEBg#[BQO&AO?"Ue7\hnq97AhhO7:"eNW<NN+Hg^8DaA*#WN38(-IcaH+?$qnb6i
+=,~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72]]></ColumnWidth>
+<CellElementList/>
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<PaperSetting>
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</PaperSetting>
+</ReportSettings>
+</Report>
+<StyleList/>
+</WorkBook>

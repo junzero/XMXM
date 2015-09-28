@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL MAP Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+  <settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="32" maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+  <!-- 查询一级工作组 -->
+<sqlMap resource="com/gotop/tyjg/workgroup/map/Groupmanager_SqlMap.xml" />
+
+  <sqlMap resource="com/gotop/tyjg/workgroup/map/Managertree_SqlMap.xml" />
+  </sqlMapConfig>

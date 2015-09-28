@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="opinion" namespace="/opinion" extends="json-default">
+    <action class="tApproveOpninionAction" method="{1}" name="tApproveOpninionAction_*">
+      <result name="viewlist">
+        /jsp/approveOpninion/tApproveOpninionDatacell.jsp
+      </result>
+      <result name="downExl">
+        /jsp/approveOpninion/opinion_downexl.jsp
+      </result>
+    </action>
+  
+    <action class="tDefaultOpinionAction" method="{1}" name="tDefaultOpinionAction_*">
+      <result name="viewlist">
+        /jsp/approveOpninion/default_opinions.jsp
+      </result>
+       <result name="opinions" type="json">
+		   <param name="root">flag</param>
+	  </result>
+    </action>
+    </package>
+</struts>

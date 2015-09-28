@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_FILE_RESOURCE_TABLE_SqlMap" >
+  <resultMap id="abatorgenerated_TFileResourceTableResult" class="com.gotop.file.model.TFileResourceTable" >
+    <!--Bean方式返回全表-->
+    <result column="FILE_ID" property="fileId" jdbcType="DECIMAL" />
+    <result column="RESOURCE_ID" property="resourceId" jdbcType="DECIMAL" />
+    <result column="RESOURCE_TYPE" property="resourceType" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+    <result column="FILE_TYPE" property="fileType" jdbcType="VARCHAR" />
+    <result column="NODE_ID" property="nodeId" jdbcType="VARCHAR" />
+    <result column="NODE_NAME" property="nodeName" jdbcType="VARCHAR" />
+    <result column="CREATOR" property="creator" jdbcType="DECIMAL" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TFileResourceTable_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="FILE_ID" property="fileId" jdbcType="DECIMAL" />
+    <result column="RESOURCE_ID" property="resourceId" jdbcType="DECIMAL" />
+    <result column="RESOURCE_TYPE" property="resourceType" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+    <result column="FILE_TYPE" property="fileType" jdbcType="VARCHAR" />
+    <result column="NODE_ID" property="nodeId" jdbcType="VARCHAR" />
+    <result column="NODE_NAME" property="nodeName" jdbcType="VARCHAR" />
+    <result column="CREATOR" property="creator" jdbcType="DECIMAL" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+  </resultMap>
+  
+    <select id="queryProcessFileLists" resultMap="abatorgenerated_TFileResourceTableResult" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+     select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE
+    where RESOURCE_TYPE = #resourceType:VARCHAR#
+  </select>
+  
+  
+  <select id="abatorgenerated_selectByPrimaryKey" resultMap="abatorgenerated_TFileResourceTableResult" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--通过主键查询一条数据-->
+    select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE
+    where FILE_ID = #fileId:DECIMAL#
+  </select>
+  <select id="abatorgenerated_selectByExample" resultMap="abatorgenerated_TFileResourceTableResult" parameterClass="com.gotop.file.model.TFileResourceTableExample" >
+    <!--通过查询实体,查询满足条件的记录-->
+    select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+      <isNotNull property="orderByClause" >
+        order by $orderByClause$
+      </isNotNull>
+    </isParameterPresent>
+  </select>
+  <select id="abatorgenerated_expandEntityByTemplate" resultMap="abatorgenerated_TFileResourceTableResult" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+    select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE where <![CDATA[ rownum<2 ]]>
+    <dynamic >
+      <isNotNull prepend="and" property="fileId" >
+        FILE_ID = #fileId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceId" >
+        RESOURCE_ID = #resourceId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceType" >
+        RESOURCE_TYPE = #resourceType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileName" >
+        FILE_NAME = #fileName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="filePath" >
+        FILE_PATH = #filePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileType" >
+        FILE_TYPE = #fileType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeId" >
+        NODE_ID = #nodeId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeName" >
+        NODE_NAME = #nodeName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="creator" >
+        CREATOR = #creator:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <select id="abatorgenerated_queryEntitiesByTemplate" resultMap="abatorgenerated_TFileResourceTableResult" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+    select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE
+    <dynamic prepend="where" >
+      <isNotNull prepend="and" property="fileId" >
+        FILE_ID = #fileId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceId" >
+        RESOURCE_ID = #resourceId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceType" >
+        RESOURCE_TYPE = #resourceType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileName" >
+        FILE_NAME = #fileName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="filePath" >
+        FILE_PATH = #filePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileType" >
+        FILE_TYPE = #fileType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeId" >
+        NODE_ID = #nodeId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeName" >
+        NODE_NAME = #nodeName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="creator" >
+        CREATOR = #creator:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <delete id="abatorgenerated_deleteByPrimaryKey" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--
+      WARNING - This element is automatically generated by Abator for iBATIS, do not modify.
+      This element was generated on .
+    -->
+    <!--通过主键删除一条记录-->
+    delete from T_FILE_RESOURCE_TABLE
+    where FILE_ID = #fileId:DECIMAL#
+  </delete>
+  <delete id="abatorgenerated_deleteByExample" parameterClass="com.gotop.file.model.TFileResourceTableExample" >
+    <!--通过查询实例，删除满足条件的数据-->
+    delete from T_FILE_RESOURCE_TABLE
+    <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+  </delete>
+  <delete id="abatorgenerated_deleteByTemplate" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--根据Bean数据模板查询条件删除记录-->
+    delete from T_FILE_RESOURCE_TABLE
+    <dynamic prepend="where" >
+      <isNotEmpty prepend="and" property="fileId" >
+        FILE_ID = #fileId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="resourceId" >
+        RESOURCE_ID = #resourceId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="resourceType" >
+        RESOURCE_TYPE = #resourceType:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="fileName" >
+        FILE_NAME = #fileName:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="filePath" >
+        FILE_PATH = #filePath:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="fileType" >
+        FILE_TYPE = #fileType:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="nodeId" >
+        NODE_ID = #nodeId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="nodeName" >
+        NODE_NAME = #nodeName:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="creator" >
+        CREATOR = #creator:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotEmpty>
+    </dynamic>
+  </delete>
+  <insert id="abatorgenerated_insert" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--通过主键更新整条数据-->
+    <selectKey resultClass="long" keyProperty="fileId">
+		SELECT T_FILE_RESOURCE_TABLE_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into T_FILE_RESOURCE_TABLE (FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH,
+      FILE_TYPE, NODE_ID, NODE_NAME, CREATOR, CREATE_DATE, CREATE_TIME)
+    values (#fileId:DECIMAL:-9999#, #resourceId:DECIMAL:-9999#, #resourceType:VARCHAR#,
+      #fileName:VARCHAR#, #filePath:VARCHAR#, #fileType:VARCHAR#, #nodeId:VARCHAR#,
+      #nodeName:VARCHAR#, #creator:DECIMAL:-9999#, #createDate:VARCHAR#, #createTime:VARCHAR#)
+  </insert>
+  <update id="abatorgenerated_updateByPrimaryKey" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--通过主键更新一条全部字段内容-->
+    update T_FILE_RESOURCE_TABLE
+    set RESOURCE_ID = #resourceId:DECIMAL:-9999#,
+      RESOURCE_TYPE = #resourceType:VARCHAR#,
+      FILE_NAME = #fileName:VARCHAR#,
+      FILE_PATH = #filePath:VARCHAR#,
+      FILE_TYPE = #fileType:VARCHAR#,
+      NODE_ID = #nodeId:VARCHAR#,
+      NODE_NAME = #nodeName:VARCHAR#,
+      CREATOR = #creator:DECIMAL:-9999#,
+      CREATE_DATE = #createDate:VARCHAR#,
+      CREATE_TIME = #createTime:VARCHAR#
+    where FILE_ID = #fileId:DECIMAL#
+  </update>
+  <update id="abatorgenerated_updateByPrimaryKeySelective" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--通过主键更新部分字段，部分字段说明：当字段为null时不更新，当字段值为''空值是更新为空值-->
+    update T_FILE_RESOURCE_TABLE
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="resourceId" >
+        RESOURCE_ID = #resourceId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="resourceType" >
+        RESOURCE_TYPE = #resourceType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="fileName" >
+        FILE_NAME = #fileName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="filePath" >
+        FILE_PATH = #filePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="fileType" >
+        FILE_TYPE = #fileType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="nodeId" >
+        NODE_ID = #nodeId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="nodeName" >
+        NODE_NAME = #nodeName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="creator" >
+        CREATOR = #creator:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where FILE_ID = #fileId:DECIMAL#
+  </update>
+  <select id="abatorgenerated_countByExample" parameterClass="com.gotop.file.model.TFileResourceTableExample" resultClass="java.lang.Integer" >
+    <!--通过查询实例，统计总数-->
+    select count(*) from T_FILE_RESOURCE_TABLE
+    <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+  </select>
+  <select id="abatorgenerated_countByTemplate" parameterClass="com.gotop.file.model.TFileResourceTable" resultClass="java.lang.Integer" >
+    <!--通过查询Bean数据模板，统计总数-->
+    select count(*) from T_FILE_RESOURCE_TABLE
+    <dynamic prepend="where" >
+      <isNotNull prepend="and" property="fileId" >
+        FILE_ID = #fileId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceId" >
+        RESOURCE_ID = #resourceId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceType" >
+        RESOURCE_TYPE = #resourceType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileName" >
+        FILE_NAME = #fileName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="filePath" >
+        FILE_PATH = #filePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileType" >
+        FILE_TYPE = #fileType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeId" >
+        NODE_ID = #nodeId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeName" >
+        NODE_NAME = #nodeName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="creator" >
+        CREATOR = #creator:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <update id="abatorgenerated_updateByExampleSelective" >
+    <!--通过查询实例，更新非null字段-->
+    update T_FILE_RESOURCE_TABLE
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="record.fileId" >
+        FILE_ID = #record.fileId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.resourceId" >
+        RESOURCE_ID = #record.resourceId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.resourceType" >
+        RESOURCE_TYPE = #record.resourceType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.fileName" >
+        FILE_NAME = #record.fileName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.filePath" >
+        FILE_PATH = #record.filePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.fileType" >
+        FILE_TYPE = #record.fileType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.nodeId" >
+        NODE_ID = #record.nodeId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.nodeName" >
+        NODE_NAME = #record.nodeName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.creator" >
+        CREATOR = #record.creator:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="record.createDate" >
+        CREATE_DATE = #record.createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="record.createTime" >
+        CREATE_TIME = #record.createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+    </isParameterPresent>
+  </update>
+  <update id="abatorgenerated_updateByExample" >
+    <!--通过查询实例，更新全部字段-->
+    update T_FILE_RESOURCE_TABLE
+    set FILE_ID = #record.fileId:DECIMAL:-9999#,
+      RESOURCE_ID = #record.resourceId:DECIMAL:-9999#,
+      RESOURCE_TYPE = #record.resourceType:VARCHAR#,
+      FILE_NAME = #record.fileName:VARCHAR#,
+      FILE_PATH = #record.filePath:VARCHAR#,
+      FILE_TYPE = #record.fileType:VARCHAR#,
+      NODE_ID = #record.nodeId:VARCHAR#,
+      NODE_NAME = #record.nodeName:VARCHAR#,
+      CREATOR = #record.creator:DECIMAL:-9999#,
+      CREATE_DATE = #record.createDate:VARCHAR#,
+      CREATE_TIME = #record.createTime:VARCHAR#
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+    </isParameterPresent>
+  </update>
+  <update id="abatorgenerated_updateEntityByTemplate" >
+    <!--根据Bean数据模板查询条件更新记录-->
+    update T_FILE_RESOURCE_TABLE
+    <dynamic prepend="set" >
+      <isNotEmpty prepend="," property="record.fileId" >
+        FILE_ID = #record.fileId:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.resourceId" >
+        RESOURCE_ID = #record.resourceId:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.resourceType" >
+        RESOURCE_TYPE = #record.resourceType:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.fileName" >
+        FILE_NAME = #record.fileName:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.filePath" >
+        FILE_PATH = #record.filePath:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.fileType" >
+        FILE_TYPE = #record.fileType:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.nodeId" >
+        NODE_ID = #record.nodeId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.nodeName" >
+        NODE_NAME = #record.nodeName:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.creator" >
+        CREATOR = #record.creator:DECIMAL:-9999#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.createDate" >
+        CREATE_DATE = #record.createDate:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="," property="record.createTime" >
+        CREATE_TIME = #record.createTime:VARCHAR#
+      </isNotEmpty>
+    </dynamic>
+    <dynamic prepend="where" >
+      <isNotEmpty prepend="and" property="template.fileId" >
+        FILE_ID = #template.fileId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.resourceId" >
+        RESOURCE_ID = #template.resourceId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.resourceType" >
+        RESOURCE_TYPE = #template.resourceType:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.fileName" >
+        FILE_NAME = #template.fileName:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.filePath" >
+        FILE_PATH = #template.filePath:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.fileType" >
+        FILE_TYPE = #template.fileType:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.nodeId" >
+        NODE_ID = #template.nodeId:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.nodeName" >
+        NODE_NAME = #template.nodeName:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.creator" >
+        CREATOR = #template.creator:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.createDate" >
+        CREATE_DATE = #template.createDate:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="template.createTime" >
+        CREATE_TIME = #template.createTime:VARCHAR#
+      </isNotEmpty>
+    </dynamic>
+  </update>
+  <select id="abatorgenerated_selectByMapAndPage" resultMap="abatorgenerated_TFileResourceTable_HashMapResult" parameterClass="java.util.HashMap" >
+    <!--通过Map方式的动态条件，查询分页数据-->
+    select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE
+    <dynamic prepend="where" >
+      <isNotNull prepend="and" property="fileId" >
+        FILE_ID = #fileId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceId" >
+        RESOURCE_ID = #resourceId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="resourceType" >
+        RESOURCE_TYPE = #resourceType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileName" >
+        FILE_NAME = #fileName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="filePath" >
+        FILE_PATH = #filePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="fileType" >
+        FILE_TYPE = #fileType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeId" >
+        NODE_ID = #nodeId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="nodeName" >
+        NODE_NAME = #nodeName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="creator" >
+        CREATOR = #creator:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <select id="abatorgenerated_selectByExampleAndPage" resultMap="abatorgenerated_TFileResourceTableResult" parameterClass="com.gotop.file.model.TFileResourceTableExample" >
+    <!--通过Bean方式的动态条件，查询分页数据-->
+    select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+    </isParameterPresent>
+  </select>
+  <select id="queryFileByIdandType" resultClass="com.gotop.file.model.TFileResourceTable" parameterClass="java.util.HashMap">
+  	select FILE_ID fileId, RESOURCE_ID resourceId, RESOURCE_TYPE resourceType, FILE_NAME fileName, FILE_PATH filePath, FILE_TYPE fileType, NODE_ID nodeId, NODE_NAME nodeName,
+      CREATOR, CREATE_DATE createDate, CREATE_TIME createTime
+    from T_FILE_RESOURCE_TABLE
+    where RESOURCE_ID = #id# and RESOURCE_TYPE = #resourceType# and FILE_TYPE=#fileType:varchar#
+  </select>
+  
+  
+  <delete id="delete_file_from_filename" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--通过主键删除一条记录-->
+    delete from T_FILE_RESOURCE_TABLE
+    where  FILE_ID = #fileId:DECIMAL#
+  </delete>
+  
+  
+  <insert id="tfileresource_insert" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--通过主键更新整条数据-->
+    <selectKey resultClass="long" keyProperty="fileId">
+		SELECT T_FILE_RESOURCE_TABLE_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into T_FILE_RESOURCE_TABLE (FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH,
+      FILE_TYPE, NODE_ID, NODE_NAME, CREATOR, CREATE_DATE, CREATE_TIME,FILE_RE_NAME)
+    values (#fileId:DECIMAL:-9999#, #resourceId:DECIMAL:-9999#, #resourceType:VARCHAR#,
+      #fileName:VARCHAR#, #filePath:VARCHAR#, #fileType:VARCHAR#, #nodeId:VARCHAR#,
+      #nodeName:VARCHAR#, #creator:DECIMAL:-9999#,to_char(sysdate,'yyyyMMdd'),
+      to_char(sysdate,'HHmmss'),#fileReName:VARCHAR#)
+  </insert>
+  
+  <select id="query_file_path_from_fileReName" resultMap="abatorgenerated_TFileResourceTableResult" parameterClass="com.gotop.file.model.TFileResourceTable" >
+    <!--通过主键查询一条数据-->
+    select FILE_ID, RESOURCE_ID, RESOURCE_TYPE, FILE_NAME, FILE_PATH, FILE_TYPE, NODE_ID, NODE_NAME,
+      CREATOR, CREATE_DATE, CREATE_TIME
+    from T_FILE_RESOURCE_TABLE
+    where FILE_RE_NAME = #fileReName:varchar#
+  </select>
+  
+</sqlMap>

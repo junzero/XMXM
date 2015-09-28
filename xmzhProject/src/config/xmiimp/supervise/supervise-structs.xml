@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts >
+  <package name="supervise" namespace="/supervise" extends="json-default" >
+    <action name="tSuperviseTableAction_*" class="tSuperviseTableAction" method="{1}" >
+      <result name="viewlist" >
+        /jsp/supervise/tSuperviseTableDatacell.jsp
+      </result>
+       <result name="input" >
+        /jsp/supervise/supervise_table_input.jsp
+      </result>
+       <result name="input1" >
+        /jsp/supervise/supervise_table_input1.jsp
+      </result>
+       <result name="approve1" >
+        /jsp/supervise/supervise_table_approve1.jsp
+      </result>
+      <result name="info" >
+        /jsp/supervise/supervise_table_info.jsp
+      </result>
+      <result name="show" >
+        /jsp/supervise/supervise_table_show.jsp
+      </result>
+       <result name="queryemp" >
+        /jsp/supervise/supervise_table_empId.jsp
+      </result>
+       <result name="persones" type="json">
+		   <param name="root">results</param>
+	  </result>
+    </action>
+  </package>
+</struts>

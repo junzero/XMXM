@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean id="tSuperviseTableService" class="com.gotop.supervise.service.impl.TSuperviseTableService" >
+    <property name="tSuperviseTableDAO" ref="tSuperviseTableDAO" />
+     <property name="tMessagePublishDAO" ref="tMessagePublishDAO" />
+      <property name="tSuperviceReceiveDAO" ref="tSuperviceReceiveDAO" />
+       <property name="tFileResourceTableService" ref="tFileResourceTableService"></property>
+     <property name="tApproveOpninionDAO" ref="tApproveOpninionDAO" />
+     <property name="tProcessTaskAssigneeDAO" ref="tProcessTaskAssigneeDAO" />
+     <property name="tProcessTaskAssigneePersonDAO" ref="tProcessTaskAssigneePersonDAO" />
+    <property name="jbpmService" ref="jbpmService"></property>
+            <property name="jbpm4HistActinstDAO" ref="jbpm4HistActinstDAO" />
+        <property name="jbpm4ExecutionDAO" ref="jbpm4ExecutionDAO" />
+        <property name="jbpm4HistTaskDAO" ref="jbpm4HistTaskDAO" />
+        <property name="jbpm4TaskDAO" ref="jbpm4TaskDAO" />
+		<property name="processEngine">
+		<ref bean="processEngine" />
+		</property>
+  </bean>
+</beans>

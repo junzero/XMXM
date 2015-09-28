@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="T_SEND_DATA_SqlMap">
+  
+  <resultMap class="com.gotop.dataIssued.model.TSendData" id="abatorgenerated_TSendDataResult">
+    <!--Bean方式返回全表-->
+    <result column="DS_ID" jdbcType="DECIMAL" property="dsId" />
+    <result column="S_EMP_ID" jdbcType="DECIMAL" property="sEmpId" />
+    <result column="ORG_ID" property="orgid" jdbcType="DECIMAL" />
+    <result column="FLOW_ID" jdbcType="VARCHAR" property="flowId" />
+    <result column="DATA_SOURCE" jdbcType="VARCHAR" property="dataSource" />
+    <result column="DA_PRO" jdbcType="VARCHAR" property="daPro" />
+    <result column="DATA_TYPE" jdbcType="VARCHAR" property="dataType" />
+    <result column="RV_TYPE" jdbcType="VARCHAR" property="rvType" />
+    <result column="DS_TITLE" jdbcType="VARCHAR" property="dsTitle" />
+    <result column="DS_EXPL" jdbcType="VARCHAR" property="dsExpl" />
+    <result column="TIME_LIMIT" jdbcType="VARCHAR" property="timeLimit" />
+    <result column="CREATE_DATE" jdbcType="VARCHAR" property="createDate" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="DATA_USER" jdbcType="VARCHAR" property="dataUser" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+  </resultMap>
+  
+  <resultMap class="com.gotop.dataIssued.model.TSendData" id="downDetail">
+    <!--Bean方式返回全表-->
+    <result column="DS_ID" jdbcType="DECIMAL" property="dsId" />
+    <result column="S_EMP_ID" jdbcType="DECIMAL" property="sEmpId" />
+    <result column="ORG_ID" property="orgid" jdbcType="DECIMAL" />
+    <result column="FLOW_ID" jdbcType="VARCHAR" property="flowId" />
+    <result column="DATA_SOURCE" jdbcType="VARCHAR" property="dataSource" />
+    <result column="DA_PRO" jdbcType="VARCHAR" property="daPro" />
+    <result column="DATA_TYPE" jdbcType="VARCHAR" property="dataType" />
+    <result column="RV_TYPE" jdbcType="VARCHAR" property="rvType" />
+    <result column="DS_TITLE" jdbcType="VARCHAR" property="dsTitle" />
+    <result column="DS_EXPL" jdbcType="VARCHAR" property="dsExpl" />
+    <result column="TIME_LIMIT" jdbcType="VARCHAR" property="timeLimit" />
+    <result column="CREATE_DATE" jdbcType="VARCHAR" property="createDate" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="DATA_USER" jdbcType="VARCHAR" property="dataUser" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="DESID" jdbcType="VARCHAR" property="desId" />
+  </resultMap>
+  
+  <resultMap class="com.gotop.dataIssued.model.TSendData" id="Download_TSendDataResult">
+    <!--Bean方式返回全表-->
+    <result column="DS_ID" jdbcType="DECIMAL" property="dsId" />
+    <result column="S_EMP_ID" jdbcType="DECIMAL" property="sEmpId" />
+    <result column="ORG_ID" property="orgid" jdbcType="DECIMAL" />
+    <result column="FLOW_ID" jdbcType="VARCHAR" property="flowId" />
+    <result column="DATA_SOURCE" jdbcType="VARCHAR" property="dataSource" />
+    <result column="DA_PRO" jdbcType="VARCHAR" property="daPro" />
+    <result column="DATA_TYPE" jdbcType="VARCHAR" property="dataType" />
+    <result column="RV_TYPE" jdbcType="VARCHAR" property="rvType" />
+    <result column="DS_TITLE" jdbcType="VARCHAR" property="dsTitle" />
+    <result column="DS_EXPL" jdbcType="VARCHAR" property="dsExpl" />
+    <result column="TIME_LIMIT" jdbcType="VARCHAR" property="timeLimit" />
+    <result column="CREATE_DATE" jdbcType="VARCHAR" property="createDate" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="userId" jdbcType="VARCHAR" property="dataUser" />
+    <result column="userOrg" jdbcType="VARCHAR" property="userOrg" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="DESID" jdbcType="VARCHAR" property="desId" />
+    <result column="IsDES" jdbcType="VARCHAR" property="isDes" />
+    <result column="DESTIME" jdbcType="VARCHAR" property="desTime" />
+  </resultMap>
+  
+  <resultMap class="java.util.HashMap" id="abatorgenerated_TSendData_HashMapResult">
+    <!--HashMap方式返回全表-->
+    <result column="DS_ID" jdbcType="DECIMAL" property="dsId" />
+    <result column="S_EMP_ID" jdbcType="DECIMAL" property="sEmpId" />
+    <result column="ORG_ID" property="orgid" jdbcType="DECIMAL" />
+    <result column="FLOW_ID" jdbcType="VARCHAR" property="flowId" />
+    <result column="DATA_SOURCE" jdbcType="VARCHAR" property="dataSource" />
+    <result column="DA_PRO" jdbcType="VARCHAR" property="daPro" />
+    <result column="DATA_TYPE" jdbcType="VARCHAR" property="dataType" />
+    <result column="RV_TYPE" jdbcType="VARCHAR" property="rvType" />
+    <result column="DS_TITLE" jdbcType="VARCHAR" property="dsTitle" />
+    <result column="DS_EXPL" jdbcType="VARCHAR" property="dsExpl" />
+    <result column="TIME_LIMIT" jdbcType="VARCHAR" property="timeLimit" />
+    <result column="CREATE_DATE" jdbcType="VARCHAR" property="createDate" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="DATA_USER" jdbcType="VARCHAR" property="dataUser" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+  </resultMap>
+  
+  <!-- My -->
+  <select id="selectByPrimaryKey" parameterClass="Long" resultMap="abatorgenerated_TSendDataResult">
+    <!--通过主键查询一条数据-->
+    select DS_ID, S_EMP_ID, ORG_ID, FLOW_ID, DATA_SOURCE, DA_PRO, DATA_TYPE, RV_TYPE, DS_TITLE, DS_EXPL,
+      TIME_LIMIT, CREATE_DATE, CREATE_TIME, DATA_USER, USERNAME
+    from T_SEND_DATA
+    where DS_ID = #dsId:DECIMAL#
+  </select>
+  
+  <select id="selectForDown" resultMap="downDetail">
+    <!--通过主键查询一条数据-->
+    select T1.DS_ID,
+       T1.S_EMP_ID,
+       T1.ORG_ID,
+       T1.FLOW_ID,
+       T1.DATA_SOURCE,
+       T1.DA_PRO,
+       T1.DATA_TYPE,
+       T1.RV_TYPE,
+       T1.DS_TITLE,
+       T1.DS_EXPL,
+       T1.TIME_LIMIT,
+       T1.CREATE_DATE,
+       T1.CREATE_TIME,
+       T1.DATA_USER,
+       T1.USERNAME,
+       T2.Des_Id DESID
+  from T_SEND_DATA T1, T_RANGE_USER T2
+ where T1.DS_ID = #resourceId:DECIMAL#
+   AND T1.DS_ID = T2.Resource_Id
+   AND T2.Resource_Type = '02'
+   AND T2.EMP_ID = #userId#
+  </select>
+  
+  <select id="getIssuedByFlowId" parameterClass="String" resultMap="abatorgenerated_TSendDataResult">
+  	select DS_ID, S_EMP_ID, ORG_ID, FLOW_ID, DATA_SOURCE, DA_PRO, DATA_TYPE, RV_TYPE, DS_TITLE, DS_EXPL,
+      TIME_LIMIT, CREATE_DATE, CREATE_TIME, DATA_USER, USERNAME
+    from T_SEND_DATA 
+    where FLOW_ID = #executionId#
+  </select>
+  
+  <insert id="insertSendData" parameterClass="com.gotop.dataIssued.model.TSendData">
+  	<selectKey keyProperty="dsId" resultClass="long">
+		SELECT SQ_T_APPLY_LEAVE_ID_1.NEXTVAL AS VALUE FROM DUAL
+	</selectKey>
+    <!--通过主键更新整条数据-->
+    insert into T_SEND_DATA (DS_ID, S_EMP_ID, ORG_ID, FLOW_ID, DATA_SOURCE, DA_PRO, DATA_TYPE, RV_TYPE,
+      DS_TITLE, DS_EXPL, TIME_LIMIT, CREATE_DATE, CREATE_TIME, DATA_USER, USERNAME)
+    values (#dsId:DECIMAL:-9999#, #sEmpId:DECIMAL:-9999#, #orgid:DECIMAL:-9999#, #flowId:VARCHAR#, #dataSource:VARCHAR#,
+      #daPro:VARCHAR#, #dataType:VARCHAR#, #rvType:VARCHAR#, #dsTitle:VARCHAR#, #dsExpl:VARCHAR#,
+      #timeLimit:VARCHAR#, #createDate:VARCHAR#, #createTime:VARCHAR#, #dataUser:VARCHAR#, #username:VARCHAR#)
+  </insert>
+  
+  <update id="updateByPrimaryKey" parameterClass="com.gotop.dataIssued.model.TSendData">
+    <!--通过主键更新部分字段，部分字段说明：当字段为null时不更新，当字段值为''空值是更新为空值-->
+    update T_SEND_DATA
+    <dynamic prepend="set">
+      <isNotNull prepend="," property="sEmpId">
+        S_EMP_ID = #sEmpId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="sEmpId">
+        ORG_ID = #orgid:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="flowId">
+        FLOW_ID = #flowId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dataSource">
+        DATA_SOURCE = #dataSource:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="daPro">
+        DA_PRO = #daPro:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dataType">
+        DATA_TYPE = #dataType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="rvType">
+        RV_TYPE = #rvType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dsTitle">
+        DS_TITLE = #dsTitle:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dsExpl">
+        DS_EXPL = #dsExpl:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="timeLimit">
+        TIME_LIMIT = #timeLimit:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createDate">
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createTime">
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="dataUser">
+        DATA_USER = #dataUser:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="username">
+        USERNAME = #username:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where DS_ID = #dsId:DECIMAL#
+  </update>
+  
+  <select id="queryIssuedByEmpId" resultMap="Download_TSendDataResult" parameterClass="java.util.HashMap">
+  	select DISTINCT s.DS_ID, s.S_EMP_ID, s.ORG_ID, s.FLOW_ID, s.DATA_SOURCE, s.DA_PRO, s.DATA_TYPE, s.RV_TYPE, s.DS_TITLE, s.DS_EXPL,
+      s.TIME_LIMIT, s.CREATE_DATE, s.CREATE_TIME, s.DATA_USER,e.empname USERNAME,
+      r.DES_ID desId,r.isdes,r.orgname userOrg,r.des_date,r.emp_id userid,r.des_date destime
+    from T_SEND_DATA s,T_RANGE_USER r, om_employee e
+    where s.DS_ID = r.RESOURCE_ID and r.RESOURCE_TYPE = '02' and 
+   e.empid = r.emp_id
+   <isNotNull prepend="and" property="empid">
+    	r.EMP_ID = #empid#
+    </isNotNull>
+    <isNotNull property="userOrg">
+        <isNotEmpty prepend="and" property="userOrg">
+    		r.orgname like '%$userOrg$%'
+    	</isNotEmpty>
+    </isNotNull>
+    <isNotNull property="dataType">
+        <isNotEmpty prepend="and" property="dataType">
+    		s.DATA_TYPE = #dataType#
+    	</isNotEmpty>
+    </isNotNull>
+    <isNotNull property="isDes">
+        <isNotEmpty prepend="and" property="isDes">
+    		r.ISDES = #isDes#
+    	</isNotEmpty>
+    </isNotNull>
+    <isNotNull property="startTime">
+    	<isNotEmpty  prepend="and"  property="startTime">
+    		<![CDATA[s.TIME_LIMIT >=#startTime#]]>
+    	</isNotEmpty>
+    </isNotNull>
+    <isNotNull property="endTime">
+    	<isNotEmpty prepend="and" property="endTime">
+    		<![CDATA[s.TIME_LIMIT <=#endTime#]]>
+    	</isNotEmpty>
+    </isNotNull>
+    <isNotNull property="beginTime">
+    	<isNotEmpty  prepend="and"  property="beginTime">
+    		<![CDATA[s.CREATE_DATE >=#beginTime#]]>
+    	</isNotEmpty>
+    </isNotNull>
+    <isNotNull property="closeTime">
+    	<isNotEmpty prepend="and" property="closeTime">
+    		<![CDATA[s.CREATE_DATE <=#closeTime#]]>
+    	</isNotEmpty>
+    </isNotNull>
+     order by r.isdes asc
+  </select>
+  
+  <select id="selectDesname" resultClass="java.util.HashMap">
+  	select t.empname from om_employee t where t.empid = #empid#
+  </select>
+  </sqlMap>

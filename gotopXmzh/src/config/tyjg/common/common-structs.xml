@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="default" name="common" namespace="/common">
+    <action class="attachmentAction" method="{1}" name="attachmentAction_*">
+      <!-- 下载 -->
+		<result name="download" type="stream">
+			<param name="inputName">inputStream</param>
+			<param name="contentType">application/x-msdownload</param>
+			<param name="bufferSize">10240</param>
+			<param name="contentDisposition">${contentDisposition}</param>
+		</result>
+	  <!-- 旧上传返回地址 -->
+      <result name="uploads">/jsp/tyjg/common/swfupload/uploadResult.jsp</result>
+      <!-- 文件上传管理主框架 -->
+      <result name="fileupload_mainframe">/jsp/tyjg/common/swfupload/fileupload_manager.jsp</result>
+      <!-- 文件上传 -->
+      <result name="fileupload">/jsp/tyjg/common/swfupload/fileupload.jsp</result>
+      <!-- 修改文件信息 -->
+      <result name="fileupload_update">/jsp/tyjg/common/swfupload/fileupload_update.jsp</result>
+      <!-- 上传文件管理业务 -->
+      <result name="fileupload_manager">/jsp/tyjg/common/swfupload/fileupload_manager.jsp</result>
+      <!-- 批量上传 -->
+      <result name="fileupload_ui">/jsp/tyjg/common/swfupload/fileupload_ui.jsp</result>
+    </action>
+  </package>
+   <package extends="json-default"  name="tree" namespace="/tree">
+   		<action class="mainTreeAction" method="{1}" name="*_mainTree">
+   			<result name="initMainTree">/jsp/tyjg/common/main_tree.jsp</result>
+   			<result name="adminTree">/jsp/tyjg/common/admin_tree.jsp</result>
+   			<result name="initGroupTree">/jsp/tyjg/common/group_tree.jsp</result>
+   			<result name="initBusessTree">/jsp/tyjg/common/busess_tree.jsp</result>
+   			<result name="initBusessRole">/jsp/tyjg/common/busess_role.jsp</result>
+   			<result name="initPersonList">/jsp/tyjg/common/person_list.jsp</result>
+   			<result name="initOrgList">/jsp/tyjg/common/org_list.jsp</result>
+   			<result name="initEmpPositionList">/jsp/tyjg/common/person_position_list.jsp</result>
+   			<result name="initMainTree2">/jsp/tyjg/common/main_tree2.jsp</result>
+   			<result name="initMainTree3">/jsp/tyjg/common/main_tree3.jsp</result>
+   			<result name="initPositionEmp">/jsp/tyjg/common/position_emp_tree.jsp</result>
+   			
+   			  <result name="list1" type="json"><param name="root">employees</param></result>
+   		</action>
+   </package>
+</struts>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100331">
+<TableDataMap>
+<TableData name="ds_1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[项目名称,,.,,问题要点名称,,.,,问题id]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[NL&=>g+X('TB!,[/]Ak:^YEM:*%@=NAPX:gL68%X*+W\uJB,Z6=/*"CCk_(*_4)7'QZSu#jaN
+qT9mpY(bae#^0@!2[4]A52YYFdm__$0L:_ju1e'>oaAt=O9%#Z(uAqE&<)BZGVR<JP-IgGVo,
+bp".<sr;`tgn8MRHN5hC-K#RhNV2b$#+cR5Rp6eR?`nOEbj![QL6+<++$#WT9FX1!Xiaibj8
+^rlS3osmd-MmdS=@Z8LmU,%g9/oLbD["5gf*Ye2N>JgFL>be:]AZG)\"iIAtr(;TA)SBIN=[G
+u"":gsodq"W]A#MJM-64$6Dd)P:mKo3gkV6Pf[h7<(sLgt]A+Tr1sQ=r*hMNB)t%_Pm2%9'XGE
+]AmS5T*7!=6E0Mo;E2Kj=6JZJ0-/>\sEF`S<\h:j<9,R$KfP8mnm7l+%Kc]A%8DsaWI;(09',b
+0]AQqQUL35)aDg1sbUDKis?[l:C&<Ndp?5FZ,XQA"*)Q0V%R5(O,[@B.$:ITc,/W1fTb!\Wqn
+NC%qi6c/Q!#K3&tcdKhb?3bt=bn^Mr;f.DesY46$s0<FE;HCjT>j.SJ\YGUL7XNTJjcqErSd
+V*JUdeZlIAfh@oKT0tn5Y"HcLGW&1[f)kdqhiXOB%,[Ok0_hj0i$#-bj"2?NXd'-Ylc?c/6C
+sj$dmDB3'*k?,*R*>p(+e2rnmWbTU-7NjrVD5pZ=Z!R>l4R2uh`o"LC=^'o4p_AJ39&eB&u,
+CtLUhIe*]A^Zh!/9@3%q)8Z4#q^+OXNO#Oh$V8"Cp/!J=7$K&u!c_3-jT9"-pH@>_\Il\j[1'
+s<%hGZCM6=U(f\<'2X!r~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[121,121,121,121,121,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<O>
+<![CDATA[项目名称]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="1" r="0">
+<O>
+<![CDATA[问题数]]></O>
+<Expand/>
+</C>
+<C c="0" r="1">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="项目名称"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="1" r="1">
+<O t="DSColumn">
+<Attributes dsName="ds_1" columnName="问题id"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.CountFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="0" r="3" cs="5" rs="2" s="0">
+<O>
+<![CDATA[各项目问题占比比较]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" cs="5" s="1">
+<Expand/>
+</C>
+<C c="0" r="6" cs="5" rs="16">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<Background name="ColorBackground" color="-1" isHorizontal="false" isSimulation3D="false"/>
+<Border style="0" color="-16777216"/>
+<Alpha value="0.4000000059604645"/>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Title>
+<GI>
+<Border style="0" color="-16777216"/>
+</GI>
+<O>
+<![CDATA[]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="true"/>
+</Title>
+<Plot class="com.fr.chart.plot.PiePlot">
+<Plot>
+<GI>
+<Background name="ColorBackground" color="-3355393" isHorizontal="false" isSimulation3D="false"/>
+<Border style="0" color="-16777216"/>
+</GI>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false"/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrPosition">
+<SeriesAttrPosition>
+<Attr position="6"/>
+</SeriesAttrPosition>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<Border style="0" color="-16777216"/>
+</GI>
+<Attr position="4" legendNum="30" visible="true"/>
+<FRFont name="SimSun" style="0" size="9"/>
+</Legend>
+<PieAttr startAngle="100" separate="0"/>
+</Plot>
+</Plot>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="p"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=CATEGORY]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<ReportletName>
+<![CDATA[/doc/chart/hotlink2.cpt]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<CategoryDefinition value="A2"/>
+<SeriesDefinition name="E2" value="B2"/>
+<SeriesPos value="0"/>
+<BaseOn value="true"/>
+<Top topCate="-1" topValue="-1"/>
+</ReportDataDefinition>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="20" foreground="-6710785"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="Head1"/>
+</StyleList>
+</WorkBook>

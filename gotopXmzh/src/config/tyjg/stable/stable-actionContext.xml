@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.tyjg.stable.action.OmGroupAction" id="omGroupaction" name="omGroupAction" singleton="false">
+    <property name="omGroupService" ref="omGroupService" />
+  </bean>
+
+  <bean class="com.gotop.tyjg.stable.action.OmGroupmemberAction" id="omGroupmemberaction" name="omGroupmemberAction" singleton="false">
+    <property name="omGroupmemberService" ref="omGroupmemberService" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.action.OmEmpgroupAction" id="omEmpgroupaction" name="omEmpgroupAction" singleton="false">
+    <property name="omEmpgroupService" ref="omEmpgroupService" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.action.OmGrouprangeAction" id="omGrouprangeaction" name="omGrouprangeAction" singleton="false">
+    <property name="omGrouprangeService" ref="omGrouprangeService" />
+  </bean>
+  
+  <bean class="com.gotop.tyjg.stable.action.AtFileuploadAction" id="atFileuploadaction" name="atFileuploadAction" singleton="false">
+    <property name="atFileuploadService" ref="atFileuploadService" />
+  </bean>
+  </beans>

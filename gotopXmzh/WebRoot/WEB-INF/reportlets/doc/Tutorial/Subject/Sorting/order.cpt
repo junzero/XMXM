@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<TableDataMap>
+<NameTableData name="ds1">
+<TableData class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="true" isDiskCache="true" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[FRDemo]]></DatabaseName>
+</Connection><Query><![CDATA[select * from StScore where ClassNo='Class1']]></Query>
+</TableData>
+</NameTableData>
+</TableDataMap>
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportParameterAttr>
+<Parameters>
+</Parameters>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" userDefineWindow="false" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<AutoRecalculate>false</AutoRecalculate>
+<DesignAttributes>
+</DesignAttributes>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+</ReportWebAttr>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<RowHeight defaultValue="19">
+<![CDATA[]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0"><O t="S"><![CDATA[学号]]></O>
+</C>
+<C c="1" r="0" s="0"><O t="S"><![CDATA[姓名]]></O>
+</C>
+<C c="2" r="0" s="0"><O t="S"><![CDATA[性别]]></O>
+</C>
+<C c="3" r="0" s="0"><O t="S"><![CDATA[成绩]]></O>
+</C>
+<C c="4" r="0" s="0"><O t="S"><![CDATA[课程]]></O>
+</C>
+<C c="0" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="StudentNo" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Name" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Sex" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Grade" />
+<Complex order="2" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"><Attr divideMode="1" /></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="1" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="Course" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="ColorBackground"
+ color="-3355393">
+</Background>
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

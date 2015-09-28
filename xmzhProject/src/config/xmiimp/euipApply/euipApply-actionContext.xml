@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd" >
+<beans >
+  <bean name="tApplyEuipAction" id="tApplyEuipaction" class="com.gotop.euipApply.action.TApplyEuipAction" singleton="false" >
+    <property name="tApplyEuipService" ref="tApplyEuipService" />
+    <property name="tDefaultOpinionService" ref="tDefaultOpinionService" />
+  </bean>
+</beans>

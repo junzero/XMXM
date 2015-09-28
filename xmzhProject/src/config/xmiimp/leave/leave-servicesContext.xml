@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.leave.service.impl.TApplyLeaveService" id="tApplyLeaveService">
+    <property name="tApplyLeaveDAO" ref="tApplyLeaveDAO" />
+    <property name="fileResourceTableService" ref="tFileResourceTableService"></property>
+    <property name="jbpmService" ref="jbpmService"></property>
+    <property name="tApproveOpninionDAO" ref="tApproveOpninionDAO"></property>
+  </bean>
+  </beans>

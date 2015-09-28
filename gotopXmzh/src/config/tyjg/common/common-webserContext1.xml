@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean class="com.gotop.tyjg.testwsdl.service.impl.AuthenticationService" id="authenticationService">
+	</bean>
+	<bean id="authenticationServiceWS" parent="baseWss4jWebService">
+	   <property name="serviceBean" ref="authenticationService" />
+	   <property name="serviceClass" value="com.gotop.tyjg.testwsdl.service.IAuthenticationService" />
+	   <property name="name" value="authenticationService.ws"></property>
+	</bean>
+</beans>

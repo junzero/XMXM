@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" package="com.gotop.vo.report">
+ <class name="TrptcolFields" table="TRPTCOLFIELDS">
+  <id name="id" column="ID" type="java.lang.Integer">
+	<generator class="sequence">
+		<param name="sequence">seq_trptcolfields</param>
+	</generator>
+  </id> 
+
+  <property generated="never" lazy="false" name="tblname" type="java.lang.String">
+   <column length="20" name="TBLNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="parentid" type="java.lang.Integer">
+   <column name="PARENTID"/>
+  </property>
+  <property generated="never" lazy="false" name="colfield" type="java.lang.String">
+   <column length="20" name="COLFIELD"/>
+  </property>
+  <property generated="never" lazy="false" name="coltype" type="java.lang.String">
+   <column length="3" name="COLTYPE"/>
+  </property>
+  
+ </class>
+</hibernate-mapping>

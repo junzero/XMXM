@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" package="com.gotop.vo.report">
+ <class name="TrptFilter" table="TRPTFILTER">
+  <id name="id" column="ID" type="java.lang.Integer">
+	<generator class="sequence">
+		<param name="sequence">seq_trptfilter</param>
+	</generator>
+  </id> 
+
+  <property generated="never" lazy="false" name="andor" type="java.lang.String">
+   <column length="20" name="ANDOR"/>
+  </property>
+  <property generated="never" lazy="false" name="tblname" type="java.lang.String">
+   <column length="20" name="TBLNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="parentid" type="java.lang.Integer">
+   <column name="PARENTID"/>
+  </property>
+  <property generated="never" lazy="false" name="field" type="java.lang.String">
+   <column length="20" name="FIELD"/>
+  </property>
+  <property generated="never" lazy="false" name="fieldop" type="java.lang.String">
+   <column length="20" name="FIELDOP"/>
+  </property>
+  <property generated="never" lazy="false" name="fieldval" type="java.lang.String">
+   <column length="100" name="FIELDVAL"/>
+  </property>
+ </class>
+</hibernate-mapping>

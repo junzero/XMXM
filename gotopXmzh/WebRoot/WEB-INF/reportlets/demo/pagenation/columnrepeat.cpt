@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT top 15 *  FROM 订单]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="2"/>
+<FR F="6" T="10"/>
+<HC F="0" T="1"/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[30,19,19,19,21,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[72,56,114,63,79,79,79,82,66,61,135,63,63,72,55,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="15" s="0">
+<O>
+<![CDATA[订单信息列表]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="0" r="2" cs="10" s="1">
+<Expand upParentDefault="false"/>
+</C>
+<C c="10" r="2" s="1">
+<O>
+<![CDATA[ ]]></O>
+<Expand/>
+</C>
+<C c="11" r="2" s="1">
+<Expand/>
+</C>
+<C c="12" r="2" s="1">
+<Expand/>
+</C>
+<C c="13" r="2" s="1">
+<Expand/>
+</C>
+<C c="14" r="2" s="1">
+<Expand/>
+</C>
+<C c="0" r="3" s="2">
+<O>
+<![CDATA[地区]]></O>
+<Expand/>
+</C>
+<C c="1" r="3" s="2">
+<O>
+<![CDATA[订单ID]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="2">
+<O>
+<![CDATA[公司名称]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="2">
+<O>
+<![CDATA[雇员名称]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="2">
+<O>
+<![CDATA[订购日期]]></O>
+<Expand/>
+</C>
+<C c="5" r="3" s="2">
+<O>
+<![CDATA[发货日期]]></O>
+<Expand/>
+</C>
+<C c="6" r="3" s="2">
+<O>
+<![CDATA[到货日期]]></O>
+<Expand/>
+</C>
+<C c="7" r="3" s="2">
+<O>
+<![CDATA[运货商]]></O>
+<Expand/>
+</C>
+<C c="8" r="3" s="2">
+<O>
+<![CDATA[运货费]]></O>
+<Expand/>
+</C>
+<C c="9" r="3" s="2">
+<O>
+<![CDATA[货主名称]]></O>
+<Expand/>
+</C>
+<C c="10" r="3" s="2">
+<O>
+<![CDATA[货主地址]]></O>
+<Expand/>
+</C>
+<C c="11" r="3" s="2">
+<O>
+<![CDATA[货主城市]]></O>
+<Expand/>
+</C>
+<C c="12" r="3" s="2">
+<O>
+<![CDATA[货主地区]]></O>
+<Expand/>
+</C>
+<C c="13" r="3" s="2">
+<O>
+<![CDATA[货主邮政编码]]></O>
+<Expand/>
+</C>
+<C c="14" r="3" s="2">
+<O>
+<![CDATA[货主国家]]></O>
+<Expand/>
+</C>
+<C c="0" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主地区"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="订单ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="客户ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="客户" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="雇员ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="订购日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="发货日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="到货日期"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="运货商"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="运货费"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主名称"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主地址"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主城市"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主地区"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主邮政编码"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="货主国家"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="5">
+<Expand/>
+</C>
+<C c="2" r="5">
+<Expand/>
+</C>
+<C c="3" r="5">
+<Expand/>
+</C>
+<C c="4" r="5">
+<Expand/>
+</C>
+<C c="5" r="5">
+<Expand/>
+</C>
+<C c="6" r="5">
+<Expand/>
+</C>
+<C c="7" r="5">
+<Expand/>
+</C>
+<C c="8" r="5">
+<Expand/>
+</C>
+<C c="9" r="5">
+<Expand/>
+</C>
+<C c="10" r="5">
+<Expand/>
+</C>
+<C c="11" r="5">
+<Expand/>
+</C>
+<C c="12" r="5">
+<Expand/>
+</C>
+<C c="13" r="5">
+<Expand/>
+</C>
+<C c="14" r="5">
+<Expand/>
+</C>
+<C c="0" r="6" cs="10" s="6">
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="10" r="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="8" cs="10" s="7">
+<O>
+<![CDATA[“重复列标题”报表功能应用说明：]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="0" r="9" cs="10" s="8">
+<O>
+<![CDATA[1、重复列标题]]></O>
+<Expand upParentDefault="false"/>
+</C>
+<C c="0" r="10" cs="10" s="9">
+<O>
+<![CDATA[     如该报表列标题栏会跟随每页重复显示。]]></O>
+<Expand upParentDefault="false"/>
+</C>
+</CellElementList>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style>
+<FRFont name="黑体" style="0" size="22" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="6" color="-6894375"/>
+</Border>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="1" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="2" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

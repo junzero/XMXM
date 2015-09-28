@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 岗位管理服务-->
+	<bean class="com.gotop.tyjg.positionmanagement.service.imp.PositionService" id="positionService">
+		<property name="positionDao" ref="positionDao"/>
+	</bean>
+	</beans>

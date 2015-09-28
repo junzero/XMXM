@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+     订单.订单ID AS 订单ID,
+     订单明细.产品ID AS 产品ID,
+     订单明细.单价*订单明细.数量*(1-订单明细.折扣)AS 金额,
+     订单.客户ID AS 客户ID
+FROM
+     订单明细 订单明细 INNER JOIN 订单 订单 ON 订单明细.订单ID = 订单.订单ID]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+     订单.客户ID AS 客户ID,
+     int(sum(订单明细.单价*订单明细.数量*(1-订单明细.折扣))) AS 合计金额
+FROM
+     订单明细 订单明细 INNER JOIN 订单 订单 ON 订单明细.订单ID = 订单.订单ID
+group by 订单.客户ID]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR F="0" T="4"/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[35,19,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[96,183,89,89,89,89,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="6" s="0">
+<O>
+<![CDATA[客户ABC等级分析]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" cs="6" s="1">
+<Expand/>
+</C>
+<C c="0" r="3" rs="2" s="2">
+<O>
+<![CDATA[客户评级]]></O>
+<Expand/>
+</C>
+<C c="1" r="3" rs="2" s="2">
+<O>
+<![CDATA[客户名称]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" cs="2" s="2">
+<O>
+<![CDATA[金额]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" cs="2" s="2">
+<O>
+<![CDATA[订单数量]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" s="2">
+<O>
+<![CDATA[本期]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" s="2">
+<O>
+<![CDATA[占比]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="2">
+<O>
+<![CDATA[总计]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" s="2">
+<O>
+<![CDATA[占比]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="合计金额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.CustomGrouper">
+<Attr other="1" force="true"/>
+<ConditionListGroup>
+<Display>
+<![CDATA[A级]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[合计金额]]></CNAME>
+<Compare op="3">
+<O t="I">
+<![CDATA[40000]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[B级]]></Display>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[合计金额]]></CNAME>
+<Compare op="4">
+<O t="I">
+<![CDATA[40000]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[合计金额]]></CNAME>
+<Compare op="3">
+<O t="I">
+<![CDATA[20000]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+</ConditionListGroup>
+<ConditionListGroup>
+<Display>
+<![CDATA[C级]]></Display>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[合计金额]]></CNAME>
+<Compare op="4">
+<O t="I">
+<![CDATA[20000]]></O>
+</Compare>
+</Condition>
+</ConditionListGroup>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="客户ID"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[客户ID]]></CNAME>
+<Compare op="0">
+<AnDSColumn dsName="ds2" columnName="客户ID"/>
+</Compare>
+</Condition>
+<Complex order="2"/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<SortFormula>
+<![CDATA[sum(ds1.select(金额))]]></SortFormula>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="1"/>
+<DBDictAttr tableName="客户" schemaName="" ki="0" vi="1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="金额"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="5" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C6/sum(C6[!0]A{})]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="订单ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.CountFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="5" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6/sum(E6[!0]A{})]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="6" cs="2" s="2">
+<O>
+<![CDATA[合计]]></O>
+<Expand leftParentDefault="false" left="A6"/>
+</C>
+<C c="2" r="6" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(c6)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C7/C8]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E6)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=e7/e8]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="7" s="6">
+<Expand/>
+</C>
+<C c="1" r="7" s="6">
+<Expand/>
+</C>
+<C c="2" r="7" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(C7)]]></Attributes>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ForegroundHighlightAction">
+<Foreground color="-1"/>
+<Scope val="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="3" r="7" s="7">
+<Expand/>
+</C>
+<C c="4" r="7" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(E7)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="7" s="6">
+<Expand/>
+</C>
+<C c="0" r="8" cs="6" s="8">
+<O>
+<![CDATA[客户ABC等级分析表说明：]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="9" cs="6" s="9">
+<O>
+<![CDATA[    数据库中并无客户等级的记录，这里的客户等级是按照统计客户总的订单金额划分为A,B,C三级。然后各个级别内，]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="10" cs="6" s="10">
+<O>
+<![CDATA[    又按照客户的订单金额数量进行降序排列，以及各个客户的订单金额/数量在总量中的比例。]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+</CellElementList>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="黑体" style="0" size="22" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-13421773"/>
+<Background name="ColorBackground" color="-2624775"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-10066330"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Top style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="宋体" style="0" size="12"/>
+<Background name="ColorBackground" color="-328966"/>
+<Border>
+<Bottom style="3" color="-6894375"/>
+<Left style="3" color="-6894375"/>
+<Right style="3" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

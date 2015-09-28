@@ -1,0 +1,1 @@
+<attach   event="onmouseover"   onevent="element.disabled=true"/>

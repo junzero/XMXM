@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.group.action.TGroupAction" id="tGroupaction" name="tGroupAction" singleton="false">
+    <property name="tGroupService" ref="tGroupService" />
+  </bean>
+
+  <bean class="com.gotop.group.action.TGroupmemberAction" id="tGroupmemberaction" name="tGroupmemberAction" singleton="false">
+    <property name="tGroupmemberService" ref="tGroupmemberService" />
+  </bean>
+  </beans>

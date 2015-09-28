@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100901">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[System,,.,,Type,,.,,Value]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[Fct'c_E\Zfc^BP;RU(+r7hLekYk3KM8JD]Ap5suFbK,#rEp/$i9&7<G"oe"t;6F3*EFlo0%IN
+NWXgRlrIq+4;loGZ\HmXLVoc4#&+j[i%jK8#=Ll*fMhRImfLrS!3>)Ia]A1EdRbF+-<D\8:O?
+lKOf%)-2Q+S-Smnfdqbb4kBcp8UXZ>!d-p[gj$+u?pO[Ei5dM,uWe*^<<Nblmg3&(cXlp<$%
+"),$-N#?)&p$B;W\A'1s4JTTf3DaOYX(&o6l)A@_%"C>28haOO4h17\Jm_OojGZ)+S9'erYh
+I8F1h9A\1NuH#89GcHAKfV4iBbf3Ol5ZqjbT8oaU~
+]]></RowData>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[Equipment,,.,,Ratio]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[Ha.JGdj=CASAqF20>L7/:3-Lce!\\+#g.8J1kdAtjg9[iE9";Z!WW~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress=""/>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.page.First">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[首页]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Previous">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[上一页]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Next">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[下一页]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Last">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[末页]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false"/>
+</WebPageContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings orientation="1" headerHeight="0.33" footerHeight="0.33">
+<PaperSize width="11.693" height="16.536"/>
+<Margin top="0.07874015748031496" left="0.15748031496062992" bottom="0.07874015748031496" right="0.15748031496062992"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[32,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,38,21,0,0,0,0,19,19,19,19,19,20,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[65,65,8,74,5,54,54,54,54,55,54,53,72,72,72,72,91,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="4" s="0">
+<O>
+<![CDATA[IT系统平台资源利用率(柱形图)]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" cs="2" s="1">
+<O>
+<![CDATA[查询日期：]]></O>
+<Expand/>
+</C>
+<C c="2" r="1" cs="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="1">
+<Expand/>
+</C>
+<C c="3" r="2">
+<Expand/>
+</C>
+<C c="0" r="3" cs="5" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="4" cs="5" rs="13" s="3">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground>
+<Background name="GradientBackground" color1="-1" color2="-1" direction="1" useCell="true" begin="0.0" finish="0.0" cyclic="false"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O>
+<![CDATA[图表标题]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="false"/>
+</Title>
+<Plot class="com.fr.chart.plot.Bar2DPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="0.20000000298023224"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr/>
+</SeriesAttr>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground>
+<Background name="ColorBackground" color="-657931"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="1" lineColor="-14117142" isRoundBorder="true"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<CateAttr isStacked="false" bgStagger="false" bgColor="-1"/>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</CategoryAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="3" color="-8355712"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.0]]></Format>
+<AxisRange/>
+</ValueAxis>
+<BarAttr isHorizontal="false" overlap="0.0" interval="2.0"/>
+<Bar2DAttr isSimulation3D="true"/>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<ReportDataDefinition>
+<CategoryDefinition value="D26"/>
+<SeriesDefinition name="A27" value="D27"/>
+<SeriesPos value="1"/>
+<BaseOn value="true"/>
+<Top topCate="-1" topValue="-1"/>
+</ReportDataDefinition>
+</O>
+<Expand/>
+</C>
+<C c="5" r="4">
+<Expand/>
+</C>
+<C c="6" r="4">
+<Expand/>
+</C>
+<C c="7" r="4">
+<Expand/>
+</C>
+<C c="8" r="4">
+<Expand/>
+</C>
+<C c="9" r="4">
+<Expand/>
+</C>
+<C c="10" r="4">
+<Expand/>
+</C>
+<C c="11" r="4">
+<Expand/>
+</C>
+<C c="12" r="4">
+<Expand/>
+</C>
+<C c="13" r="4">
+<Expand/>
+</C>
+<C c="5" r="5">
+<Expand/>
+</C>
+<C c="6" r="5">
+<Expand/>
+</C>
+<C c="7" r="5">
+<Expand/>
+</C>
+<C c="8" r="5">
+<Expand/>
+</C>
+<C c="9" r="5">
+<Expand/>
+</C>
+<C c="10" r="5">
+<Expand/>
+</C>
+<C c="11" r="5">
+<Expand/>
+</C>
+<C c="12" r="5">
+<Expand/>
+</C>
+<C c="13" r="5">
+<Expand/>
+</C>
+<C c="5" r="6">
+<Expand/>
+</C>
+<C c="6" r="6">
+<Expand/>
+</C>
+<C c="7" r="6">
+<Expand/>
+</C>
+<C c="8" r="6">
+<Expand/>
+</C>
+<C c="9" r="6">
+<Expand/>
+</C>
+<C c="10" r="6">
+<Expand/>
+</C>
+<C c="11" r="6">
+<Expand/>
+</C>
+<C c="12" r="6">
+<Expand/>
+</C>
+<C c="13" r="6">
+<Expand/>
+</C>
+<C c="5" r="7">
+<Expand/>
+</C>
+<C c="6" r="7">
+<Expand/>
+</C>
+<C c="7" r="7">
+<Expand/>
+</C>
+<C c="8" r="7">
+<Expand/>
+</C>
+<C c="9" r="7">
+<Expand/>
+</C>
+<C c="10" r="7">
+<Expand/>
+</C>
+<C c="11" r="7">
+<Expand/>
+</C>
+<C c="12" r="7">
+<Expand/>
+</C>
+<C c="13" r="7">
+<Expand/>
+</C>
+<C c="5" r="8">
+<Expand/>
+</C>
+<C c="6" r="8">
+<Expand/>
+</C>
+<C c="7" r="8">
+<Expand/>
+</C>
+<C c="8" r="8">
+<Expand/>
+</C>
+<C c="9" r="8">
+<Expand/>
+</C>
+<C c="10" r="8">
+<Expand/>
+</C>
+<C c="11" r="8">
+<Expand/>
+</C>
+<C c="12" r="8">
+<Expand/>
+</C>
+<C c="13" r="8">
+<Expand/>
+</C>
+<C c="5" r="9">
+<Expand/>
+</C>
+<C c="6" r="9">
+<Expand/>
+</C>
+<C c="7" r="9">
+<Expand/>
+</C>
+<C c="8" r="9">
+<Expand/>
+</C>
+<C c="9" r="9">
+<Expand/>
+</C>
+<C c="10" r="9">
+<Expand/>
+</C>
+<C c="11" r="9">
+<Expand/>
+</C>
+<C c="12" r="9">
+<Expand/>
+</C>
+<C c="13" r="9">
+<Expand/>
+</C>
+<C c="5" r="10">
+<Expand/>
+</C>
+<C c="6" r="10">
+<Expand/>
+</C>
+<C c="7" r="10">
+<Expand/>
+</C>
+<C c="8" r="10">
+<Expand/>
+</C>
+<C c="9" r="10">
+<Expand/>
+</C>
+<C c="10" r="10">
+<Expand/>
+</C>
+<C c="11" r="10">
+<Expand/>
+</C>
+<C c="12" r="10">
+<Expand/>
+</C>
+<C c="13" r="10">
+<Expand/>
+</C>
+<C c="5" r="11">
+<Expand/>
+</C>
+<C c="6" r="11">
+<Expand/>
+</C>
+<C c="7" r="11">
+<Expand/>
+</C>
+<C c="8" r="11">
+<Expand/>
+</C>
+<C c="9" r="11">
+<Expand/>
+</C>
+<C c="10" r="11">
+<Expand/>
+</C>
+<C c="11" r="11">
+<Expand/>
+</C>
+<C c="12" r="11">
+<Expand/>
+</C>
+<C c="13" r="11">
+<Expand/>
+</C>
+<C c="5" r="12">
+<Expand/>
+</C>
+<C c="6" r="12">
+<Expand/>
+</C>
+<C c="7" r="12">
+<Expand/>
+</C>
+<C c="8" r="12">
+<Expand/>
+</C>
+<C c="9" r="12">
+<Expand/>
+</C>
+<C c="10" r="12">
+<Expand/>
+</C>
+<C c="11" r="12">
+<Expand/>
+</C>
+<C c="12" r="12">
+<Expand/>
+</C>
+<C c="13" r="12">
+<Expand/>
+</C>
+<C c="5" r="13">
+<Expand/>
+</C>
+<C c="6" r="13">
+<Expand/>
+</C>
+<C c="7" r="13">
+<Expand/>
+</C>
+<C c="8" r="13">
+<Expand/>
+</C>
+<C c="9" r="13">
+<Expand/>
+</C>
+<C c="10" r="13">
+<Expand/>
+</C>
+<C c="11" r="13">
+<Expand/>
+</C>
+<C c="12" r="13">
+<Expand/>
+</C>
+<C c="13" r="13">
+<Expand/>
+</C>
+<C c="5" r="14">
+<Expand/>
+</C>
+<C c="6" r="14">
+<Expand/>
+</C>
+<C c="7" r="14">
+<Expand/>
+</C>
+<C c="8" r="14">
+<Expand/>
+</C>
+<C c="9" r="14">
+<Expand/>
+</C>
+<C c="10" r="14">
+<Expand/>
+</C>
+<C c="11" r="14">
+<Expand/>
+</C>
+<C c="12" r="14">
+<Expand/>
+</C>
+<C c="13" r="14">
+<Expand/>
+</C>
+<C c="5" r="15">
+<Expand/>
+</C>
+<C c="6" r="15">
+<Expand/>
+</C>
+<C c="7" r="15">
+<Expand/>
+</C>
+<C c="8" r="15">
+<Expand/>
+</C>
+<C c="9" r="15">
+<Expand/>
+</C>
+<C c="10" r="15">
+<Expand/>
+</C>
+<C c="11" r="15">
+<Expand/>
+</C>
+<C c="12" r="15">
+<Expand/>
+</C>
+<C c="13" r="15">
+<Expand/>
+</C>
+<C c="5" r="16">
+<Expand/>
+</C>
+<C c="6" r="16">
+<Expand/>
+</C>
+<C c="7" r="16">
+<Expand/>
+</C>
+<C c="8" r="16">
+<Expand/>
+</C>
+<C c="9" r="16">
+<Expand/>
+</C>
+<C c="10" r="16">
+<Expand/>
+</C>
+<C c="11" r="16">
+<Expand/>
+</C>
+<C c="12" r="16">
+<Expand/>
+</C>
+<C c="13" r="16">
+<Expand/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="3" r="17">
+<Expand/>
+</C>
+<C c="4" r="17">
+<Expand/>
+</C>
+<C c="5" r="17">
+<Expand/>
+</C>
+<C c="6" r="17">
+<Expand/>
+</C>
+<C c="7" r="17">
+<Expand/>
+</C>
+<C c="8" r="17">
+<Expand/>
+</C>
+<C c="9" r="17">
+<Expand/>
+</C>
+<C c="10" r="17">
+<Expand/>
+</C>
+<C c="11" r="17">
+<Expand/>
+</C>
+<C c="12" r="17">
+<Expand/>
+</C>
+<C c="13" r="17">
+<Expand/>
+</C>
+<C c="4" r="23">
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="0" r="24" s="4">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="1" r="24" s="4">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="2" r="24" s="4">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="3" r="24" s="4">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="4" r="24" s="4">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="5" r="24">
+<Expand/>
+</C>
+<C c="0" r="25" s="5">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="1" r="25" s="5">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="2" r="25" s="5">
+<O>
+<![CDATA[]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="3" r="25" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="System"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand dir="1"/>
+</C>
+<C c="4" r="25" s="5">
+<O>
+<![CDATA[]]></O>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="5" r="25">
+<Expand/>
+</C>
+<C c="9" r="25">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="26" cs="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Type"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction">
+<RowHeight i="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand dir="0"/>
+</C>
+<C c="3" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Value"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.AverageFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction">
+<RowHeight i="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="4" r="26">
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction">
+<RowHeight i="1"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<CellGUIAttr previewContent="false"/>
+<Expand/>
+</C>
+<C c="5" r="26">
+<Expand/>
+</C>
+<C c="0" r="28" cs="4" s="8">
+<O>
+<![CDATA[设备CPU利用率(条形图)]]></O>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="0" r="29" cs="2" s="1">
+<O>
+<![CDATA[查询日期：]]></O>
+<Expand/>
+</C>
+<C c="2" r="29" cs="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="31" cs="4" s="9">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="32" cs="4" rs="16" s="10">
+<O t="CC">
+<LayoutAttr selectedIndex="0" columns="0"/>
+<Chart name="Default">
+<Chart class="com.fr.chart.Chart">
+<GI>
+<SeriesAttrBackground>
+<Background name="GradientBackground" color1="-6697729" color2="-1" direction="1" useCell="true" begin="0.0" finish="0.0" cyclic="false"/>
+</SeriesAttrBackground>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<ChartAttr isJSDraw="false"/>
+<Title>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<O>
+<![CDATA[图表标题]]></O>
+<TextAttr>
+<Attr alignText="0">
+<FRFont name="SimSun" style="0" size="12"/>
+</Attr>
+</TextAttr>
+<TitleVisible value="false"/>
+</Title>
+<Plot class="com.fr.chart.plot.Bar2DPlot">
+<Plot>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="0.20000000298023224"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr isNullValueBreak="true"/>
+<NewSeriesCollection>
+<SeriesAttr class="com.fr.chart.plot.SeriesAttr">
+<SeriesAttr>
+<ConditionList>
+<Condition class="com.fr.chart.axis.SeriesAttrAlpha">
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrContents">
+<SeriesAttrContents>
+<Attr showLine="false"/>
+</SeriesAttrContents>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrPosition">
+<SeriesAttrPosition>
+<Attr position="1"/>
+</SeriesAttrPosition>
+</Condition>
+<Condition class="com.fr.chart.axis.SeriesAttrStyle">
+<SeriesAttrStyle>
+<Separation>
+<![CDATA[,]]></Separation>
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0]]></Format>
+</SeriesAttrStyle>
+</Condition>
+</ConditionList>
+</SeriesAttr>
+</SeriesAttr>
+</NewSeriesCollection>
+<Legend>
+<GI>
+<SeriesAttrBackground/>
+<SeriesAttrBorder>
+<Attr lineStyle="0" lineColor="-16777216" isRoundBorder="false"/>
+</SeriesAttrBorder>
+<SeriesAttrAlpha>
+<Attr alpha="1.0"/>
+</SeriesAttrAlpha>
+</GI>
+<Attr position="4" legendNum="10" visible="true" autoAdjustSize="false"/>
+<FRFont name="SimSun" style="0" size="12"/>
+</Legend>
+<CateAttr isStacked="false" bgStagger="false" bgColor="-1"/>
+<CategoryAxis class="com.fr.chart.axis.CategoryAxis">
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="2"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="0"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</CategoryAxis>
+<ValueAxis class="com.fr.chart.axis.ValueAxis">
+<AxisLine style="1" color="-8355712"/>
+<AxisPosition value="3"/>
+<AxisLabelPosition value="3"/>
+<MainGridLine style="3" color="-8355712"/>
+<SecGridLine style="0"/>
+<AxisLabelCount value="-1"/>
+<TickLine type="2" mainStroke="1.0" len="8" secType="1" secStroke="1.0" secLen="0"/>
+<ArrowShow arrowShow="false"/>
+<AxisShow axisShow="true"/>
+<Stagger value="false"/>
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+<AxisRange/>
+</ValueAxis>
+<BarAttr isHorizontal="true" overlap="0.0" interval="2.0"/>
+<Bar2DAttr isSimulation3D="true"/>
+</Plot>
+</Plot>
+</Chart>
+</Chart>
+<MoreNameCDDefinition>
+<Top topCate="-1" topValue="-1"/>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[ds2]]></Name>
+</TableData>
+<CategoryName value="Equipment"/>
+<ChartSummaryColumn name="Ratio" function="com.fr.data.util.function.NoneFunction" customName="Ratio"/>
+</MoreNameCDDefinition>
+</O>
+<Expand/>
+</C>
+<C c="4" r="32">
+<Expand/>
+</C>
+<C c="5" r="32">
+<Expand/>
+</C>
+<C c="6" r="32">
+<Expand/>
+</C>
+<C c="7" r="32">
+<Expand/>
+</C>
+<C c="8" r="32">
+<Expand/>
+</C>
+<C c="9" r="32">
+<Expand/>
+</C>
+<C c="10" r="32">
+<Expand/>
+</C>
+<C c="11" r="32">
+<Expand/>
+</C>
+<C c="12" r="32">
+<Expand/>
+</C>
+<C c="13" r="32">
+<Expand/>
+</C>
+<C c="14" r="32">
+<Expand/>
+</C>
+<C c="15" r="32">
+<Expand/>
+</C>
+<C c="4" r="33">
+<Expand/>
+</C>
+<C c="5" r="33">
+<Expand/>
+</C>
+<C c="6" r="33">
+<Expand/>
+</C>
+<C c="7" r="33">
+<Expand/>
+</C>
+<C c="8" r="33">
+<Expand/>
+</C>
+<C c="9" r="33">
+<Expand/>
+</C>
+<C c="10" r="33">
+<Expand/>
+</C>
+<C c="11" r="33">
+<Expand/>
+</C>
+<C c="12" r="33">
+<Expand/>
+</C>
+<C c="13" r="33">
+<Expand/>
+</C>
+<C c="14" r="33">
+<Expand/>
+</C>
+<C c="15" r="33">
+<Expand/>
+</C>
+<C c="4" r="34">
+<Expand/>
+</C>
+<C c="5" r="34">
+<Expand/>
+</C>
+<C c="6" r="34">
+<Expand/>
+</C>
+<C c="7" r="34">
+<Expand/>
+</C>
+<C c="8" r="34">
+<Expand/>
+</C>
+<C c="9" r="34">
+<Expand/>
+</C>
+<C c="10" r="34">
+<Expand/>
+</C>
+<C c="11" r="34">
+<Expand/>
+</C>
+<C c="12" r="34">
+<Expand/>
+</C>
+<C c="13" r="34">
+<Expand/>
+</C>
+<C c="14" r="34">
+<Expand/>
+</C>
+<C c="15" r="34">
+<Expand/>
+</C>
+<C c="4" r="35">
+<Expand/>
+</C>
+<C c="5" r="35">
+<Expand/>
+</C>
+<C c="6" r="35">
+<Expand/>
+</C>
+<C c="7" r="35">
+<Expand/>
+</C>
+<C c="8" r="35">
+<Expand/>
+</C>
+<C c="9" r="35">
+<Expand/>
+</C>
+<C c="10" r="35">
+<Expand/>
+</C>
+<C c="11" r="35">
+<Expand/>
+</C>
+<C c="12" r="35">
+<Expand/>
+</C>
+<C c="13" r="35">
+<Expand/>
+</C>
+<C c="14" r="35">
+<Expand/>
+</C>
+<C c="15" r="35">
+<Expand/>
+</C>
+<C c="4" r="36">
+<Expand/>
+</C>
+<C c="5" r="36">
+<Expand/>
+</C>
+<C c="6" r="36">
+<Expand/>
+</C>
+<C c="7" r="36">
+<Expand/>
+</C>
+<C c="8" r="36">
+<Expand/>
+</C>
+<C c="9" r="36">
+<Expand/>
+</C>
+<C c="10" r="36">
+<Expand/>
+</C>
+<C c="11" r="36">
+<Expand/>
+</C>
+<C c="12" r="36">
+<Expand/>
+</C>
+<C c="13" r="36">
+<Expand/>
+</C>
+<C c="14" r="36">
+<Expand/>
+</C>
+<C c="15" r="36">
+<Expand/>
+</C>
+<C c="4" r="37">
+<Expand/>
+</C>
+<C c="5" r="37">
+<Expand/>
+</C>
+<C c="6" r="37">
+<Expand/>
+</C>
+<C c="7" r="37">
+<Expand/>
+</C>
+<C c="8" r="37">
+<Expand/>
+</C>
+<C c="9" r="37">
+<Expand/>
+</C>
+<C c="10" r="37">
+<Expand/>
+</C>
+<C c="11" r="37">
+<Expand/>
+</C>
+<C c="12" r="37">
+<Expand/>
+</C>
+<C c="13" r="37">
+<Expand/>
+</C>
+<C c="14" r="37">
+<Expand/>
+</C>
+<C c="15" r="37">
+<Expand/>
+</C>
+<C c="4" r="38">
+<Expand/>
+</C>
+<C c="5" r="38">
+<Expand/>
+</C>
+<C c="6" r="38">
+<Expand/>
+</C>
+<C c="7" r="38">
+<Expand/>
+</C>
+<C c="8" r="38">
+<Expand/>
+</C>
+<C c="9" r="38">
+<Expand/>
+</C>
+<C c="10" r="38">
+<Expand/>
+</C>
+<C c="11" r="38">
+<Expand/>
+</C>
+<C c="12" r="38">
+<Expand/>
+</C>
+<C c="13" r="38">
+<Expand/>
+</C>
+<C c="14" r="38">
+<Expand/>
+</C>
+<C c="15" r="38">
+<Expand/>
+</C>
+<C c="4" r="39">
+<Expand/>
+</C>
+<C c="5" r="39">
+<Expand/>
+</C>
+<C c="6" r="39">
+<Expand/>
+</C>
+<C c="7" r="39">
+<Expand/>
+</C>
+<C c="8" r="39">
+<Expand/>
+</C>
+<C c="9" r="39">
+<Expand/>
+</C>
+<C c="10" r="39">
+<Expand/>
+</C>
+<C c="11" r="39">
+<Expand/>
+</C>
+<C c="12" r="39">
+<Expand/>
+</C>
+<C c="13" r="39">
+<Expand/>
+</C>
+<C c="14" r="39">
+<Expand/>
+</C>
+<C c="15" r="39">
+<Expand/>
+</C>
+<C c="4" r="40">
+<Expand/>
+</C>
+<C c="5" r="40">
+<Expand/>
+</C>
+<C c="6" r="40">
+<Expand/>
+</C>
+<C c="7" r="40">
+<Expand/>
+</C>
+<C c="8" r="40">
+<Expand/>
+</C>
+<C c="9" r="40">
+<Expand/>
+</C>
+<C c="10" r="40">
+<Expand/>
+</C>
+<C c="11" r="40">
+<Expand/>
+</C>
+<C c="12" r="40">
+<Expand/>
+</C>
+<C c="13" r="40">
+<Expand/>
+</C>
+<C c="14" r="40">
+<Expand/>
+</C>
+<C c="15" r="40">
+<Expand/>
+</C>
+<C c="4" r="41">
+<Expand/>
+</C>
+<C c="5" r="41">
+<Expand/>
+</C>
+<C c="6" r="41">
+<Expand/>
+</C>
+<C c="7" r="41">
+<Expand/>
+</C>
+<C c="8" r="41">
+<Expand/>
+</C>
+<C c="9" r="41">
+<Expand/>
+</C>
+<C c="10" r="41">
+<Expand/>
+</C>
+<C c="11" r="41">
+<Expand/>
+</C>
+<C c="12" r="41">
+<Expand/>
+</C>
+<C c="13" r="41">
+<Expand/>
+</C>
+<C c="14" r="41">
+<Expand/>
+</C>
+<C c="15" r="41">
+<Expand/>
+</C>
+<C c="4" r="42">
+<Expand/>
+</C>
+<C c="5" r="42">
+<Expand/>
+</C>
+<C c="6" r="42">
+<Expand/>
+</C>
+<C c="7" r="42">
+<Expand/>
+</C>
+<C c="8" r="42">
+<Expand/>
+</C>
+<C c="9" r="42">
+<Expand/>
+</C>
+<C c="10" r="42">
+<Expand/>
+</C>
+<C c="11" r="42">
+<Expand/>
+</C>
+<C c="12" r="42">
+<Expand/>
+</C>
+<C c="13" r="42">
+<Expand/>
+</C>
+<C c="14" r="42">
+<Expand/>
+</C>
+<C c="15" r="42">
+<Expand/>
+</C>
+<C c="4" r="43">
+<Expand/>
+</C>
+<C c="5" r="43">
+<Expand/>
+</C>
+<C c="6" r="43">
+<Expand/>
+</C>
+<C c="7" r="43">
+<Expand/>
+</C>
+<C c="8" r="43">
+<Expand/>
+</C>
+<C c="9" r="43">
+<Expand/>
+</C>
+<C c="10" r="43">
+<Expand/>
+</C>
+<C c="11" r="43">
+<Expand/>
+</C>
+<C c="12" r="43">
+<Expand/>
+</C>
+<C c="13" r="43">
+<Expand/>
+</C>
+<C c="14" r="43">
+<Expand/>
+</C>
+<C c="15" r="43">
+<Expand/>
+</C>
+<C c="4" r="44">
+<Expand/>
+</C>
+<C c="5" r="44">
+<Expand/>
+</C>
+<C c="6" r="44">
+<Expand/>
+</C>
+<C c="7" r="44">
+<Expand/>
+</C>
+<C c="8" r="44">
+<Expand/>
+</C>
+<C c="9" r="44">
+<Expand/>
+</C>
+<C c="10" r="44">
+<Expand/>
+</C>
+<C c="11" r="44">
+<Expand/>
+</C>
+<C c="12" r="44">
+<Expand/>
+</C>
+<C c="13" r="44">
+<Expand/>
+</C>
+<C c="14" r="44">
+<Expand/>
+</C>
+<C c="15" r="44">
+<Expand/>
+</C>
+<C c="4" r="45">
+<Expand/>
+</C>
+<C c="5" r="45">
+<Expand/>
+</C>
+<C c="6" r="45">
+<Expand/>
+</C>
+<C c="7" r="45">
+<Expand/>
+</C>
+<C c="8" r="45">
+<Expand/>
+</C>
+<C c="9" r="45">
+<Expand/>
+</C>
+<C c="10" r="45">
+<Expand/>
+</C>
+<C c="11" r="45">
+<Expand/>
+</C>
+<C c="12" r="45">
+<Expand/>
+</C>
+<C c="13" r="45">
+<Expand/>
+</C>
+<C c="14" r="45">
+<Expand/>
+</C>
+<C c="15" r="45">
+<Expand/>
+</C>
+<C c="4" r="46">
+<Expand/>
+</C>
+<C c="5" r="46">
+<Expand/>
+</C>
+<C c="6" r="46">
+<Expand/>
+</C>
+<C c="7" r="46">
+<Expand/>
+</C>
+<C c="8" r="46">
+<Expand/>
+</C>
+<C c="9" r="46">
+<Expand/>
+</C>
+<C c="10" r="46">
+<Expand/>
+</C>
+<C c="11" r="46">
+<Expand/>
+</C>
+<C c="12" r="46">
+<Expand/>
+</C>
+<C c="13" r="46">
+<Expand/>
+</C>
+<C c="14" r="46">
+<Expand/>
+</C>
+<C c="15" r="46">
+<Expand/>
+</C>
+<C c="4" r="47">
+<Expand/>
+</C>
+<C c="5" r="47">
+<Expand/>
+</C>
+<C c="6" r="47">
+<Expand/>
+</C>
+<C c="7" r="47">
+<Expand/>
+</C>
+<C c="8" r="47">
+<Expand/>
+</C>
+<C c="9" r="47">
+<Expand/>
+</C>
+<C c="10" r="47">
+<Expand/>
+</C>
+<C c="11" r="47">
+<Expand/>
+</C>
+<C c="12" r="47">
+<Expand/>
+</C>
+<C c="13" r="47">
+<Expand/>
+</C>
+<C c="14" r="47">
+<Expand/>
+</C>
+<C c="15" r="47">
+<Expand/>
+</C>
+<C c="0" r="50">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="Equipment"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="1" r="50">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="Ratio"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportWriteAttr/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="18" foreground="-8355712"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" foreground="-16617053"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="尝试1"/>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-14117142"/>
+<Bottom style="1" color="-14117142"/>
+<Left style="1" color="-14117142"/>
+<Right style="1" color="-14117142"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]Ad2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4iebJi;<TD!-WQ)u!;iUeW~
+]]></Image>
+</Background>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-2362369"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-2362369"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style style_name="Title"/>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]Ad2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4iebJi;<TD!-WQ)u!;iUeW~
+]]></Image>
+</Background>
+<Border>
+<Top style="1" color="-6894375"/>
+<Bottom style="1" color="-6894375"/>
+<Left style="1" color="-6894375"/>
+<Right style="1" color="-6894375"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6894375"/>
+<Bottom style="1" color="-6894375"/>
+<Left style="1" color="-6894375"/>
+<Right style="1" color="-6894375"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

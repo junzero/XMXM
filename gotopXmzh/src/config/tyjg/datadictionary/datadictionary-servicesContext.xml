@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 处理业务字典类型以及业务字典项 -->
+	<bean class="com.gotop.tyjg.datadictionary.service.imp.DictEntryService" id="dictEntryService" name="dictEntryService" singleton="false">
+	    <property name="dictEntryDao" ref="dictEntryDao" />
+	</bean>
+	<!-- 处理业务字典项导入导出 -->
+    <bean class="com.gotop.tyjg.datadictionary.service.imp.OperatorExcelService" id="operatorExcelService" name="operatorExcelService" singleton="false">
+	    <property name="dictEntryDao" ref="dictEntryDao" />
+	</bean>
+</beans>

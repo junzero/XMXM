@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts >
+  <package name="file" namespace="/file" extends="json-default" >
+    <action name="tFileResourceTableAction_*" class="tFileResourceTableAction" method="{1}" >
+      <result name="viewlist" >
+        /jsp/file/tFileResourceTableDatacell.jsp
+      </result>
+      <!-- 流程配置文件列表 -->
+       <result name="process_file_upload_list" >
+        /jsp/file/process_file_upload_list.jsp
+      </result>
+      <!-- 流程配置文件上传 -->
+      <result name="process_file_upload" >
+        /jsp/file/process_file_upload.jsp
+      </result>
+       <!-- 下载 -->
+		<result name="download" type="stream">
+			<param name="inputName">inputStream</param>
+			<param name="contentType">application/x-msdownload</param>
+			<param name="bufferSize">10240</param>
+			<param name="contentDisposition">attachment;fileName="${fileName}"</param>
+		</result>
+
+      <result name="list1" type="json">
+		   <param name="root">fileResourceTables</param>
+	  </result>
+	  
+    </action>
+  </package>
+</struts>

@@ -1,0 +1,210 @@
+/* CSS Document */
+
+
+
+/*首页个人功能菜单*/
+.userNav{ margin-top:2px;}
+.userNav li{ float:right; width:30px; margin-left:10px;}
+.userNav li a{ display:block; width:25px; height:25px;}
+.userNav li a:hover{ background:#ccc; }
+.userNav li span.num{ position:absolute; top:0px; right:0; width:18px; text-align:center; font-size:8px; color:#FFF; background:url(../../../images/img/userNav/0.gif) center no-repeat; height:10px; overflow:hidden; line-height:10px;}
+/*导航*/
+/*美工修改2013.8.22 这个宽度不能在增了，如果增加会导致导航折行 宋建*/
+/*.navBox{ width:850px;float:right; height:70px;}*/
+.navBox{ width:860px;float:right; height:70px;}
+/*美工修改2013.8.22*/
+.navBox li{float:left; width:75px; margin:5px; height:60px; position:relative;}
+.navBox li:hover{ background:#fdd5c7;}
+.navBox li div.lst1,.navBox li div.lst2,.navBox li div.lst3,.navBox li div.lst4,.navBox li div.lst5,.navBox li div.lst6,.navBox li div.lst7,.navBox li div.lst8,.navBox li div.lst9,.navBox li div.lst10{padding-top:40px; text-align:center; height: 20px; line-height: 20px; cursor:pointer;}
+.navBox li div.lst1{ background:url(../../../images/img/nav/1.gif) center no-repeat;}
+.navBox li div.lst2{ background:url(../../../images/img/nav/2.gif) center no-repeat;}
+.navBox li div.lst3{ background:url(../../../images/img/nav/3.gif) center no-repeat;}
+.navBox li div.lst4{ background:url(../../../images/img/nav/4.gif) center no-repeat;}
+.navBox li div.lst5{ background:url(../../../images/img/nav/5.gif) center no-repeat;}
+.navBox li div.lst6{ background:url(../../../images/img/nav/6.gif) center no-repeat;}
+.navBox li div.lst7{ background:url(../../../images/img/nav/7.gif) center no-repeat;}
+.navBox li div.lst8{ background:url(../../../images/img/nav/8.gif) center no-repeat;}
+.navBox li div.lst9{ background:url(../../../images/img/nav/9.gif) center no-repeat;}
+.navBox li div.lst10{ background:url(../../../images/img/nav/10.gif) center no-repeat;}
+
+div.subset{ border:1px solid #999; background:#f8f8f8; width:150px; position:absolute;display:none; top:60px; left:-77px;}/*left二级菜单偏离程度*/
+div.subset li{ height:30px; border-bottom:1px dotted #ccc; margin:0; padding:0; line-height:30px; width:150px;}
+div.subset li:hover{ background:none;}
+div.subset li a{ height:30px; line-height:30px; display:block; padding-left:0px;}
+div.subset li a:hover{ background:#ccc;}
+div.subset2{ border:1px solid #999; background:#f8f8f8; width:150px; position:absolute; left:-150px; top:0px; display:none;}
+
+
+/*中部*/
+.contentBox{}
+/*.leftBox{float:left; display:inline; width:250px;}*/
+.leftBox{float:left; display:inline; width:233px;}
+.rightBox{float:right; display:inline; background:#f2f2f2; width:90px;}
+.mainBox{ margin-left:240px;_margin-left:-3px; _display:inline; _zoom:1;margin-right:90px;_margin-right:-3px;}
+
+.tit{ background:url(../../../images/img/tit_bg.gif) repeat-x ; height:25px; border-bottom:1px solid #ccc; text-align:center; line-height:25px; color:#b34823; font-size:14px;}
+.tit .up,.tit .down{ height:16px; width:16px; border:1px solid #CCC; line-height:16px; margin:3px; float:right; cursor:pointer; overflow:hidden;}
+.up{ background:url(../../../images/img/ico1.gif) 0px 0px no-repeat;}
+.down{ background:url(../../../images/img/ico1.gif) 0px -15px no-repeat;}
+
+
+.scrollDiv{ margin:0;}/*原来是2*/
+.ScrollBox{ float:left; width:30px; }
+.ScrollLeft{ width:30px; height:150px; overflow:hidden; position:relative; margin:2px 0;}
+.ScrollPave{display:block; height:8px; border:1px solid #CCC; background:url(../../../images/img/ico1.gif) 5px -19px no-repeat; width:28px; overflow:hidden; cursor:pointer;}
+.ScrollNext{display:block; height:8px; border:1px solid #CCC; background:url(../../../images/img/ico1.gif) 5px -3px no-repeat; width:28px; overflow:hidden; cursor:pointer;}
+.ScrollLeft ul{ position:absolute; top:0; left:0; width:30px;overflow:hidden;}
+.ScrollLeft ul li{ background:#CCC; height:60px; margin:0 0 2px 0; width:27px; padding:5px 5px; text-align:center; cursor:pointer; display:block;}
+.ScrollLeft ul li.on{ height:58px; border-bottom:1px solid #999;width:27px; border-top:1px solid #999; border-left:1px solid #999; background:#E4BDB0;}
+.scrollC{ float:left; width:180px; height:170px; overflow:hidden;}
+.scrollC ul{ padding:10px 20px;}
+.scrollC ul li{ height:25px; line-height:25px;}
+
+.rightNav{width:90px; display:block;}
+.rightNav a,.rightNav a:link,.rightNav a:visited,.rightNav a:active{ text-align:center; display:block; margin:5px; background:#FFF; height:20px; padding-top:50px; padding-bottom:10px; line-height:20px; width:80px; color:#b34823;}
+/*.rightNav a.ico1{ background:#fff url(../../../images/img/rightNav/1.gif) 24px 20px no-repeat;}
+.rightNav a.ico2{ background:#fff url(../../../images/img/rightNav/2.gif) 24px 20px no-repeat;}
+.rightNav a.ico3{ background:#fff url(../../../images/img/rightNav/3.gif) 24px 20px no-repeat;}
+.rightNav a.ico4{ background:#fff url(../../../images/img/rightNav/4.gif) 24px 20px no-repeat;}*/
+/*美工修改2013.8.22解决页面兼容性问题 ico2大堂查询，ico5大堂统计，ico2-2大堂查询闪动*/
+.rightNav a.ico1,.rightNav a.ico1:link,.rightNav a.ico1:visited{ background:#fff url(../../../images/img/rightNav/1.gif) 24px 20px no-repeat;}
+.rightNav a.ico2,.rightNav a.ico2:link,.rightNav a.ico2:visited{ background:#fff url(../../../images/img/rightNav/2.gif) 24px 20px no-repeat;}
+.rightNav a.ico5,.rightNav a.ico5:link,.rightNav a.ico5:visited{ background:#fff url(../../../images/img/rightNav/2.gif) 24px 20px no-repeat;}
+.rightNav a.ico2-2,.rightNav a.ico2-2:link,.rightNav a.ico2-2:visited{ background:#fff url(../../../images/img/rightNav/2-2.gif) 24px 20px no-repeat;}
+.rightNav a.ico3,.rightNav a.ico3:link,.rightNav a.ico3:visited{ background:#fff url(../../../images/img/rightNav/3.gif) 24px 20px no-repeat;}
+.rightNav a.ico4,.rightNav a.ico4:link,.rightNav a.ico4:visited{ background:#fff url(../../../images/img/rightNav/4.gif) 24px 20px no-repeat;}
+/*美工修改2013.8.22解决页面兼容性问题*/
+
+.rightNav a.ico1:hover,.rightNav a.ico2:hover,.rightNav a.ico5:hover,.rightNav a.ico2-2:hover,.rightNav a.ico3:hover,.rightNav a.ico4:hover{ background-color: #ccc;}
+
+/*朱道明改写的开始*/
+.show_tab,hidden_tab {
+	width: 180px;
+	margin-top: 0px;
+	text-alin: left;
+	height: 120px;
+}
+
+.hidden_tab {
+	display: none;
+}
+
+.show_tab {
+	display: block;
+}
+.con{
+	width:194px;
+	height:170px;
+	overflow-y:auto;
+}
+.nav_item {
+	margin: 0px;
+	width: 150px;
+	overflow: hide;
+	padding: 0px;
+}
+.list_txt1	li a:hover {
+	text-decoration: underline;
+}
+.list_txt1	li {
+	background: url(dot_30.gif) no-repeat 0 center;
+	padding-left: 10px;
+	margin-left: 5px;
+	line-height: 27px;
+	overflow: hidden;
+	height: 27px;
+}
+/*朱道明改写的结束*/
+
+.foot{ clear:both; height:30px; background:#CCC; line-height:30px;}
+
+.icon1,.icon2,.icon3,.icon4,.icon5,.icon6,.icon7,.icon8,.icon9,.icon10{width:24px; height:24px; display:block; margin:1px 4px 0;}
+.icon1{ background:url(../../../images/img/ico/1.gif) center no-repeat;}
+.icon2{ background:url(../../../images/img/ico/2.gif) center no-repeat;}
+.icon3{ background:url(../../../images/img/ico/3.gif) center no-repeat;}
+.icon4{ background:url(../../../images/img/ico/4.gif) center no-repeat;}
+.icon5{ background:url(../../../images/img/ico/5.gif) center no-repeat;}
+.icon6{ background:url(../../../images/img/ico/6.gif) center no-repeat;}
+.icon7{ background:url(../../../images/img/ico/7.gif) center no-repeat;}
+.icon8{ background:url(../../../images/img/ico/8.gif) center no-repeat;}
+.icon9{ background:url(../../../images/img/ico/9.gif) center no-repeat;}
+.icon10{ background:url(../../../images/img/ico/10.gif) center no-repeat;}
+
+.icoNew{ background:url(../../../images/img/ico/new.gif) center no-repeat; width:18px; height:12px; overflow:hidden; float:left; margin-top:5px;}
+
+
+/*首页表格设置*/
+table.tableBox{ background:#CCC;}
+table.tableBox td{ background:#FFF; height:26px; line-height:26px;color:#333;}
+table.tableBox th{background:#e2e2e2; height:30px; line-height:30px; text-align:center; color:#000;font-weight:bold}
+
+table.tableBox tr.even td{ background:#f5f5f5;}
+/*提示框追加20130822*/
+.tipfloat{background:url(../../../images/tip/MessageWin_bg.gif) ;}
+.tipfloat{display:none;z-index:999;position:fixed;_position:absolute;right:1px;bottom:31;width:220px;height:120px;overflow:hidden;}
+.tipfloat .close{display:block;overflow:hidden;cursor:pointer;background-position:-220px 0;}
+
+/*右侧弹出框20130831
+.MessageWin{ width:240px; height:120px;z-index:999;}
+.Message{ background:#666 url(../../../images/tip/MessageWin_bg.gif) center no-repeat; width:220px; height:120px; float:left;}
+.MessageLeft{ cursor:pointer; width:20px; height:90px; display: block; overflow:hidden; float:left; text-align:center; line-height:15px; padding:30px 5px 0 5px; font-size:14px; color:#F90;}
+.MessageLeftImage{background:url(../../../images/tip/2.gif);}
+*/
+.MessageWin{ width:270px; height:150px;z-index:999;position:absolute;right:0; bottom:70px;}
+.Message{width:240px; height:150px; float:left;}
+/*专题营销提醒 start role 03到06*/
+.MessageLeftIn{ background:url(../../../images/tip/1.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:14px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+.MessageLeftInTip{ background:url(../../../images/tip/2.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:14px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+.MessageLeftOut{ background:url(../../../images/tip/3.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:14px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+.MessageLeftOutTip{ background:url(../../../images/tip/4.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:14px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+/*专题营销提醒 end role 03到06*/
+
+/*变动提醒 start role 00到02*/
+.MessageLeftInChg{ background:url(../../../images/tip/1.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:20px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+.MessageLeftInTipChg{ background:url(../../../images/tip/2.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:20px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+.MessageLeftOutChg{ background:url(../../../images/tip/3.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:20px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+.MessageLeftOutTipChg{ background:url(../../../images/tip/4.gif);margin-top:29px; cursor:pointer; width:30px; height:120px; display: block; overflow:hidden; float:left; text-align:center; line-height:20px; padding:25px 5px 0 5px; font-size:14px; color:#FFF;}
+/*变动提醒 start role 00到02*/
+
+/*人员机构*/
+.personOrgUl{width:234px;height:116px;padding:30px 10px 10px 10px;background:#FFF;}
+.personOrgUl li{height:30px;line-height:20px;overflow:hidden;}
+/*积分系数变动提醒*/
+.scoreUl{width:234px;height:116px;padding:43px 10px 10px 10px;background:#FFF;}
+.scoreUl li{height:30px;line-height:20px;overflow:hidden;}
+
+/*网点*/
+.winUl{width:234px;height:96px;padding:10px 10px 0px 10px;background:#FFF;}
+.winUl li{height:17px;line-height:17px;overflow:hidden;}
+.winUl li span{margin:0 5px 0 0;color:black;}
+
+/*专题营销活动分派*/
+.marketAssigned{width:234px;height:96px;padding:10px 10px 2px 10px;background:#FFF;}
+.marketAssigned li{height:21px;line-height:21px;overflow:hidden;}
+.marketAssigned li span{margin:0 5px 0 0;color:black;}
+
+/*专题营销活动接受*/
+.marketAccept{width:234px;height:96px;padding:10px 10px 2px 10px;background:#FFF;}
+.marketAccept li{height:21px;line-height:21px;overflow:hidden;}
+.marketAccept li span{margin:0 5px 0 0;color:black;}
+/*.marketAccept li a{font-family:'微软雅黑,宋体';font-size:10pt;}添加字体颜色，必须通过class来设置*/
+/*专题营销活动推荐*/
+.marketRecommend{width:234px;height:96px;padding:10px 10px 2px 10px;background:#FFF;}
+.marketRecommend li{height:21px;line-height:21px;overflow:hidden;}
+.marketRecommend li span{margin:0 5px 0 0;color:black;}
+
+/*待售产品信息*/
+.saleWaiting{width:27px;}
+.saleWaiting a:hover{background: #CCCCCC;}
+/*快捷菜单图标*/
+.leftMenuTopIcon{width:20px; height:18px; background:url(../../../images/tipQuickMenu/2.gif) center no-repeat;}
+#liTopId li{height:25px;}
+
+/*网点变颜色*/
+.winColor{ color: #ED5E4F;}
+/*标题太长，省略号*/
+.slh{
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;	
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+<bean class="com.gotop.vo.tyjg.OmPosition" id="omPosition" singleton="false"></bean>
+<bean class="com.gotop.tyjg.positionmanagement.action.PositionAction" id="positionAction" name="positionAction" singleton="false">
+	<property name="omPosition" ref="omPosition"></property>
+	<property name="positionService" ref="positionService"></property>
+</bean>
+	</beans>

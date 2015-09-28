@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts >
+  <package name="messagePublish" namespace="/messagePublish" extends="json-default" >
+    <action name="tMessagePublishAction_*" class="tMessagePublishAction" method="{1}" >
+      <result name="list" >
+        /jsp/messagePublish/tMessagePublishDatacell.jsp
+      </result>
+      
+       <result name="input" >
+        /jsp/messagePublish/message_publish_input.jsp
+      </result>
+      
+      <result name="approve1" >
+        /jsp/messagePublish/message_publish_apporve1.jsp
+      </result>
+      
+      <result name="approve2" >
+        /jsp/messagePublish/message_publish_apporve2.jsp
+      </result>
+   
+       <result name="addSuccess">
+      /jsp/leave/next_state.jsp
+      </result>
+      
+      <result name="info" >
+        /jsp/messagePublish/message_publish_info.jsp
+      </result>
+      
+      <result name="transmit" >
+        /jsp/messagePublish/message_transmit_emp.jsp
+      </result>
+      
+      <result name="detail" >
+        /jsp/messagePublish/message_publish_detail.jsp
+      </result>
+      
+      <result name="supEmp" type="json">
+		   <param name="root">emplist</param>
+	  </result>
+	  
+	  <result name="trunsup" >
+        /jsp/messagePublish/message_transmit_supervise.jsp
+      </result>
+      
+    </action>
+  </package>
+</struts>

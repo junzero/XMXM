@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<O>
+<![CDATA[客户编号]]></O>
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<O>
+<![CDATA[客户姓名]]></O>
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<O>
+<![CDATA[国家]]></O>
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<O>
+<![CDATA[城市]]></O>
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<O>
+<![CDATA[电话]]></O>
+<Expand/>
+</C>
+<C c="1" r="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=range(1,10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="2" r="2" s="1">
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr ki="0" vi="0"/>
+<DBDictAttr tableName="CUSTOMER" schemaName="" ki="0" vi="0"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="3" r="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C3)==0,"",sql("FRDemo","SELECT customername FROM customer WHERE customerid = "+ C3,1,1))]]></Attributes>
+</O>
+<CellPageAttr/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+<C c="4" r="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C3)==0,"",sql("FRDemo","SELECT country FROM customer WHERE customerid = "+ C3,1,1))]]></Attributes>
+</O>
+<CellPageAttr/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+<C c="5" r="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C3)==0,"",sql("FRDemo","SELECT city FROM customer WHERE customerid = "+ C3,1,1))]]></Attributes>
+</O>
+<CellPageAttr/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+<C c="6" r="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(len(C3)==0,"",sql("FRDemo","SELECT tel FROM customer WHERE customerid = "+ C3,1,1))]]></Attributes>
+</O>
+<CellPageAttr/>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FRDemo"/>
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="CUSTOMER"/>
+<ColumnConfig name="CUSTOMERID" isKey="true" skipUnmodified="false">
+<ColumnRow column="2" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="CITY" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="COUNTRY" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="TEL" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="CUSTOMERNAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="2"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[lO<9(kN.ld@UNU%p%320@UNU)#I6cXfRW$ncQ/@&e.POna,l0_Df8bT0aA&q>eKh2eIO8I(B
+u48M.YKLQ#=JS&^L9'Ydg1;?dQ1JrF`*aF[[hf3B#LW1R(H$!u]ASMmg$0kCkN`!*]A*N^*e.8
+-k7F6>T?XSjCY!W_P,k5T9j)pIF4I;$f,c$+e:(IIoW$g7J$nJ-QM%B&>$brlG%]Aq'`N*lf`
+qm.H'd#T0cEQWbVm"e_Z)(ZCZ7e1cSlt%ds,MmX^>+K<P!JasGe3a^XE.!I!WW~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

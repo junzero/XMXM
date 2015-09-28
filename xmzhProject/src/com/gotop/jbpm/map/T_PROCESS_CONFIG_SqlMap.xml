@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_PROCESS_CONFIG_SqlMap" >
+       <resultMap id="abatorgenerated_TProcessConfigResult3" class="com.gotop.jbpm.model.TProcessConfig" >
+    <!--Bean方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="DEFINITION_ID" property="definitionId" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="DECIMAL" />
+    <result column="UPLOAD_ORG" property="uploadOrg" jdbcType="DECIMAL" />
+    <result column="UPLOAD_TIME" property="uploadTime" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="ROLE_ORG_PERSON" property="roleOrgPerson" jdbcType="VARCHAR" />
+    <result column="PROCESS_NAME" property="processName" jdbcType="VARCHAR" />
+     <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+     <result column="ORDER_NO" property="orderNo" jdbcType="VARCHAR" />
+        <result column="FILE_IDS" property="fileIds" jdbcType="VARCHAR" />
+  </resultMap>
+   <resultMap id="abatorgenerated_TProcessConfigResult" class="com.gotop.jbpm.model.TProcessConfig" >
+    <!--Bean方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="DEFINITION_ID" property="definitionId" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="DECIMAL" />
+    <result column="UPLOAD_ORG" property="uploadOrg" jdbcType="DECIMAL" />
+    <result column="UPLOAD_TIME" property="uploadTime" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="ROLE_ORG_PERSON" property="roleOrgPerson" jdbcType="VARCHAR" />
+    <result column="PROCESS_NAME" property="processName" jdbcType="VARCHAR" />
+     <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+     <result column="ORDER_NO" property="orderNo" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TProcessConfigResult1" class="com.gotop.jbpm.model.TProcessConfig" >
+    <!--Bean方式返回全表-->
+    <result column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="DEFINITION_ID" property="definitionId" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="DECIMAL" />
+    <result column="UPLOAD_ORG" property="uploadOrg" jdbcType="DECIMAL" />
+    <result column="UPLOAD_TIME" property="uploadTime" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="ROLE_ORG_PERSON" property="roleOrgPerson" jdbcType="VARCHAR" />
+    <result column="PROCESS_NAME" property="processName" jdbcType="VARCHAR" />
+     <result column="BUSINESS_TYPE" property="businessType" jdbcType="VARCHAR" />
+     <result column="ORDER_NO" property="orderNo" jdbcType="VARCHAR" />
+      <result column="ORDER_NO" property="orderNo" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- 我的流程 -->
+ <select id="queryMyProcessList"  resultMap="abatorgenerated_TProcessConfigResult"  resultClass="java.util.HashMap">
+ <!--    select t.ID, t.DEFINITION_ID,t.PROCESS_NAME, t.USER_ID, t.UPLOAD_ORG, t.UPLOAD_TIME, t.STATE, t.ROLE_ORG_PERSON,t.BUSINESS_TYPE
+    from T_PROCESS_CONFIG t,T_PROCESS_CONFIG_PERSON t2 where t.ID = t2.PROCESS_CONFIG_ID and t2.RELATION_ID in($relationids$) and t.PROCESS_NAME like '%$processName$%'
+   -->
+  with tmp as(select orgid from om_organization a start with orgid ='$orgid$' connect by PRIOR parentorgid=orgid)
+select t.ID,
+       t.DEFINITION_ID,
+       t.PROCESS_NAME,
+       t.USER_ID,
+       t.UPLOAD_ORG,
+       t.UPLOAD_TIME,
+       t.STATE,
+       t.ROLE_ORG_PERSON,
+       t.BUSINESS_TYPE,
+       t.ORDER_NO
+  from T_PROCESS_CONFIG t, 
+  T_PROCESS_CONFIG_PERSON t2
+ where t.ID = t2.PROCESS_CONFIG_ID
+   and ( t2.RELATION_ID in
+       ($relationids$)
+       or exists (select orgid from tmp where orgid=t2.relation_id)
+       )
+   and t.PROCESS_NAME like '%$processName$%'
+    and t.state = '01'
+   order by t.ORDER_NO ASC
+  </select>
+  
+   <!-- 发布流程 -->
+ <select id="queryProcessConfigList"  resultMap="abatorgenerated_TProcessConfigResult"  resultClass="java.util.HashMap">
+    select t.ID, t.DEFINITION_ID, t.PROCESS_NAME,t.USER_ID, t.UPLOAD_ORG, t.UPLOAD_TIME, t.STATE, t.ROLE_ORG_PERSON,t.BUSINESS_TYPE,t.ORDER_NO
+    from T_PROCESS_CONFIG t
+    <dynamic prepend="where" > 
+          <isNotNull prepend="and" property="processName" >
+        t.PROCESS_NAME like '%$processName$%'
+      </isNotNull>
+       <isNotNull prepend="and" property="businessType" >
+        t.BUSINESS_TYPE = $businessType$
+      </isNotNull>
+      </dynamic>
+        order by t.ORDER_NO ASC
+  </select>
+  <!-- 返回去最新的定义ID -->
+  <select  id="queryProcessDefinitionId"  resultClass="com.gotop.jbpm.model.TProcessConfig" parameterClass="java.util.HashMap">
+   select definition_id as definitionId ,process_name as processName ,business_type as businessType from T_PROCESS_CONFIG where state='01' and business_type=#business_type#
+  </select>
+  
+ <insert id="abatorgenerated_insert" parameterClass="com.gotop.jbpm.model.TProcessConfig" >
+    <!--通过主键更新整条数据-->
+     <selectKey resultClass="long" keyProperty="id">
+		SELECT T_PROCESS_CONFIG_SEQ.NEXTVAL AS VALUE FROM DUAL
+		</selectKey>
+    insert into T_PROCESS_CONFIG (ID, DEFINITION_ID, USER_ID, UPLOAD_ORG, UPLOAD_TIME, STATE,
+      ROLE_ORG_PERSON,PROCESS_NAME,BUSINESS_TYPE,ORDER_NO,FILE_IDS)
+    values (#id:DECIMAL:-9999#, #definitionId:VARCHAR#, #userId:DECIMAL:-9999#,
+      #uploadOrg:DECIMAL:-9999#, #uploadTime:VARCHAR#, #state:VARCHAR#, 
+      #roleOrgPerson:VARCHAR#,#processName:VARCHAR#,#businessType:VARCHAR#,
+      #orderNo:VARCHAR#,#fileIds:VARCHAR#)
+  </insert>
+  
+ <!-- 根据流程id获取流程配置对象 -->
+ <select id="getProcessConfigByDefinitionId"  resultMap="abatorgenerated_TProcessConfigResult3"  >
+	select t.ID, t.DEFINITION_ID, t.PROCESS_NAME,t.USER_ID, t.UPLOAD_ORG,
+	t.UPLOAD_TIME, t.STATE, t.ROLE_ORG_PERSON,t.BUSINESS_TYPE,t.ORDER_NO,FILE_IDS
+	from T_PROCESS_CONFIG t
+	<dynamic prepend="where">
+		<isNotNull prepend="and" property="definitionId">
+			t.DEFINITION_ID = '$definitionId$'
+		</isNotNull>
+	</dynamic>
+ </select>
+ 
+  <update id="abatorgenerated_updateByPrimaryKeySelective" parameterClass="com.gotop.jbpm.model.TProcessConfig" >
+    <!--通过主键更新部分字段，部分字段说明：当字段为null时不更新，当字段值为''空值是更新为空值-->
+    update T_PROCESS_CONFIG
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="definitionId" >
+        DEFINITION_ID = #definitionId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="userId" >
+        USER_ID = #userId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="uploadOrg" >
+        UPLOAD_ORG = #uploadOrg:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="uploadTime" >
+        UPLOAD_TIME = #uploadTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="state" >
+        STATE = #state:VARCHAR#
+      </isNotNull>
+         <isNotNull prepend="," property="processName" >
+        PROCESS_NAME = #processName:VARCHAR#
+      </isNotNull>
+         <isNotNull prepend="," property="orderNo" >
+        ORDER_NO = #orderNo:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="roleOrgPerson" >
+        ROLE_ORG_PERSON = #roleOrgPerson:VARCHAR#
+      </isNotNull>
+        <isNotNull prepend="," property="fileIds" >
+        FILE_IDS = #fileIds:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where ID = #id:DECIMAL#
+  </update>
+</sqlMap>

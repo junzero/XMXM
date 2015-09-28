@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="eleave" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="15,126,48,48" name="start1">
+      <transition to="申请请假"/>
+   </start>
+   <task assignee="#{user}" form="/leave/tApplyLeaveAction_getLeaveforApply.action" g="101,125,92,52" name="申请请假">
+      <transition g="-10,-21" name="提交" to="部门领导审核"/>
+   </task>
+   <task assignee="#{user}" form="/leave/tApplyLeaveAction_getLeaveById.action" g="286,124,92,52" name="部门领导审核">
+      <transition g="-13,-21" name="同意" to="分行领导审核"/>
+      <transition g="237,247:-13,-44" name="退回" to="申请请假"/>
+      <transition g="-43,5" name="审核结束" to="结束"/>
+   </task>
+   <task assignee="#{user}" form="/leave/tApplyLeaveAction_getLeaveById.action" g="554,124,92,52" name="分行领导审核">
+      <transition g="3,2" name="审核结束" to="结束"/>
+      <transition g="459,50:-12,-16" name="退回" to="部门领导审核"/>
+   </task>
+   <end g="444,232,48,48" name="结束"/>
+</process>

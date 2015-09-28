@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="dataIs" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="72,143,48,48" name="start1">
+      <transition to="填写数据下发表"/>
+   </start>
+   <task assignee="#{user}" form="/dataIssued/tSendDataAction_getIssuedforjsp.action" g="179,140,109,52" name="填写数据下发表">
+      <transition g="-21,-22" name="提交" to="部门领导审核"/>
+   </task>
+   <task assignee="#{user}" form="/dataIssued/tSendDataAction_getIssuedforApprove.action" g="366,140,92,52" name="部门领导审核">
+      <transition g="-18,-22" name="同意" to="结束"/>
+      <transition g="322,242:-13,-40" name="退回" to="填写数据下发表"/>
+   </task>
+   <end g="533,144,48,48" name="结束"/>
+</process>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportServerParameter xmlVersion="20100331" language="0">
+<ServerLogLevel>
+<![CDATA[WARNING]]></ServerLogLevel>
+<Write serverCharacterEncoding="UTF-8"/>
+<GZip run="true"/>
+<ServletMapping pattern="ReportServer"/>
+<SM concurrency="30" concurrencyOnce="10"/>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress=""/>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.page.First">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[首页]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Previous">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[上一页]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Next">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[下一页]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.page.Last">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[末页]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[提交]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.Verify">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[数据校验]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[打印[客户端]A]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[打印]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[输出]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Email">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[邮件]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.AppendColumnRow">
+<WidgetAttr disabled="true"/>
+<Text>
+<![CDATA[增加记录]]></Text>
+<IconName>
+<![CDATA[appendcolumn]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ShowCellValue">
+<WidgetAttr/>
+<LabelAttr isWrap="true" autoline="false"/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress=""/>
+<Parameters/>
+<Styles>
+<SAttr name="Title">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="18" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</SAttr>
+<SAttr name="Head">
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[qg[Z+D$FVW%Q64g2HC<2G'6VU%PAe7?64!%*_@M`IM#^3Gr]A"V)&WSm4`poS*G$*+%<G5a"%
+*_8'7"^n>72Yp4_#-MO<KRQS=D^s4;,<>&k7a6MFJkDrs'B/3#G%#q,nQ"(mkFDR0=I2PSjB
+A@?>,0?t<gO!sU/]AA7B.ZARjo]AjPg@nfIF\P`5p0H`59a@b/+4EXTcj'YR%NA.2k7Q#mVf_.
+i!pY2,7DtU$T/VTP2]Ak%k>Rj789:W@cA#`;Q=Ks)OahVVIns+Q<)9`Y&<YKSmK5VTjcmlO\s
+4LWG1T7R9@KTV.Ja'PuZ'\X_mGGSR%F+:RO7\qM^iK(+ijuFP64".p$TA]AOgE;m5oLZ3ct/<
+d::3mS31rYns-9-Y2?a7lf"VZ:S'asro3%?O.SUcq>0LUO.X0PraKDGAqU2drXoA1Mi!.AR=
+u[B01MgZO9.]A`<^fA6+ickA`'RlYUIG_*Vhkd?*op9Y%f.<:<-46q9Z?(dl:6rf^cj!g@ngM
+0%.5j'^MYdqYqQ7>&*Qam#()*n?!@391k*&KSk;/p?b`O4l`6u]A>ERW.I0%Y6>t%(e6"FOBS
+n[K<=FDJpIS8V./kbAqX<N5S.ot>9/:K*Ie8E4$Z"SPn8DQ`/>8g<5;FCRlitecl]A;U3Pi$k
+'-)N23#\d&.WQ-WPp`H";<X(YMbibr+G(Yps+($KSl2HC-H^bCik$'Bm+=,+Q/W;h>\!!~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="Explanation">
+<Style>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="3" color="-6697729"/>
+<Bottom style="3" color="-6697729"/>
+<Left style="3" color="-6697729"/>
+<Right style="3" color="-6697729"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="RTitle">
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="1" size="22" foreground="-16751002"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</SAttr>
+<SAttr name="Head1">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-1577999"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="Head2">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="ColorBackground" color="-1577999"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="cell">
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</SAttr>
+</Styles>
+<FlashPrint popupFlashPrintSetting="false"/>
+<PdfPrint popupPdfPrintSetting="true"/>
+<FSAttr showFSHome="true" fsHome="${servletURL}?reportlet=/demo/analytics/dashboard/dashboard.cpt&amp;op=form" fsTitle="FineReport产品演示"/>
+</ReportServerParameter>

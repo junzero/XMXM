@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_METTING_APPLY_SqlMap" >
+<typeAlias alias="meet" type="com.gotop.mettingApply.model.TMettingApply"/>
+<!-- 20140910加上参会领导id和name，会议室名称字段 -->
+  <select id="query_metting_apply_info" resultClass="meet" parameterClass="com.gotop.mettingApply.model.TMettingApply" >
+    <!--通过主键查询一条数据-->
+    select a.METTING_ID mettingId, a.FLOW_ID as flowId, a.TITLE title, a.CONTENT content, a.TYPE type, a.METTING_TIME mettingTime, a.JOIN_EMP joinEmp, a.CREATE_DATE createDate,
+      a.CREATE_TIME createTime, a.CREATOR creator, a.ORGID orgid, a.JOIN_EMPNAME joinEmpname,b.empname empName, a.mname,a.joinLeader,a.joinLeadername
+    from T_METTING_APPLY a, OM_EMPLOYEE b
+    where a.CREATOR=b.empid
+     and  (METTING_ID = #mettingId:DECIMAL#
+    <isNotNull prepend="" property="flowId" >
+       <isNotEmpty prepend="or" property="flowId">
+        FLOW_ID=#flowId:varchar#
+        </isNotEmpty>
+        </isNotNull>
+        )
+  </select>
+  <select id="query_metting_apply_info1" resultClass="meet" parameterClass="com.gotop.mettingApply.model.TMettingApply" >
+    <!--通过主键查询一条数据-->
+    select T1.METTING_ID mettingId, T1.FLOW_ID as flowId, T1.TITLE title, T1.CONTENT content, T1.TYPE type, T1.METTING_TIME mettingTime, T1.JOIN_EMP joinEmp, T1.CREATE_DATE createDate,
+      T1.CREATE_TIME createTime, T1.CREATOR creator, T1.ORGID orgid, T1.JOIN_EMPNAME joinEmpname, T1.mname,T1.joinLeader,T1.joinLeadername, T2.empname
+    from T_METTING_APPLY T1,OM_EMPLOYEE T2
+    where METTING_ID = #mettingId:DECIMAL# and T1.CREATOR = T2.empid
+  </select>
+
+  <select id="query_home_metting_list" resultClass="meet" parameterClass="com.gotop.mettingApply.model.TMettingApply" >
+       <![CDATA[ select a.METTING_ID   mettingId,
+       a.TITLE        title,
+       a.METTING_TIME mettingTime,    
+       d.orgname
+  from T_METTING_APPLY a,om_organization d
+    where a.orgid = d.orgid
+         and exists(select 1 from t_metting_receive e where e.metting_id=a.metting_id and e.rec_emp=#empid# and e.status='0')
+         and to_char(sysdate,'yyyy-MM-dd hh24:mi')<=a.metting_time
+       order by a.METTING_TIME asc]]>
+  </select>
+  
+  <select id="query_metting_apply_list" resultClass="meet" parameterClass="com.gotop.mettingApply.model.TMettingApply" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+   select a.METTING_ID   mettingId,
+       a.FLOW_ID      flowId,
+       a.TITLE        title,
+       a.CONTENT      content,
+       a.TYPE         type,
+       a.METTING_TIME mettingTime,
+       a.JOIN_EMP     joinEmp,
+       a.CREATE_DATE  createDate,
+       a.CREATE_TIME  createTime,
+       a.CREATOR      creator,
+       a.ORGID        orgid,
+       a.JOIN_EMPNAME joinEmpname,
+       a.mname,
+       a.joinLeader,
+       a.joinLeadername,
+       b.empname    empName,
+       decode(c.status,'', '未阅','0','未阅','已阅') as statusName,
+       c.status,
+       c.rec_id recId,
+       d.orgname
+  from T_METTING_APPLY a,om_employee b,t_metting_receive c,om_organization d
+    where a.creator=b.empid
+      and a.metting_Id=c.metting_Id
+      and c.rec_emp=#empid#
+         and a.orgid = d.orgid
+      <isNotNull prepend="" property="mettingId" >
+       <isNotEmpty prepend="and" property="mettingId">
+        a.METTING_ID = #mettingId:DECIMAL#
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="status" >
+       <isNotEmpty prepend="and" property="status">
+        c.status = #status:DECIMAL#
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="flowId" >
+       <isNotEmpty prepend="and" property="flowId">
+        a.FLOW_ID = #flowId:VARCHAR#
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="title" >
+       <isNotEmpty prepend="and" property="title">
+        a.TITLE like '%$title$%'
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="content" >
+       <isNotEmpty prepend="and" property="content">
+        a.CONTENT = #content:VARCHAR#
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="type" >
+       <isNotEmpty prepend="and" property="type">
+        a.TYPE = #type:VARCHAR#
+        </isNotEmpty>
+      </isNotNull>
+     <isNotNull prepend="" property="createDate" >
+       <isNotEmpty prepend="and" property="createDate">
+         <![CDATA[ 
+          TO_CHAR(a.METTING_TIME) >= #createDate:VARCHAR#
+         ]]>
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="joinEmp" >
+       <isNotEmpty prepend="and" property="joinEmp">
+        a.JOIN_EMP = #joinEmp:VARCHAR#
+        </isNotEmpty>
+      </isNotNull>
+            <isNotNull prepend="" property="createDate1" >
+       <isNotEmpty prepend="and" property="createDate1">
+          <![CDATA[ 
+        TO_CHAR(a.METTING_TIME) <= #createDate1:VARCHAR#
+         ]]>
+       </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="createTime" >
+       <isNotEmpty prepend="and" property="createTime">
+        a.CREATE_TIME = #createTime:VARCHAR#
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="creator" >
+       <isNotEmpty prepend="and" property="creator">
+        a.CREATOR = #creator:DECIMAL#
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="orgid" >
+       <isNotEmpty prepend="and" property="orgid">
+        a.ORGID = #orgid:DECIMAL#
+        </isNotEmpty>
+      </isNotNull>
+      <isNotNull prepend="" property="joinEmpname" >
+       <isNotEmpty prepend="and" property="joinEmpname">
+        a.JOIN_EMPNAME = #joinEmpname:VARCHAR#
+        </isNotEmpty>
+      </isNotNull>
+      order by c.status,a.METTING_TIME desc
+  </select>
+ 
+  <delete id="delete_metting_apply_info" parameterClass="com.gotop.mettingApply.model.TMettingApply" >
+    <!--
+      WARNING - This element is automatically generated by Abator for iBATIS, do not modify.
+      This element was generated on .
+    -->
+    <!--通过主键删除一条记录-->
+    delete from T_METTING_APPLY
+    where METTING_ID = #mettingId:DECIMAL#
+  </delete>
+  
+  
+  <insert id="insert_metting_apply_info" parameterClass="meet" >
+   <selectKey resultClass="java.lang.Long" keyProperty="mettingId" >
+      select T_METTING_APPLY_SEQ.nextval from dual
+    </selectKey>
+    <!--通过主键更新整条数据-->
+    insert into T_METTING_APPLY (METTING_ID, FLOW_ID, TITLE, CONTENT, TYPE, METTING_TIME, JOIN_EMP,
+      CREATE_DATE, CREATE_TIME, CREATOR, ORGID, JOIN_EMPNAME, MNAME, joinLeader,joinLeadername)
+    values (#mettingId:DECIMAL:-9999#, #flowId:VARCHAR#, #title:VARCHAR#, #content:VARCHAR#,
+      #type:VARCHAR#, #mettingTime:VARCHAR#, #joinEmp:VARCHAR#, #createDate:VARCHAR#,
+      #createTime:VARCHAR#, #creator:DECIMAL:-9999#, #orgid:DECIMAL:-9999#,#joinEmpname:VARCHAR#,
+      #mname:VARCHAR#, #joinLeader:VARCHAR#, #joinLeadername:VARCHAR#)
+  </insert>
+  
+  <update id="update_metting_apply_info" parameterClass="com.gotop.mettingApply.model.TMettingApply" >
+    <!--通过主键更新一条全部字段内容-->
+    update T_METTING_APPLY
+    <dynamic prepend="set">
+        <isNotNull prepend="," property="title">
+      TITLE = #title:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="content">
+      CONTENT = #content:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="type">
+      TYPE = #type:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mettingTime">
+      METTING_TIME = #mettingTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="joinEmp">
+      JOIN_EMP = #joinEmp:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="joinEmpname">
+      JOIN_EMPNAME = #joinEmpname:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="joinLeader">
+      JOINLeader = #joinLeader:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="joinLeadername">
+      JOINLeadername = #joinLeadername:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mname">
+      mname = #mname:VARCHAR#
+      </isNotNull>
+      </dynamic>
+    where METTING_ID = #mettingId:DECIMAL#
+  </update>
+  
+</sqlMap>

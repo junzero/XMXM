@@ -1,0 +1,46 @@
+#main_history {
+	border:1px solid #ccc;  width: 100%; margin-bottom: 5px; background: #ecf4ff; height: 30px;
+}
+#list_container {
+	border:1px solid #ccc; width: 100%; 
+}
+
+.childtoolsbox {
+	position: relative; margin-top: -6px; float: right
+}
+
+.childtoolsbox ul {
+	padding:0; list-style:none; margin: -30px 15px 0px 0px;
+}
+
+td.search_td_bg {
+	text-align: right; background: #fafafa; font-size: 12px; vertical-align: top; padding-top: 5px
+}
+
+
+td.search_td_bg_no_align {
+	background: #fafafa; font-size: 12px; vertical-align: top; padding-top: 5px
+}
+
+.linkStyle {
+	cursor: pointer;  text-decoration:underline;
+}
+
+td.search_child_bg {
+	text-align: right; background: #f0f0f6; vertical-align: top; padding:5px 2px 0 2px;
+}
+
+td.value_child_bg {
+	padding-right: 3px; background: #fff; vertical-align: top; padding-top: 2px
+}
+
+.align_left {
+	text-align: left
+}
+.align_right {
+	text-align: right
+}
+.align_center {
+	text-align: center
+}
+

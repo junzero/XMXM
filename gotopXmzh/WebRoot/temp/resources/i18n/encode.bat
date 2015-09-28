@@ -1,0 +1,1 @@
+native2ascii -encoding gb2312 organization.properties organization_zh_CN.properties

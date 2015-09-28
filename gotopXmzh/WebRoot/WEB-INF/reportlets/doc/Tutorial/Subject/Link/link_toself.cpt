@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100331">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[EMPID]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM EMPLOYEE order by ${cname} ${orderby}]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings isHorizontalCenterOnPage="true" headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="12.67717" height="17.51969"/>
+<Margin top="0.27" left="0.35629921259842523" bottom="0.27" right="0.0"/>
+</ReportSettings>
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="19">
+<![CDATA[36,7,19,19,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[58,72,68,104,136,96,112,292,102,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="8" s="0">
+<O>
+<![CDATA[员工信息表]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<Expand/>
+</C>
+<C c="1" r="1" s="1">
+<Expand/>
+</C>
+<C c="2" r="1" s="1">
+<Expand/>
+</C>
+<C c="3" r="1" s="1">
+<Expand/>
+</C>
+<C c="4" r="1" s="1">
+<Expand/>
+</C>
+<C c="5" r="1" s="1">
+<Expand/>
+</C>
+<C c="6" r="1" s="1">
+<Expand/>
+</C>
+<C c="7" r="1" s="1">
+<Expand/>
+</C>
+<C c="0" r="2" cs="8" s="2">
+<Expand/>
+</C>
+<C c="0" r="3" s="3">
+<O>
+<![CDATA[员工编号]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[empid]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[empid]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="1" r="3" s="3">
+<O>
+<![CDATA[姓名]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[empname]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[empname]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="2" r="3" s="3">
+<O>
+<![CDATA[性别]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[sex]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[sex]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="3" r="3" s="3">
+<O>
+<![CDATA[生日]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[birthdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[birthdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="4" r="3" s="3">
+<O>
+<![CDATA[Email]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[email]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[email]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="5" r="3" s="3">
+<O>
+<![CDATA[毕业时间]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[graduated]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[graduated]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="6" r="3" s="3">
+<O>
+<![CDATA[到职时间]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[reportdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[reportdate]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="7" r="3" s="3">
+<O>
+<![CDATA[职称]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="升序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[title]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[asc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+<NameJavaScript name="降序">
+<JavaScript class="com.fr.report.js.ParameterJavaScript">
+<Parameters>
+<Parameter>
+<Attributes name="cname"/>
+<O>
+<![CDATA[title]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="orderby"/>
+<O>
+<![CDATA[desc]]></O>
+</Parameter>
+</Parameters>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="0" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMPID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMPNAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="BIRTHDATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMAIL"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GRADUATED"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="REPORTDATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="TITLE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="18" foreground="-16776961"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="6" color="-16777088"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<Image width="271" height="20">
+<![CDATA[mDD3s_Ctrm_#OF0>K!!9WJ6!OQ7+.ZoaQ9>0E]Ad2laNppWiE)!WiGp)li!RsTDPW,0?[QWIV
+_g1pu1d?NUQ%!281S82*R8))W+4iebJi;<TD!-WQ)u!;iUeW~
+]]></Image>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd]]></Format>
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

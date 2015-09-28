@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="T_APPLY_LEAVE_SqlMap" >
+  <resultMap id="abatorgenerated_TApplyLeaveResult" class="com.gotop.leave.model.TApplyLeave" >
+    <!--Bean方式返回全表-->
+    <result column="LV_ID" property="lvId" jdbcType="DECIMAL" />
+    <result column="EMP_ID" property="empId" jdbcType="DECIMAL" />
+    <result column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="LV_TITLE" property="lvTitle" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="LV_TYPE" property="lvType" jdbcType="VARCHAR" />
+    <result column="LV_REASON" property="lvReason" jdbcType="VARCHAR" />
+    <result column="LV_START" property="lvStart" jdbcType="VARCHAR" />
+    <result column="LV_END" property="lvEnd" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgid" jdbcType="DECIMAL" />
+  </resultMap>
+  <resultMap id="abatorgenerated_TApplyLeave_HashMapResult" class="java.util.HashMap" >
+    <!--HashMap方式返回全表-->
+    <result column="LV_ID" property="lvId" jdbcType="DECIMAL" />
+    <result column="EMP_ID" property="empId" jdbcType="DECIMAL" />
+    <result column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="LV_TITLE" property="lvTitle" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="LV_TYPE" property="lvType" jdbcType="VARCHAR" />
+    <result column="LV_REASON" property="lvReason" jdbcType="VARCHAR" />
+    <result column="LV_START" property="lvStart" jdbcType="VARCHAR" />
+    <result column="LV_END" property="lvEnd" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgid" jdbcType="DECIMAL" />
+  </resultMap>
+  <select id="abatorgenerated_selectByPrimaryKey" resultMap="abatorgenerated_TApplyLeaveResult" parameterClass="com.gotop.leave.model.TApplyLeave" >
+    <!--通过主键查询一条数据-->
+    select LV_ID, EMP_ID, LV_TITLE, PHONE_NO, LV_TYPE, LV_REASON, LV_START, LV_DAYS, CREATE_DATE, CREATE_TIME
+    from T_APPLY_LEAVE
+    where LV_ID = #lvId:DECIMAL#
+  </select>
+  <select id="abatorgenerated_selectByExample" resultMap="abatorgenerated_TApplyLeaveResult" parameterClass="com.gotop.leave.model.TApplyLeaveExample" >
+    <!--通过查询实体,查询满足条件的记录-->
+    select LV_ID, EMP_ID, LV_TITLE, PHONE_NO, LV_TYPE, LV_REASON, LV_START, LV_DAYS, CREATE_DATE, CREATE_TIME
+    from T_APPLY_LEAVE
+    <isParameterPresent >
+      <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+      <isNotNull property="orderByClause" >
+        order by $orderByClause$
+      </isNotNull>
+    </isParameterPresent>
+  </select>
+  <select id="abatorgenerated_expandEntityByTemplate" resultMap="abatorgenerated_TApplyLeaveResult" parameterClass="com.gotop.leave.model.TApplyLeave" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+    select LV_ID, EMP_ID, LV_TITLE, PHONE_NO, LV_TYPE, LV_REASON, LV_START, LV_DAYS, CREATE_DATE, CREATE_TIME
+    from T_APPLY_LEAVE where <![CDATA[ rownum<2 ]]>
+    <dynamic >
+      <isNotNull prepend="and" property="lvId" >
+        LV_ID = #lvId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="empId" >
+        EMP_ID = #empId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvTitle" >
+        LV_TITLE = #lvTitle:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="phoneNo" >
+        PHONE_NO = #phoneNo:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvType" >
+        LV_TYPE = #lvType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvReason" >
+        LV_REASON = #lvReason:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvStart" >
+        LV_START = #lvStart:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvEnd" >
+        LV_END = #lvEnd:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="atime" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+       <isNotNull prepend="and" property="atime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <select id="abatorgenerated_queryEntitiesByTemplate" resultMap="abatorgenerated_TApplyLeaveResult" parameterClass="com.gotop.leave.model.TApplyLeave" >
+    <!--根据Bean数据模板查询条件查询所有记录，可查询分页数据-->
+    select LV_ID, EMP_ID, LV_TITLE, PHONE_NO, LV_TYPE, LV_REASON, LV_START, LV_DAYS, CREATE_DATE, CREATE_TIME
+    from T_APPLY_LEAVE
+    <dynamic prepend="where" >
+      <isNotNull prepend="and" property="lvId" >
+        LV_ID = #lvId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="empId" >
+        EMP_ID = #empId:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvTitle" >
+        LV_TITLE = #lvTitle:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="phoneNo" >
+        PHONE_NO = #phoneNo:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvType" >
+        LV_TYPE = #lvType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvReason" >
+        LV_REASON = #lvReason:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvStart" >
+        LV_START = #lvStart:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="lvEnd" >
+        LV_END = #lvEnd:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="and" property="atime" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+       <isNotNull prepend="and" property="atime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+  </select>
+  <delete id="abatorgenerated_deleteByPrimaryKey" parameterClass="com.gotop.leave.model.TApplyLeave" >
+    <!--
+      WARNING - This element is automatically generated by Abator for iBATIS, do not modify.
+      This element was generated on .
+    -->
+    <!--通过主键删除一条记录-->
+    delete from T_APPLY_LEAVE
+    where LV_ID = #lvId:DECIMAL#
+  </delete>
+  <delete id="abatorgenerated_deleteByExample" parameterClass="com.gotop.leave.model.TApplyLeaveExample" >
+    <!--通过查询实例，删除满足条件的数据-->
+    delete from T_APPLY_LEAVE
+    <include refid="COMMON.abatorgenerated_Example_Where_Clause" />
+  </delete>
+  <delete id="abatorgenerated_deleteByTemplate" parameterClass="com.gotop.leave.model.TApplyLeave" >
+    <!--根据Bean数据模板查询条件删除记录-->
+    delete from T_APPLY_LEAVE
+    <dynamic prepend="where" >
+      <isNotEmpty prepend="and" property="lvId" >
+        LV_ID = #lvId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="empId" >
+        EMP_ID = #empId:DECIMAL#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="lvTitle" >
+        LV_TITLE = #lvTitle:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="phoneNo" >
+        PHONE_NO = #phoneNo:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="lvType" >
+        LV_TYPE = #lvType:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="lvReason" >
+        LV_REASON = #lvReason:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="lvStart" >
+        LV_START = #lvStart:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="lvEnd" >
+        LV_END = #lvEnd:VARCHAR#
+      </isNotEmpty>
+      <isNotEmpty prepend="and" property="atime" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotEmpty>
+       <isNotEmpty prepend="and" property="atime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotEmpty>
+    </dynamic>
+  </delete>
+  <insert id="abatorgenerated_insert" parameterClass="com.gotop.leave.model.TApplyLeave" >
+	  <selectKey resultClass="long" keyProperty="lvId">
+		SELECT SQ_T_APPLY_LEAVE_ID_1.NEXTVAL AS VALUE FROM DUAL
+		<!-- 这里需要说明一下不同的数据库主键的生成，对各自的数据库有不同的方式： -->
+		<!-- mysql:SELECT LAST_INSERT_ID() AS VALUE -->
+		<!-- mssql:select @@IDENTITY as value -->
+		<!-- oracle:SELECT STOCKIDSEQUENCE.NEXTVAL AS VALUE FROM DUAL -->
+		<!-- 还有一点需要注意的是不同的数据库生产商生成主键的方式不一样，有些是预先生成 (pre-generate)主键的，如Oracle和PostgreSQL。
+		有些是事后生成(post-generate)主键的，如MySQL和SQL Server 所以如果是Oracle数据库，则需要将selectKey写在insert之前 -->
+	</selectKey>
+    <!--通过主键更新整条数据-->
+    insert into T_APPLY_LEAVE (LV_ID, EMP_ID, FLOW_ID, LV_TITLE, PHONE_NO, LV_TYPE, LV_REASON, LV_START,
+      LV_END, CREATE_DATE,CREATE_TIME, ORG_ID)
+    values (#lvId:DECIMAL:-9999#, #empId:DECIMAL:-9999#, #flowId:VARCHAR#, #lvTitle:VARCHAR#, #phoneNo:VARCHAR#,
+      #lvType:VARCHAR#, #lvReason:VARCHAR#, #lvStart:VARCHAR#, #lvEnd:VARCHAR#, #createDate:VARCHAR#,#createTime:VARCHAR#, #orgid:DECIMAL:-9999#)
+  </insert>
+  
+  <select id="queryAllLeave" resultClass="com.gotop.leave.model.TApplyLeave" parameterClass="java.util.HashMap">
+  	
+  	<![CDATA[
+			select a.LV_ID lvID, a.EMP_ID empId, a.FLOW_ID flowId, e.EMPNAME, a.LV_TITLE lvTitle, a.PHONE_NO phoneNo, a.LV_TYPE lvType, a.LV_REASON lvReason, a.LV_START lvStart, a.LV_END lvEnd, a.ATIME
+    		from T_APPLY_LEAVE a,om_employee e
+    		where a.EMP_ID = e.EMPID
+	]]>
+  </select>
+  
+  <select id="queryByMap" resultClass="com.gotop.leave.model.TApplyLeave" parameterClass="java.util.HashMap">
+  	<![CDATA[
+			select a.LV_ID lvID, a.EMP_ID empId, a.FLOW_ID flowId, e.EMPNAME, a.LV_TITLE lvTitle, a.PHONE_NO phoneNo, a.LV_TYPE lvType, a.LV_REASON lvReason, a.LV_START lvStart, a.LV_END lvEnd
+				a.LV_START lvStart, a.LV_END lvEnd, a.CREATE_DATE createDate, a.CREATE_TIME createTime
+    		from T_APPLY_LEAVE a,om_employee e
+    		where a.EMP_ID = e.EMPID and a.LV_TITLE like '%$title$%' and e.EMPNAME like '%$applicant$%' and a.lv_reason like '%$lv_reason$%'
+	]]>
+	<isNotEqual property="lv_type" compareValue="00" >
+		and lv_type = #lv_type#
+	</isNotEqual>
+  </select>
+  
+  <select id="getLeaveById" resultClass="com.gotop.leave.model.TApplyLeave" parameterClass="Long">
+  	<![CDATA[
+			select a.LV_ID lvID, a.EMP_ID empId, a.ORG_ID orgid, a.FLOW_ID flowId, e.EMPNAME, a.LV_TITLE lvTitle, a.PHONE_NO phoneNo, a.LV_TYPE lvType, a.LV_REASON lvReason, a.LV_START lvStart, a.LV_END lvEnd, 
+				a.LV_START lvStart, a.LV_END lvEnd, a.CREATE_DATE createDate, a.CREATE_TIME createTime
+    		from T_APPLY_LEAVE a,om_employee e
+    		where a.EMP_ID = e.EMPID and a.LV_ID = #id#
+	]]>
+  </select>
+  <select id="getLeaveByFlowId" resultClass="com.gotop.leave.model.TApplyLeave" parameterClass="String" >
+  		select a.LV_ID lvID, a.EMP_ID empId, a.ORG_ID orgid, a.FLOW_ID flowId, e.EMPNAME, a.LV_TITLE lvTitle, a.PHONE_NO phoneNo, a.LV_TYPE lvType, a.LV_REASON lvReason, a.LV_START lvStart, a.LV_END lvEnd, 
+				a.LV_START lvStart, a.LV_END lvEnd, a.CREATE_DATE createDate, a.CREATE_TIME createTime
+    		from T_APPLY_LEAVE a,om_employee e
+    		where a.EMP_ID = e.EMPID and a.FLOW_ID = #executionId#
+  </select>
+  <update id="uodateLeaveById" parameterClass="com.gotop.leave.model.TApplyLeave">
+  update T_APPLY_LEAVE
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="empId" >
+        EMP_ID = #empId:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="empId" >
+        ORG_ID = #orgid:DECIMAL:-9999#
+      </isNotNull>
+      <isNotNull prepend="," property="flowId" >
+        FLOW_ID = #flowId:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lvTitle" >
+        LV_TITLE = #lvTitle:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="phoneNo" >
+        PHONE_NO = #phoneNo:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lvType" >
+        LV_TYPE = #lvType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lvReason" >
+        LV_REASON = #lvReason:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lvStart" >
+        LV_START = #lvStart:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lvEnd" >
+        LV_END = #lvEnd:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createDate" >
+        CREATE_DATE = #createDate:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where LV_ID = #lvId#
+  </update>
+</sqlMap>

@@ -1,0 +1,313 @@
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@include file="/common/common.jsp"%>
+<%@include file="/common/skins/skin0/component.jsp" %>
+<%@page import="java.util.*"%>
+<h:css href="/css/style1/style-custom.css"/>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="/js/commonUtil.js"></script>
+    <title>
+      内容页
+    </title>
+    <meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<style>
+		.fbItem {
+			float:left;
+			width:98%;
+			height:auto;			
+			margin:30px 0px 0px 10px;
+			#border-top:1px dashed  rgb(226, 103, 137);
+			position: relative;
+		}
+		.ItemTitle{
+			position:absolute;
+			background: #d0e4d9;
+			width:auto;
+			height: 25px;
+			top:-30px;
+			padding:3px 5px 0px 5px;
+		}
+		.title_span{
+			font-size: 15px;
+			font-weight:bold;
+			color: #1a3890;
+		}
+		
+		.content_span {
+			font-size: 15px;
+			text-indent: 30px;
+		}
+		.liContent_span {
+			font-size: 12px;
+		}
+		.rq_span{
+			font-size: 12px;
+			float:right;
+			position:relative;
+			top:5px;
+		}
+		.leftrq {
+			border: 1px solid gray;
+			position:relative;
+			height: 200px;
+			margin-top: 26px;
+		}
+		.leftrq_title{
+			position: absolute;
+			bottom:200px;
+			width:100%;
+			height:20px;
+			text-align: center;
+			padding-top: 5px;
+			background: url("./images/anxg.jpg") left top;
+			border: 1px solid rgb(206, 206, 206);
+		}
+		.khb {
+			margin: 0px;
+		}
+		.khb,.khb td {
+			border: 0px solid rgb(206, 206, 206);
+			border-spacing: 0px;
+			height: 22px;
+			font-size: 12px;
+			text-align: left;
+		}
+		.khb th{
+			background: rgb(243, 200, 215);
+			border: 0px solid rgb(206, 206, 206);
+			font-weight:bold;
+		}
+		.mrgg {
+			padding: 0px;
+			list-style: none;
+		}
+		.mrgg li{
+			height:30px;
+			padding-top:10px;
+			border-bottom: 1px solid rgb(206, 206, 206);
+		}
+a:link{
+text-decoration:none;
+#underline;
+color:#0000ff;
+font-size: 11pt;
+}
+a:hover
+{
+text-decoration:none;
+#underline;
+font-size: 11pt;
+color:#FE6C00;
+}
+a:visited
+{
+color:#000caf;
+text-decoration:none;
+#underline;
+font-size: 11pt;
+}
+.EOS_table1
+{
+background:#ffffff;
+border-collapse: solid;
+border:1px solid #AEC2CD;
+}
+.EOS_table1 tr th    /*  .EOS_table1 tr td,*/
+{
+#border:1px solid #AEC2CD;
+border-buttom:1px solid rgb(226, 103, 137);
+#background:#F4F5F9;
+height:20px;
+padding:0px 3px;
+font-weight:bold;
+color:#821d21;
+}
+.EOS_table1 tr{
+height:25px;
+}
+.EOS_table1 tr th
+{
+height:25px;
+vertical-align:middle;
+padding-top:3px;
+text-align:center;
+border-bottom: 1px solid  #e1e2e4;
+}
+.EOS_table1 tr td{
+text-align:left;
+color:#010101;
+border-bottom: 1px dashed   #e1e2e4;
+}
+.EOS_table_row1  
+{
+#background:#BBF0F0;
+}
+.EOS_table_selectRow1
+{
+#background:#CDDEE6;
+}
+
+.leaftcss
+{
+	display:inline;
+	width:50%;
+}
+	</style>
+  </head>
+  <body style="margin: 0px;">
+    <div style="width:100%;">
+  <div class="fbItem">
+	<div class="ItemTitle">
+		<span class="title_span">待办信息</span>
+	</div>
+ <table align="center" cellpadding="0" cellspacing="0" width="100%"  class="EOS_table1">
+ 	<tr>
+ 		<th nowrap="nowrap" >信息栏目</th>
+ 		<th nowrap="nowrap" >信息标题</th>
+ 		<th nowrap="nowrap" >发布部门</th>
+ 		<th nowrap="nowrap" >发布人</th>
+ 		<th nowrap="nowrap" >发布时间</th>
+ 		<th nowrap="nowrap" >附件</th>
+ 	</tr>
+ 	<l:notEmpty property="homeinfos">
+ 	<l:iterate id="ids" property="homeinfos">
+ 	<tr  class="<l:output evenOutput='EOS_table_row1' />">
+ 		<td nowrap="nowrap"><d:write iterateId="ids" property="messageType" dictTypeId="ZHPT_MESSAGE_TYPE"/></td>
+ 		<td nowrap="nowrap"><a href="#" onclick="doLink('<b:write iterateId="ids" property="messageId" />','<b:write iterateId="ids" property="status" />')"><b:write iterateId="ids" property="messageTitle"/></a></td>
+ 		<td nowrap="nowrap"><b:write iterateId="ids" property="orgname"/></td>
+ 		<td nowrap="nowrap"><b:write iterateId="ids" property="empname"/></td>
+ 		<td nowrap="nowrap"><b:write iterateId="ids" property="createDate" /></td>
+ 		<td nowrap="nowrap">
+ 		 <l:equal iterateId="ids" property="existsFile" targetValue="1" compareType="string">
+ 		 <!--<b:write iterateId="ids" property="existsFile"/>
+         -->
+         <img src="/images/filepng.png" style="width:20px;height:20px;"/>
+         </l:equal>
+ 		 </td>
+ 	</tr> 	
+ 	</l:iterate>
+ 	<tr><td colspan="6" style="text-align:right;height: 22px;"><a href="/messagePublish/tMessagePublishAction_queryTMessagePublishList.action?message.status=0">更多...</a></td></tr>
+ 	</l:notEmpty>
+ 	<l:empty property="homeinfos">
+ 	<tr><td  colspan="6" style="color:red">无待办信息</td></tr>
+ 	</l:empty>
+ </table> 		
+  </div>
+ 
+  <div class="fbItem">
+	<div class="ItemTitle">
+		<span class="title_span">待办事件</span>
+	</div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%"  class="EOS_table1">
+ 	<tr>
+ 		<th nowrap="nowrap" >工作事项类别</th>
+ 		<th nowrap="nowrap" >标题</th>
+ 		<!-- <th nowrap="nowrap" >处理事项</th> -->
+ 		<th nowrap="nowrap" >发起部门</th>
+ 		<th nowrap="nowrap" >上一处理人</th>
+ 		<th nowrap="nowrap" >提交时间</th>
+ 	</tr> 
+ 	<l:notEmpty property="processTaskAssignees">
+ 	<l:iterate id="ids" property="processTaskAssignees">
+ 	<tr class="<l:output evenOutput='EOS_table_row1' />">
+ 		<td nowrap="nowrap"><d:write iterateId="ids" property="businessType" dictTypeId="ZHPT_BUSINESS_TYPE"/></td>
+ 		<td nowrap="nowrap"><%-- <a href="/jbpm/jbpmDemoAction_handle.action?taskAssgineeDto.businessKey=<b:write iterateId="ids" property="businessKey"/>&taskAssgineeDto.nextTaskId=<b:write iterateId="ids" property="nextTaskId"/>&taskAssgineeDto.executionId=<b:write iterateId="ids" property="executionId"/>&taskAssgineeDto.businessType=<b:write iterateId="ids" property="businessType"/>&taskAssgineeDto.taskAssingee=<b:write iterateId="ids" property="preTaskAssingee"/>"><b:write iterateId="ids" property="businessTitle" /></a> --%>
+ 		<a href="javascript:viewBussinessDetail('<b:write iterateId="ids" property="businessKey"/>','<b:write iterateId="ids" property="nextTaskId"/>','<b:write iterateId="ids" property="executionId"/>','<b:write iterateId="ids" property="businessType"/>','<b:write iterateId="ids" property="preTaskAssingee"/>','<b:write iterateId="ids" property="assignee"/>','<b:write iterateId="ids" property="processTaskAssigneeId"/>','<b:write iterateId="ids" property="parentId"/>','<b:write iterateId="ids" property="isChild"/>');"><b:write iterateId="ids" property="businessTitle" /></a></td>
+ 		<!-- <td nowrap="nowrap"><b:write iterateId="ids" property="processName"/></td> -->
+ 		<td nowrap="nowrap"><b:write iterateId="ids" property="preTaskOrgName"/></td>
+ 		<td nowrap="nowrap"><b:write iterateId="ids" property="preTaskAssingeeName"/></td>
+ 		<td nowrap="nowrap"><b:write iterateId="ids" property="preTaskTime"  formatPattern="yyyy-MM-dd HH:mm:ss"/></td>
+ 	</tr> 	
+ 	</l:iterate> 	
+ 	<tr><td colspan="6" style="text-align:right;height: 22px;"><a href="/jbpm/tProcessTaskAssigneeAction_queryMyToDoTasksList.action">更多...</a></td></tr>
+ 	</l:notEmpty>
+  	<l:empty property="processTaskAssignees">
+ 	<tr><td colspan="6" style="color:red">无待办事件</td></tr>
+ 	</l:empty>
+  </table>
+ </div>
+ 
+ <!-- 20140904新增显示窗口 -->
+<table width="100%">
+<tr><td width="50%" valign="top">
+ <div class="fbItem">
+	<div class="ItemTitle">
+		<span class="title_span">督办提醒</span>
+	</div>
+ <table align="center" cellpadding="0" cellspacing="0" width="100%"  class="EOS_table1">
+ 	<tr>
+ 		<th nowrap="nowrap" >标题</th>
+ 		<th nowrap="nowrap" >完成时限</th>
+ 	</tr> 
+ 	<l:notEmpty property="supAssignees">
+ 	<l:iterate id="ids" property="supAssignees">
+ 	<tr class="<l:output evenOutput='EOS_table_row1' />">
+ 		<td nowrap="nowrap"><%-- <a href="/jbpm/jbpmDemoAction_handle.action?taskAssgineeDto.businessKey=<b:write iterateId="ids" property="businessKey"/>&taskAssgineeDto.nextTaskId=<b:write iterateId="ids" property="nextTaskId"/>&taskAssgineeDto.executionId=<b:write iterateId="ids" property="executionId"/>&taskAssgineeDto.businessType=<b:write iterateId="ids" property="businessType"/>&taskAssgineeDto.taskAssingee=<b:write iterateId="ids" property="preTaskAssingee"/>"><b:write iterateId="ids" property="businessTitle" /></a> --%>
+ 		<a href="javascript:viewBussinessDetail('<b:write iterateId="ids" property="businessKey"/>','<b:write iterateId="ids" property="nextTaskId"/>','<b:write iterateId="ids" property="executionId"/>','<b:write iterateId="ids" property="businessType"/>','<b:write iterateId="ids" property="preTaskAssingee"/>','<b:write iterateId="ids" property="assignee"/>','<b:write iterateId="ids" property="processTaskAssigneeId"/>','<b:write iterateId="ids" property="parentId"/>','<b:write iterateId="ids" property="isChild"/>');"><b:write iterateId="ids" property="businessTitle" /></a></td>
+ 		<!-- <td nowrap="nowrap"><b:write iterateId="ids" property="processName"/></td> -->
+ 		<td nowrap="nowrap"><b:write iterateId="ids" property="preTaskTime"  formatPattern="yyyy-MM-dd"/></td>
+ 	</tr> 	
+ 	</l:iterate> 	
+ 	<tr><td colspan="6" style="text-align:right;height: 22px;"><a href="/jbpm/tProcessTaskAssigneeAction_queryMyToDoTasksList.action">更多...</a></td></tr>
+ 	</l:notEmpty>
+  	<l:empty property="supAssignees">
+ 	<tr><td colspan="6" style="color:red">无督办提醒</td></tr>
+ 	</l:empty>
+  </table>
+ </div>
+ </td>
+ 
+<td width="50%" valign="top">
+ <div class="fbItem">
+	<div class="ItemTitle">
+		<span class="title_span">会议通知</span>
+	</div>
+ <table align="center" cellpadding="0" cellspacing="0" width="100%"  class="EOS_table1">
+ 	<tr>
+ 		<th nowrap="nowrap" >标题</th>
+ 		<th nowrap="nowrap" >发起部门</th>
+ 		<th nowrap="nowrap" >会议时间</th>
+ 	</tr> 
+ 	<l:notEmpty property="mettingList">
+ 	<l:iterate id="id1" property="mettingList">
+ 	<tr class="<l:output evenOutput='EOS_table_row1' />">
+ 		<td nowrap="nowrap"><%-- <a href="/jbpm/jbpmDemoAction_handle.action?taskAssgineeDto.businessKey=<b:write iterateId="ids" property="businessKey"/>&taskAssgineeDto.nextTaskId=<b:write iterateId="ids" property="nextTaskId"/>&taskAssgineeDto.executionId=<b:write iterateId="ids" property="executionId"/>&taskAssgineeDto.businessType=<b:write iterateId="ids" property="businessType"/>&taskAssgineeDto.taskAssingee=<b:write iterateId="ids" property="preTaskAssingee"/>"><b:write iterateId="ids" property="businessTitle" /></a> --%>
+ 		<a href="javascript:viewMettingDetail('<b:write iterateId="id1" property="recId"/>','<b:write iterateId="id1" property="status"/>','<b:write iterateId="id1" property="mettingId"/>');"><b:write iterateId="id1" property="title" /></a></td>
+ 		<!-- <td nowrap="nowrap"><b:write iterateId="ids" property="processName"/></td> -->
+ 		<td nowrap="nowrap"><b:write iterateId="id1" property="orgname"/></td>
+ 		<td nowrap="nowrap"><b:write iterateId="id1" property="mettingTime"  formatPattern="yyyy-MM-dd HH:mm:ss"/></td>
+ 	</tr> 	
+ 	</l:iterate> 	
+ 	<tr><td colspan="6" style="text-align:right;height: 22px;"><a href="/mettingApply/tMettingApplyAction_queryMettingApplyList.action">更多...</a></td></tr>
+ 	</l:notEmpty>
+  	<l:empty property="mettingList">
+ 	<tr><td colspan="6" style="color:red">无会议通知</td></tr>
+ 	</l:empty>
+  </table>
+ </div>
+ </td>
+ </tr>
+ </table>
+  </div>
+  <script>function callBack(){
+	  location.reload();
+	  }
+  /**
+	* 2014.9.1 改为弹出框'<b:write iterateId="ids" property="processTaskAssigneeId"/>'
+	**/
+  function viewBussinessDetail(businessKey,nextTaskId,executionId,businessType,preTaskAssingee,assignee,processTaskAssigneeId,parentId,isChild){
+	  var strUrl = "/jbpm/jbpmDemoAction_handle.action?taskAssgineeDto.businessKey="+businessKey+"&taskAssgineeDto.nextTaskId="+nextTaskId+"&taskAssgineeDto.executionId="+executionId+"&taskAssgineeDto.businessType="+businessType+"&taskAssgineeDto.taskAssingee="+preTaskAssingee+"&taskAssgineeDto.preTaskAssingee="+assignee+"&taskAssgineeDto.processTaskAssigneeId="+processTaskAssigneeId+"&taskAssgineeDto.parentId="+parentId+"&taskAssgineeDto.isChild="+isChild;
+		showModalCenter(encodeURI(strUrl), null, callBack, 1050, 520, '详情');
+	  }
+  function viewMettingDetail(recId,status,mettingId){
+	  var strUrl = "/mettingApply/tMettingApplyAction_info.action?meet.recId="+recId+"&meet.status="+status+"&meet.mettingId="+mettingId;
+		showModalCenter(encodeURI(strUrl), null, callBack, 1050, 520, '会议详情');
+	  }
+  </script>
+  </body>
+</html>

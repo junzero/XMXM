@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" package="com.gotop.vo.util">
+ <class name="AttachmentInfo" table="TATTACHMENTINFO">
+  <id name="attid" column="ATTID" type="java.lang.Integer">
+	<generator class="sequence">
+		<param name="sequence">SEQ_TATTACHMENTINFO</param>
+	</generator>
+  </id>
+  <property name="upattmodcd" type="java.lang.String">
+   <column length="20" name="UPATTMODCD"/>
+  </property>
+  <property name="primarytbleid" type="java.lang.Integer">
+   <column name="PRIMARYTBLEID"/>
+  </property>
+  <property name="attname" type="java.lang.String">
+   <column length="512" name="ATTNAME"/>
+  </property>
+  <property name="attstoragepath" type="java.lang.String">
+   <column length="256" name="ATTSTORAGEPATH"/>
+  </property>
+  <property name="attsize" type="java.lang.Long">
+   <column name="ATTSIZE"/>
+  </property>
+  <property name="attstatus" type="java.lang.String">
+   <column length="1" name="ATTSTATUS"/>
+  </property>
+  <property name="createdate" type="java.util.Date">
+   <column name="CREATEDATE" length="23"/>
+  </property>
+  <property name="updatedate" type="java.util.Date">
+   <column name="UPDATEDATE" length="23"/>
+  </property>
+  
+  <property name="orgid" type="java.lang.String">
+      <column name="ORGID" length="24" />
+  </property>
+  <property name="userid" type="java.lang.Integer">
+      <column name="USERID"/>
+  </property>
+  
+ </class>
+</hibernate-mapping>

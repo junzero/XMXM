@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.5</Version>
+<XMLVersion>20091127</XMLVersion>
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<XMLVersion>20091130</XMLVersion><ColumnNames><![CDATA[Product,,.,,Project,,.,,target_date]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[Kos1Y_CuNhch/gZ"+auuC\94n&!bK_4GU4U+=87kMLTP@%i,e34jKOfSaFg=3T:3:+N)_iX`
+,anAY^Z"1H?G-ZDIWAes%a8B8!P
+7CDKG%OUTeGoN>WlTumoO+\7B;4Nk7Fa.'sC#ARjI-Qg`
+;.hbdE6(([![6$,Hkl]AV]AJ8^<$b3P9OSW%UsbrehF29pE35#kXHX
+(Ik]AgL,l"%XkLZR"qMhU
+d)e9bZ+C!b:*=166<9Y^s?@u;%=;_-N~
+
+]]>
+</RowData>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters>
+</Parameters>
+<XMLVersion>20091130</XMLVersion><ColumnNames><![CDATA[month,,.,,monthname]]></ColumnNames><ColumnTypes><![CDATA[class java.lang.String,class java.lang.String]]></ColumnTypes><RowData>
+<![CDATA[1GIn^9$H<N0]AI1I:#[o^k4DA!i\E4HF=[DiVEeH6Q[p$P="-t&3KVDE19f\Y/5>:_YiH3f/`
+\ZDi:KetiA*7NoZJoJ1,S!48PK
+Bh~
+
+]]>
+</RowData>
+</TableData>
+</TableDataMap>
+<ReportSettings orientation="1" headerHeight="0.0" footerHeight="0.0">
+<PaperSize width="23.389" height="33.056" />
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,19,17,19,19,19,19,19,19,19,19]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[123,146,72,72,72,48,94,72,94,72,72]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0"></C>
+<C c="1" r="0" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="Project" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="1" />
+</C>
+<C c="0" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="Product" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="1" s="0"><O t="DSColumn"><Attributes dsName="ds1" columnName="target_date" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+</RG>
+<Result><![CDATA[$$$]]></Result></O>
+<Present class="com.fr.report.cellElement.FormulaPresent">
+<Content><![CDATA[value("ds2", 2, 1, mid($$$, 6, 2), 1) + "-" + mid($$$, 9, 2)]]></Content></Present>
+<Expand dir="0" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

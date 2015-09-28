@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="monthReports" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="113,40,48,48" name="start1">
+      <transition to="工作月报申请"/>
+   </start>
+   <task assignee="#{user}" form="/monthReport/tWorkMonthReportsAction_monthReportInput.action" g="91,128,92,52" name="工作月报申请">
+      <transition g="-13,2" name="同意" to="部门领导审核"/>
+   </task>
+   <task form="/monthReport/tWorkMonthReportsAction_monthReportApprove1.action" g="313,126,92,52" name="部门领导审核">
+      <transition g="-49,-6" name="提交分管" to="分管领导审核"/>
+      <transition g="246,124:-14,-20" name="退回" to="工作月报申请"/>
+      <transition name="提交办公室人员汇总" to="办公室汇总" g="-57,-20"/>
+   </task>
+   <task form="/monthReport/tWorkMonthReportsAction_monthReportApprove2.action" g="314,11,92,52" name="分管领导审核">
+      <transition g="394,97:5,-9" name="批示" to="部门领导审核"/>
+   </task>
+   <task form="/monthReport/tWorkMonthReportsAction_monthReportInstructions.action" g="519,16,92,52" name="行领导批示">
+      <transition g="620,99:0,-8" name="批示" to="办公室汇总"/>
+   </task>
+   <task form="/monthReport/tWorkMonthReportsAction_monthReportGather.action" g="519,127,92,52" name="办公室汇总">
+      <transition name="退回" to="部门领导审核" g="464,117:-9,-20"/>
+      <transition name="提交行领导批示" to="行领导批示" g="-46,-9"/>
+      <transition g="-46,-13" name="提交月重点工作汇总" to="月重点工作汇总"/>
+   </task>
+   <task form="/monthReport/tWorkMonthReportsAction_monthReportApprove1.action" g="517,320,92,52" name="部门领导">
+      <transition g="-34,-26" name="反馈申请人任务" to="申请人任务"/>
+   </task>
+   <task name="月重点工作汇总" g="512,223,104,59" form="/monthReport/tWorkMonthReportsAction_monthReportApprove1.action">
+      <transition name="反馈部门领导" to="部门领导" g="-33,-10"/>
+   </task>
+   <task name="申请人任务" g="320,319,92,52" form="/monthReport/tWorkMonthReportsAction_monthReportApprove1.action">
+      <transition name="结束" to="结束" g="-10,-22"/>
+   </task>
+   <end g="212,322,48,48" name="结束"/>
+</process>

@@ -1,0 +1,1 @@
+native2ascii -reverse -encoding gb2312 application_zh_CN.properties application.properties

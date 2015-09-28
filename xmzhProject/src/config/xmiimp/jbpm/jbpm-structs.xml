@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package extends="json-default" name="jbpm" namespace="/jbpm">
+    <action class="jbpmDemoAction" method="{1}" name="jbpmDemoAction_*">
+      <result name="processManager">
+     /jsp/jbpm/jbpm_manager.jsp
+      </result>
+      <result name="jbpmDelSuccess">
+     /jsp/jbpm/success.jsp
+      </result>
+       <result name="jbpm_process_view">
+     /jsp/jbpm/jbpm_process_view.jsp
+      </result>
+        <result name="jbpm_task_view">
+     /jsp/jbpm/jbpm_task_view.jsp
+      </result>
+           <result name="jbpm_instance_list">
+     /jsp/jbpm/jbpm_instance_list.jsp
+      </result>
+           <result name="jbpm_task_list">
+     /jsp/jbpm/jbpm_task_list.jsp
+      </result>
+      
+       <result name="process_task_name_config">
+     /jsp/jbpm/process_task_name_config.jsp
+      </result>
+     
+     <result name="success" type="redirectAction"> 
+		<param name="actionName">${taskUrl}</param> 
+		<param name="namespace">${nameSpace}</param>
+     </result>
+
+      <result name="apply_do.jsp">
+     /jsp/jbpm/apply_do.jsp
+      </result>
+        <result name="teacher_do.jsp">
+     /jsp/jbpm/teacher_do.jsp
+      </result>
+    
+      <result name="task_person_assigner">
+     /jsp/jbpm/task_person_assigner.jsp
+      </result>
+      <result name="task_activity">
+     /jsp/jbpm/task_activity.jsp
+      </result>
+      
+      <!-- 发布流程列表 -->
+      <result name="jbpm_process_deploy_list">
+    	 /jsp/jbpm/jbpm_process_deploy_list.jsp
+      </result>
+      
+      <!-- 发布流程 -->
+      <result name="jbpm_process_deploy">
+    	 /jsp/jbpm/jbpm_process_deploy.jsp
+      </result>
+      
+      <result name="process_task_config_list">
+      /jsp/jbpm/process_task_config_list.jsp
+      </result>
+      
+      
+      <!-- 修改流程 -->
+       <result name="jbpm_process_deploy_upt">
+      /jsp/jbpm/jbpm_process_deploy_upt.jsp
+      </result>
+      
+       <!-- 复制流程 -->
+        <result name="jbpm_process_deploy_copy">
+      /jsp/jbpm/jbpm_process_deploy_copy.jsp
+      </result>
+      
+     <result name="process_task_config">
+      /jsp/jbpm/process_task_config.jsp
+      </result>
+      
+       <result name="process_task_config_upt">
+      /jsp/jbpm/process_task_config_upt.jsp
+      </result>
+      
+      <result name="jbpm_online_design">
+      /jsp/jbpm/jbpm_online_design.jsp
+      </result>
+      
+      <result name="jbpm_online_design_upt">
+      /jsp/jbpm/jbpm_online_design_upt.jsp
+      </result>
+      
+    </action>
+    
+    <action class="tProcessConfigAction" method="{1}" name="tProcessConfigAction_*">
+        <!-- 我的流程 -->
+      <result name="my_process_list">
+        /jsp/jbpm/my_process_list.jsp
+      </result>
+      
+        <result name="definitions" type="json">
+		   <param name="root">configs</param>
+	  </result>
+    </action>
+    
+    <action class="tProcessConfigPersonAction" method="{1}" name="tProcessConfigPersonAction_*">
+      <result name="viewlist">
+       /jsp/jbpm/tProcessConfigPersonDatacell.jsp
+      </result>
+    </action>
+
+	<action class="tProcessTaskAssigneeAction" method="{1}" name="tProcessTaskAssigneeAction_*">
+		<result name="viewlist">
+			/jsp/jbpm/tProcessTaskAssigneeDatacell.jsp
+		</result>
+		<!-- 我的已办 -->
+		<result name="my_completed_tasks">
+			/jsp/jbpm/my_completed_tasks.jsp
+		</result>
+		<!-- 我的待办 -->
+		<result name="my_todo_tasks">
+			/jsp/jbpm/my_todo_tasks.jsp
+		</result>
+		<result name="my_sup_tasks">
+			/jsp/jbpm/my_sup_tasks.jsp
+		</result>
+		<!-- 我的草稿 -->
+		<result name="my_drafts">
+			/jsp/jbpm/my_drafts.jsp
+		</result>
+		    <!-- 我发起的流程 -->
+       <result name="myStartProcessList">
+      /jsp/jbpm/my_start_process_list.jsp
+      </result>
+      <result name="downexl">
+      /jsp/jbpm/my_completed_downexl.jsp
+      </result>
+	</action>
+    
+    <action class="tProcessTaskAssigneePersonAction" method="{1}" name="tProcessTaskAssigneePersonAction_*">
+      <result name="viewlist">
+       /jsp/jbpm/tProcessTaskAssigneePersonDatacell.jsp
+      </result>
+    </action>
+    
+    <action class="tProcessTaskExeConfigAction" method="{1}" name="tProcessTaskExeConfigAction_*">
+      <result name="viewlist">
+       /jsp/jbpm/tProcessTaskExeConfigDatacell.jsp
+      </result>
+    </action>
+  
+    
+    <action class="tProcessBusinessAction" method="{1}" name="tProcessBusinessAction_*">
+      <result name="viewlist">
+        /jsp/jbpm/tProcessBusinessDatacell.jsp
+      </result>
+    </action>
+    
+    <action class="tProcessBusinessConfigAction" method="{1}" name="tProcessBusinessConfigAction_*">
+      <result name="viewlist">
+        /jsp/jbpm/tProcessBusinessConfigDatacell.jsp
+      </result>
+    </action>
+    </package>
+</struts>

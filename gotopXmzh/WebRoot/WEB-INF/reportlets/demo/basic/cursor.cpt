@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="Air_Accidents" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM [Air_Accidents]A]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="44640000" height="42768000"/>
+<Margin top="986400" left="583200" bottom="986400" right="871200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[1295400,838200,952500,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[6400800,1524000,5143500,1600200,5867400,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="5" s="0">
+<O>
+<![CDATA[Airline Accidents per Mio.Flights]]></O>
+<Expand/>
+</C>
+<C c="0" r="1" s="1">
+<O>
+<![CDATA[Regions]]></O>
+<Expand/>
+</C>
+<C c="1" r="1" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="Air_Accidents" columnName="年份"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="1"/>
+</C>
+<C c="3" r="1" cs="2" s="1">
+<O>
+<![CDATA[Average per Region]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" s="2">
+<O t="DSColumn">
+<Attributes dsName="Air_Accidents" columnName="Regions"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="1"/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="Air_Accidents" columnName="次数"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="2" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[="<table width=" + ROUND(B3 * 1000 / SUM(B3[!0;!0]A), 2) + "% border=0 cellspacing=0 cellpadding=0> <tr> <td bgcolor=#D77D89><div color=#ffffff align=right>&nbsp</div></td> </tr> </table>"]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="0" showAsHTML="true"/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand/>
+</C>
+<C c="3" r="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="Air_Accidents" columnName="次数"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.AverageFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand leftParentDefault="false" left="A3"/>
+</C>
+<C c="4" r="2" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[="<table width=" + ROUND(D3 * 400 / SUM(D3[!0;!0]A), 2) + "% border=0 cellspacing=0 cellpadding=0> <tr> <td bgcolor=#D77D89><div color=#ffffff align=right>&nbsp</div></td> </tr> </table>"]]></Attributes>
+</O>
+<CellGUIAttr adjustmode="0" showAsHTML="true"/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand leftParentDefault="false" left="A3"/>
+</C>
+<C c="0" r="3" s="5">
+<Expand/>
+</C>
+<C c="1" r="3" s="5">
+<Expand/>
+</C>
+<C c="2" r="3" s="5">
+<Expand/>
+</C>
+<C c="3" r="3" s="5">
+<Expand/>
+</C>
+<C c="4" r="3" s="5">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="微软雅黑" style="0" size="120" foreground="-2654839"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="黑体" style="0" size="104"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Bottom style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72" foreground="-2654839"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style textStyle="2">
+<FRFont name="SimSun" style="0" size="72" foreground="-16776961"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

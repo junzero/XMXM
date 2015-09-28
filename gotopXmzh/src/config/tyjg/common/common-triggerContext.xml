@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- 4、配置调度器 ，容器启动就会执行调度程序  -->   
+      <!-- 总管理类，如果lazy-init='false',则容器启动时就会执行调度程序-->      
+      <!-- 如果lazy-init='true',则需要实例化该bean才能执行调度程序            -->      
+    <bean id="schdulerFactory" lazy-init="false" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">   
+         <property name="triggers">   
+             <list>   
+                 <ref bean="atUploadCronTrigger"/>   
+             </list>   
+         </property>   
+    </bean>  
+	<bean id="atUploadCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="schedulerAtUploadJobDetail"/>
+		<property name="cronExpression">
+ 			<value>0 0 0 1 * ?</value>
+		</property>
+	</bean>
+	
+	<bean id="schedulerAtUploadJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="scheduleAtUploadService"/>
+		<property name="targetMethod" value="deleteAtUploadJob"/>
+		<property name="concurrent" value="false"/>
+	</bean>
+	
+	<bean id="scheduleAtUploadService" class="com.gotop.tyjg.common.service.impl.ScheduleAtUploadService">
+		<property name="attachmentService" ref="attachmentService"/>
+	</bean>
+</beans>

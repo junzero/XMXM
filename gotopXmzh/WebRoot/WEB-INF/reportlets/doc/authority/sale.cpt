@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20100331">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<ColumnNames>
+<![CDATA[地区,,.,,销售员,,.,,产品类型,,.,,产品,,.,,销量,,.,,日期,,.,,销售成本]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.Double]]></ColumnTypes>
+<RowData>
+<![CDATA[NDqu7_a"d8Qda1Hbc]At]A%7MP<8=[I^/eE":M$D*ZBdbA8"Tf"AFAYp=TpuAB3<oHcH$@iJ>e
+%$1k5@F&D#\d,H5>ODr#jGTGJ67si]A1jV64sP-&5&$V."mN&JnD3ur+l+TgnZSrEA^1Y/$oF
+UMEGuJS?@&2G$b5_+F!dI^]A.gd`r_+b,4g)ugoJfm6`:u<[t7T3(uo+4$tILHOfBVC\IWVtJ
+/BpTZ^BKK:ANs[]ADZ5B9[aPqBq,:H^^QJW'<qK#5OW1UfKpX0PsI45a,OJT0\siVQ@jgHSSe
+]AZ;lIT/U745N^UD?#,rs=iKoiCDk$q^^)MX-6r<*<AG9(uB-1QDE-\K!u)hm":o/B!>-2#'S
+5D4V0XI"H(?r$""f27^d[Od*FCt?/HE9:[6Xf'.CkE&5_n=Jqif?t`~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,30,9,21,19,19,19,19,19,19,19]]></RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[90,72,82,101,86,89,72,72,72,72,72]]></ColumnWidth>
+<CellElementList>
+<C c="5" r="0">
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<O>
+<![CDATA[名称(用户名)：]]></O>
+<Expand/>
+</C>
+<C c="1" r="1" cs="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$fr_username]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="1" cs="2" s="0">
+<O>
+<![CDATA[部门（对应角色）：]]></O>
+<Expand/>
+</C>
+<C c="5" r="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$fr_authority]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="3" s="1">
+<O>
+<![CDATA[地区]]></O>
+<Expand/>
+</C>
+<C c="1" r="3" s="1">
+<O>
+<![CDATA[销售员]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="1">
+<O>
+<![CDATA[产品类型]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="1">
+<O>
+<![CDATA[产品]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="1">
+<O>
+<![CDATA[销量]]></O>
+<Expand/>
+</C>
+<C c="5" r="3" s="1">
+<O>
+<![CDATA[销售成本]]></O>
+<Expand/>
+</C>
+<C c="0" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="地区"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="销售员"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="产品类型"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="产品"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="销量"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="销售成本"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="ColorBackground" color="-3355393"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

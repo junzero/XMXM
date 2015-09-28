@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="237,0" dimension="358,84" />
+  <StrutsActivity path="/logout.do" location="3973,5179" dimension="358,84" />
+  <StrutsActivity path="/menu.do" location="1984,0" dimension="358,84" />
+  <StrutsActivity path="/systemdictionary.do" location="3400,2409" dimension="358,84" />
+  <StrutsActivity path="/txtpz.do" location="1791,4348" dimension="358,84" />
+  <StrutsActivity path="/function.do" location="3950,1750" dimension="358,84" />
+  <StrutsActivity path="/tableinfo.do" location="3050,2150" dimension="358,84" />
+  <StrutsActivity path="/menugroup.do" location="4550,2050" dimension="358,84" />
+  <StrutsActivity path="/menur.do" location="2450,50" dimension="358,84" />
+  <StrutsActivity path="/user.do" location="1586,2112" dimension="358,84" />
+  <StrutsActivity path="/role.do" location="2533,2112" dimension="358,84" />
+  <StrutsActivity path="/organ.do" location="776,4625" dimension="358,84" />
+  <StrutsActivity path="/mkjb.do" location="3684,4625" dimension="358,84" />
+  <StrutsActivity path="/rptDir.do" location="191,3517" dimension="358,84" />
+  <StrutsActivity path="/imprptAction.do" location="1216,4071" dimension="358,84" />
+  <StrutsActivity path="/classgroupAction.do" location="4087,4625" dimension="358,84" />
+  <StrutsActivity path="/customfieldAction.do" location="4690,4348" dimension="358,84" />
+  <StrutsActivity path="/displaySettingAction.do" location="4490,4625" dimension="358,84" />
+  <StrutsActivity path="/mergerRecordsAction.do" location="1427,4625" dimension="358,84" />
+  <StrutsActivity path="/custcareinfoAction.do" location="4893,4625" dimension="358,84" />
+  <StrutsActivity path="/emailTemplateAction.do" location="2654,4348" dimension="358,84" />
+  <StrutsActivity path="/custdirectedcareinfoAction.do" location="0,4902" dimension="358,84" />
+  <StrutsActivity path="/superQueryAction.do" location="2030,4625" dimension="358,84" />
+  <StrutsActivity path="/highLevelQueryAction.do" location="403,4902" dimension="358,84" />
+  <StrutsActivity path="/chartReportAction.do" location="272,3794" dimension="358,84" />
+  <StrutsActivity path="/groupBaseAction.do" location="3077,4071" dimension="358,84" />
+  <StrutsActivity path="/groupInfoAction.do" location="3994,4071" dimension="358,84" />
+  <StrutsActivity path="/rootpad.do" location="806,4902" dimension="358,84" />
+  <StrutsActivity path="/bmessage.do" location="3974,2112" dimension="358,84" />
+  <StrutsActivity path="/bagenda.do" location="117,4348" dimension="358,84" />
+  <StrutsActivity path="/boutregisterInfo.do" location="3432,3240" dimension="358,84" />
+  <StrutsActivity path="/bscratchpad.do" location="144,4071" dimension="358,84" />
+  <StrutsActivity path="/blinkprogram.do" location="548,1488" dimension="358,84" />
+  <StrutsActivity path="/bnotice.do" location="3221,1815" dimension="358,84" />
+  <StrutsActivity path="/txl.do" location="1209,4902" dimension="358,84" />
+  <StrutsActivity path="/baction.do" location="2511,3240" dimension="358,84" />
+  <StrutsActivity path="/tDbsybAction.do" location="1250,2450" dimension="358,84" />
+  <StrutsActivity path="/com.gotop.struts.action.tDbsybAction.do" location="4250,250" dimension="358,84" />
+  <StrutsActivity path="/richweb_demo.do" location="2450,2450" dimension="358,84" />
+  <StrutsActivity path="/common.do" location="4550,2450" dimension="362,104" />
+  <StrutsActivity path="publicSuccess;6" location="2418,5179" dimension="208,72" />
+  <StrutsActivity path="publicFailure;6" location="2671,5179" dimension="208,72" />
+  <StrutsActivity path="failure;6" location="3159,5179" dimension="172,72" />
+  <StrutsActivity path="success;6" location="3376,5179" dimension="172,72" />
+  <StrutsActivity path="home;6" location="3786,5179" dimension="142,72" />
+  <StrutsActivity path="impFailure;6" location="2924,5179" dimension="190,72" />
+  <StrutsActivity path="download;6" location="3593,5179" dimension="148,72" />
+  <StrutsActivity path="/jsp/home/top.jsp" location="484,354" dimension="142,48" />
+  <StrutsActivity path="/jsp/prelogin.jsp" location="0,354" dimension="142,48" />
+  <StrutsActivity path="/jsp/default1.jsp" location="242,354" dimension="142,48" />
+  <StrutsActivity path="/jsp/home/left.jsp" location="974,354" dimension="148,48" />
+  <StrutsActivity path="/jsp/home/root.jsp" location="726,354" dimension="148,48" />
+  <StrutsActivity path="/jsp/system/function/displayMenu.jsp" location="1850,1850" dimension="256,48" />
+  <StrutsActivity path="/jsp/product/productdetails.jsp" location="1222,354" dimension="226,48" />
+  <StrutsActivity path="/jsp/sellrequirement/selldetails.jsp" location="2212,354" dimension="256,48" />
+  <StrutsActivity path="/jsp/sellorder/sellorderdetails.jsp" location="1862,354" dimension="250,48" />
+  <StrutsActivity path="/jsp/system/menu/update.jsp" location="1250,1850" dimension="202,48" />
+  <StrutsActivity path="/jsp/report/graphdetails.jsp" location="2568,354" dimension="208,48" />
+  <StrutsActivity path="/jsp/services/servicesdetails.jsp" location="3528,354" dimension="238,48" />
+  <StrutsActivity path="/jsp/marketactive/marketactivedetails.jsp" location="3866,354" dimension="286,48" />
+  <StrutsActivity path="/jsp/office/officedetails.jsp" location="1548,354" dimension="214,48" />
+  <StrutsActivity path="/jsp/customer/customerdetails.jsp" location="2876,354" dimension="238,48" />
+  <StrutsActivity path="/jsp/system/systemdetails.jsp" location="3214,354" dimension="214,48" />
+  <StrutsActivity path="/jsp/system/queryform/displayFormMenu.jsp" location="950,2150" dimension="286,48" />
+  <StrutsActivity path="/jsp/subsystem/systemdictionary/update.jsp" location="3038,2593" dimension="292,48" />
+  <StrutsActivity path="/jsp/subsystem/systemdictionary/default.jsp" location="3430,2593" dimension="298,48" />
+  <StrutsActivity path="/jsp/subsystem/systemdictionary/add.jsp" location="3828,2593" dimension="274,48" />
+  <StrutsActivity path="/jsp/subsystem/systemdictionary/tree.jsp" location="4202,2593" dimension="280,48" />
+  <StrutsActivity path="/jsp/util/xtpz/update.jsp" location="1708,4532" dimension="190,48" />
+  <StrutsActivity path="/jsp/util/xtpz/index.jsp" location="1998,4532" dimension="184,48" />
+  <StrutsActivity path="/jsp/util/xtpz/add.jsp" location="2282,4532" dimension="172,48" />
+  <StrutsActivity path="/jsp/system/function/displayFunction.jsp" location="4550,1950" dimension="280,48" />
+  <StrutsActivity path="/jsp/system/function/index.jsp" location="3650,1750" dimension="220,48" />
+  <StrutsActivity path="/jsp/system/function/add.jsp" location="4850,1750" dimension="208,48" />
+  <StrutsActivity path="/jsp/system/function/update.jsp" location="350,1850" dimension="226,48" />
+  <StrutsActivity path="/jsp/system/queryform/display.jsp" location="2150,2150" dimension="238,48" />
+  <StrutsActivity path="/jsp/system/queryform/displayMenu.jsp" location="4850,450" dimension="262,48" />
+  <StrutsActivity path="/jsp/system/queryform/add.jsp" location="3650,2150" dimension="214,48" />
+  <StrutsActivity path="/jsp/system/queryform/update.jsp" location="650,2450" dimension="232,48" />
+  <StrutsActivity path="/jsp/system/menugroup/displayMenuGroup.jsp" location="4250,450" dimension="292,48" />
+  <StrutsActivity path="/jsp/system/menugroup/update.jsp" location="50,2150" dimension="232,48" />
+  <StrutsActivity path="/jsp/system/menu/index.jsp" location="650,1850" dimension="196,48" />
+  <StrutsActivity path="/jsp/system/menu/add.jsp" location="950,1850" dimension="184,48" />
+  <StrutsActivity path="/jsp/system/user/update.jsp" location="1359,2296" dimension="202,48" />
+  <StrutsActivity path="/jsp/system/user/default.jsp" location="1661,2296" dimension="208,48" />
+  <StrutsActivity path="/jsp/system/user/add.jsp" location="1969,2296" dimension="184,48" />
+  <StrutsActivity path="/jsp/system/popedom/tree.jsp" location="2253,2296" dimension="208,48" />
+  <StrutsActivity path="/jsp/system/role/update.jsp" location="2561,2296" dimension="202,48" />
+  <StrutsActivity path="/jsp/system/role/default.jsp" location="2863,2296" dimension="208,48" />
+  <StrutsActivity path="/jsp/system/role/add.jsp" location="3171,2296" dimension="184,48" />
+  <StrutsActivity path="/jsp/system/organization/form.jsp" location="663,4809" dimension="238,48" />
+  <StrutsActivity path="/jsp/system/organization/default.jsp" location="1001,4809" dimension="256,48" />
+  <StrutsActivity path="/jsp/subsystem/mkjb/mkjb.jsp" location="3759,4809" dimension="208,48" />
+  <StrutsActivity path="/jsp/rpt/display_rptdir.jsp" location="0,3701" dimension="202,48" />
+  <StrutsActivity path="/jsp/rpt/add.jsp" location="302,3701" dimension="136,48" />
+  <StrutsActivity path="/jsp/rpt/display_chart.jsp" location="538,3701" dimension="196,48" />
+  <StrutsActivity path="/jsp/rpt/update.jsp" location="834,3701" dimension="154,48" />
+  <StrutsActivity path="/jsp/importreport/initimp.jsp" location="953,4255" dimension="214,48" />
+  <StrutsActivity path="/jsp/importreport/initimpbizpage.jsp" location="1267,4255" dimension="256,48" />
+  <StrutsActivity path="/jsp/importreport/proceimp.jsp" location="1623,4255" dimension="220,48" />
+  <StrutsActivity path="/jsp/customize/initcustom.jsp" location="4159,4809" dimension="214,48" />
+  <StrutsActivity path="/jsp/customize/displaycustomizefield.jsp" location="4548,4532" dimension="280,48" />
+  <StrutsActivity path="/jsp/customize/editcustomfield.jsp" location="4928,4532" dimension="244,48" />
+  <StrutsActivity path="/jsp/displaysetting/displaysetting.jsp" location="4535,4809" dimension="268,48" />
+  <StrutsActivity path="/jsp/merger/displayrepeatedrecords.jsp" location="1302,4809" dimension="268,48" />
+  <StrutsActivity path="/jsp/merger/mergerrecords.jsp" location="1670,4809" dimension="214,48" />
+  <StrutsActivity path="/jsp/customer/custcare/initcustcare.jsp" location="4935,4809" dimension="274,48" />
+  <StrutsActivity path="/jsp/emailtemplate/displayemailtemplate.jsp" location="2499,4532" dimension="298,48" />
+  <StrutsActivity path="/jsp/emailtemplate/addorupdate.jsp" location="2897,4532" dimension="244,48" />
+  <StrutsActivity path="/jsp/customer/custcare/directedcare.jsp" location="42,5086" dimension="274,48" />
+  <StrutsActivity path="/jsp/superquery/superquery.jsp" location="1929,4809" dimension="220,48" />
+  <StrutsActivity path="/jsp/superquery/displaysuperquery.jsp" location="2249,4809" dimension="262,48" />
+  <StrutsActivity path="/jsp/highlevelquery/highlevel.jsp" location="463,5086" dimension="238,48" />
+  <StrutsActivity path="/jsp/gotopchart/display_chart.jsp" location="0,3978" dimension="238,48" />
+  <StrutsActivity path="/jsp/gotopchart/reportprint.jsp" location="338,3978" dimension="226,48" />
+  <StrutsActivity path="/jsp/gotopchart/displayreportdesc.jsp" location="664,3978" dimension="262,48" />
+  <StrutsActivity path="/jsp/system/groupbase/index.jsp" location="2823,4255" dimension="226,48" />
+  <StrutsActivity path="/jsp/system/groupbase/add.jsp" location="3149,4255" dimension="214,48" />
+  <StrutsActivity path="/jsp/system/groupbase/update.jsp" location="3463,4255" dimension="232,48" />
+  <StrutsActivity path="/jsp/system/groupinfo/index.jsp" location="3740,4255" dimension="226,48" />
+  <StrutsActivity path="/jsp/system/groupinfo/add.jsp" location="4066,4255" dimension="214,48" />
+  <StrutsActivity path="/jsp/system/groupinfo/update.jsp" location="4380,4255" dimension="232,48" />
+  <StrutsActivity path="/jsp/mainpage/main.jsp" location="899,5086" dimension="172,48" />
+  <StrutsActivity path="/jsp/office/bmessage/display.jsp" location="3400,2296" dimension="232,48" />
+  <StrutsActivity path="/jsp/office/bmessage/add.jsp" location="3732,2296" dimension="208,48" />
+  <StrutsActivity path="/jsp/office/bmessage/update.jsp" location="4040,2296" dimension="226,48" />
+  <StrutsActivity path="/jsp/office/bmessage/forback.jsp" location="4366,2296" dimension="232,48" />
+  <StrutsActivity path="/jsp/office/bmessage/updateCg.jsp" location="4698,2296" dimension="238,48" />
+  <StrutsActivity path="/jsp/office/bagenda/update.jsp" location="0,4532" dimension="220,48" />
+  <StrutsActivity path="/jsp/office/bagenda/index.jsp" location="320,4532" dimension="214,48" />
+  <StrutsActivity path="/jsp/office/bagenda/add.jsp" location="634,4532" dimension="202,48" />
+  <StrutsActivity path="/jsp/office/boutregisterInfo/update.jsp" location="3255,3424" dimension="274,48" />
+  <StrutsActivity path="/jsp/office/boutregisterInfo/index.jsp" location="3629,3424" dimension="268,48" />
+  <StrutsActivity path="/jsp/office/boutregisterInfo/add.jsp" location="3997,3424" dimension="256,48" />
+  <StrutsActivity path="/jsp/office/bscratchpad/update.jsp" location="0,4255" dimension="244,48" />
+  <StrutsActivity path="/jsp/office/bscratchpad/index.jsp" location="344,4255" dimension="238,48" />
+  <StrutsActivity path="/jsp/office/bscratchpad/add.jsp" location="682,4255" dimension="226,48" />
+  <StrutsActivity path="/jsp/office/blinkProgram/service/update.jsp" location="0,1722" dimension="298,48" />
+  <StrutsActivity path="/jsp/office/blinkProgram/update.jsp" location="398,1722" dimension="250,48" />
+  <StrutsActivity path="/jsp/office/blinkProgram/index.jsp" location="748,1722" dimension="244,48" />
+  <StrutsActivity path="/jsp/office/blinkProgram/service/index.jsp" location="1092,1722" dimension="292,48" />
+  <StrutsActivity path="/jsp/office/blinkProgram/add.jsp" location="1484,1722" dimension="232,48" />
+  <StrutsActivity path="/jsp/office/blinkProgram/service/add.jsp" location="1816,1722" dimension="280,48" />
+  <StrutsActivity path="/jsp/office/bnotice/view.jsp" location="2339,2019" dimension="208,48" />
+  <StrutsActivity path="/jsp/office/bnotice/shoper.jsp" location="2647,2019" dimension="220,48" />
+  <StrutsActivity path="/jsp/office/bnotice/display.jsp" location="2967,2019" dimension="226,48" />
+  <StrutsActivity path="/jsp/office/bnotice/index.jsp" location="3293,2019" dimension="214,48" />
+  <StrutsActivity path="/jsp/office/bnotice/add.jsp" location="3607,2019" dimension="202,48" />
+  <StrutsActivity path="/jsp/office/bnotice/update.jsp" location="3909,2019" dimension="220,48" />
+  <StrutsActivity path="/jsp/office/bnotice/dsh.jsp" location="4229,2019" dimension="202,48" />
+  <StrutsActivity path="/jsp/office/txl/print.jsp" location="1293,5086" dimension="190,48" />
+  <StrutsActivity path="/jsp/marketactive/baction/update.jsp" location="2194,3424" dimension="256,48" />
+  <StrutsActivity path="/jsp/marketactive/baction/dxqf_index.jsp" location="2550,3424" dimension="280,48" />
+  <StrutsActivity path="/jsp/marketactive/baction/dxdf_index.jsp" location="2930,3424" dimension="280,48" />
+  <StrutsActivity path="/test/AbfTDbsybDatacell2.jsp" location="2150,2450" dimension="208,48" />
+  <StrutsActivity path="/test/AbfTDbsybDatacell.jsp" location="1850,2450" dimension="202,48" />
+  <StrutsActivity path="/test/webcomp_demo_tld.jsp" location="3050,2450" dimension="196,48" />
+  <StrutsActivity path="/test/AbfTDbsybQuery.jsp" location="950,950" dimension="182,53" />
+  <StrutsActivity path="/jsp/util/dialogsuccess.jsp" location="2421,5351" dimension="202,48" />
+  <StrutsActivity path="/jsp/util/dialogfailure.jsp" location="2674,5351" dimension="202,48" />
+  <StrutsActivity path="/jsp/util/failure.jsp" location="3162,5351" dimension="166,48" />
+  <StrutsActivity path="/jsp/util/success.jsp" location="3379,5351" dimension="166,48" />
+  <StrutsActivity path="/jsp/default.jsp" location="3789,5351" dimension="136,48" />
+  <StrutsActivity path="/jsp/util/impfailure.jsp" location="2927,5351" dimension="184,48" />
+  <StrutsActivity path="/downloadfile.dlf" location="3596,5351" dimension="142,48" />
+  <StrutsActivity path="/jsp/system/function/displayMenuGroup.jsp" location="4550,1850" dimension="286,48" />
+  <StrutsActivity path="/jsp/marketactive/badverrtising/update.jsp" location="2242,3147" dimension="292,48" />
+  <StrutsActivity path="/jsp/marketactive/badverrtising/index.jsp" location="2634,3147" dimension="286,48" />
+  <StrutsActivity path="/jsp/marketactive/badverrtising/add.jsp" location="3020,3147" dimension="274,48" />
+  <StrutsActivity path="/jsp/marketactive/bgiftrecipients/update.jsp" location="4017,2870" dimension="304,48" />
+  <StrutsActivity path="/jsp/marketactive/bgiftrecipients/index.jsp" location="4421,2870" dimension="298,48" />
+  <StrutsActivity path="/jsp/marketactive/bgiftrecipients/add.jsp" location="4819,2870" dimension="286,48" />
+  <StrutsActivity path="/jsp/marketactive/bmarketaction/update.jsp" location="3339,3147" dimension="292,48" />
+  <StrutsActivity path="/jsp/marketactive/bmarketaction/index.jsp" location="3731,3147" dimension="286,48" />
+  <StrutsActivity path="/jsp/marketactive/bmarketaction/add.jsp" location="4117,3147" dimension="274,48" />
+  <StrutsActivity path="/jsp/customer/custinfo/update.jsp" location="0,711" dimension="238,48" />
+  <StrutsActivity path="/jsp/customer/custinfo/query.jsp" location="338,711" dimension="232,48" />
+  <StrutsActivity path="/jsp/customer/custinfo/add.jsp" location="670,711" dimension="220,48" />
+  <StrutsActivity path="/jsp/customer/custsearch/indexfx.jsp" location="990,711" dimension="256,48" />
+  <StrutsActivity path="/jsp/customer/custsearch/query.jsp" location="1346,711" dimension="244,48" />
+  <StrutsActivity path="/jsp/customer/custshare/selectGXR.jsp" location="1690,711" dimension="262,48" />
+  <StrutsActivity path="/jsp/customer/custapp/selectAPP.jsp" location="2052,711" dimension="250,48" />
+  <StrutsActivity path="/jsp/customer/custinfo/updategrkh.jsp" location="2402,711" dimension="262,48" />
+  <StrutsActivity path="/jsp/customer/custapp/index.jsp" location="2764,711" dimension="226,48" />
+  <StrutsActivity path="/jsp/customer/custshare/index.jsp" location="3090,711" dimension="238,48" />
+  <StrutsActivity path="/jsp/customer/custinfo/updateqykh.jsp" location="3428,711" dimension="262,48" />
+  <StrutsActivity path="/jsp/customer/custsearch/custfile/update.jsp" location="0,3147" dimension="304,48" />
+  <StrutsActivity path="/jsp/customer/custsearch/custfile/index.jsp" location="404,3147" dimension="298,48" />
+  <StrutsActivity path="/jsp/customer/custsearch/custfile/add.jsp" location="802,3147" dimension="286,48" />
+  <StrutsActivity path="/jsp/contact/contactinfo/update.jsp" location="971,3978" dimension="250,48" />
+  <StrutsActivity path="/jsp/contact/contactinfo/index.jsp" location="1321,3978" dimension="244,48" />
+  <StrutsActivity path="/jsp/contact/contactinfo/add.jsp" location="1665,3978" dimension="232,48" />
+  <StrutsActivity path="/jsp/contact/memorialinfo/update.jsp" location="3065,3701" dimension="256,48" />
+  <StrutsActivity path="/jsp/contact/memorialinfo/index.jsp" location="3421,3701" dimension="250,48" />
+  <StrutsActivity path="/jsp/contact/memorialinfo/add.jsp" location="3771,3701" dimension="238,48" />
+  <StrutsActivity path="/jsp/vip/card/search/index.jsp" location="0,2316" dimension="220,48" />
+  <StrutsActivity path="/jsp/vip/card/update.jsp" location="320,2316" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/card/query.jsp" location="604,2316" dimension="178,48" />
+  <StrutsActivity path="/jsp/vip/card/add.jsp" location="882,2316" dimension="166,48" />
+  <StrutsActivity path="/jsp/vip/ev/query.jsp" location="1148,2316" dimension="166,48" />
+  <StrutsActivity path="/jsp/vip/card/bg/update.jsp" location="580,1395" dimension="202,48" />
+  <StrutsActivity path="/jsp/vip/card/bg/index.jsp" location="284,1395" dimension="196,48" />
+  <StrutsActivity path="/jsp/vip/card/bg/add.jsp" location="0,1395" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/card/search/success.jsp" location="1438,1395" dimension="232,48" />
+  <StrutsActivity path="/jsp/vip/card/cz/update.jsp" location="3208,1395" dimension="202,48" />
+  <StrutsActivity path="/jsp/vip/card/cz/index.jsp" location="3794,1395" dimension="196,48" />
+  <StrutsActivity path="/jsp/vip/card/cz/add.jsp" location="3510,1395" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/card/sj/update.jsp" location="0,2870" dimension="202,48" />
+  <StrutsActivity path="/jsp/vip/card/sj/index.jsp" location="302,2870" dimension="196,48" />
+  <StrutsActivity path="/jsp/vip/card/up/shUpdate.jsp" location="598,2870" dimension="214,48" />
+  <StrutsActivity path="/jsp/vip/card/up/add.jsp" location="912,2870" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/card/up/update.jsp" location="1196,2870" dimension="202,48" />
+  <StrutsActivity path="/jsp/vip/card/zz/update.jsp" location="2906,1395" dimension="202,48" />
+  <StrutsActivity path="/jsp/vip/card/zz/index.jsp" location="2610,1395" dimension="196,48" />
+  <StrutsActivity path="/jsp/vip/card/zz/add.jsp" location="2326,1395" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/card/hk/update.jsp" location="881,4532" dimension="202,48" />
+  <StrutsActivity path="/jsp/vip/card/hk/index.jsp" location="1183,4532" dimension="196,48" />
+  <StrutsActivity path="/jsp/vip/card/hk/add.jsp" location="1479,4532" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/ev/bg/index.jsp" location="2042,1395" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/ev/bg/add.jsp" location="1770,1395" dimension="172,48" />
+  <StrutsActivity path="/jsp/vip/ev/dh/index.jsp" location="1154,1395" dimension="184,48" />
+  <StrutsActivity path="/jsp/vip/ev/dh/add.jsp" location="882,1395" dimension="172,48" />
+  <StrutsActivity path="/jsp/jfpz/add.jsp" location="1720,5086" dimension="142,48" />
+  <StrutsActivity path="/jsp/vip/card/up/configUpdate.jsp" location="1888,4255" dimension="238,48" />
+  <StrutsActivity path="/jsp/vip/card/up/configIndex.jsp" location="2226,4255" dimension="232,48" />
+  <StrutsActivity path="/jsp/vip/card/up/configAdd.jsp" location="2558,4255" dimension="220,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellchance/update.jsp" location="0,1068" dimension="292,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellchance/index.jsp" location="392,1068" dimension="286,48" />
+  <StrutsActivity path="/jsp/sellrequirement/display/history/index.jsp" location="778,1068" dimension="316,48" />
+  <StrutsActivity path="/jsp/sellrequirement/display/index.jsp" location="1194,1068" dimension="268,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellchance/add.jsp" location="1562,1068" dimension="274,48" />
+  <StrutsActivity path="/jsp/sellrequirement/display/showall.jsp" location="1936,1068" dimension="280,48" />
+  <StrutsActivity path="/jsp/sellrequirement/display/action/index.jsp" location="2316,1068" dimension="310,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellchance/newaction.jsp" location="2726,1068" dimension="310,48" />
+  <StrutsActivity path="/jsp/sellrequirement/display/plan/index.jsp" location="3136,1068" dimension="298,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellplan/update.jsp" location="1443,2870" dimension="280,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellplan/index.jsp" location="1823,2870" dimension="274,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellplan/add.jsp" location="2197,2870" dimension="262,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellplan/exec.jsp" location="2559,2870" dimension="268,48" />
+  <StrutsActivity path="/jsp/sellrequirement/competitors/update.jsp" location="0,2593" dimension="298,48" />
+  <StrutsActivity path="/jsp/sellrequirement/competitors/index.jsp" location="398,2593" dimension="292,48" />
+  <StrutsActivity path="/jsp/sellrequirement/competitors/add.jsp" location="790,2593" dimension="280,48" />
+  <StrutsActivity path="/jsp/sellrequirement/competitors/addinfo.jsp" location="1170,2593" dimension="304,48" />
+  <StrutsActivity path="/jsp/sellrequirement/agents/update.jsp" location="1033,3701" dimension="268,48" />
+  <StrutsActivity path="/jsp/sellrequirement/agents/index.jsp" location="1401,3701" dimension="262,48" />
+  <StrutsActivity path="/jsp/sellrequirement/agents/add.jsp" location="1763,3701" dimension="250,48" />
+  <StrutsActivity path="/jsp/sellrequirement/brand/update.jsp" location="2058,3701" dimension="262,48" />
+  <StrutsActivity path="/jsp/sellrequirement/brand/index.jsp" location="2420,3701" dimension="256,48" />
+  <StrutsActivity path="/jsp/sellrequirement/brand/add.jsp" location="2776,3701" dimension="244,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellaction/update.jsp" location="0,3424" dimension="292,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellaction/index.jsp" location="392,3424" dimension="286,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellaction/add.jsp" location="778,3424" dimension="274,48" />
+  <StrutsActivity path="/jsp/sellrequirement/project/update.jsp" location="4298,3424" dimension="274,48" />
+  <StrutsActivity path="/jsp/sellrequirement/project/index.jsp" location="4672,3424" dimension="268,48" />
+  <StrutsActivity path="/jsp/sellrequirement/project/add.jsp" location="5040,3424" dimension="256,48" />
+  <StrutsActivity path="/jsp/sellrequirement/file/update.jsp" location="4054,3701" dimension="256,48" />
+  <StrutsActivity path="/jsp/sellrequirement/file/index.jsp" location="4410,3701" dimension="250,48" />
+  <StrutsActivity path="/jsp/sellrequirement/file/add.jsp" location="4760,3701" dimension="238,48" />
+  <StrutsActivity path="/jsp/sellrequirement/requirement/update.jsp" location="1519,2593" dimension="298,48" />
+  <StrutsActivity path="/jsp/sellrequirement/requirement/index.jsp" location="1917,2593" dimension="292,48" />
+  <StrutsActivity path="/jsp/sellrequirement/requirement/add.jsp" location="2309,2593" dimension="280,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellchance/tochance.jsp" location="2689,2593" dimension="304,48" />
+  <StrutsActivity path="/jsp/sellrequirement/taskassign/update.jsp" location="1097,3424" dimension="292,48" />
+  <StrutsActivity path="/jsp/sellrequirement/taskassign/index.jsp" location="1489,3424" dimension="286,48" />
+  <StrutsActivity path="/jsp/sellrequirement/taskassign/add.jsp" location="1875,3424" dimension="274,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellanalyz/possibility.jsp" location="0,2019" dimension="322,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellanalyz/index.jsp" location="422,2019" dimension="286,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellanalyz/source.jsp" location="808,2019" dimension="292,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellanalyz/chancetype.jsp" location="1200,2019" dimension="316,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellanalyz/stage.jsp" location="1616,2019" dimension="286,48" />
+  <StrutsActivity path="/jsp/sellrequirement/sellanalyz/funnel.jsp" location="2002,2019" dimension="292,48" />
+  <StrutsActivity path="/jsp/product/provideinfo/index.jsp" location="1942,3978" dimension="244,48" />
+  <StrutsActivity path="/jsp/product/provideinfo/add.jsp" location="2286,3978" dimension="232,48" />
+  <StrutsActivity path="/jsp/product/provideinfo/update.jsp" location="2618,3978" dimension="250,48" />
+  <StrutsActivity path="/jsp/product/productInfo/index.jsp" location="2141,1722" dimension="244,48" />
+  <StrutsActivity path="/jsp/product/productInfo/add.jsp" location="2533,1722" dimension="232,48" />
+  <StrutsActivity path="/jsp/product/productInfo/update.jsp" location="2911,1722" dimension="250,48" />
+  <StrutsActivity path="/jsp/product/presentbase/index.jsp" location="2913,3978" dimension="244,48" />
+  <StrutsActivity path="/jsp/product/presentbase/add.jsp" location="3257,3978" dimension="232,48" />
+  <StrutsActivity path="/jsp/product/presentbase/update.jsp" location="3589,3978" dimension="250,48" />
+  <StrutsActivity path="/jsp/inventory/depotinfo/index.jsp" location="3884,3978" dimension="244,48" />
+  <StrutsActivity path="/jsp/inventory/depotinfo/add.jsp" location="4228,3978" dimension="232,48" />
+  <StrutsActivity path="/jsp/inventory/depotinfo/update.jsp" location="4560,3978" dimension="250,48" />
+  <StrutsActivity path="/jsp/inventory/joinDepot/productParticular.jsp" location="1133,3147" dimension="316,48" />
+  <StrutsActivity path="/jsp/inventory/joinDepot/add.jsp" location="1549,3147" dimension="232,48" />
+  <StrutsActivity path="/jsp/inventory/joinDepot/joinNumParticular.jsp" location="1881,3147" dimension="316,48" />
+  <StrutsActivity path="/jsp/inventory/stockinfo/depotQuery.jsp" location="2057,5086" dimension="274,48" />
+  <StrutsActivity path="/jsp/inventory/outDepot/addOutDepot.jsp" location="2872,2870" dimension="274,48" />
+  <StrutsActivity path="/jsp/inventory/outDepot/numParticular.jsp" location="3246,2870" dimension="286,48" />
+  <StrutsActivity path="/jsp/inventory/outDepot/addOutDepotBySellorder.jsp" location="3632,2870" dimension="340,48" />
+  <StrutsActivity path="/jsp/product/giftcertificate/add.jsp" location="3873,4532" dimension="256,48" />
+  <StrutsActivity path="/jsp/product/giftcertificate/update.jsp" location="4229,4532" dimension="274,48" />
+  <StrutsActivity path="/jsp/sellorder/sellorderlist.jsp" location="3135,4809" dimension="232,48" />
+  <StrutsActivity path="/jsp/sellorder/add.jsp" location="3467,4809" dimension="172,48" />
+  <StrutsActivity path="/jsp/canceldeal/addCancel.jsp" location="2490,5086" dimension="214,48" />
+  <StrutsActivity path="/jsp/services/qainfo/add.jsp" location="2556,4809" dimension="208,48" />
+  <StrutsActivity path="/jsp/services/qainfo/update.jsp" location="2864,4809" dimension="226,48" />
+  <StrutsActivity path="/jsp/services/bunkersSingle/add.jsp" location="0,4809" dimension="250,48" />
+  <StrutsActivity path="/jsp/services/bunkersSingle/update.jsp" location="350,4809" dimension="268,48" />
+  <StrutsActivity path="/jsp/services/custserviceinfo/add.jsp" location="3186,4532" dimension="262,48" />
+  <StrutsActivity path="/jsp/services/custserviceinfo/update.jsp" location="3548,4532" dimension="280,48" />
+  <StrutsActivity path="/jsp/report/customer/custtype_graph.jsp" location="2863,5086" dimension="274,48" />
+  <StrutsActivity path="/jsp/report/customer/custsource_graph.jsp" location="3260,5086" dimension="286,48" />
+  <StrutsActivity path="/jsp/report/customer/custgsxz_graph.jsp" location="3669,5086" dimension="274,48" />
+  <StrutsActivity path="/jsp/report/customer/custindustry_graph.jsp" location="4060,5086" dimension="298,48" />
+  <StrutsActivity path="/jsp/report/customer/custygrs_graph.jsp" location="4475,5086" dimension="274,48" />
+  <StrutsActivity path="/jsp/report/customer/custispost_graph.jsp" location="4872,5086" dimension="286,48" />
+  <StrutsActivity path="/jsp/report/customer/custbelongsid_graph.jsp" location="27,5363" dimension="304,48" />
+  <StrutsActivity path="/jsp/report/customer/custcreatenum_graph.jsp" location="430,5363" dimension="304,48" />
+  <StrutsActivity path="/jsp/report/customer/custcylxrtop_graph.jsp" location="836,5363" dimension="298,48" />
+  <StrutsActivity path="/jsp/report/customer/custexpendtop_graph.jsp" location="1236,5363" dimension="304,48" />
+  <StrutsActivity path="/jsp/report/product/productsellnum_graph.jsp" location="1639,5363" dimension="304,48" />
+  <StrutsActivity path="/jsp/report/product/productsellmoney_graph.jsp" location="2036,5363" dimension="316,48" />
+  <StrutsActivity path="/jsp/system/util/index.jsp" location="4550,1750" dimension="196,48" />
+  <StrutsActivity path="/jsp/system/util/add.jsp" location="50,1850" dimension="184,48" />
+  <StrutsActivity path="/jsp/system/util/update.jsp" location="4850,1650" dimension="202,48" />
+  <StrutsActivity path="/jsp/system/function/display.jsp" location="1550,1850" dimension="232,48" />
+  <StrutsActivity path="/jsp/system/function/displayMenuGrip.jsp" location="2450,1850" dimension="280,48" />
+  <StrutsActivity path="/jsp/system/menugroup/index.jsp" location="3650,1850" dimension="226,48" />
+  <StrutsActivity path="/jsp/system/function/displayFormMenu.jsp" location="350,2150" dimension="280,48" />
+  <StrutsActivity path="/jsp/system/queryform/displayFunction.jsp" location="50,2450" dimension="286,48" />
+  <StrutsActivity path="/jsp/system/queryform/index.jsp" location="950,2450" dimension="226,48" />
+  <StrutsTransition id="/user.do,update,/jsp/system/user/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1693,2196" />
+      <AbsolutePoint location="1693,2261" />
+      <AbsolutePoint location="1510,2261" />
+      <AbsolutePoint location="1510,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tDbsybAction.do,index,/test/AbfTDbsybDatacell2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1608,2513" />
+      <AbsolutePoint location="2254,2513" />
+      <AbsolutePoint location="2254,2498" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bnotice.do,display,/jsp/office/bnotice/display.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3348,1899" />
+      <AbsolutePoint location="3348,1989" />
+      <AbsolutePoint location="3080,1989" />
+      <AbsolutePoint location="3080,2019" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/richweb_demo.do,webcomp,/test/webcomp_demo_tld.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2629,2492" />
+      <AbsolutePoint location="3148,2474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/baction.do,dxdf_index,/jsp/marketactive/baction/dxdf_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2761,3324" />
+      <AbsolutePoint location="2761,3389" />
+      <AbsolutePoint location="2940,3389" />
+      <AbsolutePoint location="2940,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemdictionary.do,tree,/jsp/subsystem/systemdictionary/tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3722,2493" />
+      <AbsolutePoint location="3722,2528" />
+      <AbsolutePoint location="4342,2528" />
+      <AbsolutePoint location="4342,2593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,nbbg,/jsp/office/officedetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2118,84" />
+      <AbsolutePoint location="2118,294" />
+      <AbsolutePoint location="1655,294" />
+      <AbsolutePoint location="1655,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bagenda.do,display,/jsp/office/bagenda/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="161,4432" />
+      <AbsolutePoint location="161,4467" />
+      <AbsolutePoint location="55,4467" />
+      <AbsolutePoint location="55,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,cpgl,/jsp/product/productdetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2088,84" />
+      <AbsolutePoint location="2088,264" />
+      <AbsolutePoint location="1335,264" />
+      <AbsolutePoint location="1335,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/superQueryAction.do,index,/jsp/superquery/superquery.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2120,4709" />
+      <AbsolutePoint location="2120,4759" />
+      <AbsolutePoint location="2039,4759" />
+      <AbsolutePoint location="2039,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/boutregisterInfo.do,update,/jsp/office/boutregisterInfo/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3567,3324" />
+      <AbsolutePoint location="3567,3389" />
+      <AbsolutePoint location="3460,3389" />
+      <AbsolutePoint location="3460,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bmessage.do,update,/jsp/office/bmessage/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4153,2196" />
+      <AbsolutePoint location="4153,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,xsgl,/jsp/sellrequirement/selldetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2178,84" />
+      <AbsolutePoint location="2178,264" />
+      <AbsolutePoint location="2340,264" />
+      <AbsolutePoint location="2340,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/baction.do,SENDSUCCESS,/jsp/marketactive/baction/dxdf_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2833,3324" />
+      <AbsolutePoint location="2833,3359" />
+      <AbsolutePoint location="3140,3359" />
+      <AbsolutePoint location="3140,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tableinfo.do,add,/jsp/system/queryform/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3408,2183" />
+      <AbsolutePoint location="3650,2183" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemdictionary.do,display,/jsp/subsystem/systemdictionary/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3435,2493" />
+      <AbsolutePoint location="3435,2528" />
+      <AbsolutePoint location="3111,2528" />
+      <AbsolutePoint location="3111,2593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,schd,/jsp/marketactive/marketactivedetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2163,0" />
+      <AbsolutePoint location="2163,-75" />
+      <AbsolutePoint location="4009,-75" />
+      <AbsolutePoint location="4009,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,Menu,/jsp/home/root.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2029,84" />
+      <AbsolutePoint location="2029,204" />
+      <AbsolutePoint location="837,204" />
+      <AbsolutePoint location="837,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bagenda.do,add,/jsp/office/bagenda/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="430,4432" />
+      <AbsolutePoint location="430,4467" />
+      <AbsolutePoint location="735,4467" />
+      <AbsolutePoint location="735,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/function.do,update,/jsp/system/function/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3950,1830" />
+      <AbsolutePoint location="3622,1830" />
+      <AbsolutePoint location="3622,1785" />
+      <AbsolutePoint location="463,1785" />
+      <AbsolutePoint location="463,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bmessage.do,cg,/jsp/office/bmessage/updateCg.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4296,2196" />
+      <AbsolutePoint location="4296,2231" />
+      <AbsolutePoint location="4817,2231" />
+      <AbsolutePoint location="4817,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bscratchpad.do,index,/jsp/office/bscratchpad/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="367,4155" />
+      <AbsolutePoint location="367,4220" />
+      <AbsolutePoint location="463,4220" />
+      <AbsolutePoint location="463,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menur.do,add,/jsp/system/menu/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2599,134" />
+      <AbsolutePoint location="2599,324" />
+      <AbsolutePoint location="4197,324" />
+      <AbsolutePoint location="4197,1548" />
+      <AbsolutePoint location="1039,1548" />
+      <AbsolutePoint location="1039,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemdictionary.do,index,/jsp/subsystem/systemdictionary/default.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3579,2493" />
+      <AbsolutePoint location="3579,2593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,display,/jsp/office/blinkProgram/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,1572" />
+      <AbsolutePoint location="660,1662" />
+      <AbsolutePoint location="460,1662" />
+      <AbsolutePoint location="460,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemdictionary.do,update,/jsp/subsystem/systemdictionary/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3507,2493" />
+      <AbsolutePoint location="3507,2558" />
+      <AbsolutePoint location="3257,2558" />
+      <AbsolutePoint location="3257,2593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,add,/jsp/office/blinkProgram/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="839,1572" />
+      <AbsolutePoint location="839,1632" />
+      <AbsolutePoint location="1600,1632" />
+      <AbsolutePoint location="1600,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user.do,display,/jsp/system/user/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1621,2196" />
+      <AbsolutePoint location="1621,2231" />
+      <AbsolutePoint location="1409,2231" />
+      <AbsolutePoint location="1409,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,xtgl,/jsp/system/systemdetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2267,84" />
+      <AbsolutePoint location="2267,174" />
+      <AbsolutePoint location="3321,174" />
+      <AbsolutePoint location="3321,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bscratchpad.do,display,/jsp/office/bscratchpad/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="188,4155" />
+      <AbsolutePoint location="188,4190" />
+      <AbsolutePoint location="61,4190" />
+      <AbsolutePoint location="61,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/groupBaseAction.do,index,/jsp/system/groupbase/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3136,4155" />
+      <AbsolutePoint location="3136,4205" />
+      <AbsolutePoint location="2936,4205" />
+      <AbsolutePoint location="2936,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menur.do,index,/jsp/system/menu/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2808,92" />
+      <AbsolutePoint location="3839,92" />
+      <AbsolutePoint location="3839,1341" />
+      <AbsolutePoint location="1069,1341" />
+      <AbsolutePoint location="1069,1815" />
+      <AbsolutePoint location="763,1815" />
+      <AbsolutePoint location="763,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,login,/jsp/default1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="386,84" />
+      <AbsolutePoint location="386,174" />
+      <AbsolutePoint location="313,174" />
+      <AbsolutePoint location="313,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rptDir.do,dirindex,/jsp/rpt/display_rptdir.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="298,3601" />
+      <AbsolutePoint location="298,3666" />
+      <AbsolutePoint location="151,3666" />
+      <AbsolutePoint location="151,3701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,displayFormMenu,/jsp/system/queryform/displayFormMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,42" />
+      <AbsolutePoint location="935,42" />
+      <AbsolutePoint location="935,1014" />
+      <AbsolutePoint location="1507,1014" />
+      <AbsolutePoint location="1507,1161" />
+      <AbsolutePoint location="1731,1161" />
+      <AbsolutePoint location="1731,1815" />
+      <AbsolutePoint location="1149,1815" />
+      <AbsolutePoint location="1149,2150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/imprptAction.do,proceimp,/jsp/importreport/proceimp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1514,4155" />
+      <AbsolutePoint location="1514,4205" />
+      <AbsolutePoint location="1733,4205" />
+      <AbsolutePoint location="1733,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bnotice.do,dsh,/jsp/office/bnotice/dsh.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3553,1899" />
+      <AbsolutePoint location="3553,1929" />
+      <AbsolutePoint location="4330,1929" />
+      <AbsolutePoint location="4330,2019" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,kfgl,/jsp/services/servicesdetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2297,84" />
+      <AbsolutePoint location="2297,144" />
+      <AbsolutePoint location="3647,144" />
+      <AbsolutePoint location="3647,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/emailTemplateAction.do,index,/jsp/emailtemplate/displayemailtemplate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2744,4432" />
+      <AbsolutePoint location="2744,4482" />
+      <AbsolutePoint location="2648,4482" />
+      <AbsolutePoint location="2648,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menugroup.do,display,/jsp/system/menugroup/displayMenuGroup.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4550,2127" />
+      <AbsolutePoint location="4512,2127" />
+      <AbsolutePoint location="4512,498" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/role.do,index,/jsp/system/role/default.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2569,2196" />
+      <AbsolutePoint location="2569,2261" />
+      <AbsolutePoint location="2967,2261" />
+      <AbsolutePoint location="2967,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/txl.do,print,/jsp/office/txl/print.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1388,4986" />
+      <AbsolutePoint location="1388,5086" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,addService,/jsp/office/blinkProgram/service/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="884,1572" />
+      <AbsolutePoint location="884,1602" />
+      <AbsolutePoint location="1956,1602" />
+      <AbsolutePoint location="1956,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user.do,add,/jsp/system/user/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1836,2196" />
+      <AbsolutePoint location="1836,2261" />
+      <AbsolutePoint location="2061,2261" />
+      <AbsolutePoint location="2061,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menugroup.do,update,/jsp/system/menugroup/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4550,2092" />
+      <AbsolutePoint location="166,2092" />
+      <AbsolutePoint location="166,2150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/function.do,add,/jsp/system/function/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4308,1813" />
+      <AbsolutePoint location="4954,1813" />
+      <AbsolutePoint location="4954,1798" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/baction.do,update,/jsp/marketactive/baction/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2618,3324" />
+      <AbsolutePoint location="2618,3389" />
+      <AbsolutePoint location="2386,3389" />
+      <AbsolutePoint location="2386,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,khgl,/jsp/customer/customerdetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2238,84" />
+      <AbsolutePoint location="2238,204" />
+      <AbsolutePoint location="2995,204" />
+      <AbsolutePoint location="2995,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/imprptAction.do,index,/jsp/importreport/initimp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1275,4155" />
+      <AbsolutePoint location="1275,4205" />
+      <AbsolutePoint location="1060,4205" />
+      <AbsolutePoint location="1060,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/txtpz.do,index,/jsp/util/xtpz/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2015,4432" />
+      <AbsolutePoint location="2015,4482" />
+      <AbsolutePoint location="2090,4482" />
+      <AbsolutePoint location="2090,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bnotice.do,sh,/jsp/office/bnotice/shoper.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3297,1899" />
+      <AbsolutePoint location="3297,1959" />
+      <AbsolutePoint location="2757,1959" />
+      <AbsolutePoint location="2757,2019" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/boutregisterInfo.do,add,/jsp/office/boutregisterInfo/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3746,3324" />
+      <AbsolutePoint location="3746,3359" />
+      <AbsolutePoint location="4125,3359" />
+      <AbsolutePoint location="4125,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mergerRecordsAction.do,display,/jsp/merger/displayrepeatedrecords.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1517,4709" />
+      <AbsolutePoint location="1517,4759" />
+      <AbsolutePoint location="1436,4759" />
+      <AbsolutePoint location="1436,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,succeed,/jsp/home/root.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="505,84" />
+      <AbsolutePoint location="505,144" />
+      <AbsolutePoint location="763,144" />
+      <AbsolutePoint location="763,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tableinfo.do,update,/jsp/system/queryform/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3111,2234" />
+      <AbsolutePoint location="3111,2379" />
+      <AbsolutePoint location="766,2379" />
+      <AbsolutePoint location="766,2450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,ddgl,/jsp/sellorder/sellorderdetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2148,84" />
+      <AbsolutePoint location="2148,324" />
+      <AbsolutePoint location="1987,324" />
+      <AbsolutePoint location="1987,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bnotice.do,update,/jsp/office/bnotice/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3502,1899" />
+      <AbsolutePoint location="3502,1959" />
+      <AbsolutePoint location="4019,1959" />
+      <AbsolutePoint location="4019,2019" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bmessage.do,display,/jsp/office/bmessage/display.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4009,2196" />
+      <AbsolutePoint location="4009,2231" />
+      <AbsolutePoint location="3516,2231" />
+      <AbsolutePoint location="3516,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/classgroupAction.do,index,/jsp/customize/initcustom.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4266,4709" />
+      <AbsolutePoint location="4266,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="success;6,null,/jsp/util/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3462,5251" />
+      <AbsolutePoint location="3462,5351" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="impFailure;6,null,/jsp/util/impfailure.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3019,5251" />
+      <AbsolutePoint location="3019,5351" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bnotice.do,index,/jsp/office/bnotice/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3400,1899" />
+      <AbsolutePoint location="3400,2019" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/groupInfoAction.do,index,/jsp/system/groupinfo/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4053,4155" />
+      <AbsolutePoint location="4053,4205" />
+      <AbsolutePoint location="3853,4205" />
+      <AbsolutePoint location="3853,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/role.do,initPopTree,/jsp/system/popedom/tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2539,2196" />
+      <AbsolutePoint location="2539,2231" />
+      <AbsolutePoint location="2409,2231" />
+      <AbsolutePoint location="2409,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bnotice.do,add,/jsp/office/bnotice/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3451,1899" />
+      <AbsolutePoint location="3451,1989" />
+      <AbsolutePoint location="3708,1989" />
+      <AbsolutePoint location="3708,2019" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,loginOut,/jsp/prelogin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="267,84" />
+      <AbsolutePoint location="267,114" />
+      <AbsolutePoint location="35,114" />
+      <AbsolutePoint location="35,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/function.do,display,/jsp/system/function/displayFunction.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4114,1834" />
+      <AbsolutePoint location="4114,1959" />
+      <AbsolutePoint location="4550,1959" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/com.gotop.struts.action.tDbsybAction.do,index,/test/AbfTDbsybDatacell.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1951,2474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,updateService,/jsp/office/blinkProgram/service/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="571,1572" />
+      <AbsolutePoint location="571,1602" />
+      <AbsolutePoint location="74,1602" />
+      <AbsolutePoint location="74,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rptDir.do,preAddDir,/jsp/rpt/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="370,3601" />
+      <AbsolutePoint location="370,3701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/role.do,update,/jsp/system/role/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2640,2196" />
+      <AbsolutePoint location="2640,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mkjb.do,index,/jsp/subsystem/mkjb/mkjb.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3863,4709" />
+      <AbsolutePoint location="3863,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rptDir.do,rptchart,/jsp/rpt/display_chart.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="441,3601" />
+      <AbsolutePoint location="441,3666" />
+      <AbsolutePoint location="636,3666" />
+      <AbsolutePoint location="636,3701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/displaySettingAction.do,index,/jsp/displaysetting/displaysetting.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4669,4709" />
+      <AbsolutePoint location="4669,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,indexService,/jsp/office/blinkProgram/service/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="794,1572" />
+      <AbsolutePoint location="794,1662" />
+      <AbsolutePoint location="1238,1662" />
+      <AbsolutePoint location="1238,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemdictionary.do,add,/jsp/subsystem/systemdictionary/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3650,2493" />
+      <AbsolutePoint location="3650,2558" />
+      <AbsolutePoint location="3965,2558" />
+      <AbsolutePoint location="3965,2593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bagenda.do,update,/jsp/office/bagenda/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="251,4432" />
+      <AbsolutePoint location="251,4497" />
+      <AbsolutePoint location="165,4497" />
+      <AbsolutePoint location="165,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/function.do,index,/jsp/system/function/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3950,1753" />
+      <AbsolutePoint location="3870,1753" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,display,/jsp/system/function/displayMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2342,35" />
+      <AbsolutePoint location="4655,35" />
+      <AbsolutePoint location="4655,1458" />
+      <AbsolutePoint location="2400,1458" />
+      <AbsolutePoint location="2400,1874" />
+      <AbsolutePoint location="2106,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/baction.do,display,/jsp/marketactive/baction/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2546,3324" />
+      <AbsolutePoint location="2546,3359" />
+      <AbsolutePoint location="2322,3359" />
+      <AbsolutePoint location="2322,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/custdirectedcareinfoAction.do,index,/jsp/customer/custcare/directedcare.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="179,4986" />
+      <AbsolutePoint location="179,5086" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="home;6,null,/jsp/default.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3857,5251" />
+      <AbsolutePoint location="3857,5351" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/boutregisterInfo.do,index,/jsp/office/boutregisterInfo/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3656,3324" />
+      <AbsolutePoint location="3656,3389" />
+      <AbsolutePoint location="3763,3389" />
+      <AbsolutePoint location="3763,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,displayService,/jsp/office/blinkProgram/service/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="615,1572" />
+      <AbsolutePoint location="615,1632" />
+      <AbsolutePoint location="223,1632" />
+      <AbsolutePoint location="223,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,top,/jsp/home/top.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1999,84" />
+      <AbsolutePoint location="1999,174" />
+      <AbsolutePoint location="590,174" />
+      <AbsolutePoint location="590,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/groupInfoAction.do,add,/jsp/system/groupinfo/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4173,4155" />
+      <AbsolutePoint location="4173,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,update,/jsp/office/blinkProgram/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="705,1572" />
+      <AbsolutePoint location="705,1692" />
+      <AbsolutePoint location="585,1692" />
+      <AbsolutePoint location="585,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/organ.do,display,/jsp/system/organization/form.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="866,4709" />
+      <AbsolutePoint location="866,4759" />
+      <AbsolutePoint location="782,4759" />
+      <AbsolutePoint location="782,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bmessage.do,add,/jsp/office/bmessage/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4081,2196" />
+      <AbsolutePoint location="4081,2261" />
+      <AbsolutePoint location="3836,2261" />
+      <AbsolutePoint location="3836,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="publicSuccess;6,null,/jsp/util/dialogsuccess.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2522,5251" />
+      <AbsolutePoint location="2522,5351" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,left,/jsp/home/left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2059,84" />
+      <AbsolutePoint location="2059,234" />
+      <AbsolutePoint location="1085,234" />
+      <AbsolutePoint location="1085,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/organ.do,index,/jsp/system/organization/default.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1045,4709" />
+      <AbsolutePoint location="1045,4759" />
+      <AbsolutePoint location="1129,4759" />
+      <AbsolutePoint location="1129,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rptDir.do,index,/jsp/rpt/display_rptdir.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="226,3601" />
+      <AbsolutePoint location="226,3636" />
+      <AbsolutePoint location="50,3636" />
+      <AbsolutePoint location="50,3701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,displayMenu,/jsp/system/function/displayMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,12" />
+      <AbsolutePoint location="1807,12" />
+      <AbsolutePoint location="1807,567" />
+      <AbsolutePoint location="1997,567" />
+      <AbsolutePoint location="1997,954" />
+      <AbsolutePoint location="2268,954" />
+      <AbsolutePoint location="2268,1518" />
+      <AbsolutePoint location="1797,1518" />
+      <AbsolutePoint location="1797,1874" />
+      <AbsolutePoint location="1850,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="failure;6,null,/jsp/util/failure.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3245,5251" />
+      <AbsolutePoint location="3245,5351" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/role.do,add,/jsp/system/role/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2891,2165" />
+      <AbsolutePoint location="3027,2165" />
+      <AbsolutePoint location="3027,2261" />
+      <AbsolutePoint location="3263,2261" />
+      <AbsolutePoint location="3263,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/superQueryAction.do,result,/jsp/superquery/displaysuperquery.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2299,4709" />
+      <AbsolutePoint location="2299,4759" />
+      <AbsolutePoint location="2380,4759" />
+      <AbsolutePoint location="2380,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bscratchpad.do,update,/jsp/office/bscratchpad/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="278,4155" />
+      <AbsolutePoint location="278,4220" />
+      <AbsolutePoint location="183,4220" />
+      <AbsolutePoint location="183,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,menugroup,/jsp/home/top.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="446,84" />
+      <AbsolutePoint location="446,174" />
+      <AbsolutePoint location="519,174" />
+      <AbsolutePoint location="519,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/custcareinfoAction.do,add,/jsp/customer/custcare/initcustcare.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5072,4709" />
+      <AbsolutePoint location="5072,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/chartReportAction.do,desc,/jsp/gotopchart/displayreportdesc.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="570,3878" />
+      <AbsolutePoint location="570,3928" />
+      <AbsolutePoint location="795,3928" />
+      <AbsolutePoint location="795,3978" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/highLevelQueryAction.do,index,/jsp/highlevelquery/highlevel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="582,4986" />
+      <AbsolutePoint location="582,5086" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,failure,/jsp/prelogin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="326,84" />
+      <AbsolutePoint location="326,144" />
+      <AbsolutePoint location="106,144" />
+      <AbsolutePoint location="106,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/txtpz.do,update,/jsp/util/xtpz/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1925,4432" />
+      <AbsolutePoint location="1925,4482" />
+      <AbsolutePoint location="1850,4482" />
+      <AbsolutePoint location="1850,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blinkprogram.do,index,/jsp/office/blinkProgram/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="750,1572" />
+      <AbsolutePoint location="750,1692" />
+      <AbsolutePoint location="870,1692" />
+      <AbsolutePoint location="870,1722" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/baction.do,dxqf_index,/jsp/marketactive/baction/dxqf_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2690,3324" />
+      <AbsolutePoint location="2690,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rootpad.do,rootpad,/jsp/mainpage/main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="985,4986" />
+      <AbsolutePoint location="985,5086" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,menu,/jsp/home/left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="565,84" />
+      <AbsolutePoint location="565,114" />
+      <AbsolutePoint location="1011,114" />
+      <AbsolutePoint location="1011,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/chartReportAction.do,index,/jsp/gotopchart/display_chart.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="331,3878" />
+      <AbsolutePoint location="331,3928" />
+      <AbsolutePoint location="119,3928" />
+      <AbsolutePoint location="119,3978" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/groupBaseAction.do,update,/jsp/system/groupbase/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3375,4155" />
+      <AbsolutePoint location="3375,4205" />
+      <AbsolutePoint location="3579,4205" />
+      <AbsolutePoint location="3579,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customfieldAction.do,index,/jsp/customize/displaycustomizefield.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4779,4432" />
+      <AbsolutePoint location="4779,4482" />
+      <AbsolutePoint location="4688,4482" />
+      <AbsolutePoint location="4688,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/groupInfoAction.do,update,/jsp/system/groupinfo/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4292,4155" />
+      <AbsolutePoint location="4292,4205" />
+      <AbsolutePoint location="4496,4205" />
+      <AbsolutePoint location="4496,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/richweb_demo.do,viewlist,/test/AbfTDbsybQuery.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2629,2492" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/boutregisterInfo.do,display,/jsp/office/boutregisterInfo/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3477,3324" />
+      <AbsolutePoint location="3477,3359" />
+      <AbsolutePoint location="3323,3359" />
+      <AbsolutePoint location="3323,3424" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/txtpz.do,add,/jsp/util/xtpz/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2104,4432" />
+      <AbsolutePoint location="2104,4482" />
+      <AbsolutePoint location="2338,4482" />
+      <AbsolutePoint location="2338,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mergerRecordsAction.do,merger,/jsp/merger/mergerrecords.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1696,4709" />
+      <AbsolutePoint location="1696,4759" />
+      <AbsolutePoint location="1777,4759" />
+      <AbsolutePoint location="1777,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bagenda.do,index,/jsp/office/bagenda/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="340,4432" />
+      <AbsolutePoint location="340,4497" />
+      <AbsolutePoint location="427,4497" />
+      <AbsolutePoint location="427,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/chartReportAction.do,rptprint,/jsp/gotopchart/reportprint.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="451,3878" />
+      <AbsolutePoint location="451,3978" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/groupBaseAction.do,add,/jsp/system/groupbase/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3256,4155" />
+      <AbsolutePoint location="3256,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/txtpz.do,display,/jsp/util/xtpz/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1836,4432" />
+      <AbsolutePoint location="1836,4482" />
+      <AbsolutePoint location="1806,4482" />
+      <AbsolutePoint location="1806,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customfieldAction.do,edit,/jsp/customize/editcustomfield.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4958,4432" />
+      <AbsolutePoint location="4958,4482" />
+      <AbsolutePoint location="5050,4482" />
+      <AbsolutePoint location="5050,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menur.do,update,/jsp/system/menu/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2629,134" />
+      <AbsolutePoint location="2629,294" />
+      <AbsolutePoint location="4595,294" />
+      <AbsolutePoint location="4595,1665" />
+      <AbsolutePoint location="1467,1665" />
+      <AbsolutePoint location="1467,1874" />
+      <AbsolutePoint location="1452,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/custcareinfoAction.do,index,/jsp/customer/custcare/initcustcare.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5102,4709" />
+      <AbsolutePoint location="5102,4809" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="publicFailure;6,null,/jsp/util/dialogfailure.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2775,5251" />
+      <AbsolutePoint location="2775,5351" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="download;6,null,/downloadfile.dlf,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3667,5251" />
+      <AbsolutePoint location="3667,5351" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tableinfo.do,display,/jsp/system/queryform/display.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3156,2234" />
+      <AbsolutePoint location="3156,2424" />
+      <AbsolutePoint location="2194,2424" />
+      <AbsolutePoint location="2194,2198" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rptDir.do,update,/jsp/rpt/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="513,3601" />
+      <AbsolutePoint location="513,3636" />
+      <AbsolutePoint location="911,3636" />
+      <AbsolutePoint location="911,3701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,update,/jsp/system/menu/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,12" />
+      <AbsolutePoint location="1493,12" />
+      <AbsolutePoint location="1493,477" />
+      <AbsolutePoint location="1635,477" />
+      <AbsolutePoint location="1635,834" />
+      <AbsolutePoint location="1881,834" />
+      <AbsolutePoint location="1881,1251" />
+      <AbsolutePoint location="1399,1251" />
+      <AbsolutePoint location="1399,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/imprptAction.do,selImpExcel,/jsp/importreport/initimpbizpage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1395,4155" />
+      <AbsolutePoint location="1395,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/emailTemplateAction.do,addOrUpdate,/jsp/emailtemplate/addorupdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2923,4432" />
+      <AbsolutePoint location="2923,4482" />
+      <AbsolutePoint location="3019,4482" />
+      <AbsolutePoint location="3019,4532" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tableinfo.do,displayMenu,/jsp/system/queryform/displayMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3378,2234" />
+      <AbsolutePoint location="3378,2379" />
+      <AbsolutePoint location="5073,2379" />
+      <AbsolutePoint location="5073,498" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bmessage.do,back,/jsp/office/bmessage/forback.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4224,2196" />
+      <AbsolutePoint location="4224,2261" />
+      <AbsolutePoint location="4482,2261" />
+      <AbsolutePoint location="4482,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user.do,index,/jsp/system/user/default.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1765,2196" />
+      <AbsolutePoint location="1765,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/role.do,display,/jsp/system/role/update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2712,2196" />
+      <AbsolutePoint location="2712,2231" />
+      <AbsolutePoint location="2611,2231" />
+      <AbsolutePoint location="2611,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bscratchpad.do,add,/jsp/office/bscratchpad/add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="457,4155" />
+      <AbsolutePoint location="457,4190" />
+      <AbsolutePoint location="795,4190" />
+      <AbsolutePoint location="795,4255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/bnotice.do,view,/jsp/office/bnotice/view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3246,1899" />
+      <AbsolutePoint location="3246,1929" />
+      <AbsolutePoint location="2443,1929" />
+      <AbsolutePoint location="2443,2019" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user.do,initPopTree,/jsp/system/popedom/tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1908,2196" />
+      <AbsolutePoint location="1908,2231" />
+      <AbsolutePoint location="2305,2231" />
+      <AbsolutePoint location="2305,2296" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/menu.do,txbb,/jsp/report/graphdetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2208,84" />
+      <AbsolutePoint location="2208,234" />
+      <AbsolutePoint location="2672,234" />
+      <AbsolutePoint location="2672,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

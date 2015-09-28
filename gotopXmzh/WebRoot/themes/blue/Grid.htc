@@ -1,0 +1,1195 @@
+<PUBLIC:COMPONENT lightWeight="true">
+<PUBLIC:DEFAULTS contentEditable="false" tabStop="true"/>
+<PUBLIC:attach	 event="oncontentready" onevent="initElement()" />
+<PUBLIC:attach   event="ondetach" onevent="cleanupElement()" />
+<PUBLIC:attach	 event="onresize" onevent="elementOnResize()" />
+<PUBLIC:attach	 event="onselectstart" onevent="elementOnSelect()" />
+<PUBLIC:attach	 event="onpropertychange" onevent="elementOnPropertyChange()" />
+<PUBLIC:property name="borderWidth" value=1 />
+<PUBLIC:property name="altRowColor" value="" />
+<PUBLIC:property name="contextMenu" value="" />
+<PUBLIC:property name="rowCount" value=0 />
+<PUBLIC:property name="colCount" value=0 />
+<PUBLIC:property name="statusID" value="" />
+<PUBLIC:property name="wordWidth" value="12" />
+
+
+<PUBLIC:method   name="getSelectedCount" />
+<PUBLIC:method   name="getSelectedRow" />
+<PUBLIC:method   name="getSelected" />
+<PUBLIC:method   name="getRowIndex" />
+<PUBLIC:method   name="getRowByIndex" />
+<PUBLIC:method   name="getGridRows" />
+<PUBLIC:method   name="sortAscending" />
+<PUBLIC:method   name="sortDescending" />
+<PUBLIC:method   name="gridRowCount" />
+<PUBLIC:method   name="setRowSelected" />
+<PUBLIC:method   name="upArrow" />
+<PUBLIC:method   name="downArrow" />
+<PUBLIC:method   name="moveRow" />
+<PUBLIC:method   name="testString" />
+<PUBLIC:event    name="onRowSelect" id="rowselect" />
+<PUBLIC:event    name="onRowDoubleClick" id="rowdblclick" />
+<PUBLIC:event    name="onRowRightClick" id="rowrightclick" />
+
+<script language="jscript">
+
+var cancelClick = false ;
+var selectToHilite = null ;
+
+var menuState = false ;
+var menuColumnIdx = -1 ;
+
+var sortColumnIdx = -1 ;
+var sortDirection = "ASC" ;
+
+var inSize = false ;
+var inSizeColumnIdx = -1 ;
+var inSizeStartPos = -1 ;
+var inSizeEndPos = -1 ;
+
+var gridHeadHeight = 0 ;
+var gridHeadWidth = 0 ;
+
+var objSelectedRows = null ;
+
+var gridHead = null ;
+var gridHeadRow = null ;
+var gridRowExtraSpan = null ;
+var gridBody = null ;
+
+var objSizeItem = null ;
+var isCookieEnabled = false;
+
+var finalDefaultColumnComparator = "StringComparator";
+
+function testString(val){
+      var o = window.document.all("edt1");
+      if( val != null ){
+            o.value += val + "\r\n";
+      }
+      else{
+            o.value += "无值\r\n";
+      }
+}
+
+
+function initElement() {
+
+	//设置元素的边框
+	setGridBorder() ;
+	
+	gridHead = getElement(element, "gridHead") ;
+	if (gridHead == null) {
+		return ;
+	}
+	gridHead.align = "left" ;
+	gridHeadHeight = gridHead.offsetHeight ;
+
+	gridHeadRow = getElement(gridHead, "gridRow") ;
+	if (gridHeadRow == null) {
+		return ;
+	}
+	//在尾部插入空白列
+	with (gridHeadRow) {
+		element.colCount = children.length ;
+		insertAdjacentElement("beforeEnd", document.createElement("SPAN")) ;
+		innerHTML = innerHTML.replace(/(\> <)/g, "><") ;
+	}
+	
+	gridBody = getElement(element, "gridBody") ;
+	if (gridBody == null) {
+		return ;
+	}
+
+	if (getElement(gridBody, "gridRow") == null) {
+		return ;
+	}
+	with (gridBody) {
+		element.rowCount = children.length ;
+		style.left = "0px" ;
+	}
+	var gbChildLength = gridBody.children.length ;
+	for (var i = 0; i < gbChildLength; i++) {
+		with (gridBody.children[i]) {
+			innerHTML = innerHTML.replace(/(\> <)/g, "><") ;
+		}
+	}
+	
+	createAdditionalElements() ;
+
+	objSelectedRows = new selectedRows() ;
+            
+	setRowColors() ;
+	
+	with (gridHead) {
+		attachEvent("onmouseover", gridHeadOnMouseOver) ;
+		attachEvent("onmouseout", gridHeadOnMouseOut) ;
+		attachEvent("onmousedown", gridHeadOnMouseDown) ;
+		attachEvent("onmousemove", gridHeadOnMouseMove) ;
+		attachEvent("oncontextmenu", gridHeadOnContextMenu) ;
+	}
+
+	with (gridBody) {
+		attachEvent("onmouseover", gridBodyOnMouseOver) ;
+		attachEvent("onmouseout", gridBodyOnMouseOut) ;
+		attachEvent("onmousedown", gridBodyOnMouseDown) ;
+		attachEvent("oncontextmenu", gridBodyOnRightClick) ;
+		attachEvent("onclick", gridBodyOnClick) ;
+		attachEvent("ondblclick", gridBodyOnDblClick) ;
+		attachEvent("onscroll", gridBodyOnScroll) ;
+	}
+	with (element) {
+		attachEvent("onmousemove", elementOnMouseMove) ;
+		attachEvent("onmouseup", elementOnMouseUp) ;
+	}
+
+	window.attachEvent("onload", actionOnLoad) ;
+            
+}
+
+function cleanupElement() {
+	with (gridHead) {
+		detachEvent("onmouseover", gridHeadOnMouseOver) ;
+		detachEvent("onmouseout", gridHeadOnMouseOut) ;
+		detachEvent("onmousedown", gridHeadOnMouseDown) ;
+		detachEvent("onmousemove", gridHeadOnMouseMove) ;
+		detachEvent("oncontextmenu", gridHeadOnContextMenu) ;
+	}
+
+	with (gridBody) {
+		detachEvent("onmouseover", gridBodyOnMouseOver) ;
+		detachEvent("onmouseout", gridBodyOnMouseOut) ;
+		detachEvent("onmousedown", gridBodyOnMouseDown) ;
+		detachEvent("oncontextmenu", gridBodyOnRightClick) ;
+		detachEvent("onclick", gridBodyOnClick) ;
+		detachEvent("ondblclick", gridBodyOnDblClick) ;
+		detachEvent("onscroll", gridBodyOnScroll) ;
+	}
+	
+	with (element) {
+		detachEvent("onmousemove", elementOnMouseMove) ;
+		detachEvent("onmouseup", elementOnMouseUp) ;	
+	}
+	window.detachEvent("onload", actionOnLoad) ;
+}
+
+function actionOnLoad() {
+          //添加Grid具有保存状态的功能
+         setCookiesEnabled();         
+	with (gridHeadRow) {
+		var grChildLength = children.length ;
+		gridRowExtraSpan = children[grChildLength - 1] ;
+		gridRowExtraSpan.innerHTML = "<table class='clsHeadBack' width='100%' cellspacing='0' cellpadding='0'><tr><td class='leftCell'></td><td class='centerCell'></td><td class='leftCell'></td></tr></table>" ;
+		gridRowExtraSpan.style.cursor = "default" ;
+		
+		gridHeadHeight = gridHead.offsetHeight;
+		for (var i = 0; i < grChildLength - 1; i++) {
+			var elChild = children[i] ;
+			var elCaption = elChild.innerHTML ;
+			try {
+			      //设置列宽度只使用百分比的
+				//elChild.style.width = ((parseInt(elChild.width) / 100) * element.offsetWidth) ;
+				if( null != elChild.width ){
+				    elChild.style.width = parseInt(elChild.width) ;
+				}
+				else{
+				    elChild.style.width = getColContextMaxLength(i) * wordWidth + 25;
+				}
+			}
+			catch(e) {
+				elChild.style.width = 100;
+			}
+			setColWidth(i, elChild.offsetWidth) ;
+			gridHeadWidth += elChild.offsetWidth ;
+			elChild.innerHTML = "" ;
+			elChild.innerHTML = "<table class='clsHeadBack' width='100%' cellspacing='0' cellpadding='0'><tr><td class='leftCell'></td><td class='centerCell' style='"+  renderColHeadStyle(elChild) +"'>"  + "<font class='sortBit'>&nbsp;</font>" + elCaption + "</td><td class='rightCell'></td></tr></table>" ;
+		}
+		
+	}
+	elementOnResize() ;
+	
+	gridHead.style.visibility = "visible" ;
+	gridBody.style.visibility = "visible" ;
+	
+	//添加Grid具有保存状态的功能
+          initHeadPosition();
+          doResumeStatus();	
+}
+
+//把表头列的样式代入生成Grid后的样式
+function renderColHeadStyle(el){
+    var results = new stringBuilder();
+    
+    if(el.style.textAlign!=null){
+        results.append( "text-align:" + el.style.textAlign + ";");
+    }
+   return results.toString();    
+}
+
+//计算单列中某一行内容最长宽度
+function getColContextMaxLength(val){
+    if(null==val) return 0;
+    var max = gridHeadRow.children[val].innerText.length;
+    for(var i=0,len=0; i<gridBody.children.length; i++){
+        len = gridBody.children[i].children[val].innerText.length;
+        if(max<len) {max = len;}
+    }
+    return max;
+}   
+
+// ----------------------------------------------------
+// element functions   
+// ----------------------------------------------------
+function elementOnMouseUp() {
+	with (window.event) {
+		returnValue = false ;
+		cancelBubble = true ;
+	}
+	if (inSize) {
+		inSizeEndPos = objSizeItem.offsetLeft ;
+		objSizeItem.style.visibility = "hidden" ;
+		element.releaseCapture() ; 
+		if (inSizeColumnIdx != -1) {
+			gridHeadRow.children[inSizeColumnIdx].children[0].className = "clsHeadBack" ;
+			sizeCol(inSizeColumnIdx, inSizeEndPos - inSizeStartPos) ;
+		}
+		inSizeColumnIdx = -1 ;
+		inSize = false ;
+		cancelClick = false;
+	}
+	return false ;
+}
+
+function elementOnMouseMove() {
+	with (window.event) {
+		var evSrcElement = srcElement ;
+		var cliX = clientX ;
+		var cliY = clientY ;
+		cancelBubble = true ;
+		returnValue = false ;
+		if (button == 2) {	return ; }
+	}
+	if (inSize && objSizeItem != null) {
+		if (inSizeColumnIdx != -1) {
+			with (gridHeadRow.children[inSizeColumnIdx]) {
+				var minLeft = parseInt(offsetLeft) ;
+				with (children[0].all.tags("FONT")[0]) {
+					minLeft += parseInt(offsetLeft) ;
+					minLeft += parseInt(offsetWidth) + 10 ;
+				}
+			}
+			minLeft += absoluteX ;
+			if (cliX > minLeft) {
+				objSizeItem.style.posLeft = cliX - 1 ;
+			}
+		}
+		return ;
+	}
+}
+
+function elementOnResize() {
+
+	with (element) {
+		var elClientHeight = clientHeight ;
+		var elClientWidth = clientWidth ;
+	}
+	if (elClientHeight < gridHeadHeight || elClientWidth < 1) { return ; }
+	with (gridBody) {
+		//style.height = elClientHeight - 20;
+		style.height = elClientHeight - gridHeadHeight;
+		style.width = elClientWidth  ;
+		gridHeadRow.style.marginLeft = (-scrollLeft) ;
+
+	}
+
+	setGridHeadWidth(elClientHeight, elClientWidth, gridBody.clientHeight) ; 
+}
+
+function elementOnSelect() {
+	with (window.event) {
+		cancelBubble = true ;
+		returnValue = false ;
+	}
+	return false ;
+}
+
+function elementOnPropertyChange() {
+}
+
+
+// ----------------------------------------------------
+// gridHead functions
+// ----------------------------------------------------
+function gridHeadOnMouseOver() {
+	if (inSize ||  getHeadColSrcCell(window.event.srcElement) == gridRowExtraSpan) { return ; }
+	var el = getHeadSrcCell(window.event.srcElement) ;
+	el.className = "clsHeadBackOver" ;
+}
+
+function gridHeadOnMouseOut() {
+	if ( getHeadColSrcCell(window.event.srcElement) == gridRowExtraSpan) { return ; }
+	var el = getHeadSrcCell(window.event.srcElement) ;
+	el.className = "clsHeadBack" ;
+}
+
+function gridHeadOnContextMenu(){
+	with (window.event) {
+		returnValue = false ;
+	}
+}
+
+function gridHeadOnMouseDown() {
+	with (window.event) {
+		var evSrcElement = srcElement ;
+		var cliX = clientX ;
+		var cliY = clientY ;
+		cancelBubble = true ;
+		returnValue = false ;
+		if (button == 2 || getHeadColSrcCell(evSrcElement) == gridRowExtraSpan) { return ; }
+	}
+	//显示移动列宽度的标志
+	if (evSrcElement.className == "rightCell") {
+		inSize = true ;
+		inSizeStartPos = cliX ;
+		element.setCapture() ;
+		initOffsets(element) ;
+		with (objSizeItem.style) {
+			top = absoluteY ;
+			height = element.offsetHeight ;
+			left = cliX ;
+			if (visibility == "hidden") { visibility = "visible" ; }
+		}
+		cancelClick = true ;
+	}
+	else{
+	    var el = getHeadSrcCell(evSrcElement) ;
+	    el.className = "clsHeadBackDown" ;	    
+	    gridColumnSort();
+	}
+}
+
+
+function gridHeadOnMouseMove() {
+	if (inSize ) { return ; }
+	var cellElement = window.event.srcElement ;
+	if (cellElement.className != "rightCell") { return ; }
+	var hilightedCell = getHeadColSrcCell(cellElement) ;
+	inSizeColumnIdx = getElementIndex(hilightedCell) ;
+	try {
+		cellElement.style.cursor = (inSizeColumnIdx != -1 ? "col-resize" : "hand") ;
+	}
+	catch(e) {
+		cellElement.style.cursor = (inSizeColumnIdx != -1 ? "e-resize" : "hand") ;
+	}
+}
+
+function gridColumnSort() {
+	if (inSize || cancelClick) {
+		cancelClick = false ;
+		return ;
+	}
+	with (window.event) {
+		cancelBubble = true ;
+		returnValue = false ;
+	}	
+	if (window.event.button == 2 || getHeadColSrcCell(window.event.srcElement) == gridRowExtraSpan) { return ; }
+	var el = getHeadSrcCell(window.event.srcElement) ;
+	if (sortColumnIdx != -1) {	
+		gridHeadRow.children[sortColumnIdx].all.tags("FONT")[0].innerText = "  " ;
+	}
+	var selIndex = getElementIndex(el.parentElement) ;
+	if (sortColumnIdx == selIndex) {
+		if (sortDirection == "DSC") {
+			sortDirection = "ASC" ;
+			el.all.tags("FONT")[0].innerText = "6" ;
+		}
+		else {
+			sortDirection = "DSC" ;
+			el.all.tags("FONT")[0].innerText = "5" ;
+		}
+	}
+	else {
+		sortDirection = "ASC" ;
+		el.all.tags("FONT")[0].innerText = "6" ;
+	}	
+	sortColumnIdx = selIndex ;		
+	sortTable(sortColumnIdx) ;
+	el.className = "clsHeadBackOver" ;
+
+}
+
+
+// ----------------------------------------------------
+// gridBody functions
+// ----------------------------------------------------
+function gridBodyOnMouseOver() {
+	var rowElement = getBodySrcRow(window.event.srcElement) ;
+	if (selectToHilite == rowElement) { return ; }
+	selectToHilite = null ;
+	if (rowElement != null) {
+		setRowStyle(rowElement, "gridRowOver") ;
+	}
+}
+
+function gridBodyOnMouseOut() {
+	var rowElement = getBodySrcRow(window.event.srcElement) ;
+	if (rowElement != null) {
+		if (objSelectedRows.isRowSelected(rowElement)) {
+			setRowStyle(rowElement, "gridRowHasFocus") ;
+		}
+		else {
+			setRowStyle(rowElement, "gridRow") ;
+		}
+	}
+}
+
+function gridBodyOnMouseDown() {
+	var rowElement = getBodySrcRow(window.event.srcElement) ;
+	if (rowElement != null) {
+		switch (window.event.button) {
+			case 1:
+				setRowStyle(rowElement, "gridRowDown") ;
+				break ;
+		}
+	}
+}
+
+function gridBodyOnClick() {
+	var rowElement = getBodySrcRow(window.event.srcElement) ;
+	selectToHilite = rowElement ;
+	if (rowElement != null) {
+		switch (true) {
+			case window.event.shiftKey:
+				var lastRow = objSelectedRows.lastRow() ;
+				if (lastRow != null) {
+					var sIndex = getElementIndex(lastRow) ;
+					var lIndex = getElementIndex(rowElement) ;
+					if (sIndex > lIndex) {
+						for (i = lIndex + 1; i <= sIndex; i++) {
+							setRowStyle(gridBody.children[i - 1], "gridRowHasFocus") ;
+							if (!objSelectedRows.isRowSelected(gridBody.children[i - 1])) {
+								objSelectedRows.addRow(gridBody.children[i - 1]) ;
+							}
+						}
+					}
+					else {
+						for (i = lIndex + 1; i >= sIndex + 1; i--) {
+							setRowStyle(gridBody.children[i - 1], "gridRowHasFocus") ;
+							if (!objSelectedRows.isRowSelected(gridBody.children[i - 1])) {
+								objSelectedRows.addRow(gridBody.children[i - 1]) ;
+							}							
+						}
+					}
+				}
+				else {
+					objSelectedRows.addSingleRow(rowElement) ;
+					setRowStyle(rowElement, "gridRowHasFocus") ;
+				}
+				break;
+			case window.event.ctrlKey:
+				if (objSelectedRows.isRowSelected(rowElement)) {
+					objSelectedRows.deleteRow(rowElement) ;
+					setRowStyle(rowElement, "gridRow") ;
+				}
+				else {
+					objSelectedRows.addRow(rowElement) ;
+					setRowStyle(rowElement, "gridRowHasFocus") ;
+				}
+				break;
+			default:	
+				if (objSelectedRows.count() > 0) {
+					for (i = 0; i < objSelectedRows.count(); i++) {
+						var tElement = objSelectedRows.getSelectedRow(i) ;
+						setRowStyle(tElement, "gridRow") ;
+					}
+				}
+				objSelectedRows.addSingleRow(rowElement) ;
+				setRowStyle(rowElement, "gridRowHasFocus") ;
+				break;
+		}
+		rowselect.fire() ;
+		}
+}
+
+function gridBodyOnRightClick() {
+		var rowElement = getBodySrcRow(window.event.srcElement) ;
+		if (rowElement != null) {
+			element.rightClickRowIndex = getElementIndex(rowElement) ;
+	    }
+	rowrightclick.fire() ;
+	with (window.event) {
+		cancelBubble = true ;
+		returnValue = false ;
+	}
+}
+
+function gridBodyOnDblClick() {
+	gridBodyOnClick() ;
+	rowdblclick.fire() ;
+}
+
+function gridBodyOnScroll() {
+	gridHeadRow.style.marginLeft = (-window.event.srcElement.scrollLeft) ;
+}
+
+
+// ----------------------------------------------------
+// internal functions   
+// ----------------------------------------------------
+function selectedRows(varData) {
+	var arrRows = new Array() ;
+	var objLastRowAdded = null ;
+	
+	this.count = function () {
+					return arrRows.length ;
+				 }
+
+	this.getSelectedRow = function (varData) {
+							  if (varData >= 0 && varData <= this.count()) {
+								  return arrRows[varData] ;
+							  }
+							  else {
+								  return null ;
+							  }
+						  }
+	
+	this.lastRow = function () {
+					   return objLastRowAdded ;
+				   }
+	
+	this.getRows = function () {
+					   return arrRows ;
+				   }
+	
+	this.isRowSelected = function (varData) {
+							 return (this.getRowIndex(varData) != -1) ;
+						 }
+	
+	this.addSingleRow = function (varData) {
+						    arrRows = new Array() ;
+							this.addRow(varData) ;
+						}
+	
+	this.addRow = function (varData) {
+					  arrRows[arrRows.length] = varData ;
+					  objLastRowAdded = varData ;
+				  }
+	
+	this.deleteRow = function (varData) {
+						 var idx = this.getRowIndex(varData) ;
+						 if (idx != -1) {
+							 var c = -1;
+							 var tmpArray = new Array() ;
+						     for (var i = 0; i < arrRows.length; i++) {
+							     if (i != idx) {
+							  	     c++ ;
+							  	     tmpArray[c] = arrRows[i] ;
+							     }
+							 }
+							 arrRows = tmpArray ;
+						 }
+				     }
+
+	this.getRowIndex = function (varData) {
+						   if (arrRows.length == 0) {
+							   return (-1) ;
+						   }
+						   else {
+						       for (var i = 0; i < arrRows.length; i++) {
+								   if (varData == arrRows[i]) {
+									   return (i) ;
+								   }
+							   }
+							   return (-1) ;
+						   }
+					   }
+}
+//等同于java中的StringBuffer类
+function stringBuilder(sString) {
+	this.length = 0 ;
+	
+	this.append = function (sString) {
+					this.length += (this._parts[this._current++] = String(sString)).length ;
+					this._string = null ;
+					return this ;
+				  } ;
+	
+	this.toString = function () {
+						if (this._string != null) {
+							return this._string ;
+						}
+						var s = this._parts.join("") ;
+						this._parts = [s] ;
+						this._current = 1 ;
+						this.length = s.length ;
+						return this._string = s ;
+					} ;
+
+	this._current	= 0 ;
+	this._parts		= [] ;
+	this._string	= null ;
+	if (sString != null) {
+		this.append(sString) ;
+	}
+}
+
+//取得行的位置
+function getRowIndex(varData) {
+   var arrRows = gridBody.children;
+   if (arrRows.length == 0) {
+	   return (-1) ;
+   }
+   else {
+       for (var i = 0; i < arrRows.length; i++) {
+		   if (varData == arrRows[i]) {
+			   return (i) ;
+		   }
+	   }
+	   return (-1) ;
+   }
+}
+
+//选中的行全部上移一格
+function upArrow(){
+   for(var i=0;i<gridBody.children.length;i++){
+       if(objSelectedRows.isRowSelected(gridBody.children[i]) ){
+           if( 0==i ) break;
+           gridBody.insertBefore(gridBody.children[i], gridBody.children[i-1]) ;
+       }
+   } 
+}
+
+//选中的行全部下移一格
+function downArrow(){
+   for(var i=gridBody.children.length-1;i>=0;i--){
+       if(objSelectedRows.isRowSelected(gridBody.children[i]) ){
+           if( gridBody.children.length-1==i ) break;
+           gridBody.insertBefore(gridBody.children[i+1], gridBody.children[i]) ;
+       }
+   } 
+}
+
+
+//选中的行移动到某一位置
+function moveRow(fromPos,toPos){
+	if(toPos<0 || fromPos<0) {
+		return;
+	}
+	if(fromPos>toPos){
+		gridBody.insertBefore(gridBody.children[fromPos], gridBody.children[toPos]) ;	
+	}
+	
+	if(fromPos<toPos && gridBody.children.length>=(toPos+1)){
+		gridBody.insertBefore(gridBody.children[fromPos], gridBody.children[toPos+1]) ;	
+	}
+}
+
+function setGridBorder() {
+	element.style.borderWidth = element.borderWidth ;
+}
+
+function getElement(el, strClassName) {
+	var colLength = el.children.length ; 
+	for (var i = 0; i < colLength; i++) {
+		if (el.children[i].className == strClassName) {
+			return el.children[i] ;
+		}
+	}
+	return null ;
+}
+
+function getElementIndex(el) {
+	var colLength = el.parentElement.children.length ; 
+	for (var i = 0; i < colLength; i++) {
+		if (el.parentElement.children[i] == el) {
+			return i ;
+		}
+	}
+	return -1 ;
+}
+
+function initOffsets(el) {
+	absoluteX = 0 ;
+	absoluteY = 0 ;
+	while (el != null) {
+		absoluteY += el.offsetTop ;
+		absoluteX += el.offsetLeft ;
+		el = el.offsetParent ;
+	}
+}
+
+function getFirstVisible() {
+	var colLength = gridHeadRow.children.length ; 
+	for (var i = 0; i < colLength; i++) {
+		if (gridHeadRow.children[i].style.display != "none") {
+			return i ;
+		}
+	}
+	return 0 ;
+}
+
+function getVisibleCount() {
+	var count = 0 ;
+	var colLength = gridHeadRow.children.length ; 
+	for (var i = 0; i < colLength; i++) {
+		if (gridHeadRow.children[i].style.display != "none") {
+			count++ ;
+		}
+	}
+	return count ;
+}
+
+
+
+function createAdditionalElements() {
+	var txtHTML ;
+	//移动列宽度的显标
+	objSizeItem = window.document.createElement("DIV") ;
+	with (objSizeItem.style) {
+		backgroundColor = "buttonshadow" ;
+		try {
+			cursor = "col-resize" ;
+		}
+		catch(e) {
+			cursor = "e-resize" ;
+		}
+		position = "absolute" ;
+		border = "outset 1px" ;
+		width = "1px" ;
+		zIndex = 3000 ;
+		visibility = "hidden" ;
+	}
+	window.document.body.insertAdjacentElement("afterBegin", objSizeItem) ;	
+}
+
+function setRowColors() {
+	if (element.altRowColor != "") {
+		var gbChildLength = gridBody.children.length ;
+		for (var i = 0; i < gbChildLength; i++) {
+			with (gridBody.children[i]) {
+				if ((Math.round(i / 2) * 2) == i) {
+					style.borderColor = element.altRowColor ;
+					style.backgroundColor = element.altRowColor ;
+				}
+				else {
+					style.borderColor = "red" ;
+					style.backgroundColor = "window" ;
+				}
+			}
+			setRowStyle(gridBody.children[i], "gridRow") ;
+			if (objSelectedRows.isRowSelected(gridBody.children[i])) {
+				setRowStyle(gridBody.children[i], "gridRowHasFocus") ;
+			}
+		}
+	}
+}
+//去除gridRowOver 的加亮显示
+function setRowStyle(objUnknown, strClassName) {
+	if (objUnknown != null) {
+		var bColor = null ;
+		switch (strClassName) {
+			case "gridRow":
+				bColor = objUnknown.style.backgroundColor ;
+				break ;
+			case "gridRowOver":
+				//bColor = element.currentStyle.hoverBorderColor ;
+				bColor =  objUnknown.style.backgroundColor  ;
+				strClassName = "gridRow";
+				break ;
+			case "gridRowDown":
+				bColor = element.currentStyle.activeBorderColor ;
+				break ;
+			case "gridRowHasFocus":
+				//bColor = element.currentStyle.selectedBorderColor ;
+				bColor = "";
+				break ;
+		}
+		with (objUnknown) {
+			className = strClassName ;
+			style.borderColor = bColor ;
+		}
+	}
+}
+//处理边角的单元格的宽度
+function setGridHeadWidth(elClientHeight, elClientWidth, gridBodyClientHeight) {
+	var horScrollHeight = 0 ;  
+	if( elClientWidth < gridHeadWidth ){
+	    horScrollHeight = 16;
+	} 
+      
+      gridHeadRow.style.marginLeft = 0 ;
+      gridBody.scrollLeft = 0 ;	 
+	if (elClientWidth >= gridHeadWidth && horScrollHeight < 1) {
+
+                   if(gridRowExtraSpan!=null){
+                        gridRowExtraSpan.style.width = elClientWidth - gridHeadWidth + horScrollHeight;
+                   }
+	}
+	else {
+                   if(gridRowExtraSpan!=null){
+                        gridRowExtraSpan.style.width = element.borderWidth + horScrollHeight;  
+                  }
+	}
+	
+}
+
+function getGridRowWidth() {
+	gridHeadWidth = 0 ;
+	with (gridHeadRow) {
+		for (var i = 0; i < children.length - 1; i++) {
+			with (children[i]) {
+				if (style.display != "none") {
+					gridHeadWidth += offsetWidth ;
+				}
+			}
+		}
+	}
+}
+
+function getBodySrcRow(el) {
+	if (el.className.toUpperCase() == "GRIDBODY") {
+		return null ;
+	}
+	if(  el.tagName.toUpperCase() == "DIV"
+	      && el.className.toUpperCase().substring(0,7) == "GRIDROW" ){
+	      return el;
+	}
+	if( el.tagName.toUpperCase() == "SPAN" 
+	      && el.parentElement.tagName.toUpperCase() == "DIV"
+	      && el.parentElement.className.toUpperCase().substring(0,7) == "GRIDROW" ){
+                        return el.parentElement ;      
+            }
+            else{
+                  return getBodySrcRow(el.parentElement);
+            }
+
+}
+
+function getHeadSrcCell(el) {
+	var checkElement = el ;
+	if (checkElement != null) {
+		if (checkElement.className == "sortBit") {
+			checkElement = checkElement.parentElement ;
+		}
+		if (checkElement.className == "leftCell" || checkElement.className == "centerCell" || checkElement.className == "rightCell") {
+			checkElement = checkElement.offsetParent;
+		}
+	}
+	return checkElement ;
+}
+
+function getHeadColSrcCell(el) {
+	var checkElement = el ;
+	if (checkElement != null) {
+		if (checkElement.className == "sortBit") {
+			checkElement = checkElement.parentElement ;
+		}
+		if (checkElement.className == "leftCell" || checkElement.className == "centerCell" || checkElement.className == "rightCell") {
+			checkElement = checkElement.offsetParent.offsetParent;
+		}
+	}
+	return checkElement ;
+}
+
+ 
+// ----------------------------------------------------
+// sort methods   
+// ----------------------------------------------------
+function sortTable(sortColumn) {
+    var colComparator;
+     if( null == gridHeadRow.children[sortColumn].comparator){	     
+        colComparator = IComparator(finalDefaultColumnComparator);
+     }
+     else{		     
+        colComparator = IComparator(gridHeadRow.children[sortColumn].comparator);
+     }
+	var bReverse = (sortDirection == "DSC") ;
+	for (i = 0; i < gridBody.children.length; i++) {
+     	var rowInsert = (gridBody.children[i].children[sortColumn].innerText).toLowerCase() ;
+		for (s = 0; s <= i; s++) {
+			var rowCurrent = (gridBody.children[s].children[sortColumn].innerText).toLowerCase() ;
+			colComparator.value1 = rowInsert;
+			colComparator.value2 = rowCurrent;
+			
+			if (((!bReverse && colComparator.getResult()<0) || (bReverse && colComparator.getResult()>0)) && (i != s)) {
+                        gridBody.insertBefore(gridBody.children[i], gridBody.children[s]) ;
+                        break ;
+            }
+        }
+	}
+	setRowColors() ;
+	doSaveStatus();	
+} 
+
+
+
+
+// ----------------------------------------------------
+// column methods   
+// ----------------------------------------------------
+function setColWidth(intCol, intWidth) {
+	var gbChildLength = gridBody.children.length ;
+	for (var i = 0; i < gbChildLength; i++) {
+		var elChild = gridBody.children[i] ;
+		with (elChild.children[intCol].style) {
+			border = "none" ;
+			if (intCol == elChild.children.length - 1) {
+				width = intWidth - 2 ;
+			}
+			else {
+				width = intWidth ;
+			}
+		}
+	}
+}
+
+function sizeCol(intCol, intWidth) {
+	with (gridHeadRow.children[intCol]) {
+		var newWidth = offsetWidth + intWidth ;
+		style.width = newWidth ;
+		newWidth = offsetWidth ;
+	}
+	setColWidth(intCol, newWidth) ;
+	getGridRowWidth() ;
+	elementOnResize() ;
+	doSaveStatus();
+}
+
+// ----------------------------------------------------
+// public methods   
+// ----------------------------------------------------
+function getSelectedCount() {
+	return objSelectedRows.count() ;
+}
+
+function getSelectedRow(idx) {
+	return objSelectedRows.getSelectedRow(idx) ;
+}
+
+function getSelected(){
+      return objSelectedRows;
+}
+
+
+function getRowByIndex(idx){
+          if( idx<0 || null == gridBody || idx>= gridBody.children.length ) {
+            return null;
+          }
+          return  gridBody.children[idx]
+}
+
+function getGridRows(){
+      return gridBody;
+}
+
+function sortAscending() {
+	if (menuColumnIdx != -1) {
+		if (sortColumnIdx != -1) {
+			gridHeadRow.children[sortColumnIdx].all.tags("FONT")[0].innerText = "  " ;
+		}
+		sortDirection = "ASC" ;
+		gridHeadRow.children[menuColumnIdx].all.tags("FONT")[0].innerText = "6" ;
+		sortTable(menuColumnIdx) ;
+		sortColumnIdx = menuColumnIdx ;
+	}
+	menuColumnIdx = -1 ;
+}
+
+function sortDescending() {
+	if (menuColumnIdx != -1) {
+		if (sortColumnIdx != -1) {
+			gridHeadRow.children[sortColumnIdx].all.tags("FONT")[0].innerText = "  " ;
+		}
+		sortDirection = "DSC" ;
+		gridHeadRow.children[menuColumnIdx].all.tags("FONT")[0].innerText = "5" ;
+		sortTable(menuColumnIdx) ;
+		sortColumnIdx = menuColumnIdx ;
+	}
+	menuColumnIdx = -1 ;
+}
+
+function gridRowCount() {
+	return gridBody.children.length ;
+}
+
+
+function setRowSelected(idx, state) {
+	if (idx <= gridBody.children.length) {
+		el = gridBody.children[idx] ;
+		if (el != null) {
+			if (state) {
+				objSelectedRows.addRow(el) ;
+				setRowStyle(el, "gridRowHasFocus") ;
+			}
+			else {
+				objSelectedRows.deleteRow(el) ;
+				setRowStyle(el, "gridRow") ;
+			}
+			el = null ;
+		}
+	}
+}
+
+//----------状态持续 garyman
+
+//当前浏览是否支持Cookie读写
+function setCookiesEnabled() 
+{
+    var cookieExpires = getCookieValue("expires");
+    if(cookieExpires==""){
+       var now = new Date(); 
+       now.setHours( now.getHours() + 24 ); 
+       window.document.cookie = "expires=" + now.toGMTString();      
+    }
+       window.document.cookie = "Enabled=True"; 
+       isCookieEnabled = (getCookieValue( "Enabled" ) == "True" );
+}
+//保存状态
+function doSaveStatus(){
+      if( !isCookieEnabled || statusID == null || statusID == "" ) { return; }
+      var sb = new stringBuilder();
+      with (gridHeadRow) {
+           for(var i=children.length-2; i>=0; i--){
+                  sb.append(children[i].originalPos);
+                  sb.append(",");
+                  sb.append(i);
+                  sb.append(",");
+            	if (sortColumnIdx == i) {	
+            	      switch(true){
+            	            case (sortDirection == "DSC") : 
+            	                  sb.append(1); break;
+            	            case (sortDirection == "ASC") : 
+            	                  sb.append(0); break;
+                              default :
+                                    sb.append(-1);         	            
+            	      }
+            	}
+            	else{
+            	      sb.append("-1");
+            	}
+            	sb.append(",");
+            	if( "none" == children[i].style.display ){
+            	      sb.append(0);
+            	}
+            	else{
+            	      sb.append(1);
+            	}
+            	sb.append(",");
+            	sb.append(children[i].offsetWidth);
+            	sb.append(";");
+           }      
+      }
+      setCookieValue(statusID,sb.toString());
+}
+//恢复状态
+function doResumeStatus(){
+      if( !isCookieEnabled || statusID == null || statusID == "" ) { return; }
+      var ors = getOriginalStatus(statusID);
+      if( ors == null ) { return; }
+      resumeColumn(ors);
+}
+
+function resumeColumn(ors){
+      for(var i=0; i<ors.length; i++){
+         var lastItem = ors.length-i-1;
+         if( ors[i].width != 0){
+            sizeCol(lastItem,ors[i].width - gridHeadRow.children[lastItem].offsetWidth);
+         }
+         resumeColumnSort(lastItem, ors[i].sortOrder);
+     }
+}
+
+function getColumnIdxByOriginal(idx){
+      with(gridHeadRow){
+            for(var i=0; i<children.length; i++){
+                  if( children[i].originalPos == idx ){
+                        return i;
+                  }
+            }
+      }
+      return -1;
+}
+
+function resumeColumnSort(col,sort){
+          if( sort == -1 ) return;
+          el = gridHeadRow.children[col];
+	if (sort == 0) {
+		sortDirection = "ASC" ;
+		el.all.tags("FONT")[0].innerText = "6" ;
+	}
+	else {
+		sortDirection = "DSC" ;
+		el.all.tags("FONT")[0].innerText = "5" ;
+	}
+	sortColumnIdx = col ;
+	sortTable(sortColumnIdx) ;
+}
+
+
+
+function initHeadPosition(){
+	with (gridHeadRow) {
+	      for(var i=0; i< children.length ; i++){
+	            children[i].originalPos = i;
+	      }	
+	}      
+}
+
+function setCookieValue( name,value )
+{ 
+  window.document.cookie = name + "=" + escape(value); 
+}
+
+function getCookieValue( name ) 
+{
+        var c = window.document.cookie; 
+        var begin = c.indexOf( name ); 
+        if( begin < 0 ) return( "" ); 
+        begin += name.length + 1; 
+        var end = c.indexOf( ";", begin ); 
+        if( end == -1 ) end = c.length; 
+        return( unescape(c.slice( begin, end )) );
+}
+
+function getOriginalStatus(statusID){
+      var cols =  [];
+      if( !isCookieEnabled ) { return null; }
+      var tmValue = getCookieValue(statusID);
+      
+      if( tmValue != null ){
+            tmValues = tmValue.split(";");
+            for(var i=0; i<tmValues.length-1; i++){
+                  cols[i] = parseStatusString(tmValues[i]);
+            }
+            return cols;
+      }
+      return null;
+}
+
+function parseStatusString(val){
+      var vals = val.split(",");
+      var col = new Column();
+      col.originalPos = parseInt(vals[0]);
+      col.currentPos = parseInt(vals[1]);
+      col.sortOrder = parseInt(vals[2]);
+      col.display = parseInt(vals[3]);
+      col.width = parseInt(vals[4]);
+      
+      return col;
+}
+/*
+$ 例 DG7K239NWIPi3Y:1,3,0,1,15;2,2,1,20,D;3,1,0,1,65;  
+$     第1位: 原始位置   第2位: 当前位置      第3位: 排序状态[-1-不排序,0-升序,1-降序]
+$       第4位: 显示状态[0-不显示,1-显示]     第5位: 实际宽度(百分比)
+*/
+function Column(){
+      this.display = 0;
+      this.originalPos = -1;  //0代表第一列,最后一列是空白列    
+      this.currentPos = -1;
+      this.sortOrder = -1;  
+      this.width = 0;
+}
+</script>
+
+</PUBLIC:COMPONENT>

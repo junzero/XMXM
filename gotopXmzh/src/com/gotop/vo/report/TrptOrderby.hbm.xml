@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" package="com.gotop.vo.report">
+ <class name="TrptOrderby" table="TORDERBY">
+  <id name="id" column="ID" type="java.lang.Integer">
+	<generator class="sequence">
+		<param name="sequence">seq_torderby</param>
+	</generator>
+  </id> 
+  <property generated="never" lazy="false" name="tblname" type="java.lang.String">
+   <column length="20" name="TBLNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="parentid" type="java.lang.Integer">
+   <column name="PARENTID"/>
+  </property>
+  <property generated="never" lazy="false" name="orderfield" type="java.lang.String">
+   <column length="20" name="ORDERFIELD"/>
+  </property>
+  <property generated="never" lazy="false" name="ordertype" type="java.lang.String">
+   <column length="4" name="ORDERTYPE"/>
+  </property>
+  
+ </class>
+</hibernate-mapping>

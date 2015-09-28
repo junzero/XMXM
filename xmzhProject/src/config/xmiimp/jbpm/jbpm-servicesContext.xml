@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean class="com.gotop.jbpm.service.impl.JbpmDemoServiceImpl" id="jbpmDemoService">
+      	<property name="jbpmService" >
+      	    <ref bean="jbpmService" />
+      	</property>
+		<property name="processEngine">
+			<ref bean="processEngine" />
+		</property>
+		<property name="repositoryService">
+			<ref bean="repositoryService" />
+		</property>
+		<property name="executionService">
+			<ref bean="executionService" />
+		</property> 
+		 <property name="taskService">
+			<ref bean="taskService" />
+		</property>
+		<property name="historyService">
+			<ref bean="historyService" />
+		</property>
+		
+  </bean>
+  
+  <bean class="com.gotop.jbpm.service.impl.JbpmServiceImpl" id="jbpmService">
+         <property name="tProcessTaskAssigneeDAO" ref="tProcessTaskAssigneeDAO" />
+    	 <property name="tProcessTaskAssigneePersonDAO" ref="tProcessTaskAssigneePersonDAO" />
+    	  <property name="tProcessTaskExeConfigDAO" ref="tProcessTaskExeConfigDAO" />
+    	  <property name="tProcessBusinessDAO" ref="tProcessBusinessDAO" />
+    	    <property name="dictEntryDao" ref="dictEntryDao" />
+		<property name="processEngine">
+			<ref bean="processEngine" />
+		</property>
+<property name="repositoryService">
+			<ref bean="repositoryService" />
+		</property>
+		<property name="executionService">
+			<ref bean="executionService" />
+		</property> 
+		 <property name="taskService">
+			<ref bean="taskService" />
+		</property>
+  </bean>
+  
+   <bean class="com.gotop.jbpm.service.impl.TProcessConfigService" id="tProcessConfigService">
+    <property name="tProcessConfigDAO" ref="tProcessConfigDAO" />
+  </bean>
+
+  <bean class="com.gotop.jbpm.service.impl.TProcessConfigPersonService" id="tProcessConfigPersonService">
+    <property name="tProcessConfigPersonDAO" ref="tProcessConfigPersonDAO" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.service.impl.TProcessTaskAssigneeService" id="tProcessTaskAssigneeService">
+    <property name="tProcessTaskAssigneeDAO" ref="tProcessTaskAssigneeDAO" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.service.impl.TProcessTaskAssigneePersonService" id="tProcessTaskAssigneePersonService">
+    <property name="tProcessTaskAssigneePersonDAO" ref="tProcessTaskAssigneePersonDAO" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.service.impl.TProcessTaskExeConfigService" id="tProcessTaskExeConfigService">
+    <property name="tProcessTaskExeConfigDAO" ref="tProcessTaskExeConfigDAO" />
+  </bean>
+
+  
+  <bean class="com.gotop.jbpm.service.impl.TProcessBusinessService" id="tProcessBusinessService">
+    <property name="tProcessBusinessDAO" ref="tProcessBusinessDAO" />
+  </bean>
+  
+  <bean class="com.gotop.jbpm.service.impl.TProcessBusinessConfigService" id="tProcessBusinessConfigService">
+    <property name="tProcessBusinessConfigDAO" ref="tProcessBusinessConfigDAO" />
+  </bean>
+  </beans>
